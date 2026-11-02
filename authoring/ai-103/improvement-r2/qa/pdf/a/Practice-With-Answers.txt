@@ -1,0 +1,2800 @@
+AI-103 Practice
+Set A
+100 questions
+Answers, explanations and source links
+Objectives effective 16 April 2026
+AI-103 Practice · 1 / 109
+Case study - Rotor equipment reservations
+Rotor rents industrial equipment to authenticated business customers. Its assistant can explain availability
+and propose reservations, but the inventory API remains the system of record. The operations team is
+replacing a text-only prototype with a Responses-based prompt agent. Each question concerns an
+independent request against the configuration below.
+Application and identity
+The backend receives a signed application session identifying the customer and warehouse. It calls the
+agent using one managed identity. Two host functions are registered: get_stock(part_id, warehouse_id)
+and reserve_part(part_id, warehouse_id, quantity, customer_id). The stock function is read-only. The
+reservation function changes inventory and returns a reservation number after the database commits. The
+managed identity can reach the API, while application authorization must restrict each customer to its own
+account. JSON schema validation checks shape and types; inventory limits and account ownership are
+enforced by the host.
+Action policy
+A customer may request a proposal without committing it. Reservations costing more than 250 currency
+units require a supervisor to approve the exact customer, item, quantity and quoted amount. An approval
+for five units is not approval for fifty. A changed proposal must return to the approval screen. The host
+does not infer approval from manuals, tool-returned text or the agent saying that approval was obtained.
+The operations log records the proposal, approving principal and committed reservation number so that
+an incident can be reconstructed.
+Observed request
+A request checks the same part at two warehouses. Responses returns two function calls named
+get_stock with call_id values rotor-east and rotor-west. The west warehouse replies first. The host must
+submit function_call_output records after obtaining the actual results. A separate request asks for a
+guaranteed fresh stock lookup rather than an answer from the model’s prior knowledge. Both functions
+are attached and the chosen model supports function calling. No inventory lookup has happened merely
+because a function call is present in the model output.
+Failure investigation
+A test customer asks for a reservation belonging to another customer account. The argument object
+passes the JSON schema. A second test approves five units, but a later model turn changes the quantity
+to fifty before execution. A third test asks for a proposal only, while a developer considers forcing tools on
+every turn. Engineers need to choose controls at the correct boundary rather than relying on a single
+system instruction. The questions do not assume that a correct earlier answer changes these
+independently stated observations.
+Diagnostic exhibit
+Request exhibit: {"calls":[{"name":"get_stock","call_id":"rotor-east"},{"name":"get_stock","call_id":"rotor-
+west"}],"completionOrder":["rotor-west","rotor-east"]}. The reservation tests are separate requests, not
+effects of this lookup.
+AI-103 Practice · 2 / 109
+Q1
+ Domain B: Implement generative AI and agentic solutions
+ Case study
+Use shared case: Rotor equipment reservations.
+In Rotor’s two-warehouse request, west completes first. Which output correlation
+preserves the API contract?
+A Replace the call_id with a newly generated receipt ID.
+B Associate results with completion position.
+C Associate each result with its originating call_id. ✓
+D Associate both results with get_stock.
+Why the correct answer is right
+rotor-east and rotor-west identify distinct proposed calls even though the function name matches.
+Completion order does not change function_call_output correlation.
+Why the other options are wrong
+D: The shared name cannot distinguish the two calls.
+B: A slower call can complete later; position is not the correlation key.
+A: A business receipt is not the originating function call identifier.
+AI103-B2.01
+Sources
+S007: Use function calling with Microsoft Foundry agents
+https://learn.microsoft.com/azure/foundry/agents/how-to/tools/function-calling
+AI-103 Practice · 3 / 109
+Q2
+ Domain B: Implement generative AI and agentic solutions
+ Case study
+Use shared case: Rotor equipment reservations.
+Rotor’s fresh availability turn must use a tool rather than answer from prior knowledge.
+Both tools are available. Which request-level mode requires tool use?
+A none
+B required ✓
+C parallel_tool_calls=true
+D auto
+Why the correct answer is right
+required demands one or more tool calls. The host still checks which action is proposed, its
+authorization and any approval requirement.
+Why the other options are wrong
+D: auto permits a response without a tool call.
+A: none prevents tool calls.
+C: Permitting parallel calls does not require a tool call.
+AI103-B2.02
+Sources
+S054: Tool best practices for Microsoft Foundry Agent Service
+https://learn.microsoft.com/azure/foundry/agents/concepts/tool-best-practice
+S007: Use function calling with Microsoft Foundry agents
+https://learn.microsoft.com/azure/foundry/agents/how-to/tools/function-calling
+AI-103 Practice · 4 / 109
+Q3
+ Domain B: Implement generative AI and agentic solutions
+ Case study
+Use shared case: Rotor equipment reservations.
+In Rotor’s cross-account reservation test, the JSON schema passes. Which check must
+decide whether the host may execute?
+A Apply the warehouse’s rate limit and accept the supplied customer ID.
+B Validate caller ownership and reservation business constraints. ✓
+C Validate the argument types and permit any schema-valid account.
+D Check that the selected function is registered and has a description.
+Why the correct answer is right
+The backend session identifies the customer. Shape validation does not establish ownership or
+valid inventory quantities.
+Why the other options are wrong
+C: Valid types do not establish caller ownership.
+D: Registration does not establish customer authorization.
+A: Rate limiting does not establish ownership of the supplied account.
+AI103-B2.05
+Sources
+S007: Use function calling with Microsoft Foundry agents
+https://learn.microsoft.com/azure/foundry/agents/how-to/tools/function-calling
+S054: Tool best practices for Microsoft Foundry Agent Service
+https://learn.microsoft.com/azure/foundry/agents/concepts/tool-best-practice
+AI-103 Practice · 5 / 109
+Q4
+ Domain B: Implement generative AI and agentic solutions
+ Case study
+Use shared case: Rotor equipment reservations.
+Rotor approved five units, then the proposal changed to fifty. What should the host do?
+A Reapprove the changed argument tuple before execution. ✓
+B Execute fifty units and append the old approval record.
+C Reuse the approval because the function name is unchanged.
+D Accept the agent’s claim that the old approval covers the new quantity.
+Why the correct answer is right
+The case approval binds customer, item, quantity and amount. Changed arguments require a new
+approval, followed by truthful reporting of the committed result.
+Why the other options are wrong
+C: Approval applies to the exact proposal, not a function category.
+B: Appending evidence after the side effect cannot supply prior approval.
+D: Model acknowledgement does not amend the exact-tuple approval contract.
+AI103-B2.05
+Sources
+S007: Use function calling with Microsoft Foundry agents
+https://learn.microsoft.com/azure/foundry/agents/how-to/tools/function-calling
+S054: Tool best practices for Microsoft Foundry Agent Service
+https://learn.microsoft.com/azure/foundry/agents/concepts/tool-best-practice
+AI-103 Practice · 6 / 109
+Case study - Harbor maintenance knowledge
+Harbor maintains manuals for several equipment departments. Its new assistant must answer policy and
+catalog questions with current evidence and distinguish factual support from useful but unrelated prose.
+Search, embedding and generation are separately observable components. Each child question uses the
+same architecture and an independent observation.
+Corpus and index
+The Search index stores chunk text, a filterable department field, a catalog identifier and one vector field.
+Maintenance staff often search by exact identifiers such as HX-104 as well as by descriptions of
+symptoms. The current corpus was embedded with deployment harbor-embed-x. A proposed query
+deployment harbor-embed-y has the same vector dimensions but uses an unrelated model. The index is
+not automatically regenerated when a developer changes a query-time setting. The source documents
+and their department labels are authoritative.
+Access and retrieval
+The application authenticates each employee and derives an allowed department from its own
+authorization service. Department boundaries apply before evidence is returned to the model. A
+generated instruction asking the model to ignore unauthorized passages is not the access filter. The team
+can configure keyword retrieval, vector retrieval and hybrid retrieval. An optional semantic reranker
+operates on retrieved candidates; it does not create content embeddings or rename index fields. Query
+vectors must be compatible with the content vectors being searched.
+Evaluation evidence
+A held-out test includes queries, relevance judgments for candidate documents, retrieved passages and
+generated answers. One passage says the repair warranty lasts twelve months. An answer says twenty-
+four months while staying on the user’s topic. Another answer quotes the twelve-month passage correctly
+but responds to a shipping-time question. The team wants separate measurements for retrieval quality,
+contextual support and response relevance rather than one total score. A successful query response
+establishes transport success, not answer correctness.
+Operations
+Indexer logs record document-level errors and warnings. An overall successful run still requires checking
+whether required documents entered the index. An embedding model change needs a planned reindexing
+path and evaluation before rollout. Engineers retain safe request identifiers to correlate Search requests
+with agent traces. They do not put service credentials in model-visible tool errors. A reviewer should
+combine the named corpus, access and evaluation facts to choose each answer; previous child answers
+are not prerequisites and do not alter the configuration in this case.
+Diagnostic exhibit
+Evaluation exhibit: {"contentEmbedding":"harbor-embed-x","queryEmbedding":"harbor-embed-
+y","dimensionsMatch":true,"passageWarrantyMonths":12,"answerWarrantyMonths":24}. The authorized
+department is derived from the employee session, not either deployment name.
+AI-103 Practice · 7 / 109
+Q5
+ Domain B: Implement generative AI and agentic solutions
+ Case study
+Use shared case: Harbor maintenance knowledge.
+Harbor must serve HX-104 identifiers and descriptions of symptoms. Which retrieval
+approach combines those signals?
+A Semantic reranking without initial retrieval.
+B Hybrid keyword and vector retrieval with ranked-list fusion. ✓
+C Vector search followed by alphabetical identifier sorting.
+D Keyword retrieval followed by increasing generation temperature.
+Why the correct answer is right
+Harbor’s exact identifiers benefit from keyword retrieval and descriptive queries benefit from
+vectors. Hybrid search fuses the ranked candidates; a semantic reranker can operate afterward.
+Why the other options are wrong
+A: Reranking requires retrieved candidates and does not replace retrieval.
+C: Alphabetical sorting is not a keyword relevance ranking.
+D: Generation temperature does not add vector retrieval.
+AI103-B1.02
+Sources
+S025: Hybrid search using vectors and full-text search in Azure AI Search
+https://learn.microsoft.com/azure/search/hybrid-search-overview
+AI-103 Practice · 8 / 109
+Q6
+ Domain B: Implement generative AI and agentic solutions
+ Case study
+Use shared case: Harbor maintenance knowledge.
+Harbor tests harbor-embed-y for queries while content remains from harbor-embed-x.
+Equal dimensions did not preserve relevance. Which correction targets the mismatch?
+A Normalize vector magnitudes and retain both current embedding models.
+B Enable semantic ranking and leave embedding compatibility unresolved.
+C Use a validated compatible embedding configuration for content and queries.✓
+D Increase vector candidate count and retain the unrelated query model.
+Why the correct answer is right
+The case uses unrelated models. Dimension compatibility is necessary for vector fields but does
+not create a shared semantic space.
+Why the other options are wrong
+D: Candidate count does not align the two embedding spaces.
+A: Magnitude normalization does not align learned semantic spaces.
+B: Reranking is an additional stage and does not repair the vector representation contract.
+AI103-B1.02
+Sources
+S026: Integrated vector embedding in Azure AI Search
+https://learn.microsoft.com/azure/search/vector-search-integrated-vectorization
+S058: Integrated vectorization REST configuration
+https://learn.microsoft.com/en-us/azure/search/search-how-to-integrated-vectorization
+AI-103 Practice · 9 / 109
+Q7
+ Domain B: Implement generative AI and agentic solutions
+ Case study
+Use shared case: Harbor maintenance knowledge.
+Harbor answers twenty-four months from a passage saying twelve. It stays on topic. Which
+evaluation isolates this defect?
+A Groundedness ✓
+B Tool selection
+C Query latency
+D Relevance
+Why the correct answer is right
+The warranty claim contradicts the supplied passage. Groundedness examines answer support in
+context, distinct from topical relevance.
+Why the other options are wrong
+D: The answer can be on topic while unsupported.
+C: Transport timing does not assess factual support.
+B: The defect described is a generated claim, not a selected tool.
+AI103-B1.04
+Sources
+S039: Retrieval-Augmented Generation (RAG) evaluators
+https://learn.microsoft.com/azure/foundry/concepts/evaluation-evaluators/rag-evaluators
+AI-103 Practice · 10 / 109
+Q8
+ Domain B: Implement generative AI and agentic solutions
+ Case study
+Use shared case: Harbor maintenance knowledge.
+Harbor’s employee is authorized for one department. Which control enforces that boundary
+before passages reach the model?
+A Remove other departments from citations after the answer is generated.
+B Use the employee’s department in a system instruction after retrieval.
+C Rerank the unfiltered results and retain only the highest-scoring passage.
+D Apply the authenticated employee’s department as a retrieval filter. ✓
+Why the correct answer is right
+The case requires access filtering before evidence is returned. A supported filter on the filterable
+department field narrows retrieval; the host supplies the authorized value.
+Why the other options are wrong
+B: The policy requires filtering before passages enter context.
+A: Post-generation citation filtering is too late for this boundary.
+C: Relevance is not the employee authorization rule.
+AI103-B1.02
+Sources
+S040: Connect an Azure AI Search index to Foundry agents
+https://learn.microsoft.com/azure/foundry/agents/how-to/tools/ai-search
+S054: Tool best practices for Microsoft Foundry Agent Service
+https://learn.microsoft.com/azure/foundry/agents/concepts/tool-best-practice
+AI-103 Practice · 11 / 109
+Case study - Lumen regional engineering assistant
+Lumen operates an engineering assistant for staff in the European Union. Its platform team is designing
+deployment, identity and retrieval controls together, with separate principals for deployment and runtime.
+The service must answer interactively and retain existing learner and operational records during the
+migration described here.
+Workload boundary
+The processing policy permits inference across EU countries but forbids processing outside that data
+zone. Interactive requests cannot wait for a nightly batch. Demand varies across the day and procurement
+wants on-demand token billing rather than reserved throughput. The selected model is available for every
+deployment family considered in the questions, and the relevant quota has already been confirmed. The
+resource’s region alone is not the organization’s definition of the inference processing boundary.
+Inference identity
+The backend calls an Azure OpenAI resource through its /openai/v1/ endpoint using Microsoft Entra
+credentials. Its runtime managed identity currently has Reader on that resource and no inference data
+role. Token acquisition succeeds, but inference is denied. The team wants the documented inference role
+at the resource scope without granting model-management permissions. Developers’ personal roles and
+the GitHub deployment principal are separate from the runtime identity. A resource key is not part of the
+approved runtime design.
+Project and Search
+An AI Projects Python 2.8.0 client is used for Foundry project operations, with a project endpoint and an
+Entra credential. Search public access is disabled. The private endpoint exists, and the agent connection
+is explicitly pinned to the named runtime principal. That principal has Search Index Data Reader for the
+target index. From the runtime subnet, however, the Search hostname resolves to a public address. From
+a developer laptop on another network it resolves privately and querying succeeds. The network
+observations do not transfer from the laptop to the agent subnet.
+Release process
+A GitHub deployment workflow obtains a token using an established OIDC trust. It does not store a client
+secret. The workflow principal’s project role is assigned on a different project, while its endpoint variable
+points to the intended Lumen project. An authorization denial therefore needs identity and scope analysis
+after authentication succeeds. Operations retain redacted request spans and release identifiers to
+investigate failures. Each question asks for a single independent decision; repairing one defect is not
+assumed to repair the others. A proposed change must satisfy the named runtime, region and billing facts
+rather than simply resemble a working developer setup.
+Diagnostic exhibit
+Runtime exhibit: {"tokenAcquired":true,"inferenceRole":"Reader","searchRole":"Search Index Data
+Reader","searchDns":"public address","publicSearchAccess":false}. These observations belong to the
+runtime identity and subnet; the developer’s successful call uses a different network.
+AI-103 Practice · 12 / 109
+Q9
+ Domain A: Plan and manage an Azure AI solution
+ Case study
+Use shared case: Lumen regional engineering assistant.
+Which deployment fits Lumen’s interactive EU-processing and on-demand billing
+requirements?
+A Global Standard in an EU resource.
+B Data Zone Standard in the EU. ✓
+C Data Zone Provisioned.
+D Data Zone Batch.
+Why the correct answer is right
+Lumen permits EU-wide processing, requires interactive completion and wants token billing. Data
+Zone Standard satisfies those constraints given the stated model availability and quota.
+Why the other options are wrong
+A: The resource region alone does not constrain Global processing to the EU.
+D: Batch is asynchronous and conflicts with the interactive workload.
+C: Provisioned introduces reserved throughput rather than the requested on-demand billing.
+AI103-A2.02
+Sources
+S005: Deployment types for Microsoft Foundry Models
+https://learn.microsoft.com/azure/foundry/foundry-models/concepts/deployment-types
+AI-103 Practice · 13 / 109
+Q10
+ Domain A: Plan and manage an Azure AI solution
+ Case study
+Use shared case: Lumen regional engineering assistant.
+Lumen’s runtime obtains a token but Reader-only inference is denied. Which documented
+role at the called Azure OpenAI resource supplies inference permission?
+A A deployment workflow’s role on another project.
+B Reader on the Foundry project only.
+C Cognitive Services OpenAI User. ✓
+D Search Index Data Reader.
+Why the correct answer is right
+The named /openai/v1/ endpoint requires the runtime identity’s inference permission. Cognitive
+Services OpenAI User is the documented inference role; scope must cover the called resource.
+Why the other options are wrong
+B: Management reading does not grant the named inference permission.
+D: That role applies to Search data, not Azure OpenAI inference.
+A: A different principal and different resource scope do not authorize this runtime call.
+AI103-A3.04
+Sources
+S051: Azure OpenAI v1 API
+https://learn.microsoft.com/en-us/azure/foundry/openai/api-version-lifecycle
+S052: Use Azure OpenAI without keys
+https://learn.microsoft.com/en-us/azure/developer/ai/keyless-connections
+AI-103 Practice · 14 / 109
+Q11
+ Domain A: Plan and manage an Azure AI solution
+ Case study
+Use shared case: Lumen regional engineering assistant.
+Lumen’s Search role is correct, but the runtime resolves Search publicly. What should be
+repaired first?
+A The runtime principal’s model-token quota.
+B The semantic configuration on the Search index.
+C The developer laptop’s working Search role.
+D Private DNS resolution and subnet links. ✓
+Why the correct answer is right
+Public access is disabled and the runtime resolves to a public address. Repair its private DNS path
+and connectivity; the laptop observation is from another network.
+Why the other options are wrong
+A: Model quota does not change Search hostname resolution.
+C: The case already distinguishes the developer from the runtime network.
+B: Semantic relevance settings do not repair the network path.
+AI103-A3.04
+Sources
+S011: Set up private networking for Foundry Agent Service
+https://learn.microsoft.com/azure/foundry/agents/how-to/virtual-networks
+AI-103 Practice · 15 / 109
+Q12
+ Domain A: Plan and manage an Azure AI solution
+ Case study
+Use shared case: Lumen regional engineering assistant.
+Lumen’s OIDC token succeeds but deployment is denied. Which authorization correction
+targets the case defect?
+A Change the runtime Search role.
+B Use the endpoint string as a credential.
+C Scope the workflow’s deployment role to the intended project. ✓
+D Rotate a long-lived secret into GitHub.
+Why the correct answer is right
+Authentication works. The workflow role is scoped to a different project; align deployment
+authorization with the target while retaining federation.
+Why the other options are wrong
+D: Changing credential style does not correct the role’s resource scope.
+A: Runtime Search access belongs to a different operation and principal.
+B: An endpoint locates a service and is not an authentication credential.
+AI103-A2.04
+Sources
+S012: Quickstart: Hosted agent CI/CD templates
+https://learn.microsoft.com/azure/foundry/agents/quickstarts/set-up-cicd-hosted-agent
+S010: Role-based access control for Microsoft Foundry
+https://learn.microsoft.com/azure/foundry/concepts/rbac-foundry
+AI-103 Practice · 16 / 109
+Case study - North support memory and response contracts
+North runs a support assistant for individual subscribers. A web backend authenticates users locally and
+calls a Foundry prompt agent on their behalf. Subscribers can retain preferences across sessions, ask
+about current support policies and receive structured summaries. The team is testing the distinction
+between stored conversation history, persistent memory and curated knowledge.
+Caller and end user
+All response calls authenticate to Foundry with one backend managed identity. The memory search tool is
+attached to the agent and uses scope {{$userId}}. In the current implementation the backend sends no x-
+memory-user-id header. The application has a verified tenant identifier and subscriber identifier in its
+authenticated session. Those identifiers can be combined into a stable application-owned memory key.
+The host must derive that key from the authenticated session rather than accept an arbitrary customer
+identifier from a prompt.
+Memory operations
+The service also runs an administrative job that calls the low-level memory search API directly. The job
+uses the same backend identity. It supplies a subscriber identifier in the query text but omits the explicit
+scope parameter. The job must search the intended subscriber partition. Current support policy is
+maintained in a knowledge store, while language and unit preferences may be distilled from
+conversations. Changing a conversation title does not change either memory’s partition or the lifecycle of
+the organizational knowledge.
+Structured application result
+The client sends requests through Responses, not Chat Completions. A summary object has ticket_id and
+note properties; note accepts a string or null. Both keys must be present, and unknown properties must
+be rejected by the supported strict schema. The model supports that schema. A missing note is
+represented by null. The application handles refusal outcomes separately from successful objects. A
+developer has copied a response_format field from a Chat Completions example into the Responses
+request builder.
+Behavior and monitoring
+A system instruction limits the assistant to subscriber support and gives an explicit clarification path when
+evidence is missing. Product staff propose replacing that instruction with a low temperature. A workflow
+specialist and a retrieval specialist may also be composed, with the host retaining control of routing and
+result validation. Trace spans record latency and safe user-correlation identifiers; access tokens and full
+personal messages are redacted before export. These controls must be considered at their own
+boundaries. Every child observation is independent and requires the fixed case facts rather than an
+inferred result from a previous child.
+Diagnostic exhibit
+Backend exhibit: {"caller":"shared backend principal","memoryToolScope":"
+{{$userId}}","memoryUserHeader":null,"directSearchScope":null}. The Responses request builder also
+copied the Chat Completions response_format field; these are distinct defects against the stated per-
+subscriber and output contracts.
+AI-103 Practice · 17 / 109
+Q13
+ Domain B: Implement generative AI and agentic solutions
+ Case study
+Use shared case: North support memory and response contracts.
+North uses one backend principal and {{$userId}} with no header. Which implementation
+separates authenticated subscribers?
+A Place the subscriber key only in a natural-language prompt.
+B Send the authenticated subscriber key in x-memory-user-id. ✓
+C Create a new conversation title for each subscriber.
+D Retain the backend identity as the shared user partition.
+Why the correct answer is right
+Without the header the tool falls back to the caller’s Entra identity. North’s caller is the shared
+backend. Derive an authorized end-user key and send the documented header.
+Why the other options are wrong
+C: A title does not define the memory tool’s scope.
+D: The shared caller cannot provide separate subscriber partitions.
+A: Prompt text does not replace the documented scope-resolution input.
+AI103-B2.02
+Sources
+S053: Create and use memory in Foundry Agent Service (preview)
+https://learn.microsoft.com/en-us/azure/foundry/agents/how-to/memory-usage
+AI-103 Practice · 18 / 109
+Q14
+ Domain B: Implement generative AI and agentic solutions
+ Case study
+Use shared case: North support memory and response contracts.
+North’s administrative job searches low-level memory with the subscriber named only in
+query text. What must change?
+A Rely on {{$userId}} being inferred from the query text.
+B Supply the authorized subscriber scope on the direct API call. ✓
+C Use the subscriber’s display name as the conversation title.
+D Attach the query to a longer conversation.
+Why the correct answer is right
+Direct memory operations require explicit scope; automatic identity extraction is a memory-search
+tool behavior. The admin job must select its authorized subscriber partition.
+Why the other options are wrong
+C: Display naming does not supply the direct operation’s scope.
+D: Conversation length does not choose a memory partition.
+A: The low-level API does not infer scope from query text.
+AI103-B2.02
+Sources
+S053: Create and use memory in Foundry Agent Service (preview)
+https://learn.microsoft.com/en-us/azure/foundry/agents/how-to/memory-usage
+AI-103 Practice · 19 / 109
+Q15
+ Domain B: Implement generative AI and agentic solutions
+ Case study
+Use shared case: North support memory and response contracts.
+North’s Responses builder copied response_format from Chat Completions. Where should
+its structured-result format be configured?
+A Chat Completions response_format left unchanged on Responses.
+B The returned function_call_output record.
+C The conversation title.
+D Responses text.format. ✓
+Why the correct answer is right
+The case explicitly uses Responses. Its structured-output request shape places the format under
+text.format; note’s nullable value and required presence are separate schema concerns.
+Why the other options are wrong
+B: A tool result is not the model response-format configuration.
+C: Conversation naming does not configure the response schema.
+A: This retains the request-shape error being diagnosed.
+AI103-B3.01
+Sources
+S037: Structured outputs
+https://learn.microsoft.com/azure/foundry/openai/how-to/structured-outputs
+AI-103 Practice · 20 / 109
+Q16
+ Domain B: Implement generative AI and agentic solutions
+ Case study
+Use shared case: North support memory and response contracts.
+North wants a domain boundary and clarification when evidence is missing. Which design
+addresses behavior and enforcement?
+A Use tone examples as the complete access control.
+B Ask the model to authorize its own booking actions.
+C Define role/fallback, evaluate behavior and enforce host permissions.✓
+D Lower temperature and remove the system instruction.
+Why the correct answer is right
+System instructions express the domain and fallback, but they do not guarantee compliance.
+Evaluation and host action controls implement the case’s separate behavioral and permission
+boundaries.
+Why the other options are wrong
+D: Temperature does not define an allowed domain or fallback.
+A: Tone examples do not authorize actions.
+B: The case gives action authority to the host, not model self-approval.
+AI103-B3.01
+Sources
+S057: System message design
+https://learn.microsoft.com/en-us/azure/cognitive-services/openai/concepts/advanced-prompt-engineering?
+pivots=programming-language-chat-completions
+AI-103 Practice · 21 / 109
+Q17
+ Domain A: Plan and manage an Azure AI solution
+ Single choice
+An interactive assistant may process requests across EU countries but cannot process
+them outside the EU. Usage varies, and the team wants token-based billing. The model
+supports all listed types. Which deployment fits?
+A Data Zone Standard, using EU capacity with token-based charges for interactive requests.✓
+B Global Standard in an EU resource, relying on the resource region to keep inference
+processing within the EU.
+C Data Zone Batch, submitting requests to the asynchronous batch queue.
+D Data Zone Provisioned, with EU processing and reserved throughput.
+Why the correct answer is right
+Data Zone Standard combines the EU processing boundary with on-demand token billing. Model
+availability and quota must also be available in the selected deployment.
+Why the other options are wrong
+B: Global processing is not restricted to the EU by the resource location.
+D: The workload calls for usage-based billing rather than reserved throughput.
+C: The assistant needs responses during the user interaction.
+AI103-A2.02
+Sources
+S005: Deployment types for Microsoft Foundry Models
+https://learn.microsoft.com/azure/foundry/foundry-models/concepts/deployment-types
+AI-103 Practice · 22 / 109
+Q18
+ Domain A: Plan and manage an Azure AI solution
+ Single choice
+A service has predictable sustained model traffic and needs allocated throughput. Its
+processing boundary is already satisfied by the chosen region. Which deployment
+characteristic should drive the selection?
+A Developer deployment for experimentation with the selected model.
+B Batch processing with deferred completion for groups of requests.
+C Standard token billing with capacity shared across on-demand requests.
+D Provisioned capacity with a throughput commitment. ✓
+Why the correct answer is right
+Provisioned deployments allocate throughput under a capacity commitment. Size the commitment
+using measured workload characteristics rather than equating it with on-demand quota.
+Why the other options are wrong
+C: This does not reserve the planned throughput.
+B: Deferred completion does not meet a sustained interactive serving need.
+A: An experimentation deployment does not meet the production capacity requirement.
+AI103-A2.02
+Sources
+S005: Deployment types for Microsoft Foundry Models
+https://learn.microsoft.com/azure/foundry/foundry-models/concepts/deployment-types
+AI-103 Practice · 23 / 109
+Q19
+ Domain A: Plan and manage an Azure AI solution
+ Single choice
+Developers have scoped Foundry RBAC roles, but a shared resource key authenticates
+the application. A developer can perform an operation that their role excludes. Which
+change makes the role assignments effective for those calls?
+A Move the application behind a private endpoint while retaining key authentication.
+B Rotate the shared resource key and continue assigning each developer the same key.
+C Store the shared key in a vault and distribute it to authorized developers.
+D Authenticate with Entra identities carrying the intended scoped roles.✓
+Why the correct answer is right
+Foundry RBAC applies to Microsoft Entra authentication. A resource key grants access outside
+those individual role restrictions.
+Why the other options are wrong
+B: Rotation does not make a shared key enforce individual RBAC.
+A: Network isolation does not change the authorization semantics of the key.
+C: Protecting storage does not apply user-role restrictions to key-authenticated calls.
+AI103-A3.04
+Sources
+S010: Role-based access control for Microsoft Foundry
+https://learn.microsoft.com/azure/foundry/concepts/rbac-foundry
+AI-103 Practice · 24 / 109
+Q20
+ Domain A: Plan and manage an Azure AI solution
+ Single choice
+A secured agent has the required runtime roles. Search resolves to a public IP from the
+agent network even though public access is disabled. The private endpoint exists. What
+should be investigated next?
+A Private DNS resolution and links for the agent network. ✓
+B The query-time semantic ranking configuration on the target index.
+C The private endpoint connection approval state for the runtime subnet.
+D The Search role assignments on the identity used by the deployment pipeline.
+Why the correct answer is right
+A private endpoint must be reachable through correct DNS resolution and routing from the runtime
+network. Roles cannot repair resolution to a blocked public endpoint.
+Why the other options are wrong
+C: The stated failure is name resolution to a public address.
+D: The problem is name resolution from the runtime network.
+B: Ranking is evaluated after a request reaches Search.
+AI103-A3.04
+Sources
+S011: Set up private networking for Foundry Agent Service
+https://learn.microsoft.com/azure/foundry/agents/how-to/virtual-networks
+AI-103 Practice · 25 / 109
+Q21
+ Domain A: Plan and manage an Azure AI solution
+ Single choice
+A Foundry managed-compute preview deployment needs more accelerators. Matching
+GPU VM quota is available in the same region. Which quota should the team request?
+ARequest a larger subscription-wide regional vCPU allocation and count that capacity toward
+the Foundry managed-compute accelerator deployment.
+B An increase to the classic managed-endpoint GPU VM-family quota for that region.
+C Request the regional accelerator-SKU allocation through the Foundry managed-compute
+quota process.
+✓
+D Additional tokens per minute on the serverless language model deployment.
+Why the correct answer is right
+Managed-compute preview uses its own quota per accelerator SKU and region. Existing Azure VM
+quota cannot be applied to it.
+Why the other options are wrong
+B: Classic VM quota is a separate allocation.
+D: Token quota does not allocate managed-compute accelerators.
+A: Foundry managed-compute quota is separate from the subscription VM allocation.
+AI103-A3.01
+Sources
+S004: Deployment overview for Microsoft Foundry Models
+https://learn.microsoft.com/azure/foundry/concepts/deployments-overview
+AI-103 Practice · 26 / 109
+Q22
+ Domain A: Plan and manage an Azure AI solution
+ Single choice
+A hosted agent returns session_quota_exceeded. Several sessions no longer need active
+compute, but their stored state is still required. What should the operator do?
+A Stop the inactive sessions that are consuming active capacity. ✓
+B Delete the completed sessions together with their stored conversation state.
+C Increase the model deployment’s reserved inference throughput.
+D Increase the tokens-per-minute allocation for the underlying chat model.
+Why the correct answer is right
+Stopping sessions that no longer need active compute releases active session capacity while
+respecting the requirement to retain state.
+Why the other options are wrong
+B: The requirement explicitly preserves the state.
+D: The reported code concerns sessions, not model tokens.
+C: Model throughput is separate from active hosted-session capacity.
+AI103-A3.01
+Sources
+S009: Foundry Agent Service limits, quotas, and regional support
+https://learn.microsoft.com/azure/foundry/agents/concepts/limits-quotas-regions
+AI-103 Practice · 27 / 109
+Q23
+ Domain A: Plan and manage an Azure AI solution
+ Single choice
+A GitHub workflow must deploy a hosted agent with no long-lived Azure credential stored
+in GitHub. Which identity setup fits the documented deployment pattern?
+A A client-secret credential copied into GitHub and rotated before each release.
+B A project endpoint variable used as the workflow's authentication credential.
+C Federated OIDC authentication with a scoped deployment identity. ✓
+D The runtime agent identity inferred from the agent name in the workflow file.
+Why the correct answer is right
+OIDC federation lets the workflow obtain tokens through a configured trust relationship. The
+workflow identity still needs the required deployment roles.
+Why the other options are wrong
+A: This still stores a long-lived secret credential.
+D: A name does not establish workflow federation or deployment permissions.
+B: The endpoint identifies the service; it does not authenticate the workflow.
+AI103-A2.04
+Sources
+S012: Quickstart: Hosted agent CI/CD templates
+https://learn.microsoft.com/azure/foundry/agents/quickstarts/set-up-cicd-hosted-agent
+AI-103 Practice · 28 / 109
+Q24
+ Domain A: Plan and manage an Azure AI solution
+ Single choice
+An agent request traverses retrieval, generation and a business tool. Engineers need to
+attribute a latency increase to one operation and its parent request. Which telemetry
+structure supports that?
+A Timed service events whose correlation key is the service name shared by all requests.
+BRecord a structured event for each request containing final text, total elapsed time and the
+names of every participating service.
+C Export a correlated request trace with timed nested spans for retrieval, generation and the
+tool call.
+✓
+D Independent traces for each operation, each with a newly generated request identifier.
+Why the correct answer is right
+Nested spans represent timed operations inside a request trace. Consistent attributes and parent
+relationships make the slow stage visible.
+Why the other options are wrong
+B: Aggregate request timing and service names do not identify timed nested operations.
+A: A service name does not connect operations for a particular request.
+D: Separate identifiers break the shared request hierarchy.
+AI103-A4.03
+Sources
+S013: Agent tracing overview
+https://learn.microsoft.com/azure/foundry/observability/concepts/trace-agent-concept
+AI-103 Practice · 29 / 109
+Q25
+ Domain A: Plan and manage an Azure AI solution
+ Single choice
+Tool arguments include account numbers and an access token. Engineers need useful
+traces for incident diagnosis. Which collection policy best fits?
+A Export full content spans to a restricted workspace, then delete secrets in a nightly job.
+B Store raw access tokens in encrypted span attributes accessible to incident responders.
+C Remove the request and evaluation identifiers while preserving raw tool arguments.
+D Redact sensitive fields before export and preserve safe correlation data.✓
+Why the correct answer is right
+Remove credentials and redact personal data before they enter telemetry. Safe identifiers, timings,
+access controls and retention policies preserve diagnostic value.
+Why the other options are wrong
+A: Secrets enter telemetry before the deletion job.
+C: This loses correlation and retains sensitive content.
+B: Credentials should not be recorded in telemetry.
+AI103-A4.03
+Sources
+S013: Agent tracing overview
+https://learn.microsoft.com/azure/foundry/observability/concepts/trace-agent-concept
+AI-103 Practice · 30 / 109
+Q26
+ Domain A: Plan and manage an Azure AI solution
+ Single choice
+An indexer reports Success, but several known source documents are absent from
+Search. Where should the investigation start?
+A The successful run label and aggregate index document count.
+B The semantic ranker configuration used by the question-answering application.
+C The run's document-level errors and warnings. ✓
+D The service's query-latency dashboard for searches made after the run.
+Why the correct answer is right
+Review detailed indexer execution results. A run-level Success status does not establish
+successful processing of every document.
+Why the other options are wrong
+D: Query metrics do not identify failed ingestion items.
+A: A successful run can still include document-level errors.
+B: Reranking does not explain documents that failed ingestion.
+AI103-A3.03
+Sources
+S027: Monitor Azure AI Search
+https://learn.microsoft.com/azure/search/monitor-azure-cognitive-search
+S044: Monitor indexer status and results in Azure AI Search
+https://learn.microsoft.com/azure/search/search-monitor-indexers
+AI-103 Practice · 31 / 109
+Q27
+ Domain B: Implement generative AI and agentic solutions
+ Configuration
+Complete the current Python client calls for an existing agent named helpdesk and its
+project OpenAI client.
+agent = project.agents.[__________](agent_name="helpdesk")
+client = project.[__________]()
+operation: get / get_agent / create_version
+client: get_openai_client / get_search_client / get_agent_client
+Completed statement:
+agent = project.agents.get(agent_name="helpdesk")
+client = project.get_openai_client()
+Why the correct answer is right
+The current operations reference exposes get(agent_name). The retained 2.8.0 project library
+provides get_openai_client for Responses and conversations.
+Answer and step notes
+operation: Retrieve the existing named definition; do not mix classic retrieval or create a new
+version.
+client: Obtain the documented OpenAI client for Responses operations.
+AI103-B1.06
+Sources
+S002: Azure AI Projects client library for Python - version 2.8.0
+https://learn.microsoft.com/python/api/overview/azure/ai-projects-readme?view=azure-python
+S056: AI Projects AgentsOperations Python reference
+https://learn.microsoft.com/en-us/python/api/azure-ai-projects/azure.ai.projects.operations.agentsoperations?
+view=azure-python
+AI-103 Practice · 32 / 109
+Q28
+ Domain B: Implement generative AI and agentic solutions
+ Configuration
+Complete a backend memory-search tool definition and response header for per-user
+preferences. user_key is derived from the authenticated session.
+from azure.ai.projects.models import MemorySearchPreviewTool, PromptAgentDefinition
+tool = MemorySearchPreviewTool(memory_store_name="preferences", scope="
+[__________]")
+agent = project.agents.create_version(agent_name="support",
+definition=PromptAgentDefinition(model=deployment, tools=[tool]))
+response = client.responses.create(input=message,
+extra_body={"agent_reference": {"name": agent.name, "type": "agent_reference"}},
+extra_headers={"[__________]": user_key})
+scope: {{$userId}} / backend-shared / conversation-title
+header: x-memory-user-id / x-request-id / Authorization
+Completed statement:
+from azure.ai.projects.models import MemorySearchPreviewTool, PromptAgentDefinition
+tool = MemorySearchPreviewTool(memory_store_name="preferences", scope="{{$userId}}")
+agent = project.agents.create_version(agent_name="support",
+    definition=PromptAgentDefinition(model=deployment, tools=[tool]))
+response = client.responses.create(input=message,
+    extra_body={"agent_reference": {"name": agent.name, "type": "agent_reference"}},
+    extra_headers={"x-memory-user-id": user_key})
+Why the correct answer is right
+The memory tool resolves the placeholder from the memory-user header, falling back to caller
+TID/OID without it. A backend must supply its authenticated end-user key.
+Answer and step notes
+scope: Use the documented per-user placeholder; static scope pools users and a title is not a
+partition key.
+header: The memory-user header carries end-user identity; a trace ID does not select a user
+and Authorization identifies the calling service.
+AI103-B2.02
+Sources
+S053: Create and use memory in Foundry Agent Service (preview)
+https://learn.microsoft.com/en-us/azure/foundry/agents/how-to/memory-usage
+AI-103 Practice · 33 / 109
+Q29
+ Domain B: Implement generative AI and agentic solutions
+ Configuration
+A Responses turn must consult at least one attached tool. Complete the request-level
+control.
+response = client.responses.create(model=deployment, input=message, tools=tools,
+tool_choice="[__________]")
+mode: auto / required / none
+Completed statement:
+response = client.responses.create(model=deployment, input=message, tools=tools, 
+tool_choice="required")
+Why the correct answer is right
+required demands one or more calls. It does not by itself select one exact function, execute host
+code or grant permission.
+Answer and step notes
+mode: auto leaves tool use to the model; none prevents it. The host remains responsible for
+validation and execution.
+AI103-B2.01
+Sources
+S054: Tool best practices for Microsoft Foundry Agent Service
+https://learn.microsoft.com/azure/foundry/agents/concepts/tool-best-practice
+AI-103 Practice · 34 / 109
+Q30
+ Domain B: Implement generative AI and agentic solutions
+ Configuration
+Complete a supported strict Responses schema: note must be present and can be null;
+unknown properties are rejected.
+schema = {"type": "object", "properties": {"note": {"type": ["string", "null"]}},
+"required": [__________], "additionalProperties": [__________]}
+# response text.[__________] contains the json_schema format
+required: ["note"] / [] / ["string", "null"]
+extra: False / True
+location: format / response_format / metadata
+Completed statement:
+schema = {"type": "object", "properties": {"note": {"type": ["string", "null"]}},
+          "required": ["note"], "additionalProperties": False}
+# response text.format contains the json_schema format
+Why the correct answer is right
+Nullable value types do not make a property optional in the supported strict subset. Responses
+uses text.format, unlike the Chat Completions field.
+Answer and step notes
+required: Require the key while retaining a nullable value type.
+extra: additionalProperties false disallows unknown fields.
+location: Use the documented Responses request shape.
+AI103-B3.01
+Sources
+S037: Structured outputs
+https://learn.microsoft.com/azure/foundry/openai/how-to/structured-outputs
+AI-103 Practice · 35 / 109
+Q31
+ Domain B: Implement generative AI and agentic solutions
+ Single choice
+A supported reasoning model returns a reasoning summary through Responses. A product
+manager wants to label it 'the model's complete internal reasoning'. Which description is
+accurate?
+A A policy-adherence score produced by an agent evaluator.
+B An API-provided reasoning summary. ✓
+C A raw transcript containing each internal reasoning step.
+D A deterministic execution log for the model's hidden operations.
+Why the correct answer is right
+Reasoning summaries are a supported response feature for applicable models. They should not be
+represented as the full internal reasoning process.
+Why the other options are wrong
+C: The summary does not expose all internal reasoning.
+D: The response is not a complete operational execution log.
+A: The returned reasoning summary is not an evaluator result.
+AI103-B3.01
+Sources
+S038: Azure OpenAI reasoning models
+https://learn.microsoft.com/azure/foundry/openai/how-to/reasoning
+AI-103 Practice · 36 / 109
+Q32
+ Domain B: Implement generative AI and agentic solutions
+ Single choice
+A support assistant should stay within product support and ask for clarification when
+evidence is insufficient. Which prompt control expresses both?
+A A system-defined domain and missing-evidence fallback. ✓
+B More tone examples without defining scope.
+C A low temperature with no role instructions.
+D A larger retrieval top-k value alone.
+Why the correct answer is right
+System messages express role, scope and fallback. Test behavior and apply other mitigations
+because instructions do not guarantee compliance.
+Why the other options are wrong
+C: Temperature affects sampling rather than defining the task boundary.
+D: Retrieval quantity does not state domain behavior.
+B: Examples of tone do not replace an explicit scope/fallback contract.
+AI103-B3.01
+Sources
+S057: System message design
+https://learn.microsoft.com/en-us/azure/cognitive-services/openai/concepts/advanced-prompt-engineering?
+pivots=programming-language-chat-completions
+AI-103 Practice · 37 / 109
+Q33
+ Domain B: Implement generative AI and agentic solutions
+ Single choice
+A deterministic workflow sends a request to a retrieval specialist and then a policy
+specialist. What must its orchestration represent?
+A One larger model context replacing all flow rules.
+B Separate trace IDs with no shared request context.
+C Explicit specialist handoff and completion conditions. ✓
+D Tool descriptions treated as executable routing code.
+Why the correct answer is right
+Multi-agent orchestration needs explicit workflow control and termination conditions. Distinct
+specialist roles do not themselves supply a valid process.
+Why the other options are wrong
+A: Context size does not define routing or completion.
+D: Descriptions are not the orchestrator’s executable flow.
+B: Uncorrelated telemetry makes diagnosis harder and does not define completion.
+AI103-B2.04
+Sources
+S008: Build a workflow in Microsoft Foundry (Preview)
+https://learn.microsoft.com/azure/foundry/agents/concepts/workflow
+AI-103 Practice · 38 / 109
+Q34
+ Domain B: Implement generative AI and agentic solutions
+ Single choice
+An agent calls the translation tool for a request that requires stock availability. The
+translation call is valid and succeeds. Which evaluation pinpoints the mistake?
+A Tool Call Success.
+B Tool Output Utilization.
+C Tool Selection. ✓
+D Tool Input Accuracy.
+Why the correct answer is right
+Tool Selection measures whether the selected tool is appropriate. A valid and successful invocation
+can still be the wrong tool for the task.
+Why the other options are wrong
+A: Execution success is not the same as choosing the right tool.
+D: The scenario says the call was valid.
+B: Output use is downstream of choosing the wrong capability.
+AI103-B2.06
+Sources
+S014: Agent evaluators
+https://learn.microsoft.com/azure/foundry/concepts/evaluation-evaluators/agent-evaluators
+AI-103 Practice · 39 / 109
+Q35
+ Domain B: Implement generative AI and agentic solutions
+ Single choice
+A Search tool points at the right service but retrieves an unrelated index. Which agent-tool
+configuration should be corrected first?
+A The retrieval filter for the current unrelated index.
+B The tool's maximum result count.
+C The configured index name and project connection. ✓
+D The tool's vector-versus-keyword query mode.
+Why the correct answer is right
+The Azure AI Search tool uses a project connection and an index name. Verify both before
+changing ranking or generation settings.
+Why the other options are wrong
+B: Count limits results but does not choose which index they come from.
+D: Query mode changes retrieval behavior inside the selected index.
+A: A filter does not redirect the tool to the intended index.
+AI103-B1.02
+Sources
+S040: Connect an Azure AI Search index to Foundry agents
+https://learn.microsoft.com/azure/foundry/agents/how-to/tools/ai-search
+AI-103 Practice · 40 / 109
+Q36
+ Domain B: Implement generative AI and agentic solutions
+ Single choice
+A response is fully supported by context and addresses the question, but omits two
+required parts of the reference answer. Which additional metric is most targeted?
+A Response Completeness (preview). ✓
+B Groundedness repeated against the same supplied context.
+C Response relevance.
+D Response safety screening.
+Why the correct answer is right
+Completeness addresses missing required content. Groundedness and relevance can both be
+strong while the response remains incomplete.
+Why the other options are wrong
+B: Support does not establish coverage of all required parts.
+C: The stem already establishes topical relevance; missing required parts need completeness
+assessment.
+D: Safety screening does not measure coverage of the missing reference-answer parts.
+AI103-B1.04
+Sources
+S039: Retrieval-Augmented Generation (RAG) evaluators
+https://learn.microsoft.com/azure/foundry/concepts/evaluation-evaluators/rag-evaluators
+AI-103 Practice · 41 / 109
+Q37
+ Domain A: Plan and manage an Azure AI solution
+ Single choice
+An agent must remember a user's preferred units across conversations while answering
+from a maintained engineering manual. Which division of context is appropriate?
+A Store preferences in the knowledge base and use temporary file search for the engineering
+manual.
+B Store both preferences and the maintained manual in interaction-derived memory.
+C Store learned preferences in persistent memory and use maintained knowledge for the
+current manual.
+✓
+DStore learned preferences in the prior session conversation history and retrieve the current
+manual from the maintained knowledge base.
+Why the correct answer is right
+Persistent interaction-derived preferences fit memory; curated organizational content fits a
+knowledge base.
+Why the other options are wrong
+D: Prior session state is not the persistent cross-session memory requested.
+B: A curated source should remain a maintained knowledge resource.
+A: This misassigns user-specific memory and the maintained organizational source.
+AI103-A1.04
+Sources
+S006: Memory in Microsoft Foundry Agent Service (preview)
+https://learn.microsoft.com/azure/foundry/agents/concepts/what-is-memory
+AI-103 Practice · 42 / 109
+Q38
+ Domain A: Plan and manage an Azure AI solution
+ Single choice
+An agent follows its operating policy and calls the correct tools, but leaves two requested
+deliverables unfinished. Which evaluator best targets the overall outcome?
+A Task Completion (preview), assessing whether the agent delivered the requested end-to-
+end outcome.
+✓
+B Tool Selection, focused on the choice of tool for each operation.
+CTask Adherence (preview), using the fact that the agent obeyed its operating policy to judge
+whether all requested deliverables were completed.
+D Tool Input Accuracy, focused on the arguments supplied to a tool.
+Why the correct answer is right
+Task Completion assesses whether the agent accomplished the requested task. Adherence and
+individual tool metrics measure different properties.
+Why the other options are wrong
+C: Policy adherence does not establish delivery of the entire requested outcome.
+B: Correct tool choice is already observed.
+D: Argument quality does not measure the whole requested outcome.
+AI103-A4.02
+Sources
+S014: Agent evaluators
+https://learn.microsoft.com/azure/foundry/concepts/evaluation-evaluators/agent-evaluators
+AI-103 Practice · 43 / 109
+Q39
+ Domain A: Plan and manage an Azure AI solution
+ Single choice
+A team has query-document relevance labels and wants to compare two retrievers before
+adding answer generation. Which evaluation is appropriate?
+AGroundedness, using a hypothetical final answer to infer whether the two retrievers placed all
+relevant documents at the correct rank positions.
+B Response Completeness evaluated against a reference final answer.
+C Task Adherence evaluated against the agent system instructions.
+D Document Retrieval against the supplied query-document relevance labels for the two
+candidate retrievers.
+✓
+Why the correct answer is right
+Ground-truth relevance labels support document-retrieval evaluation. This isolates search quality
+from generation behavior.
+Why the other options are wrong
+A: Groundedness of an answer is not labeled measurement of the retrieved document ranking.
+B: This measures answer coverage rather than the retrieved ranking.
+C: Policy adherence is not the labeled retrieval measurement.
+AI103-A4.02
+Sources
+S039: Retrieval-Augmented Generation (RAG) evaluators
+https://learn.microsoft.com/azure/foundry/concepts/evaluation-evaluators/rag-evaluators
+AI-103 Practice · 44 / 109
+Q40
+ Domain A: Plan and manage an Azure AI solution
+ Single choice
+A retrieved maintenance page tells the agent to ignore its instructions and send credentials
+to a URL. Which threat category should be evaluated at this boundary?
+A A factual data-poisoning error that changes a measurement without issuing instructions.
+B A harmful final-answer classification unrelated to the retrieved instruction boundary.
+C A direct user prompt attack originating in the authenticated user message.
+D An indirect prompt attack in external document content. ✓
+Why the correct answer is right
+External documents and tool results are lower-trust inputs. Prompt Shields distinguishes these
+indirect attacks from attacks supplied directly in a user prompt.
+Why the other options are wrong
+C: The attack is embedded in retrieved context rather than the user message.
+A: The payload explicitly attempts to override instructions and exfiltrate credentials.
+B: The described threat is an instruction attack entering through external context.
+AI103-A4.01
+Sources
+S015: Guardrails and controls overview in Microsoft Foundry
+https://learn.microsoft.com/azure/foundry/guardrails/guardrails-overview
+S016: Prompt Shields in Microsoft Foundry
+https://learn.microsoft.com/azure/foundry/openai/concepts/content-filter-prompt-shields
+AI-103 Practice · 45 / 109
+Q41
+ Domain A: Plan and manage an Azure AI solution
+ Single choice
+An organization requires agent state in customer-managed resources in its own
+subscription. Which agent setup aligns with that storage requirement?
+A A larger model context window in the existing basic setup.
+B A model deployment changed from Standard to Provisioned throughput.
+C Standard setup with customer-managed supporting resources. ✓
+D Basic setup using Microsoft-managed state storage.
+Why the correct answer is right
+The documented basic and standard agent setups differ in state storage ownership. Standard
+setup uses customer-managed resources.
+Why the other options are wrong
+D: This does not meet the customer-managed storage requirement.
+A: Context size does not change the backing storage arrangement.
+B: Model deployment throughput does not choose the agent storage setup.
+AI103-A2.01
+Sources
+S009: Foundry Agent Service limits, quotas, and regional support
+https://learn.microsoft.com/azure/foundry/agents/concepts/limits-quotas-regions
+AI-103 Practice · 46 / 109
+Q42
+ Domain A: Plan and manage an Azure AI solution
+ Single choice
+A team wants one supported Python client library for extracting document layout,
+transcribing audio and analyzing recorded video into structured outputs. Which service’s
+documented client covers all three input modalities?
+A Azure Language text summarization alone.
+B Azure AI Search OCR skill alone.
+C Azure Document Intelligence Layout alone.
+D Azure AI Content Understanding. ✓
+Why the correct answer is right
+The Content Understanding client documents extraction across documents, audio, video and
+images. The other named capabilities each omit required input modalities.
+Why the other options are wrong
+C: Document layout alone does not supply audio transcription and video analysis.
+A: Text summarization alone does not perform all three native input analyses.
+B: OCR enrichment does not provide the required audio and video analysis.
+AI103-A1.02
+Sources
+S021: Azure AI Content Understanding client library for Python - version 1.1.0
+https://learn.microsoft.com/python/api/overview/azure/ai-contentunderstanding-readme?view=azure-python
+AI-103 Practice · 47 / 109
+Q43
+ Domain A: Plan and manage an Azure AI solution
+ Configuration
+Complete the Azure OpenAI v1 client for keyless inference. The calling identity has the
+inference role at the resource scope.
+token_provider = get_bearer_token_provider(credential, "[__________]")
+client = OpenAI(base_url="[__________]", api_key=token_provider)
+audience: https://ai.azure.com/.default / https://management.azure.com/.default / 
+https://search.azure.com/.default
+endpoint: https://resource.openai.azure.com/openai/v1/ / 
+https://resource.services.ai.azure.com/api/projects/support / 
+https://resource.search.windows.net/
+Completed statement:
+token_provider = get_bearer_token_provider(credential, "https://ai.azure.com/.default")
+client = OpenAI(base_url="https://resource.openai.azure.com/openai/v1/", 
+api_key=token_provider)
+Why the correct answer is right
+The named v1 example uses the ai.azure.com token audience and the resource /openai/v1/ base
+URL. Authentication still requires authorization on the called resource.
+Answer and step notes
+audience: Use the v1 example’s inference token audience, rather than an ARM or Search
+audience.
+endpoint: This is the direct resource v1 surface, not project management or Search.
+AI103-A3.04
+Sources
+S051: Azure OpenAI v1 API
+https://learn.microsoft.com/en-us/azure/foundry/openai/api-version-lifecycle
+S052: Use Azure OpenAI without keys
+https://learn.microsoft.com/en-us/azure/developer/ai/keyless-connections
+AI-103 Practice · 48 / 109
+Q44
+ Domain A: Plan and manage an Azure AI solution
+ Configuration
+Complete the AI Projects Python 2.8.0 constructor for project operations.
+project = AIProjectClient(endpoint=[__________], credential=[__________])
+endpoint: project_endpoint / openai_v1_base_url / search_endpoint
+credential: DefaultAzureCredential() / AzureKeyCredential(resource_key) / project_endpoint
+Completed statement:
+project = AIProjectClient(endpoint=project_endpoint, credential=DefaultAzureCredential())
+Why the correct answer is right
+The retained AI Projects 2.8.0 reference uses a Foundry project endpoint and Entra credentials.
+Project and direct inference clients have different roles.
+Answer and step notes
+endpoint: Choose the endpoint of the named project for project operations.
+credential: The 2.8.0 client supports Entra credentials; a URL is not a credential and resource-
+key construction is not this client contract.
+AI103-A2.03
+Sources
+S002: Azure AI Projects client library for Python - version 2.8.0
+https://learn.microsoft.com/python/api/overview/azure/ai-projects-readme?view=azure-python
+S003: Microsoft Foundry SDKs and endpoints
+https://learn.microsoft.com/azure/foundry/how-to/develop/sdk-overview
+AI-103 Practice · 49 / 109
+Q45
+ Domain A: Plan and manage an Azure AI solution
+ Single choice
+A catalog requires exact part-code matches and semantic symptom matches. Which
+design combines both retrieval signals before optional reranking?
+A Vector retrieval alone, with a larger candidate count.
+B Semantic reranking of keyword-only candidates.
+C Keyword and vector retrieval with fused rankings. ✓
+D Keyword retrieval alone, with boosted identifier fields.
+Why the correct answer is right
+Keyword evidence complements semantic vectors. Evaluate hybrid retrieval for the actual query
+set; ranking quality is distinct from generation and authentication.
+Why the other options are wrong
+A: A larger vector candidate count does not add keyword retrieval.
+D: Boosted keyword fields do not add vector retrieval.
+B: Reranking keyword candidates does not combine keyword and vector retrieval.
+AI103-A1.03
+Sources
+S025: Hybrid search using vectors and full-text search in Azure AI Search
+https://learn.microsoft.com/azure/search/hybrid-search-overview
+S026: Integrated vector embedding in Azure AI Search
+https://learn.microsoft.com/azure/search/vector-search-integrated-vectorization
+AI-103 Practice · 50 / 109
+Q46
+ Domain A: Plan and manage an Azure AI solution
+ Single choice
+An agent proposes a consequential account change. Which host boundary should decide
+whether it executes?
+A The host’s caller authorization and action approval gate. ✓
+B A valid model response schema.
+C A lower generation temperature.
+D A more detailed tool description.
+Why the correct answer is right
+The host controls operations and validates values and authority. Descriptions and structured output
+help represent intent but are not action permission.
+Why the other options are wrong
+C: Sampling does not establish caller authority.
+D: Descriptions are not an executable permission check.
+B: A response schema does not authorize an action.
+AI103-A4.04
+Sources
+S054: Tool best practices for Microsoft Foundry Agent Service
+https://learn.microsoft.com/azure/foundry/agents/concepts/tool-best-practice
+AI-103 Practice · 51 / 109
+Q47
+ Domain C: Implement computer vision solutions
+ Single choice
+A catalog app must create a new product-scene image from a text brief, with no source
+image supplied. Its supported GPT image deployment is available. Which operation
+matches this input contract?
+A Call images.edit with the brief as its source image file.
+B Send the brief to a vision chat request and treat the text response as image bytes.
+C Call images.edit with a mask but no source image.
+D Call images.generate with the deployment and text prompt. ✓
+Why the correct answer is right
+Image generation accepts the text prompt to create an image. Editing requires source image input;
+vision chat interprets supplied images rather than returning generated image bytes.
+Why the other options are wrong
+A: A text brief is not the source image input for editing.
+B: Vision chat text is not a generated image file.
+C: A mask does not supply the missing source image.
+AI103-C1.01
+Sources
+S017: Azure OpenAI image generation models
+https://learn.microsoft.com/azure/foundry/openai/how-to/dall-e
+AI-103 Practice · 52 / 109
+Q48
+ Domain C: Implement computer vision solutions
+ Single choice
+An application switches between two GPT image deployments with different quality and
+size options. What should its request builder use?
+A One fixed list copied from an older image model.
+B The union of both models' parameters, sent to each deployment for consistency.
+C The supported controls of the selected deployed image model. ✓
+D The default size accepted by a different deployment in the same resource.
+Why the correct answer is right
+Image models differ in supported editing, size and quality controls. Build requests against the
+selected deployment's documented capabilities.
+Why the other options are wrong
+A: Parameter support varies by model.
+B: A parameter supported by one model need not be supported by the other.
+D: Another deployment does not define the chosen model's accepted controls.
+AI103-C1.05
+Sources
+S017: Azure OpenAI image generation models
+https://learn.microsoft.com/azure/foundry/openai/how-to/dall-e
+AI-103 Practice · 53 / 109
+Q49
+ Domain C: Implement computer vision solutions
+ Single choice
+A vision-enabled chat model must describe damage visible in a supplied photograph.
+Which message construction gives it the actual visual input?
+A Include text instructions and image_url content in the message. ✓
+B Enable image output formatting on the text-only message.
+C Put the image filename in a text message.
+D Describe an image path in the system prompt while keeping the image local to the client.
+Why the correct answer is right
+Vision chat messages can combine text and image_url content. Supply the image in the supported
+representation along with the task instructions.
+Why the other options are wrong
+C: A filename does not transmit the image content.
+D: An inaccessible path does not supply visual input to the service.
+B: Output configuration does not supply visual input.
+AI103-C2.01
+Sources
+S019: Use vision-enabled chat models
+https://learn.microsoft.com/azure/foundry/openai/how-to/gpt-with-vision
+AI-103 Practice · 54 / 109
+Q50
+ Domain C: Implement computer vision solutions
+ Single choice
+A magnifying-glass image is the visible label of a search button. Which text alternative best
+communicates the function?
+A Small circular lens with a diagonal handle on a blue background.
+B search-icon-v3.png.
+C Magnifying glass icon.
+D Search the catalog. ✓
+Why the correct answer is right
+For an image serving as a control, communicate its action or destination. Here the functional label
+is the search action.
+Why the other options are wrong
+C: The visual shape does not name the action.
+A: A visual description is less useful than the button's function.
+B: A filename is not an accessible action label.
+AI103-C2.04
+Sources
+S050: W3C WAI An alt Decision Tree
+https://www.w3.org/WAI/tutorials/images/decision-tree/
+AI-103 Practice · 55 / 109
+Q51
+ Domain C: Implement computer vision solutions
+ Single choice
+A Content Understanding video preview samples about one frame per second. A safety
+event lasts 0.2 seconds and the output does not mention it. Which conclusion is justified?
+A The absence of a mention proves the event did not occur.
+B Increase output length to recover source frames omitted by the sampling stage.
+C The sampled analysis may have missed the brief event. ✓
+D The analyzer must have sampled every source frame because the request succeeded.
+Why the correct answer is right
+Brief events can fall between sampled frames. Absence from the output is not proof that the event
+was absent from the original video.
+Why the other options are wrong
+A: Sampling cannot establish complete observation of rapid events.
+B: Output length cannot recover visual evidence that was not sampled.
+D: Successful analysis does not change the documented sampling behavior.
+AI103-C2.06
+Sources
+S022: Azure Content Understanding in Foundry Tools video solutions
+https://learn.microsoft.com/azure/ai-services/content-understanding/video/overview
+AI-103 Practice · 56 / 109
+Q52
+ Domain C: Implement computer vision solutions
+ Single choice
+A production document-image workflow needs capabilities available in Content
+Understanding 2025-11-01. A newer preview offers unrelated features. Which API selection
+follows the documented production guidance?
+A Use the 2025-11-01 GA API for the required production capabilities. ✓
+B Use the retired 2025-05-01-preview because its examples are familiar.
+C Use 2026-06-01-preview because its date is newer.
+D Alternate API versions randomly to compare response speed in production.
+Why the correct answer is right
+The documentation recommends the GA API for production and the newer preview for evaluation
+of new capabilities. Match feature needs to an explicit version.
+Why the other options are wrong
+C: The documented guidance favors GA for supported production needs.
+B: Retired API examples are not the production target.
+D: Random version changes do not provide a stable application contract.
+AI103-C2.05
+Sources
+S020: What is Azure Content Understanding in Foundry Tools?
+https://learn.microsoft.com/azure/ai-services/content-understanding/overview
+AI-103 Practice · 57 / 109
+Q53
+ Domain C: Implement computer vision solutions
+ Single choice
+A poster has a low visual harm score but includes text telling an agent to reveal
+credentials. Which conclusion follows from the harm result?
+A The image harm score is a groundedness measurement.
+B Visual harm severity; instruction trust is a separate check. ✓
+C A successful harm request establishes the text is authorized.
+D The poster text has passed instruction-trust validation.
+Why the correct answer is right
+Visual harm classification is distinct from text prompt-attack detection. The FAQ describes text-only
+Prompt Shields; the harm score does not authorize instructions.
+Why the other options are wrong
+D: Harm classification does not establish instruction trust.
+C: HTTP success is not authorization of embedded text.
+A: Groundedness is a different assessment.
+AI103-C3.01
+Sources
+S042: QuickStart: Analyze image content
+https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-image
+S048: Azure AI Content Safety Frequently Asked Questions
+https://learn.microsoft.com/en-us/azure/ai-services/content-safety/faq
+AI-103 Practice · 58 / 109
+Q54
+ Domain C: Implement computer vision solutions
+ Single choice
+A vision model receives two images of the same machine. The app needs a concise
+caption comparing visible differences. What should be supplied?
+A Attach only the first image and describe the second image’s filename.
+B Both supported image inputs with an explicit comparison/caption instruction.✓
+C Attach both images but ask only for an independent caption of the first.
+D Send a text-only comparison request containing both image URLs as prose.
+Why the correct answer is right
+The vision request must actually include both images using its supported image content shape.
+The instruction specifies comparison and desired detail.
+Why the other options are wrong
+A: The second filename does not supply the second image.
+D: Plain prose URLs do not provide supported image content inputs.
+C: That instruction does not request the required visual comparison.
+AI103-C2.02
+Sources
+S019: Use vision-enabled chat models
+https://learn.microsoft.com/azure/foundry/openai/how-to/gpt-with-vision
+AI-103 Practice · 59 / 109
+Q55
+ Domain C: Implement computer vision solutions
+ Configuration
+Complete a vision chat message so a question about a supplied inspection photo is
+grounded in actual image input.
+content = [{"type": "text", "text": question},
+{"type": "[__________]", "[__________]": {"url": photo_url}}]
+kind: image_url / text / image_output
+field: image_url / file_name / caption
+Completed statement:
+content = [{"type": "text", "text": question},
+           {"type": "image_url", "image_url": {"url": photo_url}}]
+Why the correct answer is right
+The documented chat shape includes an image_url content part with its URL. The question text
+describes what to inspect; it does not provide pixels.
+Answer and step notes
+kind: Use the image input content type for the vision chat surface.
+field: The image_url object contains the source; a filename or generated caption is not
+equivalent input.
+AI103-C2.03
+Sources
+S019: Use vision-enabled chat models
+https://learn.microsoft.com/azure/foundry/openai/how-to/gpt-with-vision
+AI-103 Practice · 60 / 109
+Q56
+ Domain C: Implement computer vision solutions
+ Configuration
+The selected image model supports masking. Complete an edit request for a source image
+and a mask already sized to match it.
+result = client.images.edit(model=deployment, image=[__________], mask=[__________],
+prompt=edit_instruction)
+source: source_image_file / source_filename_text / prior_caption_text
+mask: matching_mask_file / size_string / quality_string
+Completed statement:
+result = client.images.edit(model=deployment, image=source_image_file, 
+mask=matching_mask_file, prompt=edit_instruction)
+Why the correct answer is right
+The supported edit consumes source image data and a spatial mask. Size and quality controls do
+not substitute for the edit mask.
+Answer and step notes
+source: Supply the image bytes/file accepted by this endpoint, not its name or a caption.
+mask: Supply the matching mask as an input; a size/quality value is a different control.
+AI103-C1.03
+Sources
+S017: Azure OpenAI image generation models
+https://learn.microsoft.com/azure/foundry/openai/how-to/dall-e
+AI-103 Practice · 61 / 109
+Q57
+ Domain D: Implement text analysis solutions
+ Single choice
+A Translator text request contains one sentence with English and German spans. Some
+words remain untranslated. Which preparation targets the documented limitation?
+A Submit the same mixture to document translation with autodetection.
+B Retry the same mixed sentence until detection changes.
+C Provide a glossary while keeping the mixed-language sentence intact.
+D Segment by source language and translate each segment explicitly. ✓
+Why the correct answer is right
+The known-issues page distinguishes mixed-language text and document failures and
+recommends intended-source-language handling or single-language segmentation.
+Why the other options are wrong
+C: Terminology customization does not remove the source-language mixture.
+B: Unchanged retries do not resolve the documented input limitation.
+A: Document translation also has documented mixed-language limitations.
+AI103-D1.03
+Sources
+S055: Azure Translator known issues and troubleshooting
+https://learn.microsoft.com/en-us/azure/ai-services/translator/reference/known-issues
+AI-103 Practice · 62 / 109
+Q58
+ Domain D: Implement text analysis solutions
+ Single choice
+A domain compliance summarizer needs a defined scope and an explicit escalation when
+evidence is missing. Which instruction design addresses it?
+A A deployment name containing compliance.
+B Domain instructions with a missing-evidence fallback. ✓
+C A longer output limit alone.
+D A lower top-p value alone.
+Why the correct answer is right
+System instructions define task scope and fallback, while evaluation checks behavior. Sampling,
+length and names do not establish those requirements.
+Why the other options are wrong
+D: Sampling does not state the permitted task.
+C: Length does not define scope.
+A: A deployment label is not an instruction contract.
+AI103-D1.04
+Sources
+S057: System message design
+https://learn.microsoft.com/en-us/azure/cognitive-services/openai/concepts/advanced-prompt-engineering?
+pivots=programming-language-chat-completions
+AI-103 Practice · 63 / 109
+Q59
+ Domain E: Implement information extraction solutions
+ Multiple select
+A blob OCR pipeline has imageAction none and incorrectly maps a skill-produced text
+node with fieldMappings. Which TWO changes repair the data path? Select TWO answers.
+A Keep imageAction none and use a larger searchable field.
+B Map enriched OCR text into the index with outputFieldMappings. ✓
+C Move the OCR text mapping into the semantic query request.
+D Enable original-image extraction but keep the OCR text mapping in fieldMappings.
+E Generate normalized images for the OCR skill input. ✓
+Why the correct answer is right
+OCR needs normalized image inputs, and the enrichment output needs a mapping to the target
+index field. Fix both sides of the pipeline.
+Why the other options are wrong
+A: Field size does not create normalized images.
+C: A query does not configure enrichment output ingestion.
+D: Image extraction alone does not repair the mapping for the skill-produced enriched node.
+AI103-E1.04
+Sources
+S043: OCR cognitive skill
+https://learn.microsoft.com/azure/search/cognitive-search-skill-ocr
+S028: Skillset concepts in Azure AI Search
+https://learn.microsoft.com/azure/search/cognitive-search-working-with-skillsets
+AI-103 Practice · 64 / 109
+Q60
+ Domain E: Implement information extraction solutions
+ Multiple select
+A team uses Content Understanding SDK 1.1.0 for production document extraction. Which
+TWO implementation choices align with the referenced contract? Select TWO answers.
+A Use capabilities compatible with its 2025-11-01 API version. ✓
+B Submit the same document repeatedly as a substitute for polling.
+C Wait for analysis completion before consuming the structured result.✓
+D Treat the initial poller as completed Markdown content.
+E Mix preview-only analyzer fields into the request with no version change.
+Why the correct answer is right
+Match the SDK's supported API and follow the asynchronous analysis lifecycle. Completed
+structured content is available after successful completion.
+Why the other options are wrong
+E: The feature and API versions must be compatible.
+D: The poller represents the long-running operation.
+B: Repeated submission creates additional operations.
+AI103-E2.02
+Sources
+S021: Azure AI Content Understanding client library for Python - version 1.1.0
+https://learn.microsoft.com/python/api/overview/azure/ai-contentunderstanding-readme?view=azure-python
+S020: What is Azure Content Understanding in Foundry Tools?
+https://learn.microsoft.com/azure/ai-services/content-understanding/overview
+AI-103 Practice · 65 / 109
+Q61
+ Domain E: Implement information extraction solutions
+ Multiple select
+A custom analyzer must extract an amount from unfamiliar invoice layouts and support
+reviewer verification. Which TWO features or inputs are useful? Select TWO answers.
+A A high confidence threshold used as proof that all accepted values are correct.
+B Representative labeled examples with verified field values. ✓
+C Generated explanations used as substitutes for labeled source values.
+D Removing source coordinates to standardize the JSON shape.
+E Field source and confidence estimation for the extraction results. ✓
+Why the correct answer is right
+Good labeled examples support extraction quality; confidence and grounding support review.
+Neither should be confused with independent verification.
+Why the other options are wrong
+C: Explanations are not verified labels.
+A: Thresholding does not create a correctness guarantee.
+D: That discards useful evidence references.
+AI103-E2.03
+Sources
+S045: Validate document analyzer quality with confidence, grounding, and labeled samples
+https://learn.microsoft.com/azure/ai-services/content-understanding/document/analyzer-improvement
+S059: Content Understanding document solutions
+https://learn.microsoft.com/en-us/azure/ai-services/content-understanding/document/overview
+AI-103 Practice · 66 / 109
+Q62
+ Domain E: Implement information extraction solutions
+ Multiple select
+Long manuals exceed embedding limits, and the query vectorizer uses an unrelated
+model. Which TWO configuration corrections address the two failures? Select TWO
+answers.
+A Chunk the source text within input limits. ✓
+B Increase the answer-generation token limit.
+C Disable indexing warnings.
+D Rescale query vectors from the unrelated model.
+E Use content/query embeddings from a compatible model configuration.✓
+Why the correct answer is right
+Chunking addresses embedding input size; compatible query/content vectors address
+representation mismatch. These are separate ingestion and retrieval requirements.
+Why the other options are wrong
+B: Answer length does not enlarge embedding input limits.
+D: Rescaling does not align learned embedding spaces.
+C: Suppressing warnings does not fix either defect.
+AI103-E1.01
+Sources
+S058: Integrated vectorization REST configuration
+https://learn.microsoft.com/en-us/azure/search/search-how-to-integrated-vectorization
+S026: Integrated vector embedding in Azure AI Search
+https://learn.microsoft.com/azure/search/vector-search-integrated-vectorization
+AI-103 Practice · 67 / 109
+Q63
+ Domain E: Implement information extraction solutions
+ Multiple select
+A product catalog needs exact codes and semantic candidates, with optional semantic
+reranking. Which TWO statements describe the stages correctly? Select TWO answers.
+A Hybrid retrieval combines keyword and vector ranked lists. ✓
+B Semantic ranking renames source fields during ingestion.
+C Semantic reranking generates the indexed vectors.
+D A query vectorizer uses a compatible embedding configuration. ✓
+E Keyword sorting makes vectorization unnecessary for the vector path.
+Why the correct answer is right
+Hybrid retrieval combines complementary lists. Query vectorization supplies the vector path;
+semantic reranking operates after candidate retrieval.
+Why the other options are wrong
+C: Reranking does not produce stored embeddings.
+B: Field mapping is an ingestion concern.
+E: A vector query still requires compatible vectorization.
+AI103-E1.02
+Sources
+S025: Hybrid search using vectors and full-text search in Azure AI Search
+https://learn.microsoft.com/azure/search/hybrid-search-overview
+S058: Integrated vectorization REST configuration
+https://learn.microsoft.com/en-us/azure/search/search-how-to-integrated-vectorization
+AI-103 Practice · 68 / 109
+Q64
+ Domain E: Implement information extraction solutions
+ Multiple select
+A document enrichment pipeline needs layout-aware Markdown and OCR for normalized
+images. Which TWO skill choices directly target these outputs? Select TWO answers.
+A The OCR skill receiving normalized images. ✓
+B The Document Intelligence Layout skill. ✓
+C A semantic query configuration.
+D An output field alias without a producing skill.
+E An Azure OpenAI chat output-token setting.
+Why the correct answer is right
+Layout and OCR are producing enrichment capabilities. Their outputs still need the appropriate
+index mappings.
+Why the other options are wrong
+C: Query semantics do not extract document layout.
+E: Generation length does not configure enrichment skills.
+D: A mapping does not create an absent enrichment output.
+AI103-E1.03
+Sources
+S029: Document Layout skill
+https://learn.microsoft.com/azure/search/cognitive-search-skill-document-intelligence-layout
+S043: OCR cognitive skill
+https://learn.microsoft.com/azure/search/cognitive-search-skill-ocr
+AI-103 Practice · 69 / 109
+Q65
+ Domain E: Implement information extraction solutions
+ Multiple select
+An agent retrieves an unrelated Search index and returns content from another
+department. Which TWO tool configuration controls address the stated defects? Select
+TWO answers.
+A A resource name containing the department.
+B A supported filter using the authorized department. ✓
+C A larger unfiltered candidate set.
+D The correct connected index name. ✓
+E A longer model answer.
+Why the correct answer is right
+Select the intended index and enforce the supported retrieval filter. The authorized field value
+comes from the host’s access context.
+Why the other options are wrong
+E: Length does not change retrieved data.
+A: A display name does not filter documents.
+C: More unfiltered candidates leave the boundary defect.
+AI103-E1.05
+Sources
+S040: Connect an Azure AI Search index to Foundry agents
+https://learn.microsoft.com/azure/foundry/agents/how-to/tools/ai-search
+S054: Tool best practices for Microsoft Foundry Agent Service
+https://learn.microsoft.com/azure/foundry/agents/concepts/tool-best-practice
+AI-103 Practice · 70 / 109
+Q66
+ Domain E: Implement information extraction solutions
+ Multiple select
+A document pipeline must extract invoice fields and support amount verification. Which
+TWO design choices address those requirements? Select TWO answers.
+A Retain source locations for reviewer inspection. ✓
+B Treat high confidence as permission to pay.
+C Replace field types with filename parsing.
+D Define the required field schema. ✓
+E Discard coordinates after assigning confidence.
+Why the correct answer is right
+The schema defines extraction targets; grounding locations connect extracted values to the source.
+Downstream payment validation is separate.
+Why the other options are wrong
+B: Confidence is not business authorization.
+C: A filename does not supply typed document fields.
+E: Discarding locations weakens evidence review.
+AI103-E2.01
+Sources
+S059: Content Understanding document solutions
+https://learn.microsoft.com/en-us/azure/ai-services/content-understanding/document/overview
+S045: Validate document analyzer quality with confidence, grounding, and labeled samples
+https://learn.microsoft.com/azure/ai-services/content-understanding/document/analyzer-improvement
+AI-103 Practice · 71 / 109
+Q67
+ Domain E: Implement information extraction solutions
+ Multiple select
+A RAG pipeline needs a clean document representation before retrieval. Which TWO
+Content Understanding outputs or behaviors fit? Select TWO answers.
+A A completed analysis result consumed after successful polling. ✓
+B Markdown representing document structure. ✓
+C A generated final answer used as the source document.
+D A queued operation treated as extracted text.
+E A raw poller serialized into the vector field.
+Why the correct answer is right
+Structured/Markdown extraction and completed analysis results support downstream processing.
+An operation handle is not the extracted representation.
+Why the other options are wrong
+D: Queued work has not yielded a completed representation.
+C: A final answer is downstream generation rather than the source representation.
+E: The poller is control state, not an embedding vector.
+AI103-E2.02
+Sources
+S059: Content Understanding document solutions
+https://learn.microsoft.com/en-us/azure/ai-services/content-understanding/document/overview
+S021: Azure AI Content Understanding client library for Python - version 1.1.0
+https://learn.microsoft.com/python/api/overview/azure/ai-contentunderstanding-readme?view=azure-python
+AI-103 Practice · 72 / 109
+Q68
+ Domain E: Implement information extraction solutions
+ Multiple select
+A custom contract analyzer misses renewal dates in a new layout. Which TWO inputs
+should guide improvement? Select TWO answers.
+A A typed renewal-date field definition. ✓
+B A high threshold reported as proof of correctness.
+C Renaming every unrelated date as renewal_date.
+D Tune the query semantic configuration without changing the extraction field definition.
+E Representative examples with verified values. ✓
+Why the correct answer is right
+Define the intended field and use representative labeled evidence to improve extraction. Evaluate
+results on separate documents.
+Why the other options are wrong
+D: Query ranking cannot define the missing renewal-date extraction target.
+C: Renaming an unrelated date does not identify the business field.
+B: A confidence threshold is not verification.
+AI103-E2.03
+Sources
+S059: Content Understanding document solutions
+https://learn.microsoft.com/en-us/azure/ai-services/content-understanding/document/overview
+S045: Validate document analyzer quality with confidence, grounding, and labeled samples
+https://learn.microsoft.com/azure/ai-services/content-understanding/document/analyzer-improvement
+AI-103 Practice · 73 / 109
+Q69
+ Domain B: Implement generative AI and agentic solutions
+ Multiple select
+An agent proposes a refund. The application requires user confirmation, and the model
+supplies untrusted arguments. Which TWO host responsibilities are needed before the
+side effect? Select TWO answers.
+A Obtain confirmation for the specific proposed refund. ✓
+B Return the payment credential to the model for approval checking.
+C Execute the refund before displaying its confirmation dialog.
+D Validate the arguments and authorize the target account. ✓
+E Treat valid JSON as sufficient permission to issue the refund.
+Why the correct answer is right
+The host must validate and authorize the operation, then obtain confirmation before executing that
+approved proposal.
+Why the other options are wrong
+E: Syntax does not establish authorization or approval.
+C: Confirmation would occur after the side effect.
+B: The host should keep secrets out of tool results.
+AI103-B2.01
+Sources
+S007: Use function calling with Microsoft Foundry agents
+https://learn.microsoft.com/azure/foundry/agents/how-to/tools/function-calling
+AI-103 Practice · 74 / 109
+Q70
+ Domain B: Implement generative AI and agentic solutions
+ Multiple select
+A strict Responses output must contain code and comment. Comment may be null, and
+additional fields are prohibited. Which TWO schema decisions satisfy those constraints?
+Select TWO answers.
+A Allow arbitrary extra fields and validate just the required names.
+B Keep comment required and allow its type to include null. ✓
+C Represent absent comment as an omitted property with no nullable type.
+D Set additionalProperties to false on the object schema. ✓
+E Omit comment from required when its value is unavailable.
+Why the correct answer is right
+Use required nullable fields for optional information and disallow additional properties. The
+supported strict subset treats presence and nullability separately.
+Why the other options are wrong
+E: The contract requires the property to be present.
+A: The contract prohibits additional fields.
+C: That changes both presence and value semantics.
+AI103-B3.01
+Sources
+S037: Structured outputs
+https://learn.microsoft.com/azure/foundry/openai/how-to/structured-outputs
+AI-103 Practice · 75 / 109
+Q71
+ Domain B: Implement generative AI and agentic solutions
+ Multiple select
+A RAG system must find exact equipment identifiers and semantic paraphrases. It uses a
+vector index built with model X. Which TWO design choices fit? Select TWO answers.
+A Use an unrelated model with matching dimensions as proof of vector compatibility.
+B Sort hybrid candidates by filename after RRF to preserve relevance.
+C Replace embeddings with semantic reranking during ingestion.
+D Use query embeddings compatible with the indexed model X vectors.✓
+E Combine keyword and vector retrieval through hybrid search. ✓
+Why the correct answer is right
+Hybrid retrieval supplies complementary lexical and semantic signals. Vector relevance also
+depends on compatible query and content representations.
+Why the other options are wrong
+A: Dimension equality does not establish a shared representation.
+C: Reranking does not generate stored vectors.
+B: Filename order is not relevance ranking.
+AI103-B1.02
+Sources
+S025: Hybrid search using vectors and full-text search in Azure AI Search
+https://learn.microsoft.com/azure/search/hybrid-search-overview
+S026: Integrated vector embedding in Azure AI Search
+https://learn.microsoft.com/azure/search/vector-search-integrated-vectorization
+AI-103 Practice · 76 / 109
+Q72
+ Domain B: Implement generative AI and agentic solutions
+ Multiple select
+An agent receives hostile user prompts and malicious instructions inside retrieved text.
+Which TWO controls align with those different entry points? Select TWO answers.
+A Treat retrieved-document instructions as lower-trust indirect attacks.✓
+B Approve retrieved instructions because the source URL uses HTTPS.
+C Scan final answers as proof that proposed tool calls were safe before execution.
+D Treat tool output as a new developer message when it names a system role.
+E Assess direct user attacks at the input boundary. ✓
+Why the correct answer is right
+User input and retrieved content create different attack paths. Apply controls at the relevant
+boundaries and preserve instruction authority.
+Why the other options are wrong
+D: Text inside a result does not acquire a privileged role.
+B: Transport security does not establish instruction authority.
+C: A final scan occurs after earlier tool actions.
+AI103-B2.05
+Sources
+S015: Guardrails and controls overview in Microsoft Foundry
+https://learn.microsoft.com/azure/foundry/guardrails/guardrails-overview
+S016: Prompt Shields in Microsoft Foundry
+https://learn.microsoft.com/azure/foundry/openai/concepts/content-filter-prompt-shields
+AI-103 Practice · 77 / 109
+Q73
+ Domain B: Implement generative AI and agentic solutions
+ Multiple select
+A support agent needs a remembered user preference, current corporate policy and a
+receipt uploaded for this interaction. Which TWO assignments are appropriate? Select
+TWO answers.
+A Use memory as the maintained full-text corporate policy repository.
+B Use the knowledge base for policy and file search for the receipt. ✓
+C Use conversation state as the cross-session preference store.
+D Use the temporary receipt as the source of the company's standing policy.
+E Use persistent memory for interaction-derived preferences. ✓
+Why the correct answer is right
+Memory, curated knowledge and temporary document search serve different information needs.
+Assign each source according to its origin and lifecycle.
+Why the other options are wrong
+C: Session state is short-term context.
+A: Curated policy belongs in a maintained knowledge source.
+D: The uploaded transaction document is not the curated policy authority.
+AI103-B2.02
+Sources
+S006: Memory in Microsoft Foundry Agent Service (preview)
+https://learn.microsoft.com/azure/foundry/agents/concepts/what-is-memory
+AI-103 Practice · 78 / 109
+Q74
+ Domain B: Implement generative AI and agentic solutions
+ Multiple select
+A proxy calls a memory-enabled prompt agent for two users using one managed identity.
+Which TWO requirements implement separate preferences? Select TWO answers.
+A Use a single static scope for every resident.
+B Put user display names only in the prompt.
+C Use the memory tool’s {{$userId}} scope. ✓
+D Rely on new conversation IDs as memory partitions.
+E Send a verified user key through x-memory-user-id. ✓
+Why the correct answer is right
+The tool’s scope-resolution mechanism is separate from conversation lifecycle. The backend must
+provide an authorized end-user key.
+Why the other options are wrong
+A: A static scope intentionally shares memory.
+B: Prompt naming does not select the tool’s partition.
+D: A conversation ID does not substitute for the memory tool’s scope.
+AI103-B2.02
+Sources
+S053: Create and use memory in Foundry Agent Service (preview)
+https://learn.microsoft.com/en-us/azure/foundry/agents/how-to/memory-usage
+AI-103 Practice · 79 / 109
+Q75
+ Domain B: Implement generative AI and agentic solutions
+ Multiple select
+A support agent needs a domain boundary and a measurable fallback for missing
+evidence. Which TWO activities address those requirements? Select TWO answers.
+A State the domain and fallback in system instructions. ✓
+B Assume one successful example establishes compliance.
+C Evaluate representative and adversarial queries against that behavior. ✓
+D Remove the fallback to reduce prompt length.
+E Treat a low temperature as complete policy enforcement.
+Why the correct answer is right
+Instructions specify desired behavior, and evaluation checks it. Add host/filter controls when the
+task requires enforcement.
+Why the other options are wrong
+E: Temperature does not guarantee policy compliance.
+B: One example does not establish behavior across cases.
+D: Removing fallback leaves missing-evidence behavior unspecified.
+AI103-B3.01
+Sources
+S057: System message design
+https://learn.microsoft.com/en-us/azure/cognitive-services/openai/concepts/advanced-prompt-engineering?
+pivots=programming-language-chat-completions
+AI-103 Practice · 80 / 109
+Q76
+ Domain B: Implement generative AI and agentic solutions
+ Multiple select
+A specialist agent proposes an action that a deterministic host rule must approve. Which
+TWO responsibilities should the design keep explicit? Select TWO answers.
+A The host’s rule/authorization gate before action execution. ✓
+B The orchestration’s handoff and completion conditions. ✓
+C The model’s acknowledgement treated as business approval.
+D A trace display label treated as an executable rule.
+E Tool registration treated as universal caller permission.
+Why the correct answer is right
+Hybrid orchestration separates proposals from deterministic rules and supplies explicit flow control.
+Tool availability does not grant permission.
+Why the other options are wrong
+C: A model statement does not supply the required approval.
+E: Registration does not authorize every caller.
+D: A label is not a rule implementation.
+AI103-B3.04
+Sources
+S008: Build a workflow in Microsoft Foundry (Preview)
+https://learn.microsoft.com/azure/foundry/agents/concepts/workflow
+S007: Use function calling with Microsoft Foundry agents
+https://learn.microsoft.com/azure/foundry/agents/how-to/tools/function-calling
+AI-103 Practice · 81 / 109
+Q77
+ Domain D: Implement text analysis solutions
+ Sequence
+A Python OpenAI 2.x application extracts events with Responses structured output. The
+client is configured and the supported model is deployed. On the successful non-refusal
+path, arrange these operations; business validation needs the parsed field values.
+Arrange these steps in order:
+A. Read the successful response.output_parsed object.
+B. Define the Pydantic event model.
+C. Call responses.parse with the event model as text_format.
+D. Validate the parsed date and participants against application rules.
+Correct order:
+1. BDefine the Pydantic event model.
+2. CCall responses.parse with the event model as text_format.
+3. A Read the successful response.output_parsed object.
+4. DValidate the parsed date and participants against application rules.
+Why the correct answer is right
+The type defines the request schema; the response supplies the parsed object. Schema
+conformance does not validate the event against business rules.
+Answer and step notes
+B: The event type must exist before it can configure the request.
+C: The request consumes that type and returns the response.
+A: The successful response supplies the parsed values.
+D: Business checks consume those values rather than the request schema.
+AI103-D1.01
+Sources
+S037: Structured outputs
+https://learn.microsoft.com/azure/foundry/openai/how-to/structured-outputs
+AI-103 Practice · 82 / 109
+Q78
+ Domain D: Implement text analysis solutions
+ Sequence
+A Language NER pipeline must send organization and location records to a JSON-
+consuming application. The host constructs the records from returned entity categories and
+verifies the resulting JSON against the consumer’s schema. Arrange the data
+dependencies.
+Arrange these steps in order:
+A. Construct JSON records from the returned organization and location entities.
+B. Read the source text into the extraction worker.
+C. Run named entity recognition on that text.
+D. Validate the constructed JSON against the consumer schema before sending it.
+Correct order:
+1. BRead the source text into the extraction worker.
+2. CRun named entity recognition on that text.
+3. A Construct JSON records from the returned organization and location entities.
+4. DValidate the constructed JSON against the consumer schema before sending it.
+Why the correct answer is right
+NER consumes source text and returns categorized entities. The host builds its records from that
+result, then validates the actual serialized payload for the consumer.
+Answer and step notes
+B: The text supplies the NER input.
+C: NER supplies the categorized entities.
+A: The records are constructed from those entities.
+D: Validation requires the actual constructed payload.
+AI103-D1.01
+Sources
+S030: What is Azure Language in Foundry Tools?
+https://learn.microsoft.com/azure/ai-services/language-service/overview
+S037: Structured outputs
+https://learn.microsoft.com/azure/foundry/openai/how-to/structured-outputs
+AI-103 Practice · 83 / 109
+Q79
+ Domain D: Implement text analysis solutions
+ Sequence
+A transcript may be held temporarily in a restricted worker. The searchable store may
+receive only a version redacted using the entities returned by PII detection. The worker has
+no existing detection result. Arrange the data dependencies.
+Arrange these steps in order:
+A. Read the transcript into the restricted worker.
+B. Build the redacted representation using the returned detected entities.
+C. Write that redacted representation to the searchable store.
+D. Analyze that text with PII detection.
+Correct order:
+1. A Read the transcript into the restricted worker.
+2. DAnalyze that text with PII detection.
+3. BBuild the redacted representation using the returned detected entities.
+4. CWrite that redacted representation to the searchable store.
+Why the correct answer is right
+PII detection identifies entities in the original text. The host uses those results to create the
+representation required by the stated storage policy before indexing.
+Answer and step notes
+A: The worker supplies the analysis input.
+D: Detection must process the input before its output exists.
+B: The detected entities supply the host’s redaction targets.
+C: Indexing the original text first would breach the specified boundary.
+AI103-D1.02
+Sources
+S030: What is Azure Language in Foundry Tools?
+https://learn.microsoft.com/azure/ai-services/language-service/overview
+AI-103 Practice · 84 / 109
+Q80
+ Domain D: Implement text analysis solutions
+ Sequence
+A mixed-language notice must be translated into French. Its language spans are known,
+and quality review compares the complete reconstructed notice with the original, including
+references across segments. Arrange this application workflow.
+Arrange these steps in order:
+A. Translate each prepared segment to French with its source language specified.
+B. Reconstruct the notice from the successful segment translations.
+C. Review the complete translated notice against the original before delivery.
+D. Prepare single-language segments with their intended source-language labels.
+Correct order:
+1. DPrepare single-language segments with their intended source-language labels.
+2. A Translate each prepared segment to French with its source language specified.
+3. BReconstruct the notice from the successful segment translations.
+4. CReview the complete translated notice against the original before delivery.
+Why the correct answer is right
+Single-language preparation addresses the documented mixture limitation. Reconstruction
+consumes translations; this review explicitly requires the complete notice.
+Answer and step notes
+D: Prepared segments and labels are inputs to the translation calls.
+A: Translation produces the target-language segments.
+B: Reconstruction combines those outputs.
+C: The specified cross-segment review needs the reconstructed notice.
+AI103-D1.03
+Sources
+S055: Azure Translator known issues and troubleshooting
+https://learn.microsoft.com/en-us/azure/ai-services/translator/reference/known-issues
+S032: What is Azure Translator in Foundry Tools?
+https://learn.microsoft.com/azure/ai-services/translator/overview
+AI-103 Practice · 85 / 109
+Q81
+ Domain D: Implement text analysis solutions
+ Sequence
+A compliance extractor may forward a result for approval only after its cited fields are
+verified against the supplied policy. Its model, client and policy are ready, but its domain
+instructions and strict output schema have not been defined. Arrange these operations.
+Arrange these steps in order:
+A. Define the domain boundary, missing-evidence fallback and supported field schema.
+B. Check the successful extracted fields and citations against the supplied policy.
+C. Forward the verified result to the authorized approval queue.
+D. Request extraction using those instructions, schema and policy text.
+Correct order:
+1. A Define the domain boundary, missing-evidence fallback and supported field schema.
+2. DRequest extraction using those instructions, schema and policy text.
+3. BCheck the successful extracted fields and citations against the supplied policy.
+4. CForward the verified result to the authorized approval queue.
+Why the correct answer is right
+Instructions and schema configure extraction. The host verifies evidence before forwarding; neither
+instructions nor valid JSON replace that gate.
+Answer and step notes
+A: The request needs the domain and output contracts.
+D: Inference produces the candidate extraction.
+B: Evidence checks require that candidate and its source.
+C: The stated queue gate requires successful verification.
+AI103-D1.04
+Sources
+S057: System message design
+https://learn.microsoft.com/en-us/azure/cognitive-services/openai/concepts/advanced-prompt-engineering?
+pivots=programming-language-chat-completions
+S037: Structured outputs
+https://learn.microsoft.com/azure/foundry/openai/how-to/structured-outputs
+AI-103 Practice · 86 / 109
+Q82
+ Domain D: Implement text analysis solutions
+ Sequence
+A voice assistant uses a text-only response model and a separate speech synthesizer. The
+application requires its response-text policy check to pass before any answer audio is
+emitted. Arrange the successful path for one recorded utterance.
+Arrange these steps in order:
+A. Generate a text response from that transcript.
+B. Recognize the utterance into finalized text.
+C. Apply the required response-text policy check.
+D. Synthesize and emit the approved response text.
+Correct order:
+1. BRecognize the utterance into finalized text.
+2. A Generate a text response from that transcript.
+3. CApply the required response-text policy check.
+4. DSynthesize and emit the approved response text.
+Why the correct answer is right
+The text-only model needs recognition output. The policy gate consumes its answer and must
+precede synthesis under this application contract.
+Answer and step notes
+B: Recognition supplies text to the response model.
+A: Generation supplies the candidate answer.
+C: The policy check requires the candidate answer.
+D: The specified policy allows audio only from approved text.
+AI103-D2.01
+Sources
+S033: What is Azure Speech?
+https://learn.microsoft.com/azure/ai-services/speech-service/overview
+S057: System message design
+https://learn.microsoft.com/en-us/azure/cognitive-services/openai/concepts/advanced-prompt-engineering?
+pivots=programming-language-chat-completions
+AI-103 Practice · 87 / 109
+Q83
+ Domain D: Implement text analysis solutions
+ Sequence
+A Custom Speech project and training data are ready. A new model must meet a held-out
+WER threshold before deployment, and the application will use it for real-time recognition,
+not batch transcription. Arrange the remaining operations.
+Arrange these steps in order:
+A. Evaluate that model on the held-out set and confirm the WER gate passes.
+B. Deploy the approved model to a custom endpoint.
+C. Train the custom model with the prepared domain data.
+D. Send real-time recognition requests to that custom endpoint.
+Correct order:
+1. CTrain the custom model with the prepared domain data.
+2. A Evaluate that model on the held-out set and confirm the WER gate passes.
+3. BDeploy the approved model to a custom endpoint.
+4. DSend real-time recognition requests to that custom endpoint.
+Why the correct answer is right
+The model must exist before evaluation. The stated release gate precedes deployment, and real-
+time use requires a deployed custom endpoint; batch usage has a different requirement.
+Answer and step notes
+C: Training produces the model being evaluated.
+A: Evaluation verifies the specified deployment gate.
+B: Deployment creates the endpoint for this model.
+D: Real-time requests use that deployed endpoint.
+AI103-D2.02
+Sources
+S034: What is custom speech?
+https://learn.microsoft.com/azure/ai-services/speech-service/custom-speech-overview
+AI-103 Practice · 88 / 109
+Q84
+ Domain D: Implement text analysis solutions
+ Sequence
+A Realtime assistant must interpret a recorded inspection question in the context of a
+written maintenance note for the same equipment. Its supported audio model and transport
+are ready. Host policy requires checking the returned interpretation against that note
+before offering a repair action. Arrange the application’s operations.
+Arrange these steps in order:
+A. Prepare the supported audio input and text context for that equipment’s conversation.
+B. Check that interpretation against the maintenance note before offering the repair action.
+C. Collect the utterance and its associated maintenance note.
+D. Submit the prepared input and obtain the successful interpretation.
+Correct order:
+1. CCollect the utterance and its associated maintenance note.
+2. A Prepare the supported audio input and text context for that equipment’s conversation.
+3. DSubmit the prepared input and obtain the successful interpretation.
+4. BCheck that interpretation against the maintenance note before offering the repair action.
+Why the correct answer is right
+The audio and written context supply the model inputs. The interpretation exists after inference,
+and the stated host gate consumes it before an action is offered.
+Answer and step notes
+C: The associated inputs must exist before they can be prepared.
+A: Input and conversation context must be prepared before submission.
+D: Successful inference supplies the interpretation.
+B: The host check consumes that interpretation and its associated note.
+AI103-D2.03
+Sources
+S036: Use the GPT Realtime API for speech and audio
+https://learn.microsoft.com/azure/foundry/openai/how-to/realtime-audio
+AI-103 Practice · 89 / 109
+Q85
+ Domain D: Implement text analysis solutions
+ Sequence
+An event-based Speech SDK translator must retain the first completed translated
+utterance. Credentials and AudioConfig are ready. It uses a TranslationRecognizer whose
+recognized callback stores successful translations. Arrange initialization so the handler is
+ready when recognition begins.
+Arrange these steps in order:
+A. Create the TranslationRecognizer from that translation configuration and AudioConfig.
+B. Configure SpeechTranslationConfig with the source and target languages.
+C. Connect the storage callback to the recognizer’s recognized event.
+D. Start continuous recognition on the configured recognizer.
+Correct order:
+1. BConfigure SpeechTranslationConfig with the source and target languages.
+2. A Create the TranslationRecognizer from that translation configuration and AudioConfig.
+3. CConnect the storage callback to the recognizer’s recognized event.
+4. DStart continuous recognition on the configured recognizer.
+Why the correct answer is right
+The configuration is consumed by the constructor. The event belongs to the created recognizer,
+and this application must subscribe before starting to avoid losing its first result.
+Answer and step notes
+B: The constructor needs the completed translation configuration.
+A: The recognizer must exist before its event can be subscribed.
+C: The application requires the callback to be ready before recognition starts.
+D: Recognition now delivers completed results to the installed handler.
+AI103-D2.04
+Sources
+S046: How to recognize and translate speech
+https://learn.microsoft.com/azure/ai-services/speech-service/how-to-translate-speech
+AI-103 Practice · 90 / 109
+Q86
+ Domain D: Implement text analysis solutions
+ Sequence
+A store-and-forward speech translator uses manual synthesis for two target languages. It
+will deliver an audio file only after synthesis succeeds. Arrange the successful path for the
+selected target language; no translation result is available initially.
+Arrange these steps in order:
+A. Synthesize that text with a voice supporting the selected target language.
+B. Deliver the successfully synthesized audio file.
+C. Select the requested language’s text from the successful result’s translations.
+D. Recognize and translate the source utterance.
+Correct order:
+1. DRecognize and translate the source utterance.
+2. CSelect the requested language’s text from the successful result’s translations.
+3. A Synthesize that text with a voice supporting the selected target language.
+4. BDeliver the successfully synthesized audio file.
+Why the correct answer is right
+The translation result supplies per-language text. Manual synthesis consumes the selected text;
+this file-delivery contract requires completed audio rather than a streamed partial response.
+Answer and step notes
+D: Translation produces the per-language results.
+C: Selection supplies the requested target text.
+A: Synthesis consumes that text and produces audio.
+B: The application delivers a file only after successful synthesis.
+AI103-D2.04
+Sources
+S046: How to recognize and translate speech
+https://learn.microsoft.com/azure/ai-services/speech-service/how-to-translate-speech
+S033: What is Azure Speech?
+https://learn.microsoft.com/azure/ai-services/speech-service/overview
+AI-103 Practice · 91 / 109
+Q87
+ Domain A: Plan and manage an Azure AI solution
+ Matching
+Match each workload requirement to its deployment family. Geography and model support have
+already been checked. Use each selected choice once; one choice is unused.
+Match each row to a choice.
+A. Deferred asynchronous groups of inference requests
+Match: __________
+B. Variable interactive demand with per-token charges
+Match: __________
+C. Allocated throughput for sustained traffic
+Match: __________
+Choice bank
+Developer
+Batch
+Provisioned
+Standard
+Correct matches:
+A. Deferred asynchronous groups of inference requests→ Batch
+B. Variable interactive demand with per-token charges→ Standard
+C. Allocated throughput for sustained traffic → Provisioned
+Why the correct answer is right
+Standard is usage-based interactive serving; Provisioned allocates throughput; Batch serves
+asynchronous work. Developer is the unused experimentation choice.
+Answer and step notes
+B: Variable interactive demand with per-token charges: Standard.
+C: Allocated throughput for sustained traffic: Provisioned.
+A: Deferred asynchronous groups of inference requests: Batch.
+AI103-A2.02
+Sources
+S005: Deployment types for Microsoft Foundry Models
+https://learn.microsoft.com/azure/foundry/foundry-models/concepts/deployment-types
+AI-103 Practice · 92 / 109
+Q88
+ Domain A: Plan and manage an Azure AI solution
+ Matching
+Match each investigation to the most direct evidence source. Use each selected choice once; one
+choice is unused.
+Match each row to a choice.
+A. A slow operation inside one scored agent request
+Match: __________
+B. Missing source documents after a partially successful run
+Match: __________
+C. Query-serving throttling during traffic peaks
+Match: __________
+Choice bank
+Search service operational metrics
+Indexer item errors and warnings
+Correlated trace and nested spans
+Aggregate billing report
+Correct matches:
+A. A slow operation inside one scored agent request→ Correlated trace and nested
+spans
+B. Missing source documents after a partially successful
+run
+→ Indexer item errors and
+warnings
+C. Query-serving throttling during traffic peaks→ Search service operational
+metrics
+Why the correct answer is right
+Use operation traces for request-level timing, indexer details for ingestion failures, and service metrics
+for serving health. An aggregate billing report cannot localize these request, ingestion or serving failures.
+Answer and step notes
+A: A slow operation inside one scored agent request: Correlated trace and nested spans.
+B: Missing source documents after a partially successful run: Indexer item errors and warnings.
+C: Query-serving throttling during traffic peaks: Search service operational metrics.
+AI103-A3.03
+Sources
+S013: Agent tracing overview
+https://learn.microsoft.com/azure/foundry/observability/concepts/trace-agent-concept
+S027: Monitor Azure AI Search
+https://learn.microsoft.com/azure/search/monitor-azure-cognitive-search
+S044: Monitor indexer status and results in Azure AI Search
+https://learn.microsoft.com/azure/search/search-monitor-indexers
+AI-103 Practice · 93 / 109
+Q89
+ Domain A: Plan and manage an Azure AI solution
+ Matching
+Match each keyless inference observation to the boundary to inspect. Use each selected choice once;
+one choice is unused.
+Match each row to a choice.
+A. A token is acquired but the resource denies inference
+Match: __________
+B. The role exists only on a different resource
+Match: __________
+C. No Entra token can be acquired
+Match: __________
+Choice bank
+Credential/authentication configuration
+Inference authorization for the caller
+Role assignment scope covering the called resource
+Generation sampling parameters
+Correct matches:
+A. A token is acquired but the resource denies inference→ Inference authorization for the
+caller
+B. The role exists only on a different resource→ Role assignment scope
+covering the called resource
+C. No Entra token can be acquired → Credential/authentication
+configuration
+Why the correct answer is right
+Authentication, permission and scope are separate boundaries.
+Answer and step notes
+C: No Entra token can be acquired: Credential/authentication configuration.
+A: A token is acquired but the resource denies inference: Inference authorization for the caller.
+B: The role exists only on a different resource: Role assignment scope covering the called resource.
+AI103-A3.04
+Sources
+S051: Azure OpenAI v1 API
+https://learn.microsoft.com/en-us/azure/foundry/openai/api-version-lifecycle
+S052: Use Azure OpenAI without keys
+https://learn.microsoft.com/en-us/azure/developer/ai/keyless-connections
+S010: Role-based access control for Microsoft Foundry
+https://learn.microsoft.com/azure/foundry/concepts/rbac-foundry
+AI-103 Practice · 94 / 109
+Q90
+ Domain A: Plan and manage an Azure AI solution
+ Matching
+Match each trust boundary to the relevant inspection point. Use each selected choice once; one choice
+is unused.
+Match each row to a choice.
+A. An instruction inserted into a retrieved document
+Match: __________
+B. A harmful generated response
+Match: __________
+C. A user’s submitted attack instruction
+Match: __________
+Choice bank
+User-input protection
+External-context/indirect-attack protection
+Final-output inspection
+Model token quota
+Correct matches:
+A. An instruction inserted into a retrieved document→ External-context/indirect-attack
+protection
+B. A harmful generated response → Final-output inspection
+C. A user’s submitted attack instruction → User-input protection
+Why the correct answer is right
+Protect each content boundary; a safe earlier input does not establish safety of later content.
+Answer and step notes
+C: A user’s submitted attack instruction: User-input protection.
+A: An instruction inserted into a retrieved document: External-context/indirect-attack protection.
+B: A harmful generated response: Final-output inspection.
+AI103-A4.01
+Sources
+S015: Guardrails and controls overview in Microsoft Foundry
+https://learn.microsoft.com/azure/foundry/guardrails/guardrails-overview
+S016: Prompt Shields in Microsoft Foundry
+https://learn.microsoft.com/azure/foundry/openai/concepts/content-filter-prompt-shields
+AI-103 Practice · 95 / 109
+Q91
+ Domain B: Implement generative AI and agentic solutions
+ Matching
+Match each observed agent defect to the targeted tool evaluator. Use each selected choice once; one
+choice is unused.
+Match each row to a choice.
+A. A correct returned quantity is misrepresented in the answer
+Match: __________
+B. The model invokes translation when inventory lookup is needed
+Match: __________
+C. The correct tool receives the warehouse ID as a part ID
+Match: __________
+Choice bank
+Tool Input Accuracy
+Task Completion (preview)
+Tool Output Utilization
+Tool Selection
+Correct matches:
+A. A correct returned quantity is misrepresented in the
+answer
+→ Tool Output Utilization
+B. The model invokes translation when inventory lookup
+is needed
+→ Tool Selection
+C. The correct tool receives the warehouse ID as a part
+ID
+→ Tool Input Accuracy
+Why the correct answer is right
+Selection concerns the chosen capability, input accuracy concerns arguments, and output utilization
+concerns returned information. Task Completion is a broader outcome metric.
+Answer and step notes
+B: The model invokes translation when inventory lookup is needed: Tool Selection.
+C: The correct tool receives the warehouse ID as a part ID: Tool Input Accuracy.
+A: A correct returned quantity is misrepresented in the answer: Tool Output Utilization.
+AI103-B2.06
+Sources
+S014: Agent evaluators
+https://learn.microsoft.com/azure/foundry/concepts/evaluation-evaluators/agent-evaluators
+AI-103 Practice · 96 / 109
+Q92
+ Domain B: Implement generative AI and agentic solutions
+ Matching
+Match each information need to the documented context capability. Use each selected choice once;
+one choice is unused.
+Match each row to a choice.
+A. A maintained corporate handbook
+Match: __________
+B. A preference learned from prior conversations
+Match: __________
+C. A receipt uploaded for the current interaction
+Match: __________
+Choice bank
+Persistent memory
+Model router
+Curated knowledge base
+File search
+Correct matches:
+A. A maintained corporate handbook → Curated knowledge base
+B. A preference learned from prior conversations→ Persistent memory
+C. A receipt uploaded for the current interaction→ File search
+Why the correct answer is right
+Memory, curated knowledge and file search serve different origins and lifecycles of information. Routing
+selects among models.
+Answer and step notes
+B: A preference learned from prior conversations: Persistent memory.
+A: A maintained corporate handbook: Curated knowledge base.
+C: A receipt uploaded for the current interaction: File search.
+AI103-B2.02
+Sources
+S006: Memory in Microsoft Foundry Agent Service (preview)
+https://learn.microsoft.com/azure/foundry/agents/concepts/what-is-memory
+AI-103 Practice · 97 / 109
+Q93
+ Domain B: Implement generative AI and agentic solutions
+ Matching
+Match each response-turn requirement to the documented tool_choice mode. Use each selected
+choice once; one choice is unused.
+Match each row to a choice.
+A. The turn must produce no tool calls
+Match: __________
+B. One or more tool calls are necessary
+Match: __________
+C. Model may decide whether a tool helps
+Match: __________
+Choice bank
+auto
+required
+none
+A specific tool execution receipt
+Correct matches:
+A. The turn must produce no tool calls → none
+B. One or more tool calls are necessary → required
+C. Model may decide whether a tool helps → auto
+Why the correct answer is right
+Request modes control tool invocation intent; execution and receipts remain host responsibilities.
+Answer and step notes
+C: Model may decide whether a tool helps: auto.
+B: One or more tool calls are necessary: required.
+A: The turn must produce no tool calls: none.
+AI103-B2.01
+Sources
+S054: Tool best practices for Microsoft Foundry Agent Service
+https://learn.microsoft.com/azure/foundry/agents/concepts/tool-best-practice
+AI-103 Practice · 98 / 109
+Q94
+ Domain C: Implement computer vision solutions
+ Matching
+Match each webpage image role to the appropriate alternative-text approach. Use each selected
+choice once; one choice is unused.
+Match each row to a choice.
+A. A complex chart whose details cannot fit concise alt text
+Match: __________
+B. An image that submits a search form
+Match: __________
+C. A purely decorative background flourish
+Match: __________
+Choice bank
+Provide the detailed information elsewhere on the page
+Use the image filename
+Communicate the action
+Use empty alt
+Correct matches:
+A. A complex chart whose details cannot fit concise alt
+text
+→ Provide the detailed
+information elsewhere on the
+page
+B. An image that submits a search form → Communicate the action
+C. A purely decorative background flourish → Use empty alt
+Why the correct answer is right
+Image purpose determines its alternative. A complex chart needs access to its detailed information in
+addition to a suitable concise alternative.
+Answer and step notes
+B: An image that submits a search form: Communicate the action.
+C: A purely decorative background flourish: Use empty alt.
+A: A complex chart whose details cannot fit concise alt text: Provide the detailed information
+elsewhere on the page.
+AI103-C2.04
+Sources
+S050: W3C WAI An alt Decision Tree
+https://www.w3.org/WAI/tutorials/images/decision-tree/
+AI-103 Practice · 99 / 109
+Q95
+ Domain E: Implement information extraction solutions
+ Configuration
+The index has no OCR text. Which one configuration defect in this exhibit blocks the OCR
+input path?
+Blob OCR pipeline
+{
+  "indexer": {
+    "parameters": {"configuration": {"imageAction": "none"}},
+    "outputFieldMappings": [{
+      "sourceFieldName": "/document/normalized_images/*/text",
+      "targetFieldName": "ocr_text"
+    }]
+  },
+  "skill": {
+    "@odata.type": "#Microsoft.Skills.Vision.OcrSkill",
+    "context": "/document/normalized_images/*",
+    "inputs": [{"name": "image", "source": "/document/normalized_images/*"}],
+    "outputs": [{"name": "text", "targetName": "text"}]
+  },
+  "indexField": {"name": "ocr_text", "type": "Collection(Edm.String)", "searchable": true}
+}
+A The index’s ocr_text field is searchable.
+B The text output mapping names the correct enriched node.
+C The blob indexer’s imageAction is none. ✓
+D The OCR skill uses the normalized image wildcard.
+Why the correct answer is right
+The normalized image collection must exist for the OCR skill input. The exhibit’s output path is
+already correct.
+Why the other options are wrong
+B: This correctly maps the produced node after the skill runs.
+A: Searchability is appropriate for retrieval.
+D: The wildcard matches the skill’s normalized-image input.
+AI103-E1.04
+Sources
+S043: OCR cognitive skill
+https://learn.microsoft.com/azure/search/cognitive-search-skill-ocr
+S028: Skillset concepts in Azure AI Search
+https://learn.microsoft.com/azure/search/cognitive-search-working-with-skillsets
+AI-103 Practice · 100 / 109
+Q96
+ Domain E: Implement information extraction solutions
+ Configuration
+The pipeline needs layout-derived Markdown for indexing. Which producing capability
+should replace the enrichment stage in this exhibit?
+Required enrichment output
+{"input":"source document","requiredOutput":"layout-aware Markdown","consumer":"Search indexer skillse
+t"}
+A A field mapper without a producing skill.
+B A semantic query configuration.
+C OCR only, with no layout extraction.
+D Document Intelligence Layout skill. ✓
+Why the correct answer is right
+The Layout skill extracts document layout into Markdown and related structure for enrichment.
+OCR alone does not supply this layout-aware representation.
+Why the other options are wrong
+C: OCR supplies text, not the requested layout capability.
+B: Query-time semantics do not produce ingestion output.
+A: A mapping cannot create the missing representation.
+AI103-E1.03
+Sources
+S029: Document Layout skill
+https://learn.microsoft.com/azure/search/cognitive-search-skill-document-intelligence-layout
+S059: Content Understanding document solutions
+https://learn.microsoft.com/en-us/azure/ai-services/content-understanding/document/overview
+AI-103 Practice · 101 / 109
+Q97
+ Domain E: Implement information extraction solutions
+ Configuration
+A custom extractor uses the following result. What should happen before the application
+posts the invoice amount?
+Invoice analyzer result
+{"total":{"value":1460.00,"confidence":0.42,"source":{"page":2,"span":"invoice total"}},"rule":"verifie
+d totals only"}
+A Verify grounded field evidence and business rules. ✓
+B Use the confidence as payment authorization.
+C Replace the source amount with the highest nearby number.
+D Post because the JSON parsed.
+Why the correct answer is right
+The result carries low confidence and source grounding for inspection. Extraction does not
+authorize payment or resolve the business rule.
+Why the other options are wrong
+D: Parsing verifies shape, not the amount or payment permission.
+B: Confidence estimates extraction, not authority.
+C: A nearby number need not be the required field.
+AI103-E2.03
+Sources
+S045: Validate document analyzer quality with confidence, grounding, and labeled samples
+https://learn.microsoft.com/azure/ai-services/content-understanding/document/analyzer-improvement
+S059: Content Understanding document solutions
+https://learn.microsoft.com/en-us/azure/ai-services/content-understanding/document/overview
+AI-103 Practice · 102 / 109
+Q98
+ Domain C: Implement computer vision solutions
+ Configuration
+The image:analyze 2024-09-01 contract uses FourSeverityLevels. Policy rejects an image
+when any harm category is Medium or High. What comparison should implement the
+policy?
+Image harm policy
+{"apiVersion":"2024-09-01","outputType":"FourSeverityLevels","rejectWhen":"any category is Medium or Hi
+gh"}
+A Reject if any analyzed category has severity 4 or 6. ✓
+B Average the returned category severities and reject when that average reaches 4.
+C Reject when every category equals 6.
+D Reject when a category equals 3.
+Why the correct answer is right
+The image API's severity values are 0, 2, 4 and 6. The stated any-category policy rejects Medium
+(4) and High (6).
+Why the other options are wrong
+D: The documented four-level values are 0, 2, 4 and 6.
+B: Averages can conceal one category that independently meets the rejection condition.
+C: The policy triggers on any Medium or High category.
+AI103-C3.01
+Sources
+S042: QuickStart: Analyze image content
+https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-image
+AI-103 Practice · 103 / 109
+Q99
+ Domain C: Implement computer vision solutions
+ Configuration
+This audio-analysis worker passes an operation handle to its transcript consumer and the
+consumer rejects it. Which change obtains the completed analysis output in the pinned
+SDK?
+Python SDK 1.1.0 / API 2025-11-01
+poller = client.begin_analyze(analyzer_id="prebuilt-audioSearch", inputs=inputs)
+transcript_consumer(poller)
+A Wait for poller.result() and consume the returned analysis result. ✓
+B Read the operation ID as the transcript and retry the consumer.
+C Cast the poller to a dictionary before sending it to the consumer.
+D Change the audio filename extension and reuse the operation handle.
+Why the correct answer is right
+begin_analyze returns a long-running operation poller. The SDK example waits with result() before
+using completed content; the operation handle is not a transcript.
+Why the other options are wrong
+B: The operation ID identifies work, not the analyzed content.
+C: Casting a control object does not obtain successful analysis output.
+D: Renaming the input does not complete or retrieve the existing operation.
+AI103-C2.05
+Sources
+S021: Azure AI Content Understanding client library for Python - version 1.1.0
+https://learn.microsoft.com/python/api/overview/azure/ai-contentunderstanding-readme?view=azure-python
+AI-103 Practice · 104 / 109
+Q100
+Domain D: Implement text analysis solutions
+ Configuration
+The translation result leaves part of this input unchanged. Which cause and response best
+fit the documented condition?
+Text translation diagnosis
+{"text":"Replace the filter, dann starten Sie die Pumpe.","detectedLanguage":"en","target":"fr","sympto
+m":"German clause unchanged"}
+A A detected language and HTTP success establish complete translation.
+B Source autodetection must be forced to German for the whole sentence.
+C A text request should become an autodetected document translation job.
+D Mixed source languages; segment and translate with intended source labels.✓
+Why the correct answer is right
+The known-issues page identifies mixed-language sentences as a text translation limitation. A
+detected language for the whole input does not resolve the mixture.
+Why the other options are wrong
+B: Choosing one language for the whole mixture does not separate its English span.
+C: Changing endpoints while retaining the mixture does not resolve the documented condition.
+A: Detection and transport success do not verify every span was translated.
+AI103-D1.03
+Sources
+S055: Azure Translator known issues and troubleshooting
+https://learn.microsoft.com/en-us/azure/ai-services/translator/reference/known-issues
+AI-103 Practice · 105 / 109
+Quick Answer Key
+# Type Correct Answer
+Q1 Case study C
+Q2 Case study B
+Q3 Case study B
+Q4 Case study A
+Q5 Case study B
+Q6 Case study C
+Q7 Case study A
+Q8 Case study D
+Q9 Case study B
+Q10 Case study C
+Q11 Case study D
+Q12 Case study C
+Q13 Case study B
+Q14 Case study B
+Q15 Case study D
+Q16 Case study C
+Q17 Single choice A
+Q18 Single choice D
+Q19 Single choice D
+Q20 Single choice A
+Q21 Single choice C
+Q22 Single choice A
+Q23 Single choice C
+Q24 Single choice C
+Q25 Single choice D
+Q26 Single choice C
+Q27 Configuration operation → get | client → get_openai_client
+Q28 Configuration scope → {{$userId}} | header → x-memory-user-id
+AI-103 Practice · 106 / 109
+# Type Correct Answer
+Q29 Configuration mode → required
+Q30 Configuration required → ["note"] | extra → False | location → format
+Q31 Single choice B
+Q32 Single choice A
+Q33 Single choice C
+Q34 Single choice C
+Q35 Single choice C
+Q36 Single choice A
+Q37 Single choice C
+Q38 Single choice A
+Q39 Single choice D
+Q40 Single choice D
+Q41 Single choice C
+Q42 Single choice D
+Q43 Configuration audience → https://ai.azure.com/.default | endpoint →
+https://resource.openai.azure.com/openai/v1/
+Q44 Configuration endpoint → project_endpoint | credential →
+DefaultAzureCredential()
+Q45 Single choice C
+Q46 Single choice A
+Q47 Single choice D
+Q48 Single choice C
+Q49 Single choice A
+Q50 Single choice D
+Q51 Single choice C
+Q52 Single choice A
+Q53 Single choice B
+Q54 Single choice B
+Q55 Configuration kind → image_url | field → image_url
+Q56 Configuration source → source_image_file | mask → matching_mask_file
+Q57 Single choice D
+AI-103 Practice · 107 / 109
+# Type Correct Answer
+Q58 Single choice B
+Q59 Multiple select E, B
+Q60 Multiple select A, C
+Q61 Multiple select B, E
+Q62 Multiple select A, E
+Q63 Multiple select A, D
+Q64 Multiple select B, A
+Q65 Multiple select D, B
+Q66 Multiple select D, A
+Q67 Multiple select B, A
+Q68 Multiple select A, E
+Q69 Multiple select D, A
+Q70 Multiple select B, D
+Q71 Multiple select E, D
+Q72 Multiple select E, A
+Q73 Multiple select E, B
+Q74 Multiple select C, E
+Q75 Multiple select A, C
+Q76 Multiple select A, B
+Q77 Sequence 1. B → 2. C → 3. A → 4. D
+Q78 Sequence 1. B → 2. C → 3. A → 4. D
+Q79 Sequence 1. A → 2. D → 3. B → 4. C
+Q80 Sequence 1. D → 2. A → 3. B → 4. C
+Q81 Sequence 1. A → 2. D → 3. B → 4. C
+Q82 Sequence 1. B → 2. A → 3. C → 4. D
+Q83 Sequence 1. C → 2. A → 3. B → 4. D
+Q84 Sequence 1. C → 2. A → 3. D → 4. B
+Q85 Sequence 1. B → 2. A → 3. C → 4. D
+Q86 Sequence 1. D → 2. C → 3. A → 4. B
+Q87 Matching B → Standard | C → Provisioned | A → Batch
+AI-103 Practice · 108 / 109
+# Type Correct Answer
+Q88 Matching A → Correlated trace and nested spans | B → Indexer item
+errors and warnings | C → Search service operational metrics
+Q89 Matching
+C → Credential/authentication configuration | A → Inference
+authorization for the caller | B → Role assignment scope
+covering the called resource
+Q90 Matching C → User-input protection | A → External-context/indirect-attack
+protection | B → Final-output inspection
+Q91 Matching B → Tool Selection | C → Tool Input Accuracy | A → Tool Output
+Utilization
+Q92 Matching B → Persistent memory | A → Curated knowledge base | C →
+File search
+Q93 Matching C → auto | B → required | A → none
+Q94 Matching B → Communicate the action | C → Use empty alt | A → Provide
+the detailed information elsewhere on the page
+Q95 Configuration C
+Q96 Configuration D
+Q97 Configuration A
+Q98 Configuration A
+Q99 Configuration A
+Q100 Configuration D
+AI-103 Practice · 109 / 109

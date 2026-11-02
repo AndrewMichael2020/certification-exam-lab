@@ -1,0 +1,284 @@
+{
+  "schemaVersion": 1,
+  "packRef": {
+    "id": "ai-103",
+    "version": "1.1.0"
+  },
+  "parentObjectiveId": "AI103-B3",
+  "title": "Optimize and operationalize generative AI systems",
+  "state": "evidence-packet-only; no questions",
+  "allowedObjectiveIds": [
+    "AI103-B3.01",
+    "AI103-B3.03",
+    "AI103-B3.04"
+  ],
+  "allowedScope": [
+    {
+      "objectiveId": "AI103-B3.01",
+      "claims": [
+        "F047A",
+        "F037A",
+        "F038A"
+      ],
+      "choice": "Tune prompt clarity, examples, output constraints, and supported model controls against repeatable evaluation data.",
+      "configuration": "Identify reasoning versus conventional models before changing sampling settings; preserve request/API generation and schema support.",
+      "comparison": "Generic temperature or chain-of-thought advice does not transfer to every reasoning model.",
+      "judgment": "A malformed extraction output is better addressed by a supported strict schema and validation than by repeatedly requesting 'valid JSON'."
+    },
+    {
+      "objectiveId": "AI103-B3.03",
+      "claims": [
+        "F013A",
+        "F013B",
+        "F009A"
+      ],
+      "choice": "Use nested traces to break down model/tool latency and relate usage and safety events to individual requests.",
+      "configuration": "Export to the connected Application Insights resource; correlate IDs/version metadata; redact sensitive inputs; inspect token/billing dimensions supported by the service.",
+      "comparison": "Aggregate request duration alone hides slow retrieval or repeated calls; trace content can reveal secrets.",
+      "judgment": "A slow answer with three redundant retrieval calls needs span-level timing and tool analysis before increasing deployment capacity."
+    },
+    {
+      "objectiveId": "AI103-B3.04",
+      "claims": [
+        "F041A",
+        "F008A",
+        "F007C"
+      ],
+      "choice": "Use model routing for eligible model choice and workflow/rule control for deterministic decisions or multi-step orchestration.",
+      "configuration": "Restrict router model sets to allowed capabilities; enforce business constraints in code; evaluate quality/cost tradeoffs.",
+      "comparison": "A router selects a model; it does not automatically encode all application rules or a complete agent workflow.",
+      "judgment": "An eligibility rule should run deterministically before an LLM explains it; router choice can optimize the explanation stage."
+    }
+  ],
+  "excludedObjectives": [
+    {
+      "id": "AI103-B3.02",
+      "reason": "The outline's chain-of-thought-evaluation phrase lacks a captured single implementation contract; modern reasoning and older prompt-engineering guidance differ. Limit authoring to supported summaries, observable outputs, and bounded review behavior."
+    }
+  ],
+  "evidence": [
+    {
+      "claimId": "F007C",
+      "statement": "Validate tool arguments and outputs, minimize secrets, apply least privilege, and require intended confirmation for side effects.",
+      "sourceId": "S007",
+      "sourceUrl": "https://learn.microsoft.com/azure/foundry/agents/how-to/tools/function-calling",
+      "versionContext": "Mixed page panels: current AI Projects2.x Responses/conversations examples and classic threads/runs material. Current fragments used below; do not transfer classic10-minute run expiry to Responses.",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S007.md",
+          "lineStart": 825,
+          "lineEnd": 829,
+          "heading": "## Security and data considerations",
+          "needle": "Treat tool arguments and tool outputs",
+          "excerpt": "\n- Treat tool arguments and tool outputs as untrusted input. Validate and sanitize values before using them.\n- Don't pass secrets (API keys, tokens, connection strings) in tool output. Return only the data the model needs.\n- Apply least privilege to the identity used by `DefaultAzureCredential`.\n- Avoid side effects unless you explicitly intend them. For example, restrict function tools to safe operations, or require explicit user confirmation for actions that change data.",
+          "sourceSha256": "0d4119f94b15c94d404729f53d2ed5f52a89dfaf35841d1290c0472be3e3e953"
+        }
+      ]
+    },
+    {
+      "claimId": "F008A",
+      "statement": "Sequential orchestration passes results in a defined order; group chat routes control dynamically; human-in-loop patterns wait for approval or missing input.",
+      "sourceId": "S008",
+      "sourceUrl": "https://learn.microsoft.com/azure/foundry/agents/concepts/workflow",
+      "versionContext": "Visual designer/in-portal workflow execution retires Dec1,2026; hosted YAML migration remains",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S008.md",
+          "lineStart": 40,
+          "lineEnd": 44,
+          "heading": "## Understand workflow patterns",
+          "needle": "| Sequential |",
+          "excerpt": "| Human in the loop | Asks the user a question and awaits user input to proceed | Creating approval requests during workflow execution and waiting for human approval, or obtaining information from the user |\n| Sequential | Passes the result from one agent to the next in a defined order | Step-by-step workflows, pipelines, or multiple-stage processing |\n| Group chat | Dynamically passes control between agents based on context or rules | Dynamic workflows, escalation, fallback, or expert handoff scenarios |\n\nFor more information, see [Microsoft Agent Framework workflow orchestrations](/en-us/agent-framework/user-guide/workflows/orchestrations/overview).",
+          "sourceSha256": "91311aec35bad6e1e44149491430baa72e5eeec37c9f869ba7fbf9356e5497e4"
+        }
+      ]
+    },
+    {
+      "claimId": "F009A",
+      "statement": "An agent uses its underlying model deployment quotas as well as agent-service limits; troubleshoot the returned limit code rather than assuming one universal quota.",
+      "sourceId": "S009",
+      "sourceUrl": "https://learn.microsoft.com/azure/foundry/agents/concepts/limits-quotas-regions",
+      "versionContext": "Feature-specific qualifications in snapshot; package/API version unknown unless stated in a referenced excerpt.",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S009.md",
+          "lineStart": 336,
+          "lineEnd": 339,
+          "heading": "## Model quotas and rate limits",
+          "needle": "Agents follow the quotas and rate limits",
+          "excerpt": "\nAgents follow the quotas and rate limits for the model deployments they use.\n\nFor current model quotas and limits, see:",
+          "sourceSha256": "d83fd890729d322d4ffa580ca5a8db2bed5bcd783dae47f5da2b05985f4b3041"
+        }
+      ]
+    },
+    {
+      "claimId": "F013A",
+      "statement": "A trace represents a request journey; nested spans represent operations with timing and attributes, exported to Application Insights for agent observability.",
+      "sourceId": "S013",
+      "sourceUrl": "https://learn.microsoft.com/azure/foundry/observability/concepts/trace-agent-concept",
+      "versionContext": "Prompt/hosted tracing GA; workflow/external preview",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S013.md",
+          "lineStart": 42,
+          "lineEnd": 46,
+          "heading": "## Trace key concepts",
+          "needle": "Spans are the building blocks",
+          "excerpt": "| Traces | Traces capture the journey of a request or workflow through your application by recording events and state changes (function calls, values, system events). See [OpenTelemetry Traces](https://opentelemetry.io/docs/concepts/signals/traces/). |\n| Spans | Spans are the building blocks of traces, representing single operations within a trace. Each span captures start and end times, attributes, and can be nested to show hierarchical relationships, so you can see the full call stack and sequence of operations. |\n| Attributes | Attributes are key-value pairs attached to traces and spans, providing contextual metadata such as function parameters, return values, or custom annotations. These enrich trace data, making it more informative and useful for analysis. |\n| Semantic conventions | OpenTelemetry defines semantic conventions to standardize names and formats for trace data attributes, making it easier to interpret and analyze across tools and platforms. To learn more, see the [OpenTelemetry GenAI semantic conventions](https://github.com/open-telemetry/semantic-conventions-genai). |\n| Trace exporters | Trace exporters send trace data to backend systems for storage and analysis. In Foundry, traces are stored in Azure Monitor Application Insights. To learn how to enable and view traces, see [How to set up tracing in Microsoft Foundry](../how-to/trace-agent-setup). |",
+          "sourceSha256": "895295a4b74d7cabaa0daf62bd6cd5239daf25b6ea85a2268dc2cdf8483b19e8"
+        },
+        {
+          "snapshot": "sources/snapshots/S013.md",
+          "lineStart": 45,
+          "lineEnd": 48,
+          "heading": "## Trace key concepts",
+          "needle": "traces are stored in Azure Monitor Application Insights",
+          "excerpt": "| Semantic conventions | OpenTelemetry defines semantic conventions to standardize names and formats for trace data attributes, making it easier to interpret and analyze across tools and platforms. To learn more, see the [OpenTelemetry GenAI semantic conventions](https://github.com/open-telemetry/semantic-conventions-genai). |\n| Trace exporters | Trace exporters send trace data to backend systems for storage and analysis. In Foundry, traces are stored in Azure Monitor Application Insights. To learn how to enable and view traces, see [How to set up tracing in Microsoft Foundry](../how-to/trace-agent-setup). |\n\n## How tracing works in Foundry",
+          "sourceSha256": "895295a4b74d7cabaa0daf62bd6cd5239daf25b6ea85a2268dc2cdf8483b19e8"
+        }
+      ]
+    },
+    {
+      "claimId": "F013B",
+      "statement": "Correlate traces with evaluation runs and redact personal data, credentials, and secrets before telemetry is stored.",
+      "sourceId": "S013",
+      "sourceUrl": "https://learn.microsoft.com/azure/foundry/observability/concepts/trace-agent-concept",
+      "versionContext": "Prompt/hosted tracing GA; workflow/external preview",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S013.md",
+          "lineStart": 95,
+          "lineEnd": 99,
+          "heading": "## Best practices",
+          "needle": "Correlate evaluation run IDs",
+          "excerpt": "- **Use consistent span attributes**: Apply the same attribute names and formats across all agents and tools to simplify querying and analysis.\n- **Correlate evaluation run IDs**: Link trace data with evaluation runs to analyze both quality and performance in a unified view.\n- **Redact sensitive content**: Remove or mask personal data, secrets, and credentials from prompts, tool arguments, and span attributes before they reach telemetry.\n\n## Security and privacy",
+          "sourceSha256": "895295a4b74d7cabaa0daf62bd6cd5239daf25b6ea85a2268dc2cdf8483b19e8"
+        },
+        {
+          "snapshot": "sources/snapshots/S013.md",
+          "lineStart": 102,
+          "lineEnd": 105,
+          "heading": "## Security and privacy",
+          "needle": "Don't store secrets",
+          "excerpt": "\n- Don't store secrets, credentials, or tokens in prompts, tool arguments, or span attributes.\n- Redact or minimize personal data and other sensitive content before it appears in telemetry.\n- Treat trace data as production telemetry and apply the same access controls and retention policies you use for logs and metrics.",
+          "sourceSha256": "895295a4b74d7cabaa0daf62bd6cd5239daf25b6ea85a2268dc2cdf8483b19e8"
+        }
+      ]
+    },
+    {
+      "claimId": "F037A",
+      "statement": "Structured outputs use response_format in Chat Completions and text.format in Responses; older JSON mode guarantees valid JSON without strict schema adherence.",
+      "sourceId": "S037",
+      "sourceUrl": "https://learn.microsoft.com/azure/foundry/openai/how-to/structured-outputs",
+      "versionContext": "Chat Completions response_format versus Responses text.format; strict schema subset",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S037.md",
+          "lineStart": 2,
+          "lineEnd": 5,
+          "heading": "# Structured outputs",
+          "needle": "For Chat Completions, define the schema",
+          "excerpt": "\nStructured outputs make a model follow a [JSON Schema](https://json-schema.org/overview/what-is-jsonschema) definition that you provide as part of your inference API call. Both the Chat Completions API and Responses API support structured outputs. For Chat Completions, define the schema in `response_format`. For Responses, define the schema in `text.format`. This approach contrasts with the older [JSON mode](json-mode) feature, which guaranteed valid JSON but couldn't ensure strict adherence to the supplied schema. Use structured outputs for function calling, extracting structured data, and building complex multi-step workflows.\n\n::: zone pivot=\"programming-language-python\"",
+          "sourceSha256": "0337c89ce3e5a9ba28d1c2fc18f1644c50b13568eb19edc43420d16b401cacfc"
+        },
+        {
+          "snapshot": "sources/snapshots/S037.md",
+          "lineStart": 2,
+          "lineEnd": 5,
+          "heading": "# Structured outputs",
+          "needle": "older [JSON mode]",
+          "excerpt": "\nStructured outputs make a model follow a [JSON Schema](https://json-schema.org/overview/what-is-jsonschema) definition that you provide as part of your inference API call. Both the Chat Completions API and Responses API support structured outputs. For Chat Completions, define the schema in `response_format`. For Responses, define the schema in `text.format`. This approach contrasts with the older [JSON mode](json-mode) feature, which guaranteed valid JSON but couldn't ensure strict adherence to the supplied schema. Use structured outputs for function calling, extracting structured data, and building complex multi-step workflows.\n\n::: zone pivot=\"programming-language-python\"",
+          "sourceSha256": "0337c89ce3e5a9ba28d1c2fc18f1644c50b13568eb19edc43420d16b401cacfc"
+        }
+      ]
+    },
+    {
+      "claimId": "F038A",
+      "statement": "Supported reasoning models can return reasoning summaries through the Responses API; preserve the distinction between a returned summary and a full internal reasoning transcript.",
+      "sourceId": "S038",
+      "sourceUrl": "https://learn.microsoft.com/azure/foundry/openai/how-to/reasoning",
+      "versionContext": "Feature-specific qualifications in snapshot; package/API version unknown unless stated in a referenced excerpt.",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S038.md",
+          "lineStart": 644,
+          "lineEnd": 647,
+          "heading": "## Reasoning summary",
+          "needle": "## Reasoning summary",
+          "excerpt": "\n## Reasoning summary\n\nWhen using the latest reasoning models with the [Responses API](responses) you can use the reasoning summary parameter to receive summaries of the model's chain of thought reasoning.",
+          "sourceSha256": "e70ad3d65055c901703ee0f2faa850aa6c69cd5ee2a4d7e57d3e0a5e0b3cbf34"
+        },
+        {
+          "snapshot": "sources/snapshots/S038.md",
+          "lineStart": 644,
+          "lineEnd": 647,
+          "heading": "## Reasoning summary",
+          "needle": "summar",
+          "excerpt": "\n## Reasoning summary\n\nWhen using the latest reasoning models with the [Responses API](responses) you can use the reasoning summary parameter to receive summaries of the model's chain of thought reasoning.",
+          "sourceSha256": "e70ad3d65055c901703ee0f2faa850aa6c69cd5ee2a4d7e57d3e0a5e0b3cbf34"
+        },
+        {
+          "snapshot": "sources/snapshots/S038.md",
+          "lineStart": 652,
+          "lineEnd": 660,
+          "heading": "## Reasoning summary",
+          "needle": "Attempting to extract raw reasoning",
+          "excerpt": "\nAttempting to extract raw reasoning through methods other than the reasoning summary parameter are not supported, may violate the Acceptable Use Policy, and may result in throttling or suspension when detected.\n\n# [C#](#tab/csharp)\n```csharp\nusing OpenAI;\nusing OpenAI.Responses;\nusing System.ClientModel.Primitives;\nusing Azure.Identity;",
+          "sourceSha256": "e70ad3d65055c901703ee0f2faa850aa6c69cd5ee2a4d7e57d3e0a5e0b3cbf34"
+        }
+      ]
+    },
+    {
+      "claimId": "F041A",
+      "statement": "Model router defaults to Balanced routing mode and supports restricting the routed model subset.",
+      "sourceId": "S041",
+      "sourceUrl": "https://learn.microsoft.com/azure/foundry/openai/how-to/model-router",
+      "versionContext": "Feature-specific qualifications in snapshot; package/API version unknown unless stated in a referenced excerpt.",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S041.md",
+          "lineStart": 60,
+          "lineEnd": 63,
+          "heading": "## Deploy a model router model",
+          "needle": "**Balanced** routing mode",
+          "excerpt": "\nBy default, model router deploys with the **Balanced** routing mode and routes across the full supported model set. You only need to change the routing mode or select a model subset when you want custom routing behavior.\n\n![Screenshot of model router deploy screen.](media/working-with-models/model-router-deploy.png)",
+          "sourceSha256": "3be91b9f91f1b5fcf1b54983251d4026747960e43c423f8f4caa3191336bf5d1"
+        },
+        {
+          "snapshot": "sources/snapshots/S041.md",
+          "lineStart": 124,
+          "lineEnd": 127,
+          "heading": "#### Optional: route to a model subset",
+          "needle": "### Optional: route to a model subset",
+          "excerpt": "\n#### Optional: route to a model subset\n\nSign in to [Microsoft Foundry](https://ai.azure.com/?cid=learnDocs). Make sure the **New Foundry** toggle is on. These steps refer to **Foundry (new)**.",
+          "sourceSha256": "3be91b9f91f1b5fcf1b54983251d4026747960e43c423f8f4caa3191336bf5d1"
+        }
+      ]
+    },
+    {
+      "claimId": "F047A",
+      "statement": "The general prompt-engineering guide explicitly excludes its techniques from reasoning-model recommendations; check the specific model's supported controls.",
+      "sourceId": "S047",
+      "sourceUrl": "https://learn.microsoft.com/azure/foundry/openai/concepts/prompt-engineering",
+      "versionContext": "Feature-specific qualifications in snapshot; package/API version unknown unless stated in a referenced excerpt.",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S047.md",
+          "lineStart": 2,
+          "lineEnd": 5,
+          "heading": "# Prompt engineering techniques",
+          "needle": "aren't recommended for reasoning models",
+          "excerpt": "\nThese techniques aren't recommended for reasoning models like gpt-5 and o-series models.\n\nPrompt construction can be difficult. In practice, the prompt acts to help the model complete the desired task, but it's more of an art than a science, often requiring experience and intuition to craft a successful prompt. The goal of this article is to help get you started with this learning process. This article attempts to capture general concepts and patterns that apply to all GPT models. However, it's important to understand that each model behaves differently, so the learnings might not apply equally to all models.",
+          "sourceSha256": "b4589840f35e640a7d5b7936baa6a05b21af3023e4ec00d3aa471e990ec8fccd"
+        }
+      ]
+    }
+  ],
+  "constraints": [
+    "Only listed facts with conditions establish answer keys. Cite correct answers and distractor rationales.",
+    "Preserve API/SDK generation, preview, retirement and region/model qualifiers.",
+    "No unshown methods, asserted execution, GH-600 material, dumps, remembered assessments or official format parity.",
+    "Ready is bounded evidence support; later content review and manual solve-first audit are still required.",
+    "Orchestration scope is documented pattern/tool/approval semantics; current Framework code requires matching pinned evidence."
+  ]
+}

@@ -1,7 +1,8 @@
 # Cloud Run Deployment Runbook
 
-> **Normal workflow:** just push to `main`. The CI/CD pipeline handles everything automatically.
-> This runbook covers first-time setup, manual operations, and rollback.
+> **Current policy (November 2, 2026): GitHub Actions is disabled.** Pushes do not
+> run hosted CI or deploy. Run `npm run ci:local` before pushing. The historical
+> instructions below apply only after deliberate reconfiguration of Actions and deployment.
 
 ---
 
@@ -27,11 +28,11 @@ bash scripts/gcp-setup.sh
 | Secret Manager secret | `openai-api-key` (read from local `.env`) |
 | GitHub Actions secrets set | `GCP_PROJECT_ID`, `GCP_WORKLOAD_IDENTITY_PROVIDER`, `GCP_SERVICE_ACCOUNT`, `GCS_BUCKET` |
 
-After running the script, push to `main` to trigger the first deploy.
+The retained workflow is manual-only and Actions is disabled; setup does not enable deployment.
 
 ---
 
-## Normal deploy
+## Historical automatic deploy (disabled)
 
 ```bash
 git push origin main

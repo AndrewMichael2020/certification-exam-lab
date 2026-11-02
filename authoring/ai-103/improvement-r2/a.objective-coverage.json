@@ -1,0 +1,1473 @@
+{
+  "scope": "One 100-item package; no full syllabus or calibrated-readiness claim",
+  "officialBulletCount": 64,
+  "assessedBullets": 50,
+  "items": [
+    {
+      "objectiveId": "AI103-A1.01",
+      "officialWording": "Choose an appropriate model for each task, including large language models (LLMs), small language models, multimodal models, and Foundry Tools",
+      "evidenceReadiness": "partial",
+      "reassessmentReason": "Model comparisons document benchmark trade-offs; task-specific small/code/multimodal comparison evidence remains incomplete.",
+      "excluded": false,
+      "assessment": [],
+      "remainingWork": "Model comparisons document benchmark trade-offs; task-specific small/code/multimodal comparison evidence remains incomplete."
+    },
+    {
+      "objectiveId": "AI103-A1.02",
+      "officialWording": "Choose the appropriate Foundry services for generative tasks, grounding, vector search, agent workflows, or multimodal processing",
+      "evidenceReadiness": "sufficient for documented authored scope",
+      "reassessmentReason": "Bounded documented facts and stated judgment only.",
+      "excluded": false,
+      "assessment": [
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q042",
+          "primary": true,
+          "testedDecision": "A team wants one supported Python client library for extracting document layout, transcribing audio and analyzing recorded video into structured outputs. Which service’s documented client covers all three input modalities?",
+          "sourceIds": [
+            "S021"
+          ]
+        }
+      ],
+      "remainingWork": "Independent content review pending."
+    },
+    {
+      "objectiveId": "AI103-A1.03",
+      "officialWording": "Choose an appropriate method for retrieval and indexing",
+      "evidenceReadiness": "sufficient for documented authored scope",
+      "reassessmentReason": "Bounded documented facts and stated judgment only.",
+      "excluded": false,
+      "assessment": [
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q045",
+          "primary": true,
+          "testedDecision": "A catalog requires exact part-code matches and semantic symptom matches. Which design combines both retrieval signals before optional reranking?",
+          "sourceIds": [
+            "S025",
+            "S026"
+          ]
+        }
+      ],
+      "remainingWork": "Independent content review pending."
+    },
+    {
+      "objectiveId": "AI103-A1.04",
+      "officialWording": "Choose appropriate memory, tool, and knowledge integration services for agent solutions",
+      "evidenceReadiness": "sufficient for documented authored scope",
+      "reassessmentReason": "Bounded documented facts and stated judgment only.",
+      "excluded": false,
+      "assessment": [
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q037",
+          "primary": true,
+          "testedDecision": "An agent must remember a user's preferred units across conversations while answering from a maintained engineering manual. Which division of context is appropriate?",
+          "sourceIds": [
+            "S006"
+          ]
+        }
+      ],
+      "remainingWork": "Independent content review pending."
+    },
+    {
+      "objectiveId": "AI103-A2.01",
+      "officialWording": "Design Azure infrastructure for AI apps and agent-based solutions",
+      "evidenceReadiness": "sufficient for documented authored scope",
+      "reassessmentReason": "Bounded documented facts and stated judgment only.",
+      "excluded": false,
+      "assessment": [
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q041",
+          "primary": true,
+          "testedDecision": "An organization requires agent state in customer-managed resources in its own subscription. Which agent setup aligns with that storage requirement?",
+          "sourceIds": [
+            "S009"
+          ]
+        }
+      ],
+      "remainingWork": "Independent content review pending."
+    },
+    {
+      "objectiveId": "AI103-A2.02",
+      "officialWording": "Choose appropriate deployment options",
+      "evidenceReadiness": "sufficient for documented authored scope",
+      "reassessmentReason": "Bounded documented facts and stated judgment only.",
+      "excluded": false,
+      "assessment": [
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q009",
+          "primary": true,
+          "testedDecision": "Which deployment fits Lumen’s interactive EU-processing and on-demand billing requirements?",
+          "sourceIds": [
+            "S005"
+          ]
+        },
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q017",
+          "primary": true,
+          "testedDecision": "An interactive assistant may process requests across EU countries but cannot process them outside the EU. Usage varies, and the team wants token-based billing. The model supports all listed types. Which deployment fits?",
+          "sourceIds": [
+            "S005"
+          ]
+        },
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q018",
+          "primary": true,
+          "testedDecision": "A service has predictable sustained model traffic and needs allocated throughput. Its processing boundary is already satisfied by the chosen region. Which deployment characteristic should drive the selection?",
+          "sourceIds": [
+            "S005"
+          ]
+        },
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q087",
+          "primary": true,
+          "testedDecision": "Match each workload requirement to its deployment family. Geography and model support have already been checked. Use each selected choice once; one choice is unused.",
+          "sourceIds": [
+            "S005"
+          ]
+        }
+      ],
+      "remainingWork": "Independent content review pending."
+    },
+    {
+      "objectiveId": "AI103-A2.03",
+      "officialWording": "Configure model and agent deployments",
+      "evidenceReadiness": "sufficient for documented authored scope",
+      "reassessmentReason": "Bounded documented facts and stated judgment only.",
+      "excluded": false,
+      "assessment": [
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q044",
+          "primary": true,
+          "testedDecision": "Complete the AI Projects Python 2.8.0 constructor for project operations.",
+          "sourceIds": [
+            "S002",
+            "S003"
+          ]
+        }
+      ],
+      "remainingWork": "Independent content review pending."
+    },
+    {
+      "objectiveId": "AI103-A2.04",
+      "officialWording": "Integrate Foundry projects with continuous integration and continuous deployment (CI/CD) pipelines",
+      "evidenceReadiness": "sufficient for documented authored scope",
+      "reassessmentReason": "Bounded documented facts and stated judgment only.",
+      "excluded": false,
+      "assessment": [
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q012",
+          "primary": true,
+          "testedDecision": "Lumen’s OIDC token succeeds but deployment is denied. Which authorization correction targets the case defect?",
+          "sourceIds": [
+            "S012",
+            "S010"
+          ]
+        },
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q023",
+          "primary": true,
+          "testedDecision": "A GitHub workflow must deploy a hosted agent with no long-lived Azure credential stored in GitHub. Which identity setup fits the documented deployment pattern?",
+          "sourceIds": [
+            "S012"
+          ]
+        }
+      ],
+      "remainingWork": "Independent content review pending."
+    },
+    {
+      "objectiveId": "AI103-A3.01",
+      "officialWording": "Manage quotas, scaling, rate limits, and cost footprints for model and agent workloads",
+      "evidenceReadiness": "sufficient for documented authored scope",
+      "reassessmentReason": "Bounded documented facts and stated judgment only.",
+      "excluded": false,
+      "assessment": [
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q021",
+          "primary": true,
+          "testedDecision": "A Foundry managed-compute preview deployment needs more accelerators. Matching GPU VM quota is available in the same region. Which quota should the team request?",
+          "sourceIds": [
+            "S004"
+          ]
+        },
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q022",
+          "primary": true,
+          "testedDecision": "A hosted agent returns session_quota_exceeded. Several sessions no longer need active compute, but their stored state is still required. What should the operator do?",
+          "sourceIds": [
+            "S009"
+          ]
+        }
+      ],
+      "remainingWork": "Independent content review pending."
+    },
+    {
+      "objectiveId": "AI103-A3.02",
+      "officialWording": "Monitor model performance, drift, safety events, and grounding quality",
+      "evidenceReadiness": "partial",
+      "reassessmentReason": "Accuracy/drift monitoring guidance exists; a version-specific Foundry drift implementation contract is not established.",
+      "excluded": false,
+      "assessment": [],
+      "remainingWork": "Accuracy/drift monitoring guidance exists; a version-specific Foundry drift implementation contract is not established."
+    },
+    {
+      "objectiveId": "AI103-A3.03",
+      "officialWording": "Monitor data ingestion quality, search index health, and relevance performance",
+      "evidenceReadiness": "sufficient for documented authored scope",
+      "reassessmentReason": "Bounded documented facts and stated judgment only.",
+      "excluded": false,
+      "assessment": [
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q026",
+          "primary": true,
+          "testedDecision": "An indexer reports Success, but several known source documents are absent from Search. Where should the investigation start?",
+          "sourceIds": [
+            "S027",
+            "S044"
+          ]
+        },
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q088",
+          "primary": true,
+          "testedDecision": "Match each investigation to the most direct evidence source. Use each selected choice once; one choice is unused.",
+          "sourceIds": [
+            "S013",
+            "S027",
+            "S044"
+          ]
+        }
+      ],
+      "remainingWork": "Independent content review pending."
+    },
+    {
+      "objectiveId": "AI103-A3.04",
+      "officialWording": "Configure security, including managed identity, private networking, keyless credentials, and role policies",
+      "evidenceReadiness": "sufficient for documented authored scope",
+      "reassessmentReason": "Bounded documented facts and stated judgment only.",
+      "excluded": false,
+      "assessment": [
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q010",
+          "primary": true,
+          "testedDecision": "Lumen’s runtime obtains a token but Reader-only inference is denied. Which documented role at the called Azure OpenAI resource supplies inference permission?",
+          "sourceIds": [
+            "S051",
+            "S052"
+          ]
+        },
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q011",
+          "primary": true,
+          "testedDecision": "Lumen’s Search role is correct, but the runtime resolves Search publicly. What should be repaired first?",
+          "sourceIds": [
+            "S011"
+          ]
+        },
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q019",
+          "primary": true,
+          "testedDecision": "Developers have scoped Foundry RBAC roles, but a shared resource key authenticates the application. A developer can perform an operation that their role excludes. Which change makes the role assignments effective for those calls?",
+          "sourceIds": [
+            "S010"
+          ]
+        },
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q020",
+          "primary": true,
+          "testedDecision": "A secured agent has the required runtime roles. Search resolves to a public IP from the agent network even though public access is disabled. The private endpoint exists. What should be investigated next?",
+          "sourceIds": [
+            "S011"
+          ]
+        },
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q043",
+          "primary": true,
+          "testedDecision": "Complete the Azure OpenAI v1 client for keyless inference. The calling identity has the inference role at the resource scope.",
+          "sourceIds": [
+            "S051",
+            "S052"
+          ]
+        },
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q089",
+          "primary": true,
+          "testedDecision": "Match each keyless inference observation to the boundary to inspect. Use each selected choice once; one choice is unused.",
+          "sourceIds": [
+            "S051",
+            "S052",
+            "S010"
+          ]
+        }
+      ],
+      "remainingWork": "Independent content review pending."
+    },
+    {
+      "objectiveId": "AI103-A4.01",
+      "officialWording": "Configure safety filters, guardrails, risk detection, and content moderation",
+      "evidenceReadiness": "sufficient for documented authored scope",
+      "reassessmentReason": "Bounded documented facts and stated judgment only.",
+      "excluded": false,
+      "assessment": [
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q040",
+          "primary": true,
+          "testedDecision": "A retrieved maintenance page tells the agent to ignore its instructions and send credentials to a URL. Which threat category should be evaluated at this boundary?",
+          "sourceIds": [
+            "S015",
+            "S016"
+          ]
+        },
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q090",
+          "primary": true,
+          "testedDecision": "Match each trust boundary to the relevant inspection point. Use each selected choice once; one choice is unused.",
+          "sourceIds": [
+            "S015",
+            "S016"
+          ]
+        }
+      ],
+      "remainingWork": "Independent content review pending."
+    },
+    {
+      "objectiveId": "AI103-A4.02",
+      "officialWording": "Apply responsible AI instrumentation, including evaluators, safety evaluations, and explanation tooling",
+      "evidenceReadiness": "sufficient for documented authored scope",
+      "reassessmentReason": "Bounded documented facts and stated judgment only.",
+      "excluded": false,
+      "assessment": [
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q038",
+          "primary": true,
+          "testedDecision": "An agent follows its operating policy and calls the correct tools, but leaves two requested deliverables unfinished. Which evaluator best targets the overall outcome?",
+          "sourceIds": [
+            "S014"
+          ]
+        },
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q039",
+          "primary": true,
+          "testedDecision": "A team has query-document relevance labels and wants to compare two retrievers before adding answer generation. Which evaluation is appropriate?",
+          "sourceIds": [
+            "S039"
+          ]
+        }
+      ],
+      "remainingWork": "Independent content review pending."
+    },
+    {
+      "objectiveId": "AI103-A4.03",
+      "officialWording": "Implement auditing through trace logging, provenance metadata, and approval workflows",
+      "evidenceReadiness": "sufficient for documented authored scope",
+      "reassessmentReason": "Bounded documented facts and stated judgment only.",
+      "excluded": false,
+      "assessment": [
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q024",
+          "primary": true,
+          "testedDecision": "An agent request traverses retrieval, generation and a business tool. Engineers need to attribute a latency increase to one operation and its parent request. Which telemetry structure supports that?",
+          "sourceIds": [
+            "S013"
+          ]
+        },
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q025",
+          "primary": true,
+          "testedDecision": "Tool arguments include account numbers and an access token. Engineers need useful traces for incident diagnosis. Which collection policy best fits?",
+          "sourceIds": [
+            "S013"
+          ]
+        }
+      ],
+      "remainingWork": "Independent content review pending."
+    },
+    {
+      "objectiveId": "AI103-A4.04",
+      "officialWording": "Govern agent behavior with oversight modes, constraints, and tool-access controls",
+      "evidenceReadiness": "sufficient for documented authored scope",
+      "reassessmentReason": "Bounded documented facts and stated judgment only.",
+      "excluded": false,
+      "assessment": [
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q046",
+          "primary": true,
+          "testedDecision": "An agent proposes a consequential account change. Which host boundary should decide whether it executes?",
+          "sourceIds": [
+            "S054"
+          ]
+        }
+      ],
+      "remainingWork": "Independent content review pending."
+    },
+    {
+      "objectiveId": "AI103-B1.01",
+      "officialWording": "Deploy and consume LLMs, small models, code models, and multimodal models",
+      "evidenceReadiness": "sufficient for documented authored scope",
+      "reassessmentReason": "Bounded documented facts and stated judgment only.",
+      "excluded": false,
+      "assessment": [],
+      "remainingWork": "No item in this single package."
+    },
+    {
+      "objectiveId": "AI103-B1.02",
+      "officialWording": "Implement retrieval-augmented generation (RAG) in an application",
+      "evidenceReadiness": "sufficient for documented authored scope",
+      "reassessmentReason": "Bounded documented facts and stated judgment only.",
+      "excluded": false,
+      "assessment": [
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q005",
+          "primary": true,
+          "testedDecision": "Harbor must serve HX-104 identifiers and descriptions of symptoms. Which retrieval approach combines those signals?",
+          "sourceIds": [
+            "S025"
+          ]
+        },
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q006",
+          "primary": true,
+          "testedDecision": "Harbor tests harbor-embed-y for queries while content remains from harbor-embed-x. Equal dimensions did not preserve relevance. Which correction targets the mismatch?",
+          "sourceIds": [
+            "S026",
+            "S058"
+          ]
+        },
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q008",
+          "primary": true,
+          "testedDecision": "Harbor’s employee is authorized for one department. Which control enforces that boundary before passages reach the model?",
+          "sourceIds": [
+            "S040",
+            "S054"
+          ]
+        },
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q035",
+          "primary": true,
+          "testedDecision": "A Search tool points at the right service but retrieves an unrelated index. Which agent-tool configuration should be corrected first?",
+          "sourceIds": [
+            "S040"
+          ]
+        },
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q071",
+          "primary": true,
+          "testedDecision": "A RAG system must find exact equipment identifiers and semantic paraphrases. It uses a vector index built with model X. Which TWO design choices fit? Select TWO answers.",
+          "sourceIds": [
+            "S025",
+            "S026"
+          ]
+        }
+      ],
+      "remainingWork": "Independent content review pending."
+    },
+    {
+      "objectiveId": "AI103-B1.03",
+      "officialWording": "Design workflows, tool-augmented flows, and multistep reasoning pipelines",
+      "evidenceReadiness": "sufficient for documented authored scope",
+      "reassessmentReason": "Bounded documented facts and stated judgment only.",
+      "excluded": false,
+      "assessment": [],
+      "remainingWork": "No item in this single package."
+    },
+    {
+      "objectiveId": "AI103-B1.04",
+      "officialWording": "Evaluate models and apps, including detecting fabrications, relevance, quality, and safety",
+      "evidenceReadiness": "sufficient for documented authored scope",
+      "reassessmentReason": "Bounded documented facts and stated judgment only.",
+      "excluded": false,
+      "assessment": [
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q007",
+          "primary": true,
+          "testedDecision": "Harbor answers twenty-four months from a passage saying twelve. It stays on topic. Which evaluation isolates this defect?",
+          "sourceIds": [
+            "S039"
+          ]
+        },
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q036",
+          "primary": true,
+          "testedDecision": "A response is fully supported by context and addresses the question, but omits two required parts of the reference answer. Which additional metric is most targeted?",
+          "sourceIds": [
+            "S039"
+          ]
+        }
+      ],
+      "remainingWork": "Independent content review pending."
+    },
+    {
+      "objectiveId": "AI103-B1.05",
+      "officialWording": "Integrate generative workflows into applications by using Foundry SDKs and connectors",
+      "evidenceReadiness": "sufficient for documented authored scope",
+      "reassessmentReason": "Bounded documented facts and stated judgment only.",
+      "excluded": false,
+      "assessment": [],
+      "remainingWork": "No item in this single package."
+    },
+    {
+      "objectiveId": "AI103-B1.06",
+      "officialWording": "Configure an application to connect to a Foundry project",
+      "evidenceReadiness": "sufficient for documented authored scope",
+      "reassessmentReason": "Bounded documented facts and stated judgment only.",
+      "excluded": false,
+      "assessment": [
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q027",
+          "primary": true,
+          "testedDecision": "Complete the current Python client calls for an existing agent named helpdesk and its project OpenAI client.",
+          "sourceIds": [
+            "S002",
+            "S056"
+          ]
+        }
+      ],
+      "remainingWork": "Independent content review pending."
+    },
+    {
+      "objectiveId": "AI103-B2.01",
+      "officialWording": "Define agent roles, goals, conversation-tracking approach, and tool schemas",
+      "evidenceReadiness": "sufficient for documented authored scope",
+      "reassessmentReason": "Bounded documented facts and stated judgment only.",
+      "excluded": false,
+      "assessment": [
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q001",
+          "primary": true,
+          "testedDecision": "In Rotor’s two-warehouse request, west completes first. Which output correlation preserves the API contract?",
+          "sourceIds": [
+            "S007"
+          ]
+        },
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q029",
+          "primary": true,
+          "testedDecision": "A Responses turn must consult at least one attached tool. Complete the request-level control.",
+          "sourceIds": [
+            "S054"
+          ]
+        },
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q069",
+          "primary": true,
+          "testedDecision": "An agent proposes a refund. The application requires user confirmation, and the model supplies untrusted arguments. Which TWO host responsibilities are needed before the side effect? Select TWO answers.",
+          "sourceIds": [
+            "S007"
+          ]
+        },
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q093",
+          "primary": true,
+          "testedDecision": "Match each response-turn requirement to the documented tool_choice mode. Use each selected choice once; one choice is unused.",
+          "sourceIds": [
+            "S054"
+          ]
+        }
+      ],
+      "remainingWork": "Independent content review pending."
+    },
+    {
+      "objectiveId": "AI103-B2.02",
+      "officialWording": "Build agents that integrate retrieval, function-calling, and conversation memory",
+      "evidenceReadiness": "sufficient for documented authored scope",
+      "reassessmentReason": "Bounded documented facts and stated judgment only.",
+      "excluded": false,
+      "assessment": [
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q002",
+          "primary": true,
+          "testedDecision": "Rotor’s fresh availability turn must use a tool rather than answer from prior knowledge. Both tools are available. Which request-level mode requires tool use?",
+          "sourceIds": [
+            "S054",
+            "S007"
+          ]
+        },
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q013",
+          "primary": true,
+          "testedDecision": "North uses one backend principal and {{$userId}} with no header. Which implementation separates authenticated subscribers?",
+          "sourceIds": [
+            "S053"
+          ]
+        },
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q014",
+          "primary": true,
+          "testedDecision": "North’s administrative job searches low-level memory with the subscriber named only in query text. What must change?",
+          "sourceIds": [
+            "S053"
+          ]
+        },
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q028",
+          "primary": true,
+          "testedDecision": "Complete a backend memory-search tool definition and response header for per-user preferences. user_key is derived from the authenticated session.",
+          "sourceIds": [
+            "S053"
+          ]
+        },
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q073",
+          "primary": true,
+          "testedDecision": "A support agent needs a remembered user preference, current corporate policy and a receipt uploaded for this interaction. Which TWO assignments are appropriate? Select TWO answers.",
+          "sourceIds": [
+            "S006"
+          ]
+        },
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q074",
+          "primary": true,
+          "testedDecision": "A proxy calls a memory-enabled prompt agent for two users using one managed identity. Which TWO requirements implement separate preferences? Select TWO answers.",
+          "sourceIds": [
+            "S053"
+          ]
+        },
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q092",
+          "primary": true,
+          "testedDecision": "Match each information need to the documented context capability. Use each selected choice once; one choice is unused.",
+          "sourceIds": [
+            "S006"
+          ]
+        }
+      ],
+      "remainingWork": "Independent content review pending."
+    },
+    {
+      "objectiveId": "AI103-B2.03",
+      "officialWording": "Integrate agent tools, including APIs, knowledge stores, search, content understanding, and custom functions",
+      "evidenceReadiness": "partial",
+      "reassessmentReason": "The Agent Framework context provider is documented. This is distinct from a native Foundry Agent Service tool contract; cross-surface integration remains partial.",
+      "excluded": false,
+      "assessment": [],
+      "remainingWork": "The Agent Framework context provider is documented. This is distinct from a native Foundry Agent Service tool contract; cross-surface integration remains partial."
+    },
+    {
+      "objectiveId": "AI103-B2.04",
+      "officialWording": "Implement orchestrated multi-agent solutions",
+      "evidenceReadiness": "sufficient for documented authored scope",
+      "reassessmentReason": "Bounded documented facts and stated judgment only.",
+      "excluded": false,
+      "assessment": [
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q033",
+          "primary": true,
+          "testedDecision": "A deterministic workflow sends a request to a retrieval specialist and then a policy specialist. What must its orchestration represent?",
+          "sourceIds": [
+            "S008"
+          ]
+        }
+      ],
+      "remainingWork": "Independent content review pending."
+    },
+    {
+      "objectiveId": "AI103-B2.05",
+      "officialWording": "Build autonomous or semiautonomous workflows with safeguards and approval flow controls",
+      "evidenceReadiness": "sufficient for documented authored scope",
+      "reassessmentReason": "Bounded documented facts and stated judgment only.",
+      "excluded": false,
+      "assessment": [
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q003",
+          "primary": true,
+          "testedDecision": "In Rotor’s cross-account reservation test, the JSON schema passes. Which check must decide whether the host may execute?",
+          "sourceIds": [
+            "S007",
+            "S054"
+          ]
+        },
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q004",
+          "primary": true,
+          "testedDecision": "Rotor approved five units, then the proposal changed to fifty. What should the host do?",
+          "sourceIds": [
+            "S007",
+            "S054"
+          ]
+        },
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q072",
+          "primary": true,
+          "testedDecision": "An agent receives hostile user prompts and malicious instructions inside retrieved text. Which TWO controls align with those different entry points? Select TWO answers.",
+          "sourceIds": [
+            "S015",
+            "S016"
+          ]
+        }
+      ],
+      "remainingWork": "Independent content review pending."
+    },
+    {
+      "objectiveId": "AI103-B2.06",
+      "officialWording": "Integrate monitoring into deployed agents, evaluate agent behavior, and perform error analysis",
+      "evidenceReadiness": "sufficient for documented authored scope",
+      "reassessmentReason": "Bounded documented facts and stated judgment only.",
+      "excluded": false,
+      "assessment": [
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q034",
+          "primary": true,
+          "testedDecision": "An agent calls the translation tool for a request that requires stock availability. The translation call is valid and succeeds. Which evaluation pinpoints the mistake?",
+          "sourceIds": [
+            "S014"
+          ]
+        },
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q091",
+          "primary": true,
+          "testedDecision": "Match each observed agent defect to the targeted tool evaluator. Use each selected choice once; one choice is unused.",
+          "sourceIds": [
+            "S014"
+          ]
+        }
+      ],
+      "remainingWork": "Independent content review pending."
+    },
+    {
+      "objectiveId": "AI103-B3.01",
+      "officialWording": "Tune generation behavior, such as prompt engineering and adjusting model parameters",
+      "evidenceReadiness": "sufficient for documented authored scope",
+      "reassessmentReason": "Bounded documented facts and stated judgment only.",
+      "excluded": false,
+      "assessment": [
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q015",
+          "primary": true,
+          "testedDecision": "North’s Responses builder copied response_format from Chat Completions. Where should its structured-result format be configured?",
+          "sourceIds": [
+            "S037"
+          ]
+        },
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q016",
+          "primary": true,
+          "testedDecision": "North wants a domain boundary and clarification when evidence is missing. Which design addresses behavior and enforcement?",
+          "sourceIds": [
+            "S057"
+          ]
+        },
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q030",
+          "primary": true,
+          "testedDecision": "Complete a supported strict Responses schema: note must be present and can be null; unknown properties are rejected.",
+          "sourceIds": [
+            "S037"
+          ]
+        },
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q031",
+          "primary": true,
+          "testedDecision": "A supported reasoning model returns a reasoning summary through Responses. A product manager wants to label it 'the model's complete internal reasoning'. Which description is accurate?",
+          "sourceIds": [
+            "S038"
+          ]
+        },
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q032",
+          "primary": true,
+          "testedDecision": "A support assistant should stay within product support and ask for clarification when evidence is insufficient. Which prompt control expresses both?",
+          "sourceIds": [
+            "S057"
+          ]
+        },
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q070",
+          "primary": true,
+          "testedDecision": "A strict Responses output must contain code and comment. Comment may be null, and additional fields are prohibited. Which TWO schema decisions satisfy those constraints? Select TWO answers.",
+          "sourceIds": [
+            "S037"
+          ]
+        },
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q075",
+          "primary": true,
+          "testedDecision": "A support agent needs a domain boundary and a measurable fallback for missing evidence. Which TWO activities address those requirements? Select TWO answers.",
+          "sourceIds": [
+            "S057"
+          ]
+        }
+      ],
+      "remainingWork": "Independent content review pending."
+    },
+    {
+      "objectiveId": "AI103-B3.02",
+      "officialWording": "Implement model reflection, chain-of-thought evaluations, and self-critique loops",
+      "evidenceReadiness": "partial",
+      "reassessmentReason": "Agent evaluation and reasoning summaries are documented; hidden chain-of-thought and an implemented self-critique loop are not established by these sources.",
+      "excluded": false,
+      "assessment": [],
+      "remainingWork": "Agent evaluation and reasoning summaries are documented; hidden chain-of-thought and an implemented self-critique loop are not established by these sources."
+    },
+    {
+      "objectiveId": "AI103-B3.03",
+      "officialWording": "Set up observability by implementing tracing, token analytics, safety signals, and latency breakdowns",
+      "evidenceReadiness": "sufficient for documented authored scope",
+      "reassessmentReason": "Bounded documented facts and stated judgment only.",
+      "excluded": false,
+      "assessment": [],
+      "remainingWork": "No item in this single package."
+    },
+    {
+      "objectiveId": "AI103-B3.04",
+      "officialWording": "Orchestrate multiple models, flows, or hybrid LLM and rules engines",
+      "evidenceReadiness": "sufficient for documented authored scope",
+      "reassessmentReason": "Bounded documented facts and stated judgment only.",
+      "excluded": false,
+      "assessment": [
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q076",
+          "primary": true,
+          "testedDecision": "A specialist agent proposes an action that a deterministic host rule must approve. Which TWO responsibilities should the design keep explicit? Select TWO answers.",
+          "sourceIds": [
+            "S008",
+            "S007"
+          ]
+        }
+      ],
+      "remainingWork": "Independent content review pending."
+    },
+    {
+      "objectiveId": "AI103-C1.01",
+      "officialWording": "Implement a solution that generates images from text prompts and reference media",
+      "evidenceReadiness": "sufficient for documented authored scope",
+      "reassessmentReason": "Bounded documented facts and stated judgment only.",
+      "excluded": false,
+      "assessment": [
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q047",
+          "primary": true,
+          "testedDecision": "A catalog app must create a new product-scene image from a text brief, with no source image supplied. Its supported GPT image deployment is available. Which operation matches this input contract?",
+          "sourceIds": [
+            "S017"
+          ]
+        }
+      ],
+      "remainingWork": "Independent content review pending."
+    },
+    {
+      "objectiveId": "AI103-C1.02",
+      "officialWording": "Implement a solution that generates videos from text prompts and reference media",
+      "evidenceReadiness": "sufficient for documented authored scope",
+      "reassessmentReason": "Bounded documented facts and stated judgment only.",
+      "excluded": true,
+      "assessment": [],
+      "remainingWork": "Video generation/editing deliberately excluded."
+    },
+    {
+      "objectiveId": "AI103-C1.03",
+      "officialWording": "Configure image-editing workflows, including inpainting, mask‑based edits, and prompt‑driven modifications",
+      "evidenceReadiness": "sufficient for documented authored scope",
+      "reassessmentReason": "Bounded documented facts and stated judgment only.",
+      "excluded": false,
+      "assessment": [
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q056",
+          "primary": true,
+          "testedDecision": "The selected image model supports masking. Complete an edit request for a source image and a mask already sized to match it.",
+          "sourceIds": [
+            "S017"
+          ]
+        }
+      ],
+      "remainingWork": "Independent content review pending."
+    },
+    {
+      "objectiveId": "AI103-C1.04",
+      "officialWording": "Implement workflows to edit generated videos",
+      "evidenceReadiness": "sufficient for documented authored scope",
+      "reassessmentReason": "Bounded documented facts and stated judgment only.",
+      "excluded": true,
+      "assessment": [],
+      "remainingWork": "Video generation/editing deliberately excluded."
+    },
+    {
+      "objectiveId": "AI103-C1.05",
+      "officialWording": "Select and apply appropriate generation and editing controls provided by the platform",
+      "evidenceReadiness": "sufficient for documented authored scope",
+      "reassessmentReason": "Bounded documented facts and stated judgment only.",
+      "excluded": false,
+      "assessment": [
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q048",
+          "primary": true,
+          "testedDecision": "An application switches between two GPT image deployments with different quality and size options. What should its request builder use?",
+          "sourceIds": [
+            "S017"
+          ]
+        }
+      ],
+      "remainingWork": "Independent content review pending."
+    },
+    {
+      "objectiveId": "AI103-C2.01",
+      "officialWording": "Build a solution that analyzes visual context by using multimodal models",
+      "evidenceReadiness": "sufficient for documented authored scope",
+      "reassessmentReason": "Bounded documented facts and stated judgment only.",
+      "excluded": false,
+      "assessment": [
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q049",
+          "primary": true,
+          "testedDecision": "A vision-enabled chat model must describe damage visible in a supplied photograph. Which message construction gives it the actual visual input?",
+          "sourceIds": [
+            "S019"
+          ]
+        }
+      ],
+      "remainingWork": "Independent content review pending."
+    },
+    {
+      "objectiveId": "AI103-C2.02",
+      "officialWording": "Configure apps to produce concise or detailed captions for single or multiple images",
+      "evidenceReadiness": "sufficient for documented authored scope",
+      "reassessmentReason": "Bounded documented facts and stated judgment only.",
+      "excluded": false,
+      "assessment": [
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q054",
+          "primary": true,
+          "testedDecision": "A vision model receives two images of the same machine. The app needs a concise caption comparing visible differences. What should be supplied?",
+          "sourceIds": [
+            "S019"
+          ]
+        }
+      ],
+      "remainingWork": "Independent content review pending."
+    },
+    {
+      "objectiveId": "AI103-C2.03",
+      "officialWording": "Implement a solution that enables question‑answering grounded in visual evidence",
+      "evidenceReadiness": "sufficient for documented authored scope",
+      "reassessmentReason": "Bounded documented facts and stated judgment only.",
+      "excluded": false,
+      "assessment": [
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q055",
+          "primary": true,
+          "testedDecision": "Complete a vision chat message so a question about a supplied inspection photo is grounded in actual image input.",
+          "sourceIds": [
+            "S019"
+          ]
+        }
+      ],
+      "remainingWork": "Independent content review pending."
+    },
+    {
+      "objectiveId": "AI103-C2.04",
+      "officialWording": "Configure generation of alt‑text and extended image descriptions aligned to accessibility guidelines",
+      "evidenceReadiness": "sufficient for documented authored scope",
+      "reassessmentReason": "Bounded documented facts and stated judgment only.",
+      "excluded": false,
+      "assessment": [
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q050",
+          "primary": true,
+          "testedDecision": "A magnifying-glass image is the visible label of a search button. Which text alternative best communicates the function?",
+          "sourceIds": [
+            "S050"
+          ]
+        },
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q094",
+          "primary": true,
+          "testedDecision": "Match each webpage image role to the appropriate alternative-text approach. Use each selected choice once; one choice is unused.",
+          "sourceIds": [
+            "S050"
+          ]
+        }
+      ],
+      "remainingWork": "Independent content review pending."
+    },
+    {
+      "objectiveId": "AI103-C2.05",
+      "officialWording": "Implement visual understanding by configuring Azure Content Understanding in Foundry Tools to extract visual characteristics",
+      "evidenceReadiness": "sufficient for documented authored scope",
+      "reassessmentReason": "Bounded documented facts and stated judgment only.",
+      "excluded": false,
+      "assessment": [
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q052",
+          "primary": true,
+          "testedDecision": "A production document-image workflow needs capabilities available in Content Understanding 2025-11-01. A newer preview offers unrelated features. Which API selection follows the documented production guidance?",
+          "sourceIds": [
+            "S020"
+          ]
+        },
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q099",
+          "primary": true,
+          "testedDecision": "This audio-analysis worker passes an operation handle to its transcript consumer and the consumer rejects it. Which change obtains the completed analysis output in the pinned SDK?",
+          "sourceIds": [
+            "S021"
+          ]
+        }
+      ],
+      "remainingWork": "Independent content review pending."
+    },
+    {
+      "objectiveId": "AI103-C2.06",
+      "officialWording": "Implement video analysis workflows to process and interpret video segments",
+      "evidenceReadiness": "sufficient for documented authored scope",
+      "reassessmentReason": "Bounded documented facts and stated judgment only.",
+      "excluded": false,
+      "assessment": [
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q051",
+          "primary": true,
+          "testedDecision": "A Content Understanding video preview samples about one frame per second. A safety event lasts 0.2 seconds and the output does not mention it. Which conclusion is justified?",
+          "sourceIds": [
+            "S022"
+          ]
+        }
+      ],
+      "remainingWork": "Independent content review pending."
+    },
+    {
+      "objectiveId": "AI103-C2.07",
+      "officialWording": "Configure single‑task and pro‑mode Content Understanding pipelines",
+      "evidenceReadiness": "version conflict",
+      "reassessmentReason": "Historical pro/agentic-mode and current GA/preview surfaces differ. Keep version conflict visible; no current pro-mode parity item.",
+      "excluded": false,
+      "assessment": [],
+      "remainingWork": "Historical pro/agentic-mode and current GA/preview surfaces differ. Keep version conflict visible; no current pro-mode parity item."
+    },
+    {
+      "objectiveId": "AI103-C2.08",
+      "officialWording": "Implement solutions that identify objects, components, or regions within images or video",
+      "evidenceReadiness": "partial",
+      "reassessmentReason": "Azure ML region labeling is documented, but does not establish Content Understanding object/region extraction behavior.",
+      "excluded": false,
+      "assessment": [],
+      "remainingWork": "Azure ML region labeling is documented, but does not establish Content Understanding object/region extraction behavior."
+    },
+    {
+      "objectiveId": "AI103-C3.01",
+      "officialWording": "Implement filters to classify unsafe or disallowed visual content",
+      "evidenceReadiness": "sufficient for documented authored scope",
+      "reassessmentReason": "Bounded documented facts and stated judgment only.",
+      "excluded": false,
+      "assessment": [
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q053",
+          "primary": true,
+          "testedDecision": "A poster has a low visual harm score but includes text telling an agent to reveal credentials. Which conclusion follows from the harm result?",
+          "sourceIds": [
+            "S042",
+            "S048"
+          ]
+        },
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q098",
+          "primary": true,
+          "testedDecision": "The image:analyze 2024-09-01 contract uses FourSeverityLevels. Policy rejects an image when any harm category is Medium or High. What comparison should implement the policy?",
+          "sourceIds": [
+            "S042"
+          ]
+        }
+      ],
+      "remainingWork": "Independent content review pending."
+    },
+    {
+      "objectiveId": "AI103-C3.02",
+      "officialWording": "Detect and mitigate indirect prompt injection by using embedded text in images",
+      "evidenceReadiness": "partial",
+      "reassessmentReason": "Prompt Shields documents text-only detection. OCR plus text checking is a composed workflow, not evidence of native image-pixel injection detection.",
+      "excluded": false,
+      "assessment": [],
+      "remainingWork": "Prompt Shields documents text-only detection. OCR plus text checking is a composed workflow, not evidence of native image-pixel injection detection."
+    },
+    {
+      "objectiveId": "AI103-C3.03",
+      "officialWording": "Enforce visual policy rules, such as applying watermarks, flagging prohibited symbols, upholding brand usage requirements, and detecting potentially inappropriate content",
+      "evidenceReadiness": "partial",
+      "reassessmentReason": "Microsoft 365 watermark policy is a different product surface. Azure visual brand/prohibited-symbol policy remains incomplete.",
+      "excluded": false,
+      "assessment": [],
+      "remainingWork": "Microsoft 365 watermark policy is a different product surface. Azure visual brand/prohibited-symbol policy remains incomplete."
+    },
+    {
+      "objectiveId": "AI103-D1.01",
+      "officialWording": "Implement solutions to extract entities, topics, summaries, and structured JSON outputs by using generative prompting and Foundry Tools",
+      "evidenceReadiness": "sufficient for documented authored scope",
+      "reassessmentReason": "Bounded documented facts and stated judgment only.",
+      "excluded": false,
+      "assessment": [
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q077",
+          "primary": true,
+          "testedDecision": "A Python OpenAI 2.x application extracts events with Responses structured output. The client is configured and the supported model is deployed. On the successful non-refusal path, arrange these operations; business validation needs the parsed field values.",
+          "sourceIds": [
+            "S037"
+          ]
+        },
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q078",
+          "primary": true,
+          "testedDecision": "A Language NER pipeline must send organization and location records to a JSON-consuming application. The host constructs the records from returned entity categories and verifies the resulting JSON against the consumer’s schema. Arrange the data dependencies.",
+          "sourceIds": [
+            "S030",
+            "S037"
+          ]
+        }
+      ],
+      "remainingWork": "Independent content review pending."
+    },
+    {
+      "objectiveId": "AI103-D1.02",
+      "officialWording": "Configure detection of sentiment, tone, safety issues, and sensitive content",
+      "evidenceReadiness": "sufficient for documented authored scope",
+      "reassessmentReason": "Bounded documented facts and stated judgment only.",
+      "excluded": false,
+      "assessment": [
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q079",
+          "primary": true,
+          "testedDecision": "A transcript may be held temporarily in a restricted worker. The searchable store may receive only a version redacted using the entities returned by PII detection. The worker has no existing detection result. Arrange the data dependencies.",
+          "sourceIds": [
+            "S030"
+          ]
+        }
+      ],
+      "remainingWork": "Independent content review pending."
+    },
+    {
+      "objectiveId": "AI103-D1.03",
+      "officialWording": "Build solutions that translate text by using Azure Translator in Foundry Tools or LLM‑powered translation flows",
+      "evidenceReadiness": "sufficient for documented authored scope",
+      "reassessmentReason": "Bounded documented facts and stated judgment only.",
+      "excluded": false,
+      "assessment": [
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q057",
+          "primary": true,
+          "testedDecision": "A Translator text request contains one sentence with English and German spans. Some words remain untranslated. Which preparation targets the documented limitation?",
+          "sourceIds": [
+            "S055"
+          ]
+        },
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q080",
+          "primary": true,
+          "testedDecision": "A mixed-language notice must be translated into French. Its language spans are known, and quality review compares the complete reconstructed notice with the original, including references across segments. Arrange this application workflow.",
+          "sourceIds": [
+            "S055",
+            "S032"
+          ]
+        },
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q100",
+          "primary": true,
+          "testedDecision": "The translation result leaves part of this input unchanged. Which cause and response best fit the documented condition?",
+          "sourceIds": [
+            "S055"
+          ]
+        }
+      ],
+      "remainingWork": "Independent content review pending."
+    },
+    {
+      "objectiveId": "AI103-D1.04",
+      "officialWording": "Customize language model outputs for domain tasks, such as compliance summarization and domain extraction",
+      "evidenceReadiness": "sufficient for documented authored scope",
+      "reassessmentReason": "Bounded documented facts and stated judgment only.",
+      "excluded": false,
+      "assessment": [
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q058",
+          "primary": true,
+          "testedDecision": "A domain compliance summarizer needs a defined scope and an explicit escalation when evidence is missing. Which instruction design addresses it?",
+          "sourceIds": [
+            "S057"
+          ]
+        },
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q081",
+          "primary": true,
+          "testedDecision": "A compliance extractor may forward a result for approval only after its cited fields are verified against the supplied policy. Its model, client and policy are ready, but its domain instructions and strict output schema have not been defined. Arrange these operations.",
+          "sourceIds": [
+            "S057",
+            "S037"
+          ]
+        }
+      ],
+      "remainingWork": "Independent content review pending."
+    },
+    {
+      "objectiveId": "AI103-D2.01",
+      "officialWording": "Implement workflows to convert speech to text and text to speech for agentic interactions",
+      "evidenceReadiness": "sufficient for documented authored scope",
+      "reassessmentReason": "Bounded documented facts and stated judgment only.",
+      "excluded": false,
+      "assessment": [
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q082",
+          "primary": true,
+          "testedDecision": "A voice assistant uses a text-only response model and a separate speech synthesizer. The application requires its response-text policy check to pass before any answer audio is emitted. Arrange the successful path for one recorded utterance.",
+          "sourceIds": [
+            "S033",
+            "S057"
+          ]
+        }
+      ],
+      "remainingWork": "Independent content review pending."
+    },
+    {
+      "objectiveId": "AI103-D2.02",
+      "officialWording": "Integrate speech as an agent modality, including custom speech models",
+      "evidenceReadiness": "sufficient for documented authored scope",
+      "reassessmentReason": "Bounded documented facts and stated judgment only.",
+      "excluded": false,
+      "assessment": [
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q083",
+          "primary": true,
+          "testedDecision": "A Custom Speech project and training data are ready. A new model must meet a held-out WER threshold before deployment, and the application will use it for real-time recognition, not batch transcription. Arrange the remaining operations.",
+          "sourceIds": [
+            "S034"
+          ]
+        }
+      ],
+      "remainingWork": "Independent content review pending."
+    },
+    {
+      "objectiveId": "AI103-D2.03",
+      "officialWording": "Enable multimodal reasoning from audio inputs",
+      "evidenceReadiness": "sufficient for documented authored scope",
+      "reassessmentReason": "Bounded documented facts and stated judgment only.",
+      "excluded": false,
+      "assessment": [
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q084",
+          "primary": true,
+          "testedDecision": "A Realtime assistant must interpret a recorded inspection question in the context of a written maintenance note for the same equipment. Its supported audio model and transport are ready. Host policy requires checking the returned interpretation against that note before offering a repair action. Arrange the application’s operations.",
+          "sourceIds": [
+            "S036"
+          ]
+        }
+      ],
+      "remainingWork": "Independent content review pending."
+    },
+    {
+      "objectiveId": "AI103-D2.04",
+      "officialWording": "Translate speech into other languages by using language models and Foundry Tools",
+      "evidenceReadiness": "sufficient for documented authored scope",
+      "reassessmentReason": "Bounded documented facts and stated judgment only.",
+      "excluded": false,
+      "assessment": [
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q085",
+          "primary": true,
+          "testedDecision": "An event-based Speech SDK translator must retain the first completed translated utterance. Credentials and AudioConfig are ready. It uses a TranslationRecognizer whose recognized callback stores successful translations. Arrange initialization so the handler is ready when recognition begins.",
+          "sourceIds": [
+            "S046"
+          ]
+        },
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q086",
+          "primary": true,
+          "testedDecision": "A store-and-forward speech translator uses manual synthesis for two target languages. It will deliver an audio file only after synthesis succeeds. Arrange the successful path for the selected target language; no translation result is available initially.",
+          "sourceIds": [
+            "S046",
+            "S033"
+          ]
+        }
+      ],
+      "remainingWork": "Independent content review pending."
+    },
+    {
+      "objectiveId": "AI103-E1.01",
+      "officialWording": "Ingest and index content, such as documents, images, audio, and video",
+      "evidenceReadiness": "sufficient for documented authored scope",
+      "reassessmentReason": "Bounded documented facts and stated judgment only.",
+      "excluded": false,
+      "assessment": [
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q062",
+          "primary": true,
+          "testedDecision": "Long manuals exceed embedding limits, and the query vectorizer uses an unrelated model. Which TWO configuration corrections address the two failures? Select TWO answers.",
+          "sourceIds": [
+            "S058",
+            "S026"
+          ]
+        }
+      ],
+      "remainingWork": "Independent content review pending."
+    },
+    {
+      "objectiveId": "AI103-E1.02",
+      "officialWording": "Configure semantic search, hybrid search, and vector search for grounding",
+      "evidenceReadiness": "sufficient for documented authored scope",
+      "reassessmentReason": "Bounded documented facts and stated judgment only.",
+      "excluded": false,
+      "assessment": [
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q063",
+          "primary": true,
+          "testedDecision": "A product catalog needs exact codes and semantic candidates, with optional semantic reranking. Which TWO statements describe the stages correctly? Select TWO answers.",
+          "sourceIds": [
+            "S025",
+            "S058"
+          ]
+        }
+      ],
+      "remainingWork": "Independent content review pending."
+    },
+    {
+      "objectiveId": "AI103-E1.03",
+      "officialWording": "Implement enrichment by using custom or built-in skills for text, images, and layout",
+      "evidenceReadiness": "sufficient for documented authored scope",
+      "reassessmentReason": "Bounded documented facts and stated judgment only.",
+      "excluded": false,
+      "assessment": [
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q064",
+          "primary": true,
+          "testedDecision": "A document enrichment pipeline needs layout-aware Markdown and OCR for normalized images. Which TWO skill choices directly target these outputs? Select TWO answers.",
+          "sourceIds": [
+            "S029",
+            "S043"
+          ]
+        },
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q096",
+          "primary": true,
+          "testedDecision": "The pipeline needs layout-derived Markdown for indexing. Which producing capability should replace the enrichment stage in this exhibit?",
+          "sourceIds": [
+            "S029",
+            "S059"
+          ]
+        }
+      ],
+      "remainingWork": "Independent content review pending."
+    },
+    {
+      "objectiveId": "AI103-E1.04",
+      "officialWording": "Configure RAG ingestion flow, including documents and using optical character recognition (OCR)",
+      "evidenceReadiness": "sufficient for documented authored scope",
+      "reassessmentReason": "Bounded documented facts and stated judgment only.",
+      "excluded": false,
+      "assessment": [
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q059",
+          "primary": true,
+          "testedDecision": "A blob OCR pipeline has imageAction none and incorrectly maps a skill-produced text node with fieldMappings. Which TWO changes repair the data path? Select TWO answers.",
+          "sourceIds": [
+            "S043",
+            "S028"
+          ]
+        },
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q095",
+          "primary": true,
+          "testedDecision": "The index has no OCR text. Which one configuration defect in this exhibit blocks the OCR input path?",
+          "sourceIds": [
+            "S043",
+            "S028"
+          ]
+        }
+      ],
+      "remainingWork": "Independent content review pending."
+    },
+    {
+      "objectiveId": "AI103-E1.05",
+      "officialWording": "Connect retrieval pipelines directly to workflows and agent tools",
+      "evidenceReadiness": "sufficient for documented authored scope",
+      "reassessmentReason": "Bounded documented facts and stated judgment only.",
+      "excluded": false,
+      "assessment": [
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q065",
+          "primary": true,
+          "testedDecision": "An agent retrieves an unrelated Search index and returns content from another department. Which TWO tool configuration controls address the stated defects? Select TWO answers.",
+          "sourceIds": [
+            "S040",
+            "S054"
+          ]
+        }
+      ],
+      "remainingWork": "Independent content review pending."
+    },
+    {
+      "objectiveId": "AI103-E2.01",
+      "officialWording": "Extract information by using multimodal pipelines that combine OCR, layout analysis, and field extraction",
+      "evidenceReadiness": "sufficient for documented authored scope",
+      "reassessmentReason": "Bounded documented facts and stated judgment only.",
+      "excluded": false,
+      "assessment": [
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q066",
+          "primary": true,
+          "testedDecision": "A document pipeline must extract invoice fields and support amount verification. Which TWO design choices address those requirements? Select TWO answers.",
+          "sourceIds": [
+            "S059",
+            "S045"
+          ]
+        }
+      ],
+      "remainingWork": "Independent content review pending."
+    },
+    {
+      "objectiveId": "AI103-E2.02",
+      "officialWording": "Produce clean, grounded representations to use with agents and RAG by using Content Understanding",
+      "evidenceReadiness": "sufficient for documented authored scope",
+      "reassessmentReason": "Bounded documented facts and stated judgment only.",
+      "excluded": false,
+      "assessment": [
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q060",
+          "primary": true,
+          "testedDecision": "A team uses Content Understanding SDK 1.1.0 for production document extraction. Which TWO implementation choices align with the referenced contract? Select TWO answers.",
+          "sourceIds": [
+            "S021",
+            "S020"
+          ]
+        },
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q067",
+          "primary": true,
+          "testedDecision": "A RAG pipeline needs a clean document representation before retrieval. Which TWO Content Understanding outputs or behaviors fit? Select TWO answers.",
+          "sourceIds": [
+            "S059",
+            "S021"
+          ]
+        }
+      ],
+      "remainingWork": "Independent content review pending."
+    },
+    {
+      "objectiveId": "AI103-E2.03",
+      "officialWording": "Implement analyzers for generating structured or markdown outputs for downstream reasoning by using Content Understanding",
+      "evidenceReadiness": "sufficient for documented authored scope",
+      "reassessmentReason": "Bounded documented facts and stated judgment only.",
+      "excluded": false,
+      "assessment": [
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q061",
+          "primary": true,
+          "testedDecision": "A custom analyzer must extract an amount from unfamiliar invoice layouts and support reviewer verification. Which TWO features or inputs are useful? Select TWO answers.",
+          "sourceIds": [
+            "S045",
+            "S059"
+          ]
+        },
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q068",
+          "primary": true,
+          "testedDecision": "A custom contract analyzer misses renewal dates in a new layout. Which TWO inputs should guide improvement? Select TWO answers.",
+          "sourceIds": [
+            "S059",
+            "S045"
+          ]
+        },
+        {
+          "itemId": "ai103-improvement-r2-set-a-100-q097",
+          "primary": true,
+          "testedDecision": "A custom extractor uses the following result. What should happen before the application posts the invoice amount?",
+          "sourceIds": [
+            "S045",
+            "S059"
+          ]
+        }
+      ],
+      "remainingWork": "Independent content review pending."
+    }
+  ]
+}

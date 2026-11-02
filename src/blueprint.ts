@@ -1,179 +1,70 @@
-import { BatchPlan, Difficulty, DomainBlueprint, GenerationPlan, ItemTypeBlueprint } from "./types.js";
+import type { BatchPlan, DifficultyCounts, GenerationPlan, ItemTypeBlueprint, PackRef } from "./types.js";
+import { LEGACY_GH600, resolvePack, samePack } from "./packs.js";
 
-// Official GH-600 domain weights (mid-range), slightly equalised so no single
-// domain dominates. All counts are within the official percentage bands.
-// A 15–20 % | B 20–25 % | C 10–15 % | D 15–20 % | E 15–20 % | F 10–15 %
-const baseDomains: DomainBlueprint[] = [
-  { id: "A", name: "Agent architecture and SDLC integration",              count: 17 },
-  { id: "B", name: "MCP/tool use and environment permissions",             count: 21 },
-  { id: "C", name: "Memory, state, and execution",                        count: 14 },
-  { id: "D", name: "Evaluation, telemetry, error analysis, and tuning",   count: 17 },
-  { id: "E", name: "Multi-agent orchestration and incident response",      count: 18 },
-  { id: "F", name: "Guardrails, safety, accountability, and governance",   count: 13 },
-];
-
-// Domain assignment order for case-study batches (highest-weight domains first).
-// Each batch gets the next domain in this cycle so scenarios spread across the exam.
-const CASE_STUDY_DOMAIN_CYCLE = ["B", "A", "D", "E", "C", "F"] as const;
-
-// Domains that receive matching/sequence batches.
-// Chosen to balance the domains that get fewer case-study questions.
-const MATCH_SEQ_DOMAINS = ["B", "A", "C", "F"] as const;
-
-const baseItemTypes: ItemTypeBlueprint = {
-  single_choice: 42,
-  multi_select: 18,
-  sequence_order: 10,
-  matching_magnet: 8,
-  case_study: 16,
-  code_or_config_artifact: 6,
-};
-
-function scaleCounts<T extends { count: number }>(items: T[], total: number): T[] {
-  const baseTotal = items.reduce((s, d) => s + d.count, 0);
-  const scaled = items.map((item) => ({ ...item, count: Math.floor((item.count / baseTotal) * total) }));
-  let remainder = total - scaled.reduce((s, d) => s + d.count, 0);
-  const order = [...items].sort((a, b) => b.count - a.count);
-  let i = 0;
-  while (remainder > 0) {
-    const target = order[i % order.length];
-    const found = scaled.find((x) => (x as unknown as { id?: string }).id === (target as unknown as { id?: string }).id) ?? scaled[i % scaled.length];
-    found.count += 1;
-    remainder -= 1;
-    i += 1;
-  }
-  return scaled;
+/** Largest remainder rounding; manifest order breaks ties deterministically. */
+export function allocateCounts(weights: number[], total: number): number[] {
+  const sum = weights.reduce((a, b) => a + b, 0);
+  const exact = weights.map(w => w * total / sum);
+  const counts = exact.map(Math.floor);
+  const order = exact.map((n, i) => ({ i, remainder: n - counts[i] })).sort((a, b) => b.remainder - a.remainder || a.i - b.i);
+  for (let left = total - counts.reduce((a, b) => a + b, 0), i = 0; left > 0; left--, i++) counts[order[i].i]++;
+  return counts;
 }
 
-function scaleItemTypes(total: number): ItemTypeBlueprint {
-  if (total === 100) return { ...baseItemTypes };
-  const entries = Object.entries(baseItemTypes) as Array<[keyof ItemTypeBlueprint, number]>;
-  const scaled: ItemTypeBlueprint = {
-    single_choice: 0,
-    multi_select: 0,
-    sequence_order: 0,
-    matching_magnet: 0,
-    case_study: 0,
-    code_or_config_artifact: 0,
-  };
-  for (const [k, v] of entries) scaled[k] = Math.floor((v / 100) * total);
-  let remainder = total - Object.values(scaled).reduce((s, n) => s + n, 0);
-  for (const [k] of entries.sort((a, b) => b[1] - a[1])) {
-    if (remainder <= 0) break;
-    scaled[k] += 1;
-    remainder -= 1;
-  }
-  if (total >= 25 && scaled.case_study === 0) {
-    scaled.single_choice = Math.max(0, scaled.single_choice - 1);
-    scaled.case_study = 1;
-  }
-  if (total >= 20 && scaled.code_or_config_artifact === 0) {
-    scaled.single_choice = Math.max(0, scaled.single_choice - 1);
-    scaled.code_or_config_artifact = 1;
-  }
-  if (total >= 10 && scaled.multi_select === 0) {
-    scaled.single_choice = Math.max(0, scaled.single_choice - 1);
-    scaled.multi_select = 1;
-  }
-  if (total < 10) {
-    scaled.sequence_order = 0;
-    scaled.matching_magnet = 0;
-    scaled.case_study = 0;
-    scaled.code_or_config_artifact = Math.min(scaled.code_or_config_artifact, 1);
-    const used = Object.values(scaled).reduce((s, n) => s + n, 0);
-    if (used < total) scaled.single_choice += total - used;
-  }
-  return scaled;
-}
-
-function difficultyDistribution(total: number): Record<Difficulty, number> {
-  const medium = Math.floor(total * 0.35);
-  const hard = Math.floor(total * 0.45);
-  const veryHard = total - medium - hard;
-  return { medium, hard, very_hard: veryHard };
-}
-
-function caseStudyCount(total: number): number {
-  if (total >= 100) return 4;
-  if (total >= 70) return 3;
-  if (total >= 30) return 2;
-  if (total >= 20) return 2;
-  if (total >= 10) return 1;
-  return 0;
-}
-
-export function buildBlueprint(totalQuestions: number): GenerationPlan {
-  const safeTotal = Math.max(1, totalQuestions);
-  const domains = safeTotal === 100 ? baseDomains.map((d) => ({ ...d })) : scaleCounts(baseDomains, safeTotal);
-  const itemTypes = scaleItemTypes(safeTotal);
-  const cases = caseStudyCount(safeTotal);
-  const difficulty = difficultyDistribution(safeTotal);
-
+export function buildBlueprint(totalQuestions: number, ref: PackRef): GenerationPlan {
+  if (!Number.isInteger(totalQuestions) || totalQuestions < 1 || totalQuestions > 200) throw new Error("Question count must be an integer between 1 and 200");
+  const pack = resolvePack(ref);
+  if (samePack(ref, LEGACY_GH600)) throw new Error("GH-600 1.0.0 is read-only history; use 1.1.0 for new plans");
+  const counts = allocateCounts(pack.domains.map(d => d.weight), totalQuestions);
+  const domains = pack.domains.map((d, i) => ({ id: d.id, name: d.name, count: counts[i] }));
+  // Practice format proportions; no assertion of official exam format parity.
+  const keys: (keyof ItemTypeBlueprint)[] = ["single_choice", "multi_select", "sequence_order", "matching_magnet", "case_study", "code_or_config_artifact"];
+  const itemCounts = allocateCounts([42, 18, 10, 8, 16, 6], totalQuestions);
+  if (totalQuestions < 10) { itemCounts[0] += itemCounts[2] + itemCounts[3] + itemCounts[4]; itemCounts[2] = itemCounts[3] = itemCounts[4] = 0; }
+  const itemTypes = Object.fromEntries(keys.map((key, i) => [key, itemCounts[i]])) as unknown as ItemTypeBlueprint;
+  const cases = Math.min(itemTypes.case_study, totalQuestions >= 100 ? 4 : totalQuestions >= 70 ? 3 : totalQuestions >= 20 ? 2 : totalQuestions >= 10 ? 1 : 0);
+  const difficultyCounts = allocateCounts([35, 45, 20], totalQuestions);
+  const difficulty = Object.fromEntries((["medium", "hard", "very_hard"] as const).map((key, i) => [key, difficultyCounts[i]])) as DifficultyCounts;
+  const remaining = [...counts];
   const batches: BatchPlan[] = [];
-  let batchIndex = 1;
-
-  // ── Per-domain SC / MS / code batches ───────────────────────────────
-  // Generate ~70 % of each domain's quota here; the rest comes from
-  // case-study and matching batches that are also domain-tagged below.
-  for (const domain of domains) {
-    if (domain.count <= 0) continue;
-    batches.push({
-      id: `batch-${batchIndex++}`,
-      domainId: domain.id,
-      domainName: domain.name,
-      typeFocus: ["single_choice", "multi_select", "code_or_config_artifact"],
-      difficultyFocus: ["medium", "hard", "very_hard"],
-      questionCount: Math.max(1, Math.floor(domain.count * 0.7)),
-    });
-  }
-
-  // ── Case-study batches — each tagged to a specific domain ───────────
-  // Cycling through CASE_STUDY_DOMAIN_CYCLE spreads scenarios evenly.
-  const caseQPerBatch = Math.max(3, Math.floor(itemTypes.case_study / Math.max(1, cases)));
-  for (let i = 0; i < cases; i++) {
-    const domId = CASE_STUDY_DOMAIN_CYCLE[i % CASE_STUDY_DOMAIN_CYCLE.length];
-    const domMeta = domains.find((d) => d.id === domId) ?? { id: domId, name: domId, count: 0 };
-    batches.push({
-      id: `batch-${batchIndex++}`,
-      domainId: domId,
-      domainName: domMeta.name,
-      caseStudyId: `case-${i + 1}`,
-      typeFocus: ["case_study"],
-      difficultyFocus: ["hard", "very_hard"],
-      questionCount: caseQPerBatch,
-    });
-  }
-
-  // ── Matching / sequence batches — split across MATCH_SEQ_DOMAINS ────
-  // Distributing these to domains that receive fewer case-study questions
-  // (C, F) plus the two heaviest (B, A) keeps the overall distribution
-  // within the official percentage bands.
-  if (itemTypes.matching_magnet + itemTypes.sequence_order > 0) {
-    const matchSeqTotal = itemTypes.matching_magnet + itemTypes.sequence_order;
-    const baseCount = Math.floor(matchSeqTotal / MATCH_SEQ_DOMAINS.length);
-    const remainder = matchSeqTotal - baseCount * MATCH_SEQ_DOMAINS.length;
-
-    MATCH_SEQ_DOMAINS.forEach((domId, idx) => {
-      const qCount = baseCount + (idx < remainder ? 1 : 0);
-      if (qCount <= 0) return;
-      const domMeta = domains.find((d) => d.id === domId) ?? { id: domId, name: domId, count: 0 };
-      batches.push({
-        id: `batch-${batchIndex++}`,
-        domainId: domId,
-        domainName: domMeta.name,
-        typeFocus: ["matching_magnet", "sequence_order"],
-        difficultyFocus: ["hard", "very_hard"],
-        questionCount: qCount,
-      });
-    });
-  }
-
-  return {
-    totalQuestions: safeTotal,
-    domains,
-    itemTypes,
-    caseStudyCount: cases,
-    difficulty,
-    batches: batches.filter((b) => b.questionCount > 0),
+  const add = (index: number, count: number, type: keyof ItemTypeBlueprint, caseStudyId?: string) => {
+    remaining[index] -= count;
+    batches.push({ id: `batch-${batches.length + 1}`, domainId: domains[index].id, domainName: domains[index].name,
+      typeFocus: [type], difficultyFocus: ["medium", "hard", "very_hard"], questionCount: count, ...(caseStudyId ? { caseStudyId } : {}) });
   };
+  // Allocate intact case groups first, then consume remaining domain capacity exactly.
+  if (cases) {
+    const sizes = allocateCounts(Array(cases).fill(1), itemTypes.case_study);
+    sizes.forEach((size, i) => {
+      const index = remaining.indexOf(Math.max(...remaining));
+      if (remaining[index] < size) throw new Error("Case group cannot fit domain quota");
+      add(index, size, "case_study", `case-${i + 1}`);
+    });
+  }
+  for (const type of keys.filter(k => k !== "case_study")) {
+    let left = itemTypes[type];
+    while (left > 0) {
+      const index = remaining.indexOf(Math.max(...remaining));
+      const count = Math.min(left, remaining[index], 10);
+      if (!count) throw new Error("Invalid planner capacity");
+      add(index, count, type); left -= count;
+    }
+  }
+  return { pack: pack.ref, planningVersion: pack.planningVersion, totalQuestions, domains, itemTypes, caseStudyCount: cases, difficulty, batches };
+}
+
+export const ASSESSED_PLANNING_VERSION = "exact-quotas-assessed-difficulty-v1";
+
+/** Offline reviewed content may declare assessed counts rather than inflate labels to a target. */
+export function buildAssessedBlueprint(total: number, ref: PackRef, counts: unknown): GenerationPlan {
+  const keys = ["easy", "medium", "hard", "very_hard"] as const;
+  if (!counts || typeof counts !== "object" || Array.isArray(counts)) throw new Error("Assessed difficulty counts are required");
+  const values = counts as Record<string, unknown>;
+  if (Object.keys(values).length !== keys.length || keys.some(k => !Number.isInteger(values[k]) || Number(values[k]) < 0) || keys.reduce((n, k) => n + Number(values[k]), 0) !== total) {
+    throw new Error("Assessed difficulty requires all four nonnegative integer counts totaling the question count");
+  }
+  const plan = buildBlueprint(total, ref);
+  return { ...plan, planningVersion: ASSESSED_PLANNING_VERSION,
+    difficulty: Object.fromEntries(keys.map(k => [k, values[k]])) as DifficultyCounts,
+    batches: plan.batches.map(batch => ({ ...batch, difficultyFocus: [...keys] })) };
 }

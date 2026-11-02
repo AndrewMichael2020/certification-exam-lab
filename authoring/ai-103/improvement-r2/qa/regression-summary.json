@@ -1,0 +1,15 @@
+{
+  "units": 89,
+  "build": "pass",
+  "browser": {
+    "passed": 12,
+    "failed": 2,
+    "baselineMatchedFailures": [
+      "tests/e2e/baseline.spec.ts:24",
+      "tests/e2e/packs.spec.ts:106"
+    ]
+  },
+  "existingAssertionsUnchanged": true,
+  "exactNewSourceReceipts": 18,
+  "setupVersionSelection": "ID-only selector still plans 1.1.0; explicit 1.2.0 API/library flows pass"
+}

@@ -1,0 +1,210 @@
+{
+  "schemaVersion": 1,
+  "packRef": {
+    "id": "ai-103",
+    "version": "1.1.0"
+  },
+  "parentObjectiveId": "AI103-C1",
+  "title": "Design and implement image- and video-generation solutions",
+  "state": "evidence-packet-only; no questions",
+  "allowedObjectiveIds": [
+    "AI103-C1.01",
+    "AI103-C1.02",
+    "AI103-C1.03",
+    "AI103-C1.04",
+    "AI103-C1.05"
+  ],
+  "allowedScope": [
+    {
+      "objectiveId": "AI103-C1.01",
+      "claims": [
+        "F017A",
+        "F017B",
+        "F017C"
+      ],
+      "choice": "Use a supported GPT image deployment for text-to-image and permitted reference-image inputs.",
+      "configuration": "Choose a documented model, size/quality/count, request route, and output format; account for deployment eligibility and output encoding.",
+      "comparison": "Historical DALL-E 3 examples do not provide a deployable current implementation.",
+      "judgment": "For a marketing image requiring a reference composition, select a model supporting image inputs and review supported controls before generation."
+    },
+    {
+      "objectiveId": "AI103-C1.02",
+      "claims": [
+        "F018A"
+      ],
+      "choice": "Use the Sora 2 preview video API for text/image-conditioned generation when the use case and model policy permit it.",
+      "configuration": "Create the video job, wait/poll for completion, and obtain generated output; keep current v1 methods separate from older jobs API samples.",
+      "comparison": "A creation acknowledgement is not the completed video; model policy restrictions can block apparently reasonable content.",
+      "judgment": "For an asynchronous creative workflow, persist job identity and status so the user can resume retrieval after a delay."
+    },
+    {
+      "objectiveId": "AI103-C1.03",
+      "claims": [
+        "F017B",
+        "F017C"
+      ],
+      "choice": "Use documented image editing with a source image, prompt, and mask when the selected model supports inpainting.",
+      "configuration": "Check matching mask/image requirements in the chosen model/API reference; specify only valid editing controls and inspect the revised artifact.",
+      "comparison": "An edit prompt alone does not guarantee changes stay inside a desired region; generation and editing are different operation contracts.",
+      "judgment": "For replacing a background while preserving a subject, choose a compatible masked-edit workflow and compare the preserved content after generation."
+    },
+    {
+      "objectiveId": "AI103-C1.04",
+      "claims": [
+        "F018A",
+        "F018B"
+      ],
+      "choice": "Use documented remix for prompt-driven changes to a previously generated Sora video.",
+      "configuration": "Provide the originating video_id and revision prompt, follow the asynchronous lifecycle, and inspect the result.",
+      "comparison": "Remix support is not a claim of arbitrary imported-video timeline, trim, or compositing support.",
+      "judgment": "A palette/motion revision to a generated clip fits remix; a multi-track editor requirement needs separate evidence."
+    },
+    {
+      "objectiveId": "AI103-C1.05",
+      "claims": [
+        "F017B",
+        "F017C",
+        "F018A"
+      ],
+      "choice": "Apply only controls documented for the chosen model and modality.",
+      "configuration": "Compare image size/quality/format/count and video duration/resolution/reference support within the same API generation; preserve access and content restrictions.",
+      "comparison": "Copying one image model's quality enum to another model or applying image controls to video causes invalid requests.",
+      "judgment": "A latency-sensitive image prototype and a detailed final edit can use different valid quality settings, verified against that deployment's capability table."
+    }
+  ],
+  "excludedObjectives": [],
+  "evidence": [
+    {
+      "claimId": "F017A",
+      "statement": "DALL-E 3 is retired in the captured Azure guide; use the documented GPT image family and its model-specific controls for current generation.",
+      "sourceId": "S017",
+      "sourceUrl": "https://learn.microsoft.com/azure/foundry/openai/how-to/dall-e",
+      "versionContext": "GPT image models with model-specific GA/access/preview; DALL-E3retired",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S017.md",
+          "lineStart": 4,
+          "lineEnd": 7,
+          "heading": "# Azure OpenAI image generation models",
+          "needle": "dall-e-3` was retired on March 4, 2026",
+          "excerpt": "\nThe DALL-E image generation model `dall-e-3` was retired on March 4, 2026, and is no longer available for new deployments. Existing deployments are non-functional. Use a `gpt-image-` series model for image generation instead. See the [image generation how-to guide](/en-us/azure/ai-foundry/openai/how-to/dall-e) for updated instructions.\n\nOpenAI's image generation models create images from user-provided text prompts and optional images. This article explains how to use these models, configure options, and benefit from advanced image generation capabilities in Azure.",
+          "sourceSha256": "34668770bb5790633413f4ae9432738c85ed36aef328f9f2bdb8b1b82437dca6"
+        }
+      ]
+    },
+    {
+      "claimId": "F017B",
+      "statement": "The image capability table documents prompt/reference image inputs and model-specific mask/inpainting/editing support; supported controls vary by deployed model.",
+      "sourceId": "S017",
+      "sourceUrl": "https://learn.microsoft.com/azure/foundry/openai/how-to/dall-e",
+      "versionContext": "GPT image models with model-specific GA/access/preview; DALL-E3retired",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S017.md",
+          "lineStart": 20,
+          "lineEnd": 27,
+          "heading": "## Models and capabilities",
+          "needle": "**Input / Output Modalities & Format**",
+          "excerpt": "| **Strengths** | Most capable model for image generation and editing; best when editing precision matters most | Fastest model for high-quality, everyday image generation | Best for high-resolution and 4K generation, improved image editing, and broad aspect-ratio support | Best for realism, instruction-following, multimodal context, and improved speed/cost | Best for realism, instruction-following, and multimodal context | Best for fast prototyping, bulk generation, or cost-sensitive use cases |\n| **Input / Output Modalities & Format** | Accepts **text + image** inputs; outputs images. | Accepts **text + image** inputs; outputs images. | Accepts **text + image** inputs; outputs images only in **base64** (no URL option). | Accepts **text + image** inputs; outputs images only in **base64** (no URL option). | Accepts **text + image** inputs; outputs images only in **base64** (no URL option). | Accepts **text + image** inputs; outputs images only in **base64** (no URL option). |\n| **Image Sizes / Resolutions** | Custom `WIDTHxHEIGHT` dimensions (for example, `1536x864`). Both edges must be multiples of 16 px; aspect ratio between 1:3 and 3:1; neither edge exceeds 3,840 px; total pixels 655,360–8,294,400 (4K). Resolutions above `2560x1440` are experimental. | Custom `WIDTHxHEIGHT` dimensions (for example, `1536x864`). Both edges must be multiples of 16 px; aspect ratio between 1:3 and 3:1; neither edge exceeds 3,840 px; total pixels 655,360–8,294,400 (4K). Resolutions above `2560x1440` are experimental. | Arbitrary resolutions: both edges must be multiples of 16 px; long edge up to 3,840 px (4K); aspect ratio up to 3:1; pixel count 655,360–8,294,400 | 1024×1024, 1024×1536, 1536×1024 | 1024×1024, 1024×1536, 1536×1024 | 1024×1024, 1024×1536, 1536×1024 |\n| **Quality Options** | `low`, `medium`, `high`, `xhigh`, `max`, `auto` | `low`, `medium`, `high`, `xhigh`, `max`, `auto` | Reworked quality controls: `low`, `medium`, `high`; `low` is optimized for latency-sensitive use cases | `low`, `medium`, `high` (default = high) | `low`, `medium`, `high` (default = high) | `low`, `medium`, `high` (default = medium) |\n| **Number of Images per Request** | 1–10 images per request | 1–10 images per request | 1–10 images per request (`n` parameter) | 1–10 images per request (`n` parameter) | 1–10 images per request (`n` parameter) | 1–10 images per request (`n` parameter) |\n| **Editing (inpainting / variations)** | ✅ Supports inpainting | ✅ Supports inpainting | ✅ Improved editing performance with inpainting and variations | ✅ Supports inpainting and variations with mask + prompt | ✅ Supports inpainting and variations with mask + prompt | ✅ Supports inpainting and variations with mask + prompt |\n| **Face Preservation** |  |  | ✅ Advanced **face preservation** for realistic, consistent results | ✅ Advanced **face preservation** for realistic, consistent results | ✅ Advanced **face preservation** for realistic, consistent results | ❌ No dedicated face preservation; better for **non-portrait/general creative** imagery |\n| **Performance & Cost** | Highest-fidelity model; optimized for editing precision | Optimized for speed and cost for high-quality, everyday generation | High-fidelity, **realism-optimized** model; higher latency and cost | High-fidelity, **realism-optimized** model; improved efficiency and latency over GPT-Image-1 | High-fidelity, **realism-optimized** model; higher latency and cost | **Cost-efficient** and **faster** for large-scale or iterative generation |",
+          "sourceSha256": "34668770bb5790633413f4ae9432738c85ed36aef328f9f2bdb8b1b82437dca6"
+        },
+        {
+          "snapshot": "sources/snapshots/S017.md",
+          "lineStart": 24,
+          "lineEnd": 27,
+          "heading": "## Models and capabilities",
+          "needle": "**Editing (inpainting / variations)**",
+          "excerpt": "| **Number of Images per Request** | 1–10 images per request | 1–10 images per request | 1–10 images per request (`n` parameter) | 1–10 images per request (`n` parameter) | 1–10 images per request (`n` parameter) | 1–10 images per request (`n` parameter) |\n| **Editing (inpainting / variations)** | ✅ Supports inpainting | ✅ Supports inpainting | ✅ Improved editing performance with inpainting and variations | ✅ Supports inpainting and variations with mask + prompt | ✅ Supports inpainting and variations with mask + prompt | ✅ Supports inpainting and variations with mask + prompt |\n| **Face Preservation** |  |  | ✅ Advanced **face preservation** for realistic, consistent results | ✅ Advanced **face preservation** for realistic, consistent results | ✅ Advanced **face preservation** for realistic, consistent results | ❌ No dedicated face preservation; better for **non-portrait/general creative** imagery |\n| **Performance & Cost** | Highest-fidelity model; optimized for editing precision | Optimized for speed and cost for high-quality, everyday generation | High-fidelity, **realism-optimized** model; higher latency and cost | High-fidelity, **realism-optimized** model; improved efficiency and latency over GPT-Image-1 | High-fidelity, **realism-optimized** model; higher latency and cost | **Cost-efficient** and **faster** for large-scale or iterative generation |",
+          "sourceSha256": "34668770bb5790633413f4ae9432738c85ed36aef328f9f2bdb8b1b82437dca6"
+        }
+      ]
+    },
+    {
+      "claimId": "F017C",
+      "statement": "The documented Python image-generation call uses client.images.generate with the Azure deployment name, prompt, size, quality, and image count.",
+      "sourceId": "S017",
+      "sourceUrl": "https://learn.microsoft.com/azure/foundry/openai/how-to/dall-e",
+      "versionContext": "GPT image models with model-specific GA/access/preview; DALL-E3retired",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S017.md",
+          "lineStart": 344,
+          "lineEnd": 354,
+          "heading": "### Generate images",
+          "needle": "result = client.images.generate(",
+          "excerpt": "\nresult = client.images.generate(\n    model=\"gpt-image-1\", # the name of your GPT-image series deployment\n    prompt=\"a close-up of a bear walking through the forest\",\n    n=1,\n    size=\"1024x1024\",\n    quality=\"high\",\n    output_format=\"png\",\n    # background=\"transparent\",  # Set to \"transparent\" for transparent backgrounds (GPT-image-1 only; requires PNG)\n    # output_compression=100,  # 0-100 compression level (JPEG output only)\n)",
+          "sourceSha256": "34668770bb5790633413f4ae9432738c85ed36aef328f9f2bdb8b1b82437dca6"
+        },
+        {
+          "snapshot": "sources/snapshots/S017.md",
+          "lineStart": 349,
+          "lineEnd": 354,
+          "heading": "### Generate images",
+          "needle": "quality=\"high\"",
+          "excerpt": "    size=\"1024x1024\",\n    quality=\"high\",\n    output_format=\"png\",\n    # background=\"transparent\",  # Set to \"transparent\" for transparent backgrounds (GPT-image-1 only; requires PNG)\n    # output_compression=100,  # 0-100 compression level (JPEG output only)\n)",
+          "sourceSha256": "34668770bb5790633413f4ae9432738c85ed36aef328f9f2bdb8b1b82437dca6"
+        }
+      ]
+    },
+    {
+      "claimId": "F018A",
+      "statement": "Sora 2 preview supports text/image-to-video, remix of generated videos, and audio output; generation follows an asynchronous job lifecycle.",
+      "sourceId": "S018",
+      "sourceUrl": "https://learn.microsoft.com/azure/foundry/openai/concepts/video-generation",
+      "versionContext": "Sora2preview; OpenAI v1 videos API; do not mix older jobs samples",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S018.md",
+          "lineStart": 8,
+          "lineEnd": 12,
+          "heading": "## Capabilities",
+          "needle": "**Remix**",
+          "excerpt": "- **Audio**: Sora 2 supports audio generation in output videos (similar to the Sora app).\n- **Remix**: Sora 2 introduces the ability to remix existing videos by making targeted adjustments instead of regenerating from scratch.\n- **Responsible AI and video generation**: Azure OpenAI's video generation models include built-in Responsible AI (RAI) protections to help ensure safe and compliant use. Sora 2 blocks all IP and photorealistic content.\n\n    In addition, Azure provides input and output moderation across all image generation models, along with Azure-specific safeguards such as content filtering and abuse monitoring. These systems help detect and prevent the generation or misuse of harmful, unsafe, or policy-violating content.",
+          "sourceSha256": "32257da44487ca802a87e1ebad7ef31dc91f45f034d3334fb60b1c7d53ffb808"
+        },
+        {
+          "snapshot": "sources/snapshots/S018.md",
+          "lineStart": 6,
+          "lineEnd": 10,
+          "heading": "## Capabilities",
+          "needle": "**Modalities**",
+          "excerpt": "\n- **Modalities**: text → video, image → video, video (generated) → video\n- **Audio**: Sora 2 supports audio generation in output videos (similar to the Sora app).\n- **Remix**: Sora 2 introduces the ability to remix existing videos by making targeted adjustments instead of regenerating from scratch.\n- **Responsible AI and video generation**: Azure OpenAI's video generation models include built-in Responsible AI (RAI) protections to help ensure safe and compliant use. Sora 2 blocks all IP and photorealistic content.",
+          "sourceSha256": "32257da44487ca802a87e1ebad7ef31dc91f45f034d3334fb60b1c7d53ffb808"
+        },
+        {
+          "snapshot": "sources/snapshots/S018.md",
+          "lineStart": 30,
+          "lineEnd": 33,
+          "heading": "## Quickstart",
+          "needle": "asynchronous",
+          "excerpt": "\nGenerate video clips using the Azure OpenAI service. Video generation is an asynchronous process. You create a job request with your text prompt and video format specifications, and the model processes the request in the background. You check the status of the video generation job and, once it finishes, retrieve the generated video through a download URL. The example uses the Sora 2 model.\n\n::: zone pivot=\"rest-api\"",
+          "sourceSha256": "32257da44487ca802a87e1ebad7ef31dc91f45f034d3334fb60b1c7d53ffb808"
+        }
+      ]
+    },
+    {
+      "claimId": "F018B",
+      "statement": "The current v1 Python reference remixes a previously generated video_id with a new prompt; this is distinct from arbitrary timeline editing.",
+      "sourceId": "S018",
+      "sourceUrl": "https://learn.microsoft.com/azure/foundry/openai/concepts/video-generation",
+      "versionContext": "Sora2preview; OpenAI v1 videos API; do not mix older jobs samples",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S018.md",
+          "lineStart": 1146,
+          "lineEnd": 1150,
+          "heading": "# [Microsoft Entra ID](#tab/python-entra)",
+          "needle": "video = client.videos.remix(",
+          "excerpt": "\nvideo = client.videos.remix(\n    video_id=\"<previous_video_id>\",\n    prompt=\"Shift the color palette to teal, sand, and rust, with a warm backlight.\"\n)",
+          "sourceSha256": "32257da44487ca802a87e1ebad7ef31dc91f45f034d3334fb60b1c7d53ffb808"
+        }
+      ]
+    }
+  ],
+  "constraints": [
+    "Only listed facts with conditions establish answer keys. Cite correct answers and distractor rationales.",
+    "Preserve API/SDK generation, preview, retirement and region/model qualifiers.",
+    "No unshown methods, asserted execution, GH-600 material, dumps, remembered assessments or official format parity.",
+    "Ready is bounded evidence support; later content review and manual solve-first audit are still required."
+  ]
+}

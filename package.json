@@ -5,10 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "vitest run",
+    "ci:local": "python3 scripts/local-ci.py",
+    "test:e2e": "playwright test",
     "build": "tsc -p tsconfig.json",
-    "dev": "tsx --env-file=.env src/server.ts",
-    "start": "node --env-file=.env dist/server.js",
+    "dev": "tsx --env-file-if-exists=.env src/server.ts",
+    "start": "node --env-file-if-exists=.env dist/server.js",
     "generate": "tsx --env-file=.env scripts/generate.ts",
+    "import-exam": "tsx scripts/import-exam.ts",
     "fetch-knowledge": "tsx scripts/fetch-knowledge.ts",
     "export-pdf": "tsx scripts/export-exam-pdf.ts"
   },
@@ -32,8 +35,17 @@
     "vitest": "^4.1.6"
   },
   "overrides": {
-    "@google-cloud/storage": { "uuid": "^11.1.1" },
-    "gaxios": { "uuid": "^11.1.1" },
-    "teeny-request": { "uuid": "^11.1.1" }
+    "@google-cloud/storage": {
+      "uuid": "^11.1.1"
+    },
+    "gaxios": {
+      "uuid": "^11.1.1"
+    },
+    "teeny-request": {
+      "uuid": "^11.1.1"
+    },
+    "@types/request": {
+      "form-data": "^2.5.6"
+    }
   }
 }

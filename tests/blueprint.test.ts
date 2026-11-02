@@ -1,5 +1,7 @@
 import { describe, expect, it } from "vitest";
-import { buildBlueprint } from "../src/blueprint.js";
+import { buildBlueprint as buildPackBlueprint } from "../src/blueprint.js";
+
+const buildBlueprint = (count: number) => buildPackBlueprint(count, { id: "gh-600", version: "1.1.0" });
 
 describe("buildBlueprint", () => {
   it("uses updated domain distribution for 100 (within official ranges)", () => {

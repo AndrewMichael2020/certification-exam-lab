@@ -6,8 +6,9 @@
  */
 import { Storage } from "@google-cloud/storage";
 import path from "node:path";
+import { offline } from "./runtime.js";
 
-const BUCKET_NAME = process.env.GCS_BUCKET ?? "";
+const BUCKET_NAME = offline ? "" : process.env.GCS_BUCKET ?? "";
 
 let _storage: Storage | null = null;
 function gcs(): Storage {
@@ -30,6 +31,7 @@ export function gcsPublicUrl(filename: string): string {
  * Returns the public URL.
  */
 export async function uploadPdf(localPath: string, filename: string): Promise<string> {
+  if (!gcsConfigured()) throw new Error("Cloud PDF storage is disabled.");
   const bucket = gcs().bucket(BUCKET_NAME);
   await bucket.upload(localPath, {
     destination: filename,
@@ -45,6 +47,7 @@ export async function uploadPdf(localPath: string, filename: string): Promise<st
  * Check whether a PDF already exists in the bucket.
  */
 export async function pdfExistsInGcs(filename: string): Promise<boolean> {
+  if (!gcsConfigured()) return false;
   try {
     const [exists] = await gcs().bucket(BUCKET_NAME).file(filename).exists();
     return exists;
@@ -61,14 +64,16 @@ export async function pdfExistsInGcs(filename: string): Promise<boolean> {
 export async function resolvePdfStatus(
   filename: string,
   localDir: string,
+  localUrl?: string,
+  objectName = filename,
 ): Promise<{ exists: boolean; url: string | null }> {
   if (gcsConfigured()) {
-    const exists = await pdfExistsInGcs(filename);
-    return { exists, url: exists ? gcsPublicUrl(filename) : null };
+    const exists = await pdfExistsInGcs(objectName);
+    return { exists, url: exists ? gcsPublicUrl(objectName) : null };
   }
   // Local fallback
   const { existsSync } = await import("node:fs");
   const localPath = path.join(localDir, filename);
   const exists = existsSync(localPath);
-  return { exists, url: exists ? `/exams/${filename}` : null };
+  return { exists, url: exists ? (localUrl ?? `/exams/${filename}`) : null };
 }

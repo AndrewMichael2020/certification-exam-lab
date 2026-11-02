@@ -1,0 +1,968 @@
+{
+  "canonicalDraftHash": "06b6490c1b4476a934d6301f1a53263b0e941b691ac9febf2e4522411b324c4a",
+  "questions": [
+    {
+      "domainId": "E",
+      "objectiveTags": [
+        "AI103-E1.02"
+      ],
+      "stem": "A product catalog needs exact codes and semantic candidates, with optional semantic reranking. Which TWO statements describe the stages correctly? Select TWO answers.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Hybrid retrieval combines keyword and vector ranked lists."
+        },
+        {
+          "id": "B",
+          "text": "Semantic ranking renames source fields during ingestion."
+        },
+        {
+          "id": "C",
+          "text": "Semantic reranking generates the indexed vectors."
+        },
+        {
+          "id": "D",
+          "text": "A query vectorizer uses a compatible embedding configuration."
+        },
+        {
+          "id": "E",
+          "text": "Keyword sorting makes vectorization unnecessary for the vector path."
+        }
+      ],
+      "correctAnswer": [
+        "A",
+        "D"
+      ],
+      "type": "multi_select",
+      "difficulty": "medium",
+      "explanation": {
+        "whyCorrect": "Hybrid retrieval combines complementary lists. Query vectorization supplies the vector path; semantic reranking operates after candidate retrieval.",
+        "whyDistractorsWrong": {
+          "C": "Reranking does not produce stored embeddings.",
+          "B": "Field mapping is an ingestion concern.",
+          "E": "A vector query still requires compatible vectorization."
+        }
+      },
+      "id": "ai103-improvement-r2-set-a-100-q063",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Implement information extraction solutions",
+      "sourceRefs": [
+        {
+          "sourceId": "S025",
+          "title": "Hybrid search using vectors and full-text search in Azure AI Search",
+          "url": "https://learn.microsoft.com/azure/search/hybrid-search-overview",
+          "snapshotSha256": "8f766ea87e9528dc1e469ffca3de91350cf9b9393aaf47e5c8c124378457397d",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S058",
+          "title": "Integrated vectorization REST configuration",
+          "url": "https://learn.microsoft.com/en-us/azure/search/search-how-to-integrated-vectorization",
+          "snapshotSha256": "a09c24b08450e2017f75e2fa7d0b107b870d58cb085c863b6531ddb3ab513716",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-10",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "E",
+      "objectiveTags": [
+        "AI103-E1.03"
+      ],
+      "stem": "A document enrichment pipeline needs layout-aware Markdown and OCR for normalized images. Which TWO skill choices directly target these outputs? Select TWO answers.",
+      "options": [
+        {
+          "id": "A",
+          "text": "The OCR skill receiving normalized images."
+        },
+        {
+          "id": "B",
+          "text": "The Document Intelligence Layout skill."
+        },
+        {
+          "id": "C",
+          "text": "A semantic query configuration."
+        },
+        {
+          "id": "D",
+          "text": "An output field alias without a producing skill."
+        },
+        {
+          "id": "E",
+          "text": "An Azure OpenAI chat output-token setting."
+        }
+      ],
+      "correctAnswer": [
+        "B",
+        "A"
+      ],
+      "type": "multi_select",
+      "difficulty": "medium",
+      "explanation": {
+        "whyCorrect": "Layout and OCR are producing enrichment capabilities. Their outputs still need the appropriate index mappings.",
+        "whyDistractorsWrong": {
+          "C": "Query semantics do not extract document layout.",
+          "E": "Generation length does not configure enrichment skills.",
+          "D": "A mapping does not create an absent enrichment output."
+        }
+      },
+      "id": "ai103-improvement-r2-set-a-100-q064",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Implement information extraction solutions",
+      "sourceRefs": [
+        {
+          "sourceId": "S029",
+          "title": "Document Layout skill",
+          "url": "https://learn.microsoft.com/azure/search/cognitive-search-skill-document-intelligence-layout",
+          "snapshotSha256": "eb899b4d8c7fdd95e158072fa95891c8c96388f09c48c00a67683fa10ec4591a",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S043",
+          "title": "OCR cognitive skill",
+          "url": "https://learn.microsoft.com/azure/search/cognitive-search-skill-ocr",
+          "snapshotSha256": "0a5cdd696dcbae744d32db7fd89a69926f0203462f86d6dc25793ab07d001b3d",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-10",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "E",
+      "objectiveTags": [
+        "AI103-E1.05"
+      ],
+      "stem": "An agent retrieves an unrelated Search index and returns content from another department. Which TWO tool configuration controls address the stated defects? Select TWO answers.",
+      "options": [
+        {
+          "id": "A",
+          "text": "A resource name containing the department."
+        },
+        {
+          "id": "B",
+          "text": "A supported filter using the authorized department."
+        },
+        {
+          "id": "C",
+          "text": "A larger unfiltered candidate set."
+        },
+        {
+          "id": "D",
+          "text": "The correct connected index name."
+        },
+        {
+          "id": "E",
+          "text": "A longer model answer."
+        }
+      ],
+      "correctAnswer": [
+        "D",
+        "B"
+      ],
+      "type": "multi_select",
+      "difficulty": "medium",
+      "explanation": {
+        "whyCorrect": "Select the intended index and enforce the supported retrieval filter. The authorized field value comes from the host’s access context.",
+        "whyDistractorsWrong": {
+          "E": "Length does not change retrieved data.",
+          "A": "A display name does not filter documents.",
+          "C": "More unfiltered candidates leave the boundary defect."
+        }
+      },
+      "id": "ai103-improvement-r2-set-a-100-q065",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Implement information extraction solutions",
+      "sourceRefs": [
+        {
+          "sourceId": "S040",
+          "title": "Connect an Azure AI Search index to Foundry agents",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/how-to/tools/ai-search",
+          "snapshotSha256": "67830020b25de8c993ae294ff523035ad2c04c16865c1fe7222f053769316545",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S054",
+          "title": "Tool best practices for Microsoft Foundry Agent Service",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/concepts/tool-best-practice",
+          "snapshotSha256": "fbf440754eab789009c34a8bf7636fc60c1d0bd64402cd650b1b903230ffd0f9",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-10",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "E",
+      "objectiveTags": [
+        "AI103-E2.01"
+      ],
+      "stem": "A document pipeline must extract invoice fields and support amount verification. Which TWO design choices address those requirements? Select TWO answers.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Retain source locations for reviewer inspection."
+        },
+        {
+          "id": "B",
+          "text": "Treat high confidence as permission to pay."
+        },
+        {
+          "id": "C",
+          "text": "Replace field types with filename parsing."
+        },
+        {
+          "id": "D",
+          "text": "Define the required field schema."
+        },
+        {
+          "id": "E",
+          "text": "Discard coordinates after assigning confidence."
+        }
+      ],
+      "correctAnswer": [
+        "D",
+        "A"
+      ],
+      "type": "multi_select",
+      "difficulty": "medium",
+      "explanation": {
+        "whyCorrect": "The schema defines extraction targets; grounding locations connect extracted values to the source. Downstream payment validation is separate.",
+        "whyDistractorsWrong": {
+          "B": "Confidence is not business authorization.",
+          "C": "A filename does not supply typed document fields.",
+          "E": "Discarding locations weakens evidence review."
+        }
+      },
+      "id": "ai103-improvement-r2-set-a-100-q066",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Implement information extraction solutions",
+      "sourceRefs": [
+        {
+          "sourceId": "S059",
+          "title": "Content Understanding document solutions",
+          "url": "https://learn.microsoft.com/en-us/azure/ai-services/content-understanding/document/overview",
+          "snapshotSha256": "bf5c315cb4cdc9062a3f9dd797d0167ce02b793bfbcea213c4c3ea8f25903422",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S045",
+          "title": "Validate document analyzer quality with confidence, grounding, and labeled samples",
+          "url": "https://learn.microsoft.com/azure/ai-services/content-understanding/document/analyzer-improvement",
+          "snapshotSha256": "c08a60437bdcc723d00d30d9898b3967040a122cf43b5ff95b5f1a33a3dadd93",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-10",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "E",
+      "objectiveTags": [
+        "AI103-E2.02"
+      ],
+      "stem": "A RAG pipeline needs a clean document representation before retrieval. Which TWO Content Understanding outputs or behaviors fit? Select TWO answers.",
+      "options": [
+        {
+          "id": "A",
+          "text": "A completed analysis result consumed after successful polling."
+        },
+        {
+          "id": "B",
+          "text": "Markdown representing document structure."
+        },
+        {
+          "id": "C",
+          "text": "A generated final answer used as the source document."
+        },
+        {
+          "id": "D",
+          "text": "A queued operation treated as extracted text."
+        },
+        {
+          "id": "E",
+          "text": "A raw poller serialized into the vector field."
+        }
+      ],
+      "correctAnswer": [
+        "B",
+        "A"
+      ],
+      "type": "multi_select",
+      "difficulty": "medium",
+      "explanation": {
+        "whyCorrect": "Structured/Markdown extraction and completed analysis results support downstream processing. An operation handle is not the extracted representation.",
+        "whyDistractorsWrong": {
+          "D": "Queued work has not yielded a completed representation.",
+          "C": "A final answer is downstream generation rather than the source representation.",
+          "E": "The poller is control state, not an embedding vector."
+        }
+      },
+      "id": "ai103-improvement-r2-set-a-100-q067",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Implement information extraction solutions",
+      "sourceRefs": [
+        {
+          "sourceId": "S059",
+          "title": "Content Understanding document solutions",
+          "url": "https://learn.microsoft.com/en-us/azure/ai-services/content-understanding/document/overview",
+          "snapshotSha256": "bf5c315cb4cdc9062a3f9dd797d0167ce02b793bfbcea213c4c3ea8f25903422",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S021",
+          "title": "Azure AI Content Understanding client library for Python - version 1.1.0",
+          "url": "https://learn.microsoft.com/python/api/overview/azure/ai-contentunderstanding-readme?view=azure-python",
+          "snapshotSha256": "aa5fd0abb99fe608e62d3909ffd7bc4eac9904dc931f427c9e3788351fbc7b42",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-10",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "E",
+      "objectiveTags": [
+        "AI103-E2.03"
+      ],
+      "stem": "A custom contract analyzer misses renewal dates in a new layout. Which TWO inputs should guide improvement? Select TWO answers.",
+      "options": [
+        {
+          "id": "A",
+          "text": "A typed renewal-date field definition."
+        },
+        {
+          "id": "B",
+          "text": "A high threshold reported as proof of correctness."
+        },
+        {
+          "id": "C",
+          "text": "Renaming every unrelated date as renewal_date."
+        },
+        {
+          "id": "D",
+          "text": "Tune the query semantic configuration without changing the extraction field definition."
+        },
+        {
+          "id": "E",
+          "text": "Representative examples with verified values."
+        }
+      ],
+      "correctAnswer": [
+        "A",
+        "E"
+      ],
+      "type": "multi_select",
+      "difficulty": "medium",
+      "explanation": {
+        "whyCorrect": "Define the intended field and use representative labeled evidence to improve extraction. Evaluate results on separate documents.",
+        "whyDistractorsWrong": {
+          "D": "Query ranking cannot define the missing renewal-date extraction target.",
+          "C": "Renaming an unrelated date does not identify the business field.",
+          "B": "A confidence threshold is not verification."
+        }
+      },
+      "id": "ai103-improvement-r2-set-a-100-q068",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Implement information extraction solutions",
+      "sourceRefs": [
+        {
+          "sourceId": "S059",
+          "title": "Content Understanding document solutions",
+          "url": "https://learn.microsoft.com/en-us/azure/ai-services/content-understanding/document/overview",
+          "snapshotSha256": "bf5c315cb4cdc9062a3f9dd797d0167ce02b793bfbcea213c4c3ea8f25903422",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S045",
+          "title": "Validate document analyzer quality with confidence, grounding, and labeled samples",
+          "url": "https://learn.microsoft.com/azure/ai-services/content-understanding/document/analyzer-improvement",
+          "snapshotSha256": "c08a60437bdcc723d00d30d9898b3967040a122cf43b5ff95b5f1a33a3dadd93",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-10",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "B",
+      "stem": "An agent proposes a refund. The application requires user confirmation, and the model supplies untrusted arguments. Which TWO host responsibilities are needed before the side effect? Select TWO answers.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Obtain confirmation for the specific proposed refund."
+        },
+        {
+          "id": "B",
+          "text": "Return the payment credential to the model for approval checking."
+        },
+        {
+          "id": "C",
+          "text": "Execute the refund before displaying its confirmation dialog."
+        },
+        {
+          "id": "D",
+          "text": "Validate the arguments and authorize the target account."
+        },
+        {
+          "id": "E",
+          "text": "Treat valid JSON as sufficient permission to issue the refund."
+        }
+      ],
+      "correctAnswer": [
+        "D",
+        "A"
+      ],
+      "difficulty": "medium",
+      "type": "multi_select",
+      "explanation": {
+        "whyCorrect": "The host must validate and authorize the operation, then obtain confirmation before executing that approved proposal.",
+        "whyDistractorsWrong": {
+          "E": "Syntax does not establish authorization or approval.",
+          "C": "Confirmation would occur after the side effect.",
+          "B": "The host should keep secrets out of tool results."
+        }
+      },
+      "objectiveTags": [
+        "AI103-B2.01"
+      ],
+      "id": "ai103-improvement-r2-set-a-100-q069",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Implement generative AI and agentic solutions",
+      "sourceRefs": [
+        {
+          "sourceId": "S007",
+          "title": "Use function calling with Microsoft Foundry agents",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/how-to/tools/function-calling",
+          "snapshotSha256": "0d4119f94b15c94d404729f53d2ed5f52a89dfaf35841d1290c0472be3e3e953",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-11",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "B",
+      "stem": "A strict Responses output must contain code and comment. Comment may be null, and additional fields are prohibited. Which TWO schema decisions satisfy those constraints? Select TWO answers.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Allow arbitrary extra fields and validate just the required names."
+        },
+        {
+          "id": "B",
+          "text": "Keep comment required and allow its type to include null."
+        },
+        {
+          "id": "C",
+          "text": "Represent absent comment as an omitted property with no nullable type."
+        },
+        {
+          "id": "D",
+          "text": "Set additionalProperties to false on the object schema."
+        },
+        {
+          "id": "E",
+          "text": "Omit comment from required when its value is unavailable."
+        }
+      ],
+      "correctAnswer": [
+        "B",
+        "D"
+      ],
+      "difficulty": "medium",
+      "type": "multi_select",
+      "explanation": {
+        "whyCorrect": "Use required nullable fields for optional information and disallow additional properties. The supported strict subset treats presence and nullability separately.",
+        "whyDistractorsWrong": {
+          "E": "The contract requires the property to be present.",
+          "A": "The contract prohibits additional fields.",
+          "C": "That changes both presence and value semantics."
+        }
+      },
+      "objectiveTags": [
+        "AI103-B3.01"
+      ],
+      "id": "ai103-improvement-r2-set-a-100-q070",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Implement generative AI and agentic solutions",
+      "sourceRefs": [
+        {
+          "sourceId": "S037",
+          "title": "Structured outputs",
+          "url": "https://learn.microsoft.com/azure/foundry/openai/how-to/structured-outputs",
+          "snapshotSha256": "0337c89ce3e5a9ba28d1c2fc18f1644c50b13568eb19edc43420d16b401cacfc",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-11",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "B",
+      "stem": "A RAG system must find exact equipment identifiers and semantic paraphrases. It uses a vector index built with model X. Which TWO design choices fit? Select TWO answers.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Use an unrelated model with matching dimensions as proof of vector compatibility."
+        },
+        {
+          "id": "B",
+          "text": "Sort hybrid candidates by filename after RRF to preserve relevance."
+        },
+        {
+          "id": "C",
+          "text": "Replace embeddings with semantic reranking during ingestion."
+        },
+        {
+          "id": "D",
+          "text": "Use query embeddings compatible with the indexed model X vectors."
+        },
+        {
+          "id": "E",
+          "text": "Combine keyword and vector retrieval through hybrid search."
+        }
+      ],
+      "correctAnswer": [
+        "E",
+        "D"
+      ],
+      "difficulty": "medium",
+      "type": "multi_select",
+      "explanation": {
+        "whyCorrect": "Hybrid retrieval supplies complementary lexical and semantic signals. Vector relevance also depends on compatible query and content representations.",
+        "whyDistractorsWrong": {
+          "A": "Dimension equality does not establish a shared representation.",
+          "C": "Reranking does not generate stored vectors.",
+          "B": "Filename order is not relevance ranking."
+        }
+      },
+      "objectiveTags": [
+        "AI103-B1.02"
+      ],
+      "id": "ai103-improvement-r2-set-a-100-q071",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Implement generative AI and agentic solutions",
+      "sourceRefs": [
+        {
+          "sourceId": "S025",
+          "title": "Hybrid search using vectors and full-text search in Azure AI Search",
+          "url": "https://learn.microsoft.com/azure/search/hybrid-search-overview",
+          "snapshotSha256": "8f766ea87e9528dc1e469ffca3de91350cf9b9393aaf47e5c8c124378457397d",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S026",
+          "title": "Integrated vector embedding in Azure AI Search",
+          "url": "https://learn.microsoft.com/azure/search/vector-search-integrated-vectorization",
+          "snapshotSha256": "45a6b445fbe4f7f65334693eb96b2de7b021e0b50ce46b363ab47c5de0a11f0d",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-11",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "B",
+      "stem": "An agent receives hostile user prompts and malicious instructions inside retrieved text. Which TWO controls align with those different entry points? Select TWO answers.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Treat retrieved-document instructions as lower-trust indirect attacks."
+        },
+        {
+          "id": "B",
+          "text": "Approve retrieved instructions because the source URL uses HTTPS."
+        },
+        {
+          "id": "C",
+          "text": "Scan final answers as proof that proposed tool calls were safe before execution."
+        },
+        {
+          "id": "D",
+          "text": "Treat tool output as a new developer message when it names a system role."
+        },
+        {
+          "id": "E",
+          "text": "Assess direct user attacks at the input boundary."
+        }
+      ],
+      "correctAnswer": [
+        "E",
+        "A"
+      ],
+      "difficulty": "medium",
+      "type": "multi_select",
+      "explanation": {
+        "whyCorrect": "User input and retrieved content create different attack paths. Apply controls at the relevant boundaries and preserve instruction authority.",
+        "whyDistractorsWrong": {
+          "D": "Text inside a result does not acquire a privileged role.",
+          "B": "Transport security does not establish instruction authority.",
+          "C": "A final scan occurs after earlier tool actions."
+        }
+      },
+      "objectiveTags": [
+        "AI103-B2.05"
+      ],
+      "id": "ai103-improvement-r2-set-a-100-q072",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Implement generative AI and agentic solutions",
+      "sourceRefs": [
+        {
+          "sourceId": "S015",
+          "title": "Guardrails and controls overview in Microsoft Foundry",
+          "url": "https://learn.microsoft.com/azure/foundry/guardrails/guardrails-overview",
+          "snapshotSha256": "8bff59568b79380dc2ea6df819b965422c98fdf03bf6b06df0b99bc1287e4c54",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S016",
+          "title": "Prompt Shields in Microsoft Foundry",
+          "url": "https://learn.microsoft.com/azure/foundry/openai/concepts/content-filter-prompt-shields",
+          "snapshotSha256": "770228d708d01826dc0d17c9ddafbb8d0e7f412bb2a0ad9a13b2ac54ac84735e",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-11",
+        "validationStatus": "draft"
+      }
+    }
+  ],
+  "caseStudies": [],
+  "evidence": [
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q063",
+      "testedDecision": "A product catalog needs exact codes and semantic candidates, with optional semantic reranking. Which TWO statements describe the stages correctly? Select TWO answers.",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-E1.02",
+      "itemRevisionHash": "22f89d783d1be13f6bb0bfe0ef7796485727e5e8bbae4df62e5e2e35ab3e29d6",
+      "sources": [
+        {
+          "sourceId": "S025",
+          "title": "Hybrid search using vectors and full-text search in Azure AI Search",
+          "url": "https://learn.microsoft.com/azure/search/hybrid-search-overview",
+          "snapshotSha256": "8f766ea87e9528dc1e469ffca3de91350cf9b9393aaf47e5c8c124378457397d",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S058",
+          "title": "Integrated vectorization REST configuration",
+          "url": "https://learn.microsoft.com/en-us/azure/search/search-how-to-integrated-vectorization",
+          "snapshotSha256": "a09c24b08450e2017f75e2fa7d0b107b870d58cb085c863b6531ddb3ab513716",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q064",
+      "testedDecision": "A document enrichment pipeline needs layout-aware Markdown and OCR for normalized images. Which TWO skill choices directly target these outputs? Select TWO answers.",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-E1.03",
+      "itemRevisionHash": "83451f6e24fa742a93f448d7a32a979f0fdea4cfc2cf08f812c9cabc43429c3e",
+      "sources": [
+        {
+          "sourceId": "S029",
+          "title": "Document Layout skill",
+          "url": "https://learn.microsoft.com/azure/search/cognitive-search-skill-document-intelligence-layout",
+          "snapshotSha256": "eb899b4d8c7fdd95e158072fa95891c8c96388f09c48c00a67683fa10ec4591a",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S043",
+          "title": "OCR cognitive skill",
+          "url": "https://learn.microsoft.com/azure/search/cognitive-search-skill-ocr",
+          "snapshotSha256": "0a5cdd696dcbae744d32db7fd89a69926f0203462f86d6dc25793ab07d001b3d",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q065",
+      "testedDecision": "An agent retrieves an unrelated Search index and returns content from another department. Which TWO tool configuration controls address the stated defects? Select TWO answers.",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-E1.05",
+      "itemRevisionHash": "f3914f8cb82aba0f5d19cece46a826f61158311cf34d4249a9d20d5bf9276911",
+      "sources": [
+        {
+          "sourceId": "S040",
+          "title": "Connect an Azure AI Search index to Foundry agents",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/how-to/tools/ai-search",
+          "snapshotSha256": "67830020b25de8c993ae294ff523035ad2c04c16865c1fe7222f053769316545",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S054",
+          "title": "Tool best practices for Microsoft Foundry Agent Service",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/concepts/tool-best-practice",
+          "snapshotSha256": "fbf440754eab789009c34a8bf7636fc60c1d0bd64402cd650b1b903230ffd0f9",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q066",
+      "testedDecision": "A document pipeline must extract invoice fields and support amount verification. Which TWO design choices address those requirements? Select TWO answers.",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-E2.01",
+      "itemRevisionHash": "e36b1f070255b29a4b58279507edf826f0030455dec17ef5c8b215817092c828",
+      "sources": [
+        {
+          "sourceId": "S059",
+          "title": "Content Understanding document solutions",
+          "url": "https://learn.microsoft.com/en-us/azure/ai-services/content-understanding/document/overview",
+          "snapshotSha256": "bf5c315cb4cdc9062a3f9dd797d0167ce02b793bfbcea213c4c3ea8f25903422",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S045",
+          "title": "Validate document analyzer quality with confidence, grounding, and labeled samples",
+          "url": "https://learn.microsoft.com/azure/ai-services/content-understanding/document/analyzer-improvement",
+          "snapshotSha256": "c08a60437bdcc723d00d30d9898b3967040a122cf43b5ff95b5f1a33a3dadd93",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q067",
+      "testedDecision": "A RAG pipeline needs a clean document representation before retrieval. Which TWO Content Understanding outputs or behaviors fit? Select TWO answers.",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-E2.02",
+      "itemRevisionHash": "669a0d76720eb306aa021d657c67308ffb5cedaa600b61f15e70eab76234e129",
+      "sources": [
+        {
+          "sourceId": "S059",
+          "title": "Content Understanding document solutions",
+          "url": "https://learn.microsoft.com/en-us/azure/ai-services/content-understanding/document/overview",
+          "snapshotSha256": "bf5c315cb4cdc9062a3f9dd797d0167ce02b793bfbcea213c4c3ea8f25903422",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S021",
+          "title": "Azure AI Content Understanding client library for Python - version 1.1.0",
+          "url": "https://learn.microsoft.com/python/api/overview/azure/ai-contentunderstanding-readme?view=azure-python",
+          "snapshotSha256": "aa5fd0abb99fe608e62d3909ffd7bc4eac9904dc931f427c9e3788351fbc7b42",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q068",
+      "testedDecision": "A custom contract analyzer misses renewal dates in a new layout. Which TWO inputs should guide improvement? Select TWO answers.",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-E2.03",
+      "itemRevisionHash": "15930e9f729389e1610ade9aa64cd125ab8a1129164d9a2775bb647671ad2720",
+      "sources": [
+        {
+          "sourceId": "S059",
+          "title": "Content Understanding document solutions",
+          "url": "https://learn.microsoft.com/en-us/azure/ai-services/content-understanding/document/overview",
+          "snapshotSha256": "bf5c315cb4cdc9062a3f9dd797d0167ce02b793bfbcea213c4c3ea8f25903422",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S045",
+          "title": "Validate document analyzer quality with confidence, grounding, and labeled samples",
+          "url": "https://learn.microsoft.com/azure/ai-services/content-understanding/document/analyzer-improvement",
+          "snapshotSha256": "c08a60437bdcc723d00d30d9898b3967040a122cf43b5ff95b5f1a33a3dadd93",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q069",
+      "testedDecision": "An agent proposes a refund. The application requires user confirmation, and the model supplies untrusted arguments. Which TWO host responsibilities are needed before the side effect? Select TWO answers.",
+      "oldItemIds": [
+        "ai103-set-a-q070"
+      ],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-B2.01",
+      "itemRevisionHash": "4f885550d8d48bd56b9793ff0aaf6439429fd96059e326dac87e052c633ddd2f",
+      "sources": [
+        {
+          "sourceId": "S007",
+          "title": "Use function calling with Microsoft Foundry agents",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/how-to/tools/function-calling",
+          "snapshotSha256": "0d4119f94b15c94d404729f53d2ed5f52a89dfaf35841d1290c0472be3e3e953",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q070",
+      "testedDecision": "A strict Responses output must contain code and comment. Comment may be null, and additional fields are prohibited. Which TWO schema decisions satisfy those constraints? Select TWO answers.",
+      "oldItemIds": [
+        "ai103-set-a-q071"
+      ],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-B3.01",
+      "itemRevisionHash": "b6dffadd10643fb43f54c8b4a4077ecb22bf9c97704e2d4f734329d66537a97a",
+      "sources": [
+        {
+          "sourceId": "S037",
+          "title": "Structured outputs",
+          "url": "https://learn.microsoft.com/azure/foundry/openai/how-to/structured-outputs",
+          "snapshotSha256": "0337c89ce3e5a9ba28d1c2fc18f1644c50b13568eb19edc43420d16b401cacfc",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q071",
+      "testedDecision": "A RAG system must find exact equipment identifiers and semantic paraphrases. It uses a vector index built with model X. Which TWO design choices fit? Select TWO answers.",
+      "oldItemIds": [
+        "ai103-set-a-q072"
+      ],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-B1.02",
+      "itemRevisionHash": "8cb79a3349c27dce78ed37ce644a321b02515e45debcac81c8094b4835320008",
+      "sources": [
+        {
+          "sourceId": "S025",
+          "title": "Hybrid search using vectors and full-text search in Azure AI Search",
+          "url": "https://learn.microsoft.com/azure/search/hybrid-search-overview",
+          "snapshotSha256": "8f766ea87e9528dc1e469ffca3de91350cf9b9393aaf47e5c8c124378457397d",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S026",
+          "title": "Integrated vector embedding in Azure AI Search",
+          "url": "https://learn.microsoft.com/azure/search/vector-search-integrated-vectorization",
+          "snapshotSha256": "45a6b445fbe4f7f65334693eb96b2de7b021e0b50ce46b363ab47c5de0a11f0d",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q072",
+      "testedDecision": "An agent receives hostile user prompts and malicious instructions inside retrieved text. Which TWO controls align with those different entry points? Select TWO answers.",
+      "oldItemIds": [
+        "ai103-set-a-q073"
+      ],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-B2.05",
+      "itemRevisionHash": "6ab8c5c2496fc619454b0be833f6b53eafb40b8dfe44c604bb7a137ed691145f",
+      "sources": [
+        {
+          "sourceId": "S015",
+          "title": "Guardrails and controls overview in Microsoft Foundry",
+          "url": "https://learn.microsoft.com/azure/foundry/guardrails/guardrails-overview",
+          "snapshotSha256": "8bff59568b79380dc2ea6df819b965422c98fdf03bf6b06df0b99bc1287e4c54",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S016",
+          "title": "Prompt Shields in Microsoft Foundry",
+          "url": "https://learn.microsoft.com/azure/foundry/openai/concepts/content-filter-prompt-shields",
+          "snapshotSha256": "770228d708d01826dc0d17c9ddafbb8d0e7f412bb2a0ad9a13b2ac54ac84735e",
+          "docType": "microsoft_learn"
+        }
+      ]
+    }
+  ]
+}

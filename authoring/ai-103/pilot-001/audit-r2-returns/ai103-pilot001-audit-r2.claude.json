@@ -1,0 +1,565 @@
+{
+  "templateOnly": false,
+  "packetId": "ai103-pilot001-audit-r2",
+  "packageId": "ai103-pilot-001-r2",
+  "revision": "2",
+  "pack": {
+    "id": "ai-103",
+    "version": "1.1.0"
+  },
+  "draftPackageSha256": "5d3fb8595e92f9e0bd7143fd6fba655bfad32906408a011084d3c6257594f2a8",
+  "reviewer": {
+    "actualModelLabel": "claude-opus-5-5[1m] (session_context.model); last_served_model claude-opus-5-5",
+    "visibleModeIfAny": "effort_level xhigh as read at 2026-10-08T07:02:50Z. Andrew switched to xhigh at 07:02:22Z. The original Phase 1 blind answers (saved about 07:01Z) ran at the prior, unrecorded level, so Phase 1 was rerun at xhigh at about 07:07Z in a fresh worker context that read only 00, 01 and 02; all ten rerun answers match the original blind answers. Phase 2 review ran at xhigh. permission_mode auto",
+    "reviewedAtUtc": "2026-10-08T07:10:00Z"
+  },
+  "items": [
+    {
+      "itemId": "ai103-pilot001-q01",
+      "itemRevision": "2",
+      "itemSha256": "ff2516e6617fe35b8db17fad20d6c898b0473c479a421a49284349540fb61710",
+      "sourceIds": [
+        "S005"
+      ],
+      "blindAnswer": "B",
+      "finalProposedAnswer": "B",
+      "verdict": "accept",
+      "rationale": "Blind answer matches the key. The case gives three constraints (EU processing boundary, pay-per-token without reservation, interactive responses) and each distractor fails exactly one: Global Standard fails the boundary, Data Zone Provisioned fails billing, Data Zone Batch fails interactivity. Explanations are correct and grounded in S005.",
+      "sourceEvidence": [
+        {
+          "sourceId": "S005",
+          "lines": "21-25",
+          "supports": "Global types may process in any region; Data Zone types process only within the EU/US/APAC zone."
+        },
+        {
+          "sourceId": "S005",
+          "lines": "39-46",
+          "supports": "Data Zone Standard is within data zone and pay-per-token; Data Zone Provisioned is reserved PTU; Data Zone Batch is the discounted batch type."
+        },
+        {
+          "sourceId": "S005",
+          "lines": "11",
+          "supports": "Batch is discounted asynchronous processing, which excludes interactive responses."
+        }
+      ],
+      "issues": [
+        {
+          "severity": "minor",
+          "blocking": false,
+          "text": "Rationale for D says the case 'explicitly excludes' batch. The case requires responses during the user interaction (01 L11) and does not name batch; the exclusion is implied. Optional rewording: 'which conflicts with the case requirement that responses be available during the user interaction.' If applied, the item needs a new bound revision."
+        },
+        {
+          "severity": "minor",
+          "blocking": false,
+          "text": "Extra-high blind rerun: difficulty disputed (medium in Phase 2, easy in rerun). Accepted at medium; easy is also defensible. Non-blocking."
+        }
+      ],
+      "suggestedCorrection": null,
+      "difficultyAssessment": {
+        "authorEstimate": "medium",
+        "reviewerEstimate": "medium",
+        "agree": true,
+        "note": "Borderline easy: each distractor is removed by one stated constraint, but the candidate must know what Global, Provisioned and Batch mean. Medium is defensible. Extra-high blind rerun (fresh context, 00-02 only): easy. Rates it a direct table lookup once the three constraints are mapped."
+      }
+    },
+    {
+      "itemId": "ai103-pilot001-q02",
+      "itemRevision": "2",
+      "itemSha256": "40c4ea6f85bc00579fc708a78f11b1ed270ecd022d0af4cae6356412621e3e63",
+      "sourceIds": [
+        "S011",
+        "S040"
+      ],
+      "blindAnswer": "D",
+      "finalProposedAnswer": "D",
+      "verdict": "revise",
+      "rationale": "Blind answer matches the key and the key is correct. The stem wording and the case stipulation (01 L19: the keyless connection principal is the Foundry account's system-assigned managed identity) adequately resolve the project-versus-account identity conflict in the frozen sources, and no option offers a project managed identity, so the conflict cannot make two options defensible. The main explanation and the C and B explanations are correct; 'the first role' correctly refers to Search Service Contributor. The A explanation contains a factual error about the option it explains, so the item needs one text revision.",
+      "sourceEvidence": [
+        {
+          "sourceId": "S040",
+          "lines": "5",
+          "supports": "Key-based authentication is not supported with private virtual networking; managed identity is required."
+        },
+        {
+          "sourceId": "S040",
+          "lines": "45-47",
+          "supports": "Keyless setup uses the Foundry account's system-assigned managed identity with Search Index Data Contributor and Search Service Contributor."
+        },
+        {
+          "sourceId": "S040",
+          "lines": "886-892",
+          "supports": "Portal steps assign both roles to the account identity's object ID."
+        },
+        {
+          "sourceId": "S011",
+          "lines": "59-74",
+          "supports": "Provisioning caller roles do not replace the runtime identity's data-plane roles."
+        }
+      ],
+      "issues": [
+        {
+          "severity": "major",
+          "blocking": true,
+          "text": "A explanation, second sentence: 'Granting a role to the developer also does not authorize the managed identity used by the connection.' In option A the connection stays key-based, so no managed identity is used by the connection. The sentence misdescribes the option and could teach that A involves a managed identity."
+        },
+        {
+          "severity": "info",
+          "blocking": false,
+          "text": "Unresolved source conflict, preserved: S040 L5 and S011 L74 say 'project managed identity'; S040 L45 and L887 say the Foundry account's system-assigned identity. The item relies on the case stipulation rather than resolving the conflict from sources. Acceptable for this item; flag for any item that does not carry the stipulation."
+        },
+        {
+          "severity": "minor",
+          "blocking": false,
+          "text": "Option C 'grant it Foundry User only' can be read as 'add only Foundry User' or 'leave the identity with only Foundry User'. Both readings are wrong, so the key is unaffected."
+        },
+        {
+          "severity": "minor",
+          "blocking": false,
+          "text": "Extra-high blind rerun: the case facts ('no other Search role'; neither provisioning identity is the runtime principal) narrow the choice to C versus D. This is the intended stipulation, not a defect."
+        }
+      ],
+      "suggestedCorrection": "Replace the A explanation with: 'A: The captured tool guide does not support key-based authentication with private virtual networking, and keeping the key leaves the connection on that unsupported method. A role granted to the developer does not change how the agent's connection authenticates; the developer is a provisioning identity, not the runtime connection principal.' Key D and all other text unchanged; rebind the item hash.",
+      "difficultyAssessment": {
+        "authorEstimate": "medium",
+        "reviewerEstimate": "medium",
+        "agree": true,
+        "note": "A and B fall to the case stipulations; C versus D requires knowing that Foundry User is not a Search data-plane role and that both documented Search roles are needed. Extra-high blind rerun (fresh context, 00-02 only): medium. Agrees."
+      }
+    },
+    {
+      "itemId": "ai103-pilot001-q03",
+      "itemRevision": "2",
+      "itemSha256": "31d35d4d2a7e954e8a23d8b9a4cc2e8d77e593b3307bfc6f09fa4a2941dd0745",
+      "sourceIds": [
+        "S037"
+      ],
+      "blindAnswer": {
+        "pairs": {
+          "required": "[\"order_id\", \"note\"]",
+          "additional": "false",
+          "format": "text.format"
+        }
+      },
+      "finalProposedAnswer": {
+        "pairs": {
+          "required": "[\"order_id\", \"note\"]",
+          "additional": "false",
+          "format": "text.format"
+        }
+      },
+      "verdict": "accept",
+      "rationale": "Blind answer matches the key. The required/null evidence is now complete: S037 L977-1003 requires all fields, L1005-1031 shows the string-or-null union keeping the key in required, and L1037-1039 requires additionalProperties false. S037 L3 places the schema in text.format for Responses and response_format for Chat Completions, and contrasts JSON mode. The stem's 'every successful, non-refusal output must contain order_id and note; null when absent' matches the union-plus-required pattern exactly. Every rejected choice in all three blanks has a correct explanation.",
+      "sourceEvidence": [
+        {
+          "sourceId": "S037",
+          "lines": "3",
+          "supports": "Responses defines the schema in text.format; Chat Completions uses response_format; JSON mode does not enforce the schema."
+        },
+        {
+          "sourceId": "S037",
+          "lines": "977-1031",
+          "supports": "All fields must be required; optional semantics via a union with null while remaining in required."
+        },
+        {
+          "sourceId": "S037",
+          "lines": "1037-1039",
+          "supports": "additionalProperties must be false for structured outputs."
+        }
+      ],
+      "issues": [
+        {
+          "severity": "minor",
+          "blocking": false,
+          "text": "Extra-high blind rerun: the format choice 'JSON mode without a schema' is a mode, not a request location, so it is a category-mismatched and weak distractor. Optional: replace it with a location-type distractor."
+        },
+        {
+          "severity": "minor",
+          "blocking": false,
+          "text": "Extra-high blind rerun: the 'required: {{required}}' template line sits directly above the 'required: [...] | ...' choice line with the same label, which can read as two settings. Optional: label the choice lines 'Choices for required:' and so on."
+        }
+      ],
+      "suggestedCorrection": null,
+      "difficultyAssessment": {
+        "authorEstimate": "medium",
+        "reviewerEstimate": "medium",
+        "agree": true,
+        "note": "The required-plus-nullable rule is the real discriminator; ['order_id'] is a plausible trap. Three independent blanks. Extra-high blind rerun (fresh context, 00-02 only): medium. Agrees."
+      }
+    },
+    {
+      "itemId": "ai103-pilot001-q04",
+      "itemRevision": "2",
+      "itemSha256": "7a2910a2963af9a93ca5ed8d22cdec871047aaf94582caf1b03280109896838d",
+      "sourceIds": [
+        "S007"
+      ],
+      "blindAnswer": "C",
+      "finalProposedAnswer": "C",
+      "verdict": "accept",
+      "rationale": "Blind answer matches the key. The call_id explanation is now correct: it distinguishes the function name (get_stock) from the per-invocation identifiers (call_red, call_blue) and ties each output to its originating call, which S007 L121-126 shows as call_id=item.call_id. The trace makes the defect visible and each distractor is wrong under the scenario.",
+      "sourceEvidence": [
+        {
+          "sourceId": "S007",
+          "lines": "113-127",
+          "supports": "Each function_call_output is built with call_id taken from the originating function_call item."
+        }
+      ],
+      "issues": [
+        {
+          "severity": "minor",
+          "blocking": false,
+          "text": "The D explanation says the captured example 'requires' the call_id field, and the A explanation says order 'does not replace the required call_id association'. S007 shows the pattern by example; it contains no normative sentence that ordering is insufficient. The conclusion is sound, but 'shows' is more accurate than 'requires' for the D explanation. Optional; rebind if changed."
+        },
+        {
+          "severity": "minor",
+          "blocking": false,
+          "text": "Optional: the D explanation could note that tool_call_id is the Chat Completions field name, which is what makes D a plausible distractor. Not required for correctness."
+        }
+      ],
+      "suggestedCorrection": null,
+      "difficultyAssessment": {
+        "authorEstimate": "easy",
+        "reviewerEstimate": "easy",
+        "agree": true,
+        "note": "The trace and option C name call_red and call_blue directly. Extra-high blind rerun (fresh context, 00-02 only): easy. Agrees."
+      }
+    },
+    {
+      "itemId": "ai103-pilot001-q05",
+      "itemRevision": "2",
+      "itemSha256": "2612907e04fc9fdc1d9a90e89c0e765f8b68f2719945c85b38617c13b00f9981",
+      "sourceIds": [
+        "S014",
+        "S039"
+      ],
+      "blindAnswer": "A",
+      "finalProposedAnswer": "A",
+      "verdict": "accept",
+      "rationale": "Blind answer matches the key. The stem removes Tool Call Success (calls succeeded) and Task Adherence (system policy followed) as explanations, and Task Completion's definition in S014 L18 (usable deliverable meeting all user requirements) matches the missing quote and table. Groundedness (S039 L9) measures precision against context and is correctly rejected.",
+      "sourceEvidence": [
+        {
+          "sourceId": "S014",
+          "lines": "18",
+          "supports": "Task Completion measures a usable deliverable that meets all user requirements."
+        },
+        {
+          "sourceId": "S014",
+          "lines": "20",
+          "supports": "Task Adherence measures adherence to rules, procedures and policy constraints from the system message."
+        },
+        {
+          "sourceId": "S014",
+          "lines": "27",
+          "supports": "Tool Call Success measures technical errors or exceptions."
+        },
+        {
+          "sourceId": "S039",
+          "lines": "9",
+          "supports": "Groundedness measures alignment with given context (precision)."
+        }
+      ],
+      "issues": [
+        {
+          "severity": "minor",
+          "blocking": false,
+          "text": "Extra-high blind rerun: difficulty disputed (medium in Phase 2, easy in rerun). Accepted at medium; easy is also defensible. Non-blocking."
+        }
+      ],
+      "suggestedCorrection": null,
+      "difficultyAssessment": {
+        "authorEstimate": "medium",
+        "reviewerEstimate": "medium",
+        "agree": true,
+        "note": "Task Adherence versus Task Completion is a real conceptual distinction. Extra-high blind rerun (fresh context, 00-02 only): easy. Rates it easy because the stem stipulates away Tool Call Success and Task Adherence."
+      }
+    },
+    {
+      "itemId": "ai103-pilot001-q06",
+      "itemRevision": "2",
+      "itemSha256": "e7c9fa6faea465dd927be2389e616d5b227e7ccd94510bb2e92e12f36443b261",
+      "sourceIds": [
+        "S018"
+      ],
+      "blindAnswer": "B",
+      "finalProposedAnswer": "B",
+      "verdict": "revise",
+      "rationale": "Blind answer matches the key, and the key and all four explanations are correct against S018. The revision is for the stimulus formatting only: as delivered in 01-BLIND-QUESTIONS.md, the stimulus nests ```python and ```json fences inside a ```text fence, which breaks Markdown rendering of Q6 and Q7.",
+      "sourceEvidence": [
+        {
+          "sourceId": "S018",
+          "lines": "633-635",
+          "supports": "Poll the video by ID; states are queued, in_progress, completed, failed."
+        },
+        {
+          "sourceId": "S018",
+          "lines": "666-675",
+          "supports": "Retrieve until completed or failed."
+        },
+        {
+          "sourceId": "S018",
+          "lines": "882-883",
+          "supports": "download_content retrieves the finished video."
+        },
+        {
+          "sourceId": "S018",
+          "lines": "1131, 1147-1150, 1201",
+          "supports": "Remix references a completed video and returns a new queued video ID with remixed_from_video_id."
+        }
+      ],
+      "issues": [
+        {
+          "severity": "major",
+          "blocking": true,
+          "text": "Rendering defect at 01 L109-124. Under CommonMark, the outer ```text fence (L109) closes at the bare ``` on L115; ```json opens at L117 and closes at L123; the stray ``` on L124 then opens a new code block that runs until L142. Rendered output would show Q6 options A-D, the Q7 heading, the Q7 stem and the start of the Q7 error summary as one code block. Inferred from CommonMark fence rules; not render-tested. The raw text is readable, so the key is unaffected."
+        },
+        {
+          "severity": "info",
+          "blocking": false,
+          "text": "The packet does not show whether the nesting is in the canonical item text or introduced by the Markdown export. If only the exporter nests the blocks, the fix belongs to the exporter and the item content could then be accepted on rebind."
+        },
+        {
+          "severity": "minor",
+          "blocking": false,
+          "text": "Extra-high blind rerun: independently found the same fence-nesting rendering defect, including the corruption of the Q7 display."
+        }
+      ],
+      "suggestedCorrection": "Render the stimulus with a four-backtick outer fence (as 02-SOURCE-EVIDENCE.md already does), or drop the outer ```text wrapper and present the python request and json result as two sibling fences under the caption. Key B and explanations unchanged; rebind the item hash.",
+      "difficultyAssessment": {
+        "authorEstimate": "easy",
+        "reviewerEstimate": "easy",
+        "agree": true,
+        "note": "The returned queued status and new ID point directly to B. Extra-high blind rerun (fresh context, 00-02 only): easy. Agrees."
+      }
+    },
+    {
+      "itemId": "ai103-pilot001-q07",
+      "itemRevision": "2",
+      "itemSha256": "c97da0405ba27044292bef1c51b198cc626e416df579925a5360f922ed9e55b0",
+      "sourceIds": [
+        "S009"
+      ],
+      "blindAnswer": [
+        "A",
+        "E"
+      ],
+      "finalProposedAnswer": [
+        "A",
+        "E"
+      ],
+      "verdict": "revise",
+      "rationale": "Blind answer matches the key and the content is correct. The initial-versus-persistent framing is now consistent with S009 L226: the stem asks for 'initial actions', group R is described as intermittent, and the explanation says backoff is the initial response with a support request if the error persists, without promising capacity. The revision is for the difficulty label: the item is not hard. Every distractor is eliminated by an explicit stem constraint (B by the retained-state requirement, C by 'Model token usage is below its quota' plus 'sole', D by the region policy), leaving exactly A and E for a two-answer item. A test-wise candidate can score it without knowing the session quota codes.",
+      "sourceEvidence": [
+        {
+          "sourceId": "S009",
+          "lines": "225-227",
+          "supports": "session_quota_exceeded: stop sessions not needing compute, delete only unneeded state, or request an increase; regional_session_quota_exceeded: exponential backoff or another region, support request if it persists; use backoff with jitter."
+        },
+        {
+          "sourceId": "S009",
+          "lines": "259",
+          "supports": "A stopped session keeps persisted state and does not count toward the concurrent session quota."
+        },
+        {
+          "sourceId": "S009",
+          "lines": "302-303",
+          "supports": "Error table repeats both remediations."
+        }
+      ],
+      "issues": [
+        {
+          "severity": "major",
+          "blocking": true,
+          "text": "Difficulty label 'hard' is overstated. All three distractors fall to explicit stem constraints, so the item measures careful reading more than session-quota knowledge. Reviewer estimate: medium."
+        },
+        {
+          "severity": "minor",
+          "blocking": false,
+          "text": "The explanation says 'bounded backoff with jitter'. Neither option E nor S009 says 'bounded'. Optional: drop 'bounded' or say 'exponential backoff with jitter'."
+        }
+      ],
+      "suggestedCorrection": "Change the assessed estimate from hard to medium. If the author wants this to remain the set's hard item, remove 'Model token usage is below its quota.' from the stem so that C must be rejected from the error codes themselves (S009 L229 separates tokens-per-minute caps from session limits), and consider removing 'the client currently retries immediately with no delay'; then re-review difficulty on the rebound text. A second, blind extra-high read rated this item easy; medium is the conservative label.",
+      "difficultyAssessment": {
+        "authorEstimate": "hard",
+        "reviewerEstimate": "medium",
+        "agree": false,
+        "note": "Solvable by elimination from stem constraints; two error layers and a multi-select keep it above easy. Extra-high blind rerun (fresh context, 00-02 only): easy. Agrees it is not hard; rates it easy because all three distractors fall to stem constraints."
+      }
+    },
+    {
+      "itemId": "ai103-pilot001-q08",
+      "itemRevision": "2",
+      "itemSha256": "3594149034eb4fe2a91754d781ad248cc0c9bbf11757da1642fcc379e2e2d28c",
+      "sourceIds": [
+        "S042"
+      ],
+      "blindAnswer": [
+        "B",
+        "E"
+      ],
+      "finalProposedAnswer": [
+        "B",
+        "E"
+      ],
+      "verdict": "accept",
+      "rationale": "Blind answer matches the key. S042 L129 states the image API supports only FourSeverityLevels with values 0, 2, 4, 6, and S042 L33 maps 4 to Medium and 6 to High, so B implements the policy and E is the documented configuration. C fails on the unsupported eight-level output; A confuses analysis success with approval; D is contradicted by the four separate categories in S042 L100 and L128.",
+      "sourceEvidence": [
+        {
+          "sourceId": "S042",
+          "lines": "33",
+          "supports": "Severity levels 0 Safe, 2 Low, 4 Medium, 6 High."
+        },
+        {
+          "sourceId": "S042",
+          "lines": "93-102",
+          "supports": "Request lists Hate, SelfHarm, Sexual, Violence with FourSeverityLevels."
+        },
+        {
+          "sourceId": "S042",
+          "lines": "127-129",
+          "supports": "Image moderation supports only FourSeverityLevels (0,2,4,6); categories default to all four."
+        }
+      ],
+      "issues": [],
+      "suggestedCorrection": null,
+      "difficultyAssessment": {
+        "authorEstimate": "medium",
+        "reviewerEstimate": "medium",
+        "agree": true,
+        "note": "Option C is a knowledge-based trap for candidates who know the text API's eight levels. Extra-high blind rerun (fresh context, 00-02 only): medium. Agrees."
+      }
+    },
+    {
+      "itemId": "ai103-pilot001-q09",
+      "itemRevision": "2",
+      "itemSha256": "2451ff9a3933330be814baf1438629fc2e85b71a29b9e48c7bffb3a016bc69ef",
+      "sourceIds": [
+        "S046"
+      ],
+      "blindAnswer": {
+        "order": [
+          "C",
+          "A",
+          "D",
+          "B"
+        ]
+      },
+      "finalProposedAnswer": {
+        "order": [
+          "C",
+          "A",
+          "D",
+          "B"
+        ]
+      },
+      "verdict": "accept",
+      "rationale": "Blind answer matches the key. The dependency chain (config and audio input, recognizer, recognize_once with TranslatedSpeech check, read translations['de'] and synthesize) is fully supported by S046, including synthesis from the translations dictionary with a voice set on a separate SpeechConfig.",
+      "sourceEvidence": [
+        {
+          "sourceId": "S046",
+          "lines": "76-95",
+          "supports": "SpeechTranslationConfig, it-IT recognition locale, add_target_language('de')."
+        },
+        {
+          "sourceId": "S046",
+          "lines": "102-118, 134-137",
+          "supports": "TranslationRecognizer takes translation_config and audio_config."
+        },
+        {
+          "sourceId": "S046",
+          "lines": "174-185",
+          "supports": "recognize_once(), ResultReason.TranslatedSpeech, translations[to_language]."
+        },
+        {
+          "sourceId": "S046",
+          "lines": "340-386",
+          "supports": "Synthesize translation text with a SpeechSynthesizer whose SpeechConfig sets the voice."
+        }
+      ],
+      "issues": [],
+      "suggestedCorrection": null,
+      "difficultyAssessment": {
+        "authorEstimate": "easy",
+        "reviewerEstimate": "easy",
+        "agree": true,
+        "note": "Natural dependency order; step C bundles audio-config creation, which A then consumes. Extra-high blind rerun (fresh context, 00-02 only): easy. Agrees."
+      }
+    },
+    {
+      "itemId": "ai103-pilot001-q10",
+      "itemRevision": "2",
+      "itemSha256": "c59dd6128fabe5d321941654c470f313e21645f923c4698f903c2044b60a8034",
+      "sourceIds": [
+        "S028",
+        "S029",
+        "S043",
+        "S026"
+      ],
+      "blindAnswer": {
+        "pairs": {
+          "A": "fieldMappings",
+          "B": "outputFieldMappings",
+          "C": "Document Layout skill",
+          "D": "OCR skill"
+        }
+      },
+      "finalProposedAnswer": {
+        "pairs": {
+          "A": "fieldMappings",
+          "B": "outputFieldMappings",
+          "C": "Document Layout skill",
+          "D": "OCR skill"
+        }
+      },
+      "verdict": "accept",
+      "rationale": "Blind answer matches the key. Each row maps to one source statement: fieldMappings for a source field and outputFieldMappings for an enrichment-tree node (S028 L151-156), Document Layout for structure-preserving Markdown or text (S029 L7, L74), OCR for normalized images to text (S043 L46-52). The query-time vectorizer (S026 L36-40) is correctly the unused choice.",
+      "sourceEvidence": [
+        {
+          "sourceId": "S028",
+          "lines": "151-156",
+          "supports": "fieldMappings map source fields; outputFieldMappings map enriched-document nodes."
+        },
+        {
+          "sourceId": "S029",
+          "lines": "7, 74",
+          "supports": "Document Layout skill analyzes structure and outputs Markdown or text."
+        },
+        {
+          "sourceId": "S043",
+          "lines": "46-52",
+          "supports": "OCR reads /document/normalized_images and outputs text."
+        },
+        {
+          "sourceId": "S026",
+          "lines": "36-40",
+          "supports": "Vectorizer converts query text to vectors at query time."
+        }
+      ],
+      "issues": [
+        {
+          "severity": "minor",
+          "blocking": false,
+          "text": "Extra-high blind rerun: S029 L7 says Document Layout also supports image extraction, a slight overlap with row D. Row D wording (normalized image inputs, characters) and the one-to-one rule still force OCR. No change needed."
+        }
+      ],
+      "suggestedCorrection": null,
+      "difficultyAssessment": {
+        "authorEstimate": "medium",
+        "reviewerEstimate": "medium",
+        "agree": true,
+        "note": "fieldMappings versus outputFieldMappings is the real discriminator; the vectorizer is an obvious leftover. Extra-high blind rerun (fresh context, 00-02 only): medium. Agrees."
+      }
+    }
+  ],
+  "overall": {
+    "summary": "All ten blind answers (recorded before 03 and 04 were opened) match the author key. Seven items are accepted. Three need a bound revision: Q2 (A explanation wrongly says the key-based connection uses a managed identity), Q6 (stimulus fences are nested and break Markdown rendering of Q6 and Q7; key and explanations correct), and Q7 (assessed 'hard' but every distractor is eliminated by a stem constraint; reviewer estimate medium). The specifically flagged areas are otherwise resolved: the Q2 case stipulation is sufficient and no option exploits the project-versus-account identity conflict; Q3 required and null evidence is complete; the Q4 call_id explanation is correct; Q7 initial versus persistent escalation is consistent with S009 L226. Difficulty: reviewer agrees with 9 of 10 labels; with Q7 at medium the assessed counts become easy 3, medium 7, hard 0, so the set would have no hard item. The shared case is sufficient and independent for Q1 and Q2. File byte hashes for 01-04 were checked against 00-START-HERE.md and match. No live sources were consulted; all findings are against frozen evidence. Phase 1 was rerun at extra high in a fresh context that saw only 00, 01 and 02. All ten rerun answers match both the original blind answers and the key. The rerun independently found the Q6 rendering defect and agreed Q7 is not hard. Its difficulty counts were easy 6, medium 4, hard 0; it also rated Q1 and Q5 easy. Both reads agree the set has no hard item and that several items (Q1, Q5, Q7) are answerable mainly by eliminating options against explicit stem constraints.",
+    "releaseRecommendation": "not_ready: revise Q2, Q6 and Q7, rebind their hashes, and re-review only the changed text; Q1, Q3, Q4, Q5, Q8, Q9 and Q10 are accepted at their current hashes.",
+    "unresolvedSourceGaps": [
+      "Identity terminology conflict in frozen sources: S040 L5 and S011 L74 say 'project managed identity'; S040 L45 and L887 say the Foundry account's system-assigned managed identity. Q2 relies on the case stipulation (01 L19), not on source resolution.",
+      "S007 L113-127 shows call_id pairing by example only; no frozen sentence states that output ordering cannot substitute for call_id. Q4's key rests on that reasonable inference.",
+      "Q6 fence nesting: the packet does not show whether the defect is in canonical item text or in the Markdown export.",
+      "No live Microsoft Learn pages were checked; currency of S005, S009, S014, S040 and S042 after their snapshot dates is unverified.",
+      "02-SOURCE-EVIDENCE.md prints S037 L1036-1039 twice (once inside the L977-1039 excerpt and again on its own). Cosmetic.",
+      "S018 L666 polls for status cancelled, but L635 lists only queued, in_progress, completed and failed. Does not affect Q6."
+    ]
+  }
+}

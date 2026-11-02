@@ -62,7 +62,7 @@ async function startFirstExam(page: Page) {
   await page.goto("/");
   await expect(page.locator("#examList")).toBeVisible({ timeout: 10_000 });
   // Click the "🎯 Exam" button (data-exam-mode="exam") on the first exam card
-  const takeBtn = page.locator("[data-exam-mode='exam']").first();
+  const takeBtn = page.locator("[data-exam-mode='exam'][data-exam-id='ci-gh600-fixture']");
   await expect(takeBtn).toBeVisible({ timeout: 10_000 });
   await takeBtn.click();
   await expect(page.locator("#view-exam")).toBeVisible({ timeout: 10_000 });
@@ -85,7 +85,7 @@ test.describe("GH-600 exam flow", () => {
 
     // ── 2. Answer all 20 questions ─────────────────────────────────────────
     const nextBtn = page.locator("#nextBtn");
-    const prevBtn = page.locator("#prevBtn");
+    const seenTypes = new Set<string>();
     let questionNumber = 1;
 
     while (true) {
@@ -103,6 +103,7 @@ test.describe("GH-600 exam flow", () => {
         await expect(sections.first()).toBeVisible();
       }
 
+      seenTypes.add(await page.locator("#typeBadge").innerText());
       // Answer the question
       await answerCurrentQuestion(page);
       await page.waitForTimeout(200);
@@ -110,7 +111,7 @@ test.describe("GH-600 exam flow", () => {
       questionNumber++;
 
       // Check if next button is visible and not submit
-      const isLastQuestion = await page.locator("#submitBtn").isVisible();
+      const isLastQuestion = /Q\s*20\s*\/\s*20/.test(await page.locator("#examCounter").innerText());
       if (isLastQuestion) break;
 
       if (await nextBtn.isVisible()) {
@@ -121,6 +122,9 @@ test.describe("GH-600 exam flow", () => {
 
       if (questionNumber > 25) break; // safety
     }
+
+    await expect(page.locator("#examCounter")).toHaveText("Q 20 / 20");
+    expect(seenTypes.size).toBe(9);
 
     // ── 3. Submit exam ─────────────────────────────────────────────────────
     const submitBtn = page.locator("#submitBtn");
@@ -141,7 +145,7 @@ test.describe("GH-600 exam flow", () => {
     // Score summary should show N / 20 correct
     const summary = page.locator("#scoreSummary");
     await expect(summary).toBeVisible();
-    await expect(summary).toContainText(/\d+ \/ \d+ correct/);
+    await expect(summary).toContainText(/\d+ \/ 20 correct/);
 
     // Domain breakdown should exist and all percentages should be 0–100%
     const breakdown = page.locator("#domainBreakdown, .domain-breakdown");
@@ -166,7 +170,7 @@ test.describe("GH-600 exam flow", () => {
     for (let i = 0; i < 25; i++) {
       await page.waitForTimeout(200);
       await answerCurrentQuestion(page);
-      const isLast = await page.locator("#submitBtn").isVisible();
+      const isLast = /Q\s*20\s*\/\s*20/.test(await page.locator("#examCounter").innerText());
       if (isLast) break;
       if (await nextBtn.isVisible()) await nextBtn.click();
     }
@@ -229,11 +233,11 @@ test.describe("GH-600 exam flow", () => {
         found = true;
         break;
       }
-      const isLast = await page.locator("#submitBtn").isVisible();
+      const isLast = /Q\s*20\s*\/\s*20/.test(await page.locator("#examCounter").innerText());
       if (isLast) break;
       if (await nextBtn.isVisible()) await nextBtn.click();
     }
-    if (!found) console.log("ℹ️  No matching_magnet question reached in this run");
+    expect(found).toBe(true);
   });
 
   test("case study panel shows sections on case study questions", async ({ page }) => {
@@ -262,8 +266,6 @@ test.describe("GH-600 exam flow", () => {
       if (m && m[1] === m[2]) break; // on last question
       await nextBtn.click();
     }
-    if (!found) {
-      console.log("ℹ️  No case study questions in this exam — skipping assertion");
-    }
+    expect(found).toBe(true);
   });
 });

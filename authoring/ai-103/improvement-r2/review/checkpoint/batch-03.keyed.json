@@ -1,0 +1,771 @@
+{
+  "canonicalDraftHash": "d2d885166ed8a1c2675e6d43bb3fd40f8d70e3d1b48e4a6618b345b2edb424f0",
+  "questions": [
+    {
+      "domainId": "A",
+      "objectiveTags": [
+        "AI103-A3.04"
+      ],
+      "stem": "Complete the Azure OpenAI v1 client for keyless inference. The calling identity has the inference role at the resource scope.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Complete the configured fields."
+        },
+        {
+          "id": "B",
+          "text": "Inspect all slot choices."
+        }
+      ],
+      "correctAnswer": {
+        "pairs": {
+          "audience": "https://ai.azure.com/.default",
+          "endpoint": "https://resource.openai.azure.com/openai/v1/"
+        }
+      },
+      "type": "dropdown_completion",
+      "difficulty": "medium",
+      "explanation": {
+        "whyCorrect": "The named v1 example uses the ai.azure.com token audience and the resource /openai/v1/ base URL. Authentication still requires authorization on the called resource.",
+        "whyDistractorsWrong": {
+          "audience": "Use the v1 example’s inference token audience, rather than an ARM or Search audience.",
+          "endpoint": "This is the direct resource v1 surface, not project management or Search."
+        }
+      },
+      "statementTemplate": "token_provider = get_bearer_token_provider(credential, \"{{audience}}\")\nclient = OpenAI(base_url=\"{{endpoint}}\", api_key=token_provider)",
+      "slots": [
+        {
+          "id": "audience",
+          "choices": [
+            "https://ai.azure.com/.default",
+            "https://management.azure.com/.default",
+            "https://search.azure.com/.default"
+          ]
+        },
+        {
+          "id": "endpoint",
+          "choices": [
+            "https://resource.openai.azure.com/openai/v1/",
+            "https://resource.services.ai.azure.com/api/projects/support",
+            "https://resource.search.windows.net/"
+          ]
+        }
+      ],
+      "id": "ai103-improvement-r2-checkpoint-20-q004",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Plan and manage an Azure AI solution",
+      "sourceRefs": [
+        {
+          "sourceId": "S051",
+          "title": "Azure OpenAI v1 API",
+          "url": "https://learn.microsoft.com/en-us/azure/foundry/openai/api-version-lifecycle",
+          "snapshotSha256": "8e7e4b2c4e94ad6056ffa3edf4750e4db864ceac16a52777cc13fd2068403803",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S052",
+          "title": "Use Azure OpenAI without keys",
+          "url": "https://learn.microsoft.com/en-us/azure/developer/ai/keyless-connections",
+          "snapshotSha256": "4f2b4d850889660d3af96aac661fa1955b8d9e1bf6f454facbef5b11aa59efcd",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:37:42Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-3",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "A",
+      "objectiveTags": [
+        "AI103-A2.03"
+      ],
+      "stem": "Complete the AI Projects Python 2.8.0 constructor for project operations.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Complete the configured fields."
+        },
+        {
+          "id": "B",
+          "text": "Inspect all slot choices."
+        }
+      ],
+      "correctAnswer": {
+        "pairs": {
+          "endpoint": "project_endpoint",
+          "credential": "DefaultAzureCredential()"
+        }
+      },
+      "type": "dropdown_completion",
+      "difficulty": "medium",
+      "explanation": {
+        "whyCorrect": "The retained AI Projects 2.8.0 reference uses a Foundry project endpoint and Entra credentials. Project and direct inference clients have different roles.",
+        "whyDistractorsWrong": {
+          "endpoint": "Choose the endpoint of the named project for project operations.",
+          "credential": "The 2.8.0 client supports Entra credentials; a URL is not a credential and resource-key construction is not this client contract."
+        }
+      },
+      "statementTemplate": "project = AIProjectClient(endpoint={{endpoint}}, credential={{credential}})",
+      "slots": [
+        {
+          "id": "endpoint",
+          "choices": [
+            "project_endpoint",
+            "openai_v1_base_url",
+            "search_endpoint"
+          ]
+        },
+        {
+          "id": "credential",
+          "choices": [
+            "DefaultAzureCredential()",
+            "AzureKeyCredential(resource_key)",
+            "project_endpoint"
+          ]
+        }
+      ],
+      "id": "ai103-improvement-r2-checkpoint-20-q005",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Plan and manage an Azure AI solution",
+      "sourceRefs": [
+        {
+          "sourceId": "S002",
+          "title": "Azure AI Projects client library for Python - version 2.8.0",
+          "url": "https://learn.microsoft.com/python/api/overview/azure/ai-projects-readme?view=azure-python",
+          "snapshotSha256": "2ce3139fd9fb77eb3f63d4a797ecc24deab957376faac5fe5a28d80e8080b266",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S003",
+          "title": "Microsoft Foundry SDKs and endpoints",
+          "url": "https://learn.microsoft.com/azure/foundry/how-to/develop/sdk-overview",
+          "snapshotSha256": "f62e4cfa9a1eeed9aa30383cab18005b8bc8f72d2743a26dedf0bb83d24e046d",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:37:42Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-3",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "A",
+      "objectiveTags": [
+        "AI103-A1.03"
+      ],
+      "stem": "A catalog requires exact part-code matches and semantic symptom matches. Which design combines both retrieval signals before optional reranking?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Vector retrieval alone, with a larger candidate count."
+        },
+        {
+          "id": "B",
+          "text": "Semantic reranking of keyword-only candidates."
+        },
+        {
+          "id": "C",
+          "text": "Keyword and vector retrieval with fused rankings."
+        },
+        {
+          "id": "D",
+          "text": "Keyword retrieval alone, with boosted identifier fields."
+        }
+      ],
+      "correctAnswer": "C",
+      "type": "single_choice",
+      "difficulty": "medium",
+      "explanation": {
+        "whyCorrect": "Keyword evidence complements semantic vectors. Evaluate hybrid retrieval for the actual query set; ranking quality is distinct from generation and authentication.",
+        "whyDistractorsWrong": {
+          "A": "A larger vector candidate count does not add keyword retrieval.",
+          "D": "Boosted keyword fields do not add vector retrieval.",
+          "B": "Reranking keyword candidates does not combine keyword and vector retrieval."
+        }
+      },
+      "id": "ai103-improvement-r2-checkpoint-20-q006",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Plan and manage an Azure AI solution",
+      "sourceRefs": [
+        {
+          "sourceId": "S025",
+          "title": "Hybrid search using vectors and full-text search in Azure AI Search",
+          "url": "https://learn.microsoft.com/azure/search/hybrid-search-overview",
+          "snapshotSha256": "8f766ea87e9528dc1e469ffca3de91350cf9b9393aaf47e5c8c124378457397d",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S026",
+          "title": "Integrated vector embedding in Azure AI Search",
+          "url": "https://learn.microsoft.com/azure/search/vector-search-integrated-vectorization",
+          "snapshotSha256": "45a6b445fbe4f7f65334693eb96b2de7b021e0b50ce46b363ab47c5de0a11f0d",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:37:42Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-3",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "A",
+      "stem": "A secured agent has the required runtime roles. Search resolves to a public IP from the agent network even though public access is disabled. The private endpoint exists. What should be investigated next?",
+      "options": [
+        {
+          "id": "A",
+          "text": "The Search role assignments on the identity used by the deployment pipeline."
+        },
+        {
+          "id": "B",
+          "text": "The query-time semantic ranking configuration on the target index."
+        },
+        {
+          "id": "C",
+          "text": "The private endpoint connection approval state for the runtime subnet."
+        },
+        {
+          "id": "D",
+          "text": "Private DNS resolution and links for the agent network."
+        }
+      ],
+      "correctAnswer": "D",
+      "difficulty": "medium",
+      "type": "single_choice",
+      "explanation": {
+        "whyCorrect": "A private endpoint must be reachable through correct DNS resolution and routing from the runtime network. Roles cannot repair resolution to a blocked public endpoint.",
+        "whyDistractorsWrong": {
+          "C": "The stated failure is name resolution to a public address.",
+          "A": "The problem is name resolution from the runtime network.",
+          "B": "Ranking is evaluated after a request reaches Search."
+        }
+      },
+      "objectiveTags": [
+        "AI103-A3.04"
+      ],
+      "id": "ai103-improvement-r2-checkpoint-20-q007",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Plan and manage an Azure AI solution",
+      "sourceRefs": [
+        {
+          "sourceId": "S011",
+          "title": "Set up private networking for Foundry Agent Service",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/how-to/virtual-networks",
+          "snapshotSha256": "02eb40fb9bc5fcbd6b27249423b2d0ba26f5df0dd6b6885c881270a7a6fac8b9",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:37:42Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-3",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "B",
+      "objectiveTags": [
+        "AI103-B1.06"
+      ],
+      "stem": "Complete the current Python client calls for an existing agent named helpdesk and its project OpenAI client.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Inspect all slot choices."
+        },
+        {
+          "id": "B",
+          "text": "Complete the configured fields."
+        }
+      ],
+      "correctAnswer": {
+        "pairs": {
+          "operation": "get",
+          "client": "get_openai_client"
+        }
+      },
+      "type": "dropdown_completion",
+      "difficulty": "medium",
+      "explanation": {
+        "whyCorrect": "The current operations reference exposes get(agent_name). The retained 2.8.0 project library provides get_openai_client for Responses and conversations.",
+        "whyDistractorsWrong": {
+          "operation": "Retrieve the existing named definition; do not mix classic retrieval or create a new version.",
+          "client": "Obtain the documented OpenAI client for Responses operations."
+        }
+      },
+      "statementTemplate": "agent = project.agents.{{operation}}(agent_name=\"helpdesk\")\nclient = project.{{client}}()",
+      "slots": [
+        {
+          "id": "operation",
+          "choices": [
+            "get",
+            "get_agent",
+            "create_version"
+          ]
+        },
+        {
+          "id": "client",
+          "choices": [
+            "get_openai_client",
+            "get_search_client",
+            "get_agent_client"
+          ]
+        }
+      ],
+      "id": "ai103-improvement-r2-checkpoint-20-q008",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Implement generative AI and agentic solutions",
+      "sourceRefs": [
+        {
+          "sourceId": "S002",
+          "title": "Azure AI Projects client library for Python - version 2.8.0",
+          "url": "https://learn.microsoft.com/python/api/overview/azure/ai-projects-readme?view=azure-python",
+          "snapshotSha256": "2ce3139fd9fb77eb3f63d4a797ecc24deab957376faac5fe5a28d80e8080b266",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S056",
+          "title": "AI Projects AgentsOperations Python reference",
+          "url": "https://learn.microsoft.com/en-us/python/api/azure-ai-projects/azure.ai.projects.operations.agentsoperations?view=azure-python",
+          "snapshotSha256": "888658bb603bbc211a4096be874b78aefcabf8c8e5a4b3c0a14e93ad80c2a6a7",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:37:42Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-4",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "B",
+      "objectiveTags": [
+        "AI103-B2.02"
+      ],
+      "stem": "Complete a backend memory-search tool definition and response header for per-user preferences. user_key is derived from the authenticated session.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Complete the configured fields."
+        },
+        {
+          "id": "B",
+          "text": "Inspect all slot choices."
+        }
+      ],
+      "correctAnswer": {
+        "pairs": {
+          "scope": "{{$userId}}",
+          "header": "x-memory-user-id"
+        }
+      },
+      "type": "dropdown_completion",
+      "difficulty": "medium",
+      "explanation": {
+        "whyCorrect": "The memory tool resolves the placeholder from the memory-user header, falling back to caller TID/OID without it. A backend must supply its authenticated end-user key.",
+        "whyDistractorsWrong": {
+          "scope": "Use the documented per-user placeholder; static scope pools users and a title is not a partition key.",
+          "header": "The memory-user header carries end-user identity; a trace ID does not select a user and Authorization identifies the calling service."
+        }
+      },
+      "statementTemplate": "from azure.ai.projects.models import MemorySearchPreviewTool, PromptAgentDefinition\ntool = MemorySearchPreviewTool(memory_store_name=\"preferences\", scope=\"{{scope}}\")\nagent = project.agents.create_version(agent_name=\"support\",\n    definition=PromptAgentDefinition(model=deployment, tools=[tool]))\nresponse = client.responses.create(input=message,\n    extra_body={\"agent_reference\": {\"name\": agent.name, \"type\": \"agent_reference\"}},\n    extra_headers={\"{{header}}\": user_key})",
+      "slots": [
+        {
+          "id": "scope",
+          "choices": [
+            "{{$userId}}",
+            "backend-shared",
+            "conversation-title"
+          ]
+        },
+        {
+          "id": "header",
+          "choices": [
+            "x-memory-user-id",
+            "x-request-id",
+            "Authorization"
+          ]
+        }
+      ],
+      "id": "ai103-improvement-r2-checkpoint-20-q009",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Implement generative AI and agentic solutions",
+      "sourceRefs": [
+        {
+          "sourceId": "S053",
+          "title": "Create and use memory in Foundry Agent Service (preview)",
+          "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/how-to/memory-usage",
+          "snapshotSha256": "d118113db20dbe589f686a9150063736c78ce1b6e7b37c649bf28262918d31b6",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:37:42Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-4",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "B",
+      "objectiveTags": [
+        "AI103-B2.01"
+      ],
+      "stem": "A Responses turn must consult at least one attached tool. Complete the request-level control.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Inspect all slot choices."
+        },
+        {
+          "id": "B",
+          "text": "Complete the configured fields."
+        }
+      ],
+      "correctAnswer": {
+        "pairs": {
+          "mode": "required"
+        }
+      },
+      "type": "dropdown_completion",
+      "difficulty": "medium",
+      "explanation": {
+        "whyCorrect": "required demands one or more calls. It does not by itself select one exact function, execute host code or grant permission.",
+        "whyDistractorsWrong": {
+          "mode": "auto leaves tool use to the model; none prevents it. The host remains responsible for validation and execution."
+        }
+      },
+      "statementTemplate": "response = client.responses.create(model=deployment, input=message, tools=tools, tool_choice=\"{{mode}}\")",
+      "slots": [
+        {
+          "id": "mode",
+          "choices": [
+            "auto",
+            "required",
+            "none"
+          ]
+        }
+      ],
+      "id": "ai103-improvement-r2-checkpoint-20-q010",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Implement generative AI and agentic solutions",
+      "sourceRefs": [
+        {
+          "sourceId": "S054",
+          "title": "Tool best practices for Microsoft Foundry Agent Service",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/concepts/tool-best-practice",
+          "snapshotSha256": "fbf440754eab789009c34a8bf7636fc60c1d0bd64402cd650b1b903230ffd0f9",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:37:42Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-4",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "B",
+      "objectiveTags": [
+        "AI103-B3.01"
+      ],
+      "stem": "Complete a supported strict Responses schema: note must be present and can be null; unknown properties are rejected.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Complete the configured fields."
+        },
+        {
+          "id": "B",
+          "text": "Inspect all slot choices."
+        }
+      ],
+      "correctAnswer": {
+        "pairs": {
+          "required": "[\"note\"]",
+          "extra": "False",
+          "location": "format"
+        }
+      },
+      "type": "dropdown_completion",
+      "difficulty": "medium",
+      "explanation": {
+        "whyCorrect": "Nullable value types do not make a property optional in the supported strict subset. Responses uses text.format, unlike the Chat Completions field.",
+        "whyDistractorsWrong": {
+          "required": "Require the key while retaining a nullable value type.",
+          "extra": "additionalProperties false disallows unknown fields.",
+          "location": "Use the documented Responses request shape."
+        }
+      },
+      "statementTemplate": "schema = {\"type\": \"object\", \"properties\": {\"note\": {\"type\": [\"string\", \"null\"]}},\n          \"required\": {{required}}, \"additionalProperties\": {{extra}}}\n# response text.{{location}} contains the json_schema format",
+      "slots": [
+        {
+          "id": "required",
+          "choices": [
+            "[\"note\"]",
+            "[]",
+            "[\"string\", \"null\"]"
+          ]
+        },
+        {
+          "id": "extra",
+          "choices": [
+            "False",
+            "True"
+          ]
+        },
+        {
+          "id": "location",
+          "choices": [
+            "format",
+            "response_format",
+            "metadata"
+          ]
+        }
+      ],
+      "id": "ai103-improvement-r2-checkpoint-20-q011",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Implement generative AI and agentic solutions",
+      "sourceRefs": [
+        {
+          "sourceId": "S037",
+          "title": "Structured outputs",
+          "url": "https://learn.microsoft.com/azure/foundry/openai/how-to/structured-outputs",
+          "snapshotSha256": "0337c89ce3e5a9ba28d1c2fc18f1644c50b13568eb19edc43420d16b401cacfc",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:37:42Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-4",
+        "validationStatus": "draft"
+      }
+    }
+  ],
+  "caseStudies": [],
+  "evidence": [
+    {
+      "itemId": "ai103-improvement-r2-checkpoint-20-q004",
+      "testedDecision": "Complete the Azure OpenAI v1 client for keyless inference. The calling identity has the inference role at the resource scope.",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-A3.04",
+      "itemRevisionHash": "2146a70792a92938f0801693ecb9b25bfd8d250d7a9f0b09ae85ba485a48ae25",
+      "sources": [
+        {
+          "sourceId": "S051",
+          "title": "Azure OpenAI v1 API",
+          "url": "https://learn.microsoft.com/en-us/azure/foundry/openai/api-version-lifecycle",
+          "snapshotSha256": "8e7e4b2c4e94ad6056ffa3edf4750e4db864ceac16a52777cc13fd2068403803",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S052",
+          "title": "Use Azure OpenAI without keys",
+          "url": "https://learn.microsoft.com/en-us/azure/developer/ai/keyless-connections",
+          "snapshotSha256": "4f2b4d850889660d3af96aac661fa1955b8d9e1bf6f454facbef5b11aa59efcd",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-checkpoint-20-q005",
+      "testedDecision": "Complete the AI Projects Python 2.8.0 constructor for project operations.",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-A2.03",
+      "itemRevisionHash": "601d3a715dd3c75d6761f2badf7eb240cc81b20e4704cf449f646110f1b1c8c6",
+      "sources": [
+        {
+          "sourceId": "S002",
+          "title": "Azure AI Projects client library for Python - version 2.8.0",
+          "url": "https://learn.microsoft.com/python/api/overview/azure/ai-projects-readme?view=azure-python",
+          "snapshotSha256": "2ce3139fd9fb77eb3f63d4a797ecc24deab957376faac5fe5a28d80e8080b266",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S003",
+          "title": "Microsoft Foundry SDKs and endpoints",
+          "url": "https://learn.microsoft.com/azure/foundry/how-to/develop/sdk-overview",
+          "snapshotSha256": "f62e4cfa9a1eeed9aa30383cab18005b8bc8f72d2743a26dedf0bb83d24e046d",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-checkpoint-20-q006",
+      "testedDecision": "A catalog requires exact part-code matches and semantic symptom matches. Which design combines both retrieval signals before optional reranking?",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-A1.03",
+      "itemRevisionHash": "9c010206c06274c842110001ff98757c817c355a353a1abbe499c3e4f6966ba2",
+      "sources": [
+        {
+          "sourceId": "S025",
+          "title": "Hybrid search using vectors and full-text search in Azure AI Search",
+          "url": "https://learn.microsoft.com/azure/search/hybrid-search-overview",
+          "snapshotSha256": "8f766ea87e9528dc1e469ffca3de91350cf9b9393aaf47e5c8c124378457397d",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S026",
+          "title": "Integrated vector embedding in Azure AI Search",
+          "url": "https://learn.microsoft.com/azure/search/vector-search-integrated-vectorization",
+          "snapshotSha256": "45a6b445fbe4f7f65334693eb96b2de7b021e0b50ce46b363ab47c5de0a11f0d",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-checkpoint-20-q007",
+      "testedDecision": "A secured agent has the required runtime roles. Search resolves to a public IP from the agent network even though public access is disabled. The private endpoint exists. What should be investigated next?",
+      "oldItemIds": [
+        "ai103-set-a-q004"
+      ],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-A3.04",
+      "itemRevisionHash": "8c4c5aba70e8cc187b006bf836dafed3a25b0920198d8cbddd7e9f29bf43c58a",
+      "sources": [
+        {
+          "sourceId": "S011",
+          "title": "Set up private networking for Foundry Agent Service",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/how-to/virtual-networks",
+          "snapshotSha256": "02eb40fb9bc5fcbd6b27249423b2d0ba26f5df0dd6b6885c881270a7a6fac8b9",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-checkpoint-20-q008",
+      "testedDecision": "Complete the current Python client calls for an existing agent named helpdesk and its project OpenAI client.",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-B1.06",
+      "itemRevisionHash": "784ad441d7f34c829ed0e399a2c88b95437d8d6df06d6f6d6f056b07a9dfdc45",
+      "sources": [
+        {
+          "sourceId": "S002",
+          "title": "Azure AI Projects client library for Python - version 2.8.0",
+          "url": "https://learn.microsoft.com/python/api/overview/azure/ai-projects-readme?view=azure-python",
+          "snapshotSha256": "2ce3139fd9fb77eb3f63d4a797ecc24deab957376faac5fe5a28d80e8080b266",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S056",
+          "title": "AI Projects AgentsOperations Python reference",
+          "url": "https://learn.microsoft.com/en-us/python/api/azure-ai-projects/azure.ai.projects.operations.agentsoperations?view=azure-python",
+          "snapshotSha256": "888658bb603bbc211a4096be874b78aefcabf8c8e5a4b3c0a14e93ad80c2a6a7",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-checkpoint-20-q009",
+      "testedDecision": "Complete a backend memory-search tool definition and response header for per-user preferences. user_key is derived from the authenticated session.",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-B2.02",
+      "itemRevisionHash": "bfdbcdfb63c330cba511141aceff334a644814aae39a97f247841767250a54b2",
+      "sources": [
+        {
+          "sourceId": "S053",
+          "title": "Create and use memory in Foundry Agent Service (preview)",
+          "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/how-to/memory-usage",
+          "snapshotSha256": "d118113db20dbe589f686a9150063736c78ce1b6e7b37c649bf28262918d31b6",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-checkpoint-20-q010",
+      "testedDecision": "A Responses turn must consult at least one attached tool. Complete the request-level control.",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-B2.01",
+      "itemRevisionHash": "b93271fe050d6ef1be4326850d7cf7f625916ffc312f6cdf16de3ff167253c5c",
+      "sources": [
+        {
+          "sourceId": "S054",
+          "title": "Tool best practices for Microsoft Foundry Agent Service",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/concepts/tool-best-practice",
+          "snapshotSha256": "fbf440754eab789009c34a8bf7636fc60c1d0bd64402cd650b1b903230ffd0f9",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-checkpoint-20-q011",
+      "testedDecision": "Complete a supported strict Responses schema: note must be present and can be null; unknown properties are rejected.",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-B3.01",
+      "itemRevisionHash": "230405296aa14715945e90dc8e3e1340574b6e2f5921c463b01e7aab3b111d7a",
+      "sources": [
+        {
+          "sourceId": "S037",
+          "title": "Structured outputs",
+          "url": "https://learn.microsoft.com/azure/foundry/openai/how-to/structured-outputs",
+          "snapshotSha256": "0337c89ce3e5a9ba28d1c2fc18f1644c50b13568eb19edc43420d16b401cacfc",
+          "docType": "microsoft_learn"
+        }
+      ]
+    }
+  ]
+}

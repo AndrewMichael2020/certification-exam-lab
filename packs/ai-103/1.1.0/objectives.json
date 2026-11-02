@@ -1,0 +1,1630 @@
+{
+  "examCode": "AI-103",
+  "idPolicy": "Stable local IDs; Microsoft publishes unnumbered bullets. Foundation parent IDs retained.",
+  "capturedAt": "2026-10-08T04:25:11.784045+00:00",
+  "objectiveEffectiveDate": "2026-04-16",
+  "officialRanges": [
+    {
+      "domainId": "A",
+      "name": "Plan and manage an Azure AI solution",
+      "officialRange": [
+        25,
+        30
+      ],
+      "localPracticeWeight": 28
+    },
+    {
+      "domainId": "B",
+      "name": "Implement generative AI and agentic solutions",
+      "officialRange": [
+        30,
+        35
+      ],
+      "localPracticeWeight": 33
+    },
+    {
+      "domainId": "C",
+      "name": "Implement computer vision solutions",
+      "officialRange": [
+        10,
+        15
+      ],
+      "localPracticeWeight": 13
+    },
+    {
+      "domainId": "D",
+      "name": "Implement text analysis solutions",
+      "officialRange": [
+        10,
+        15
+      ],
+      "localPracticeWeight": 13
+    },
+    {
+      "domainId": "E",
+      "name": "Implement information extraction solutions",
+      "officialRange": [
+        10,
+        15
+      ],
+      "localPracticeWeight": 13
+    }
+  ],
+  "groups": [
+    {
+      "id": "AI103-A1",
+      "domainId": "A",
+      "title": "Choose the appropriate Foundry services for generative AI and agents",
+      "officialAnchor": "choose-the-appropriate-foundry-services-for-generative-ai-and-agents",
+      "candidateSourceIds": [
+        "S003",
+        "S004",
+        "S006",
+        "S007",
+        "S021",
+        "S025",
+        "S026",
+        "S041"
+      ]
+    },
+    {
+      "id": "AI103-A2",
+      "domainId": "A",
+      "title": "Set up AI solutions in Foundry",
+      "officialAnchor": "set-up-ai-solutions-in-foundry",
+      "candidateSourceIds": [
+        "S002",
+        "S003",
+        "S004",
+        "S005",
+        "S009",
+        "S011",
+        "S012",
+        "S014"
+      ]
+    },
+    {
+      "id": "AI103-A3",
+      "domainId": "A",
+      "title": "Manage, monitor, and secure AI systems",
+      "officialAnchor": "manage-monitor-and-secure-ai-systems",
+      "candidateSourceIds": [
+        "S004",
+        "S009",
+        "S010",
+        "S011",
+        "S013",
+        "S027",
+        "S039",
+        "S040",
+        "S044"
+      ]
+    },
+    {
+      "id": "AI103-A4",
+      "domainId": "A",
+      "title": "Implement responsible AI across generative AI and agentic systems",
+      "officialAnchor": "implement-responsible-ai-across-generative-ai-and-agentic-systems",
+      "candidateSourceIds": [
+        "S007",
+        "S008",
+        "S013",
+        "S014",
+        "S015",
+        "S016",
+        "S039",
+        "S045"
+      ]
+    },
+    {
+      "id": "AI103-B1",
+      "domainId": "B",
+      "title": "Build generative applications by using Foundry",
+      "officialAnchor": "build-generative-applications-by-using-foundry",
+      "candidateSourceIds": [
+        "S002",
+        "S003",
+        "S004",
+        "S007",
+        "S008",
+        "S014",
+        "S025",
+        "S026",
+        "S039",
+        "S040"
+      ]
+    },
+    {
+      "id": "AI103-B2",
+      "domainId": "B",
+      "title": "Build agents by using Foundry",
+      "officialAnchor": "build-agents-by-using-foundry",
+      "candidateSourceIds": [
+        "S003",
+        "S006",
+        "S007",
+        "S008",
+        "S013",
+        "S014",
+        "S015",
+        "S021",
+        "S040"
+      ]
+    },
+    {
+      "id": "AI103-B3",
+      "domainId": "B",
+      "title": "Optimize and operationalize generative AI systems",
+      "officialAnchor": "optimize-and-operationalize-generative-ai-systems",
+      "candidateSourceIds": [
+        "S007",
+        "S008",
+        "S009",
+        "S013",
+        "S014",
+        "S037",
+        "S038",
+        "S041",
+        "S047"
+      ]
+    },
+    {
+      "id": "AI103-C1",
+      "domainId": "C",
+      "title": "Design and implement image- and video-generation solutions",
+      "officialAnchor": "design-and-implement-image--and-video-generation-solutions",
+      "candidateSourceIds": [
+        "S017",
+        "S018"
+      ]
+    },
+    {
+      "id": "AI103-C2",
+      "domainId": "C",
+      "title": "Design and implement multimodal understanding workflows",
+      "officialAnchor": "design-and-implement-multimodal-understanding-workflows",
+      "candidateSourceIds": [
+        "S019",
+        "S020",
+        "S021",
+        "S022",
+        "S023",
+        "S024",
+        "S045",
+        "S049",
+        "S050"
+      ]
+    },
+    {
+      "id": "AI103-C3",
+      "domainId": "C",
+      "title": "Implement responsible AI for multimodal content",
+      "officialAnchor": "implement-responsible-ai-for-multimodal-content",
+      "candidateSourceIds": [
+        "S016",
+        "S018",
+        "S042",
+        "S043",
+        "S048"
+      ]
+    },
+    {
+      "id": "AI103-D1",
+      "domainId": "D",
+      "title": "Apply language model text analysis",
+      "officialAnchor": "apply-language-model-text-analysis",
+      "candidateSourceIds": [
+        "S015",
+        "S030",
+        "S031",
+        "S032",
+        "S037",
+        "S047",
+        "S048"
+      ]
+    },
+    {
+      "id": "AI103-D2",
+      "domainId": "D",
+      "title": "Implement speech solutions",
+      "officialAnchor": "implement-speech-solutions",
+      "candidateSourceIds": [
+        "S033",
+        "S034",
+        "S035",
+        "S036",
+        "S046"
+      ]
+    },
+    {
+      "id": "AI103-E1",
+      "domainId": "E",
+      "title": "Build retrieval and grounding pipelines",
+      "officialAnchor": "build-retrieval-and-grounding-pipelines",
+      "candidateSourceIds": [
+        "S007",
+        "S021",
+        "S025",
+        "S026",
+        "S028",
+        "S029",
+        "S040",
+        "S043"
+      ]
+    },
+    {
+      "id": "AI103-E2",
+      "domainId": "E",
+      "title": "Extract content from documents",
+      "officialAnchor": "extract-content-from-documents",
+      "candidateSourceIds": [
+        "S020",
+        "S021",
+        "S024",
+        "S029",
+        "S045"
+      ]
+    }
+  ],
+  "objectives": [
+    {
+      "id": "AI103-A1.01",
+      "parentId": "AI103-A1",
+      "domainId": "A",
+      "officialWording": "Choose an appropriate model for each task, including large language models (LLMs), small language models, multimodal models, and Foundry Tools",
+      "officialUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-103#choose-the-appropriate-foundry-services-for-generative-ai-and-agents",
+      "effectiveDate": "2026-04-16",
+      "outlineSourceId": "S001",
+      "outlineCaptureSha256": "6300f5be415422e770ebe6e4fad8975ba5a2f466937a2752ac6a7a88a2835a0b",
+      "researchStatus": "partial",
+      "candidateSourceIds": [
+        "S003",
+        "S004",
+        "S041"
+      ],
+      "claimIds": [
+        "F003B",
+        "F004A",
+        "F041A"
+      ],
+      "note": "knowledge/objectives/AI103-A1.01.md"
+    },
+    {
+      "id": "AI103-A1.02",
+      "parentId": "AI103-A1",
+      "domainId": "A",
+      "officialWording": "Choose the appropriate Foundry services for generative tasks, grounding, vector search, agent workflows, or multimodal processing",
+      "officialUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-103#choose-the-appropriate-foundry-services-for-generative-ai-and-agents",
+      "effectiveDate": "2026-04-16",
+      "outlineSourceId": "S001",
+      "outlineCaptureSha256": "6300f5be415422e770ebe6e4fad8975ba5a2f466937a2752ac6a7a88a2835a0b",
+      "researchStatus": "ready",
+      "candidateSourceIds": [
+        "S006",
+        "S021",
+        "S026"
+      ],
+      "claimIds": [
+        "F006B",
+        "F026A",
+        "F021B"
+      ],
+      "note": "knowledge/objectives/AI103-A1.02.md"
+    },
+    {
+      "id": "AI103-A1.03",
+      "parentId": "AI103-A1",
+      "domainId": "A",
+      "officialWording": "Choose an appropriate method for retrieval and indexing",
+      "officialUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-103#choose-the-appropriate-foundry-services-for-generative-ai-and-agents",
+      "effectiveDate": "2026-04-16",
+      "outlineSourceId": "S001",
+      "outlineCaptureSha256": "6300f5be415422e770ebe6e4fad8975ba5a2f466937a2752ac6a7a88a2835a0b",
+      "researchStatus": "ready",
+      "candidateSourceIds": [
+        "S025",
+        "S026"
+      ],
+      "claimIds": [
+        "F025A",
+        "F025B",
+        "F026A"
+      ],
+      "note": "knowledge/objectives/AI103-A1.03.md"
+    },
+    {
+      "id": "AI103-A1.04",
+      "parentId": "AI103-A1",
+      "domainId": "A",
+      "officialWording": "Choose appropriate memory, tool, and knowledge integration services for agent solutions",
+      "officialUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-103#choose-the-appropriate-foundry-services-for-generative-ai-and-agents",
+      "effectiveDate": "2026-04-16",
+      "outlineSourceId": "S001",
+      "outlineCaptureSha256": "6300f5be415422e770ebe6e4fad8975ba5a2f466937a2752ac6a7a88a2835a0b",
+      "researchStatus": "ready",
+      "candidateSourceIds": [
+        "S006",
+        "S007"
+      ],
+      "claimIds": [
+        "F006A",
+        "F006B",
+        "F006C",
+        "F007A"
+      ],
+      "note": "knowledge/objectives/AI103-A1.04.md"
+    },
+    {
+      "id": "AI103-A2.01",
+      "parentId": "AI103-A2",
+      "domainId": "A",
+      "officialWording": "Design Azure infrastructure for AI apps and agent-based solutions",
+      "officialUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-103#set-up-ai-solutions-in-foundry",
+      "effectiveDate": "2026-04-16",
+      "outlineSourceId": "S001",
+      "outlineCaptureSha256": "6300f5be415422e770ebe6e4fad8975ba5a2f466937a2752ac6a7a88a2835a0b",
+      "researchStatus": "ready",
+      "candidateSourceIds": [
+        "S003",
+        "S009",
+        "S011"
+      ],
+      "claimIds": [
+        "F009C",
+        "F011A",
+        "F003B"
+      ],
+      "note": "knowledge/objectives/AI103-A2.01.md"
+    },
+    {
+      "id": "AI103-A2.02",
+      "parentId": "AI103-A2",
+      "domainId": "A",
+      "officialWording": "Choose appropriate deployment options",
+      "officialUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-103#set-up-ai-solutions-in-foundry",
+      "effectiveDate": "2026-04-16",
+      "outlineSourceId": "S001",
+      "outlineCaptureSha256": "6300f5be415422e770ebe6e4fad8975ba5a2f466937a2752ac6a7a88a2835a0b",
+      "researchStatus": "ready",
+      "candidateSourceIds": [
+        "S004",
+        "S005"
+      ],
+      "claimIds": [
+        "F004A",
+        "F004B",
+        "F005A",
+        "F005B"
+      ],
+      "note": "knowledge/objectives/AI103-A2.02.md"
+    },
+    {
+      "id": "AI103-A2.03",
+      "parentId": "AI103-A2",
+      "domainId": "A",
+      "officialWording": "Configure model and agent deployments",
+      "officialUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-103#set-up-ai-solutions-in-foundry",
+      "effectiveDate": "2026-04-16",
+      "outlineSourceId": "S001",
+      "outlineCaptureSha256": "6300f5be415422e770ebe6e4fad8975ba5a2f466937a2752ac6a7a88a2835a0b",
+      "researchStatus": "ready",
+      "candidateSourceIds": [
+        "S002",
+        "S003",
+        "S009"
+      ],
+      "claimIds": [
+        "F002A",
+        "F003A",
+        "F009A"
+      ],
+      "note": "knowledge/objectives/AI103-A2.03.md"
+    },
+    {
+      "id": "AI103-A2.04",
+      "parentId": "AI103-A2",
+      "domainId": "A",
+      "officialWording": "Integrate Foundry projects with continuous integration and continuous deployment (CI/CD) pipelines",
+      "officialUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-103#set-up-ai-solutions-in-foundry",
+      "effectiveDate": "2026-04-16",
+      "outlineSourceId": "S001",
+      "outlineCaptureSha256": "6300f5be415422e770ebe6e4fad8975ba5a2f466937a2752ac6a7a88a2835a0b",
+      "researchStatus": "ready",
+      "candidateSourceIds": [
+        "S012",
+        "S014"
+      ],
+      "claimIds": [
+        "F012A",
+        "F014B"
+      ],
+      "note": "knowledge/objectives/AI103-A2.04.md"
+    },
+    {
+      "id": "AI103-A3.01",
+      "parentId": "AI103-A3",
+      "domainId": "A",
+      "officialWording": "Manage quotas, scaling, rate limits, and cost footprints for model and agent workloads",
+      "officialUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-103#manage-monitor-and-secure-ai-systems",
+      "effectiveDate": "2026-04-16",
+      "outlineSourceId": "S001",
+      "outlineCaptureSha256": "6300f5be415422e770ebe6e4fad8975ba5a2f466937a2752ac6a7a88a2835a0b",
+      "researchStatus": "ready",
+      "candidateSourceIds": [
+        "S004",
+        "S009"
+      ],
+      "claimIds": [
+        "F009A",
+        "F009B",
+        "F004B"
+      ],
+      "note": "knowledge/objectives/AI103-A3.01.md"
+    },
+    {
+      "id": "AI103-A3.02",
+      "parentId": "AI103-A3",
+      "domainId": "A",
+      "officialWording": "Monitor model performance, drift, safety events, and grounding quality",
+      "officialUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-103#manage-monitor-and-secure-ai-systems",
+      "effectiveDate": "2026-04-16",
+      "outlineSourceId": "S001",
+      "outlineCaptureSha256": "6300f5be415422e770ebe6e4fad8975ba5a2f466937a2752ac6a7a88a2835a0b",
+      "researchStatus": "partial",
+      "candidateSourceIds": [
+        "S013",
+        "S039"
+      ],
+      "claimIds": [
+        "F013A",
+        "F013B",
+        "F039A",
+        "F039B"
+      ],
+      "note": "knowledge/objectives/AI103-A3.02.md"
+    },
+    {
+      "id": "AI103-A3.03",
+      "parentId": "AI103-A3",
+      "domainId": "A",
+      "officialWording": "Monitor data ingestion quality, search index health, and relevance performance",
+      "officialUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-103#manage-monitor-and-secure-ai-systems",
+      "effectiveDate": "2026-04-16",
+      "outlineSourceId": "S001",
+      "outlineCaptureSha256": "6300f5be415422e770ebe6e4fad8975ba5a2f466937a2752ac6a7a88a2835a0b",
+      "researchStatus": "ready",
+      "candidateSourceIds": [
+        "S027",
+        "S039",
+        "S044"
+      ],
+      "claimIds": [
+        "F027A",
+        "F044A",
+        "F039B"
+      ],
+      "note": "knowledge/objectives/AI103-A3.03.md"
+    },
+    {
+      "id": "AI103-A3.04",
+      "parentId": "AI103-A3",
+      "domainId": "A",
+      "officialWording": "Configure security, including managed identity, private networking, keyless credentials, and role policies",
+      "officialUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-103#manage-monitor-and-secure-ai-systems",
+      "effectiveDate": "2026-04-16",
+      "outlineSourceId": "S001",
+      "outlineCaptureSha256": "6300f5be415422e770ebe6e4fad8975ba5a2f466937a2752ac6a7a88a2835a0b",
+      "researchStatus": "ready",
+      "candidateSourceIds": [
+        "S010",
+        "S011",
+        "S040"
+      ],
+      "claimIds": [
+        "F010A",
+        "F011A",
+        "F040B"
+      ],
+      "note": "knowledge/objectives/AI103-A3.04.md"
+    },
+    {
+      "id": "AI103-A4.01",
+      "parentId": "AI103-A4",
+      "domainId": "A",
+      "officialWording": "Configure safety filters, guardrails, risk detection, and content moderation",
+      "officialUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-103#implement-responsible-ai-across-generative-ai-and-agentic-systems",
+      "effectiveDate": "2026-04-16",
+      "outlineSourceId": "S001",
+      "outlineCaptureSha256": "6300f5be415422e770ebe6e4fad8975ba5a2f466937a2752ac6a7a88a2835a0b",
+      "researchStatus": "ready",
+      "candidateSourceIds": [
+        "S015",
+        "S016"
+      ],
+      "claimIds": [
+        "F015A",
+        "F016A",
+        "F016B"
+      ],
+      "note": "knowledge/objectives/AI103-A4.01.md"
+    },
+    {
+      "id": "AI103-A4.02",
+      "parentId": "AI103-A4",
+      "domainId": "A",
+      "officialWording": "Apply responsible AI instrumentation, including evaluators, safety evaluations, and explanation tooling",
+      "officialUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-103#implement-responsible-ai-across-generative-ai-and-agentic-systems",
+      "effectiveDate": "2026-04-16",
+      "outlineSourceId": "S001",
+      "outlineCaptureSha256": "6300f5be415422e770ebe6e4fad8975ba5a2f466937a2752ac6a7a88a2835a0b",
+      "researchStatus": "ready",
+      "candidateSourceIds": [
+        "S014",
+        "S039"
+      ],
+      "claimIds": [
+        "F014A",
+        "F014B",
+        "F039A"
+      ],
+      "note": "knowledge/objectives/AI103-A4.02.md"
+    },
+    {
+      "id": "AI103-A4.03",
+      "parentId": "AI103-A4",
+      "domainId": "A",
+      "officialWording": "Implement auditing through trace logging, provenance metadata, and approval workflows",
+      "officialUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-103#implement-responsible-ai-across-generative-ai-and-agentic-systems",
+      "effectiveDate": "2026-04-16",
+      "outlineSourceId": "S001",
+      "outlineCaptureSha256": "6300f5be415422e770ebe6e4fad8975ba5a2f466937a2752ac6a7a88a2835a0b",
+      "researchStatus": "ready",
+      "candidateSourceIds": [
+        "S007",
+        "S013",
+        "S045"
+      ],
+      "claimIds": [
+        "F013A",
+        "F013B",
+        "F045B",
+        "F007C"
+      ],
+      "note": "knowledge/objectives/AI103-A4.03.md"
+    },
+    {
+      "id": "AI103-A4.04",
+      "parentId": "AI103-A4",
+      "domainId": "A",
+      "officialWording": "Govern agent behavior with oversight modes, constraints, and tool-access controls",
+      "officialUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-103#implement-responsible-ai-across-generative-ai-and-agentic-systems",
+      "effectiveDate": "2026-04-16",
+      "outlineSourceId": "S001",
+      "outlineCaptureSha256": "6300f5be415422e770ebe6e4fad8975ba5a2f466937a2752ac6a7a88a2835a0b",
+      "researchStatus": "ready",
+      "candidateSourceIds": [
+        "S007",
+        "S008",
+        "S015"
+      ],
+      "claimIds": [
+        "F007C",
+        "F015A",
+        "F008A"
+      ],
+      "note": "knowledge/objectives/AI103-A4.04.md"
+    },
+    {
+      "id": "AI103-B1.01",
+      "parentId": "AI103-B1",
+      "domainId": "B",
+      "officialWording": "Deploy and consume LLMs, small models, code models, and multimodal models",
+      "officialUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-103#build-generative-applications-by-using-foundry",
+      "effectiveDate": "2026-04-16",
+      "outlineSourceId": "S001",
+      "outlineCaptureSha256": "6300f5be415422e770ebe6e4fad8975ba5a2f466937a2752ac6a7a88a2835a0b",
+      "researchStatus": "ready",
+      "candidateSourceIds": [
+        "S003",
+        "S004"
+      ],
+      "claimIds": [
+        "F003A",
+        "F003B",
+        "F004A"
+      ],
+      "note": "knowledge/objectives/AI103-B1.01.md"
+    },
+    {
+      "id": "AI103-B1.02",
+      "parentId": "AI103-B1",
+      "domainId": "B",
+      "officialWording": "Implement retrieval-augmented generation (RAG) in an application",
+      "officialUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-103#build-generative-applications-by-using-foundry",
+      "effectiveDate": "2026-04-16",
+      "outlineSourceId": "S001",
+      "outlineCaptureSha256": "6300f5be415422e770ebe6e4fad8975ba5a2f466937a2752ac6a7a88a2835a0b",
+      "researchStatus": "ready",
+      "candidateSourceIds": [
+        "S025",
+        "S026",
+        "S039",
+        "S040"
+      ],
+      "claimIds": [
+        "F025A",
+        "F026A",
+        "F040A",
+        "F039A"
+      ],
+      "note": "knowledge/objectives/AI103-B1.02.md"
+    },
+    {
+      "id": "AI103-B1.03",
+      "parentId": "AI103-B1",
+      "domainId": "B",
+      "officialWording": "Design workflows, tool-augmented flows, and multistep reasoning pipelines",
+      "officialUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-103#build-generative-applications-by-using-foundry",
+      "effectiveDate": "2026-04-16",
+      "outlineSourceId": "S001",
+      "outlineCaptureSha256": "6300f5be415422e770ebe6e4fad8975ba5a2f466937a2752ac6a7a88a2835a0b",
+      "researchStatus": "ready",
+      "candidateSourceIds": [
+        "S007",
+        "S008"
+      ],
+      "claimIds": [
+        "F007A",
+        "F007B",
+        "F008A"
+      ],
+      "note": "knowledge/objectives/AI103-B1.03.md"
+    },
+    {
+      "id": "AI103-B1.04",
+      "parentId": "AI103-B1",
+      "domainId": "B",
+      "officialWording": "Evaluate models and apps, including detecting fabrications, relevance, quality, and safety",
+      "officialUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-103#build-generative-applications-by-using-foundry",
+      "effectiveDate": "2026-04-16",
+      "outlineSourceId": "S001",
+      "outlineCaptureSha256": "6300f5be415422e770ebe6e4fad8975ba5a2f466937a2752ac6a7a88a2835a0b",
+      "researchStatus": "ready",
+      "candidateSourceIds": [
+        "S014",
+        "S039"
+      ],
+      "claimIds": [
+        "F039A",
+        "F039B",
+        "F014A"
+      ],
+      "note": "knowledge/objectives/AI103-B1.04.md"
+    },
+    {
+      "id": "AI103-B1.05",
+      "parentId": "AI103-B1",
+      "domainId": "B",
+      "officialWording": "Integrate generative workflows into applications by using Foundry SDKs and connectors",
+      "officialUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-103#build-generative-applications-by-using-foundry",
+      "effectiveDate": "2026-04-16",
+      "outlineSourceId": "S001",
+      "outlineCaptureSha256": "6300f5be415422e770ebe6e4fad8975ba5a2f466937a2752ac6a7a88a2835a0b",
+      "researchStatus": "ready",
+      "candidateSourceIds": [
+        "S002",
+        "S003"
+      ],
+      "claimIds": [
+        "F003A",
+        "F003B",
+        "F002A"
+      ],
+      "note": "knowledge/objectives/AI103-B1.05.md"
+    },
+    {
+      "id": "AI103-B1.06",
+      "parentId": "AI103-B1",
+      "domainId": "B",
+      "officialWording": "Configure an application to connect to a Foundry project",
+      "officialUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-103#build-generative-applications-by-using-foundry",
+      "effectiveDate": "2026-04-16",
+      "outlineSourceId": "S001",
+      "outlineCaptureSha256": "6300f5be415422e770ebe6e4fad8975ba5a2f466937a2752ac6a7a88a2835a0b",
+      "researchStatus": "ready",
+      "candidateSourceIds": [
+        "S002",
+        "S003"
+      ],
+      "claimIds": [
+        "F002A",
+        "F003A"
+      ],
+      "note": "knowledge/objectives/AI103-B1.06.md"
+    },
+    {
+      "id": "AI103-B2.01",
+      "parentId": "AI103-B2",
+      "domainId": "B",
+      "officialWording": "Define agent roles, goals, conversation-tracking approach, and tool schemas",
+      "officialUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-103#build-agents-by-using-foundry",
+      "effectiveDate": "2026-04-16",
+      "outlineSourceId": "S001",
+      "outlineCaptureSha256": "6300f5be415422e770ebe6e4fad8975ba5a2f466937a2752ac6a7a88a2835a0b",
+      "researchStatus": "ready",
+      "candidateSourceIds": [
+        "S003",
+        "S006",
+        "S007"
+      ],
+      "claimIds": [
+        "F007A",
+        "F006A",
+        "F003A"
+      ],
+      "note": "knowledge/objectives/AI103-B2.01.md"
+    },
+    {
+      "id": "AI103-B2.02",
+      "parentId": "AI103-B2",
+      "domainId": "B",
+      "officialWording": "Build agents that integrate retrieval, function-calling, and conversation memory",
+      "officialUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-103#build-agents-by-using-foundry",
+      "effectiveDate": "2026-04-16",
+      "outlineSourceId": "S001",
+      "outlineCaptureSha256": "6300f5be415422e770ebe6e4fad8975ba5a2f466937a2752ac6a7a88a2835a0b",
+      "researchStatus": "ready",
+      "candidateSourceIds": [
+        "S006",
+        "S007",
+        "S040"
+      ],
+      "claimIds": [
+        "F006A",
+        "F006B",
+        "F007B",
+        "F040A"
+      ],
+      "note": "knowledge/objectives/AI103-B2.02.md"
+    },
+    {
+      "id": "AI103-B2.03",
+      "parentId": "AI103-B2",
+      "domainId": "B",
+      "officialWording": "Integrate agent tools, including APIs, knowledge stores, search, content understanding, and custom functions",
+      "officialUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-103#build-agents-by-using-foundry",
+      "effectiveDate": "2026-04-16",
+      "outlineSourceId": "S001",
+      "outlineCaptureSha256": "6300f5be415422e770ebe6e4fad8975ba5a2f466937a2752ac6a7a88a2835a0b",
+      "researchStatus": "partial",
+      "candidateSourceIds": [
+        "S007",
+        "S021",
+        "S040"
+      ],
+      "claimIds": [
+        "F040A",
+        "F007A",
+        "F021C"
+      ],
+      "note": "knowledge/objectives/AI103-B2.03.md"
+    },
+    {
+      "id": "AI103-B2.04",
+      "parentId": "AI103-B2",
+      "domainId": "B",
+      "officialWording": "Implement orchestrated multi-agent solutions",
+      "officialUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-103#build-agents-by-using-foundry",
+      "effectiveDate": "2026-04-16",
+      "outlineSourceId": "S001",
+      "outlineCaptureSha256": "6300f5be415422e770ebe6e4fad8975ba5a2f466937a2752ac6a7a88a2835a0b",
+      "researchStatus": "ready",
+      "candidateSourceIds": [
+        "S008"
+      ],
+      "claimIds": [
+        "F008A",
+        "F008B"
+      ],
+      "note": "knowledge/objectives/AI103-B2.04.md"
+    },
+    {
+      "id": "AI103-B2.05",
+      "parentId": "AI103-B2",
+      "domainId": "B",
+      "officialWording": "Build autonomous or semiautonomous workflows with safeguards and approval flow controls",
+      "officialUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-103#build-agents-by-using-foundry",
+      "effectiveDate": "2026-04-16",
+      "outlineSourceId": "S001",
+      "outlineCaptureSha256": "6300f5be415422e770ebe6e4fad8975ba5a2f466937a2752ac6a7a88a2835a0b",
+      "researchStatus": "ready",
+      "candidateSourceIds": [
+        "S007",
+        "S008",
+        "S015"
+      ],
+      "claimIds": [
+        "F007C",
+        "F008A",
+        "F015A"
+      ],
+      "note": "knowledge/objectives/AI103-B2.05.md"
+    },
+    {
+      "id": "AI103-B2.06",
+      "parentId": "AI103-B2",
+      "domainId": "B",
+      "officialWording": "Integrate monitoring into deployed agents, evaluate agent behavior, and perform error analysis",
+      "officialUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-103#build-agents-by-using-foundry",
+      "effectiveDate": "2026-04-16",
+      "outlineSourceId": "S001",
+      "outlineCaptureSha256": "6300f5be415422e770ebe6e4fad8975ba5a2f466937a2752ac6a7a88a2835a0b",
+      "researchStatus": "ready",
+      "candidateSourceIds": [
+        "S013",
+        "S014"
+      ],
+      "claimIds": [
+        "F013A",
+        "F014A",
+        "F014B"
+      ],
+      "note": "knowledge/objectives/AI103-B2.06.md"
+    },
+    {
+      "id": "AI103-B3.01",
+      "parentId": "AI103-B3",
+      "domainId": "B",
+      "officialWording": "Tune generation behavior, such as prompt engineering and adjusting model parameters",
+      "officialUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-103#optimize-and-operationalize-generative-ai-systems",
+      "effectiveDate": "2026-04-16",
+      "outlineSourceId": "S001",
+      "outlineCaptureSha256": "6300f5be415422e770ebe6e4fad8975ba5a2f466937a2752ac6a7a88a2835a0b",
+      "researchStatus": "ready",
+      "candidateSourceIds": [
+        "S037",
+        "S038",
+        "S047"
+      ],
+      "claimIds": [
+        "F047A",
+        "F037A",
+        "F038A"
+      ],
+      "note": "knowledge/objectives/AI103-B3.01.md"
+    },
+    {
+      "id": "AI103-B3.02",
+      "parentId": "AI103-B3",
+      "domainId": "B",
+      "officialWording": "Implement model reflection, chain-of-thought evaluations, and self-critique loops",
+      "officialUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-103#optimize-and-operationalize-generative-ai-systems",
+      "effectiveDate": "2026-04-16",
+      "outlineSourceId": "S001",
+      "outlineCaptureSha256": "6300f5be415422e770ebe6e4fad8975ba5a2f466937a2752ac6a7a88a2835a0b",
+      "researchStatus": "partial",
+      "candidateSourceIds": [
+        "S014",
+        "S038",
+        "S047"
+      ],
+      "claimIds": [
+        "F038A",
+        "F047A",
+        "F014B"
+      ],
+      "note": "knowledge/objectives/AI103-B3.02.md"
+    },
+    {
+      "id": "AI103-B3.03",
+      "parentId": "AI103-B3",
+      "domainId": "B",
+      "officialWording": "Set up observability by implementing tracing, token analytics, safety signals, and latency breakdowns",
+      "officialUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-103#optimize-and-operationalize-generative-ai-systems",
+      "effectiveDate": "2026-04-16",
+      "outlineSourceId": "S001",
+      "outlineCaptureSha256": "6300f5be415422e770ebe6e4fad8975ba5a2f466937a2752ac6a7a88a2835a0b",
+      "researchStatus": "ready",
+      "candidateSourceIds": [
+        "S009",
+        "S013"
+      ],
+      "claimIds": [
+        "F013A",
+        "F013B",
+        "F009A"
+      ],
+      "note": "knowledge/objectives/AI103-B3.03.md"
+    },
+    {
+      "id": "AI103-B3.04",
+      "parentId": "AI103-B3",
+      "domainId": "B",
+      "officialWording": "Orchestrate multiple models, flows, or hybrid LLM and rules engines",
+      "officialUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-103#optimize-and-operationalize-generative-ai-systems",
+      "effectiveDate": "2026-04-16",
+      "outlineSourceId": "S001",
+      "outlineCaptureSha256": "6300f5be415422e770ebe6e4fad8975ba5a2f466937a2752ac6a7a88a2835a0b",
+      "researchStatus": "ready",
+      "candidateSourceIds": [
+        "S007",
+        "S008",
+        "S041"
+      ],
+      "claimIds": [
+        "F041A",
+        "F008A",
+        "F007C"
+      ],
+      "note": "knowledge/objectives/AI103-B3.04.md"
+    },
+    {
+      "id": "AI103-C1.01",
+      "parentId": "AI103-C1",
+      "domainId": "C",
+      "officialWording": "Implement a solution that generates images from text prompts and reference media",
+      "officialUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-103#design-and-implement-image--and-video-generation-solutions",
+      "effectiveDate": "2026-04-16",
+      "outlineSourceId": "S001",
+      "outlineCaptureSha256": "6300f5be415422e770ebe6e4fad8975ba5a2f466937a2752ac6a7a88a2835a0b",
+      "researchStatus": "ready",
+      "candidateSourceIds": [
+        "S017"
+      ],
+      "claimIds": [
+        "F017A",
+        "F017B",
+        "F017C"
+      ],
+      "note": "knowledge/objectives/AI103-C1.01.md"
+    },
+    {
+      "id": "AI103-C1.02",
+      "parentId": "AI103-C1",
+      "domainId": "C",
+      "officialWording": "Implement a solution that generates videos from text prompts and reference media",
+      "officialUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-103#design-and-implement-image--and-video-generation-solutions",
+      "effectiveDate": "2026-04-16",
+      "outlineSourceId": "S001",
+      "outlineCaptureSha256": "6300f5be415422e770ebe6e4fad8975ba5a2f466937a2752ac6a7a88a2835a0b",
+      "researchStatus": "ready",
+      "candidateSourceIds": [
+        "S018"
+      ],
+      "claimIds": [
+        "F018A"
+      ],
+      "note": "knowledge/objectives/AI103-C1.02.md"
+    },
+    {
+      "id": "AI103-C1.03",
+      "parentId": "AI103-C1",
+      "domainId": "C",
+      "officialWording": "Configure image-editing workflows, including inpainting, mask‑based edits, and prompt‑driven modifications",
+      "officialUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-103#design-and-implement-image--and-video-generation-solutions",
+      "effectiveDate": "2026-04-16",
+      "outlineSourceId": "S001",
+      "outlineCaptureSha256": "6300f5be415422e770ebe6e4fad8975ba5a2f466937a2752ac6a7a88a2835a0b",
+      "researchStatus": "ready",
+      "candidateSourceIds": [
+        "S017"
+      ],
+      "claimIds": [
+        "F017B",
+        "F017C"
+      ],
+      "note": "knowledge/objectives/AI103-C1.03.md"
+    },
+    {
+      "id": "AI103-C1.04",
+      "parentId": "AI103-C1",
+      "domainId": "C",
+      "officialWording": "Implement workflows to edit generated videos",
+      "officialUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-103#design-and-implement-image--and-video-generation-solutions",
+      "effectiveDate": "2026-04-16",
+      "outlineSourceId": "S001",
+      "outlineCaptureSha256": "6300f5be415422e770ebe6e4fad8975ba5a2f466937a2752ac6a7a88a2835a0b",
+      "researchStatus": "ready",
+      "candidateSourceIds": [
+        "S018"
+      ],
+      "claimIds": [
+        "F018A",
+        "F018B"
+      ],
+      "note": "knowledge/objectives/AI103-C1.04.md"
+    },
+    {
+      "id": "AI103-C1.05",
+      "parentId": "AI103-C1",
+      "domainId": "C",
+      "officialWording": "Select and apply appropriate generation and editing controls provided by the platform",
+      "officialUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-103#design-and-implement-image--and-video-generation-solutions",
+      "effectiveDate": "2026-04-16",
+      "outlineSourceId": "S001",
+      "outlineCaptureSha256": "6300f5be415422e770ebe6e4fad8975ba5a2f466937a2752ac6a7a88a2835a0b",
+      "researchStatus": "ready",
+      "candidateSourceIds": [
+        "S017",
+        "S018"
+      ],
+      "claimIds": [
+        "F017B",
+        "F017C",
+        "F018A"
+      ],
+      "note": "knowledge/objectives/AI103-C1.05.md"
+    },
+    {
+      "id": "AI103-C2.01",
+      "parentId": "AI103-C2",
+      "domainId": "C",
+      "officialWording": "Build a solution that analyzes visual context by using multimodal models",
+      "officialUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-103#design-and-implement-multimodal-understanding-workflows",
+      "effectiveDate": "2026-04-16",
+      "outlineSourceId": "S001",
+      "outlineCaptureSha256": "6300f5be415422e770ebe6e4fad8975ba5a2f466937a2752ac6a7a88a2835a0b",
+      "researchStatus": "ready",
+      "candidateSourceIds": [
+        "S019"
+      ],
+      "claimIds": [
+        "F019A",
+        "F019B"
+      ],
+      "note": "knowledge/objectives/AI103-C2.01.md"
+    },
+    {
+      "id": "AI103-C2.02",
+      "parentId": "AI103-C2",
+      "domainId": "C",
+      "officialWording": "Configure apps to produce concise or detailed captions for single or multiple images",
+      "officialUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-103#design-and-implement-multimodal-understanding-workflows",
+      "effectiveDate": "2026-04-16",
+      "outlineSourceId": "S001",
+      "outlineCaptureSha256": "6300f5be415422e770ebe6e4fad8975ba5a2f466937a2752ac6a7a88a2835a0b",
+      "researchStatus": "ready",
+      "candidateSourceIds": [
+        "S019",
+        "S049"
+      ],
+      "claimIds": [
+        "F019A",
+        "F019B",
+        "F049A"
+      ],
+      "note": "knowledge/objectives/AI103-C2.02.md"
+    },
+    {
+      "id": "AI103-C2.03",
+      "parentId": "AI103-C2",
+      "domainId": "C",
+      "officialWording": "Implement a solution that enables question‑answering grounded in visual evidence",
+      "officialUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-103#design-and-implement-multimodal-understanding-workflows",
+      "effectiveDate": "2026-04-16",
+      "outlineSourceId": "S001",
+      "outlineCaptureSha256": "6300f5be415422e770ebe6e4fad8975ba5a2f466937a2752ac6a7a88a2835a0b",
+      "researchStatus": "ready",
+      "candidateSourceIds": [
+        "S019",
+        "S045"
+      ],
+      "claimIds": [
+        "F019A",
+        "F045B"
+      ],
+      "note": "knowledge/objectives/AI103-C2.03.md"
+    },
+    {
+      "id": "AI103-C2.04",
+      "parentId": "AI103-C2",
+      "domainId": "C",
+      "officialWording": "Configure generation of alt‑text and extended image descriptions aligned to accessibility guidelines",
+      "officialUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-103#design-and-implement-multimodal-understanding-workflows",
+      "effectiveDate": "2026-04-16",
+      "outlineSourceId": "S001",
+      "outlineCaptureSha256": "6300f5be415422e770ebe6e4fad8975ba5a2f466937a2752ac6a7a88a2835a0b",
+      "researchStatus": "ready",
+      "candidateSourceIds": [
+        "S019",
+        "S049",
+        "S050"
+      ],
+      "claimIds": [
+        "F050A",
+        "F019A",
+        "F049A"
+      ],
+      "note": "knowledge/objectives/AI103-C2.04.md"
+    },
+    {
+      "id": "AI103-C2.05",
+      "parentId": "AI103-C2",
+      "domainId": "C",
+      "officialWording": "Implement visual understanding by configuring Azure Content Understanding in Foundry Tools to extract visual characteristics",
+      "officialUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-103#design-and-implement-multimodal-understanding-workflows",
+      "effectiveDate": "2026-04-16",
+      "outlineSourceId": "S001",
+      "outlineCaptureSha256": "6300f5be415422e770ebe6e4fad8975ba5a2f466937a2752ac6a7a88a2835a0b",
+      "researchStatus": "ready",
+      "candidateSourceIds": [
+        "S020",
+        "S021"
+      ],
+      "claimIds": [
+        "F020A",
+        "F021B",
+        "F021D"
+      ],
+      "note": "knowledge/objectives/AI103-C2.05.md"
+    },
+    {
+      "id": "AI103-C2.06",
+      "parentId": "AI103-C2",
+      "domainId": "C",
+      "officialWording": "Implement video analysis workflows to process and interpret video segments",
+      "officialUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-103#design-and-implement-multimodal-understanding-workflows",
+      "effectiveDate": "2026-04-16",
+      "outlineSourceId": "S001",
+      "outlineCaptureSha256": "6300f5be415422e770ebe6e4fad8975ba5a2f466937a2752ac6a7a88a2835a0b",
+      "researchStatus": "ready",
+      "candidateSourceIds": [
+        "S022"
+      ],
+      "claimIds": [
+        "F022A",
+        "F022B"
+      ],
+      "note": "knowledge/objectives/AI103-C2.06.md"
+    },
+    {
+      "id": "AI103-C2.07",
+      "parentId": "AI103-C2",
+      "domainId": "C",
+      "officialWording": "Configure single‑task and pro‑mode Content Understanding pipelines",
+      "officialUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-103#design-and-implement-multimodal-understanding-workflows",
+      "effectiveDate": "2026-04-16",
+      "outlineSourceId": "S001",
+      "outlineCaptureSha256": "6300f5be415422e770ebe6e4fad8975ba5a2f466937a2752ac6a7a88a2835a0b",
+      "researchStatus": "partial",
+      "candidateSourceIds": [
+        "S020",
+        "S023",
+        "S024"
+      ],
+      "claimIds": [
+        "F020A",
+        "F023A",
+        "F023B",
+        "F024A"
+      ],
+      "note": "knowledge/objectives/AI103-C2.07.md"
+    },
+    {
+      "id": "AI103-C2.08",
+      "parentId": "AI103-C2",
+      "domainId": "C",
+      "officialWording": "Implement solutions that identify objects, components, or regions within images or video",
+      "officialUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-103#design-and-implement-multimodal-understanding-workflows",
+      "effectiveDate": "2026-04-16",
+      "outlineSourceId": "S001",
+      "outlineCaptureSha256": "6300f5be415422e770ebe6e4fad8975ba5a2f466937a2752ac6a7a88a2835a0b",
+      "researchStatus": "partial",
+      "candidateSourceIds": [
+        "S021",
+        "S022",
+        "S045"
+      ],
+      "claimIds": [
+        "F021D",
+        "F022B",
+        "F045B"
+      ],
+      "note": "knowledge/objectives/AI103-C2.08.md"
+    },
+    {
+      "id": "AI103-C3.01",
+      "parentId": "AI103-C3",
+      "domainId": "C",
+      "officialWording": "Implement filters to classify unsafe or disallowed visual content",
+      "officialUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-103#implement-responsible-ai-for-multimodal-content",
+      "effectiveDate": "2026-04-16",
+      "outlineSourceId": "S001",
+      "outlineCaptureSha256": "6300f5be415422e770ebe6e4fad8975ba5a2f466937a2752ac6a7a88a2835a0b",
+      "researchStatus": "ready",
+      "candidateSourceIds": [
+        "S042",
+        "S048"
+      ],
+      "claimIds": [
+        "F042A",
+        "F048A"
+      ],
+      "note": "knowledge/objectives/AI103-C3.01.md"
+    },
+    {
+      "id": "AI103-C3.02",
+      "parentId": "AI103-C3",
+      "domainId": "C",
+      "officialWording": "Detect and mitigate indirect prompt injection by using embedded text in images",
+      "officialUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-103#implement-responsible-ai-for-multimodal-content",
+      "effectiveDate": "2026-04-16",
+      "outlineSourceId": "S001",
+      "outlineCaptureSha256": "6300f5be415422e770ebe6e4fad8975ba5a2f466937a2752ac6a7a88a2835a0b",
+      "researchStatus": "partial",
+      "candidateSourceIds": [
+        "S016",
+        "S043",
+        "S048"
+      ],
+      "claimIds": [
+        "F048A",
+        "F016A",
+        "F043A"
+      ],
+      "note": "knowledge/objectives/AI103-C3.02.md"
+    },
+    {
+      "id": "AI103-C3.03",
+      "parentId": "AI103-C3",
+      "domainId": "C",
+      "officialWording": "Enforce visual policy rules, such as applying watermarks, flagging prohibited symbols, upholding brand usage requirements, and detecting potentially inappropriate content",
+      "officialUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-103#implement-responsible-ai-for-multimodal-content",
+      "effectiveDate": "2026-04-16",
+      "outlineSourceId": "S001",
+      "outlineCaptureSha256": "6300f5be415422e770ebe6e4fad8975ba5a2f466937a2752ac6a7a88a2835a0b",
+      "researchStatus": "partial",
+      "candidateSourceIds": [
+        "S018",
+        "S042",
+        "S048"
+      ],
+      "claimIds": [
+        "F042A",
+        "F018A",
+        "F048A"
+      ],
+      "note": "knowledge/objectives/AI103-C3.03.md"
+    },
+    {
+      "id": "AI103-D1.01",
+      "parentId": "AI103-D1",
+      "domainId": "D",
+      "officialWording": "Implement solutions to extract entities, topics, summaries, and structured JSON outputs by using generative prompting and Foundry Tools",
+      "officialUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-103#apply-language-model-text-analysis",
+      "effectiveDate": "2026-04-16",
+      "outlineSourceId": "S001",
+      "outlineCaptureSha256": "6300f5be415422e770ebe6e4fad8975ba5a2f466937a2752ac6a7a88a2835a0b",
+      "researchStatus": "ready",
+      "candidateSourceIds": [
+        "S030",
+        "S037"
+      ],
+      "claimIds": [
+        "F030A",
+        "F037A",
+        "F037B"
+      ],
+      "note": "knowledge/objectives/AI103-D1.01.md"
+    },
+    {
+      "id": "AI103-D1.02",
+      "parentId": "AI103-D1",
+      "domainId": "D",
+      "officialWording": "Configure detection of sentiment, tone, safety issues, and sensitive content",
+      "officialUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-103#apply-language-model-text-analysis",
+      "effectiveDate": "2026-04-16",
+      "outlineSourceId": "S001",
+      "outlineCaptureSha256": "6300f5be415422e770ebe6e4fad8975ba5a2f466937a2752ac6a7a88a2835a0b",
+      "researchStatus": "ready",
+      "candidateSourceIds": [
+        "S015",
+        "S030",
+        "S048"
+      ],
+      "claimIds": [
+        "F030A",
+        "F015A",
+        "F048A"
+      ],
+      "note": "knowledge/objectives/AI103-D1.02.md"
+    },
+    {
+      "id": "AI103-D1.03",
+      "parentId": "AI103-D1",
+      "domainId": "D",
+      "officialWording": "Build solutions that translate text by using Azure Translator in Foundry Tools or LLM‑powered translation flows",
+      "officialUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-103#apply-language-model-text-analysis",
+      "effectiveDate": "2026-04-16",
+      "outlineSourceId": "S001",
+      "outlineCaptureSha256": "6300f5be415422e770ebe6e4fad8975ba5a2f466937a2752ac6a7a88a2835a0b",
+      "researchStatus": "ready",
+      "candidateSourceIds": [
+        "S032",
+        "S037"
+      ],
+      "claimIds": [
+        "F032A",
+        "F037A"
+      ],
+      "note": "knowledge/objectives/AI103-D1.03.md"
+    },
+    {
+      "id": "AI103-D1.04",
+      "parentId": "AI103-D1",
+      "domainId": "D",
+      "officialWording": "Customize language model outputs for domain tasks, such as compliance summarization and domain extraction",
+      "officialUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-103#apply-language-model-text-analysis",
+      "effectiveDate": "2026-04-16",
+      "outlineSourceId": "S001",
+      "outlineCaptureSha256": "6300f5be415422e770ebe6e4fad8975ba5a2f466937a2752ac6a7a88a2835a0b",
+      "researchStatus": "ready",
+      "candidateSourceIds": [
+        "S031",
+        "S037",
+        "S047"
+      ],
+      "claimIds": [
+        "F037A",
+        "F037B",
+        "F047A",
+        "F031A"
+      ],
+      "note": "knowledge/objectives/AI103-D1.04.md"
+    },
+    {
+      "id": "AI103-D2.01",
+      "parentId": "AI103-D2",
+      "domainId": "D",
+      "officialWording": "Implement workflows to convert speech to text and text to speech for agentic interactions",
+      "officialUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-103#implement-speech-solutions",
+      "effectiveDate": "2026-04-16",
+      "outlineSourceId": "S001",
+      "outlineCaptureSha256": "6300f5be415422e770ebe6e4fad8975ba5a2f466937a2752ac6a7a88a2835a0b",
+      "researchStatus": "ready",
+      "candidateSourceIds": [
+        "S033",
+        "S035"
+      ],
+      "claimIds": [
+        "F033A",
+        "F035A"
+      ],
+      "note": "knowledge/objectives/AI103-D2.01.md"
+    },
+    {
+      "id": "AI103-D2.02",
+      "parentId": "AI103-D2",
+      "domainId": "D",
+      "officialWording": "Integrate speech as an agent modality, including custom speech models",
+      "officialUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-103#implement-speech-solutions",
+      "effectiveDate": "2026-04-16",
+      "outlineSourceId": "S001",
+      "outlineCaptureSha256": "6300f5be415422e770ebe6e4fad8975ba5a2f466937a2752ac6a7a88a2835a0b",
+      "researchStatus": "ready",
+      "candidateSourceIds": [
+        "S034",
+        "S035"
+      ],
+      "claimIds": [
+        "F034A",
+        "F035A"
+      ],
+      "note": "knowledge/objectives/AI103-D2.02.md"
+    },
+    {
+      "id": "AI103-D2.03",
+      "parentId": "AI103-D2",
+      "domainId": "D",
+      "officialWording": "Enable multimodal reasoning from audio inputs",
+      "officialUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-103#implement-speech-solutions",
+      "effectiveDate": "2026-04-16",
+      "outlineSourceId": "S001",
+      "outlineCaptureSha256": "6300f5be415422e770ebe6e4fad8975ba5a2f466937a2752ac6a7a88a2835a0b",
+      "researchStatus": "ready",
+      "candidateSourceIds": [
+        "S035",
+        "S036"
+      ],
+      "claimIds": [
+        "F036A",
+        "F035A"
+      ],
+      "note": "knowledge/objectives/AI103-D2.03.md"
+    },
+    {
+      "id": "AI103-D2.04",
+      "parentId": "AI103-D2",
+      "domainId": "D",
+      "officialWording": "Translate speech into other languages by using language models and Foundry Tools",
+      "officialUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-103#implement-speech-solutions",
+      "effectiveDate": "2026-04-16",
+      "outlineSourceId": "S001",
+      "outlineCaptureSha256": "6300f5be415422e770ebe6e4fad8975ba5a2f466937a2752ac6a7a88a2835a0b",
+      "researchStatus": "ready",
+      "candidateSourceIds": [
+        "S033",
+        "S046"
+      ],
+      "claimIds": [
+        "F033A",
+        "F046A"
+      ],
+      "note": "knowledge/objectives/AI103-D2.04.md"
+    },
+    {
+      "id": "AI103-E1.01",
+      "parentId": "AI103-E1",
+      "domainId": "E",
+      "officialWording": "Ingest and index content, such as documents, images, audio, and video",
+      "officialUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-103#build-retrieval-and-grounding-pipelines",
+      "effectiveDate": "2026-04-16",
+      "outlineSourceId": "S001",
+      "outlineCaptureSha256": "6300f5be415422e770ebe6e4fad8975ba5a2f466937a2752ac6a7a88a2835a0b",
+      "researchStatus": "ready",
+      "candidateSourceIds": [
+        "S021",
+        "S026"
+      ],
+      "claimIds": [
+        "F021B",
+        "F021C",
+        "F026A"
+      ],
+      "note": "knowledge/objectives/AI103-E1.01.md"
+    },
+    {
+      "id": "AI103-E1.02",
+      "parentId": "AI103-E1",
+      "domainId": "E",
+      "officialWording": "Configure semantic search, hybrid search, and vector search for grounding",
+      "officialUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-103#build-retrieval-and-grounding-pipelines",
+      "effectiveDate": "2026-04-16",
+      "outlineSourceId": "S001",
+      "outlineCaptureSha256": "6300f5be415422e770ebe6e4fad8975ba5a2f466937a2752ac6a7a88a2835a0b",
+      "researchStatus": "ready",
+      "candidateSourceIds": [
+        "S025",
+        "S026"
+      ],
+      "claimIds": [
+        "F025A",
+        "F025B",
+        "F026A"
+      ],
+      "note": "knowledge/objectives/AI103-E1.02.md"
+    },
+    {
+      "id": "AI103-E1.03",
+      "parentId": "AI103-E1",
+      "domainId": "E",
+      "officialWording": "Implement enrichment by using custom or built-in skills for text, images, and layout",
+      "officialUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-103#build-retrieval-and-grounding-pipelines",
+      "effectiveDate": "2026-04-16",
+      "outlineSourceId": "S001",
+      "outlineCaptureSha256": "6300f5be415422e770ebe6e4fad8975ba5a2f466937a2752ac6a7a88a2835a0b",
+      "researchStatus": "ready",
+      "candidateSourceIds": [
+        "S028",
+        "S029",
+        "S043"
+      ],
+      "claimIds": [
+        "F028A",
+        "F029A",
+        "F043A"
+      ],
+      "note": "knowledge/objectives/AI103-E1.03.md"
+    },
+    {
+      "id": "AI103-E1.04",
+      "parentId": "AI103-E1",
+      "domainId": "E",
+      "officialWording": "Configure RAG ingestion flow, including documents and using optical character recognition (OCR)",
+      "officialUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-103#build-retrieval-and-grounding-pipelines",
+      "effectiveDate": "2026-04-16",
+      "outlineSourceId": "S001",
+      "outlineCaptureSha256": "6300f5be415422e770ebe6e4fad8975ba5a2f466937a2752ac6a7a88a2835a0b",
+      "researchStatus": "ready",
+      "candidateSourceIds": [
+        "S026",
+        "S029",
+        "S043"
+      ],
+      "claimIds": [
+        "F043A",
+        "F026A",
+        "F029A"
+      ],
+      "note": "knowledge/objectives/AI103-E1.04.md"
+    },
+    {
+      "id": "AI103-E1.05",
+      "parentId": "AI103-E1",
+      "domainId": "E",
+      "officialWording": "Connect retrieval pipelines directly to workflows and agent tools",
+      "officialUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-103#build-retrieval-and-grounding-pipelines",
+      "effectiveDate": "2026-04-16",
+      "outlineSourceId": "S001",
+      "outlineCaptureSha256": "6300f5be415422e770ebe6e4fad8975ba5a2f466937a2752ac6a7a88a2835a0b",
+      "researchStatus": "ready",
+      "candidateSourceIds": [
+        "S007",
+        "S040"
+      ],
+      "claimIds": [
+        "F040A",
+        "F040B",
+        "F007A"
+      ],
+      "note": "knowledge/objectives/AI103-E1.05.md"
+    },
+    {
+      "id": "AI103-E2.01",
+      "parentId": "AI103-E2",
+      "domainId": "E",
+      "officialWording": "Extract information by using multimodal pipelines that combine OCR, layout analysis, and field extraction",
+      "officialUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-103#extract-content-from-documents",
+      "effectiveDate": "2026-04-16",
+      "outlineSourceId": "S001",
+      "outlineCaptureSha256": "6300f5be415422e770ebe6e4fad8975ba5a2f466937a2752ac6a7a88a2835a0b",
+      "researchStatus": "ready",
+      "candidateSourceIds": [
+        "S020",
+        "S021",
+        "S029",
+        "S045"
+      ],
+      "claimIds": [
+        "F020A",
+        "F021D",
+        "F029A",
+        "F045A"
+      ],
+      "note": "knowledge/objectives/AI103-E2.01.md"
+    },
+    {
+      "id": "AI103-E2.02",
+      "parentId": "AI103-E2",
+      "domainId": "E",
+      "officialWording": "Produce clean, grounded representations to use with agents and RAG by using Content Understanding",
+      "officialUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-103#extract-content-from-documents",
+      "effectiveDate": "2026-04-16",
+      "outlineSourceId": "S001",
+      "outlineCaptureSha256": "6300f5be415422e770ebe6e4fad8975ba5a2f466937a2752ac6a7a88a2835a0b",
+      "researchStatus": "ready",
+      "candidateSourceIds": [
+        "S021",
+        "S045"
+      ],
+      "claimIds": [
+        "F021B",
+        "F045A",
+        "F045B"
+      ],
+      "note": "knowledge/objectives/AI103-E2.02.md"
+    },
+    {
+      "id": "AI103-E2.03",
+      "parentId": "AI103-E2",
+      "domainId": "E",
+      "officialWording": "Implement analyzers for generating structured or markdown outputs for downstream reasoning by using Content Understanding",
+      "officialUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-103#extract-content-from-documents",
+      "effectiveDate": "2026-04-16",
+      "outlineSourceId": "S001",
+      "outlineCaptureSha256": "6300f5be415422e770ebe6e4fad8975ba5a2f466937a2752ac6a7a88a2835a0b",
+      "researchStatus": "ready",
+      "candidateSourceIds": [
+        "S021",
+        "S024"
+      ],
+      "claimIds": [
+        "F021A",
+        "F021C",
+        "F021D",
+        "F024A"
+      ],
+      "note": "knowledge/objectives/AI103-E2.03.md"
+    }
+  ]
+}

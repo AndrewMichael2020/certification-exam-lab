@@ -5,23 +5,53 @@
 ![Vitest](https://img.shields.io/badge/tests-Vitest-6E9F18?logo=vitest&logoColor=white)
 ![Playwright](https://img.shields.io/badge/e2e-Playwright-2EAD33?logo=playwright&logoColor=white)
 ![OpenAI](https://img.shields.io/badge/API-OpenAI-412991?logo=openai&logoColor=white)
-[![Current pack: GH-600](https://img.shields.io/badge/current%20pack-GH--600-0969DA)](#current-exam-pack-gh-600)
+![Exam packs](https://img.shields.io/badge/exam%20packs-GH--600%20%7C%20AI--103-0969DA)
 [![License: GPL-3.0](https://img.shields.io/badge/license-GPL--3.0-blue.svg)](./LICENSE)
 
 A full-stack TypeScript engine for designing, generating, reviewing, taking, analysing, and exporting
 demanding certification practice exams. The product direction covers **Microsoft**, **GitHub**, and
 other technically deep certification programs.
 
-The first implemented and versioned exam pack is **GitHub Certified: Agentic AI Developer
-(GH-600 beta)**. Its domain blueprint, official-source knowledge, prompts, examples, and UI copy are
-included in this repository today. The exam/practice experience, scoring, analytics, study loops,
-publishing, and PDF pipeline form the reusable engine; extracting GH-600 into a clean pack interface
-is tracked in [Issue #15](https://github.com/AndrewMichael2020/certification-exam-lab/issues/15).
+**GH-600 and AI-103 are separate exam packs.** Each has its own blueprint, source
+snapshots, prompts, version identity and learner outputs. They share the exam engine,
+scoring, analytics and PDF renderer. Exams, attempts and runtime exports are stored
+under `data/packs/<pack-id>/`; existing GH-600 history remains readable.
 
 > [!IMPORTANT]
 > This is an independent, unofficial practice resource. It is not affiliated with, authorized,
 > sponsored, endorsed, or approved by GitHub or Microsoft. Practice scores are learning feedback,
 > not predictions of an official scaled score or pass/fail result.
+
+## Exam packs and separate outputs
+
+| Pack | Material | Outputs |
+| --- | --- | --- |
+| **GH-600** — GitHub Certified: Agentic AI Developer | Historical 1.0.0 exams and 1.1.0 planning | [Existing GH-600 100-question PDF](data/exams/gh-600-2026-05-22-100q-a1ac29d0.pdf); runtime exports in `data/packs/gh-600/exports/` |
+| **AI-103** — Microsoft Azure AI | Versioned 1.1.0 and refreshed 1.2.0 knowledge packs; current 100-question set | [Questions only](output/pdf/ai-103-improvement-r2/AI-103-Set-A-100-Questions-Only.pdf) · [Practice with answers](output/pdf/ai-103-improvement-r2/AI-103-Set-A-100-Practice-With-Answers.pdf); runtime exports in `data/packs/ai-103/exports/` |
+
+The current AI-103 output is **one 100-question set**, with separate questions-only
+and practice-with-answers PDFs. Earlier pilots, the 20-question checkpoint and the
+original two booklets are retained as historical artifacts. The current set supersedes
+those outputs for study. The repository owner approved its content on November 2,
+2026; [the acceptance receipt](docs/AI-103-OWNER-ACCEPTANCE.json) binds that approval
+to the exact canonical draft and PDF bytes.
+
+Choose GH-600 or the desired AI-103 revision in the setup selector. The planning
+preview shows the selected revision; imported exams retain their own immutable pack
+identity throughout study and export. Question, answer and combined practice exports
+use distinct filenames containing pack, version, exam identity and PDF layout revision.
+
+Local study and offline imports require no API key:
+
+```bash
+STUDY_OFFLINE=1 npm run dev
+```
+
+The checked-in AI-103 PDFs are ready to open directly. Runtime JSON import is a
+separate operation with exact source, plan and item-review validation; owner approval
+does not fabricate an independent audit or silently import learner data. See the
+[offline import contract](docs/OFFLINE-IMPORT.md). Provider generation is deferred;
+new provider output cannot bypass the release/import checks.
 
 ---
 
@@ -32,7 +62,7 @@ is tracked in [Issue #15](https://github.com/AndrewMichael2020/certification-exa
 | [100-question GH-600 PDF](data/exams/gh-600-2026-05-22-100q-a1ac29d0.pdf) | Human-readable export of a complete generated practice set |
 | [Generated exam corpus](data/exams/exams.json) | Structured questions, case studies, explanations, sources, and anti-bias statistics |
 | [Unit and mocked full-flow tests](tests) | Blueprinting, schema validation, scoring, study loops, anti-bias checks, and generate-to-score flow |
-| [Cloud Run deployment workflow](.github/workflows/ci.yml) | Test/build gates, keyless GCP federation, container publication, deployment, and health verification |
+| [Local CI runner](scripts/local-ci.py) | Disposable OrbStack install, unit tests, TypeScript build, Chromium/API/CLI checks and GH-600 preservation hashes |
 | [Production-readiness issue](https://github.com/AndrewMichael2020/certification-exam-lab/issues/14) | Known security, ethics, provenance, licensing, and release work tracked explicitly |
 
 What is working now:
@@ -44,9 +74,8 @@ What is working now:
 - answer-position and option-length bias measurement;
 - developer-controlled publication plus browser and CLI PDF export.
 
-No live-demo or workflow-status badge is shown yet: the latest main deployment workflow is not green,
-and [Issue #15](https://github.com/AndrewMichael2020/certification-exam-lab/issues/15) correctly
-requires working proof before advertising either.
+Local CI is the verification gate. GitHub Actions is disabled to avoid hosted runner
+costs; pushes do not deploy the application.
 
 ---
 
@@ -67,7 +96,7 @@ Copy the example and fill in your values:
 cp .env.example .env
 ```
 
-Required:
+Required only for the deferred paid provider path (stored exams and imports work without it):
 
 ```env
 OPENAI_API_KEY=sk-...
@@ -133,7 +162,7 @@ In dev mode the sidebar shows a **Generate New Exam** panel. Enter a question co
 1. Builds a **domain/item-type blueprint** (`src/blueprint.ts`) that distributes questions across the six GH-600 domains with weights close to the official exam distribution.
 2. Calls OpenAI in **batches** (`src/generation.ts`) — each batch targets a specific domain and question type, passing previously generated question stems to avoid duplicates.
 3. For case-study batches, already-used narrative themes are passed in the prompt so the generator avoids repeating them.
-4. Assembles and persists the finished `ExamSet` to `data/exams/exams.json`.
+4. Historically assembled into `data/exams/exams.json`. That store is now read-only; new exams must pass the offline release/import gate.
 
 The UI shows live batch-by-batch progress via Server-Sent Events.
 
@@ -312,80 +341,34 @@ production warning below and [Issue #14](https://github.com/AndrewMichael2020/ce
 
 ---
 
-## CI / CD and production deployment
+## Local CI and deployment policy
 
-> [!WARNING]
-> Do not treat the current Cloud Run path as a production-ready public multi-user service. The
-> authorization, publication-boundary, privacy, content-review, and dependency-remediation work in
-> [Issue #14](https://github.com/AndrewMichael2020/certification-exam-lab/issues/14) must be
-> completed first. The latest `main` workflow is also failing, so deployment is documented here as
-> implemented infrastructure—not advertised as a working live demo.
-
-### GitHub Actions pipeline
-
-The workflow defines test and build jobs for every push and pull request, plus a deployment job for
-direct pushes to `main`:
-
-| Job | Trigger | What it does |
-|-----|---------|-------------|
-| **Test** | every push / PR | `npm ci && npm test` (Vitest, 13 unit tests) |
-| **TypeScript build** | every push / PR | `npm ci && npm run build` — full `tsc` compile check |
-| **Deploy to Cloud Run** | push to `main` only | Builds Docker image → pushes to Artifact Registry → deploys to Cloud Run → verifies `/healthz` |
-
-The deploy job uses **Workload Identity Federation** (no long-lived SA keys checked in). It only runs after both Test and Build pass.
-
-### First-time GCP setup
-
-A one-shot setup script is provided. Run it once from any machine with `gcloud` and `gh` authenticated:
+Run the full verification gate before committing and pushing:
 
 ```bash
-gcloud auth login
-gcloud auth application-default login
-gh auth login
-bash scripts/gcp-setup.sh
+npm run ci:local
 ```
 
-The script creates everything needed and sets all four GitHub Actions secrets automatically:
+The runner uses the active OrbStack Docker context and the locally installed
+Playwright image matching `package-lock.json`. It copies an allowlist of project
+inputs into a disposable container, installs locked dependencies with lifecycle
+scripts disabled, and runs unit tests, TypeScript build and Chromium browser/API/CLI
+checks. No API credentials are needed. It checks all 21 protected GH-600 reference
+hashes before and after. Reports and PDF/browser QA captures stay in ignored `.local-ci/`.
 
-| What | Detail |
-|------|--------|
-| Artifact Registry repo | `gh-600-prep` in `us-central1` |
-| GCS bucket | `gh-600-prep-pdfs` — public-read, for generated PDFs |
-| Service account | `gh-600-prep-deploy@exam-prep-600.iam.gserviceaccount.com` |
-| WIF pool / provider | `github-actions` / `github` scoped to this repo |
-| Secret Manager | `openai-api-key` read from local `.env` |
+**GitHub Actions is disabled at repository level.** The retained
+[workflow](.github/workflows/ci.yml) has only a manual trigger, so enabling Actions
+later will not automatically start jobs on pushes or pull requests. It has no active
+automated deployment path. The [Cloud Run runbook](.github/CLOUD_RUN_DEPLOYMENT_RUNBOOK.md)
+is retained for deliberate future operations.
 
-### Required GitHub Actions secrets
-
-Set in **Settings → Secrets and variables → Actions** (the setup script does this automatically):
-
-| Secret | Value |
-|--------|-------|
-| `GCP_PROJECT_ID` | `exam-prep-600` |
-| `GCP_WORKLOAD_IDENTITY_PROVIDER` | Full WIF provider resource name |
-| `GCP_SERVICE_ACCOUNT` | Deploy SA email |
-| `GCS_BUCKET` | GCS bucket name for PDFs |
-
-### Deploy flow
-
-```
-git push origin main
-  └─ CI: test → build → deploy
-       └─ docker build + push to Artifact Registry
-            └─ gcloud run deploy (zero-downtime rolling update)
-                 └─ curl /healthz → must return {"ok":true}
+```text
+npm run ci:local → review changes → commit → push origin
 ```
 
-### Production vs dev
-
-In production (`NODE_ENV=production`):
-- Only **published** exams appear (controlled by `data/published.json` + publish toggle in dev mode)
-- **No** generation panel, publish toggle, PDF generate, or PDF download buttons
-- Exams and PDFs are baked into the Docker image at build time; PDFs are served from GCS
-
-To publish an exam to production: toggle it in dev mode → commit `data/published.json` + `data/exams/exams.json` → push to `main`. The CI deploy bakes the new data into the image automatically.
-
-See `.github/CLOUD_RUN_DEPLOYMENT_RUNBOOK.md` for operational details (key rotation, rollback, verification).
+Pushing source or study PDFs does not publish exams into a running service. Local
+imports remain separate from publication. Production serves only allowlisted exams;
+the existing cloud resources are not updated by this release.
 
 ---
 

@@ -1,0 +1,104 @@
+{
+  "itemCount": 100,
+  "domains": [
+    {
+      "id": "A",
+      "name": "Plan and manage an Azure AI solution",
+      "count": 28
+    },
+    {
+      "id": "B",
+      "name": "Implement generative AI and agentic solutions",
+      "count": 33
+    },
+    {
+      "id": "C",
+      "name": "Implement computer vision solutions",
+      "count": 13
+    },
+    {
+      "id": "D",
+      "name": "Implement text analysis solutions",
+      "count": 13
+    },
+    {
+      "id": "E",
+      "name": "Implement information extraction solutions",
+      "count": 13
+    }
+  ],
+  "formats": {
+    "single_choice": 42,
+    "multi_select": 18,
+    "sequence_order": 10,
+    "matching_magnet": 8,
+    "case_study": 16,
+    "code_or_config_artifact": 6
+  },
+  "assessedDifficulty": {
+    "easy": 38,
+    "medium": 62,
+    "hard": 0,
+    "very_hard": 0
+  },
+  "answerPositions": {
+    "A": 14,
+    "B": 10,
+    "C": 18,
+    "D": 14,
+    "E": 0
+  },
+  "longestKeyRatio": 0.17857142857142858,
+  "longestKeyItems": [
+    "ai103-improvement-r2-set-a-100-q006",
+    "ai103-improvement-r2-set-a-100-q012",
+    "ai103-improvement-r2-set-a-100-q014",
+    "ai103-improvement-r2-set-a-100-q016",
+    "ai103-improvement-r2-set-a-100-q032",
+    "ai103-improvement-r2-set-a-100-q033",
+    "ai103-improvement-r2-set-a-100-q046",
+    "ai103-improvement-r2-set-a-100-q054",
+    "ai103-improvement-r2-set-a-100-q058",
+    "ai103-improvement-r2-set-a-100-q100"
+  ],
+  "caseWordCounts": [
+    {
+      "id": "case-1",
+      "words": 403
+    },
+    {
+      "id": "case-2",
+      "words": 383
+    },
+    {
+      "id": "case-3",
+      "words": 412
+    },
+    {
+      "id": "case-4",
+      "words": 414
+    }
+  ],
+  "structuredItems": [
+    "ai103-improvement-r2-set-a-100-q027",
+    "ai103-improvement-r2-set-a-100-q028",
+    "ai103-improvement-r2-set-a-100-q029",
+    "ai103-improvement-r2-set-a-100-q030",
+    "ai103-improvement-r2-set-a-100-q043",
+    "ai103-improvement-r2-set-a-100-q044",
+    "ai103-improvement-r2-set-a-100-q055",
+    "ai103-improvement-r2-set-a-100-q056"
+  ],
+  "absoluteWordItems": [
+    "ai103-improvement-r2-set-a-100-q008",
+    "ai103-improvement-r2-set-a-100-q010",
+    "ai103-improvement-r2-set-a-100-q013",
+    "ai103-improvement-r2-set-a-100-q045",
+    "ai103-improvement-r2-set-a-100-q049",
+    "ai103-improvement-r2-set-a-100-q054",
+    "ai103-improvement-r2-set-a-100-q060",
+    "ai103-improvement-r2-set-a-100-q074",
+    "ai103-improvement-r2-set-a-100-q089",
+    "ai103-improvement-r2-set-a-100-q096"
+  ]
+}

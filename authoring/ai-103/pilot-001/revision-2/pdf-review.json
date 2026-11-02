@@ -1,0 +1,28 @@
+{
+  "status": "passed",
+  "scope": "Draft presentation only; not released content",
+  "pdfs": [
+    {
+      "path": "authoring/ai-103/pilot-001/revision-2/output/pdf/ai103-pilot-001-r2-answers.pdf",
+      "sha256": "71bfc1b8cde2704c60337df26e3660602ba2e2225fe97dcbc0ac17801e69a23b",
+      "pages": 14,
+      "questionHeaders": 10,
+      "sourceLinks": 15
+    },
+    {
+      "path": "authoring/ai-103/pilot-001/revision-2/output/pdf/ai103-pilot-001-r2-practice.pdf",
+      "sha256": "1ad58d69acaf9f53f6449cfccb87769acf8405bd69e9513429f5de15d8aa8095",
+      "pages": 14,
+      "questionHeaders": 10,
+      "sourceLinks": 15
+    },
+    {
+      "path": "authoring/ai-103/pilot-001/revision-2/output/pdf/ai103-pilot-001-r2-questions.pdf",
+      "sha256": "e637ee89b0b0b83defeb9dc1bc3f1cc048600bf75135c3ab23ef8889d208feee",
+      "pages": 10,
+      "questionHeaders": 10,
+      "sourceLinks": 0
+    }
+  ],
+  "visualReview": "All 38 pages rasterized and inspected in contact sheets; detailed dropdown, matching and answer-key pages inspected. Latest final sample rerender confirmed."
+}

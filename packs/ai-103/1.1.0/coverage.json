@@ -1,0 +1,780 @@
+{
+  "schemaVersion": 1,
+  "examCode": "AI-103",
+  "version": "1.1.0",
+  "reviewedAt": "2026-10-08T04:38:23.255712+00:00",
+  "readinessMeaning": "Ready means evidence supports the precise bounded facts/scenario scope in the note and packet; not exhaustive objective coverage, Azure execution, mastery, bank correctness or exam parity. Partial objectives stay in study notes but are excluded from ready-only packets.",
+  "scopeCount": 64,
+  "readyCount": 56,
+  "partialCount": 8,
+  "unsupportedCount": 0,
+  "excludedCount": 0,
+  "objectives": [
+    {
+      "id": "AI103-A1.01",
+      "domainId": "A",
+      "status": "partial",
+      "reason": "The inventory establishes endpoint/deployment/router choices but lacks a captured task-by-task small/code/multimodal model comparison; exact model winners are excluded.",
+      "note": "knowledge/objectives/AI103-A1.01.md",
+      "claimIds": [
+        "F003B",
+        "F004A",
+        "F041A"
+      ]
+    },
+    {
+      "id": "AI103-A1.02",
+      "domainId": "A",
+      "status": "ready",
+      "reason": "Bounded documented facts and stated judgment only.",
+      "note": "knowledge/objectives/AI103-A1.02.md",
+      "claimIds": [
+        "F006B",
+        "F026A",
+        "F021B"
+      ]
+    },
+    {
+      "id": "AI103-A1.03",
+      "domainId": "A",
+      "status": "ready",
+      "reason": "Bounded documented facts and stated judgment only.",
+      "note": "knowledge/objectives/AI103-A1.03.md",
+      "claimIds": [
+        "F025A",
+        "F025B",
+        "F026A"
+      ]
+    },
+    {
+      "id": "AI103-A1.04",
+      "domainId": "A",
+      "status": "ready",
+      "reason": "Bounded documented facts and stated judgment only.",
+      "note": "knowledge/objectives/AI103-A1.04.md",
+      "claimIds": [
+        "F006A",
+        "F006B",
+        "F006C",
+        "F007A"
+      ]
+    },
+    {
+      "id": "AI103-A2.01",
+      "domainId": "A",
+      "status": "ready",
+      "reason": "Bounded documented facts and stated judgment only.",
+      "note": "knowledge/objectives/AI103-A2.01.md",
+      "claimIds": [
+        "F009C",
+        "F011A",
+        "F003B"
+      ]
+    },
+    {
+      "id": "AI103-A2.02",
+      "domainId": "A",
+      "status": "ready",
+      "reason": "Bounded documented facts and stated judgment only.",
+      "note": "knowledge/objectives/AI103-A2.02.md",
+      "claimIds": [
+        "F004A",
+        "F004B",
+        "F005A",
+        "F005B"
+      ]
+    },
+    {
+      "id": "AI103-A2.03",
+      "domainId": "A",
+      "status": "ready",
+      "reason": "Bounded documented facts and stated judgment only.",
+      "note": "knowledge/objectives/AI103-A2.03.md",
+      "claimIds": [
+        "F002A",
+        "F003A",
+        "F009A"
+      ]
+    },
+    {
+      "id": "AI103-A2.04",
+      "domainId": "A",
+      "status": "ready",
+      "reason": "Bounded documented facts and stated judgment only.",
+      "note": "knowledge/objectives/AI103-A2.04.md",
+      "claimIds": [
+        "F012A",
+        "F014B"
+      ]
+    },
+    {
+      "id": "AI103-A3.01",
+      "domainId": "A",
+      "status": "ready",
+      "reason": "Bounded documented facts and stated judgment only.",
+      "note": "knowledge/objectives/AI103-A3.01.md",
+      "claimIds": [
+        "F009A",
+        "F009B",
+        "F004B"
+      ]
+    },
+    {
+      "id": "AI103-A3.02",
+      "domainId": "A",
+      "status": "partial",
+      "reason": "Sources support quality comparison and tracing, but no captured turnkey drift detector/configuration; drift-specific implementation claims remain excluded.",
+      "note": "knowledge/objectives/AI103-A3.02.md",
+      "claimIds": [
+        "F013A",
+        "F013B",
+        "F039A",
+        "F039B"
+      ]
+    },
+    {
+      "id": "AI103-A3.03",
+      "domainId": "A",
+      "status": "ready",
+      "reason": "Bounded documented facts and stated judgment only.",
+      "note": "knowledge/objectives/AI103-A3.03.md",
+      "claimIds": [
+        "F027A",
+        "F044A",
+        "F039B"
+      ]
+    },
+    {
+      "id": "AI103-A3.04",
+      "domainId": "A",
+      "status": "ready",
+      "reason": "Bounded documented facts and stated judgment only.",
+      "note": "knowledge/objectives/AI103-A3.04.md",
+      "claimIds": [
+        "F010A",
+        "F011A",
+        "F040B"
+      ]
+    },
+    {
+      "id": "AI103-A4.01",
+      "domainId": "A",
+      "status": "ready",
+      "reason": "Bounded documented facts and stated judgment only.",
+      "note": "knowledge/objectives/AI103-A4.01.md",
+      "claimIds": [
+        "F015A",
+        "F016A",
+        "F016B"
+      ]
+    },
+    {
+      "id": "AI103-A4.02",
+      "domainId": "A",
+      "status": "ready",
+      "reason": "Bounded documented facts and stated judgment only.",
+      "note": "knowledge/objectives/AI103-A4.02.md",
+      "claimIds": [
+        "F014A",
+        "F014B",
+        "F039A"
+      ]
+    },
+    {
+      "id": "AI103-A4.03",
+      "domainId": "A",
+      "status": "ready",
+      "reason": "Bounded documented facts and stated judgment only.",
+      "note": "knowledge/objectives/AI103-A4.03.md",
+      "claimIds": [
+        "F013A",
+        "F013B",
+        "F045B",
+        "F007C"
+      ]
+    },
+    {
+      "id": "AI103-A4.04",
+      "domainId": "A",
+      "status": "ready",
+      "reason": "Bounded documented facts and stated judgment only.",
+      "note": "knowledge/objectives/AI103-A4.04.md",
+      "claimIds": [
+        "F007C",
+        "F015A",
+        "F008A"
+      ]
+    },
+    {
+      "id": "AI103-B1.01",
+      "domainId": "B",
+      "status": "ready",
+      "reason": "Bounded documented facts and stated judgment only.",
+      "note": "knowledge/objectives/AI103-B1.01.md",
+      "claimIds": [
+        "F003A",
+        "F003B",
+        "F004A"
+      ]
+    },
+    {
+      "id": "AI103-B1.02",
+      "domainId": "B",
+      "status": "ready",
+      "reason": "Bounded documented facts and stated judgment only.",
+      "note": "knowledge/objectives/AI103-B1.02.md",
+      "claimIds": [
+        "F025A",
+        "F026A",
+        "F040A",
+        "F039A"
+      ]
+    },
+    {
+      "id": "AI103-B1.03",
+      "domainId": "B",
+      "status": "ready",
+      "reason": "Bounded documented facts and stated judgment only.",
+      "note": "knowledge/objectives/AI103-B1.03.md",
+      "claimIds": [
+        "F007A",
+        "F007B",
+        "F008A"
+      ]
+    },
+    {
+      "id": "AI103-B1.04",
+      "domainId": "B",
+      "status": "ready",
+      "reason": "Bounded documented facts and stated judgment only.",
+      "note": "knowledge/objectives/AI103-B1.04.md",
+      "claimIds": [
+        "F039A",
+        "F039B",
+        "F014A"
+      ]
+    },
+    {
+      "id": "AI103-B1.05",
+      "domainId": "B",
+      "status": "ready",
+      "reason": "Bounded documented facts and stated judgment only.",
+      "note": "knowledge/objectives/AI103-B1.05.md",
+      "claimIds": [
+        "F003A",
+        "F003B",
+        "F002A"
+      ]
+    },
+    {
+      "id": "AI103-B1.06",
+      "domainId": "B",
+      "status": "ready",
+      "reason": "Bounded documented facts and stated judgment only.",
+      "note": "knowledge/objectives/AI103-B1.06.md",
+      "claimIds": [
+        "F002A",
+        "F003A"
+      ]
+    },
+    {
+      "id": "AI103-B2.01",
+      "domainId": "B",
+      "status": "ready",
+      "reason": "Bounded documented facts and stated judgment only.",
+      "note": "knowledge/objectives/AI103-B2.01.md",
+      "claimIds": [
+        "F007A",
+        "F006A",
+        "F003A"
+      ]
+    },
+    {
+      "id": "AI103-B2.02",
+      "domainId": "B",
+      "status": "ready",
+      "reason": "Bounded documented facts and stated judgment only.",
+      "note": "knowledge/objectives/AI103-B2.02.md",
+      "claimIds": [
+        "F006A",
+        "F006B",
+        "F007B",
+        "F040A"
+      ]
+    },
+    {
+      "id": "AI103-B2.03",
+      "domainId": "B",
+      "status": "partial",
+      "reason": "Search/function integrations are documented; this capture does not establish a native Content Understanding agent-tool contract across SDK generations. Treat a CU wrapper as a composed design, not a guaranteed built-in tool.",
+      "note": "knowledge/objectives/AI103-B2.03.md",
+      "claimIds": [
+        "F040A",
+        "F007A",
+        "F021C"
+      ]
+    },
+    {
+      "id": "AI103-B2.04",
+      "domainId": "B",
+      "status": "ready",
+      "reason": "Bounded documented facts and stated judgment only.",
+      "note": "knowledge/objectives/AI103-B2.04.md",
+      "claimIds": [
+        "F008A",
+        "F008B"
+      ]
+    },
+    {
+      "id": "AI103-B2.05",
+      "domainId": "B",
+      "status": "ready",
+      "reason": "Bounded documented facts and stated judgment only.",
+      "note": "knowledge/objectives/AI103-B2.05.md",
+      "claimIds": [
+        "F007C",
+        "F008A",
+        "F015A"
+      ]
+    },
+    {
+      "id": "AI103-B2.06",
+      "domainId": "B",
+      "status": "ready",
+      "reason": "Bounded documented facts and stated judgment only.",
+      "note": "knowledge/objectives/AI103-B2.06.md",
+      "claimIds": [
+        "F013A",
+        "F014A",
+        "F014B"
+      ]
+    },
+    {
+      "id": "AI103-B3.01",
+      "domainId": "B",
+      "status": "ready",
+      "reason": "Bounded documented facts and stated judgment only.",
+      "note": "knowledge/objectives/AI103-B3.01.md",
+      "claimIds": [
+        "F047A",
+        "F037A",
+        "F038A"
+      ]
+    },
+    {
+      "id": "AI103-B3.02",
+      "domainId": "B",
+      "status": "partial",
+      "reason": "The outline's chain-of-thought-evaluation phrase lacks a captured single implementation contract; modern reasoning and older prompt-engineering guidance differ. Limit authoring to supported summaries, observable outputs, and bounded review behavior.",
+      "note": "knowledge/objectives/AI103-B3.02.md",
+      "claimIds": [
+        "F038A",
+        "F047A",
+        "F014B"
+      ]
+    },
+    {
+      "id": "AI103-B3.03",
+      "domainId": "B",
+      "status": "ready",
+      "reason": "Bounded documented facts and stated judgment only.",
+      "note": "knowledge/objectives/AI103-B3.03.md",
+      "claimIds": [
+        "F013A",
+        "F013B",
+        "F009A"
+      ]
+    },
+    {
+      "id": "AI103-B3.04",
+      "domainId": "B",
+      "status": "ready",
+      "reason": "Bounded documented facts and stated judgment only.",
+      "note": "knowledge/objectives/AI103-B3.04.md",
+      "claimIds": [
+        "F041A",
+        "F008A",
+        "F007C"
+      ]
+    },
+    {
+      "id": "AI103-C1.01",
+      "domainId": "C",
+      "status": "ready",
+      "reason": "Bounded documented facts and stated judgment only.",
+      "note": "knowledge/objectives/AI103-C1.01.md",
+      "claimIds": [
+        "F017A",
+        "F017B",
+        "F017C"
+      ]
+    },
+    {
+      "id": "AI103-C1.02",
+      "domainId": "C",
+      "status": "ready",
+      "reason": "Bounded documented facts and stated judgment only.",
+      "note": "knowledge/objectives/AI103-C1.02.md",
+      "claimIds": [
+        "F018A"
+      ]
+    },
+    {
+      "id": "AI103-C1.03",
+      "domainId": "C",
+      "status": "ready",
+      "reason": "Bounded documented facts and stated judgment only.",
+      "note": "knowledge/objectives/AI103-C1.03.md",
+      "claimIds": [
+        "F017B",
+        "F017C"
+      ]
+    },
+    {
+      "id": "AI103-C1.04",
+      "domainId": "C",
+      "status": "ready",
+      "reason": "Bounded documented facts and stated judgment only.",
+      "note": "knowledge/objectives/AI103-C1.04.md",
+      "claimIds": [
+        "F018A",
+        "F018B"
+      ]
+    },
+    {
+      "id": "AI103-C1.05",
+      "domainId": "C",
+      "status": "ready",
+      "reason": "Bounded documented facts and stated judgment only.",
+      "note": "knowledge/objectives/AI103-C1.05.md",
+      "claimIds": [
+        "F017B",
+        "F017C",
+        "F018A"
+      ]
+    },
+    {
+      "id": "AI103-C2.01",
+      "domainId": "C",
+      "status": "ready",
+      "reason": "Bounded documented facts and stated judgment only.",
+      "note": "knowledge/objectives/AI103-C2.01.md",
+      "claimIds": [
+        "F019A",
+        "F019B"
+      ]
+    },
+    {
+      "id": "AI103-C2.02",
+      "domainId": "C",
+      "status": "ready",
+      "reason": "Bounded documented facts and stated judgment only.",
+      "note": "knowledge/objectives/AI103-C2.02.md",
+      "claimIds": [
+        "F019A",
+        "F019B",
+        "F049A"
+      ]
+    },
+    {
+      "id": "AI103-C2.03",
+      "domainId": "C",
+      "status": "ready",
+      "reason": "Bounded documented facts and stated judgment only.",
+      "note": "knowledge/objectives/AI103-C2.03.md",
+      "claimIds": [
+        "F019A",
+        "F045B"
+      ]
+    },
+    {
+      "id": "AI103-C2.04",
+      "domainId": "C",
+      "status": "ready",
+      "reason": "Bounded documented facts and stated judgment only.",
+      "note": "knowledge/objectives/AI103-C2.04.md",
+      "claimIds": [
+        "F050A",
+        "F019A",
+        "F049A"
+      ]
+    },
+    {
+      "id": "AI103-C2.05",
+      "domainId": "C",
+      "status": "ready",
+      "reason": "Bounded documented facts and stated judgment only.",
+      "note": "knowledge/objectives/AI103-C2.05.md",
+      "claimIds": [
+        "F020A",
+        "F021B",
+        "F021D"
+      ]
+    },
+    {
+      "id": "AI103-C2.06",
+      "domainId": "C",
+      "status": "ready",
+      "reason": "Bounded documented facts and stated judgment only.",
+      "note": "knowledge/objectives/AI103-C2.06.md",
+      "claimIds": [
+        "F022A",
+        "F022B"
+      ]
+    },
+    {
+      "id": "AI103-C2.07",
+      "domainId": "C",
+      "status": "partial",
+      "reason": "The exam outline names pro-mode while product docs say its only API is retired. Historical configuration and current replacement differ; authoring is restricted to the documented migration/behavior distinction pending scope clarification.",
+      "note": "knowledge/objectives/AI103-C2.07.md",
+      "claimIds": [
+        "F020A",
+        "F023A",
+        "F023B",
+        "F024A"
+      ]
+    },
+    {
+      "id": "AI103-C2.08",
+      "domainId": "C",
+      "status": "partial",
+      "reason": "Current captures support semantic multimodal extraction and document field regions, but not one validated object-detection/localization contract across images/video. Exact bounding-box model/API recipes remain excluded.",
+      "note": "knowledge/objectives/AI103-C2.08.md",
+      "claimIds": [
+        "F021D",
+        "F022B",
+        "F045B"
+      ]
+    },
+    {
+      "id": "AI103-C3.01",
+      "domainId": "C",
+      "status": "ready",
+      "reason": "Bounded documented facts and stated judgment only.",
+      "note": "knowledge/objectives/AI103-C3.01.md",
+      "claimIds": [
+        "F042A",
+        "F048A"
+      ]
+    },
+    {
+      "id": "AI103-C3.02",
+      "domainId": "C",
+      "status": "partial",
+      "reason": "OCR plus text shielding is a design inference, not a documented end-to-end image shield. Direct image coverage, OCR loss, and bypass behavior require separate verified implementation evidence.",
+      "note": "knowledge/objectives/AI103-C3.02.md",
+      "claimIds": [
+        "F048A",
+        "F016A",
+        "F043A"
+      ]
+    },
+    {
+      "id": "AI103-C3.03",
+      "domainId": "C",
+      "status": "partial",
+      "reason": "The source set does not prove configurable platform watermark enforcement, complete symbol detection, or brand-use validation. Those guarantees remain unsupported; current packets may teach the limit, not claim the missing capability.",
+      "note": "knowledge/objectives/AI103-C3.03.md",
+      "claimIds": [
+        "F042A",
+        "F018A",
+        "F048A"
+      ]
+    },
+    {
+      "id": "AI103-D1.01",
+      "domainId": "D",
+      "status": "ready",
+      "reason": "Bounded documented facts and stated judgment only.",
+      "note": "knowledge/objectives/AI103-D1.01.md",
+      "claimIds": [
+        "F030A",
+        "F037A",
+        "F037B"
+      ]
+    },
+    {
+      "id": "AI103-D1.02",
+      "domainId": "D",
+      "status": "ready",
+      "reason": "Bounded documented facts and stated judgment only.",
+      "note": "knowledge/objectives/AI103-D1.02.md",
+      "claimIds": [
+        "F030A",
+        "F015A",
+        "F048A"
+      ]
+    },
+    {
+      "id": "AI103-D1.03",
+      "domainId": "D",
+      "status": "ready",
+      "reason": "Bounded documented facts and stated judgment only.",
+      "note": "knowledge/objectives/AI103-D1.03.md",
+      "claimIds": [
+        "F032A",
+        "F037A"
+      ]
+    },
+    {
+      "id": "AI103-D1.04",
+      "domainId": "D",
+      "status": "ready",
+      "reason": "Bounded documented facts and stated judgment only.",
+      "note": "knowledge/objectives/AI103-D1.04.md",
+      "claimIds": [
+        "F037A",
+        "F037B",
+        "F047A",
+        "F031A"
+      ]
+    },
+    {
+      "id": "AI103-D2.01",
+      "domainId": "D",
+      "status": "ready",
+      "reason": "Bounded documented facts and stated judgment only.",
+      "note": "knowledge/objectives/AI103-D2.01.md",
+      "claimIds": [
+        "F033A",
+        "F035A"
+      ]
+    },
+    {
+      "id": "AI103-D2.02",
+      "domainId": "D",
+      "status": "ready",
+      "reason": "Bounded documented facts and stated judgment only.",
+      "note": "knowledge/objectives/AI103-D2.02.md",
+      "claimIds": [
+        "F034A",
+        "F035A"
+      ]
+    },
+    {
+      "id": "AI103-D2.03",
+      "domainId": "D",
+      "status": "ready",
+      "reason": "Bounded documented facts and stated judgment only.",
+      "note": "knowledge/objectives/AI103-D2.03.md",
+      "claimIds": [
+        "F036A",
+        "F035A"
+      ]
+    },
+    {
+      "id": "AI103-D2.04",
+      "domainId": "D",
+      "status": "ready",
+      "reason": "Bounded documented facts and stated judgment only.",
+      "note": "knowledge/objectives/AI103-D2.04.md",
+      "claimIds": [
+        "F033A",
+        "F046A"
+      ]
+    },
+    {
+      "id": "AI103-E1.01",
+      "domainId": "E",
+      "status": "ready",
+      "reason": "Bounded documented facts and stated judgment only.",
+      "note": "knowledge/objectives/AI103-E1.01.md",
+      "claimIds": [
+        "F021B",
+        "F021C",
+        "F026A"
+      ]
+    },
+    {
+      "id": "AI103-E1.02",
+      "domainId": "E",
+      "status": "ready",
+      "reason": "Bounded documented facts and stated judgment only.",
+      "note": "knowledge/objectives/AI103-E1.02.md",
+      "claimIds": [
+        "F025A",
+        "F025B",
+        "F026A"
+      ]
+    },
+    {
+      "id": "AI103-E1.03",
+      "domainId": "E",
+      "status": "ready",
+      "reason": "Bounded documented facts and stated judgment only.",
+      "note": "knowledge/objectives/AI103-E1.03.md",
+      "claimIds": [
+        "F028A",
+        "F029A",
+        "F043A"
+      ]
+    },
+    {
+      "id": "AI103-E1.04",
+      "domainId": "E",
+      "status": "ready",
+      "reason": "Bounded documented facts and stated judgment only.",
+      "note": "knowledge/objectives/AI103-E1.04.md",
+      "claimIds": [
+        "F043A",
+        "F026A",
+        "F029A"
+      ]
+    },
+    {
+      "id": "AI103-E1.05",
+      "domainId": "E",
+      "status": "ready",
+      "reason": "Bounded documented facts and stated judgment only.",
+      "note": "knowledge/objectives/AI103-E1.05.md",
+      "claimIds": [
+        "F040A",
+        "F040B",
+        "F007A"
+      ]
+    },
+    {
+      "id": "AI103-E2.01",
+      "domainId": "E",
+      "status": "ready",
+      "reason": "Bounded documented facts and stated judgment only.",
+      "note": "knowledge/objectives/AI103-E2.01.md",
+      "claimIds": [
+        "F020A",
+        "F021D",
+        "F029A",
+        "F045A"
+      ]
+    },
+    {
+      "id": "AI103-E2.02",
+      "domainId": "E",
+      "status": "ready",
+      "reason": "Bounded documented facts and stated judgment only.",
+      "note": "knowledge/objectives/AI103-E2.02.md",
+      "claimIds": [
+        "F021B",
+        "F045A",
+        "F045B"
+      ]
+    },
+    {
+      "id": "AI103-E2.03",
+      "domainId": "E",
+      "status": "ready",
+      "reason": "Bounded documented facts and stated judgment only.",
+      "note": "knowledge/objectives/AI103-E2.03.md",
+      "claimIds": [
+        "F021A",
+        "F021C",
+        "F021D",
+        "F024A"
+      ]
+    }
+  ],
+  "azureExecution": "not-run",
+  "questionAuthoring": "not-started",
+  "manualSolveFirstAudit": "not-started",
+  "runtimeActivation": false
+}

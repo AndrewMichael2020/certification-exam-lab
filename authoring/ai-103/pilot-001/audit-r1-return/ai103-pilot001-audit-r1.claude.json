@@ -1,0 +1,451 @@
+{
+  "templateOnly": false,
+  "packetId": "ai103-pilot001-audit-r1",
+  "packageId": "ai103-pilot-001-r1",
+  "revision": "1",
+  "pack": {
+    "id": "ai-103",
+    "version": "1.1.0"
+  },
+  "draftPackageSha256": "0ceafb2d5784ffa424193a00ff62ffb47731c6f902e9c766010db3fe582b358b",
+  "reviewer": {
+    "actualModelLabel": "claude-opus-5-5[1m] (session_context.model); last_served_model claude-opus-5-5, from get_session",
+    "visibleModeIfAny": "effort_level medium; permission mode auto; Claude Code cloud session",
+    "reviewedAtUtc": "2026-10-08T06:30:00Z"
+  },
+  "instructions": "Fill every item after the two-stage audit. Preserve your blind answer. Allowed verdicts: accept, revise, reject, unverifiable. No default acceptance. Nulls must be completed, or explicitly describe unavailable information. Cite sourceId and line ranges. Return this JSON plus a concise overall summary. This is an audit response, not an importable review package.",
+  "rubric": [
+    "correct answer and source support under the stated version",
+    "one defensible answer (or exact multi-select set); no hidden prerequisites",
+    "plausible, unambiguously wrong distractors under the scenario",
+    "every explanation and structured step/slot is supported",
+    "objective alignment and realistic difficulty; no exam-parity claim",
+    "case-child independence and cross-item answer leakage"
+  ],
+  "items": [
+    {
+      "itemId": "ai103-pilot001-q01",
+      "itemRevision": "1",
+      "itemSha256": "88268cdf183f7d13476c0c67e2fce969096c1b65d2a410e009627dba60133d10",
+      "sourceIds": [
+        "S005"
+      ],
+      "blindAnswer": "B",
+      "finalProposedAnswer": "B",
+      "verdict": "accept",
+      "rationale": "Key correct. Only Data Zone Standard combines data-zone processing with pay-per-token billing; Global = any region, Data Zone Provisioned = reserved PTU, Data Zone Batch = async. All option notes supported.",
+      "sourceEvidence": [
+        {
+          "sourceId": "S005",
+          "lines": "11",
+          "supports": "standard/provisioned/batch categories"
+        },
+        {
+          "sourceId": "S005",
+          "lines": "23-24",
+          "supports": "Global any region; Data Zone within US/EU/APAC zone"
+        },
+        {
+          "sourceId": "S005",
+          "lines": "41,44-46",
+          "supports": "billing per type"
+        }
+      ],
+      "issues": [
+        "Minor wording: explanation says 'selected data zone'; S005:24 says 'Microsoft-specified data zone'.",
+        "Answer leakage from case wording: 'EU data zone', 'pay-per-token', 'without reserving throughput units' and 'batch unsuitable' map one-to-one onto the option names, so the item is recall of the table rather than a decision."
+      ],
+      "suggestedCorrection": "None required for correctness; see difficultyAssessment for optional discrimination changes.",
+      "difficultyAssessment": "Provisional medium; assessed easy-to-medium. To raise discrimination, describe requirements in business terms (e.g. 'EU customers; processing may cross EU countries but not leave the EU; spiky traffic; finance rejects monthly capacity commitments') and add Standard (geography) as an option so the candidate must separate data zone from geography."
+    },
+    {
+      "itemId": "ai103-pilot001-q02",
+      "itemRevision": "1",
+      "itemSha256": "a137efa41e0e79e90094adcb6c97acab1c1b27ec8f125c355b2cd3313cf20ece",
+      "sourceIds": [
+        "S011",
+        "S040"
+      ],
+      "blindAnswer": "D",
+      "finalProposedAnswer": "D",
+      "verdict": "revise",
+      "rationale": "Key D correct: private networking excludes key auth (S040:5); keyless setup uses the containing Foundry account's system-assigned identity with Search Index Data Contributor + Search Service Contributor (S040:45-47, 887-891). Revise because one option note is unsupported and the stem refers to a problem the case never documents.",
+      "sourceEvidence": [
+        {
+          "sourceId": "S040",
+          "lines": "5",
+          "supports": "key-based auth not supported with private VNet"
+        },
+        {
+          "sourceId": "S040",
+          "lines": "45-47",
+          "supports": "account system-assigned MI + two Search roles"
+        },
+        {
+          "sourceId": "S040",
+          "lines": "887-892",
+          "supports": "portal role assignment steps"
+        },
+        {
+          "sourceId": "S011",
+          "lines": "59,63,74",
+          "supports": "provisioning caller vs runtime identity distinction"
+        }
+      ],
+      "issues": [
+        "Unsupported claim: option C note says 'Foundry User is a project role'. No excerpt mentions Foundry User. C is still wrong (Search Index Data Contributor missing), but the note asserts an unevidenced fact.",
+        "Stem says 'documented retrieval problem', but the case documents no failure symptom (no 403, no empty results); it only lists configuration facts.",
+        "Source tension: S040:5 and S011:74 say 'project managed identity'; S040:45 names the account's system-assigned identity. The case resolves this by stipulation ('For this setup'), which is acceptable but is a stipulated, not documented, reconciliation.",
+        "Heavy leakage: the case names the correct principal and states the exact missing role, so A, B and C are eliminated by the case text alone.",
+        "Case-child coupling: shared case text says 'deployment types listed in Q1', so the shared context refers to a sibling item."
+      ],
+      "suggestedCorrection": "Stem: 'Which connection and authorization change lets the agent query the index while preserving the case study's network and runtime-identity requirements?' Option C note: 'C does not grant Search Index Data Contributor, which the keyless setup requires (S040:45-47).' Drop the Foundry User claim or add a source. Optionally give a symptom (e.g. agent Search tool calls return 403 after switching to keyless) instead of stating the missing role.",
+      "difficultyAssessment": "Provisional very_hard; assessed medium as written, because the case states the principal and the missing role. It can reach hard if the case gives only the symptom and current role list, and the options vary identity and role independently (e.g. account MI + Search Index Data Reader; project MI + Index Data Contributor)."
+    },
+    {
+      "itemId": "ai103-pilot001-q03",
+      "itemRevision": "1",
+      "itemSha256": "624c26da0a23c47516773028503499c0527a4adc46925943cef2470786d6ffcf",
+      "sourceIds": [
+        "S037"
+      ],
+      "blindAnswer": {
+        "required": "[\"order_id\", \"note\"]",
+        "additional": "false",
+        "format": "text.format"
+      },
+      "finalProposedAnswer": {
+        "required": "[\"order_id\", \"note\"]",
+        "additional": "false",
+        "format": "text.format"
+      },
+      "verdict": "accept",
+      "rationale": "Key correct on all three slots: all fields required, additionalProperties false, Responses uses text.format.",
+      "sourceEvidence": [
+        {
+          "sourceId": "S037",
+          "lines": "3",
+          "supports": "text.format for Responses; response_format for Chat Completions; JSON mode does not enforce schema"
+        },
+        {
+          "sourceId": "S037",
+          "lines": "977",
+          "supports": "heading 'All fields must be required'"
+        },
+        {
+          "sourceId": "S037",
+          "lines": "1037-1039",
+          "supports": "additionalProperties false"
+        }
+      ],
+      "issues": [
+        "Evidence gap in file 02: lines 977-978 carry only the heading; the null-union 'emulate optional' text the explanation relies on is omitted. Current-document check (live, 2026-10-08, https://learn.microsoft.com/en-us/azure/foundry/openai/how-to/structured-outputs, page dated 2026-08-24) contains: 'you can emulate an optional parameter by using a union type with null'. Snapshot body lines not seen; add them to the evidence map.",
+        "Distractors `[]` and 'JSON mode without a schema' are weak; few candidates would pick them."
+      ],
+      "suggestedCorrection": "None required for correctness; see difficultyAssessment for optional discrimination changes.",
+      "difficultyAssessment": "Provisional very_hard; assessed medium. Three independent recall facts with one strong distractor per slot at most. For hard: add slots such as `strict: true` vs omitted, and `type: json_schema` vs `json_object`, or include a nested object where additionalProperties must also be false."
+    },
+    {
+      "itemId": "ai103-pilot001-q04",
+      "itemRevision": "1",
+      "itemSha256": "b8087677071536fd7beb195cb7656004d5e5947477864dd6a2dc3dd657e5bbb9",
+      "sourceIds": [
+        "S007"
+      ],
+      "blindAnswer": "C",
+      "finalProposedAnswer": "C",
+      "verdict": "accept",
+      "rationale": "Key correct. Each function_call_output must carry the originating call_id (S007:124 call_id=item.call_id).",
+      "sourceEvidence": [
+        {
+          "sourceId": "S007",
+          "lines": "113-127",
+          "supports": "function_call_output with call_id from the function_call item"
+        }
+      ],
+      "issues": [
+        "The 'order does not replace call_id' and 'tool_call_id is another API pattern' notes are inferences; the corpus shows one call only and never mentions tool_call_id. They are accurate (tool_call_id is the Chat Completions tool message field) but not evidenced in file 02.",
+        "The trace shows call_red/call_blue next to call_id=get_stock, so the answer is visible by inspection."
+      ],
+      "suggestedCorrection": "None required for correctness; see difficultyAssessment for optional discrimination changes.",
+      "difficultyAssessment": "Provisional hard; assessed easy-to-medium. For hard: mix a parallel-call trace where outputs reuse the right ids but one output is attached to the wrong id, or include previous_response_id/input-list handling as the discriminator."
+    },
+    {
+      "itemId": "ai103-pilot001-q05",
+      "itemRevision": "1",
+      "itemSha256": "6ff7672fc7463cc6b0118e17ba49669360e83543aaabe87a27967b05caf9f8e5",
+      "sourceIds": [
+        "S014",
+        "S039"
+      ],
+      "blindAnswer": "A",
+      "finalProposedAnswer": "A",
+      "verdict": "accept",
+      "rationale": "Key correct. Task Completion measures a usable deliverable meeting all user requirements; Task Adherence measures rule/policy compliance, which the stem says was followed; Tool Call Success is technical success; Groundedness is context fidelity.",
+      "sourceEvidence": [
+        {
+          "sourceId": "S014",
+          "lines": "18,20,27",
+          "supports": "evaluator definitions"
+        },
+        {
+          "sourceId": "S039",
+          "lines": "9",
+          "supports": "Groundedness definition"
+        }
+      ],
+      "issues": [
+        "Task Adherence wording in S014:20 ('adhere to its assigned tasks') overlaps slightly; the stem's 'follows its system policy' clause carries the disambiguation, which is appropriate."
+      ],
+      "suggestedCorrection": "None required for correctness; see difficultyAssessment for optional discrimination changes.",
+      "difficultyAssessment": "Provisional medium; agree medium. Good, realistic distractors."
+    },
+    {
+      "itemId": "ai103-pilot001-q06",
+      "itemRevision": "1",
+      "itemSha256": "4658dd9a64cd01897a1b0184bde266770491dfe762fb11c934778d0a7ab0497e",
+      "sourceIds": [
+        "S018"
+      ],
+      "blindAnswer": "B",
+      "finalProposedAnswer": "B",
+      "verdict": "accept",
+      "rationale": "Key correct. Remix returns a new video id with status queued and remixed_from_video_id; poll to completed, then download that id.",
+      "sourceEvidence": [
+        {
+          "sourceId": "S018",
+          "lines": "633-635",
+          "supports": "status lifecycle"
+        },
+        {
+          "sourceId": "S018",
+          "lines": "666-675",
+          "supports": "poll until completed"
+        },
+        {
+          "sourceId": "S018",
+          "lines": "882-883",
+          "supports": "download_content"
+        },
+        {
+          "sourceId": "S018",
+          "lines": "1131,1147-1150,1201",
+          "supports": "remix call; new id with remixed_from_video_id, queued"
+        }
+      ],
+      "issues": [
+        "New-id behavior is shown by example (S018:1201), not stated in prose; adequate.",
+        "A, C and D are implausible to anyone who reads 'queued' in the JSON."
+      ],
+      "suggestedCorrection": "None required for correctness; see difficultyAssessment for optional discrimination changes.",
+      "difficultyAssessment": "Provisional hard; assessed easy. For hard: test that remix requires a completed source (S018:1131), e.g. remixing a video still in_progress, or use variant/expiry handling as discriminators."
+    },
+    {
+      "itemId": "ai103-pilot001-q07",
+      "itemRevision": "1",
+      "itemSha256": "185a0440ceac077610e2ad81ead5b8db6acef3933c27f96806f7a1f326c27ceb",
+      "sourceIds": [
+        "S009"
+      ],
+      "blindAnswer": [
+        "A",
+        "E"
+      ],
+      "finalProposedAnswer": [
+        "A",
+        "E"
+      ],
+      "verdict": "revise",
+      "rationale": "Key A+E is the best available set, but the group R log says retries already report insufficient regional capacity. S009:226 says to retry with backoff or change region and, if the error persists, open a support request. With region change forbidden and retries already failing, E is not clearly sufficient.",
+      "sourceEvidence": [
+        {
+          "sourceId": "S009",
+          "lines": "225-227",
+          "supports": "per-code remediation; backoff with jitter"
+        },
+        {
+          "sourceId": "S009",
+          "lines": "259",
+          "supports": "stopped sessions keep state and do not count"
+        },
+        {
+          "sourceId": "S009",
+          "lines": "302-303",
+          "supports": "error table"
+        }
+      ],
+      "issues": [
+        "Group R wording undermines option E (retrying is already failing).",
+        "'Bounded' retries is the author's addition; S009 says exponential backoff with jitter. Acceptable engineering practice, not sourced."
+      ],
+      "suggestedCorrection": "Change the group R line to: 'Session creation fails intermittently in the approved region; the client currently retries immediately with no delay.' Alternatively keep the line and add an option 'Create an Azure support request for the approved region' and make the item select A + that option.",
+      "difficultyAssessment": "Provisional hard; agree medium-to-hard once the R wording is fixed. B and C are weak distractors."
+    },
+    {
+      "itemId": "ai103-pilot001-q08",
+      "itemRevision": "1",
+      "itemSha256": "e2c17a6009fcc757ef690691025bab1f9e67dcb76e0124b67c688125bd1a5bc2",
+      "sourceIds": [
+        "S042"
+      ],
+      "blindAnswer": [
+        "B",
+        "E"
+      ],
+      "finalProposedAnswer": [
+        "B",
+        "E"
+      ],
+      "verdict": "accept",
+      "rationale": "Key correct. Image API supports only FourSeverityLevels (0,2,4,6); 4=Medium, 6=High; all four categories requested.",
+      "sourceEvidence": [
+        {
+          "sourceId": "S042",
+          "lines": "33",
+          "supports": "0-Safe, 2-Low, 4-Medium, 6-High (Studio section)"
+        },
+        {
+          "sourceId": "S042",
+          "lines": "100-101",
+          "supports": "four categories; FourSeverityLevels"
+        },
+        {
+          "sourceId": "S042",
+          "lines": "128-129",
+          "supports": "all four by default; image supports only FourSeverityLevels with values 0,2,4,6"
+        }
+      ],
+      "issues": [
+        "Severity-name mapping comes from the Studio quickstart text, not the REST parameter table; acceptable but cite both.",
+        "Intra-item cue: option E states the value set, which confirms B and refutes C.",
+        "A and D are implausible."
+      ],
+      "suggestedCorrection": "None required for correctness; see difficultyAssessment for optional discrimination changes.",
+      "difficultyAssessment": "Provisional medium; assessed easy-to-medium. For more discrimination, replace A/D with a plausible 'reject at severity 2 or higher' or a text-API-only EightSeverityLevels setting presented without the word 'images'."
+    },
+    {
+      "itemId": "ai103-pilot001-q09",
+      "itemRevision": "1",
+      "itemSha256": "8e3336da727d7bd44d3c5b413a95a9ee7e39f7b05933ff7e446e4f2e9da932a2",
+      "sourceIds": [
+        "S046"
+      ],
+      "blindAnswer": {
+        "order": [
+          "C",
+          "A",
+          "D",
+          "B"
+        ]
+      },
+      "finalProposedAnswer": {
+        "order": [
+          "C",
+          "A",
+          "D",
+          "B"
+        ]
+      },
+      "verdict": "accept",
+      "rationale": "Key correct. Config with it-IT and de target and audio config, then TranslationRecognizer, then recognize_once and check TranslatedSpeech, then synthesize translations['de'] with a voice-configured SpeechSynthesizer.",
+      "sourceEvidence": [
+        {
+          "sourceId": "S046",
+          "lines": "76-95",
+          "supports": "recognition locale; add_target_language"
+        },
+        {
+          "sourceId": "S046",
+          "lines": "102,118,135-137",
+          "supports": "recognizer construction with audio_config"
+        },
+        {
+          "sourceId": "S046",
+          "lines": "178,183-185",
+          "supports": "recognize_once; TranslatedSpeech; translations[lang]"
+        },
+        {
+          "sourceId": "S046",
+          "lines": "341,377-386",
+          "supports": "separate SpeechConfig voice + SpeechSynthesizer"
+        }
+      ],
+      "issues": [
+        "Pure dependency chain; order follows from reading the steps.",
+        "Steps bundle several actions (C has four), which removes ordering decisions."
+      ],
+      "suggestedCorrection": "None required for correctness; see difficultyAssessment for optional discrimination changes.",
+      "difficultyAssessment": "Provisional medium; assessed easy. For medium/hard: use a build-list format with distractor steps (e.g. 'set speech_synthesis_voice_name on SpeechTranslationConfig', 'construct SpeechRecognizer', 'add target de-DE') and require choosing 4 of 6 in order."
+    },
+    {
+      "itemId": "ai103-pilot001-q10",
+      "itemRevision": "1",
+      "itemSha256": "607c29550929f6fe7972a3cb30dc263c7d08bb624df9fa6a2033c65e5216f549",
+      "sourceIds": [
+        "S028",
+        "S029",
+        "S043",
+        "S026"
+      ],
+      "blindAnswer": {
+        "A": "fieldMappings",
+        "B": "outputFieldMappings",
+        "C": "Document Layout skill",
+        "D": "OCR skill"
+      },
+      "finalProposedAnswer": {
+        "A": "fieldMappings",
+        "B": "outputFieldMappings",
+        "C": "Document Layout skill",
+        "D": "OCR skill"
+      },
+      "verdict": "accept",
+      "rationale": "Key correct; Query-time vectorizer unused.",
+      "sourceEvidence": [
+        {
+          "sourceId": "S028",
+          "lines": "151-156",
+          "supports": "fieldMappings vs outputFieldMappings"
+        },
+        {
+          "sourceId": "S029",
+          "lines": "7,74",
+          "supports": "Document Layout Markdown/text output"
+        },
+        {
+          "sourceId": "S043",
+          "lines": "46,50-53",
+          "supports": "OCR on normalized_images; text output"
+        },
+        {
+          "sourceId": "S026",
+          "lines": "40",
+          "supports": "vectorizer is query time"
+        }
+      ],
+      "issues": [
+        "Only one unused choice and it is plainly query-time, so the elimination is easy.",
+        "S043:53 layoutText gives OCR some location output, which makes row C a reasonable OCR lure; good."
+      ],
+      "suggestedCorrection": "None required for correctness; see difficultyAssessment for optional discrimination changes.",
+      "difficultyAssessment": "Provisional hard; assessed medium. Add a second plausible unused choice (e.g. Text Split skill or Merge skill, or 'indexer imageAction setting') to raise discrimination."
+    }
+  ],
+  "overall": {
+    "summary": "Blind answers matched the author key on all ten items, and the key is correct on all ten under the frozen snapshots. No reject. Two revise: Q2 (unsupported 'Foundry User is a project role' note; stem cites a retrieval problem the case never documents) and Q7 (group R log says retries already fail, which undermines key option E). Eight accept. Main weakness is difficulty: stems and case text name the answer, so 6 of 10 items are easier than labelled. No Azure execution performed; snapshot files beyond file 02 were not opened.",
+    "releaseRecommendation": "Do not release revision 1. Apply the Q2 and Q7 corrections, recalibrate difficulty labels, add the missing S037 locator lines, then request a new bound review for changed items (and for Q1, because a shared-case edit invalidates both children).",
+    "unresolvedSourceGaps": [
+      "S037 snapshot lines ~979-1003 (null-union optional fields) not in file 02; verified only against the live page dated 2026-08-24.",
+      "No excerpt supports 'Foundry User is a project role' (Q2 option C note).",
+      "Corpus never mentions tool_call_id (Q4 option D note); claim is accurate but unevidenced.",
+      "S040:5 and S011:74 'project managed identity' vs S040:45 account system-assigned identity; resolved in Q2 only by case stipulation."
+    ],
+    "difficultyAndCoverageFindings": [
+      "Assessed difficulty vs provisional: Q1 easy-medium (medium), Q2 medium (very_hard), Q3 medium (very_hard), Q4 easy-medium (hard), Q5 medium (medium), Q6 easy (hard), Q7 medium-hard after fix (hard), Q8 easy-medium (medium), Q9 easy (medium), Q10 medium (hard). Q2/Q3 do not warrant very_hard; Q6 does not warrant hard.",
+      "Recurring cause: requirements are phrased with the same nouns as the correct option, and distractors violate an explicit constraint in the stem. Stronger items state business requirements and symptoms and make the candidate translate them.",
+      "Domain mix 3/3/2/1/1 vs official AI-103 weights (study guide updated 2026-04-14: A 25-30%, B 30-35%, C/D/E 10-15% each): C is slightly over-weighted at 20%; acceptable for a 10-item pilot.",
+      "Case study: Microsoft describes case studies as complex scenarios that test identifying critical information and synthesizing it (learn.microsoft.com/en-us/credentials/certifications/frequently-asked-questions). The Cedar Atlas case states the critical facts directly. No Microsoft primary source found that quantifies case-study length."
+    ]
+  },
+  "verdictConvention": "Verdicts judge the bound item content (stem, options, key, explanations). Difficulty relabels are reported in difficultyAssessment and overall findings; applying one changes the item hash and needs a new bound review."
+}

@@ -1,0 +1,104 @@
+{
+  "canonicalDraftHash": "d2d885166ed8a1c2675e6d43bb3fd40f8d70e3d1b48e4a6618b345b2edb424f0",
+  "questions": [
+    {
+      "domainId": "E",
+      "objectiveTags": [
+        "AI103-E1.04"
+      ],
+      "stem": "The index has no OCR text. Which one configuration defect in this exhibit blocks the OCR input path?",
+      "options": [
+        {
+          "id": "A",
+          "text": "The OCR skill uses the normalized image wildcard."
+        },
+        {
+          "id": "B",
+          "text": "The blob indexer’s imageAction is none."
+        },
+        {
+          "id": "C",
+          "text": "The text output mapping names the correct enriched node."
+        },
+        {
+          "id": "D",
+          "text": "The index’s ocr_text field is searchable."
+        }
+      ],
+      "correctAnswer": "B",
+      "type": "code_or_config_artifact",
+      "difficulty": "medium",
+      "explanation": {
+        "whyCorrect": "The normalized image collection must exist for the OCR skill input. The exhibit’s output path is already correct.",
+        "whyDistractorsWrong": {
+          "C": "This correctly maps the produced node after the skill runs.",
+          "D": "Searchability is appropriate for retrieval.",
+          "A": "The wildcard matches the skill’s normalized-image input."
+        }
+      },
+      "artifact": {
+        "title": "Blob OCR pipeline",
+        "kind": "json",
+        "content": "{\n  \"indexer\": {\n    \"parameters\": {\"configuration\": {\"imageAction\": \"none\"}},\n    \"outputFieldMappings\": [{\n      \"sourceFieldName\": \"/document/normalized_images/*/text\",\n      \"targetFieldName\": \"ocr_text\"\n    }]\n  },\n  \"skill\": {\n    \"@odata.type\": \"#Microsoft.Skills.Vision.OcrSkill\",\n    \"context\": \"/document/normalized_images/*\",\n    \"inputs\": [{\"name\": \"image\", \"source\": \"/document/normalized_images/*\"}],\n    \"outputs\": [{\"name\": \"text\", \"targetName\": \"text\"}]\n  },\n  \"indexField\": {\"name\": \"ocr_text\", \"type\": \"Collection(Edm.String)\", \"searchable\": true}\n}"
+      },
+      "id": "ai103-improvement-r2-checkpoint-20-q020",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Implement information extraction solutions",
+      "sourceRefs": [
+        {
+          "sourceId": "S043",
+          "title": "OCR cognitive skill",
+          "url": "https://learn.microsoft.com/azure/search/cognitive-search-skill-ocr",
+          "snapshotSha256": "0a5cdd696dcbae744d32db7fd89a69926f0203462f86d6dc25793ab07d001b3d",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S028",
+          "title": "Skillset concepts in Azure AI Search",
+          "url": "https://learn.microsoft.com/azure/search/cognitive-search-working-with-skillsets",
+          "snapshotSha256": "3d24961260a3a7ca041656383016222704c25dec2dff53743bbaef628236312b",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:37:42Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-9",
+        "validationStatus": "draft"
+      }
+    }
+  ],
+  "caseStudies": [],
+  "evidence": [
+    {
+      "itemId": "ai103-improvement-r2-checkpoint-20-q020",
+      "testedDecision": "The index has no OCR text. Which one configuration defect in this exhibit blocks the OCR input path?",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-E1.04",
+      "itemRevisionHash": "4b1d1623856ab11cdf3c741f943b57e12dd877ad0b999c56e9fa3ef85eda9ab4",
+      "sources": [
+        {
+          "sourceId": "S043",
+          "title": "OCR cognitive skill",
+          "url": "https://learn.microsoft.com/azure/search/cognitive-search-skill-ocr",
+          "snapshotSha256": "0a5cdd696dcbae744d32db7fd89a69926f0203462f86d6dc25793ab07d001b3d",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S028",
+          "title": "Skillset concepts in Azure AI Search",
+          "url": "https://learn.microsoft.com/azure/search/cognitive-search-working-with-skillsets",
+          "snapshotSha256": "3d24961260a3a7ca041656383016222704c25dec2dff53743bbaef628236312b",
+          "docType": "microsoft_learn"
+        }
+      ]
+    }
+  ]
+}

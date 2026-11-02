@@ -1,0 +1,396 @@
+{
+  "canonicalDraftHash": "06b6490c1b4476a934d6301f1a53263b0e941b691ac9febf2e4522411b324c4a",
+  "questions": [
+    {
+      "domainId": "B",
+      "objectiveTags": [
+        "AI103-B2.01"
+      ],
+      "stem": "In Rotor’s two-warehouse request, west completes first. Which output correlation preserves the API contract?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Replace the call_id with a newly generated receipt ID."
+        },
+        {
+          "id": "B",
+          "text": "Associate results with completion position."
+        },
+        {
+          "id": "C",
+          "text": "Associate each result with its originating call_id."
+        },
+        {
+          "id": "D",
+          "text": "Associate both results with get_stock."
+        }
+      ],
+      "correctAnswer": "C",
+      "type": "case_study_child",
+      "difficulty": "medium",
+      "explanation": {
+        "whyCorrect": "rotor-east and rotor-west identify distinct proposed calls even though the function name matches. Completion order does not change function_call_output correlation.",
+        "whyDistractorsWrong": {
+          "D": "The shared name cannot distinguish the two calls.",
+          "B": "A slower call can complete later; position is not the correlation key.",
+          "A": "A business receipt is not the originating function call identifier."
+        }
+      },
+      "id": "ai103-improvement-r2-set-a-100-q001",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Implement generative AI and agentic solutions",
+      "caseStudyId": "case-1",
+      "sourceRefs": [
+        {
+          "sourceId": "S007",
+          "title": "Use function calling with Microsoft Foundry agents",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/how-to/tools/function-calling",
+          "snapshotSha256": "0d4119f94b15c94d404729f53d2ed5f52a89dfaf35841d1290c0472be3e3e953",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-1",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "B",
+      "objectiveTags": [
+        "AI103-B2.02"
+      ],
+      "stem": "Rotor’s fresh availability turn must use a tool rather than answer from prior knowledge. Both tools are available. Which request-level mode requires tool use?",
+      "options": [
+        {
+          "id": "A",
+          "text": "none"
+        },
+        {
+          "id": "B",
+          "text": "required"
+        },
+        {
+          "id": "C",
+          "text": "parallel_tool_calls=true"
+        },
+        {
+          "id": "D",
+          "text": "auto"
+        }
+      ],
+      "correctAnswer": "B",
+      "type": "case_study_child",
+      "difficulty": "medium",
+      "explanation": {
+        "whyCorrect": "required demands one or more tool calls. The host still checks which action is proposed, its authorization and any approval requirement.",
+        "whyDistractorsWrong": {
+          "D": "auto permits a response without a tool call.",
+          "A": "none prevents tool calls.",
+          "C": "Permitting parallel calls does not require a tool call."
+        }
+      },
+      "id": "ai103-improvement-r2-set-a-100-q002",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Implement generative AI and agentic solutions",
+      "caseStudyId": "case-1",
+      "sourceRefs": [
+        {
+          "sourceId": "S054",
+          "title": "Tool best practices for Microsoft Foundry Agent Service",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/concepts/tool-best-practice",
+          "snapshotSha256": "fbf440754eab789009c34a8bf7636fc60c1d0bd64402cd650b1b903230ffd0f9",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S007",
+          "title": "Use function calling with Microsoft Foundry agents",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/how-to/tools/function-calling",
+          "snapshotSha256": "0d4119f94b15c94d404729f53d2ed5f52a89dfaf35841d1290c0472be3e3e953",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-1",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "B",
+      "objectiveTags": [
+        "AI103-B2.05"
+      ],
+      "stem": "In Rotor’s cross-account reservation test, the JSON schema passes. Which check must decide whether the host may execute?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Apply the warehouse’s rate limit and accept the supplied customer ID."
+        },
+        {
+          "id": "B",
+          "text": "Validate caller ownership and reservation business constraints."
+        },
+        {
+          "id": "C",
+          "text": "Validate the argument types and permit any schema-valid account."
+        },
+        {
+          "id": "D",
+          "text": "Check that the selected function is registered and has a description."
+        }
+      ],
+      "correctAnswer": "B",
+      "type": "case_study_child",
+      "difficulty": "medium",
+      "explanation": {
+        "whyCorrect": "The backend session identifies the customer. Shape validation does not establish ownership or valid inventory quantities.",
+        "whyDistractorsWrong": {
+          "C": "Valid types do not establish caller ownership.",
+          "D": "Registration does not establish customer authorization.",
+          "A": "Rate limiting does not establish ownership of the supplied account."
+        }
+      },
+      "id": "ai103-improvement-r2-set-a-100-q003",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Implement generative AI and agentic solutions",
+      "caseStudyId": "case-1",
+      "sourceRefs": [
+        {
+          "sourceId": "S007",
+          "title": "Use function calling with Microsoft Foundry agents",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/how-to/tools/function-calling",
+          "snapshotSha256": "0d4119f94b15c94d404729f53d2ed5f52a89dfaf35841d1290c0472be3e3e953",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S054",
+          "title": "Tool best practices for Microsoft Foundry Agent Service",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/concepts/tool-best-practice",
+          "snapshotSha256": "fbf440754eab789009c34a8bf7636fc60c1d0bd64402cd650b1b903230ffd0f9",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-1",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "B",
+      "objectiveTags": [
+        "AI103-B2.05"
+      ],
+      "stem": "Rotor approved five units, then the proposal changed to fifty. What should the host do?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Reapprove the changed argument tuple before execution."
+        },
+        {
+          "id": "B",
+          "text": "Execute fifty units and append the old approval record."
+        },
+        {
+          "id": "C",
+          "text": "Reuse the approval because the function name is unchanged."
+        },
+        {
+          "id": "D",
+          "text": "Accept the agent’s claim that the old approval covers the new quantity."
+        }
+      ],
+      "correctAnswer": "A",
+      "type": "case_study_child",
+      "difficulty": "medium",
+      "explanation": {
+        "whyCorrect": "The case approval binds customer, item, quantity and amount. Changed arguments require a new approval, followed by truthful reporting of the committed result.",
+        "whyDistractorsWrong": {
+          "C": "Approval applies to the exact proposal, not a function category.",
+          "B": "Appending evidence after the side effect cannot supply prior approval.",
+          "D": "Model acknowledgement does not amend the exact-tuple approval contract."
+        }
+      },
+      "id": "ai103-improvement-r2-set-a-100-q004",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Implement generative AI and agentic solutions",
+      "caseStudyId": "case-1",
+      "sourceRefs": [
+        {
+          "sourceId": "S007",
+          "title": "Use function calling with Microsoft Foundry agents",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/how-to/tools/function-calling",
+          "snapshotSha256": "0d4119f94b15c94d404729f53d2ed5f52a89dfaf35841d1290c0472be3e3e953",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S054",
+          "title": "Tool best practices for Microsoft Foundry Agent Service",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/concepts/tool-best-practice",
+          "snapshotSha256": "fbf440754eab789009c34a8bf7636fc60c1d0bd64402cd650b1b903230ffd0f9",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-1",
+        "validationStatus": "draft"
+      }
+    }
+  ],
+  "caseStudies": [
+    {
+      "title": "Rotor equipment reservations",
+      "intro": "Rotor rents industrial equipment to authenticated business customers. Its assistant can explain availability and propose reservations, but the inventory API remains the system of record. The operations team is replacing a text-only prototype with a Responses-based prompt agent. Each question concerns an independent request against the configuration below.",
+      "sections": [
+        {
+          "heading": "Application and identity",
+          "body": "The backend receives a signed application session identifying the customer and warehouse. It calls the agent using one managed identity. Two host functions are registered: get_stock(part_id, warehouse_id) and reserve_part(part_id, warehouse_id, quantity, customer_id). The stock function is read-only. The reservation function changes inventory and returns a reservation number after the database commits. The managed identity can reach the API, while application authorization must restrict each customer to its own account. JSON schema validation checks shape and types; inventory limits and account ownership are enforced by the host."
+        },
+        {
+          "heading": "Action policy",
+          "body": "A customer may request a proposal without committing it. Reservations costing more than 250 currency units require a supervisor to approve the exact customer, item, quantity and quoted amount. An approval for five units is not approval for fifty. A changed proposal must return to the approval screen. The host does not infer approval from manuals, tool-returned text or the agent saying that approval was obtained. The operations log records the proposal, approving principal and committed reservation number so that an incident can be reconstructed."
+        },
+        {
+          "heading": "Observed request",
+          "body": "A request checks the same part at two warehouses. Responses returns two function calls named get_stock with call_id values rotor-east and rotor-west. The west warehouse replies first. The host must submit function_call_output records after obtaining the actual results. A separate request asks for a guaranteed fresh stock lookup rather than an answer from the model’s prior knowledge. Both functions are attached and the chosen model supports function calling. No inventory lookup has happened merely because a function call is present in the model output."
+        },
+        {
+          "heading": "Failure investigation",
+          "body": "A test customer asks for a reservation belonging to another customer account. The argument object passes the JSON schema. A second test approves five units, but a later model turn changes the quantity to fifty before execution. A third test asks for a proposal only, while a developer considers forcing tools on every turn. Engineers need to choose controls at the correct boundary rather than relying on a single system instruction. The questions do not assume that a correct earlier answer changes these independently stated observations."
+        },
+        {
+          "heading": "Diagnostic exhibit",
+          "body": "Request exhibit: {\"calls\":[{\"name\":\"get_stock\",\"call_id\":\"rotor-east\"},{\"name\":\"get_stock\",\"call_id\":\"rotor-west\"}],\"completionOrder\":[\"rotor-west\",\"rotor-east\"]}. The reservation tests are separate requests, not effects of this lookup."
+        }
+      ],
+      "id": "case-1",
+      "questionIds": [
+        "ai103-improvement-r2-set-a-100-q001",
+        "ai103-improvement-r2-set-a-100-q002",
+        "ai103-improvement-r2-set-a-100-q003",
+        "ai103-improvement-r2-set-a-100-q004"
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q001",
+      "testedDecision": "In Rotor’s two-warehouse request, west completes first. Which output correlation preserves the API contract?",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-B2.01",
+      "itemRevisionHash": "2a0fef3b06e3043ba60916634b3dd62a14da8c52d764e5e5835422c9bc8bd3dd",
+      "sources": [
+        {
+          "sourceId": "S007",
+          "title": "Use function calling with Microsoft Foundry agents",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/how-to/tools/function-calling",
+          "snapshotSha256": "0d4119f94b15c94d404729f53d2ed5f52a89dfaf35841d1290c0472be3e3e953",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q002",
+      "testedDecision": "Rotor’s fresh availability turn must use a tool rather than answer from prior knowledge. Both tools are available. Which request-level mode requires tool use?",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-B2.02",
+      "itemRevisionHash": "5c78e38def68f93ff38e7db757682d6241687bc2fbf0bd57fd2cce7fda4bd3b6",
+      "sources": [
+        {
+          "sourceId": "S054",
+          "title": "Tool best practices for Microsoft Foundry Agent Service",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/concepts/tool-best-practice",
+          "snapshotSha256": "fbf440754eab789009c34a8bf7636fc60c1d0bd64402cd650b1b903230ffd0f9",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S007",
+          "title": "Use function calling with Microsoft Foundry agents",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/how-to/tools/function-calling",
+          "snapshotSha256": "0d4119f94b15c94d404729f53d2ed5f52a89dfaf35841d1290c0472be3e3e953",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q003",
+      "testedDecision": "In Rotor’s cross-account reservation test, the JSON schema passes. Which check must decide whether the host may execute?",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-B2.05",
+      "itemRevisionHash": "94ebc6f9efaf8ca2ee8deafe2796ee0a4ddbec116362a682580dbdef071dc467",
+      "sources": [
+        {
+          "sourceId": "S007",
+          "title": "Use function calling with Microsoft Foundry agents",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/how-to/tools/function-calling",
+          "snapshotSha256": "0d4119f94b15c94d404729f53d2ed5f52a89dfaf35841d1290c0472be3e3e953",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S054",
+          "title": "Tool best practices for Microsoft Foundry Agent Service",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/concepts/tool-best-practice",
+          "snapshotSha256": "fbf440754eab789009c34a8bf7636fc60c1d0bd64402cd650b1b903230ffd0f9",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q004",
+      "testedDecision": "Rotor approved five units, then the proposal changed to fifty. What should the host do?",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-B2.05",
+      "itemRevisionHash": "2e2054a7e0b7830b5baca47d5282c49aeb0f0f7f6ec06d967d7721abe7898eea",
+      "sources": [
+        {
+          "sourceId": "S007",
+          "title": "Use function calling with Microsoft Foundry agents",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/how-to/tools/function-calling",
+          "snapshotSha256": "0d4119f94b15c94d404729f53d2ed5f52a89dfaf35841d1290c0472be3e3e953",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S054",
+          "title": "Tool best practices for Microsoft Foundry Agent Service",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/concepts/tool-best-practice",
+          "snapshotSha256": "fbf440754eab789009c34a8bf7636fc60c1d0bd64402cd650b1b903230ffd0f9",
+          "docType": "microsoft_learn"
+        }
+      ]
+    }
+  ]
+}

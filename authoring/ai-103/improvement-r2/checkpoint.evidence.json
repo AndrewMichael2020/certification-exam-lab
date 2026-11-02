@@ -1,0 +1,458 @@
+{
+  "packageId": "ai103-improvement-r2-checkpoint-20",
+  "canonicalDraftHash": "d2d885166ed8a1c2675e6d43bb3fd40f8d70e3d1b48e4a6618b345b2edb424f0",
+  "packManifestHash": "49384b20f6efd6a2601f3dd5cec2cd06b699c0c0ee69d7ffbfd620f1b35aeef4",
+  "assessmentState": "author estimate; independent review pending",
+  "items": [
+    {
+      "itemId": "ai103-improvement-r2-checkpoint-20-q001",
+      "testedDecision": "In Rotor’s two-warehouse request, west completes first. Which output correlation preserves the API contract?",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-B2.01",
+      "itemRevisionHash": "4a770a05e824f01095ad94987dd236ec8946b0923314c3568922d0341e3dc25c",
+      "sources": [
+        {
+          "sourceId": "S007",
+          "title": "Use function calling with Microsoft Foundry agents",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/how-to/tools/function-calling",
+          "snapshotSha256": "0d4119f94b15c94d404729f53d2ed5f52a89dfaf35841d1290c0472be3e3e953",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-checkpoint-20-q002",
+      "testedDecision": "Rotor’s fresh availability turn must use a tool rather than answer from prior knowledge. Both tools are available. Which request-level mode requires tool use?",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-B2.02",
+      "itemRevisionHash": "c45d6bd94f0afb2da4febf8b965a5a62177d17be95118efb553667a20423c725",
+      "sources": [
+        {
+          "sourceId": "S054",
+          "title": "Tool best practices for Microsoft Foundry Agent Service",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/concepts/tool-best-practice",
+          "snapshotSha256": "fbf440754eab789009c34a8bf7636fc60c1d0bd64402cd650b1b903230ffd0f9",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S007",
+          "title": "Use function calling with Microsoft Foundry agents",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/how-to/tools/function-calling",
+          "snapshotSha256": "0d4119f94b15c94d404729f53d2ed5f52a89dfaf35841d1290c0472be3e3e953",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-checkpoint-20-q003",
+      "testedDecision": "Lumen’s runtime obtains a token but Reader-only inference is denied. Which documented role at the called Azure OpenAI resource supplies inference permission?",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-A3.04",
+      "itemRevisionHash": "4146b0330866b11c26c54dcfdf2acd25e26ffbab60a860eb308e55b420e4f8cf",
+      "sources": [
+        {
+          "sourceId": "S051",
+          "title": "Azure OpenAI v1 API",
+          "url": "https://learn.microsoft.com/en-us/azure/foundry/openai/api-version-lifecycle",
+          "snapshotSha256": "8e7e4b2c4e94ad6056ffa3edf4750e4db864ceac16a52777cc13fd2068403803",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S052",
+          "title": "Use Azure OpenAI without keys",
+          "url": "https://learn.microsoft.com/en-us/azure/developer/ai/keyless-connections",
+          "snapshotSha256": "4f2b4d850889660d3af96aac661fa1955b8d9e1bf6f454facbef5b11aa59efcd",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-checkpoint-20-q004",
+      "testedDecision": "Complete the Azure OpenAI v1 client for keyless inference. The calling identity has the inference role at the resource scope.",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-A3.04",
+      "itemRevisionHash": "2146a70792a92938f0801693ecb9b25bfd8d250d7a9f0b09ae85ba485a48ae25",
+      "sources": [
+        {
+          "sourceId": "S051",
+          "title": "Azure OpenAI v1 API",
+          "url": "https://learn.microsoft.com/en-us/azure/foundry/openai/api-version-lifecycle",
+          "snapshotSha256": "8e7e4b2c4e94ad6056ffa3edf4750e4db864ceac16a52777cc13fd2068403803",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S052",
+          "title": "Use Azure OpenAI without keys",
+          "url": "https://learn.microsoft.com/en-us/azure/developer/ai/keyless-connections",
+          "snapshotSha256": "4f2b4d850889660d3af96aac661fa1955b8d9e1bf6f454facbef5b11aa59efcd",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-checkpoint-20-q005",
+      "testedDecision": "Complete the AI Projects Python 2.8.0 constructor for project operations.",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-A2.03",
+      "itemRevisionHash": "601d3a715dd3c75d6761f2badf7eb240cc81b20e4704cf449f646110f1b1c8c6",
+      "sources": [
+        {
+          "sourceId": "S002",
+          "title": "Azure AI Projects client library for Python - version 2.8.0",
+          "url": "https://learn.microsoft.com/python/api/overview/azure/ai-projects-readme?view=azure-python",
+          "snapshotSha256": "2ce3139fd9fb77eb3f63d4a797ecc24deab957376faac5fe5a28d80e8080b266",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S003",
+          "title": "Microsoft Foundry SDKs and endpoints",
+          "url": "https://learn.microsoft.com/azure/foundry/how-to/develop/sdk-overview",
+          "snapshotSha256": "f62e4cfa9a1eeed9aa30383cab18005b8bc8f72d2743a26dedf0bb83d24e046d",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-checkpoint-20-q006",
+      "testedDecision": "A catalog requires exact part-code matches and semantic symptom matches. Which design combines both retrieval signals before optional reranking?",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-A1.03",
+      "itemRevisionHash": "9c010206c06274c842110001ff98757c817c355a353a1abbe499c3e4f6966ba2",
+      "sources": [
+        {
+          "sourceId": "S025",
+          "title": "Hybrid search using vectors and full-text search in Azure AI Search",
+          "url": "https://learn.microsoft.com/azure/search/hybrid-search-overview",
+          "snapshotSha256": "8f766ea87e9528dc1e469ffca3de91350cf9b9393aaf47e5c8c124378457397d",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S026",
+          "title": "Integrated vector embedding in Azure AI Search",
+          "url": "https://learn.microsoft.com/azure/search/vector-search-integrated-vectorization",
+          "snapshotSha256": "45a6b445fbe4f7f65334693eb96b2de7b021e0b50ce46b363ab47c5de0a11f0d",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-checkpoint-20-q007",
+      "testedDecision": "A secured agent has the required runtime roles. Search resolves to a public IP from the agent network even though public access is disabled. The private endpoint exists. What should be investigated next?",
+      "oldItemIds": [
+        "ai103-set-a-q004"
+      ],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-A3.04",
+      "itemRevisionHash": "8c4c5aba70e8cc187b006bf836dafed3a25b0920198d8cbddd7e9f29bf43c58a",
+      "sources": [
+        {
+          "sourceId": "S011",
+          "title": "Set up private networking for Foundry Agent Service",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/how-to/virtual-networks",
+          "snapshotSha256": "02eb40fb9bc5fcbd6b27249423b2d0ba26f5df0dd6b6885c881270a7a6fac8b9",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-checkpoint-20-q008",
+      "testedDecision": "Complete the current Python client calls for an existing agent named helpdesk and its project OpenAI client.",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-B1.06",
+      "itemRevisionHash": "784ad441d7f34c829ed0e399a2c88b95437d8d6df06d6f6d6f056b07a9dfdc45",
+      "sources": [
+        {
+          "sourceId": "S002",
+          "title": "Azure AI Projects client library for Python - version 2.8.0",
+          "url": "https://learn.microsoft.com/python/api/overview/azure/ai-projects-readme?view=azure-python",
+          "snapshotSha256": "2ce3139fd9fb77eb3f63d4a797ecc24deab957376faac5fe5a28d80e8080b266",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S056",
+          "title": "AI Projects AgentsOperations Python reference",
+          "url": "https://learn.microsoft.com/en-us/python/api/azure-ai-projects/azure.ai.projects.operations.agentsoperations?view=azure-python",
+          "snapshotSha256": "888658bb603bbc211a4096be874b78aefcabf8c8e5a4b3c0a14e93ad80c2a6a7",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-checkpoint-20-q009",
+      "testedDecision": "Complete a backend memory-search tool definition and response header for per-user preferences. user_key is derived from the authenticated session.",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-B2.02",
+      "itemRevisionHash": "bfdbcdfb63c330cba511141aceff334a644814aae39a97f247841767250a54b2",
+      "sources": [
+        {
+          "sourceId": "S053",
+          "title": "Create and use memory in Foundry Agent Service (preview)",
+          "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/how-to/memory-usage",
+          "snapshotSha256": "d118113db20dbe589f686a9150063736c78ce1b6e7b37c649bf28262918d31b6",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-checkpoint-20-q010",
+      "testedDecision": "A Responses turn must consult at least one attached tool. Complete the request-level control.",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-B2.01",
+      "itemRevisionHash": "b93271fe050d6ef1be4326850d7cf7f625916ffc312f6cdf16de3ff167253c5c",
+      "sources": [
+        {
+          "sourceId": "S054",
+          "title": "Tool best practices for Microsoft Foundry Agent Service",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/concepts/tool-best-practice",
+          "snapshotSha256": "fbf440754eab789009c34a8bf7636fc60c1d0bd64402cd650b1b903230ffd0f9",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-checkpoint-20-q011",
+      "testedDecision": "Complete a supported strict Responses schema: note must be present and can be null; unknown properties are rejected.",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-B3.01",
+      "itemRevisionHash": "230405296aa14715945e90dc8e3e1340574b6e2f5921c463b01e7aab3b111d7a",
+      "sources": [
+        {
+          "sourceId": "S037",
+          "title": "Structured outputs",
+          "url": "https://learn.microsoft.com/azure/foundry/openai/how-to/structured-outputs",
+          "snapshotSha256": "0337c89ce3e5a9ba28d1c2fc18f1644c50b13568eb19edc43420d16b401cacfc",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-checkpoint-20-q012",
+      "testedDecision": "An image safety policy evaluates four harm categories and rejects any severity of 4 or 6. Which TWO implementation decisions match the image:analyze 2024-09-01 contract? Select TWO answers.",
+      "oldItemIds": [
+        "ai103-set-a-q075"
+      ],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-C3.01",
+      "itemRevisionHash": "d4b20eb4b80b5eaf87db7a729d9df6e8f9ee4841f15c0ede76876e0b202f7aca",
+      "sources": [
+        {
+          "sourceId": "S042",
+          "title": "QuickStart: Analyze image content",
+          "url": "https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-image",
+          "snapshotSha256": "6a40b6fdabe9e2a91838a3026f8530d0229c70acd401c4fab094a6c0c63b8670",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-checkpoint-20-q013",
+      "testedDecision": "A model supports masked image edits. The client must change one area of an existing image. Which TWO inputs are directly relevant to the edit definition? Select TWO answers.",
+      "oldItemIds": [
+        "ai103-set-a-q076"
+      ],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-C1.03",
+      "itemRevisionHash": "0708a89a85a35593c1521059eaff6ac27f2d8ebabb93ef75ddee31d49990faf2",
+      "sources": [
+        {
+          "sourceId": "S017",
+          "title": "Azure OpenAI image generation models",
+          "url": "https://learn.microsoft.com/azure/foundry/openai/how-to/dall-e",
+          "snapshotSha256": "34668770bb5790633413f4ae9432738c85ed36aef328f9f2bdb8b1b82437dca6",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-checkpoint-20-q014",
+      "testedDecision": "A team evaluates the video-analysis 2026-06-01-preview contract for fast events and tiny labels. Which TWO limitations belong in its evaluation plan? Select TWO answers.",
+      "oldItemIds": [
+        "ai103-set-a-q077"
+      ],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-C2.06",
+      "itemRevisionHash": "47734af93d793451bed20b201d72448cef2479bfbb45f7779b100af72088bbaa",
+      "sources": [
+        {
+          "sourceId": "S022",
+          "title": "Azure Content Understanding in Foundry Tools video solutions",
+          "url": "https://learn.microsoft.com/azure/ai-services/content-understanding/video/overview",
+          "snapshotSha256": "3a89d957245350c800482a717244bd3fc27b322ed67dbcbabea8e41782a3a57a",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-checkpoint-20-q015",
+      "testedDecision": "Mixed-language segments were submitted together for translation. Which TWO changes directly target the documented input problem? Select TWO answers.",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-D1.03",
+      "itemRevisionHash": "ba08d378e15880f00aff9dc5a83195b924a7aa88dce01daf0216fdf1fb101629",
+      "sources": [
+        {
+          "sourceId": "S055",
+          "title": "Azure Translator known issues and troubleshooting",
+          "url": "https://learn.microsoft.com/en-us/azure/ai-services/translator/reference/known-issues",
+          "snapshotSha256": "c1b48f37f4dc56c80cbc9c30661bfc67f1f6f75dea4693ef6d9e39beeeb88f1c",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-checkpoint-20-q016",
+      "testedDecision": "A source document exceeds the embedding input limit. Arrange the dependency chain that produces searchable chunk vectors.",
+      "oldItemIds": [],
+      "dependencyEdges": [
+        {
+          "before": "C",
+          "after": "D",
+          "reason": "Chunking requires source text and produces embedding inputs."
+        },
+        {
+          "before": "D",
+          "after": "A",
+          "reason": "Vectors are produced from prepared chunks."
+        },
+        {
+          "before": "A",
+          "after": "B",
+          "reason": "Indexing consumes text and completed vectors."
+        }
+      ],
+      "primaryObjective": "AI103-E1.01",
+      "itemRevisionHash": "ee2a94b8caebf98397d9fc4921aa185dfcd71ff0147cd102a9429f86ecb32db1",
+      "sources": [
+        {
+          "sourceId": "S026",
+          "title": "Integrated vector embedding in Azure AI Search",
+          "url": "https://learn.microsoft.com/azure/search/vector-search-integrated-vectorization",
+          "snapshotSha256": "45a6b445fbe4f7f65334693eb96b2de7b021e0b50ce46b363ab47c5de0a11f0d",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S058",
+          "title": "Integrated vectorization REST configuration",
+          "url": "https://learn.microsoft.com/en-us/azure/search/search-how-to-integrated-vectorization",
+          "snapshotSha256": "a09c24b08450e2017f75e2fa7d0b107b870d58cb085c863b6531ddb3ab513716",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-checkpoint-20-q017",
+      "testedDecision": "A configured document analyzer returns a long-running operation. Arrange the dependency chain for sending completed extraction to a RAG pipeline.",
+      "oldItemIds": [],
+      "dependencyEdges": [
+        {
+          "before": "A",
+          "after": "B",
+          "reason": "The operation must finish successfully before consumption."
+        },
+        {
+          "before": "B",
+          "after": "D",
+          "reason": "Only the successful result supplies the representation."
+        },
+        {
+          "before": "D",
+          "after": "C",
+          "reason": "Downstream work requires the extracted representation."
+        }
+      ],
+      "primaryObjective": "AI103-E2.02",
+      "itemRevisionHash": "40a17af2a766b2729396f65f34edb98f571dc20725aae07750411dd8c2c4e8ef",
+      "sources": [
+        {
+          "sourceId": "S021",
+          "title": "Azure AI Content Understanding client library for Python - version 1.1.0",
+          "url": "https://learn.microsoft.com/python/api/overview/azure/ai-contentunderstanding-readme?view=azure-python",
+          "snapshotSha256": "aa5fd0abb99fe608e62d3909ffd7bc4eac9904dc931f427c9e3788351fbc7b42",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-checkpoint-20-q018",
+      "testedDecision": "Match each speech requirement to the relevant capability. Use each selected choice once; one choice is unused.",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-D2.01",
+      "itemRevisionHash": "8f59edf663d98227702cf67235bbe8a9d05c6fc9b0c8619e78538a0e8d8abc06",
+      "sources": [
+        {
+          "sourceId": "S033",
+          "title": "What is Azure Speech?",
+          "url": "https://learn.microsoft.com/azure/ai-services/speech-service/overview",
+          "snapshotSha256": "60a8436b0646a9a3c1e779b78f0e1d645948866173ce85449a6283d58c019d54",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S034",
+          "title": "What is custom speech?",
+          "url": "https://learn.microsoft.com/azure/ai-services/speech-service/custom-speech-overview",
+          "snapshotSha256": "8bde6391b7bdee42b5e52ea8c995024dcda82d1a0b56acbdfb817207b2a8d511",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S046",
+          "title": "How to recognize and translate speech",
+          "url": "https://learn.microsoft.com/azure/ai-services/speech-service/how-to-translate-speech",
+          "snapshotSha256": "8a73fb1e63f49dde972815b860758a57ff3d620842220f9e29200bccf573c39e",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-checkpoint-20-q019",
+      "testedDecision": "Match each text task to the most targeted Language capability. Use each selected choice once; one choice is unused.",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-D1.01",
+      "itemRevisionHash": "ab9b8766c1fe8a310e18d36c7845df525f6916a770aa9f4e479e776dae2d645e",
+      "sources": [
+        {
+          "sourceId": "S030",
+          "title": "What is Azure Language in Foundry Tools?",
+          "url": "https://learn.microsoft.com/azure/ai-services/language-service/overview",
+          "snapshotSha256": "debd3c5f132c72a0d258daa4d82d950834da5b4c89e3b42b20cf32982a169e1d",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-checkpoint-20-q020",
+      "testedDecision": "The index has no OCR text. Which one configuration defect in this exhibit blocks the OCR input path?",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-E1.04",
+      "itemRevisionHash": "4b1d1623856ab11cdf3c741f943b57e12dd877ad0b999c56e9fa3ef85eda9ab4",
+      "sources": [
+        {
+          "sourceId": "S043",
+          "title": "OCR cognitive skill",
+          "url": "https://learn.microsoft.com/azure/search/cognitive-search-skill-ocr",
+          "snapshotSha256": "0a5cdd696dcbae744d32db7fd89a69926f0203462f86d6dc25793ab07d001b3d",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S028",
+          "title": "Skillset concepts in Azure AI Search",
+          "url": "https://learn.microsoft.com/azure/search/cognitive-search-working-with-skillsets",
+          "snapshotSha256": "3d24961260a3a7ca041656383016222704c25dec2dff53743bbaef628236312b",
+          "docType": "microsoft_learn"
+        }
+      ]
+    }
+  ]
+}

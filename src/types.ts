@@ -9,7 +9,36 @@ export type QuestionType =
   | "log_or_artifact_interpretation"
   | "policy_control_selection";
 
-export type Difficulty = "medium" | "hard" | "very_hard";
+export type Difficulty = "easy" | "medium" | "hard" | "very_hard";
+export type DifficultyCounts = Record<Exclude<Difficulty, "easy">, number> & { easy?: number };
+
+export interface PackRef { id: string; version: string }
+export interface AuthoringProvenance {
+  route: "codex-subscription" | "synthetic-fixture";
+  model: string;
+  reasoningEffort: string;
+  authoredAt: string;
+}
+export interface ReleaseManifest {
+  packageId: string;
+  revision: string;
+  packageSha256: string;
+  manifestSha256: string;
+  assetSha256: Record<string, string>;
+  itemSha256: Record<string, string>;
+  provenance: AuthoringProvenance;
+  reviews: ItemReview[];
+  status: "synthetic" | "released";
+}
+export interface ItemReview {
+  itemId: string;
+  itemSha256: string;
+  verdict: "accept" | "revise" | "reject" | "unverifiable";
+  reviewer: string;
+  reviewedAt: string;
+  sourceIds: string[];
+  rationale: string;
+}
 
 export interface AnswerOption {
   id: "A" | "B" | "C" | "D" | "E" | string;
@@ -50,6 +79,8 @@ export interface Explanation {
 }
 
 export interface SourceRef {
+  sourceId?: string;
+  snapshotSha256?: string;
   title: string;
   url?: string;
   repo?: string;
@@ -73,7 +104,9 @@ export interface QuestionMetadata {
 
 export interface PracticeQuestion {
   id: string;
-  examCode: "GH-600";
+  pack?: PackRef;
+  revision?: string;
+  examCode: string;
   domainId: string;
   domainName: string;
   objectiveTags: string[];
@@ -123,11 +156,13 @@ export interface ItemTypeBlueprint {
 }
 
 export interface GenerationPlan {
+  pack?: PackRef;
+  planningVersion?: string;
   totalQuestions: number;
   domains: DomainBlueprint[];
   itemTypes: ItemTypeBlueprint;
   caseStudyCount: number;
-  difficulty: Record<Difficulty, number>;
+  difficulty: DifficultyCounts;
   batches: BatchPlan[];
 }
 
@@ -143,6 +178,9 @@ export interface BatchPlan {
 
 export interface ExamSet {
   id: string;
+  pack?: PackRef;
+  compatibility?: "legacy-gh-600";
+  release?: ReleaseManifest;
   createdAt: string;
   plan: GenerationPlan;
   questions: PracticeQuestion[];
@@ -153,11 +191,17 @@ export interface ExamSet {
   };
 }
 
+/** New artifacts require identity; optional base fields exist for legacy JSON only. */
+export type PackGenerationPlan = GenerationPlan & { pack: PackRef; planningVersion: string };
+export type ImportedExamSet = ExamSet & { pack: PackRef; plan: PackGenerationPlan; release: ReleaseManifest };
+
 export interface Attempt {
   id: string;
+  pack?: PackRef;
+  examSha256?: string;
   examId: string;
   createdAt: string;
-  answers: Record<string, string | string[] | Record<string, string>>;
+  answers: Record<string, unknown>;
   confidence: Record<string, "guessed" | "somewhat_confident" | "confident">;
   flagged: string[];
   score: {

@@ -1,0 +1,459 @@
+{
+  "templateOnly": true,
+  "packetId": "ai103-improvement-r2-checkpoint-20-manual-audit",
+  "packageId": "ai103-improvement-r2-checkpoint-20",
+  "revision": "2",
+  "pack": {
+    "id": "ai-103",
+    "version": "1.2.0"
+  },
+  "draftPackageSha256": "d2d885166ed8a1c2675e6d43bb3fd40f8d70e3d1b48e4a6618b345b2edb424f0",
+  "reviewer": {
+    "actualModelLabel": null,
+    "visibleModeIfAny": null,
+    "reviewedAtUtc": null
+  },
+  "instructions": "Solve blind first. Assess alternatives, evidence, API/version, objective fit, difficulty and cues. Null verdicts are not reviews.",
+  "items": [
+    {
+      "itemId": "ai103-improvement-r2-checkpoint-20-q001",
+      "itemRevision": "2",
+      "itemSha256": "4a770a05e824f01095ad94987dd236ec8946b0923314c3568922d0341e3dc25c",
+      "sourceIds": [
+        "S007"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S007",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-checkpoint-20-q002",
+      "itemRevision": "2",
+      "itemSha256": "c45d6bd94f0afb2da4febf8b965a5a62177d17be95118efb553667a20423c725",
+      "sourceIds": [
+        "S054",
+        "S007"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S054",
+          "lines": null,
+          "supports": null
+        },
+        {
+          "sourceId": "S007",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-checkpoint-20-q003",
+      "itemRevision": "2",
+      "itemSha256": "4146b0330866b11c26c54dcfdf2acd25e26ffbab60a860eb308e55b420e4f8cf",
+      "sourceIds": [
+        "S051",
+        "S052"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S051",
+          "lines": null,
+          "supports": null
+        },
+        {
+          "sourceId": "S052",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-checkpoint-20-q004",
+      "itemRevision": "2",
+      "itemSha256": "2146a70792a92938f0801693ecb9b25bfd8d250d7a9f0b09ae85ba485a48ae25",
+      "sourceIds": [
+        "S051",
+        "S052"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S051",
+          "lines": null,
+          "supports": null
+        },
+        {
+          "sourceId": "S052",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-checkpoint-20-q005",
+      "itemRevision": "2",
+      "itemSha256": "601d3a715dd3c75d6761f2badf7eb240cc81b20e4704cf449f646110f1b1c8c6",
+      "sourceIds": [
+        "S002",
+        "S003"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S002",
+          "lines": null,
+          "supports": null
+        },
+        {
+          "sourceId": "S003",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-checkpoint-20-q006",
+      "itemRevision": "2",
+      "itemSha256": "9c010206c06274c842110001ff98757c817c355a353a1abbe499c3e4f6966ba2",
+      "sourceIds": [
+        "S025",
+        "S026"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S025",
+          "lines": null,
+          "supports": null
+        },
+        {
+          "sourceId": "S026",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-checkpoint-20-q007",
+      "itemRevision": "2",
+      "itemSha256": "8c4c5aba70e8cc187b006bf836dafed3a25b0920198d8cbddd7e9f29bf43c58a",
+      "sourceIds": [
+        "S011"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S011",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-checkpoint-20-q008",
+      "itemRevision": "2",
+      "itemSha256": "784ad441d7f34c829ed0e399a2c88b95437d8d6df06d6f6d6f056b07a9dfdc45",
+      "sourceIds": [
+        "S002",
+        "S056"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S002",
+          "lines": null,
+          "supports": null
+        },
+        {
+          "sourceId": "S056",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-checkpoint-20-q009",
+      "itemRevision": "2",
+      "itemSha256": "bfdbcdfb63c330cba511141aceff334a644814aae39a97f247841767250a54b2",
+      "sourceIds": [
+        "S053"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S053",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-checkpoint-20-q010",
+      "itemRevision": "2",
+      "itemSha256": "b93271fe050d6ef1be4326850d7cf7f625916ffc312f6cdf16de3ff167253c5c",
+      "sourceIds": [
+        "S054"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S054",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-checkpoint-20-q011",
+      "itemRevision": "2",
+      "itemSha256": "230405296aa14715945e90dc8e3e1340574b6e2f5921c463b01e7aab3b111d7a",
+      "sourceIds": [
+        "S037"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S037",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-checkpoint-20-q012",
+      "itemRevision": "2",
+      "itemSha256": "d4b20eb4b80b5eaf87db7a729d9df6e8f9ee4841f15c0ede76876e0b202f7aca",
+      "sourceIds": [
+        "S042"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S042",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-checkpoint-20-q013",
+      "itemRevision": "2",
+      "itemSha256": "0708a89a85a35593c1521059eaff6ac27f2d8ebabb93ef75ddee31d49990faf2",
+      "sourceIds": [
+        "S017"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S017",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-checkpoint-20-q014",
+      "itemRevision": "2",
+      "itemSha256": "47734af93d793451bed20b201d72448cef2479bfbb45f7779b100af72088bbaa",
+      "sourceIds": [
+        "S022"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S022",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-checkpoint-20-q015",
+      "itemRevision": "2",
+      "itemSha256": "ba08d378e15880f00aff9dc5a83195b924a7aa88dce01daf0216fdf1fb101629",
+      "sourceIds": [
+        "S055"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S055",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-checkpoint-20-q016",
+      "itemRevision": "2",
+      "itemSha256": "ee2a94b8caebf98397d9fc4921aa185dfcd71ff0147cd102a9429f86ecb32db1",
+      "sourceIds": [
+        "S026",
+        "S058"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S026",
+          "lines": null,
+          "supports": null
+        },
+        {
+          "sourceId": "S058",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-checkpoint-20-q017",
+      "itemRevision": "2",
+      "itemSha256": "40a17af2a766b2729396f65f34edb98f571dc20725aae07750411dd8c2c4e8ef",
+      "sourceIds": [
+        "S021"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S021",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-checkpoint-20-q018",
+      "itemRevision": "2",
+      "itemSha256": "8f59edf663d98227702cf67235bbe8a9d05c6fc9b0c8619e78538a0e8d8abc06",
+      "sourceIds": [
+        "S033",
+        "S034",
+        "S046"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S033",
+          "lines": null,
+          "supports": null
+        },
+        {
+          "sourceId": "S034",
+          "lines": null,
+          "supports": null
+        },
+        {
+          "sourceId": "S046",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-checkpoint-20-q019",
+      "itemRevision": "2",
+      "itemSha256": "ab9b8766c1fe8a310e18d36c7845df525f6916a770aa9f4e479e776dae2d645e",
+      "sourceIds": [
+        "S030"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S030",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-checkpoint-20-q020",
+      "itemRevision": "2",
+      "itemSha256": "4b1d1623856ab11cdf3c741f943b57e12dd877ad0b999c56e9fa3ef85eda9ab4",
+      "sourceIds": [
+        "S043",
+        "S028"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S043",
+          "lines": null,
+          "supports": null
+        },
+        {
+          "sourceId": "S028",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    }
+  ]
+}

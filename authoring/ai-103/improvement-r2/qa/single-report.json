@@ -1,0 +1,58 @@
+{
+  "reports": [
+    {
+      "packageId": "ai103-improvement-r2-set-a-100",
+      "canonicalDraftHash": "06b6490c1b4476a934d6301f1a53263b0e941b691ac9febf2e4522411b324c4a",
+      "structure": "pass",
+      "realDraftBrowserFormats": [
+        "case_study_child",
+        "single_choice",
+        "dropdown_completion",
+        "multi_select",
+        "sequence_order",
+        "matching_magnet",
+        "code_or_config_artifact"
+      ],
+      "draftImportRejected": true,
+      "sharedCaseChangesInvalidateChildren": true,
+      "pdfRecords": [
+        {
+          "path": "output/pdf/ai-103-improvement-r2/AI-103-Set-A-100-Questions-Only.pdf",
+          "sha256": "d261eb3564cfad3be84da59b6fae04fd8f0318cba862cb2970192c26c3f943dd",
+          "questions": 100,
+          "explanations": 0,
+          "horizontalOverflow": []
+        },
+        {
+          "path": "output/pdf/ai-103-improvement-r2/AI-103-Set-A-100-Practice-With-Answers.pdf",
+          "sha256": "e8b5e9535cbf428b42a8d4a85945935a6f66e167523c8c77fd80ec213e64ad9a",
+          "questions": 100,
+          "explanations": 100,
+          "horizontalOverflow": []
+        }
+      ]
+    }
+  ],
+  "reproducibility": "canonical hashes identical on two consecutive assemblies",
+  "mechanics": {
+    "syntheticOnly": true,
+    "formats": [
+      "case_study_child",
+      "dropdown_completion",
+      "log_or_artifact_interpretation",
+      "policy_control_selection",
+      "single_choice",
+      "multi_select",
+      "sequence_order",
+      "matching_magnet",
+      "code_or_config_artifact"
+    ],
+    "score": 100,
+    "import": "pass",
+    "review": "pass",
+    "attemptExport": "pass",
+    "pdfExport": "pass",
+    "temporaryStore": true
+  },
+  "independentContentReview": "pending"
+}

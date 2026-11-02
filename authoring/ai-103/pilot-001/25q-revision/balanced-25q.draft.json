@@ -1,0 +1,1923 @@
+{
+  "schemaVersion": 1,
+  "id": "ai103-practice25-20261008-r3",
+  "revision": "3",
+  "pack": {
+    "id": "ai-103",
+    "version": "1.1.0"
+  },
+  "plan": {
+    "pack": {
+      "id": "ai-103",
+      "version": "1.1.0"
+    },
+    "planningVersion": "exact-quotas-assessed-difficulty-v1",
+    "totalQuestions": 25,
+    "domains": [
+      {
+        "id": "A",
+        "name": "Plan and manage an Azure AI solution",
+        "count": 7
+      },
+      {
+        "id": "B",
+        "name": "Implement generative AI and agentic solutions",
+        "count": 9
+      },
+      {
+        "id": "C",
+        "name": "Implement computer vision solutions",
+        "count": 3
+      },
+      {
+        "id": "D",
+        "name": "Implement text analysis solutions",
+        "count": 3
+      },
+      {
+        "id": "E",
+        "name": "Implement information extraction solutions",
+        "count": 3
+      }
+    ],
+    "itemTypes": {
+      "single_choice": 11,
+      "multi_select": 5,
+      "sequence_order": 2,
+      "matching_magnet": 2,
+      "case_study": 4,
+      "code_or_config_artifact": 1
+    },
+    "caseStudyCount": 2,
+    "difficulty": {
+      "easy": 4,
+      "medium": 21,
+      "hard": 0,
+      "very_hard": 0
+    },
+    "batches": [
+      {
+        "id": "batch-1",
+        "domainId": "B",
+        "domainName": "Implement generative AI and agentic solutions",
+        "typeFocus": [
+          "case_study"
+        ],
+        "difficultyFocus": [
+          "easy",
+          "medium",
+          "hard",
+          "very_hard"
+        ],
+        "questionCount": 2,
+        "caseStudyId": "case-1"
+      },
+      {
+        "id": "batch-2",
+        "domainId": "A",
+        "domainName": "Plan and manage an Azure AI solution",
+        "typeFocus": [
+          "case_study"
+        ],
+        "difficultyFocus": [
+          "easy",
+          "medium",
+          "hard",
+          "very_hard"
+        ],
+        "questionCount": 2,
+        "caseStudyId": "case-2"
+      },
+      {
+        "id": "batch-3",
+        "domainId": "B",
+        "domainName": "Implement generative AI and agentic solutions",
+        "typeFocus": [
+          "single_choice"
+        ],
+        "difficultyFocus": [
+          "easy",
+          "medium",
+          "hard",
+          "very_hard"
+        ],
+        "questionCount": 7
+      },
+      {
+        "id": "batch-4",
+        "domainId": "A",
+        "domainName": "Plan and manage an Azure AI solution",
+        "typeFocus": [
+          "single_choice"
+        ],
+        "difficultyFocus": [
+          "easy",
+          "medium",
+          "hard",
+          "very_hard"
+        ],
+        "questionCount": 4
+      },
+      {
+        "id": "batch-5",
+        "domainId": "C",
+        "domainName": "Implement computer vision solutions",
+        "typeFocus": [
+          "multi_select"
+        ],
+        "difficultyFocus": [
+          "easy",
+          "medium",
+          "hard",
+          "very_hard"
+        ],
+        "questionCount": 3
+      },
+      {
+        "id": "batch-6",
+        "domainId": "D",
+        "domainName": "Implement text analysis solutions",
+        "typeFocus": [
+          "multi_select"
+        ],
+        "difficultyFocus": [
+          "easy",
+          "medium",
+          "hard",
+          "very_hard"
+        ],
+        "questionCount": 2
+      },
+      {
+        "id": "batch-7",
+        "domainId": "E",
+        "domainName": "Implement information extraction solutions",
+        "typeFocus": [
+          "sequence_order"
+        ],
+        "difficultyFocus": [
+          "easy",
+          "medium",
+          "hard",
+          "very_hard"
+        ],
+        "questionCount": 2
+      },
+      {
+        "id": "batch-8",
+        "domainId": "A",
+        "domainName": "Plan and manage an Azure AI solution",
+        "typeFocus": [
+          "matching_magnet"
+        ],
+        "difficultyFocus": [
+          "easy",
+          "medium",
+          "hard",
+          "very_hard"
+        ],
+        "questionCount": 1
+      },
+      {
+        "id": "batch-9",
+        "domainId": "D",
+        "domainName": "Implement text analysis solutions",
+        "typeFocus": [
+          "matching_magnet"
+        ],
+        "difficultyFocus": [
+          "easy",
+          "medium",
+          "hard",
+          "very_hard"
+        ],
+        "questionCount": 1
+      },
+      {
+        "id": "batch-10",
+        "domainId": "E",
+        "domainName": "Implement information extraction solutions",
+        "typeFocus": [
+          "code_or_config_artifact"
+        ],
+        "difficultyFocus": [
+          "easy",
+          "medium",
+          "hard",
+          "very_hard"
+        ],
+        "questionCount": 1
+      }
+    ]
+  },
+  "provenance": {
+    "route": "codex-subscription",
+    "model": "Codex GPT-6 main agent (runtime variant not exposed)",
+    "reasoningEffort": "not exposed",
+    "authoredAt": "2026-10-08T08:05:35.357213Z"
+  },
+  "status": "draft",
+  "questions": [
+    {
+      "domainId": "B",
+      "domainName": "Implement generative AI and agentic solutions",
+      "objectiveTags": [
+        "AI103-B2.04"
+      ],
+      "type": "case_study_child",
+      "difficulty": "medium",
+      "stem": "Which orchestration pattern best implements the dependency between the three agents in the Larch workflow?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Use a handoff to transfer responsibility to the next available specialist."
+        },
+        {
+          "id": "B",
+          "text": "Use a group chat whose coordinator chooses the next speaker from the conversation history."
+        },
+        {
+          "id": "C",
+          "text": "Use a sequential workflow: extraction feeds policy evaluation, which feeds drafting."
+        },
+        {
+          "id": "D",
+          "text": "Run extraction and policy evaluation concurrently, then send both results to the drafting agent."
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": {
+        "whyCorrect": "Sequential orchestration passes the output of each stage to the next in a defined order. The policy decision depends on extraction, and drafting depends on that decision.",
+        "whyDistractorsWrong": {
+          "A": "A handoff routes responsibility dynamically; it does not encode this fixed data dependency.",
+          "B": "Dynamic speaker selection does not enforce the required stage order.",
+          "D": "Policy evaluation needs extracted facts before it can produce its decision."
+        }
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "S051",
+          "title": "Microsoft Agent Framework orchestration patterns",
+          "url": "https://learn.microsoft.com/en-us/agent-framework/workflows/orchestrations/",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "caseStudyId": "case-1",
+      "metadata": {
+        "generatedAt": "2026-10-08T08:05:35.357213Z",
+        "model": "Codex GPT-6 main agent (runtime variant not exposed)",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-1",
+        "validationStatus": "draft"
+      },
+      "id": "ai103-practice25-20261008-q01",
+      "revision": "1",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.1.0"
+      },
+      "examCode": "AI-103"
+    },
+    {
+      "domainId": "B",
+      "domainName": "Implement generative AI and agentic solutions",
+      "objectiveTags": [
+        "AI103-B2.05"
+      ],
+      "type": "case_study_child",
+      "difficulty": "medium",
+      "stem": "The drafting agent proposes a replacement shipment and requests create_shipment. Which control best meets the Larch approval and input-trust requirements?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Validate arguments, obtain approval for the proposed shipment, then execute with a least-privileged identity."
+        },
+        {
+          "id": "B",
+          "text": "Approve the proposal and execute its unvalidated arguments with a least-privileged identity."
+        },
+        {
+          "id": "C",
+          "text": "Validate arguments, execute with a least-privileged identity, and ask the supervisor to confirm the shipment afterwards."
+        },
+        {
+          "id": "D",
+          "text": "Validate arguments, obtain approval for the proposed shipment, then execute with the service administrator identity."
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "whyCorrect": "A tool request is a proposal for application execution. The documented guidance treats tool arguments and outputs as untrusted, recommends least privilege, and permits explicit confirmation for changes to data. The workflow must wait for human approval before the shipment is created.",
+        "whyDistractorsWrong": {
+          "B": "Approval does not replace application validation of untrusted arguments.",
+          "C": "The supervisor must approve before shipment creation.",
+          "D": "An administrator identity exceeds the required execution privileges."
+        }
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "S007",
+          "title": "Use function calling with Microsoft Foundry agents",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/how-to/tools/function-calling",
+          "snapshotSha256": "0d4119f94b15c94d404729f53d2ed5f52a89dfaf35841d1290c0472be3e3e953",
+          "docType": "official_docs"
+        },
+        {
+          "sourceId": "S008",
+          "title": "Build a workflow in Microsoft Foundry (Preview)",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/concepts/workflow",
+          "snapshotSha256": "91311aec35bad6e1e44149491430baa72e5eeec37c9f869ba7fbf9356e5497e4",
+          "docType": "official_docs"
+        }
+      ],
+      "caseStudyId": "case-1",
+      "metadata": {
+        "generatedAt": "2026-10-08T08:05:35.357213Z",
+        "model": "Codex GPT-6 main agent (runtime variant not exposed)",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-1",
+        "validationStatus": "draft"
+      },
+      "id": "ai103-practice25-20261008-q02",
+      "revision": "1",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.1.0"
+      },
+      "examCode": "AI-103"
+    },
+    {
+      "id": "ai103-practice25-20261008-q03",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.1.0"
+      },
+      "revision": "1",
+      "examCode": "AI-103",
+      "domainId": "A",
+      "domainName": "Plan and manage an Azure AI solution",
+      "objectiveTags": [
+        "AI103-A2.02"
+      ],
+      "type": "case_study_child",
+      "difficulty": "medium",
+      "stem": "Which model deployment type meets the case study's processing-boundary, billing and interactive-response requirements?",
+      "caseStudyId": "case-2",
+      "options": [
+        {
+          "id": "A",
+          "text": "Global Standard"
+        },
+        {
+          "id": "B",
+          "text": "Data Zone Standard"
+        },
+        {
+          "id": "C",
+          "text": "Data Zone Provisioned"
+        },
+        {
+          "id": "D",
+          "text": "Data Zone Batch"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": {
+        "whyCorrect": "Data Zone Standard processes requests within the selected data zone and uses pay-per-token billing. It matches the approved EU boundary and an interactive workload without a reserved-throughput commitment.",
+        "whyDistractorsWrong": {
+          "A": "Global Standard uses global processing. Selecting an EU resource location does not convert the global processing boundary into the required EU data-zone boundary.",
+          "C": "Data Zone Provisioned respects the data-zone boundary but uses reserved provisioned throughput units, contrary to the stated billing requirement.",
+          "D": "Data Zone Batch respects the data-zone boundary but processes asynchronous batch workloads. That conflicts with the case requirement for responses to be available during the user interaction."
+        }
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "S005",
+          "snapshotSha256": "6c6d5d7b11684c1cbba8d35fd278a313e1420e3853b0ba9f104898c4a8c24c58",
+          "title": "Deployment types for Microsoft Foundry Models",
+          "url": "https://learn.microsoft.com/azure/foundry/foundry-models/concepts/deployment-types",
+          "docType": "official_docs"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-08T08:05:35.357213Z",
+        "model": "Codex GPT-6 main agent (runtime variant not exposed)",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-2",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "id": "ai103-practice25-20261008-q04",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.1.0"
+      },
+      "revision": "1",
+      "examCode": "AI-103",
+      "domainId": "A",
+      "domainName": "Plan and manage an Azure AI solution",
+      "objectiveTags": [
+        "AI103-A3.04"
+      ],
+      "type": "case_study_child",
+      "difficulty": "medium",
+      "stem": "Which connection and authorization change lets the agent query the index while preserving the case study's network and runtime-identity requirements?",
+      "caseStudyId": "case-2",
+      "options": [
+        {
+          "id": "A",
+          "text": "Keep the key-based Search connection; grant Search Index Data Contributor to the developer."
+        },
+        {
+          "id": "B",
+          "text": "Authenticate the Search connection as the deployment pipeline; grant Search Index Data Contributor to that identity."
+        },
+        {
+          "id": "C",
+          "text": "Authenticate the Search connection with the Foundry account's system-assigned managed identity; grant it Foundry User on the account."
+        },
+        {
+          "id": "D",
+          "text": "Authenticate the Search connection with the Foundry account's system-assigned managed identity; grant it Search Index Data Contributor."
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": {
+        "whyCorrect": "The case names the Foundry account's system-assigned identity as the connection principal. Use that identity for the keyless Search connection and assign the documented Search Index Data Contributor role required by this agent-tool setup.",
+        "whyDistractorsWrong": {
+          "A": "The tool guide does not support key-based authentication with private virtual networking. Keeping the key leaves that unsupported authentication method in place; granting a Search role to the developer does not change the agent connection's authentication.",
+          "B": "The documented keyless setup uses the containing Foundry account's system-assigned identity. The pipeline is a provisioning identity in this case, not the configured runtime principal.",
+          "C": "This option does not grant Search Index Data Contributor on the Search service, which the keyless setup requires in addition to Search Service Contributor."
+        },
+        "examStrategyNote": "Check the runtime principal as well as the service role. Developer access does not establish agent access."
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "S011",
+          "snapshotSha256": "02eb40fb9bc5fcbd6b27249423b2d0ba26f5df0dd6b6885c881270a7a6fac8b9",
+          "title": "Set up private networking for Foundry Agent Service",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/how-to/virtual-networks",
+          "docType": "official_docs"
+        },
+        {
+          "sourceId": "S040",
+          "snapshotSha256": "67830020b25de8c993ae294ff523035ad2c04c16865c1fe7222f053769316545",
+          "title": "Connect an Azure AI Search index to Foundry agents",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/how-to/tools/ai-search",
+          "docType": "official_docs"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-08T08:05:35.357213Z",
+        "model": "Codex GPT-6 main agent (runtime variant not exposed)",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-2",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "id": "ai103-practice25-20261008-q05",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.1.0"
+      },
+      "revision": "1",
+      "examCode": "AI-103",
+      "domainId": "B",
+      "domainName": "Implement generative AI and agentic solutions",
+      "objectiveTags": [
+        "AI103-B3.01"
+      ],
+      "type": "dropdown_completion",
+      "difficulty": "medium",
+      "stem": "Complete the three settings for a supported model using strict structured outputs through the Responses API. Every successful, non-refusal structured output must contain order_id and note; when no note exists, note must be null. Extra properties must be disallowed. The property definitions below are already correct.",
+      "artifact": {
+        "title": "Existing property definitions (illustrative JSON Schema fragment)",
+        "kind": "json",
+        "content": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"order_id\": {\n      \"type\": \"string\"\n    },\n    \"note\": {\n      \"type\": [\n        \"string\",\n        \"null\"\n      ]\n    }\n  }\n}"
+      },
+      "options": [
+        {
+          "id": "required",
+          "text": "Required-property list"
+        },
+        {
+          "id": "additionalProperties",
+          "text": "Extra-property setting"
+        },
+        {
+          "id": "format",
+          "text": "Request format location"
+        }
+      ],
+      "statementTemplate": "required: {{required}}\nadditionalProperties: {{additionalProperties}}\nResponses request format location: {{format}}",
+      "slots": [
+        {
+          "id": "required",
+          "choices": [
+            "[\"order_id\"]",
+            "[\"order_id\", \"note\"]",
+            "[]"
+          ]
+        },
+        {
+          "id": "additionalProperties",
+          "choices": [
+            "true",
+            "false"
+          ]
+        },
+        {
+          "id": "format",
+          "choices": [
+            "response_format",
+            "text.format",
+            "JSON mode without a schema"
+          ]
+        }
+      ],
+      "correctAnswer": {
+        "pairs": {
+          "required": "[\"order_id\", \"note\"]",
+          "format": "text.format",
+          "additionalProperties": "false"
+        }
+      },
+      "explanation": {
+        "whyCorrect": "The strict schema includes both properties in required. The existing string-or-null type represents an absent note without omitting its key. additionalProperties must be false. For the Responses API, the strict JSON-schema format is configured under text.format; response_format is the Chat Completions location.",
+        "whyDistractorsWrong": {
+          "required": "Choose [\"order_id\", \"note\"]. Choosing only [\"order_id\"] omits note from the required list, and [] makes neither field required. The strict-schema subset requires all defined fields; nullable values provide optional semantics.",
+          "format": "Choose text.format for Responses. response_format belongs to Chat Completions. JSON mode alone guarantees valid JSON without enforcing this schema.",
+          "additionalProperties": "Choose false. true permits fields outside the declared contract and violates the documented strict-schema requirement. Nullability of note does not permit extra object properties."
+        }
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "S037",
+          "snapshotSha256": "0337c89ce3e5a9ba28d1c2fc18f1644c50b13568eb19edc43420d16b401cacfc",
+          "title": "Structured outputs",
+          "url": "https://learn.microsoft.com/azure/foundry/openai/how-to/structured-outputs",
+          "docType": "official_docs"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-08T08:05:35.357213Z",
+        "model": "Codex GPT-6 main agent (runtime variant not exposed)",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-3",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "id": "ai103-practice25-20261008-q06",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.1.0"
+      },
+      "revision": "1",
+      "examCode": "AI-103",
+      "domainId": "B",
+      "domainName": "Implement generative AI and agentic solutions",
+      "objectiveTags": [
+        "AI103-B1.03",
+        "AI103-B2.02"
+      ],
+      "type": "log_or_artifact_interpretation",
+      "difficulty": "easy",
+      "stem": "Two function requests in a Responses flow call the same local function for different products. Both local executions succeed. Which change is required when returning the outputs shown in this illustrative trace?",
+      "artifact": {
+        "title": "Illustrative application trace, not a Azure error",
+        "kind": "log",
+        "content": "Output strings are decoded below for readability; serialization is already correct.\n\nRequested function calls:\n  call_id=call_red  name=get_stock  arguments={\"sku\":\"R-14\"}\n  call_id=call_blue name=get_stock  arguments={\"sku\":\"B-27\"}\n\nLocal execution results:\n  call_red  -> {\"sku\":\"R-14\",\"available\":0}\n  call_blue -> {\"sku\":\"B-27\",\"available\":8}\n\nCurrent outgoing records:\n  type=function_call_output call_id=get_stock output={\"sku\":\"R-14\",\"available\":0}\n  type=function_call_output call_id=get_stock output={\"sku\":\"B-27\",\"available\":8}"
+      },
+      "options": [
+        {
+          "id": "A",
+          "text": "Keep get_stock as call_id and send the two outputs in the same order as the requests."
+        },
+        {
+          "id": "B",
+          "text": "Combine both results into one output and use get_stock as the identifier for the combined call."
+        },
+        {
+          "id": "C",
+          "text": "Return each result with its originating call_id: call_red for R-14 and call_blue for B-27."
+        },
+        {
+          "id": "D",
+          "text": "Replace call_id with the function name in a tool_call_id field while retaining function_call_output."
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": {
+        "whyCorrect": "The documented flow returns each function_call_output with the call_id of the function_call it answers. In this trace, get_stock is the function name shared by both invocations; call_red and call_blue identify the separate calls. Returning each result with its originating ID follows that documented pattern and preserves the association before the model continues.",
+        "whyDistractorsWrong": {
+          "A": "The documented pattern copies the originating call_id into each result. Keeping the shared name get_stock in that field does not follow the pattern, even when results are sent in request order.",
+          "B": "The model requested two distinct calls. Merging their results under the shared function name fails to return outputs associated with the two originating call IDs.",
+          "D": "The function_call_output example uses call_id populated from the originating call. This option removes that field and substitutes a function name under another field, so it does not follow the shown pattern."
+        }
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "S007",
+          "snapshotSha256": "0d4119f94b15c94d404729f53d2ed5f52a89dfaf35841d1290c0472be3e3e953",
+          "title": "Use function calling with Microsoft Foundry agents",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/how-to/tools/function-calling",
+          "docType": "official_docs"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-08T08:05:35.357213Z",
+        "model": "Codex GPT-6 main agent (runtime variant not exposed)",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-3",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "id": "ai103-practice25-20261008-q07",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.1.0"
+      },
+      "revision": "1",
+      "examCode": "AI-103",
+      "domainId": "B",
+      "domainName": "Implement generative AI and agentic solutions",
+      "objectiveTags": [
+        "AI103-B2.06"
+      ],
+      "type": "single_choice",
+      "difficulty": "medium",
+      "stem": "A user asks an agent for quotes from two carriers and a comparison table with delivery dates. Traces show successful calls to both carriers with correct parameters. The agent follows its system policy against modifying records, but its final response includes only one quote and no comparison table. Which evaluator most directly measures this failure to deliver the requested outcome?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Task Completion (preview)"
+        },
+        {
+          "id": "B",
+          "text": "Tool Call Success"
+        },
+        {
+          "id": "C",
+          "text": "Task Adherence (preview)"
+        },
+        {
+          "id": "D",
+          "text": "Groundedness"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "whyCorrect": "Task Completion evaluates whether the agent produced a usable deliverable meeting all user requirements. Successful carrier calls and compliance with the system policy do not establish that the requested two-carrier comparison was delivered.",
+        "whyDistractorsWrong": {
+          "B": "Tool Call Success measures technical success or errors in tool execution. Both calls succeeded here, so that measure does not directly capture the omitted final deliverable.",
+          "C": "Task Adherence measures compliance with assigned rules, procedures and policy constraints. The stated system policy was followed; the described failure is incomplete task delivery.",
+          "D": "Groundedness checks fidelity to supplied context. The single quote could be fully grounded while the response still omits the second quote and comparison table."
+        }
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "S014",
+          "snapshotSha256": "0ce17b86785e87efb44074de9d3fdee3ae8290dedcb04a18a68558081be7103f",
+          "title": "Agent evaluators",
+          "url": "https://learn.microsoft.com/azure/foundry/concepts/evaluation-evaluators/agent-evaluators",
+          "docType": "official_docs"
+        },
+        {
+          "sourceId": "S039",
+          "snapshotSha256": "3b16c765be1f1479ac22e04cf9b293be767d473fc1cacb188b90751227074a4b",
+          "title": "Retrieval-Augmented Generation (RAG) evaluators",
+          "url": "https://learn.microsoft.com/azure/foundry/concepts/evaluation-evaluators/rag-evaluators",
+          "docType": "official_docs"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-08T08:05:35.357213Z",
+        "model": "Codex GPT-6 main agent (runtime variant not exposed)",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-3",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "B",
+      "domainName": "Implement generative AI and agentic solutions",
+      "objectiveTags": [
+        "AI103-B2.02"
+      ],
+      "type": "single_choice",
+      "difficulty": "medium",
+      "stem": "A support agent needs three kinds of context: a user's preferred delivery time learned across conversations, the company's curated warranty manual, and a receipt uploaded for the current interaction. Which assignment follows the Foundry memory guidance?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Use session history for learned preferences, a curated knowledge base for the manual, and file search for the uploaded receipt."
+        },
+        {
+          "id": "B",
+          "text": "Use memory for learned preferences and the warranty manual, and file search for the receipt."
+        },
+        {
+          "id": "C",
+          "text": "Use persistent memory for learned preferences, a curated knowledge base for the manual, and persistent memory for the receipt."
+        },
+        {
+          "id": "D",
+          "text": "Use memory for learned preferences, a knowledge base for the manual, and file search for the receipt."
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": {
+        "whyCorrect": "The guidance separates persistent interaction-derived memory, curated organizational knowledge, and search over user-provided documents. These have different retention and grounding purposes.",
+        "whyDistractorsWrong": {
+          "A": "Session history does not supply persistent cross-session preferences.",
+          "B": "Curated company content belongs in a maintained knowledge source.",
+          "C": "File search is intended for the document uploaded in this interaction."
+        }
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "S006",
+          "title": "Memory in Microsoft Foundry Agent Service (preview)",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/concepts/what-is-memory",
+          "snapshotSha256": "1dd4a33b4885266d1a2a73cee51de011ad50f9e63454609195d46179316746f8",
+          "docType": "official_docs"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-08T08:05:35.357213Z",
+        "model": "Codex GPT-6 main agent (runtime variant not exposed)",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-3",
+        "validationStatus": "draft"
+      },
+      "id": "ai103-practice25-20261008-q08",
+      "revision": "1",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.1.0"
+      },
+      "examCode": "AI-103"
+    },
+    {
+      "domainId": "B",
+      "domainName": "Implement generative AI and agentic solutions",
+      "objectiveTags": [
+        "AI103-B1.06"
+      ],
+      "type": "single_choice",
+      "difficulty": "medium",
+      "stem": "A Python application targets new Foundry projects with azure-ai-projects 2.8.0 and must use the project's Responses operations. Which client setup is appropriate for azure-ai-projects 2.x?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Construct AIProjectClient with an Azure OpenAI v1 inference endpoint and an Entra credential, then request its OpenAI client."
+        },
+        {
+          "id": "B",
+          "text": "Construct AIProjectClient with the project endpoint and an Entra credential, then call get_openai_client()."
+        },
+        {
+          "id": "C",
+          "text": "Construct AIProjectClient with the new project endpoint and pass the resource API key as an AzureKeyCredential, then call get_openai_client()."
+        },
+        {
+          "id": "D",
+          "text": "Construct AIProjectClient with an Entra credential and the connected Search service endpoint."
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": {
+        "whyCorrect": "The 2.8.0 client supports Entra authentication and exposes get_openai_client() for Responses and related operations. The SDK overview distinguishes new-project 2.x endpoints from classic 1.x and service-specific endpoint families.",
+        "whyDistractorsWrong": {
+          "A": "AIProjectClient requires a project endpoint, not the inference endpoint.",
+          "C": "The specified client supports Entra authentication, not resource-key authentication.",
+          "D": "The Search endpoint is a different service boundary."
+        }
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "S002",
+          "title": "Azure AI Projects client library for Python - version 2.8.0",
+          "url": "https://learn.microsoft.com/python/api/overview/azure/ai-projects-readme?view=azure-python",
+          "snapshotSha256": "2ce3139fd9fb77eb3f63d4a797ecc24deab957376faac5fe5a28d80e8080b266",
+          "docType": "official_docs"
+        },
+        {
+          "sourceId": "S003",
+          "title": "Microsoft Foundry SDKs and endpoints",
+          "url": "https://learn.microsoft.com/azure/foundry/how-to/develop/sdk-overview",
+          "snapshotSha256": "f62e4cfa9a1eeed9aa30383cab18005b8bc8f72d2743a26dedf0bb83d24e046d",
+          "docType": "official_docs"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-08T08:05:35.357213Z",
+        "model": "Codex GPT-6 main agent (runtime variant not exposed)",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-3",
+        "validationStatus": "draft"
+      },
+      "id": "ai103-practice25-20261008-q09",
+      "revision": "1",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.1.0"
+      },
+      "examCode": "AI-103"
+    },
+    {
+      "domainId": "B",
+      "domainName": "Implement generative AI and agentic solutions",
+      "objectiveTags": [
+        "AI103-B1.04"
+      ],
+      "type": "single_choice",
+      "difficulty": "medium",
+      "stem": "A RAG answer directly addresses the user's question but adds a warranty extension that appears nowhere in the supplied passages. You want an evaluator focused on whether the answer is supported by its context. Which metric best fits?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Response Completeness (preview), comparing answer coverage with a reference answer."
+        },
+        {
+          "id": "B",
+          "text": "Document Retrieval, scoring the relevance of documents returned by the search stage."
+        },
+        {
+          "id": "C",
+          "text": "Groundedness, comparing generated claims with the context supplied to the model."
+        },
+        {
+          "id": "D",
+          "text": "Relevance, scoring how closely the generated answer addresses the user question."
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": {
+        "whyCorrect": "Groundedness evaluates alignment of generated content with the supplied context and is directed at unsupported fabrication. A response can be relevant to the question while adding unsupported claims.",
+        "whyDistractorsWrong": {
+          "A": "Completeness measures coverage, not whether claims follow from the retrieved context.",
+          "B": "Retrieval evaluation measures the search stage, not the support for the generated extension.",
+          "D": "A relevant answer can still contain an unsupported claim."
+        }
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "S039",
+          "title": "Retrieval-Augmented Generation (RAG) evaluators",
+          "url": "https://learn.microsoft.com/azure/foundry/concepts/evaluation-evaluators/rag-evaluators",
+          "snapshotSha256": "3b16c765be1f1479ac22e04cf9b293be767d473fc1cacb188b90751227074a4b",
+          "docType": "official_docs"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-08T08:05:35.357213Z",
+        "model": "Codex GPT-6 main agent (runtime variant not exposed)",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-3",
+        "validationStatus": "draft"
+      },
+      "id": "ai103-practice25-20261008-q10",
+      "revision": "1",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.1.0"
+      },
+      "examCode": "AI-103"
+    },
+    {
+      "domainId": "B",
+      "domainName": "Implement generative AI and agentic solutions",
+      "objectiveTags": [
+        "AI103-B3.03"
+      ],
+      "type": "single_choice",
+      "difficulty": "medium",
+      "stem": "An agent performs retrieval, a model call and a tool invocation. End-to-end latency increased, and engineers need to identify the slow operation and its parent request. Which instrumentation provides the most useful structure?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Enable Application Insights request logging with separate service-call entries identified by service name."
+        },
+        {
+          "id": "B",
+          "text": "Record final text and end-to-end latency for each request as one structured Application Insights event."
+        },
+        {
+          "id": "C",
+          "text": "Export timed service spans with operation names to Application Insights, assigning an independent trace identifier to each service."
+        },
+        {
+          "id": "D",
+          "text": "Export one request trace with timed, nested operation spans and consistent attributes to Application Insights."
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": {
+        "whyCorrect": "A trace represents the request journey. Spans describe timed operations and may be nested, allowing the team to connect latency within a step to its enclosing request.",
+        "whyDistractorsWrong": {
+          "A": "Service names do not establish the request and parent-operation relationships.",
+          "B": "Total latency does not isolate the slow operation.",
+          "C": "Independent trace identifiers break the shared request journey."
+        }
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "S013",
+          "title": "Agent tracing overview",
+          "url": "https://learn.microsoft.com/azure/foundry/observability/concepts/trace-agent-concept",
+          "snapshotSha256": "895295a4b74d7cabaa0daf62bd6cd5239daf25b6ea85a2268dc2cdf8483b19e8",
+          "docType": "official_docs"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-08T08:05:35.357213Z",
+        "model": "Codex GPT-6 main agent (runtime variant not exposed)",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-3",
+        "validationStatus": "draft"
+      },
+      "id": "ai103-practice25-20261008-q11",
+      "revision": "1",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.1.0"
+      },
+      "examCode": "AI-103"
+    },
+    {
+      "domainId": "A",
+      "domainName": "Plan and manage an Azure AI solution",
+      "objectiveTags": [
+        "AI103-A3.04"
+      ],
+      "type": "single_choice",
+      "difficulty": "medium",
+      "stem": "A team assigns narrow Foundry RBAC roles to developers but its application still authenticates with a shared resource API key. They expect those user-role restrictions to limit each call. Which change addresses that expectation?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Use Microsoft Entra authentication with the intended scoped role assignments."
+        },
+        {
+          "id": "B",
+          "text": "Keep the shared API key and add narrower roles to the same users."
+        },
+        {
+          "id": "C",
+          "text": "Restrict the application to a private network while continuing to authenticate with the shared API key."
+        },
+        {
+          "id": "D",
+          "text": "Use a different copy of the same API key for each developer."
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "whyCorrect": "The access-control guide states that RBAC restrictions apply with Entra authentication, while key-based access grants access without those role restrictions. The authentication method must support the intended authorization design.",
+        "whyDistractorsWrong": {
+          "B": "Adding roles does not make a shared key carry per-user role restrictions.",
+          "C": "Network isolation restricts connectivity; it does not make key-authenticated requests subject to per-user Entra role assignments.",
+          "D": "Copies of the same key do not establish distinct Entra identities or role-scoped calls."
+        }
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "S010",
+          "title": "Role-based access control for Microsoft Foundry",
+          "url": "https://learn.microsoft.com/azure/foundry/concepts/rbac-foundry",
+          "snapshotSha256": "c63d1b1d5cb16c4ffbf9019b34ac56ab5e47f81f1457b4e2d7c02a2de16a59f9",
+          "docType": "official_docs"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-08T08:05:35.357213Z",
+        "model": "Codex GPT-6 main agent (runtime variant not exposed)",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-4",
+        "validationStatus": "draft"
+      },
+      "id": "ai103-practice25-20261008-q12",
+      "revision": "1",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.1.0"
+      },
+      "examCode": "AI-103"
+    },
+    {
+      "domainId": "A",
+      "domainName": "Plan and manage an Azure AI solution",
+      "objectiveTags": [
+        "AI103-A3.03"
+      ],
+      "type": "single_choice",
+      "difficulty": "medium",
+      "stem": "After an ingestion run, most documents appear in an Azure AI Search index, but several known source documents are missing. What should you inspect first to diagnose document-specific failures?",
+      "options": [
+        {
+          "id": "A",
+          "text": "The indexer execution history, restricted to the Success status of the most recent completed run."
+        },
+        {
+          "id": "B",
+          "text": "The index schema, especially whether fields holding the missing content are retrievable."
+        },
+        {
+          "id": "C",
+          "text": "The indexer run details, including document-level errors and warnings for the ingestion window."
+        },
+        {
+          "id": "D",
+          "text": "The search response count and query latency measured after the most recent ingestion run completed."
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": {
+        "whyCorrect": "Indexer execution status provides errors and warnings for a particular run in addition to timing and status. Successful processing of some documents does not eliminate document-specific failures.",
+        "whyDistractorsWrong": {
+          "A": "A successful run can still contain document-level errors.",
+          "B": "Retrievable controls which fields appear in results; it does not diagnose which source documents failed ingestion.",
+          "D": "Query metrics describe serving behavior, not individual ingestion failures."
+        }
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "S044",
+          "title": "Monitor indexer status and results in Azure AI Search",
+          "url": "https://learn.microsoft.com/azure/search/search-monitor-indexers",
+          "snapshotSha256": "7b9808eefb69e1d573b537e17a3fff7ab159cf6e259f3b7a254a2ecd1c1a8dcc",
+          "docType": "official_docs"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-08T08:05:35.357213Z",
+        "model": "Codex GPT-6 main agent (runtime variant not exposed)",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-4",
+        "validationStatus": "draft"
+      },
+      "id": "ai103-practice25-20261008-q13",
+      "revision": "1",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.1.0"
+      },
+      "examCode": "AI-103"
+    },
+    {
+      "domainId": "A",
+      "domainName": "Plan and manage an Azure AI solution",
+      "objectiveTags": [
+        "AI103-A3.01"
+      ],
+      "type": "single_choice",
+      "difficulty": "medium",
+      "stem": "A managed-compute deployment in Foundry (new, preview) needs additional accelerator capacity. The subscription has unused VM quota for the matching GPU family and region. Which request addresses the deployment capacity limit?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Request a larger serverless model tokens-per-minute allocation in the region."
+        },
+        {
+          "id": "B",
+          "text": "Request managed-compute quota for the accelerator SKU and region through the Foundry quota process."
+        },
+        {
+          "id": "C",
+          "text": "Request a larger subscription-wide total of regional vCPUs to cover the accelerator-backed deployment."
+        },
+        {
+          "id": "D",
+          "text": "Request a VM-family quota increase for that region through the process used for classic managed online endpoints."
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": {
+        "whyCorrect": "Managed-compute quota is specific to the accelerator SKU and region and is separate from Azure VM quota.",
+        "whyDistractorsWrong": {
+          "A": "Serverless token throughput does not allocate managed-compute accelerators.",
+          "C": "The managed-compute preview has a separate accelerator quota.",
+          "D": "Existing Azure VM quota cannot be applied to this managed-compute allocation."
+        },
+        "examStrategyNote": "Identify whether the limit concerns serverless model throughput, classic VM resources or Foundry managed compute."
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "S004",
+          "title": "Deployment overview for Microsoft Foundry Models",
+          "url": "https://learn.microsoft.com/azure/foundry/concepts/deployments-overview",
+          "snapshotSha256": "91520b0f84e6e2823bb27945cb8e25f716440b7680ffc7ea9689d8025f1d080f",
+          "docType": "official_docs"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-08T08:05:35.357213Z",
+        "model": "Codex GPT-6 main agent (runtime variant not exposed)",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-4",
+        "validationStatus": "draft"
+      },
+      "id": "ai103-practice25-20261008-q14",
+      "revision": "1",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.1.0"
+      },
+      "examCode": "AI-103"
+    },
+    {
+      "domainId": "A",
+      "domainName": "Plan and manage an Azure AI solution",
+      "objectiveTags": [
+        "AI103-A4.03"
+      ],
+      "type": "single_choice",
+      "difficulty": "medium",
+      "stem": "An agent team wants to correlate poor answers with evaluation runs. Tool arguments may contain account identifiers and an access token. Which telemetry policy best preserves diagnostic value while following the tracing guidance?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Export full spans with tool-content recording enabled, and restrict the Application Insights resource to the designated engineering team."
+        },
+        {
+          "id": "B",
+          "text": "Redact sensitive fields before export, then generate unrelated trace identifiers for the evaluation and request paths."
+        },
+        {
+          "id": "C",
+          "text": "Export raw spans with request and evaluation identifiers, then remove sensitive attributes in a nightly retention job."
+        },
+        {
+          "id": "D",
+          "text": "Keep request and evaluation identifiers, redact sensitive fields before export, and enforce access and retention controls."
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": {
+        "whyCorrect": "The tracing guide recommends consistent attributes and evaluation-run correlation while removing or masking personal data, secrets and credentials before telemetry storage. Trace data needs appropriate access and retention controls.",
+        "whyDistractorsWrong": {
+          "A": "Restricted access does not justify recording access tokens in telemetry.",
+          "B": "Unrelated identifiers prevent evaluation-to-request correlation.",
+          "C": "Sensitive values have already entered telemetry before the nightly job."
+        }
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "S013",
+          "title": "Agent tracing overview",
+          "url": "https://learn.microsoft.com/azure/foundry/observability/concepts/trace-agent-concept",
+          "snapshotSha256": "895295a4b74d7cabaa0daf62bd6cd5239daf25b6ea85a2268dc2cdf8483b19e8",
+          "docType": "official_docs"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-08T08:05:35.357213Z",
+        "model": "Codex GPT-6 main agent (runtime variant not exposed)",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-4",
+        "validationStatus": "draft"
+      },
+      "id": "ai103-practice25-20261008-q15",
+      "revision": "1",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.1.0"
+      },
+      "examCode": "AI-103"
+    },
+    {
+      "id": "ai103-practice25-20261008-q16",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.1.0"
+      },
+      "revision": "1",
+      "examCode": "AI-103",
+      "domainId": "C",
+      "domainName": "Implement computer vision solutions",
+      "objectiveTags": [
+        "AI103-C3.01"
+      ],
+      "type": "multi_select",
+      "difficulty": "medium",
+      "stem": "An app uses the Azure Content Safety image:analyze API contract (2024-09-01). Its policy checks all four harm categories, rejects an image when any category is Medium or High, and otherwise allows it. Which TWO implementation choices match that policy and the documented image API?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Allow any image when the API returns HTTP success, because successful analysis means the content is approved."
+        },
+        {
+          "id": "B",
+          "text": "Reject when any returned category has severity 4 or 6; otherwise allow the image under the stated policy."
+        },
+        {
+          "id": "C",
+          "text": "Request EightSeverityLevels for images and reject results at severity 5 or above."
+        },
+        {
+          "id": "D",
+          "text": "Request the Violence category, because the service reports hate, self-harm and sexual content within its Violence severity."
+        },
+        {
+          "id": "E",
+          "text": "Analyze all four categories using FourSeverityLevels, whose documented values are 0, 2, 4 and 6."
+        }
+      ],
+      "correctAnswer": [
+        "B",
+        "E"
+      ],
+      "explanation": {
+        "whyCorrect": "The documented image moderation contract supports FourSeverityLevels: 0 Safe, 2 Low, 4 Medium and 6 High. Analyzing all four categories and rejecting any result at 4 or 6 implements the stated rule. HTTP success indicates successful analysis; the app still applies its acceptance policy.",
+        "whyDistractorsWrong": {
+          "A": "Successful analysis is not itself a content-approval decision. The result supplies category severities, and acceptance depends on the configured policy.",
+          "C": "The image API supports FourSeverityLevels, not the proposed eight-level output. The proposed threshold also fails to follow the stated Medium-or-High rule for the documented values.",
+          "D": "Hate, SelfHarm, Sexual and Violence are separate categories. Requesting Violence alone omits signals that the policy explicitly requires."
+        }
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "S042",
+          "snapshotSha256": "6a40b6fdabe9e2a91838a3026f8530d0229c70acd401c4fab094a6c0c63b8670",
+          "title": "QuickStart: Analyze image content",
+          "url": "https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-image",
+          "docType": "official_docs"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-08T08:05:35.357213Z",
+        "model": "Codex GPT-6 main agent (runtime variant not exposed)",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-5",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "C",
+      "domainName": "Implement computer vision solutions",
+      "objectiveTags": [
+        "AI103-C1.03"
+      ],
+      "type": "multi_select",
+      "difficulty": "easy",
+      "stem": "An image-editing feature must replace a product background while preserving the product region. The selected GPT image deployment supports masked editing. Which TWO inputs define the requested edit?",
+      "options": [
+        {
+          "id": "A",
+          "text": "The original product photo, supplied as the source image for the image edit request."
+        },
+        {
+          "id": "B",
+          "text": "A text response-format schema describing the intended image dimensions and colors."
+        },
+        {
+          "id": "C",
+          "text": "A mask for the region to edit, supplied with the source image and an editing prompt."
+        },
+        {
+          "id": "D",
+          "text": "A higher image count, used to mark which pixels belong to the editable background."
+        },
+        {
+          "id": "E",
+          "text": "A quality setting that encodes the boundary between the product and the surrounding background."
+        }
+      ],
+      "correctAnswer": [
+        "A",
+        "C"
+      ],
+      "explanation": {
+        "whyCorrect": "Masked image editing combines the original image with a region mask and a prompt describing the desired change. Mask support depends on the chosen model.",
+        "whyDistractorsWrong": {
+          "B": "A text-output schema does not specify editable pixels.",
+          "D": "Image count controls the number of outputs, not the edit region.",
+          "E": "Quality is an output control, not a spatial mask."
+        }
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "S017",
+          "title": "Azure OpenAI image generation models",
+          "url": "https://learn.microsoft.com/azure/foundry/openai/how-to/dall-e",
+          "snapshotSha256": "34668770bb5790633413f4ae9432738c85ed36aef328f9f2bdb8b1b82437dca6",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-08T08:05:35.357213Z",
+        "model": "Codex GPT-6 main agent (runtime variant not exposed)",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-5",
+        "validationStatus": "draft"
+      },
+      "id": "ai103-practice25-20261008-q17",
+      "revision": "1",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.1.0"
+      },
+      "examCode": "AI-103"
+    },
+    {
+      "domainId": "C",
+      "domainName": "Implement computer vision solutions",
+      "objectiveTags": [
+        "AI103-C2.04"
+      ],
+      "type": "multi_select",
+      "difficulty": "medium",
+      "stem": "An AI assistant proposes alt text for a webpage. A magnifying-glass image is the only label on a search button, and a decorative wave adds no information. Which TWO recommendations follow the W3C decision tree?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Name the search icon by its visual appearance, such as a magnifying glass."
+        },
+        {
+          "id": "B",
+          "text": "Give the search button image alt text that states its action, such as \"Search\"."
+        },
+        {
+          "id": "C",
+          "text": "Give the decorative wave a description that explains its color and position in the page header."
+        },
+        {
+          "id": "D",
+          "text": "Omit the decorative image alt attribute so assistive technology can use the image source filename."
+        },
+        {
+          "id": "E",
+          "text": "Use an empty alt attribute (alt=\"\") for the decorative wave so screen readers skip it."
+        }
+      ],
+      "correctAnswer": [
+        "B",
+        "E"
+      ],
+      "explanation": {
+        "whyCorrect": "Functional images need text that communicates the action or destination. Purely decorative images use an empty alt attribute so they do not add unnecessary spoken content.",
+        "whyDistractorsWrong": {
+          "A": "For a functional image, communicate the action or destination.",
+          "C": "A decorative image does not add meaningful content requiring description.",
+          "D": "Omitting alt differs from explicitly marking the image as decorative with empty alt."
+        }
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "S050",
+          "title": "W3C WAI An alt Decision Tree",
+          "url": "https://www.w3.org/WAI/tutorials/images/decision-tree/",
+          "snapshotSha256": "fa71070e3609f8825849fe94c3b718fb8632724b4c88ed9f3e5ea54615f36404",
+          "docType": "official_docs"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-08T08:05:35.357213Z",
+        "model": "Codex GPT-6 main agent (runtime variant not exposed)",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-5",
+        "validationStatus": "draft"
+      },
+      "id": "ai103-practice25-20261008-q18",
+      "revision": "1",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.1.0"
+      },
+      "examCode": "AI-103"
+    },
+    {
+      "domainId": "D",
+      "domainName": "Implement text analysis solutions",
+      "objectiveTags": [
+        "AI103-D2.02"
+      ],
+      "type": "multi_select",
+      "difficulty": "medium",
+      "stem": "A speech-to-text application consistently misrecognizes specialized equipment terms. The team has representative domain recordings and transcriptions. Which TWO activities match the documented Custom Speech workflow?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Test and train a custom recognition model with domain data and compare its accuracy with a baseline."
+        },
+        {
+          "id": "B",
+          "text": "Switch to a neural text-to-speech voice whose pronunciation lexicon includes the equipment terms."
+        },
+        {
+          "id": "C",
+          "text": "Deploy the selected recognition model to a custom endpoint and point the app's recognizer at that endpoint."
+        },
+        {
+          "id": "D",
+          "text": "Evaluate the trained recognizer using the same labeled recordings used during its training, then compare the scores."
+        },
+        {
+          "id": "E",
+          "text": "Deploy the selected recognition model by setting its model identifier as the text-to-speech voice name in the client."
+        }
+      ],
+      "correctAnswer": [
+        "A",
+        "C"
+      ],
+      "explanation": {
+        "whyCorrect": "Use representative domain data to evaluate and train a recognizer, compare performance on held-out recordings, and deploy the selected model to a custom endpoint.",
+        "whyDistractorsWrong": {
+          "B": "Changing synthesis pronunciation does not repair speech recognition.",
+          "D": "Held-out evaluation data is needed for a useful generalization comparison.",
+          "E": "A recognition model is deployed through a custom recognition endpoint, not a synthesis voice setting."
+        }
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "S034",
+          "title": "What is custom speech?",
+          "url": "https://learn.microsoft.com/azure/ai-services/speech-service/custom-speech-overview",
+          "snapshotSha256": "8bde6391b7bdee42b5e52ea8c995024dcda82d1a0b56acbdfb817207b2a8d511",
+          "docType": "official_docs"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-08T08:05:35.357213Z",
+        "model": "Codex GPT-6 main agent (runtime variant not exposed)",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-6",
+        "validationStatus": "draft"
+      },
+      "id": "ai103-practice25-20261008-q19",
+      "revision": "1",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.1.0"
+      },
+      "examCode": "AI-103"
+    },
+    {
+      "domainId": "D",
+      "domainName": "Implement text analysis solutions",
+      "objectiveTags": [
+        "AI103-D2.04"
+      ],
+      "type": "multi_select",
+      "difficulty": "medium",
+      "stem": "A Python Speech SDK application must recognize Italian speech, translate it into German, and later speak the translated text. Recognition and synthesis credentials are already available. Which TWO statements correctly describe this flow?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Set the recognition source language to de-DE because German is the output language."
+        },
+        {
+          "id": "B",
+          "text": "Set speech_recognition_language to it-IT and add de as a translation target."
+        },
+        {
+          "id": "C",
+          "text": "Read result.translations[\"it-IT\"] as the German target output."
+        },
+        {
+          "id": "D",
+          "text": "Read the German translated text from the de entry after successful translation, then send that text to the synthesis step."
+        },
+        {
+          "id": "E",
+          "text": "Send the Italian source transcript to SpeechSynthesizer configured with a German voice to produce the translation."
+        }
+      ],
+      "correctAnswer": [
+        "B",
+        "D"
+      ],
+      "explanation": {
+        "whyCorrect": "The source locale identifies the incoming speech, while a target language selects the translation. The translations dictionary is keyed by target language. Generating spoken output is a further synthesis operation.",
+        "whyDistractorsWrong": {
+          "A": "German is the target, not the language being recognized from the incoming Italian audio.",
+          "C": "The requested target is de; it-IT is the recognition locale and is not the configured German translation key.",
+          "E": "Choosing a synthesis voice does not translate source-language text; synthesize the translated target text."
+        }
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "S046",
+          "title": "How to recognize and translate speech",
+          "url": "https://learn.microsoft.com/azure/ai-services/speech-service/how-to-translate-speech",
+          "snapshotSha256": "8a73fb1e63f49dde972815b860758a57ff3d620842220f9e29200bccf573c39e",
+          "docType": "official_docs"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-08T08:05:35.357213Z",
+        "model": "Codex GPT-6 main agent (runtime variant not exposed)",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-6",
+        "validationStatus": "draft"
+      },
+      "id": "ai103-practice25-20261008-q20",
+      "revision": "1",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.1.0"
+      },
+      "examCode": "AI-103"
+    },
+    {
+      "domainId": "E",
+      "domainName": "Implement information extraction solutions",
+      "objectiveTags": [
+        "AI103-E1.01"
+      ],
+      "type": "sequence_order",
+      "difficulty": "medium",
+      "stem": "An existing Search pipeline has an index and an embedding deployment configured. The source documents are too long for one embedding request. Arrange the four data-processing steps in dependency order. Configuration setup is complete; these are the operations on each document.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Split the retrieved text into chunks within the embedding model's input limits."
+        },
+        {
+          "id": "B",
+          "text": "Write the resulting chunk text and vectors into the configured search index."
+        },
+        {
+          "id": "C",
+          "text": "Retrieve the raw document content from the supported data source."
+        },
+        {
+          "id": "D",
+          "text": "Generate an embedding vector for each prepared text chunk."
+        }
+      ],
+      "correctAnswer": {
+        "order": [
+          "C",
+          "A",
+          "D",
+          "B"
+        ]
+      },
+      "explanation": {
+        "whyCorrect": "The indexer retrieves source content, chunking prepares units small enough for embedding, the embedding skill produces vectors, and the index receives the processed content. Keeping text as well as vectors supports readable retrieval results.",
+        "whyDistractorsWrong": {
+          "A": "Chunking follows content retrieval and precedes embedding for these oversized documents.",
+          "B": "The index receives the generated text/vector records after those records exist.",
+          "C": "The raw input must be retrieved before the downstream operations can process it.",
+          "D": "The model embeds the prepared chunks; writing finished vector records depends on that output."
+        }
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "S026",
+          "title": "Integrated vector embedding in Azure AI Search",
+          "url": "https://learn.microsoft.com/azure/search/vector-search-integrated-vectorization",
+          "snapshotSha256": "45a6b445fbe4f7f65334693eb96b2de7b021e0b50ce46b363ab47c5de0a11f0d",
+          "docType": "official_docs"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-08T08:05:35.357213Z",
+        "model": "Codex GPT-6 main agent (runtime variant not exposed)",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-7",
+        "validationStatus": "draft"
+      },
+      "id": "ai103-practice25-20261008-q21",
+      "revision": "1",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.1.0"
+      },
+      "examCode": "AI-103"
+    },
+    {
+      "domainId": "E",
+      "domainName": "Implement information extraction solutions",
+      "objectiveTags": [
+        "AI103-E2.03"
+      ],
+      "type": "sequence_order",
+      "difficulty": "easy",
+      "stem": "A document analyzer is already configured in Content Understanding. Using the Python SDK 1.1.0 workflow, arrange these application steps to process one document. Authentication and model configuration are complete.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Read the completed analysis result's structured content and markdown."
+        },
+        {
+          "id": "B",
+          "text": "Begin analysis with the configured analyzer and document input."
+        },
+        {
+          "id": "C",
+          "text": "Pass the extracted representation to the downstream application."
+        },
+        {
+          "id": "D",
+          "text": "Wait for the returned long-running operation to complete, such as by using the poller's result() method."
+        }
+      ],
+      "correctAnswer": {
+        "order": [
+          "B",
+          "D",
+          "A",
+          "C"
+        ]
+      },
+      "explanation": {
+        "whyCorrect": "Analysis is asynchronous. Begin the operation, wait for completion, extract the completed content, then use that content downstream. The initial operation acknowledgment is not the final analysis result.",
+        "whyDistractorsWrong": {
+          "A": "Structured content is processed after the long-running analysis completes.",
+          "B": "Beginning analysis creates the operation that can subsequently be polled.",
+          "C": "The downstream application consumes the extracted result, so this step follows result processing.",
+          "D": "The SDK poller handles waiting for the asynchronous operation before the completed result is consumed."
+        }
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "S021",
+          "title": "Azure AI Content Understanding client library for Python - version 1.1.0",
+          "url": "https://learn.microsoft.com/python/api/overview/azure/ai-contentunderstanding-readme?view=azure-python",
+          "snapshotSha256": "aa5fd0abb99fe608e62d3909ffd7bc4eac9904dc931f427c9e3788351fbc7b42",
+          "docType": "official_docs"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-08T08:05:35.357213Z",
+        "model": "Codex GPT-6 main agent (runtime variant not exposed)",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-7",
+        "validationStatus": "draft"
+      },
+      "id": "ai103-practice25-20261008-q22",
+      "revision": "1",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.1.0"
+      },
+      "examCode": "AI-103"
+    },
+    {
+      "domainId": "A",
+      "domainName": "Plan and manage an Azure AI solution",
+      "objectiveTags": [
+        "AI103-A3.01"
+      ],
+      "type": "matching_magnet",
+      "difficulty": "medium",
+      "stem": "Match each hosted-agent failure situation to the most appropriate listed next action. Required session state must be retained, moving regions is prohibited, and the model token quota is not exhausted. Use each selected action once; one action is unused.",
+      "options": [
+        {
+          "id": "A",
+          "text": "session_quota_exceeded; several sessions no longer need active compute, but their stored state is still required."
+        },
+        {
+          "id": "B",
+          "text": "regional_session_quota_exceeded occurs intermittently; the client currently retries immediately with no delay."
+        },
+        {
+          "id": "C",
+          "text": "regional_session_quota_exceeded persists after appropriate retry/backoff in the approved region."
+        }
+      ],
+      "correctAnswer": {
+        "pairs": {
+          "A": "Stop sessions that no longer need active compute.",
+          "B": "Apply exponential backoff with jitter.",
+          "C": "Create an Azure support request."
+        }
+      },
+      "explanation": {
+        "whyCorrect": "Stop inactive sessions to free active compute while retaining required state. Use backoff with jitter for transient regional limits, and seek support when the regional problem persists.",
+        "whyDistractorsWrong": {
+          "A": "Stopping an unneeded active session addresses its compute use while preserving the state required by the scenario.",
+          "B": "Backoff with jitter is an initial response to intermittent regional capacity failures when moving regions is unavailable.",
+          "C": "The guidance directs support escalation when the regional error persists. Raising a model token quota is unused because it addresses a different limit."
+        }
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "S009",
+          "title": "Foundry Agent Service limits, quotas, and regional support",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/concepts/limits-quotas-regions",
+          "snapshotSha256": "d83fd890729d322d4ffa580ca5a8db2bed5bcd783dae47f5da2b05985f4b3041",
+          "docType": "official_docs"
+        }
+      ],
+      "matchChoices": [
+        "Apply exponential backoff with jitter.",
+        "Increase the model tokens-per-minute quota.",
+        "Create an Azure support request.",
+        "Stop sessions that no longer need active compute."
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-08T08:05:35.357213Z",
+        "model": "Codex GPT-6 main agent (runtime variant not exposed)",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-8",
+        "validationStatus": "draft"
+      },
+      "id": "ai103-practice25-20261008-q23",
+      "revision": "1",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.1.0"
+      },
+      "examCode": "AI-103"
+    },
+    {
+      "domainId": "D",
+      "domainName": "Implement text analysis solutions",
+      "objectiveTags": [
+        "AI103-D1.01",
+        "AI103-D1.02"
+      ],
+      "type": "matching_magnet",
+      "difficulty": "easy",
+      "stem": "Choose the most targeted Azure Language capability for each text-processing requirement. Use each selected capability once; one choice is unused.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Identify personal identifiers in submitted text so the application can route them to a redaction workflow."
+        },
+        {
+          "id": "B",
+          "text": "Determine whether incoming text is primarily French, German or another supported language."
+        },
+        {
+          "id": "C",
+          "text": "Label mentions in text using predefined entity types such as organizations and locations."
+        }
+      ],
+      "correctAnswer": {
+        "pairs": {
+          "A": "PII detection",
+          "B": "Language detection",
+          "C": "Prebuilt named entity recognition"
+        }
+      },
+      "explanation": {
+        "whyCorrect": "The Language overview distinguishes PII detection, language detection and prebuilt NER. Each is targeted at the respective requirement, while a general document summary would not supply those specialized results.",
+        "whyDistractorsWrong": {
+          "A": "PII detection identifies entities associated with individuals; subsequent redaction policy remains an application decision.",
+          "B": "Language detection evaluates the input language and dialect rather than classifying named entities.",
+          "C": "Prebuilt NER assigns predefined entity types. Summarization is unused because none of these tasks asks for a condensed account of the document."
+        }
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "S030",
+          "title": "What is Azure Language in Foundry Tools?",
+          "url": "https://learn.microsoft.com/azure/ai-services/language-service/overview",
+          "snapshotSha256": "debd3c5f132c72a0d258daa4d82d950834da5b4c89e3b42b20cf32982a169e1d",
+          "docType": "official_docs"
+        }
+      ],
+      "matchChoices": [
+        "Summarization",
+        "Language detection",
+        "PII detection",
+        "Prebuilt named entity recognition"
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-08T08:05:35.357213Z",
+        "model": "Codex GPT-6 main agent (runtime variant not exposed)",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-9",
+        "validationStatus": "draft"
+      },
+      "id": "ai103-practice25-20261008-q24",
+      "revision": "1",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.1.0"
+      },
+      "examCode": "AI-103"
+    },
+    {
+      "domainId": "E",
+      "domainName": "Implement information extraction solutions",
+      "objectiveTags": [
+        "AI103-E1.04"
+      ],
+      "type": "code_or_config_artifact",
+      "difficulty": "medium",
+      "stem": "A blob indexer and OCR skillset already exist. The OCR skill consumes /document/normalized_images/* and names its text output text. The target index has a searchable ocr_text field. The fragment below fails to supply OCR input and treats enriched output as a source field. Which paired correction addresses both problems?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Keep imageAction as none and rename fieldMappings to vectorQueries."
+        },
+        {
+          "id": "B",
+          "text": "Set imageAction to generateNormalizedImages and use outputFieldMappings for the enriched OCR text path."
+        },
+        {
+          "id": "C",
+          "text": "Set imageAction to generateNormalizedImages but keep fieldMappings for the enriched OCR text path."
+        },
+        {
+          "id": "D",
+          "text": "Keep imageAction as none and use outputFieldMappings, relying on mapping alone to create image inputs."
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": {
+        "whyCorrect": "The OCR skill needs normalized-image inputs generated by the indexer imageAction setting. Its text is an enriched document-tree node, so outputFieldMappings carries that node into the index field. Both input generation and the output mapping must be correct.",
+        "whyDistractorsWrong": {
+          "A": "Disabling image generation still leaves the OCR input absent, and vectorQueries is not the indexer mapping mechanism for enriched output.",
+          "C": "This produces normalized images but still uses the source-field mapping mechanism for an enriched node.",
+          "D": "An output mapping moves an existing enriched value; it does not generate the normalized-image inputs required by OCR."
+        }
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "S043",
+          "title": "OCR cognitive skill",
+          "url": "https://learn.microsoft.com/azure/search/cognitive-search-skill-ocr",
+          "snapshotSha256": "0a5cdd696dcbae744d32db7fd89a69926f0203462f86d6dc25793ab07d001b3d",
+          "docType": "official_docs"
+        },
+        {
+          "sourceId": "S028",
+          "title": "Skillset concepts in Azure AI Search",
+          "url": "https://learn.microsoft.com/azure/search/cognitive-search-working-with-skillsets",
+          "snapshotSha256": "3d24961260a3a7ca041656383016222704c25dec2dff53743bbaef628236312b",
+          "docType": "official_docs"
+        }
+      ],
+      "artifact": {
+        "title": "Indexer fragment (illustrative JSON; other settings omitted)",
+        "kind": "json",
+        "content": "{\n  \"parameters\": {\n    \"configuration\": {\"dataToExtract\": \"contentAndMetadata\",\n                      \"imageAction\": \"none\"}\n  },\n  \"fieldMappings\": [\n    {\"sourceFieldName\": \"/document/normalized_images/*/text\",\n     \"targetFieldName\": \"ocr_text\"}\n  ]\n}"
+      },
+      "metadata": {
+        "generatedAt": "2026-10-08T08:05:35.357213Z",
+        "model": "Codex GPT-6 main agent (runtime variant not exposed)",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-10",
+        "validationStatus": "draft"
+      },
+      "id": "ai103-practice25-20261008-q25",
+      "revision": "1",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.1.0"
+      },
+      "examCode": "AI-103"
+    }
+  ],
+  "caseStudies": [
+    {
+      "id": "case-1",
+      "title": "Larch equipment-service workflow",
+      "intro": "Answer each question using the shared scenario. Your answers do not change the scenario.",
+      "sections": [
+        {
+          "heading": "Evidence and dependencies",
+          "body": "An extraction agent reads a customer request and warranty evidence. A policy agent uses those extracted facts to decide whether a replacement is eligible. A drafting agent then prepares a shipment proposal from the policy decision. Later stages must receive the relevant earlier outputs."
+        },
+        {
+          "heading": "Execution boundary",
+          "body": "The application may expose a create_shipment function. Creating a shipment changes company records and initiates fulfillment. A supervisor must explicitly approve the proposed shipment before that function executes. Retrieved warranty text is evidence only; statements inside it do not grant operational approval."
+        },
+        {
+          "heading": "Trust and permissions",
+          "body": "Tool arguments and external documents are untrusted. The application must validate proposed arguments, use a least-privileged execution identity, and keep credentials out of model-visible tool results."
+        }
+      ],
+      "questionIds": [
+        "ai103-practice25-20261008-q01",
+        "ai103-practice25-20261008-q02"
+      ]
+    },
+    {
+      "id": "case-2",
+      "title": "Cedar Atlas support agent",
+      "intro": "Answer each question using the shared scenario. Your answers do not change the scenario.",
+      "sections": [
+        {
+          "heading": "Inference and workload requirements",
+          "body": "The agent answers interactive support requests. Processing may use capacity across EU countries but must not leave the EU. Traffic is irregular, and finance wants usage-based token charges without a reserved capacity commitment. Responses must be available during the user interaction. Assume the chosen model supports the listed deployment types and sufficient quota is available."
+        },
+        {
+          "heading": "Retrieval and network requirements",
+          "body": "Company manuals are indexed in Azure AI Search. Foundry Agent Service uses standard setup with private networking. Public access to Search must stay disabled. Private endpoint routing and DNS resolution have been verified from the relevant network. An authorized developer can query the index from that network."
+        },
+        {
+          "heading": "Identity findings",
+          "body": "The agent uses the documented Azure AI Search tool and a project connection to the correct index. The connection currently uses a Search API key. For this setup, the keyless connection principal is the system-assigned managed identity of the Foundry account containing the project. Search RBAC is enabled. That identity already has Search Service Contributor on Search, and no other Search role. The developer and deployment pipeline have provisioning permissions; neither is intended as the runtime connection principal. The agent's model calls already succeed, but its retrieval tool cannot query the company index."
+        }
+      ],
+      "questionIds": [
+        "ai103-practice25-20261008-q03",
+        "ai103-practice25-20261008-q04"
+      ]
+    }
+  ],
+  "reviews": []
+}

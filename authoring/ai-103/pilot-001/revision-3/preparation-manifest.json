@@ -1,0 +1,142 @@
+{
+  "status": "corrected draft verified; focused independent acceptance and released import pending",
+  "packageSha256": "13bd138a2d24b8bd6be8365393e96b0098b6dea1b76d67a64afa653a66711d68",
+  "artifacts": [
+    {
+      "path": "/Users/antvibe/Documents/Dev/cert-exam-lab-local/authoring/ai-103/pilot-001/revision-3/ADJUDICATION.md",
+      "sha256": "721ceb516b46ce06e11b3514aa4a3dc1639c7f4d2382ce46385d1b90eef845f1",
+      "bytes": 5295
+    },
+    {
+      "path": "/Users/antvibe/Documents/Dev/cert-exam-lab-local/authoring/ai-103/pilot-001/revision-3/adjudication.json",
+      "sha256": "35a344f41631b21ee346610d31bab20c8955dc5458ecf452f67a9ac198d065a1",
+      "bytes": 11200
+    },
+    {
+      "path": "/Users/antvibe/Documents/Dev/cert-exam-lab-local/authoring/ai-103/pilot-001/revision-3/blueprint.json",
+      "sha256": "410c6f9d27728c4696f8dfb0602368ff9fba06b078e6fa6b67f7fd8bd0fc6235",
+      "bytes": 3154
+    },
+    {
+      "path": "/Users/antvibe/Documents/Dev/cert-exam-lab-local/authoring/ai-103/pilot-001/revision-3/claude-audit/00-START-HERE.md",
+      "sha256": "de945667d5fc7c7065764f0435cedc1744171080be35dcb6e7590c5a220a8686",
+      "bytes": 2542
+    },
+    {
+      "path": "/Users/antvibe/Documents/Dev/cert-exam-lab-local/authoring/ai-103/pilot-001/revision-3/claude-audit/01-BLIND-QUESTIONS.md",
+      "sha256": "dfb35667b79f07f91775ce7297b6f48c3fc1fa7c574b7dacb74bc0e8246ec57d",
+      "bytes": 10403
+    },
+    {
+      "path": "/Users/antvibe/Documents/Dev/cert-exam-lab-local/authoring/ai-103/pilot-001/revision-3/claude-audit/02-SOURCE-EVIDENCE.md",
+      "sha256": "8df115f05f7576dd6aa2b1bff04e0bbe6fbb66fe73899852c7bfd6af9a3d6124",
+      "bytes": 34379
+    },
+    {
+      "path": "/Users/antvibe/Documents/Dev/cert-exam-lab-local/authoring/ai-103/pilot-001/revision-3/claude-audit/03-AUTHOR-KEY.md",
+      "sha256": "98380ebefdd04e2381cc17e474dd2d7c33487208d08475fe4ba52654cd9a8062",
+      "bytes": 20655
+    },
+    {
+      "path": "/Users/antvibe/Documents/Dev/cert-exam-lab-local/authoring/ai-103/pilot-001/revision-3/claude-audit/04-AUDIT-RETURN-TEMPLATE.json",
+      "sha256": "088627334fc2a2341e366a018ac3f89baa7a4ff7a78ce8342751934134b730a0",
+      "bytes": 12639
+    },
+    {
+      "path": "/Users/antvibe/Documents/Dev/cert-exam-lab-local/authoring/ai-103/pilot-001/revision-3/evidence-map.json",
+      "sha256": "4a39b42f903f28233d3c1414476fca441e7df2e617d38ca9e4cee57629874096",
+      "bytes": 13415
+    },
+    {
+      "path": "/Users/antvibe/Documents/Dev/cert-exam-lab-local/authoring/ai-103/pilot-001/revision-3/output/pdf/ai103-pilot-001-r3-answers.pdf",
+      "sha256": "405b87a1b67bd1d199f5a1b1557449f97b61b4314b13e9b65df56797b50ee4c6",
+      "bytes": 219529
+    },
+    {
+      "path": "/Users/antvibe/Documents/Dev/cert-exam-lab-local/authoring/ai-103/pilot-001/revision-3/output/pdf/ai103-pilot-001-r3-practice.pdf",
+      "sha256": "17b3ec1cea7ff111a97885ecdde85da2f2914737ea749aa380e26d060d4e64d6",
+      "bytes": 219420
+    },
+    {
+      "path": "/Users/antvibe/Documents/Dev/cert-exam-lab-local/authoring/ai-103/pilot-001/revision-3/output/pdf/ai103-pilot-001-r3-questions.pdf",
+      "sha256": "42fdd27d58981d32aacdcfad90289be45dd9daf3f54bf15b8b24fd7f6c472671",
+      "bytes": 141075
+    },
+    {
+      "path": "/Users/antvibe/Documents/Dev/cert-exam-lab-local/authoring/ai-103/pilot-001/revision-3/pdf-review.json",
+      "sha256": "b71af6b71102726ddeb472e67699bddfd56d5c6359733dae27c656465b6e9188",
+      "bytes": 1763
+    },
+    {
+      "path": "/Users/antvibe/Documents/Dev/cert-exam-lab-local/authoring/ai-103/pilot-001/revision-3/pilot.draft.json",
+      "sha256": "d45b3846972905d6e1fdb782ca71775decccccb369920358bd517be2ce6d6a0a",
+      "bytes": 41343
+    },
+    {
+      "path": "/Users/antvibe/Documents/Dev/cert-exam-lab-local/authoring/ai-103/pilot-001/revision-3/preflight-report.json",
+      "sha256": "23c91ef7abfcb5867b2c921e828c2db550f003e1d6a56a577e54bb1274398b0c",
+      "bytes": 30977
+    },
+    {
+      "path": "/Users/antvibe/Documents/Dev/cert-exam-lab-local/authoring/ai-103/pilot-001/revision-3/preservation-before.json",
+      "sha256": "a9186829d050ba68a48400231623ead57b06a30028db067ae9fcd83940aed6bc",
+      "bytes": 35163
+    },
+    {
+      "path": "/Users/antvibe/Documents/Dev/cert-exam-lab-local/authoring/ai-103/pilot-001/revision-3/preservation-report.json",
+      "sha256": "72500f73a2e1a19801c8214dc8d966d244ea18e47ab28516e1d3233a32fbc2dd",
+      "bytes": 225
+    }
+  ],
+  "codeFiles": [
+    {
+      "path": "/Users/antvibe/Documents/Dev/cert-exam-lab-local/src/auditMarkdown.ts",
+      "sha256": "ba80aaf94e189667dd0024499ebcd6f7ac78a3f65e95cd6c953cac16e7d95956",
+      "checkedBy": "isolated CI"
+    },
+    {
+      "path": "/Users/antvibe/Documents/Dev/cert-exam-lab-local/scripts/export-blind-questions.ts",
+      "sha256": "63a91dec1983d75660dc7af9ca702a69410aa74dfb2577067bea86195486a9f1",
+      "checkedBy": "actual-pilot isolated preflight"
+    },
+    {
+      "path": "/Users/antvibe/Documents/Dev/cert-exam-lab-local/tests/auditMarkdown.test.ts",
+      "sha256": "f235740c697f71a0fbded171051413c4f74e40def11aa359fc15706abfd95382",
+      "checkedBy": "isolated CI"
+    }
+  ],
+  "ci": {
+    "capturedAt": "2026-10-08T07:27:07.452956+00:00",
+    "unitTestsPassed": 85,
+    "chromiumTestsPassed": 14,
+    "runtime": {
+      "node": "v24.15.0",
+      "npm": "11.12.1",
+      "playwright": "1.60.0",
+      "stages": [
+        {
+          "command": "npm test",
+          "exitCode": 0,
+          "seconds": 4.984
+        },
+        {
+          "command": "npm run build",
+          "exitCode": 0,
+          "seconds": 0.835
+        },
+        {
+          "command": "npm run test:e2e",
+          "exitCode": 0,
+          "seconds": 44.086
+        }
+      ]
+    },
+    "imageId": "sha256:9bd26ad900bb5e0f4dee75839e957a89ae89c2b7ab1e76050e559790e946b948",
+    "preservation": {
+      "checked": 21,
+      "failures": []
+    }
+  },
+  "releaseCreated": false,
+  "runtimeImportPerformed": false
+}

@@ -1,0 +1,158 @@
+{
+  "pack": {
+    "id": "ai-103",
+    "version": "1.1.0"
+  },
+  "planningVersion": "exact-quotas-assessed-difficulty-v1",
+  "totalQuestions": 10,
+  "domains": [
+    {
+      "id": "A",
+      "name": "Plan and manage an Azure AI solution",
+      "count": 3
+    },
+    {
+      "id": "B",
+      "name": "Implement generative AI and agentic solutions",
+      "count": 3
+    },
+    {
+      "id": "C",
+      "name": "Implement computer vision solutions",
+      "count": 2
+    },
+    {
+      "id": "D",
+      "name": "Implement text analysis solutions",
+      "count": 1
+    },
+    {
+      "id": "E",
+      "name": "Implement information extraction solutions",
+      "count": 1
+    }
+  ],
+  "itemTypes": {
+    "single_choice": 4,
+    "multi_select": 2,
+    "sequence_order": 1,
+    "matching_magnet": 1,
+    "case_study": 2,
+    "code_or_config_artifact": 0
+  },
+  "caseStudyCount": 1,
+  "difficulty": {
+    "easy": 3,
+    "medium": 7,
+    "hard": 0,
+    "very_hard": 0
+  },
+  "batches": [
+    {
+      "id": "batch-1",
+      "domainId": "A",
+      "domainName": "Plan and manage an Azure AI solution",
+      "typeFocus": [
+        "case_study"
+      ],
+      "difficultyFocus": [
+        "easy",
+        "medium",
+        "hard",
+        "very_hard"
+      ],
+      "questionCount": 2,
+      "caseStudyId": "case-1"
+    },
+    {
+      "id": "batch-2",
+      "domainId": "B",
+      "domainName": "Implement generative AI and agentic solutions",
+      "typeFocus": [
+        "single_choice"
+      ],
+      "difficultyFocus": [
+        "easy",
+        "medium",
+        "hard",
+        "very_hard"
+      ],
+      "questionCount": 3
+    },
+    {
+      "id": "batch-3",
+      "domainId": "C",
+      "domainName": "Implement computer vision solutions",
+      "typeFocus": [
+        "single_choice"
+      ],
+      "difficultyFocus": [
+        "easy",
+        "medium",
+        "hard",
+        "very_hard"
+      ],
+      "questionCount": 1
+    },
+    {
+      "id": "batch-4",
+      "domainId": "A",
+      "domainName": "Plan and manage an Azure AI solution",
+      "typeFocus": [
+        "multi_select"
+      ],
+      "difficultyFocus": [
+        "easy",
+        "medium",
+        "hard",
+        "very_hard"
+      ],
+      "questionCount": 1
+    },
+    {
+      "id": "batch-5",
+      "domainId": "C",
+      "domainName": "Implement computer vision solutions",
+      "typeFocus": [
+        "multi_select"
+      ],
+      "difficultyFocus": [
+        "easy",
+        "medium",
+        "hard",
+        "very_hard"
+      ],
+      "questionCount": 1
+    },
+    {
+      "id": "batch-6",
+      "domainId": "D",
+      "domainName": "Implement text analysis solutions",
+      "typeFocus": [
+        "sequence_order"
+      ],
+      "difficultyFocus": [
+        "easy",
+        "medium",
+        "hard",
+        "very_hard"
+      ],
+      "questionCount": 1
+    },
+    {
+      "id": "batch-7",
+      "domainId": "E",
+      "domainName": "Implement information extraction solutions",
+      "typeFocus": [
+        "matching_magnet"
+      ],
+      "difficultyFocus": [
+        "easy",
+        "medium",
+        "hard",
+        "very_hard"
+      ],
+      "questionCount": 1
+    }
+  ]
+}

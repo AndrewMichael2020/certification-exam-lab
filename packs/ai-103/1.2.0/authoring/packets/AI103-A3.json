@@ -1,0 +1,256 @@
+{
+  "schemaVersion": 1,
+  "packRef": {
+    "id": "ai-103",
+    "version": "1.1.0"
+  },
+  "parentObjectiveId": "AI103-A3",
+  "title": "Manage, monitor, and secure AI systems",
+  "state": "evidence-packet-only; no questions",
+  "allowedObjectiveIds": [
+    "AI103-A3.01",
+    "AI103-A3.03",
+    "AI103-A3.04"
+  ],
+  "allowedScope": [
+    {
+      "objectiveId": "AI103-A3.01",
+      "claims": [
+        "F009A",
+        "F009B",
+        "F004B"
+      ],
+      "choice": "Diagnose model limits separately from agent/session and managed-compute quotas; control concurrency and resource lifetime.",
+      "configuration": "Inspect the error code; use bounded exponential backoff with jitter; measure token usage and consider capacity appropriate to sustained load.",
+      "comparison": "Blind retries do not fix persistent exhausted quota or leaked active sessions.",
+      "judgment": "For repeated 429 errors, distinguish session limits from model throughput before choosing cleanup, capacity change, or retry."
+    },
+    {
+      "objectiveId": "AI103-A3.03",
+      "claims": [
+        "F027A",
+        "F044A",
+        "F039B"
+      ],
+      "choice": "Monitor ingestion/indexer failures and service health separately from search relevance.",
+      "configuration": "Inspect execution history and item warnings/errors; configure latency/throttle/storage alerts; evaluate retrieval against relevance labels.",
+      "comparison": "A partially successful indexer can leave required documents absent; index health does not establish relevance.",
+      "judgment": "If questions about recently ingested documents fail, inspect indexer errors/counts before retuning the LLM."
+    },
+    {
+      "objectiveId": "AI103-A3.04",
+      "claims": [
+        "F010A",
+        "F011A",
+        "F040B"
+      ],
+      "choice": "Use Entra identities with scoped RBAC and documented private-network connections for least-privilege operation.",
+      "configuration": "Assign access to both the caller and project/runtime identity as required; configure dependency networking/DNS; avoid embedding keys.",
+      "comparison": "Granting a role to the developer does not automatically grant the project identity access; key-based access bypasses Foundry RBAC restrictions.",
+      "judgment": "A private Search tool connection must use the documented project managed identity; replacing it with an API key does not satisfy that private connection contract."
+    }
+  ],
+  "excludedObjectives": [
+    {
+      "id": "AI103-A3.02",
+      "reason": "Sources support quality comparison and tracing, but no captured turnkey drift detector/configuration; drift-specific implementation claims remain excluded."
+    }
+  ],
+  "evidence": [
+    {
+      "claimId": "F004B",
+      "statement": "Current managed-compute preview quota is per accelerator SKU and region, separate from Azure VM quota; the older classic VM-quota recipe is a different generation.",
+      "sourceId": "S004",
+      "sourceUrl": "https://learn.microsoft.com/azure/foundry/concepts/deployments-overview",
+      "versionContext": "Serverless plus new managed compute preview; quota is separate from classic VM quota",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S004.md",
+          "lineStart": 89,
+          "lineEnd": 92,
+          "heading": "### Billing and quota",
+          "needle": "Quota is granted per accelerator",
+          "excerpt": "\nQuota is granted per accelerator SKU per region through the **Foundry quota process** and is **separate from Azure VM quota**. Azure virtual machines are an infrastructure-as-a-service (IaaS) offering with regional SKUs; managed compute is a PaaS offering that leads with Global and Data Zone processing. Existing Azure VM quota can't be applied to a managed compute deployment.\n\nManaged compute is currently available for global deployment. For rate estimates, see the [Azure pricing calculator](https://azure.microsoft.com/pricing/calculator/).",
+          "sourceSha256": "91520b0f84e6e2823bb27945cb8e25f716440b7680ffc7ea9689d8025f1d080f"
+        }
+      ]
+    },
+    {
+      "claimId": "F009A",
+      "statement": "An agent uses its underlying model deployment quotas as well as agent-service limits; troubleshoot the returned limit code rather than assuming one universal quota.",
+      "sourceId": "S009",
+      "sourceUrl": "https://learn.microsoft.com/azure/foundry/agents/concepts/limits-quotas-regions",
+      "versionContext": "Feature-specific qualifications in snapshot; package/API version unknown unless stated in a referenced excerpt.",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S009.md",
+          "lineStart": 336,
+          "lineEnd": 339,
+          "heading": "## Model quotas and rate limits",
+          "needle": "Agents follow the quotas and rate limits",
+          "excerpt": "\nAgents follow the quotas and rate limits for the model deployments they use.\n\nFor current model quotas and limits, see:",
+          "sourceSha256": "d83fd890729d322d4ffa580ca5a8db2bed5bcd783dae47f5da2b05985f4b3041"
+        }
+      ]
+    },
+    {
+      "claimId": "F009B",
+      "statement": "For 429 failures the documented remedies include code-specific session cleanup, exponential backoff with jitter, regional alternatives where permitted, and provisioned throughput for sustained loads.",
+      "sourceId": "S009",
+      "sourceUrl": "https://learn.microsoft.com/azure/foundry/agents/concepts/limits-quotas-regions",
+      "versionContext": "Feature-specific qualifications in snapshot; package/API version unknown unless stated in a referenced excerpt.",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S009.md",
+          "lineStart": 226,
+          "lineEnd": 229,
+          "heading": "### Agent receives rate-limit (429) errors",
+          "needle": "exponential backoff with jitter",
+          "excerpt": "- If the error code is `regional_session_quota_exceeded`, retry with exponential backoff or use another region. If the error persists create an Azure support request.\n- Implement exponential backoff with jitter in your application retry logic.\n- For sustained high-throughput workloads, consider provisioned throughput deployments.\n- Review [Azure OpenAI quotas and limits](../../openai/quotas-limits) for your deployment's tokens-per-minute and requests-per-minute caps.",
+          "sourceSha256": "d83fd890729d322d4ffa580ca5a8db2bed5bcd783dae47f5da2b05985f4b3041"
+        }
+      ]
+    },
+    {
+      "claimId": "F010A",
+      "statement": "Entra-authenticated Foundry access uses scoped RBAC; an API key bypasses those RBAC role restrictions, so least-privilege role design requires Entra authentication.",
+      "sourceId": "S010",
+      "sourceUrl": "https://learn.microsoft.com/azure/foundry/concepts/rbac-foundry",
+      "versionContext": "Feature-specific qualifications in snapshot; package/API version unknown unless stated in a referenced excerpt.",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S010.md",
+          "lineStart": 6,
+          "lineEnd": 9,
+          "heading": "# Role-based access control for Microsoft Foundry",
+          "needle": "key grants full access without role restrictions",
+          "excerpt": "\nRBAC roles apply when you authenticate using Microsoft Entra ID. If you use key-based authentication instead, the key grants full access without role restrictions. Microsoft recommends using Entra ID authentication for improved security and granular access control.\n\nFor more information about authentication and authorization in Microsoft Foundry, see [Authentication and Authorization](authentication-authorization-foundry).",
+          "sourceSha256": "c63d1b1d5cb16c4ffbf9019b34ac56ab5e47f81f1457b4e2d7c02a2de16a59f9"
+        }
+      ]
+    },
+    {
+      "claimId": "F011A",
+      "statement": "Private agent networking uses a standard secured setup and dependency endpoints; successful private access also depends on DNS and correct runtime identities.",
+      "sourceId": "S011",
+      "sourceUrl": "https://learn.microsoft.com/azure/foundry/agents/how-to/virtual-networks",
+      "versionContext": "Feature-specific qualifications in snapshot; package/API version unknown unless stated in a referenced excerpt.",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S011.md",
+          "lineStart": 8,
+          "lineEnd": 11,
+          "heading": "# Set up private networking for Foundry Agent Service",
+          "needle": "Standard Setup with private networking",
+          "excerpt": "\nFoundry Agent Service offers a **Standard Setup with private networking** environment. This setup creates an isolated network environment that enables secure access to data while maintaining full control over your network infrastructure.\n\nBy default, the Standard Setup with private networking ensures:",
+          "sourceSha256": "02eb40fb9bc5fcbd6b27249423b2d0ba26f5df0dd6b6885c881270a7a6fac8b9"
+        },
+        {
+          "snapshot": "sources/snapshots/S011.md",
+          "lineStart": 140,
+          "lineEnd": 143,
+          "heading": "## Verify the deployment",
+          "needle": "DNS",
+          "excerpt": "2. **Check public network access**: Open each resource (Foundry, Azure AI Search, Azure Storage, Azure Cosmos DB) and confirm **Public network access** is set to **Disabled**.\n3. **Validate private endpoint DNS resolution**: From a machine connected to the VNet, run `nslookup` against each endpoint listed in the DNS zone configurations summary.\n4. **Test agent connectivity**: Access your Foundry project from within the VNet (see Access your secured agents) and confirm you can create and run an agent.\n5. **Configure Role assignments**: Run the following commands to assign the required roles. The first grants Managed Identity Operator on the user-assigned managed identity, and the second grants Network Contributor on the remote VNet for cross-tenant access.",
+          "sourceSha256": "02eb40fb9bc5fcbd6b27249423b2d0ba26f5df0dd6b6885c881270a7a6fac8b9"
+        },
+        {
+          "snapshot": "sources/snapshots/S011.md",
+          "lineStart": 71,
+          "lineEnd": 74,
+          "heading": "### Runtime access after deployment",
+          "needle": "Runtime access after deployment",
+          "excerpt": "\n### Runtime access after deployment\n\nThe project managed identity is what running agents use to reach Azure Cosmos DB, Azure AI Search, and Azure Storage. Grant it data-plane roles on each resource before agents run. The caller roles in the previous table enable capability settings provisioning only. They don't replace the roles the project managed identity needs at runtime. For portal and legacy capability host REST API deployments, the project managed identity also performs provisioning. For the per-resource role list, see [Standard agent setup](../concepts/standard-agent-setup).",
+          "sourceSha256": "02eb40fb9bc5fcbd6b27249423b2d0ba26f5df0dd6b6885c881270a7a6fac8b9"
+        }
+      ]
+    },
+    {
+      "claimId": "F027A",
+      "statement": "The Search monitoring guide recommends service-health alerts for search latency, throttling, and storage and describes collection of operational resource logs.",
+      "sourceId": "S027",
+      "sourceUrl": "https://learn.microsoft.com/azure/search/monitor-azure-cognitive-search",
+      "versionContext": "Feature-specific qualifications in snapshot; package/API version unknown unless stated in a referenced excerpt.",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S027.md",
+          "lineStart": 187,
+          "lineEnd": 191,
+          "heading": "### Azure AI Search alert rules",
+          "needle": "Search Latency (metric alert)",
+          "excerpt": "| --- | --- | --- |\n| Search Latency (metric alert) | Whenever the average search latency is greater than a user-specified threshold (in seconds) | Send an alert when average query response time exceeds the threshold. |\n| Throttled search queries percentage (metric alert) | Whenever the total throttled search queries percentage is greater than or equal to a user-specified threshold | Send an alert when dropped queries begin to exceed the threshold. |\n| Storage Usage | When total storage usage exceeds a user-defined threshold, trigger an alert. Use the index name dimension to monitor specific scenarios. | Send an alert if the storage usage exceeds the expected limit. |\n| Compute Usage | When total storage usage exceeds a user-defined threshold, trigger an alert. Use the operation name and index name dimensions to monitor specific scenarios. | Send an alert when compute consumed begin to exceed the threshold. |",
+          "sourceSha256": "fd18e205e7cd88e39eab53a5690757f65c8d457366491f8954875d2bc4f54ca0"
+        },
+        {
+          "snapshot": "sources/snapshots/S027.md",
+          "lineStart": 64,
+          "lineEnd": 67,
+          "heading": "## Azure Monitor resource logs",
+          "needle": "## Azure Monitor resource logs",
+          "excerpt": "\n## Azure Monitor resource logs\n\nResource logs provide insight into operations that were done by an Azure resource. Logs are generated automatically, but you must route them to Azure Monitor logs to save or query them. Logs are organized in categories. A given namespace might have multiple resource log categories.",
+          "sourceSha256": "fd18e205e7cd88e39eab53a5690757f65c8d457366491f8954875d2bc4f54ca0"
+        }
+      ]
+    },
+    {
+      "claimId": "F039B",
+      "statement": "Document-retrieval evaluation with relevance ground truth measures search quality; retrieval evaluation without labels uses an LLM judge.",
+      "sourceId": "S039",
+      "sourceUrl": "https://learn.microsoft.com/azure/foundry/concepts/evaluation-evaluators/rag-evaluators",
+      "versionContext": "Feature-specific qualifications in snapshot; package/API version unknown unless stated in a referenced excerpt.",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S039.md",
+          "lineStart": 6,
+          "lineEnd": 12,
+          "heading": "# Retrieval-Augmented Generation (RAG) evaluators",
+          "needle": "| Document Retrieval |",
+          "excerpt": "| --- | --- | --- | --- | --- |\n| Document Retrieval | Process evaluation | Retrieval quality is a bottleneck for your RAG, and you have query relevance labels (ground truth) for precise search quality metrics for debugging and parameter optimization | Measures search quality metrics (Fidelity, NDCG, XDCG, Max Relevance, Holes) by comparing retrieved documents against ground truth labels | Composite: Fidelity, NDCG, XDCG, Max Relevance, Holes (with Pass/Fail) |\n| Retrieval | Process evaluation | You want to assess textual quality of retrieved context, but you don't have ground truths | Measures how relevant the retrieved context chunks are to addressing a query using an LLM judge | Binary: Pass/Fail based on threshold (1-5 scale) |\n| Groundedness | System evaluation | You want a well-rounded groundedness definition that works with agent inputs, and bring your own GPT models as the LLM-judge | Measures how well the generated response aligns with the given context without fabricating content (precision aspect) | Binary: Pass/Fail based on threshold (1-5 scale) |\n| Groundedness Pro (preview) | System evaluation | You want a strict groundedness definition powered by Azure AI Content Safety and use our service model | Detects if the response is strictly consistent with the context using the Azure AI Content Safety service | Binary: True/False |\n| Relevance | System evaluation | You want to assess how well the RAG response addresses the query but don't have ground truths | Measures the accuracy, completeness, and direct relevance of the response to the query | Binary: Pass/Fail based on threshold (1-5 scale) |\n| Response Completeness (preview) | System evaluation | You want to ensure the RAG response doesn't miss critical information (recall aspect) from your ground truth | Measures how completely the response covers the expected information compared to ground truth | Binary: Pass/Fail based on threshold (1-5 scale) |",
+          "sourceSha256": "3b16c765be1f1479ac22e04cf9b293be767d473fc1cacb188b90751227074a4b"
+        }
+      ]
+    },
+    {
+      "claimId": "F040B",
+      "statement": "A private-network Azure AI Search agent-tool connection requires Microsoft Entra project managed identity in the captured guide.",
+      "sourceId": "S040",
+      "sourceUrl": "https://learn.microsoft.com/azure/foundry/agents/how-to/tools/ai-search",
+      "versionContext": "Feature-specific qualifications in snapshot; package/API version unknown unless stated in a referenced excerpt.",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S040.md",
+          "lineStart": 4,
+          "lineEnd": 7,
+          "heading": "# Connect an Azure AI Search index to Foundry agents",
+          "needle": "Key-based authentication isn't supported",
+          "excerpt": "\nIf you want to use a private virtual network with the Azure AI Search tool, make sure you use Microsoft Entra project managed identity to authenticate in your Azure AI Search connection. Key-based authentication isn't supported with private virtual networking.\n\nFor a managed knowledge base experience, see [Foundry IQ](../foundry-iq-connect).",
+          "sourceSha256": "67830020b25de8c993ae294ff523035ad2c04c16865c1fe7222f053769316545"
+        }
+      ]
+    },
+    {
+      "claimId": "F044A",
+      "statement": "Indexer status includes run timing and detailed item-level errors/warnings, which should be inspected even when some documents succeed.",
+      "sourceId": "S044",
+      "sourceUrl": "https://learn.microsoft.com/azure/search/search-monitor-indexers",
+      "versionContext": "Feature-specific qualifications in snapshot; package/API version unknown unless stated in a referenced excerpt.",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S044.md",
+          "lineStart": 6,
+          "lineEnd": 9,
+          "heading": "# Monitor indexer status and results in Azure AI Search",
+          "needle": "detailed errors and warnings",
+          "excerpt": "\nYou can monitor indexer processing in the Azure portal, or programmatically through REST calls or an Azure SDK. In addition to status about the indexer itself, you can review start and end times, and detailed errors and warnings from a particular run.\n\n## Monitor using Azure portal",
+          "sourceSha256": "7b9808eefb69e1d573b537e17a3fff7ab159cf6e259f3b7a254a2ecd1c1a8dcc"
+        }
+      ]
+    }
+  ],
+  "constraints": [
+    "Only listed facts with conditions establish answer keys. Cite correct answers and distractor rationales.",
+    "Preserve API/SDK generation, preview, retirement and region/model qualifiers.",
+    "No unshown methods, asserted execution, GH-600 material, dumps, remembered assessments or official format parity.",
+    "Ready is bounded evidence support; later content review and manual solve-first audit are still required."
+  ]
+}

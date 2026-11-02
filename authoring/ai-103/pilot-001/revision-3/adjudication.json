@@ -1,0 +1,317 @@
+{
+  "packageId": "ai103-pilot-001-r3",
+  "revision": "3",
+  "previousPackageId": "ai103-pilot-001-r2",
+  "previousDraftPackageSha256": "5d3fb8595e92f9e0bd7143fd6fba655bfad32906408a011084d3c6257594f2a8",
+  "draftPackageSha256": "13bd138a2d24b8bd6be8365393e96b0098b6dea1b76d67a64afa653a66711d68",
+  "authorSideStatus": "corrections completed; independent exact-revision acceptance pending",
+  "independentAcceptanceCreated": false,
+  "originalAuditsPreserved": true,
+  "allKeysUnchanged": true,
+  "sharedCaseUnchanged": true,
+  "difficulty": {
+    "easy": 3,
+    "medium": 7,
+    "hard": 0,
+    "very_hard": 0
+  },
+  "items": [
+    {
+      "itemId": "ai103-pilot001-q01",
+      "previousItemRevision": "2",
+      "itemRevision": "3",
+      "previousItemSha256": "ff2516e6617fe35b8db17fad20d6c898b0473c479a421a49284349540fb61710",
+      "itemSha256": "ca7940b793990fc43f8bd09b0cbd3628372ed279afee50125356d4118a7e8eb7",
+      "changedFields": [
+        "explanation",
+        "metadata",
+        "revision"
+      ],
+      "canonicalItemUnchanged": false,
+      "answerKeyUnchanged": true,
+      "priorVerdicts": [
+        "accept",
+        "accept"
+      ]
+    },
+    {
+      "itemId": "ai103-pilot001-q02",
+      "previousItemRevision": "2",
+      "itemRevision": "3",
+      "previousItemSha256": "40c4ea6f85bc00579fc708a78f11b1ed270ecd022d0af4cae6356412621e3e63",
+      "itemSha256": "1f5d996723959cc80e2d463a773ab3ad29d32a7b587878e5a3e1acab72f93586",
+      "changedFields": [
+        "explanation",
+        "metadata",
+        "revision"
+      ],
+      "canonicalItemUnchanged": false,
+      "answerKeyUnchanged": true,
+      "priorVerdicts": [
+        "revise",
+        "revise"
+      ]
+    },
+    {
+      "itemId": "ai103-pilot001-q03",
+      "previousItemRevision": "2",
+      "itemRevision": "2",
+      "previousItemSha256": "31d35d4d2a7e954e8a23d8b9a4cc2e8d77e593b3307bfc6f09fa4a2941dd0745",
+      "itemSha256": "31d35d4d2a7e954e8a23d8b9a4cc2e8d77e593b3307bfc6f09fa4a2941dd0745",
+      "changedFields": [],
+      "canonicalItemUnchanged": true,
+      "answerKeyUnchanged": true,
+      "priorVerdicts": [
+        "accept",
+        "accept"
+      ]
+    },
+    {
+      "itemId": "ai103-pilot001-q04",
+      "previousItemRevision": "2",
+      "itemRevision": "3",
+      "previousItemSha256": "7a2910a2963af9a93ca5ed8d22cdec871047aaf94582caf1b03280109896838d",
+      "itemSha256": "59fbf4231d6237e98bda4d81da8ec4fc2b5650e9c070bccbf7647c64d3de0905",
+      "changedFields": [
+        "explanation",
+        "metadata",
+        "revision"
+      ],
+      "canonicalItemUnchanged": false,
+      "answerKeyUnchanged": true,
+      "priorVerdicts": [
+        "accept",
+        "accept"
+      ]
+    },
+    {
+      "itemId": "ai103-pilot001-q05",
+      "previousItemRevision": "2",
+      "itemRevision": "2",
+      "previousItemSha256": "2612907e04fc9fdc1d9a90e89c0e765f8b68f2719945c85b38617c13b00f9981",
+      "itemSha256": "2612907e04fc9fdc1d9a90e89c0e765f8b68f2719945c85b38617c13b00f9981",
+      "changedFields": [],
+      "canonicalItemUnchanged": true,
+      "answerKeyUnchanged": true,
+      "priorVerdicts": [
+        "accept",
+        "accept"
+      ]
+    },
+    {
+      "itemId": "ai103-pilot001-q06",
+      "previousItemRevision": "2",
+      "itemRevision": "2",
+      "previousItemSha256": "e7c9fa6faea465dd927be2389e616d5b227e7ccd94510bb2e92e12f36443b261",
+      "itemSha256": "e7c9fa6faea465dd927be2389e616d5b227e7ccd94510bb2e92e12f36443b261",
+      "changedFields": [],
+      "canonicalItemUnchanged": true,
+      "answerKeyUnchanged": true,
+      "priorVerdicts": [
+        "revise",
+        "revise"
+      ]
+    },
+    {
+      "itemId": "ai103-pilot001-q07",
+      "previousItemRevision": "2",
+      "itemRevision": "3",
+      "previousItemSha256": "c97da0405ba27044292bef1c51b198cc626e416df579925a5360f922ed9e55b0",
+      "itemSha256": "c849ef09bcc65ea034217ea00de12015357a643fcd8cdf6a11e7b945fecb19f0",
+      "changedFields": [
+        "difficulty",
+        "explanation",
+        "metadata",
+        "revision"
+      ],
+      "canonicalItemUnchanged": false,
+      "answerKeyUnchanged": true,
+      "priorVerdicts": [
+        "revise",
+        "accept"
+      ]
+    },
+    {
+      "itemId": "ai103-pilot001-q08",
+      "previousItemRevision": "2",
+      "itemRevision": "2",
+      "previousItemSha256": "3594149034eb4fe2a91754d781ad248cc0c9bbf11757da1642fcc379e2e2d28c",
+      "itemSha256": "3594149034eb4fe2a91754d781ad248cc0c9bbf11757da1642fcc379e2e2d28c",
+      "changedFields": [],
+      "canonicalItemUnchanged": true,
+      "answerKeyUnchanged": true,
+      "priorVerdicts": [
+        "accept",
+        "accept"
+      ]
+    },
+    {
+      "itemId": "ai103-pilot001-q09",
+      "previousItemRevision": "2",
+      "itemRevision": "2",
+      "previousItemSha256": "2451ff9a3933330be814baf1438629fc2e85b71a29b9e48c7bffb3a016bc69ef",
+      "itemSha256": "2451ff9a3933330be814baf1438629fc2e85b71a29b9e48c7bffb3a016bc69ef",
+      "changedFields": [],
+      "canonicalItemUnchanged": true,
+      "answerKeyUnchanged": true,
+      "priorVerdicts": [
+        "accept",
+        "accept"
+      ]
+    },
+    {
+      "itemId": "ai103-pilot001-q10",
+      "previousItemRevision": "2",
+      "itemRevision": "2",
+      "previousItemSha256": "c59dd6128fabe5d321941654c470f313e21645f923c4698f903c2044b60a8034",
+      "itemSha256": "c59dd6128fabe5d321941654c470f313e21645f923c4698f903c2044b60a8034",
+      "changedFields": [],
+      "canonicalItemUnchanged": true,
+      "answerKeyUnchanged": true,
+      "priorVerdicts": [
+        "accept",
+        "accept"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "Q2-auth-explanation",
+      "decision": "accepted and corrected",
+      "itemIds": [
+        "ai103-pilot001-q02"
+      ],
+      "basis": "Both Opus passes: option A remains key-based, so its explanation must not imply that connection already uses managed identity.",
+      "change": "Explains unsupported key authentication and why granting a developer role does not change it.",
+      "sources": [
+        "S040:5"
+      ]
+    },
+    {
+      "id": "Q2-identity-conflict",
+      "decision": "accepted and corrected",
+      "itemIds": [
+        "ai103-pilot001-q02"
+      ],
+      "basis": "Pass 3: explanation must acknowledge project/account terminology and the case stipulation.",
+      "change": "Explains both source wordings and explicitly limits the account identity conclusion to the stipulated case. Shared case unchanged.",
+      "sources": [
+        "S040:5,45-47,887-892",
+        "S011:72-74"
+      ]
+    },
+    {
+      "id": "Q6-nested-fences",
+      "decision": "accepted; exporter corrected",
+      "itemIds": [
+        "ai103-pilot001-q06",
+        "ai103-pilot001-q07"
+      ],
+      "basis": "Both passes identify a blocking Markdown rendering defect that swallows Q6 options/Q7 heading.",
+      "change": "Durable blind exporter chooses a fence longer than every inner backtick run. Q6 canonical item is unchanged. Regression tests and actual Markdown rendering verify the correction.",
+      "sources": [
+        "revision-2/claude-audit/01-BLIND-QUESTIONS.md:109-142"
+      ]
+    },
+    {
+      "id": "Q7-difficulty",
+      "decision": "accepted and corrected",
+      "itemIds": [
+        "ai103-pilot001-q07"
+      ],
+      "basis": "Both Phase 2 passes assess medium; one returned revise and the other accepted with difficulty feedback. Explicit constraints eliminate distractors.",
+      "change": "hard -> medium; exact assessed totals 3 easy / 7 medium / 0 hard / 0 very_hard. No harder claim or artificial quota.",
+      "sources": [
+        "both Opus difficulty assessments"
+      ]
+    },
+    {
+      "id": "Q7-bounded",
+      "decision": "accepted and corrected",
+      "itemIds": [
+        "ai103-pilot001-q07"
+      ],
+      "basis": "First pass notes bounded is not in captured guidance.",
+      "change": "Uses exponential backoff with jitter; retains support escalation for persistent errors.",
+      "sources": [
+        "S009:225-229"
+      ]
+    },
+    {
+      "id": "Q1-explicitly",
+      "decision": "accepted and corrected",
+      "itemIds": [
+        "ai103-pilot001-q01"
+      ],
+      "basis": "Both passes: case implies exclusion of asynchronous batch through interactive response, not an explicit batch ban.",
+      "change": "D explanation now states that asynchronous batch conflicts with the interaction requirement.",
+      "sources": [
+        "S005:11,39-49"
+      ]
+    },
+    {
+      "id": "Q4-normative-wording",
+      "decision": "accepted and corrected",
+      "itemIds": [
+        "ai103-pilot001-q04"
+      ],
+      "basis": "Both passes accept key but prefer wording tied to shown code, not an unsupported normative rejection claim.",
+      "change": "Explains the documented call_id pattern and its application to this trace. No claim about unshown API validation or other API field names.",
+      "sources": [
+        "S007:113-127"
+      ]
+    },
+    {
+      "id": "packet-case-labels",
+      "decision": "accepted and corrected in export",
+      "itemIds": [
+        "ai103-pilot001-q01",
+        "ai103-pilot001-q02"
+      ],
+      "basis": "Pass 3: 01 should identify case children explicitly.",
+      "change": "Shared case says Q1 and Q2; both children identify their case. Canonical shared context unchanged."
+    },
+    {
+      "id": "packet-dropdown-labels",
+      "decision": "accepted and corrected in export",
+      "itemIds": [
+        "ai103-pilot001-q03"
+      ],
+      "basis": "Blind rerun: setting and choices share required label.",
+      "change": "Choice lists say Choices for required/additional/format; template in a separate fenced block."
+    },
+    {
+      "id": "duplicate-source-excerpt",
+      "decision": "accepted and corrected in packet",
+      "itemIds": [
+        "ai103-pilot001-q03"
+      ],
+      "basis": "Both passes: S037:1036-1039 repeats within larger range.",
+      "change": "Merge overlapping/adjacent source ranges; preserve exact source text and line numbers."
+    },
+    {
+      "id": "accepted-item-design-notes",
+      "decision": "retained with limits recorded",
+      "itemIds": [
+        "ai103-pilot001-q01",
+        "ai103-pilot001-q03",
+        "ai103-pilot001-q05",
+        "ai103-pilot001-q08",
+        "ai103-pilot001-q10"
+      ],
+      "basis": "Both final passes accept these items; weak cues or borderline easy estimates are non-blocking.",
+      "change": "Keep accepted stems/options/keys. Treat this as a small foundational pilot, not evidence of hard-item coverage or exam readiness. Q3 category-mismatched distractor and Q8 cueing are recorded for later item-bank design."
+    },
+    {
+      "id": "source-scope-notes",
+      "decision": "bounded and disclosed",
+      "itemIds": [
+        "ai103-pilot001-q06",
+        "ai103-pilot001-q08",
+        "ai103-pilot001-q10"
+      ],
+      "basis": "Cancelled-state source mismatch, Studio severity labels, and layout/OCR overlap are noted but do not change the offered decisions.",
+      "change": "Use frozen evidence only. No live-currency or executed-Azure claim; Q6 asks about queued completion, Q8 uses one quickstart with category values/labels, and Q10 requires OCR on normalized image inputs."
+    }
+  ]
+}

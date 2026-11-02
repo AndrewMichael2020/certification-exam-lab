@@ -1,0 +1,253 @@
+{
+  "schemaVersion": 1,
+  "packRef": {
+    "id": "ai-103",
+    "version": "1.1.0"
+  },
+  "parentObjectiveId": "AI103-E2",
+  "title": "Extract content from documents",
+  "state": "evidence-packet-only; no questions",
+  "allowedObjectiveIds": [
+    "AI103-E2.01",
+    "AI103-E2.02",
+    "AI103-E2.03"
+  ],
+  "allowedScope": [
+    {
+      "objectiveId": "AI103-E2.01",
+      "claims": [
+        "F020A",
+        "F021D",
+        "F029A",
+        "F045A"
+      ],
+      "choice": "Combine content extraction/OCR/layout with field schema extraction, preserving the source of each required value.",
+      "configuration": "Use compatible CU/Document Intelligence layout paths; configure the field schema and source/confidence estimation; validate representative documents.",
+      "comparison": "OCR alone returns text, while layout and field extraction preserve structure and target semantics; neither is a guarantee of perfect accuracy.",
+      "judgment": "For invoices, verify the amount/currency/date fields against source locations and route uncertain fields for review."
+    },
+    {
+      "objectiveId": "AI103-E2.02",
+      "claims": [
+        "F021B",
+        "F045A",
+        "F045B"
+      ],
+      "choice": "Produce clean RAG/agent content while retaining its page, coordinate, span, and document lineage.",
+      "configuration": "Select the documentSearch analyzer/markdown output; preserve structure and references in chunk metadata; choose review thresholds from representative validation.",
+      "comparison": "Discarding source references during cleanup makes a polished answer harder to verify; confidence is not an unconditional accuracy promise.",
+      "judgment": "A contract chunk should carry its document/page/clause context so the agent can support a citation and a reviewer can find the passage."
+    },
+    {
+      "objectiveId": "AI103-E2.03",
+      "claims": [
+        "F021A",
+        "F021C",
+        "F021D",
+        "F024A"
+      ],
+      "choice": "Create a version-compatible analyzer that produces the intended schema fields or markdown representation.",
+      "configuration": "Use ContentUnderstandingClient, analyzer_id and long-running polling; configure fields/models/defaults and retain the GA/preview distinction.",
+      "comparison": "A retired analyzer property can break migration; returning the initial operation response is not the final extracted document.",
+      "judgment": "A downstream rules engine benefits from typed extracted fields, while a RAG workflow also needs readable structured markdown and provenance."
+    }
+  ],
+  "excludedObjectives": [],
+  "evidence": [
+    {
+      "claimId": "F020A",
+      "statement": "Content Understanding recommends the 2025-11-01 GA API for production and 2026-06-01-preview for evaluating new capabilities.",
+      "sourceId": "S020",
+      "sourceUrl": "https://learn.microsoft.com/azure/ai-services/content-understanding/overview",
+      "versionContext": "GA2025-11-01 versus2026-06-01-preview",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S020.md",
+          "lineStart": 42,
+          "lineEnd": 53,
+          "heading": "## Content Understanding Features by version",
+          "needle": "Use API version `2025-11-01` (GA)",
+          "excerpt": "\nUse API version `2025-11-01` (GA) for production workloads, and use API version `2026-06-01-preview` to evaluate new capabilities announced in the Build 2026 wave.\n\n| Capability area | `2025-11-01`(GA) | `2026-06-01-preview` |\n| --- | --- | --- |\n| Production readiness | Recommended for production use. | Public preview for early access testing and evaluation. |\n| Core multimodal extraction | Stable support for document, image, audio, and video extraction workflows. | Includes GA capabilities plus preview enhancements. |\n| Agentic document understanding | Not available. | Available through [agentic mode](concepts/agentic-mode) for complex reasoning over document evidence. |\n| Classification enhancements | Standard document classification and segmentation. | Adds richer classification signals and [in-page segmentation](concepts/classifier#classification-enhancements-2026-06-01-preview). |\n| Document intelligence additions | Existing extraction and layout behavior. | Adds preview features such as [signature detection](document/elements#signatures) and [document metadata extraction](document/elements#document-metadata). |\n| Custom analyzer training behavior | Supports labeled training examples. | Supports labeled training and improves training behavior by distilling patterns into the built analyzer for improved privacy and efficiency. See [improve analyzer training](document/analyzer-improvement). |\n| Generative model flexibility | Supports GA model combinations for analyzer scenarios. | Expands and iterates model support aligned with Build 2026 updates. See [model deployments](concepts/models-deployments). |",
+          "sourceSha256": "c371f350d668f0d6040d569a845d3ec43e22834614253c7be6c62115f59ba8df"
+        }
+      ]
+    },
+    {
+      "claimId": "F021A",
+      "statement": "The captured Content Understanding Python SDK 1.1.0 is tied to API version 2025-11-01, preventing silent combination with preview-only analyzer features.",
+      "sourceId": "S021",
+      "sourceUrl": "https://learn.microsoft.com/python/api/overview/azure/ai-contentunderstanding-readme?view=azure-python",
+      "versionContext": "azure-ai-contentunderstanding1.1.0 /API2025-11-01; ContentUnderstandingClient; Entra or key",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S021.md",
+          "lineStart": 33,
+          "lineEnd": 36,
+          "heading": "### Install the package",
+          "needle": "| 1.1.0 | 2025-11-01 |",
+          "excerpt": "| --- | --- |\n| 1.1.0 | 2025-11-01 |\n| 1.0.1 | 2025-11-01 |\n| 1.0.0 | 2025-11-01 |",
+          "sourceSha256": "aa5fd0abb99fe608e62d3909ffd7bc4eac9904dc931f427c9e3788351fbc7b42"
+        }
+      ]
+    },
+    {
+      "claimId": "F021B",
+      "statement": "Content Understanding provides separate document, image, audio, and video search analyzers; the document-search analyzer preserves layout and structured markdown for RAG.",
+      "sourceId": "S021",
+      "sourceUrl": "https://learn.microsoft.com/python/api/overview/azure/ai-contentunderstanding-readme?view=azure-python",
+      "versionContext": "azure-ai-contentunderstanding1.1.0 /API2025-11-01; ContentUnderstandingClient; Entra or key",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S021.md",
+          "lineStart": 282,
+          "lineEnd": 290,
+          "heading": "### Prebuilt analyzers",
+          "needle": "**`prebuilt-documentSearch`**",
+          "excerpt": "- **RAG analyzers** - Optimized for retrieval-augmented generation scenarios with semantic analysis and markdown extraction. These analyzers return markdown and a one-paragraph `Summary`for each content item:\n    - **`prebuilt-documentSearch`** - Extracts content from documents (PDF, images, Office documents) with layout preservation, table detection, figure analysis, and structured markdown output. Optimized for RAG scenarios.\n    - **`prebuilt-imageSearch`** - Analyzes standalone images and returns a one-paragraph description of the image content. Optimized for image understanding and search scenarios. For images that contain text (including hand-written text), use `prebuilt-documentSearch`.\n    - **`prebuilt-audioSearch`** - Transcribes audio content with speaker diarization, timing information, and conversation summaries. Supports multilingual transcription.\n    - **`prebuilt-videoSearch`** - Analyzes video content with visual frame extraction, audio transcription, and structured summaries. Provides temporal alignment of visual and audio content and can return multiple segments per video.\n- **Content extraction analyzers** - Focus on OCR and layout analysis (e.g., `prebuilt-read`, `prebuilt-layout`)\n- **Base analyzers** - Fundamental content processing capabilities used as parent analyzers for custom analyzers (e.g., `prebuilt-document`, `prebuilt-image`, `prebuilt-audio`, `prebuilt-video`)\n- **Domain-specific analyzers** - Preconfigured analyzers for common document categories including financial documents (invoices, receipts, bank statements), identity documents (passports, driver's licenses), tax forms, mortgage documents, and contracts\n- **Utility analyzers** - Specialized tools for schema generation and field extraction (e.g., `prebuilt-documentFieldSchema`, `prebuilt-documentFields`)",
+          "sourceSha256": "aa5fd0abb99fe608e62d3909ffd7bc4eac9904dc931f427c9e3788351fbc7b42"
+        }
+      ]
+    },
+    {
+      "claimId": "F021C",
+      "statement": "Content Understanding analysis is a long-running operation: begin analysis, poll to completion, then process structured content and markdown.",
+      "sourceId": "S021",
+      "sourceUrl": "https://learn.microsoft.com/python/api/overview/azure/ai-contentunderstanding-readme?view=azure-python",
+      "versionContext": "azure-ai-contentunderstanding1.1.0 /API2025-11-01; ContentUnderstandingClient; Entra or key",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S021.md",
+          "lineStart": 304,
+          "lineEnd": 307,
+          "heading": "### Asynchronous operations",
+          "needle": "### Asynchronous operations",
+          "excerpt": "\n### Asynchronous operations\n\nContent Understanding operations are asynchronous long-running operations. The workflow is:",
+          "sourceSha256": "aa5fd0abb99fe608e62d3909ffd7bc4eac9904dc931f427c9e3788351fbc7b42"
+        }
+      ]
+    },
+    {
+      "claimId": "F021D",
+      "statement": "Custom Content Understanding analyzers define domain-specific field schemas across supported content modalities; they require compatible model/resource configuration.",
+      "sourceId": "S021",
+      "sourceUrl": "https://learn.microsoft.com/python/api/overview/azure/ai-contentunderstanding-readme?view=azure-python",
+      "versionContext": "azure-ai-contentunderstanding1.1.0 /API2025-11-01; ContentUnderstandingClient; Entra or key",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S021.md",
+          "lineStart": 295,
+          "lineEnd": 298,
+          "heading": "### Custom analyzers",
+          "needle": "custom analyzers with specific field schemas",
+          "excerpt": "\nYou can create custom analyzers with specific field schemas for multi-modal content processing (documents, images, audio, video). Custom analyzers allow you to extract domain-specific information tailored to your use case across all four modalities (documents, video, audio, and images).\n\n### Content types",
+          "sourceSha256": "aa5fd0abb99fe608e62d3909ffd7bc4eac9904dc931f427c9e3788351fbc7b42"
+        },
+        {
+          "snapshot": "sources/snapshots/S021.md",
+          "lineStart": 42,
+          "lineEnd": 45,
+          "heading": "### Configuring Microsoft Foundry resource",
+          "needle": "Configuring Microsoft Foundry resource",
+          "excerpt": "\n### Configuring Microsoft Foundry resource\n\nBefore using the Content Understanding SDK, you need to set up a Microsoft Foundry resource and deploy the required large language models. Content Understanding currently uses OpenAI GPT models (such as gpt-4.1, gpt-4.1-mini, and text-embedding-3-large).",
+          "sourceSha256": "aa5fd0abb99fe608e62d3909ffd7bc4eac9904dc931f427c9e3788351fbc7b42"
+        }
+      ]
+    },
+    {
+      "claimId": "F024A",
+      "statement": "Migrating old Content Understanding analyzers to GA changes the analyzer base type and model configuration; the old Scenario property is deprecated.",
+      "sourceId": "S024",
+      "sourceUrl": "https://learn.microsoft.com/azure/ai-services/content-understanding/how-to/migration-preview-to-ga",
+      "versionContext": "GA2025-11-01migration; keep feature-specific preview qualifiers",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S024.md",
+          "lineStart": 84,
+          "lineEnd": 88,
+          "heading": "### Step 2: Update the analyzer definition for the GA API",
+          "needle": "The `Scenario` property from the preview release",
+          "excerpt": "\n1. Add or update the `baseAnalyzerId` property at the top level of the analyzer definition and set it to one of the supported values: `prebuilt-document`, `prebuilt-audio`, `prebuilt-video`, or `prebuilt-image`. Select the one that corresponds to the files that you plan to process with this analyzer. The `Scenario` property from the preview release is deprecated.\n2. Add a `models` object and specify the completion and embeddings model. This object sets the default generative models that this analyzer uses.\n\nFor example, the schema from step 1 is updated to:",
+          "sourceSha256": "fae2f5f5f6b539cd61891a670e03cd73b69517bd45010e6f6a02902e4bd82ad7"
+        }
+      ]
+    },
+    {
+      "claimId": "F029A",
+      "statement": "The Document Layout search skill uses Document Intelligence layout analysis to emit structured Markdown or text and can preserve image location metadata.",
+      "sourceId": "S029",
+      "sourceUrl": "https://learn.microsoft.com/azure/search/cognitive-search-skill-document-intelligence-layout",
+      "versionContext": "Feature-specific qualifications in snapshot; package/API version unknown unless stated in a referenced excerpt.",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S029.md",
+          "lineStart": 6,
+          "lineEnd": 9,
+          "heading": "# Document Layout skill",
+          "needle": "representation in Markdown or text format",
+          "excerpt": "\nThe **Document Layout** skill uses the [layout model](/en-us/azure/ai-services/document-intelligence/concept-layout) from Azure Document Intelligence in Foundry Tools to analyze a document, detect its structure and characteristics, and produce a syntactical representation in Markdown or text format. This skill supports text and image extraction, the latter of which includes location metadata that preserves image position within a document. Image proximity to related content is beneficial in retrieval-augmented generation (RAG) and [multimodal search](multimodal-search-overview) scenarios.\n\nFor transactions that exceed 20 documents per indexer per day, this skill requires you to [attach a billable Microsoft Foundry resource](cognitive-search-attach-cognitive-services) to your skillset. Execution of built-in skills is charged at the existing [Foundry Tools Standard price](https://azure.microsoft.com/pricing/details/cognitive-services/).",
+          "sourceSha256": "eb899b4d8c7fdd95e158072fa95891c8c96388f09c48c00a67683fa10ec4591a"
+        }
+      ]
+    },
+    {
+      "claimId": "F045A",
+      "statement": "Document analyzer field confidence and source estimation use estimateFieldSourceAndConfidence; confidence is useful for review routing, while source coordinates/spans establish provenance.",
+      "sourceId": "S045",
+      "sourceUrl": "https://learn.microsoft.com/azure/ai-services/content-understanding/document/analyzer-improvement",
+      "versionContext": "Feature-specific qualifications in snapshot; package/API version unknown unless stated in a referenced excerpt.",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S045.md",
+          "lineStart": 30,
+          "lineEnd": 33,
+          "heading": "## Confidence scoring: Automate with control",
+          "needle": "`estimateFieldSourceAndConfidence`",
+          "excerpt": "\nEnable confidence scores for all fields (or specific fields) by using the `estimateFieldSourceAndConfidence` property. Learn more about [configuring confidence scores for analyzers](../concepts/analyzer-reference#estimatefieldsourceandconfidence).\n\n### Why confidence scores matter",
+          "sourceSha256": "c08a60437bdcc723d00d30d9898b3967040a122cf43b5ff95b5f1a33a3dadd93"
+        },
+        {
+          "snapshot": "sources/snapshots/S045.md",
+          "lineStart": 28,
+          "lineEnd": 31,
+          "heading": "## Confidence scoring: Automate with control",
+          "needle": "confidence score between 0 and 1",
+          "excerpt": "\nEvery field can include a confidence score between 0 and 1 that indicates how certain the analyzer is about the result. Use this value to automate high-confidence results and route low-confidence results for human review.\n\nEnable confidence scores for all fields (or specific fields) by using the `estimateFieldSourceAndConfidence` property. Learn more about [configuring confidence scores for analyzers](../concepts/analyzer-reference#estimatefieldsourceandconfidence).",
+          "sourceSha256": "c08a60437bdcc723d00d30d9898b3967040a122cf43b5ff95b5f1a33a3dadd93"
+        },
+        {
+          "snapshot": "sources/snapshots/S045.md",
+          "lineStart": 51,
+          "lineEnd": 54,
+          "heading": "## Grounding: Trace every result to its source",
+          "needle": "page number and spatial coordinates",
+          "excerpt": "\nGrounding ensures that every field, answer, or classification includes a reference to its original location in the document. This includes source information (page number and spatial coordinates) and spans (offset and length).\n\n### Why grounding matters",
+          "sourceSha256": "c08a60437bdcc723d00d30d9898b3967040a122cf43b5ff95b5f1a33a3dadd93"
+        }
+      ]
+    },
+    {
+      "claimId": "F045B",
+      "statement": "Content Understanding grounding links fields to document pages, coordinates, and spans; retaining these references supports verification of downstream answers.",
+      "sourceId": "S045",
+      "sourceUrl": "https://learn.microsoft.com/azure/ai-services/content-understanding/document/analyzer-improvement",
+      "versionContext": "Feature-specific qualifications in snapshot; package/API version unknown unless stated in a referenced excerpt.",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S045.md",
+          "lineStart": 51,
+          "lineEnd": 54,
+          "heading": "## Grounding: Trace every result to its source",
+          "needle": "page number and spatial coordinates",
+          "excerpt": "\nGrounding ensures that every field, answer, or classification includes a reference to its original location in the document. This includes source information (page number and spatial coordinates) and spans (offset and length).\n\n### Why grounding matters",
+          "sourceSha256": "c08a60437bdcc723d00d30d9898b3967040a122cf43b5ff95b5f1a33a3dadd93"
+        }
+      ]
+    }
+  ],
+  "constraints": [
+    "Only listed facts with conditions establish answer keys. Cite correct answers and distractor rationales.",
+    "Preserve API/SDK generation, preview, retirement and region/model qualifiers.",
+    "No unshown methods, asserted execution, GH-600 material, dumps, remembered assessments or official format parity.",
+    "Ready is bounded evidence support; later content review and manual solve-first audit are still required."
+  ]
+}

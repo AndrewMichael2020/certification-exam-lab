@@ -1,0 +1,171 @@
+{
+  "id": "ai-103",
+  "version": "1.0.0",
+  "examCode": "AI-103",
+  "title": "Developing AI Apps and Agents on Azure",
+  "objectiveEffectiveDate": "2026-04-16",
+  "status": "foundation",
+  "planningVersion": "exact-quotas-v1",
+  "domainIdPolicy": "local-objective-groups",
+  "domains": [
+    {
+      "id": "A",
+      "name": "Plan and manage an Azure AI solution",
+      "weight": 28,
+      "officialRange": [
+        25,
+        30
+      ],
+      "objectives": [
+        {
+          "id": "AI103-A1",
+          "title": "Choose Foundry services and integrations"
+        },
+        {
+          "id": "AI103-A2",
+          "title": "Set up Foundry solutions"
+        },
+        {
+          "id": "AI103-A3",
+          "title": "Manage, monitor, and secure systems"
+        },
+        {
+          "id": "AI103-A4",
+          "title": "Apply responsible AI and oversight"
+        }
+      ]
+    },
+    {
+      "id": "B",
+      "name": "Implement generative AI and agentic solutions",
+      "weight": 33,
+      "officialRange": [
+        30,
+        35
+      ],
+      "objectives": [
+        {
+          "id": "AI103-B1",
+          "title": "Build generative applications"
+        },
+        {
+          "id": "AI103-B2",
+          "title": "Build and evaluate agents"
+        },
+        {
+          "id": "AI103-B3",
+          "title": "Optimize and operationalize generation"
+        }
+      ]
+    },
+    {
+      "id": "C",
+      "name": "Implement computer vision solutions",
+      "weight": 13,
+      "officialRange": [
+        10,
+        15
+      ],
+      "objectives": [
+        {
+          "id": "AI103-C1",
+          "title": "Generate and edit images and video"
+        },
+        {
+          "id": "AI103-C2",
+          "title": "Understand visual content"
+        },
+        {
+          "id": "AI103-C3",
+          "title": "Protect multimodal content"
+        }
+      ]
+    },
+    {
+      "id": "D",
+      "name": "Implement text analysis solutions",
+      "weight": 13,
+      "officialRange": [
+        10,
+        15
+      ],
+      "objectives": [
+        {
+          "id": "AI103-D1",
+          "title": "Analyze and translate text"
+        },
+        {
+          "id": "AI103-D2",
+          "title": "Implement speech solutions"
+        }
+      ]
+    },
+    {
+      "id": "E",
+      "name": "Implement information extraction solutions",
+      "weight": 13,
+      "officialRange": [
+        10,
+        15
+      ],
+      "objectives": [
+        {
+          "id": "AI103-E1",
+          "title": "Build retrieval and grounding pipelines"
+        },
+        {
+          "id": "AI103-E2",
+          "title": "Extract document content"
+        }
+      ]
+    }
+  ],
+  "supportedFormats": [
+    "single_choice",
+    "multi_select",
+    "sequence_order",
+    "matching_magnet",
+    "dropdown_completion",
+    "case_study_child",
+    "code_or_config_artifact",
+    "log_or_artifact_interpretation",
+    "policy_control_selection"
+  ],
+  "timing": {
+    "minutesPerQuestion": 1.2,
+    "kind": "practice"
+  },
+  "providerGeneration": false,
+  "sources": [
+    {
+      "id": "ai103-outline",
+      "title": "AI-103 official objective outline",
+      "url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-103",
+      "snapshot": "sources/ai-103-study-guide.html",
+      "sha256": "141ae830f2a3d2f231077793c9f0095063ebc81beac51b188573cc6d9faa6181",
+      "status": "fetched",
+      "fetchedAt": "2026-10-08T04:16:23.008404+00:00"
+    }
+  ],
+  "knowledge": {
+    "A": "knowledge/domain-A.md",
+    "B": "knowledge/domain-B.md",
+    "C": "knowledge/domain-C.md",
+    "D": "knowledge/domain-D.md",
+    "E": "knowledge/domain-E.md"
+  },
+  "prompts": {
+    "author": "prompts/author.md",
+    "review": "prompts/review.md"
+  },
+  "assets": {
+    "knowledge/domain-D.md": "cd7e6fa449500e3e07bb1e1a88249881acab528b6ebe3a6f838ac91fa0145e10",
+    "knowledge/domain-A.md": "e581d7fbe13f2adc234a0361a69b08add5d1c633f739d72c627dc1f74ac2590c",
+    "knowledge/domain-E.md": "264a455397ce009395451f848daaabe5a2cd037cd8ce82f4622bcb587aeab594",
+    "knowledge/domain-B.md": "99c9d5ca3f85723311213a1310698b12b351fb5b418ca29288cbedfbf7ba5b64",
+    "knowledge/domain-C.md": "603ad39725f683e1f1d70f963d3ce72931f261246fd40725b669b1b7c89f2870",
+    "prompts/author.md": "668c2f64125e93d0f795a3ed0ebac2bfb8f41a3f3b33239456ee5981b8cdf892",
+    "prompts/review.md": "643b7217180dfe70148e33c2b604804f73b63242e359c74ed508be659ec0ee09",
+    "sources/ai-103-study-guide.html": "141ae830f2a3d2f231077793c9f0095063ebc81beac51b188573cc6d9faa6181"
+  }
+}

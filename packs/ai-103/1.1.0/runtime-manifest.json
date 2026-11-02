@@ -1,0 +1,1272 @@
+{
+  "id": "ai-103",
+  "version": "1.1.0",
+  "examCode": "AI-103",
+  "title": "Developing AI Apps and Agents on Azure",
+  "objectiveEffectiveDate": "2026-04-16",
+  "domains": [
+    {
+      "id": "A",
+      "name": "Plan and manage an Azure AI solution",
+      "weight": 28,
+      "officialRange": [
+        25,
+        30
+      ],
+      "objectives": [
+        {
+          "id": "AI103-A1.01",
+          "title": "Choose an appropriate model for each task, including large language models (LLMs), small language models, multimodal models, and Foundry Tools",
+          "status": "partial"
+        },
+        {
+          "id": "AI103-A1.02",
+          "title": "Choose the appropriate Foundry services for generative tasks, grounding, vector search, agent workflows, or multimodal processing",
+          "status": "ready"
+        },
+        {
+          "id": "AI103-A1.03",
+          "title": "Choose an appropriate method for retrieval and indexing",
+          "status": "ready"
+        },
+        {
+          "id": "AI103-A1.04",
+          "title": "Choose appropriate memory, tool, and knowledge integration services for agent solutions",
+          "status": "ready"
+        },
+        {
+          "id": "AI103-A2.01",
+          "title": "Design Azure infrastructure for AI apps and agent-based solutions",
+          "status": "ready"
+        },
+        {
+          "id": "AI103-A2.02",
+          "title": "Choose appropriate deployment options",
+          "status": "ready"
+        },
+        {
+          "id": "AI103-A2.03",
+          "title": "Configure model and agent deployments",
+          "status": "ready"
+        },
+        {
+          "id": "AI103-A2.04",
+          "title": "Integrate Foundry projects with continuous integration and continuous deployment (CI/CD) pipelines",
+          "status": "ready"
+        },
+        {
+          "id": "AI103-A3.01",
+          "title": "Manage quotas, scaling, rate limits, and cost footprints for model and agent workloads",
+          "status": "ready"
+        },
+        {
+          "id": "AI103-A3.02",
+          "title": "Monitor model performance, drift, safety events, and grounding quality",
+          "status": "partial"
+        },
+        {
+          "id": "AI103-A3.03",
+          "title": "Monitor data ingestion quality, search index health, and relevance performance",
+          "status": "ready"
+        },
+        {
+          "id": "AI103-A3.04",
+          "title": "Configure security, including managed identity, private networking, keyless credentials, and role policies",
+          "status": "ready"
+        },
+        {
+          "id": "AI103-A4.01",
+          "title": "Configure safety filters, guardrails, risk detection, and content moderation",
+          "status": "ready"
+        },
+        {
+          "id": "AI103-A4.02",
+          "title": "Apply responsible AI instrumentation, including evaluators, safety evaluations, and explanation tooling",
+          "status": "ready"
+        },
+        {
+          "id": "AI103-A4.03",
+          "title": "Implement auditing through trace logging, provenance metadata, and approval workflows",
+          "status": "ready"
+        },
+        {
+          "id": "AI103-A4.04",
+          "title": "Govern agent behavior with oversight modes, constraints, and tool-access controls",
+          "status": "ready"
+        }
+      ]
+    },
+    {
+      "id": "B",
+      "name": "Implement generative AI and agentic solutions",
+      "weight": 33,
+      "officialRange": [
+        30,
+        35
+      ],
+      "objectives": [
+        {
+          "id": "AI103-B1.01",
+          "title": "Deploy and consume LLMs, small models, code models, and multimodal models",
+          "status": "ready"
+        },
+        {
+          "id": "AI103-B1.02",
+          "title": "Implement retrieval-augmented generation (RAG) in an application",
+          "status": "ready"
+        },
+        {
+          "id": "AI103-B1.03",
+          "title": "Design workflows, tool-augmented flows, and multistep reasoning pipelines",
+          "status": "ready"
+        },
+        {
+          "id": "AI103-B1.04",
+          "title": "Evaluate models and apps, including detecting fabrications, relevance, quality, and safety",
+          "status": "ready"
+        },
+        {
+          "id": "AI103-B1.05",
+          "title": "Integrate generative workflows into applications by using Foundry SDKs and connectors",
+          "status": "ready"
+        },
+        {
+          "id": "AI103-B1.06",
+          "title": "Configure an application to connect to a Foundry project",
+          "status": "ready"
+        },
+        {
+          "id": "AI103-B2.01",
+          "title": "Define agent roles, goals, conversation-tracking approach, and tool schemas",
+          "status": "ready"
+        },
+        {
+          "id": "AI103-B2.02",
+          "title": "Build agents that integrate retrieval, function-calling, and conversation memory",
+          "status": "ready"
+        },
+        {
+          "id": "AI103-B2.03",
+          "title": "Integrate agent tools, including APIs, knowledge stores, search, content understanding, and custom functions",
+          "status": "partial"
+        },
+        {
+          "id": "AI103-B2.04",
+          "title": "Implement orchestrated multi-agent solutions",
+          "status": "ready"
+        },
+        {
+          "id": "AI103-B2.05",
+          "title": "Build autonomous or semiautonomous workflows with safeguards and approval flow controls",
+          "status": "ready"
+        },
+        {
+          "id": "AI103-B2.06",
+          "title": "Integrate monitoring into deployed agents, evaluate agent behavior, and perform error analysis",
+          "status": "ready"
+        },
+        {
+          "id": "AI103-B3.01",
+          "title": "Tune generation behavior, such as prompt engineering and adjusting model parameters",
+          "status": "ready"
+        },
+        {
+          "id": "AI103-B3.02",
+          "title": "Implement model reflection, chain-of-thought evaluations, and self-critique loops",
+          "status": "partial"
+        },
+        {
+          "id": "AI103-B3.03",
+          "title": "Set up observability by implementing tracing, token analytics, safety signals, and latency breakdowns",
+          "status": "ready"
+        },
+        {
+          "id": "AI103-B3.04",
+          "title": "Orchestrate multiple models, flows, or hybrid LLM and rules engines",
+          "status": "ready"
+        }
+      ]
+    },
+    {
+      "id": "C",
+      "name": "Implement computer vision solutions",
+      "weight": 13,
+      "officialRange": [
+        10,
+        15
+      ],
+      "objectives": [
+        {
+          "id": "AI103-C1.01",
+          "title": "Implement a solution that generates images from text prompts and reference media",
+          "status": "ready"
+        },
+        {
+          "id": "AI103-C1.02",
+          "title": "Implement a solution that generates videos from text prompts and reference media",
+          "status": "ready"
+        },
+        {
+          "id": "AI103-C1.03",
+          "title": "Configure image-editing workflows, including inpainting, mask\u2011based edits, and prompt\u2011driven modifications",
+          "status": "ready"
+        },
+        {
+          "id": "AI103-C1.04",
+          "title": "Implement workflows to edit generated videos",
+          "status": "ready"
+        },
+        {
+          "id": "AI103-C1.05",
+          "title": "Select and apply appropriate generation and editing controls provided by the platform",
+          "status": "ready"
+        },
+        {
+          "id": "AI103-C2.01",
+          "title": "Build a solution that analyzes visual context by using multimodal models",
+          "status": "ready"
+        },
+        {
+          "id": "AI103-C2.02",
+          "title": "Configure apps to produce concise or detailed captions for single or multiple images",
+          "status": "ready"
+        },
+        {
+          "id": "AI103-C2.03",
+          "title": "Implement a solution that enables question\u2011answering grounded in visual evidence",
+          "status": "ready"
+        },
+        {
+          "id": "AI103-C2.04",
+          "title": "Configure generation of alt\u2011text and extended image descriptions aligned to accessibility guidelines",
+          "status": "ready"
+        },
+        {
+          "id": "AI103-C2.05",
+          "title": "Implement visual understanding by configuring Azure Content Understanding in Foundry Tools to extract visual characteristics",
+          "status": "ready"
+        },
+        {
+          "id": "AI103-C2.06",
+          "title": "Implement video analysis workflows to process and interpret video segments",
+          "status": "ready"
+        },
+        {
+          "id": "AI103-C2.07",
+          "title": "Configure single\u2011task and pro\u2011mode Content Understanding pipelines",
+          "status": "partial"
+        },
+        {
+          "id": "AI103-C2.08",
+          "title": "Implement solutions that identify objects, components, or regions within images or video",
+          "status": "partial"
+        },
+        {
+          "id": "AI103-C3.01",
+          "title": "Implement filters to classify unsafe or disallowed visual content",
+          "status": "ready"
+        },
+        {
+          "id": "AI103-C3.02",
+          "title": "Detect and mitigate indirect prompt injection by using embedded text in images",
+          "status": "partial"
+        },
+        {
+          "id": "AI103-C3.03",
+          "title": "Enforce visual policy rules, such as applying watermarks, flagging prohibited symbols, upholding brand usage requirements, and detecting potentially inappropriate content",
+          "status": "partial"
+        }
+      ]
+    },
+    {
+      "id": "D",
+      "name": "Implement text analysis solutions",
+      "weight": 13,
+      "officialRange": [
+        10,
+        15
+      ],
+      "objectives": [
+        {
+          "id": "AI103-D1.01",
+          "title": "Implement solutions to extract entities, topics, summaries, and structured JSON outputs by using generative prompting and Foundry Tools",
+          "status": "ready"
+        },
+        {
+          "id": "AI103-D1.02",
+          "title": "Configure detection of sentiment, tone, safety issues, and sensitive content",
+          "status": "ready"
+        },
+        {
+          "id": "AI103-D1.03",
+          "title": "Build solutions that translate text by using Azure Translator in Foundry Tools or LLM\u2011powered translation flows",
+          "status": "ready"
+        },
+        {
+          "id": "AI103-D1.04",
+          "title": "Customize language model outputs for domain tasks, such as compliance summarization and domain extraction",
+          "status": "ready"
+        },
+        {
+          "id": "AI103-D2.01",
+          "title": "Implement workflows to convert speech to text and text to speech for agentic interactions",
+          "status": "ready"
+        },
+        {
+          "id": "AI103-D2.02",
+          "title": "Integrate speech as an agent modality, including custom speech models",
+          "status": "ready"
+        },
+        {
+          "id": "AI103-D2.03",
+          "title": "Enable multimodal reasoning from audio inputs",
+          "status": "ready"
+        },
+        {
+          "id": "AI103-D2.04",
+          "title": "Translate speech into other languages by using language models and Foundry Tools",
+          "status": "ready"
+        }
+      ]
+    },
+    {
+      "id": "E",
+      "name": "Implement information extraction solutions",
+      "weight": 13,
+      "officialRange": [
+        10,
+        15
+      ],
+      "objectives": [
+        {
+          "id": "AI103-E1.01",
+          "title": "Ingest and index content, such as documents, images, audio, and video",
+          "status": "ready"
+        },
+        {
+          "id": "AI103-E1.02",
+          "title": "Configure semantic search, hybrid search, and vector search for grounding",
+          "status": "ready"
+        },
+        {
+          "id": "AI103-E1.03",
+          "title": "Implement enrichment by using custom or built-in skills for text, images, and layout",
+          "status": "ready"
+        },
+        {
+          "id": "AI103-E1.04",
+          "title": "Configure RAG ingestion flow, including documents and using optical character recognition (OCR)",
+          "status": "ready"
+        },
+        {
+          "id": "AI103-E1.05",
+          "title": "Connect retrieval pipelines directly to workflows and agent tools",
+          "status": "ready"
+        },
+        {
+          "id": "AI103-E2.01",
+          "title": "Extract information by using multimodal pipelines that combine OCR, layout analysis, and field extraction",
+          "status": "ready"
+        },
+        {
+          "id": "AI103-E2.02",
+          "title": "Produce clean, grounded representations to use with agents and RAG by using Content Understanding",
+          "status": "ready"
+        },
+        {
+          "id": "AI103-E2.03",
+          "title": "Implement analyzers for generating structured or markdown outputs for downstream reasoning by using Content Understanding",
+          "status": "ready"
+        }
+      ]
+    }
+  ],
+  "knowledge": {
+    "A": "knowledge/domain-A.md",
+    "B": "knowledge/domain-B.md",
+    "C": "knowledge/domain-C.md",
+    "D": "knowledge/domain-D.md",
+    "E": "knowledge/domain-E.md"
+  },
+  "providerGeneration": false,
+  "assets": {
+    "READINESS-REVIEW.md": "55ce3b59c704523f60c241cda1123d3c693f7c904c34dd05d7ed64630cc944e0",
+    "README.md": "5b0837740ef3938cf95a29ff8d1632494e5ee5e124480541ddc56a2918046918",
+    "RESOURCE-INVENTORY.md": "60ae8aa46967a6b9bb75253dc14c1a8e8a24e70e478ccdfe79b8a572409ddfde",
+    "authoring/packets/AI103-A1.json": "4ebff3e193ff2e6b4d261addef3c693614ced0083ac71d243ad3c206586a71b8",
+    "authoring/packets/AI103-A2.json": "cee66eb5ff60764dc28f4b1f9a23fbb92a538241f96052dccc7cfd6c8032e665",
+    "authoring/packets/AI103-A3.json": "d24b1fea1f325ae6a8e8f01bd394a91b622b761f48bb95c540f769ea3322d109",
+    "authoring/packets/AI103-A4.json": "3cb71fdc927fc5266635195b484d1c80ae2e291a4c0150f18b5a7f6605c0ef77",
+    "authoring/packets/AI103-B1.json": "ad06903588f692ad5de0ea465240198b5d986c32118a581d863a560c7e70c8df",
+    "authoring/packets/AI103-B2.json": "348218a4d22047594c3ed438df460985b3598c73a07cd4049cae8afe805742c2",
+    "authoring/packets/AI103-B3.json": "3b5112118c9b62a423b67351b4f64c03bd0279ad554d2648a92a9dee6ff3c2a2",
+    "authoring/packets/AI103-C1.json": "765bf31e38c4f834442a2a26df2ff04669194cc6352fadf755378d5ed897ab55",
+    "authoring/packets/AI103-C2.json": "2d88861d5115af1db57e90441fe6a1ddbed42698b29fd11c403f39ec98a589b1",
+    "authoring/packets/AI103-C3.json": "2a0422496361daa2c59711e27f874f79b8bfc855b1af2ca59a429a7cc1ee3823",
+    "authoring/packets/AI103-D1.json": "ac3596ee7a0876e60154e62241746326659be69ef3f39aefb3079d8d44216224",
+    "authoring/packets/AI103-D2.json": "99c4539bffb4d584664db4567bf2de286dd2e606b52129b466e53c69edd8884e",
+    "authoring/packets/AI103-E1.json": "a54f9d27e31300d357a5880c56ec3e5b65e88ab8965d35024e0727c1e9175654",
+    "authoring/packets/AI103-E2.json": "a209118d50d411bf187f1c8fa89f4ab49999e588e4815f4d3b4d6e3db849a670",
+    "coverage.json": "70df6e55c8d14224a57517ef5adf543b78f22032f99a7e9b5f413863151c81fe",
+    "evidence/claims.json": "97e24be627f9a35d6f5cedd8555f3f499f9e64bf2fb59626b2283717152cf4b8",
+    "evidence/integrity-review.json": "3bf6ac80025f1d6873767446d663f7ff1462b8d1317b8973f3848594d902a14f",
+    "evidence/main-review.json": "1935d4f740f66d9f90fa08027521547d1fa687c6f1067078e0169423585241ec",
+    "evidence/research-preservation.json": "0e777d40c48f48a63af537c37e92f9287ed018fdd627d396f97812b46fe5e356",
+    "evidence/version-conflicts.md": "3dabc04333c6d190b0c7d79eac0712ef642fb1ccba8ec382c2931b07847678f1",
+    "knowledge/code-reading.md": "5b7aeeee6780345c132f0b2c8b965dbc845294fea87df44b5f6678ccca51c67d",
+    "knowledge/domain-A.md": "c48390734a17f37591c22489f1adea369a34bdd2cab59411dff717a49edb9b8b",
+    "knowledge/domain-B.md": "0e5bf34102212c4e59efe872cff086fffabfd8bda4601d9ad39df5044ba0a2e5",
+    "knowledge/domain-C.md": "e543d3ef794f60d64d458811081cbd646e10e0f2bfa509bd9dcff022fac327da",
+    "knowledge/domain-D.md": "5c9a4b8062d19331cfd29a76d6f979b036e4e7144316cb8a0e8d3738a8357501",
+    "knowledge/domain-E.md": "275ea660755842e37293f7063cb1677f465580ca77cab787bbd58be2c9cea96e",
+    "knowledge/objectives/AI103-A1.01.md": "810aeeef2409ba8a92bf00ad70335fd828f34a1a9c0b58222b6c27261da15edc",
+    "knowledge/objectives/AI103-A1.02.md": "0185b32a99c6471092a86a23c170f379b1cf9d7fd6d0364d22595f30832401f8",
+    "knowledge/objectives/AI103-A1.03.md": "1abe623887fa38bd88d7f87dbb6b4de9e0fbfbe59c3c1f3869bff3c42a45165a",
+    "knowledge/objectives/AI103-A1.04.md": "5bf80de28e7499b77b1c33d1ef70044054244e44833092b3c2d37947484a84ba",
+    "knowledge/objectives/AI103-A2.01.md": "6459eda24693e2f10390b67be139cea0a70fdf2809b5e3dda34f37eb01d19bf6",
+    "knowledge/objectives/AI103-A2.02.md": "745eda1d5829523d0c0338239b522743e98c4e17abce5e051c917f446b5781fc",
+    "knowledge/objectives/AI103-A2.03.md": "036a100d1007c96bf07afb58006e10b3cb40f4ddc8a39503b40b4ba8ea478733",
+    "knowledge/objectives/AI103-A2.04.md": "4caf19f34bfcc290959ec67b6eadbe5e7d2df0433710f5b637022028b580deeb",
+    "knowledge/objectives/AI103-A3.01.md": "c74b537e448b4477f790a144cb82c24548570382737d3488d5b2c8ea92b4a9ef",
+    "knowledge/objectives/AI103-A3.02.md": "2b0782a8854cd5b86cd8d6d235ef0596980ab784a3452ceb3f2cd5efcf8f9f37",
+    "knowledge/objectives/AI103-A3.03.md": "910047dea145530c366af608e9237f5bf5b4829a80101a925bf37b4f936a49a3",
+    "knowledge/objectives/AI103-A3.04.md": "f3b511050a7cf1ea5c9e068586e245060fb31ec42fa1cccf098b449986a3b32a",
+    "knowledge/objectives/AI103-A4.01.md": "c7023dcec98df69fdc618d4a1a90c8b61106876491b1728602115088ff93bc46",
+    "knowledge/objectives/AI103-A4.02.md": "290b9b41404c65cddef0411182193eaaf2c4547f4cd6c7880aecddccab81a902",
+    "knowledge/objectives/AI103-A4.03.md": "c83ec548780675549884ef679a442b3499e9fcd6a1b4760dbcd1c5a34cc9e7a3",
+    "knowledge/objectives/AI103-A4.04.md": "2b0bdd1066f1b5794dc2c3fd9e85f773b0b53d00aa38e8d48ee18cd6cb82ab2e",
+    "knowledge/objectives/AI103-B1.01.md": "f124de61bda0c9f115365eee1d74cf97fa315cbfc3d9ecb93349a928d44b8140",
+    "knowledge/objectives/AI103-B1.02.md": "d68bf23d3e7381a2c1feab346a63b8a65e8434ec1582b419887c8bf5bc38073b",
+    "knowledge/objectives/AI103-B1.03.md": "75c7fe73a15cca4e6a2887e57bd1a25b9c8e268ae687efff717dad962af4db2c",
+    "knowledge/objectives/AI103-B1.04.md": "efe535a1bf336acf2e1199212418763a3cb254f6cbfa45c3f7abfd30bcb5d2dd",
+    "knowledge/objectives/AI103-B1.05.md": "b23bc8ce72c654f41b5dc286f64839cdf0693d1318faa00bc21bc78018e45ac6",
+    "knowledge/objectives/AI103-B1.06.md": "7cacadc44978bd20505719ff8087a111097221b850f657e41fa4b9458112946f",
+    "knowledge/objectives/AI103-B2.01.md": "5c70d1058a2bf96e4e772de0287c2e09753dfa077711faae5c83109156caafb2",
+    "knowledge/objectives/AI103-B2.02.md": "7114e0149ececdfc64a338db4d8bbb6bb47e3fa08f763e2a74e348902c691e44",
+    "knowledge/objectives/AI103-B2.03.md": "b48c143ecb39138eeb3dc360c3c092db82b3aa594fe377523dbe0d1a2428847a",
+    "knowledge/objectives/AI103-B2.04.md": "0d5f4388bc9138a0af182aa26bb8d02d4d767ccbbf10915216227a2b526c870b",
+    "knowledge/objectives/AI103-B2.05.md": "6e9eeedd15400d3498d5ebef5f7959b4f9b8b9896df02835dbe3e5fa149bac1a",
+    "knowledge/objectives/AI103-B2.06.md": "6f2aafa695b2f91c6d37099d6f2e60ee3824a313790218fb92f7914f3b2d3479",
+    "knowledge/objectives/AI103-B3.01.md": "cee211774f83c2ae6951d6bcf3e5b20bc9bd9baeaf62f58c9c8d4541b171774c",
+    "knowledge/objectives/AI103-B3.02.md": "63c819fdde2de074e67e9414eb9bc736245124ff49534b10e1869f6e17474f9b",
+    "knowledge/objectives/AI103-B3.03.md": "661d8bb472b778f751a0cc6569d7f14f18dcef29af5a3eb6fb951e014dc49970",
+    "knowledge/objectives/AI103-B3.04.md": "fd4b8896e08861000168a4286e302f33c94dc4ea945ba27ec29b61264fe2ad28",
+    "knowledge/objectives/AI103-C1.01.md": "75d8138963f46aaf21febd38c4c94f575a8fc0c72b2f06543976eaf3f0525152",
+    "knowledge/objectives/AI103-C1.02.md": "8f354728f7ca40e51d4d6a9f2e0f4b43f9e9cdebfa5cc3b31f36c79f53d99d49",
+    "knowledge/objectives/AI103-C1.03.md": "97ace1f5540c1eb7f0aa5e6d59c2c38273eafdf2412c0cba7fa020a4b18ca4de",
+    "knowledge/objectives/AI103-C1.04.md": "c00064d649ff2e1492be097fd21ca34052cba76dfdabede57a67085f36f042ae",
+    "knowledge/objectives/AI103-C1.05.md": "5efbcf490359e77f377db97cbd6f43df2f7370975684ce11fd86c03f6498566e",
+    "knowledge/objectives/AI103-C2.01.md": "d4e727c48fb122aaee59a20c6abb32ac72bb087e64cecbf8e2e6d1e4c9c4bdc5",
+    "knowledge/objectives/AI103-C2.02.md": "243f85b89ed708bcc882b3af9134a752e97fe99505136f3ee6a6ba9992900ba5",
+    "knowledge/objectives/AI103-C2.03.md": "872008a411652730a7ed2d8aa66ba4b7f2e908763ac57f67f01796d9654381ff",
+    "knowledge/objectives/AI103-C2.04.md": "58ef2cdf1077897fe053e161342c75a976d35fe0d557212854c5cdda45a18eff",
+    "knowledge/objectives/AI103-C2.05.md": "26aedb34fe96885dc73e15e8f49e97d1929b00417c04930e6107736a5adeee1c",
+    "knowledge/objectives/AI103-C2.06.md": "67d493111698f42fc7350ccb2ccb9c8c742d3ecd3c328d4fb05fa0a35d0425ed",
+    "knowledge/objectives/AI103-C2.07.md": "c04e0dd53a6f5cd5e9238fee56b3f3137c217f2389545c8f8e977071b0792af0",
+    "knowledge/objectives/AI103-C2.08.md": "8ef9383947263268e36c84e906711d2087215e7220e966afd02458b5cc6cc089",
+    "knowledge/objectives/AI103-C3.01.md": "10532db6906f8bd95bda7da90cd6e04b9df7ad106efb653711c9888e77d956de",
+    "knowledge/objectives/AI103-C3.02.md": "c46d052a8b729776412e189c4643e2f5192cb3c2edec44291df9b1423c007fc9",
+    "knowledge/objectives/AI103-C3.03.md": "41e86b067ad550a91f0ec4cb5a8fad4677ab13d9f680e24f97c52868568df334",
+    "knowledge/objectives/AI103-D1.01.md": "e91a9c319d2084caa277ee1e97a80f7b6b40011b5b3015680b8a2b9819db58b9",
+    "knowledge/objectives/AI103-D1.02.md": "e8c4a4f582268a0ad81ea1ee653bae9468acec114972312dc707647523c68ef6",
+    "knowledge/objectives/AI103-D1.03.md": "f27588e7a1e8c32a17873f3902be44d639742f5f24e6d1720aac67061e64ba23",
+    "knowledge/objectives/AI103-D1.04.md": "3505309ddfa5c2ee7d41e2ef68933d52da6af8d2d9ebc50124f951077b0f5ee5",
+    "knowledge/objectives/AI103-D2.01.md": "87abb326678d0482ecb119e4cc51e23af604cc57de853e59e6376b434aea66e1",
+    "knowledge/objectives/AI103-D2.02.md": "f609ef831d1dc0226701904086937d0027fca1615a2e085fe922da05ae5352fe",
+    "knowledge/objectives/AI103-D2.03.md": "98f9c4f80ee6aa55b486129c513d8a888a979c20af46a2d02aaf369e8dcefe40",
+    "knowledge/objectives/AI103-D2.04.md": "e593456430f1d7e507080296a9f3aaafb9d4e232a221905b6e2bf01441d8b65e",
+    "knowledge/objectives/AI103-E1.01.md": "d62d7dff58649d369d09a74d8361a2db1dd6fa8c4df2c8fc62639cb8418323b0",
+    "knowledge/objectives/AI103-E1.02.md": "78455858dc2892ab402f2818ad4c5b6e52a6fb6df32e1d6571cd2e5156e449d3",
+    "knowledge/objectives/AI103-E1.03.md": "41323914a44be78baf7d45a22164ce56ad486a2c3b2fa06d27bb093813baa3c3",
+    "knowledge/objectives/AI103-E1.04.md": "a62a8c224269ca2872b43dcc060eb658889f24d3d2eefd5fe78e63976c237500",
+    "knowledge/objectives/AI103-E1.05.md": "9b8cc087d3b3406ff5932b6ee80f2ae1644a154e20627d2ea072be597a6ecfcb",
+    "knowledge/objectives/AI103-E2.01.md": "c055d20bcdd163bf51e3fedef114fc1cd5b4bfcf5bb0d13532d439535d2ba2cc",
+    "knowledge/objectives/AI103-E2.02.md": "033f310e62de899de729c09422b10015e79eca85f5f5d34a4f3d812c8c7015a4",
+    "knowledge/objectives/AI103-E2.03.md": "53b0eb6cabaf66df7005df4b1c55d314d2f39a32d738d9b696598a92ba6f6fa3",
+    "objectives.json": "25963a7c443cc751b998bc15be443cf04674ff60a71f0c4fa90efc70a109a9e8",
+    "sources/registry.json": "2d9b6835dd421b3ddc9077da72940056f647c40f4eadfb4f0f0ce82547c3efcb",
+    "sources/resources/BEUoruZBHgc-metadata.json": "f09a1d11c0fed2581c77897f0f7eaead39df93ba5b582f2a05e3ab609da04017",
+    "sources/resources/WK2BvjOYTCQ-metadata.json": "1a8e35e6e467ca99dc07f5867a15f62246d1e5e77c06b0d0b0cbf93364d6e959",
+    "sources/resources/ai103-certification-page.md": "ed49a345614cf7366bf3d173d1800601dbebc9fbc45909b6cb48b1669fe70ed6",
+    "sources/resources/ai103-course.html": "3e7567a6615e093f0c0419cc639b4e673ff23ff6efc5260039578af1dc6a1c26",
+    "sources/resources/catalog.json": "09a916086d771ac93689431e9c2c08dcc4299e4562311f27ebb66f95bb6a66c2",
+    "sources/resources/repositories.json": "26b9a56986876b7fa7175abf41f10f8ff05b4cb7cb3107d28538e81461176556",
+    "sources/resources/screening.json": "13ce3eb38b42b5a2944cc58ac6842e95749ad7a905b48877d91b751f7bca2991",
+    "sources/snapshots/S001-ai103-outline.md": "6300f5be415422e770ebe6e4fad8975ba5a2f466937a2752ac6a7a88a2835a0b",
+    "sources/snapshots/S002.md": "2ce3139fd9fb77eb3f63d4a797ecc24deab957376faac5fe5a28d80e8080b266",
+    "sources/snapshots/S003.md": "f62e4cfa9a1eeed9aa30383cab18005b8bc8f72d2743a26dedf0bb83d24e046d",
+    "sources/snapshots/S004.md": "91520b0f84e6e2823bb27945cb8e25f716440b7680ffc7ea9689d8025f1d080f",
+    "sources/snapshots/S005.md": "6c6d5d7b11684c1cbba8d35fd278a313e1420e3853b0ba9f104898c4a8c24c58",
+    "sources/snapshots/S006.md": "1dd4a33b4885266d1a2a73cee51de011ad50f9e63454609195d46179316746f8",
+    "sources/snapshots/S007.md": "0d4119f94b15c94d404729f53d2ed5f52a89dfaf35841d1290c0472be3e3e953",
+    "sources/snapshots/S008.md": "91311aec35bad6e1e44149491430baa72e5eeec37c9f869ba7fbf9356e5497e4",
+    "sources/snapshots/S009.md": "d83fd890729d322d4ffa580ca5a8db2bed5bcd783dae47f5da2b05985f4b3041",
+    "sources/snapshots/S010.md": "c63d1b1d5cb16c4ffbf9019b34ac56ab5e47f81f1457b4e2d7c02a2de16a59f9",
+    "sources/snapshots/S011.md": "02eb40fb9bc5fcbd6b27249423b2d0ba26f5df0dd6b6885c881270a7a6fac8b9",
+    "sources/snapshots/S012.md": "e6e53feb7b84553872c1d228d971a02871b943aa30c877cb5f9402e1cb4797c6",
+    "sources/snapshots/S013.md": "895295a4b74d7cabaa0daf62bd6cd5239daf25b6ea85a2268dc2cdf8483b19e8",
+    "sources/snapshots/S014.md": "0ce17b86785e87efb44074de9d3fdee3ae8290dedcb04a18a68558081be7103f",
+    "sources/snapshots/S015.md": "8bff59568b79380dc2ea6df819b965422c98fdf03bf6b06df0b99bc1287e4c54",
+    "sources/snapshots/S016.md": "770228d708d01826dc0d17c9ddafbb8d0e7f412bb2a0ad9a13b2ac54ac84735e",
+    "sources/snapshots/S017.md": "34668770bb5790633413f4ae9432738c85ed36aef328f9f2bdb8b1b82437dca6",
+    "sources/snapshots/S018.md": "32257da44487ca802a87e1ebad7ef31dc91f45f034d3334fb60b1c7d53ffb808",
+    "sources/snapshots/S019.md": "1ce6d9970cccbd4d54714eff5d70bc5e73d4c2c8ad3ea48175c8fcea5d11b2cd",
+    "sources/snapshots/S020.md": "c371f350d668f0d6040d569a845d3ec43e22834614253c7be6c62115f59ba8df",
+    "sources/snapshots/S021.md": "aa5fd0abb99fe608e62d3909ffd7bc4eac9904dc931f427c9e3788351fbc7b42",
+    "sources/snapshots/S022.md": "3a89d957245350c800482a717244bd3fc27b322ed67dbcbabea8e41782a3a57a",
+    "sources/snapshots/S023.md": "cdca80161f869225821aa08ca9d9eab4cb30d557431a3b5bb027a8efd1af9846",
+    "sources/snapshots/S024.md": "fae2f5f5f6b539cd61891a670e03cd73b69517bd45010e6f6a02902e4bd82ad7",
+    "sources/snapshots/S025.md": "8f766ea87e9528dc1e469ffca3de91350cf9b9393aaf47e5c8c124378457397d",
+    "sources/snapshots/S026.md": "45a6b445fbe4f7f65334693eb96b2de7b021e0b50ce46b363ab47c5de0a11f0d",
+    "sources/snapshots/S027.md": "fd18e205e7cd88e39eab53a5690757f65c8d457366491f8954875d2bc4f54ca0",
+    "sources/snapshots/S028.md": "3d24961260a3a7ca041656383016222704c25dec2dff53743bbaef628236312b",
+    "sources/snapshots/S029.md": "eb899b4d8c7fdd95e158072fa95891c8c96388f09c48c00a67683fa10ec4591a",
+    "sources/snapshots/S030.md": "debd3c5f132c72a0d258daa4d82d950834da5b4c89e3b42b20cf32982a169e1d",
+    "sources/snapshots/S031.md": "2ce54fde2b84248210dcae4d3c5703d0a09a7ab87e8b3ca97cd7e786c37bb6a0",
+    "sources/snapshots/S032.md": "5bed84630392d9ef61f1f463299425457e14614de81cefd58f484a680615b0df",
+    "sources/snapshots/S033.md": "60a8436b0646a9a3c1e779b78f0e1d645948866173ce85449a6283d58c019d54",
+    "sources/snapshots/S034.md": "8bde6391b7bdee42b5e52ea8c995024dcda82d1a0b56acbdfb817207b2a8d511",
+    "sources/snapshots/S035.md": "e73bb03416a786c00b45198fdfdb0cc859eb5c76e66e481361d69ba291d440f0",
+    "sources/snapshots/S036.md": "69134c918deb6d5a8089eb41d86cf44b7a17ded278305d6afb203c2779e889b6",
+    "sources/snapshots/S037.md": "0337c89ce3e5a9ba28d1c2fc18f1644c50b13568eb19edc43420d16b401cacfc",
+    "sources/snapshots/S038.md": "e70ad3d65055c901703ee0f2faa850aa6c69cd5ee2a4d7e57d3e0a5e0b3cbf34",
+    "sources/snapshots/S039.md": "3b16c765be1f1479ac22e04cf9b293be767d473fc1cacb188b90751227074a4b",
+    "sources/snapshots/S040.md": "67830020b25de8c993ae294ff523035ad2c04c16865c1fe7222f053769316545",
+    "sources/snapshots/S041.md": "3be91b9f91f1b5fcf1b54983251d4026747960e43c423f8f4caa3191336bf5d1",
+    "sources/snapshots/S042.md": "6a40b6fdabe9e2a91838a3026f8530d0229c70acd401c4fab094a6c0c63b8670",
+    "sources/snapshots/S043.md": "0a5cdd696dcbae744d32db7fd89a69926f0203462f86d6dc25793ab07d001b3d",
+    "sources/snapshots/S044.md": "7b9808eefb69e1d573b537e17a3fff7ab159cf6e259f3b7a254a2ecd1c1a8dcc",
+    "sources/snapshots/S045.md": "c08a60437bdcc723d00d30d9898b3967040a122cf43b5ff95b5f1a33a3dadd93",
+    "sources/snapshots/S046.md": "8a73fb1e63f49dde972815b860758a57ff3d620842220f9e29200bccf573c39e",
+    "sources/snapshots/S047.md": "b4589840f35e640a7d5b7936baa6a05b21af3023e4ec00d3aa471e990ec8fccd",
+    "sources/snapshots/S048.md": "b63f7ce635fdf749b4a5fcb4859aa2e9f6ef5e5bb69ec1ef6b772a3fdec08db9",
+    "sources/snapshots/S049.md": "95378c3f712e2832a660c7b6d60a3e066d86d42959477c5f231053fd3ba7ccd4",
+    "sources/snapshots/S050.html": "4e9d1d3b85fe92145d990d9a42726a239ee2f971b982f0024312dc01412d5361",
+    "sources/snapshots/S050.md": "fa71070e3609f8825849fe94c3b718fb8632724b4c88ed9f3e5ea54615f36404",
+    "manifest.json": "92ec7ec5e25f5210e758649d1ffa6bd5b5ad7b36e2b9818661e4bed20e763b35",
+    "prompts/author.md": "bbacaf223068e233e44eab0d8196ea97aecbc2c75831fa3b611ad80272eb54ec",
+    "prompts/review.md": "f6b85c90d1bb1d0c3fa3cbd2487084263b5bd3ead9477b06933d19f5bf4fcfc8"
+  },
+  "status": "ready",
+  "planningVersion": "exact-quotas-v1",
+  "domainIdPolicy": "local-objective-bullets",
+  "supportedFormats": [
+    "single_choice",
+    "multi_select",
+    "sequence_order",
+    "matching_magnet",
+    "dropdown_completion",
+    "case_study_child",
+    "code_or_config_artifact",
+    "log_or_artifact_interpretation",
+    "policy_control_selection"
+  ],
+  "timing": {
+    "minutesPerQuestion": 1.2,
+    "kind": "practice"
+  },
+  "sources": [
+    {
+      "id": "S001",
+      "title": "AI-103 official study guide",
+      "url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-103",
+      "snapshot": "sources/snapshots/S001-ai103-outline.md",
+      "sha256": "6300f5be415422e770ebe6e4fad8975ba5a2f466937a2752ac6a7a88a2835a0b",
+      "fetchedAt": "2026-10-08T04:26:05.574Z",
+      "status": "fetched",
+      "objectiveIds": []
+    },
+    {
+      "id": "S002",
+      "title": "Azure AI Projects client library for Python - version 2.8.0",
+      "url": "https://learn.microsoft.com/python/api/overview/azure/ai-projects-readme?view=azure-python",
+      "snapshot": "sources/snapshots/S002.md",
+      "sha256": "2ce3139fd9fb77eb3f63d4a797ecc24deab957376faac5fe5a28d80e8080b266",
+      "fetchedAt": "2026-10-08T04:26:06.367Z",
+      "status": "fetched",
+      "objectiveIds": [
+        "AI103-A2.03",
+        "AI103-B1.05",
+        "AI103-B1.06"
+      ]
+    },
+    {
+      "id": "S003",
+      "title": "Microsoft Foundry SDKs and endpoints",
+      "url": "https://learn.microsoft.com/azure/foundry/how-to/develop/sdk-overview",
+      "snapshot": "sources/snapshots/S003.md",
+      "sha256": "f62e4cfa9a1eeed9aa30383cab18005b8bc8f72d2743a26dedf0bb83d24e046d",
+      "fetchedAt": "2026-10-08T04:26:06.764Z",
+      "status": "fetched",
+      "objectiveIds": [
+        "AI103-A1.01",
+        "AI103-A2.01",
+        "AI103-A2.03",
+        "AI103-B1.01",
+        "AI103-B1.05",
+        "AI103-B1.06",
+        "AI103-B2.01"
+      ]
+    },
+    {
+      "id": "S004",
+      "title": "Deployment overview for Microsoft Foundry Models",
+      "url": "https://learn.microsoft.com/azure/foundry/concepts/deployments-overview",
+      "snapshot": "sources/snapshots/S004.md",
+      "sha256": "91520b0f84e6e2823bb27945cb8e25f716440b7680ffc7ea9689d8025f1d080f",
+      "fetchedAt": "2026-10-08T04:26:06.803Z",
+      "status": "fetched",
+      "objectiveIds": [
+        "AI103-A1.01",
+        "AI103-A2.02",
+        "AI103-A3.01",
+        "AI103-B1.01"
+      ]
+    },
+    {
+      "id": "S005",
+      "title": "Deployment types for Microsoft Foundry Models",
+      "url": "https://learn.microsoft.com/azure/foundry/foundry-models/concepts/deployment-types",
+      "snapshot": "sources/snapshots/S005.md",
+      "sha256": "6c6d5d7b11684c1cbba8d35fd278a313e1420e3853b0ba9f104898c4a8c24c58",
+      "fetchedAt": "2026-10-08T04:26:06.582Z",
+      "status": "fetched",
+      "objectiveIds": [
+        "AI103-A2.02"
+      ]
+    },
+    {
+      "id": "S006",
+      "title": "Memory in Microsoft Foundry Agent Service (preview)",
+      "url": "https://learn.microsoft.com/azure/foundry/agents/concepts/what-is-memory",
+      "snapshot": "sources/snapshots/S006.md",
+      "sha256": "1dd4a33b4885266d1a2a73cee51de011ad50f9e63454609195d46179316746f8",
+      "fetchedAt": "2026-10-08T04:26:06.344Z",
+      "status": "fetched",
+      "objectiveIds": [
+        "AI103-A1.02",
+        "AI103-A1.04",
+        "AI103-B2.01",
+        "AI103-B2.02"
+      ]
+    },
+    {
+      "id": "S007",
+      "title": "Use function calling with Microsoft Foundry agents",
+      "url": "https://learn.microsoft.com/azure/foundry/agents/how-to/tools/function-calling",
+      "snapshot": "sources/snapshots/S007.md",
+      "sha256": "0d4119f94b15c94d404729f53d2ed5f52a89dfaf35841d1290c0472be3e3e953",
+      "fetchedAt": "2026-10-08T04:26:06.627Z",
+      "status": "fetched",
+      "objectiveIds": [
+        "AI103-A1.04",
+        "AI103-A4.03",
+        "AI103-A4.04",
+        "AI103-B1.03",
+        "AI103-B2.01",
+        "AI103-B2.02",
+        "AI103-B2.03",
+        "AI103-B2.05",
+        "AI103-B3.04",
+        "AI103-E1.05"
+      ]
+    },
+    {
+      "id": "S008",
+      "title": "Build a workflow in Microsoft Foundry (Preview)",
+      "url": "https://learn.microsoft.com/azure/foundry/agents/concepts/workflow",
+      "snapshot": "sources/snapshots/S008.md",
+      "sha256": "91311aec35bad6e1e44149491430baa72e5eeec37c9f869ba7fbf9356e5497e4",
+      "fetchedAt": "2026-10-08T04:26:06.425Z",
+      "status": "fetched",
+      "objectiveIds": [
+        "AI103-A4.04",
+        "AI103-B1.03",
+        "AI103-B2.04",
+        "AI103-B2.05",
+        "AI103-B3.04"
+      ]
+    },
+    {
+      "id": "S009",
+      "title": "Foundry Agent Service limits, quotas, and regional support",
+      "url": "https://learn.microsoft.com/azure/foundry/agents/concepts/limits-quotas-regions",
+      "snapshot": "sources/snapshots/S009.md",
+      "sha256": "d83fd890729d322d4ffa580ca5a8db2bed5bcd783dae47f5da2b05985f4b3041",
+      "fetchedAt": "2026-10-08T04:26:06.654Z",
+      "status": "fetched",
+      "objectiveIds": [
+        "AI103-A2.01",
+        "AI103-A2.03",
+        "AI103-A3.01",
+        "AI103-B3.03"
+      ]
+    },
+    {
+      "id": "S010",
+      "title": "Role-based access control for Microsoft Foundry",
+      "url": "https://learn.microsoft.com/azure/foundry/concepts/rbac-foundry",
+      "snapshot": "sources/snapshots/S010.md",
+      "sha256": "c63d1b1d5cb16c4ffbf9019b34ac56ab5e47f81f1457b4e2d7c02a2de16a59f9",
+      "fetchedAt": "2026-10-08T04:26:17.716Z",
+      "status": "fetched",
+      "objectiveIds": [
+        "AI103-A3.04"
+      ]
+    },
+    {
+      "id": "S011",
+      "title": "Set up private networking for Foundry Agent Service",
+      "url": "https://learn.microsoft.com/azure/foundry/agents/how-to/virtual-networks",
+      "snapshot": "sources/snapshots/S011.md",
+      "sha256": "02eb40fb9bc5fcbd6b27249423b2d0ba26f5df0dd6b6885c881270a7a6fac8b9",
+      "fetchedAt": "2026-10-08T04:26:19.851Z",
+      "status": "fetched",
+      "objectiveIds": [
+        "AI103-A2.01",
+        "AI103-A3.04"
+      ]
+    },
+    {
+      "id": "S012",
+      "title": "Quickstart: Hosted agent CI/CD templates",
+      "url": "https://learn.microsoft.com/azure/foundry/agents/quickstarts/set-up-cicd-hosted-agent",
+      "snapshot": "sources/snapshots/S012.md",
+      "sha256": "e6e53feb7b84553872c1d228d971a02871b943aa30c877cb5f9402e1cb4797c6",
+      "fetchedAt": "2026-10-08T04:26:17.813Z",
+      "status": "fetched",
+      "objectiveIds": [
+        "AI103-A2.04"
+      ]
+    },
+    {
+      "id": "S013",
+      "title": "Agent tracing overview",
+      "url": "https://learn.microsoft.com/azure/foundry/observability/concepts/trace-agent-concept",
+      "snapshot": "sources/snapshots/S013.md",
+      "sha256": "895295a4b74d7cabaa0daf62bd6cd5239daf25b6ea85a2268dc2cdf8483b19e8",
+      "fetchedAt": "2026-10-08T04:26:17.608Z",
+      "status": "fetched",
+      "objectiveIds": [
+        "AI103-A3.02",
+        "AI103-A4.03",
+        "AI103-B2.06",
+        "AI103-B3.03"
+      ]
+    },
+    {
+      "id": "S014",
+      "title": "Agent evaluators",
+      "url": "https://learn.microsoft.com/azure/foundry/concepts/evaluation-evaluators/agent-evaluators",
+      "snapshot": "sources/snapshots/S014.md",
+      "sha256": "0ce17b86785e87efb44074de9d3fdee3ae8290dedcb04a18a68558081be7103f",
+      "fetchedAt": "2026-10-08T04:26:17.939Z",
+      "status": "fetched",
+      "objectiveIds": [
+        "AI103-A2.04",
+        "AI103-A4.02",
+        "AI103-B1.04",
+        "AI103-B2.06",
+        "AI103-B3.02"
+      ]
+    },
+    {
+      "id": "S015",
+      "title": "Guardrails and controls overview in Microsoft Foundry",
+      "url": "https://learn.microsoft.com/azure/foundry/guardrails/guardrails-overview",
+      "snapshot": "sources/snapshots/S015.md",
+      "sha256": "8bff59568b79380dc2ea6df819b965422c98fdf03bf6b06df0b99bc1287e4c54",
+      "fetchedAt": "2026-10-08T04:26:20.223Z",
+      "status": "fetched",
+      "objectiveIds": [
+        "AI103-A4.01",
+        "AI103-A4.04",
+        "AI103-B2.05",
+        "AI103-D1.02"
+      ]
+    },
+    {
+      "id": "S016",
+      "title": "Prompt Shields in Microsoft Foundry",
+      "url": "https://learn.microsoft.com/azure/foundry/openai/concepts/content-filter-prompt-shields",
+      "snapshot": "sources/snapshots/S016.md",
+      "sha256": "770228d708d01826dc0d17c9ddafbb8d0e7f412bb2a0ad9a13b2ac54ac84735e",
+      "fetchedAt": "2026-10-08T04:26:17.605Z",
+      "status": "fetched",
+      "objectiveIds": [
+        "AI103-A4.01",
+        "AI103-C3.02"
+      ]
+    },
+    {
+      "id": "S017",
+      "title": "Azure OpenAI image generation models",
+      "url": "https://learn.microsoft.com/azure/foundry/openai/how-to/dall-e",
+      "snapshot": "sources/snapshots/S017.md",
+      "sha256": "34668770bb5790633413f4ae9432738c85ed36aef328f9f2bdb8b1b82437dca6",
+      "fetchedAt": "2026-10-08T04:26:18.089Z",
+      "status": "fetched",
+      "objectiveIds": [
+        "AI103-C1.01",
+        "AI103-C1.03",
+        "AI103-C1.05"
+      ]
+    },
+    {
+      "id": "S018",
+      "title": "Video generation with Sora 2 (preview)",
+      "url": "https://learn.microsoft.com/azure/foundry/openai/concepts/video-generation",
+      "snapshot": "sources/snapshots/S018.md",
+      "sha256": "32257da44487ca802a87e1ebad7ef31dc91f45f034d3334fb60b1c7d53ffb808",
+      "fetchedAt": "2026-10-08T04:26:19.882Z",
+      "status": "fetched",
+      "objectiveIds": [
+        "AI103-C1.02",
+        "AI103-C1.04",
+        "AI103-C1.05",
+        "AI103-C3.03"
+      ]
+    },
+    {
+      "id": "S019",
+      "title": "Use vision-enabled chat models",
+      "url": "https://learn.microsoft.com/azure/foundry/openai/how-to/gpt-with-vision",
+      "snapshot": "sources/snapshots/S019.md",
+      "sha256": "1ce6d9970cccbd4d54714eff5d70bc5e73d4c2c8ad3ea48175c8fcea5d11b2cd",
+      "fetchedAt": "2026-10-08T04:26:34.714Z",
+      "status": "fetched",
+      "objectiveIds": [
+        "AI103-C2.01",
+        "AI103-C2.02",
+        "AI103-C2.03",
+        "AI103-C2.04"
+      ]
+    },
+    {
+      "id": "S020",
+      "title": "What is Azure Content Understanding in Foundry Tools?",
+      "url": "https://learn.microsoft.com/azure/ai-services/content-understanding/overview",
+      "snapshot": "sources/snapshots/S020.md",
+      "sha256": "c371f350d668f0d6040d569a845d3ec43e22834614253c7be6c62115f59ba8df",
+      "fetchedAt": "2026-10-08T04:26:34.198Z",
+      "status": "fetched",
+      "objectiveIds": [
+        "AI103-C2.05",
+        "AI103-C2.07",
+        "AI103-E2.01"
+      ]
+    },
+    {
+      "id": "S021",
+      "title": "Azure AI Content Understanding client library for Python - version 1.1.0",
+      "url": "https://learn.microsoft.com/python/api/overview/azure/ai-contentunderstanding-readme?view=azure-python",
+      "snapshot": "sources/snapshots/S021.md",
+      "sha256": "aa5fd0abb99fe608e62d3909ffd7bc4eac9904dc931f427c9e3788351fbc7b42",
+      "fetchedAt": "2026-10-08T04:26:34.224Z",
+      "status": "fetched",
+      "objectiveIds": [
+        "AI103-A1.02",
+        "AI103-B2.03",
+        "AI103-C2.05",
+        "AI103-C2.08",
+        "AI103-E1.01",
+        "AI103-E2.01",
+        "AI103-E2.02",
+        "AI103-E2.03"
+      ]
+    },
+    {
+      "id": "S022",
+      "title": "Azure Content Understanding in Foundry Tools video solutions",
+      "url": "https://learn.microsoft.com/azure/ai-services/content-understanding/video/overview",
+      "snapshot": "sources/snapshots/S022.md",
+      "sha256": "3a89d957245350c800482a717244bd3fc27b322ed67dbcbabea8e41782a3a57a",
+      "fetchedAt": "2026-10-08T04:26:34.483Z",
+      "status": "fetched",
+      "objectiveIds": [
+        "AI103-C2.06",
+        "AI103-C2.08"
+      ]
+    },
+    {
+      "id": "S023",
+      "title": "Agentic mode for document analysis (preview)",
+      "url": "https://learn.microsoft.com/azure/ai-services/content-understanding/concepts/agentic-mode",
+      "snapshot": "sources/snapshots/S023.md",
+      "sha256": "cdca80161f869225821aa08ca9d9eab4cb30d557431a3b5bb027a8efd1af9846",
+      "fetchedAt": "2026-10-08T04:26:34.767Z",
+      "status": "fetched",
+      "objectiveIds": [
+        "AI103-C2.07"
+      ]
+    },
+    {
+      "id": "S024",
+      "title": "Migrate from Azure Content Understanding Preview to GA",
+      "url": "https://learn.microsoft.com/azure/ai-services/content-understanding/how-to/migration-preview-to-ga",
+      "snapshot": "sources/snapshots/S024.md",
+      "sha256": "fae2f5f5f6b539cd61891a670e03cd73b69517bd45010e6f6a02902e4bd82ad7",
+      "fetchedAt": "2026-10-08T04:26:34.174Z",
+      "status": "fetched",
+      "objectiveIds": [
+        "AI103-C2.07",
+        "AI103-E2.03"
+      ]
+    },
+    {
+      "id": "S025",
+      "title": "Hybrid search using vectors and full-text search in Azure AI Search",
+      "url": "https://learn.microsoft.com/azure/search/hybrid-search-overview",
+      "snapshot": "sources/snapshots/S025.md",
+      "sha256": "8f766ea87e9528dc1e469ffca3de91350cf9b9393aaf47e5c8c124378457397d",
+      "fetchedAt": "2026-10-08T04:26:34.293Z",
+      "status": "fetched",
+      "objectiveIds": [
+        "AI103-A1.03",
+        "AI103-B1.02",
+        "AI103-E1.02"
+      ]
+    },
+    {
+      "id": "S026",
+      "title": "Integrated vector embedding in Azure AI Search",
+      "url": "https://learn.microsoft.com/azure/search/vector-search-integrated-vectorization",
+      "snapshot": "sources/snapshots/S026.md",
+      "sha256": "45a6b445fbe4f7f65334693eb96b2de7b021e0b50ce46b363ab47c5de0a11f0d",
+      "fetchedAt": "2026-10-08T04:26:34.192Z",
+      "status": "fetched",
+      "objectiveIds": [
+        "AI103-A1.02",
+        "AI103-A1.03",
+        "AI103-B1.02",
+        "AI103-E1.01",
+        "AI103-E1.02",
+        "AI103-E1.04"
+      ]
+    },
+    {
+      "id": "S027",
+      "title": "Monitor Azure AI Search",
+      "url": "https://learn.microsoft.com/azure/search/monitor-azure-cognitive-search",
+      "snapshot": "sources/snapshots/S027.md",
+      "sha256": "fd18e205e7cd88e39eab53a5690757f65c8d457366491f8954875d2bc4f54ca0",
+      "fetchedAt": "2026-10-08T04:26:34.118Z",
+      "status": "fetched",
+      "objectiveIds": [
+        "AI103-A3.03"
+      ]
+    },
+    {
+      "id": "S028",
+      "title": "Skillset concepts in Azure AI Search",
+      "url": "https://learn.microsoft.com/azure/search/cognitive-search-working-with-skillsets",
+      "snapshot": "sources/snapshots/S028.md",
+      "sha256": "3d24961260a3a7ca041656383016222704c25dec2dff53743bbaef628236312b",
+      "fetchedAt": "2026-10-08T04:26:34.609Z",
+      "status": "fetched",
+      "objectiveIds": [
+        "AI103-E1.03"
+      ]
+    },
+    {
+      "id": "S029",
+      "title": "Document Layout skill",
+      "url": "https://learn.microsoft.com/azure/search/cognitive-search-skill-document-intelligence-layout",
+      "snapshot": "sources/snapshots/S029.md",
+      "sha256": "eb899b4d8c7fdd95e158072fa95891c8c96388f09c48c00a67683fa10ec4591a",
+      "fetchedAt": "2026-10-08T04:26:45.449Z",
+      "status": "fetched",
+      "objectiveIds": [
+        "AI103-E1.03",
+        "AI103-E1.04",
+        "AI103-E2.01"
+      ]
+    },
+    {
+      "id": "S030",
+      "title": "What is Azure Language in Foundry Tools?",
+      "url": "https://learn.microsoft.com/azure/ai-services/language-service/overview",
+      "snapshot": "sources/snapshots/S030.md",
+      "sha256": "debd3c5f132c72a0d258daa4d82d950834da5b4c89e3b42b20cf32982a169e1d",
+      "fetchedAt": "2026-10-08T04:26:45.449Z",
+      "status": "fetched",
+      "objectiveIds": [
+        "AI103-D1.01",
+        "AI103-D1.02"
+      ]
+    },
+    {
+      "id": "S031",
+      "title": "What is summarization?",
+      "url": "https://learn.microsoft.com/azure/ai-services/language-service/summarization/overview",
+      "snapshot": "sources/snapshots/S031.md",
+      "sha256": "2ce54fde2b84248210dcae4d3c5703d0a09a7ab87e8b3ca97cd7e786c37bb6a0",
+      "fetchedAt": "2026-10-08T04:26:45.353Z",
+      "status": "fetched",
+      "objectiveIds": [
+        "AI103-D1.04"
+      ]
+    },
+    {
+      "id": "S032",
+      "title": "What is Azure Translator in Foundry Tools?",
+      "url": "https://learn.microsoft.com/azure/ai-services/translator/overview",
+      "snapshot": "sources/snapshots/S032.md",
+      "sha256": "5bed84630392d9ef61f1f463299425457e14614de81cefd58f484a680615b0df",
+      "fetchedAt": "2026-10-08T04:26:45.353Z",
+      "status": "fetched",
+      "objectiveIds": [
+        "AI103-D1.03"
+      ]
+    },
+    {
+      "id": "S033",
+      "title": "What is Azure Speech?",
+      "url": "https://learn.microsoft.com/azure/ai-services/speech-service/overview",
+      "snapshot": "sources/snapshots/S033.md",
+      "sha256": "60a8436b0646a9a3c1e779b78f0e1d645948866173ce85449a6283d58c019d54",
+      "fetchedAt": "2026-10-08T04:26:45.861Z",
+      "status": "fetched",
+      "objectiveIds": [
+        "AI103-D2.01",
+        "AI103-D2.04"
+      ]
+    },
+    {
+      "id": "S034",
+      "title": "What is custom speech?",
+      "url": "https://learn.microsoft.com/azure/ai-services/speech-service/custom-speech-overview",
+      "snapshot": "sources/snapshots/S034.md",
+      "sha256": "8bde6391b7bdee42b5e52ea8c995024dcda82d1a0b56acbdfb817207b2a8d511",
+      "fetchedAt": "2026-10-08T04:26:45.527Z",
+      "status": "fetched",
+      "objectiveIds": [
+        "AI103-D2.02"
+      ]
+    },
+    {
+      "id": "S035",
+      "title": "Voice Live API for real-time voice agents",
+      "url": "https://learn.microsoft.com/azure/ai-services/speech-service/voice-live",
+      "snapshot": "sources/snapshots/S035.md",
+      "sha256": "e73bb03416a786c00b45198fdfdb0cc859eb5c76e66e481361d69ba291d440f0",
+      "fetchedAt": "2026-10-08T04:26:45.779Z",
+      "status": "fetched",
+      "objectiveIds": [
+        "AI103-D2.01",
+        "AI103-D2.02",
+        "AI103-D2.03"
+      ]
+    },
+    {
+      "id": "S036",
+      "title": "Use the GPT Realtime API for speech and audio",
+      "url": "https://learn.microsoft.com/azure/foundry/openai/how-to/realtime-audio",
+      "snapshot": "sources/snapshots/S036.md",
+      "sha256": "69134c918deb6d5a8089eb41d86cf44b7a17ded278305d6afb203c2779e889b6",
+      "fetchedAt": "2026-10-08T04:26:45.463Z",
+      "status": "fetched",
+      "objectiveIds": [
+        "AI103-D2.03"
+      ]
+    },
+    {
+      "id": "S037",
+      "title": "Structured outputs",
+      "url": "https://learn.microsoft.com/azure/foundry/openai/how-to/structured-outputs",
+      "snapshot": "sources/snapshots/S037.md",
+      "sha256": "0337c89ce3e5a9ba28d1c2fc18f1644c50b13568eb19edc43420d16b401cacfc",
+      "fetchedAt": "2026-10-08T04:26:45.503Z",
+      "status": "fetched",
+      "objectiveIds": [
+        "AI103-B3.01",
+        "AI103-D1.01",
+        "AI103-D1.03",
+        "AI103-D1.04"
+      ]
+    },
+    {
+      "id": "S038",
+      "title": "Azure OpenAI reasoning models",
+      "url": "https://learn.microsoft.com/azure/foundry/openai/how-to/reasoning",
+      "snapshot": "sources/snapshots/S038.md",
+      "sha256": "e70ad3d65055c901703ee0f2faa850aa6c69cd5ee2a4d7e57d3e0a5e0b3cbf34",
+      "fetchedAt": "2026-10-08T04:27:31.451Z",
+      "status": "fetched",
+      "objectiveIds": [
+        "AI103-B3.01",
+        "AI103-B3.02"
+      ]
+    },
+    {
+      "id": "S040",
+      "title": "Connect an Azure AI Search index to Foundry agents",
+      "url": "https://learn.microsoft.com/azure/foundry/agents/how-to/tools/ai-search",
+      "snapshot": "sources/snapshots/S040.md",
+      "sha256": "67830020b25de8c993ae294ff523035ad2c04c16865c1fe7222f053769316545",
+      "fetchedAt": "2026-10-08T04:27:31.726Z",
+      "status": "fetched",
+      "objectiveIds": [
+        "AI103-A3.04",
+        "AI103-B1.02",
+        "AI103-B2.02",
+        "AI103-B2.03",
+        "AI103-E1.05"
+      ]
+    },
+    {
+      "id": "S041",
+      "title": "Use model router for Microsoft Foundry",
+      "url": "https://learn.microsoft.com/azure/foundry/openai/how-to/model-router",
+      "snapshot": "sources/snapshots/S041.md",
+      "sha256": "3be91b9f91f1b5fcf1b54983251d4026747960e43c423f8f4caa3191336bf5d1",
+      "fetchedAt": "2026-10-08T04:27:31.353Z",
+      "status": "fetched",
+      "objectiveIds": [
+        "AI103-A1.01",
+        "AI103-B3.04"
+      ]
+    },
+    {
+      "id": "S042",
+      "title": "QuickStart: Analyze image content",
+      "url": "https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-image",
+      "snapshot": "sources/snapshots/S042.md",
+      "sha256": "6a40b6fdabe9e2a91838a3026f8530d0229c70acd401c4fab094a6c0c63b8670",
+      "fetchedAt": "2026-10-08T04:27:31.323Z",
+      "status": "fetched",
+      "objectiveIds": [
+        "AI103-C3.01",
+        "AI103-C3.03"
+      ]
+    },
+    {
+      "id": "S043",
+      "title": "OCR cognitive skill",
+      "url": "https://learn.microsoft.com/azure/search/cognitive-search-skill-ocr",
+      "snapshot": "sources/snapshots/S043.md",
+      "sha256": "0a5cdd696dcbae744d32db7fd89a69926f0203462f86d6dc25793ab07d001b3d",
+      "fetchedAt": "2026-10-08T04:27:31.143Z",
+      "status": "fetched",
+      "objectiveIds": [
+        "AI103-C3.02",
+        "AI103-E1.03",
+        "AI103-E1.04"
+      ]
+    },
+    {
+      "id": "S044",
+      "title": "Monitor indexer status and results in Azure AI Search",
+      "url": "https://learn.microsoft.com/azure/search/search-monitor-indexers",
+      "snapshot": "sources/snapshots/S044.md",
+      "sha256": "7b9808eefb69e1d573b537e17a3fff7ab159cf6e259f3b7a254a2ecd1c1a8dcc",
+      "fetchedAt": "2026-10-08T04:27:31.159Z",
+      "status": "fetched",
+      "objectiveIds": [
+        "AI103-A3.03"
+      ]
+    },
+    {
+      "id": "S045",
+      "title": "Validate document analyzer quality with confidence, grounding, and labeled samples",
+      "url": "https://learn.microsoft.com/azure/ai-services/content-understanding/document/analyzer-improvement",
+      "snapshot": "sources/snapshots/S045.md",
+      "sha256": "c08a60437bdcc723d00d30d9898b3967040a122cf43b5ff95b5f1a33a3dadd93",
+      "fetchedAt": "2026-10-08T04:27:31.273Z",
+      "status": "fetched",
+      "objectiveIds": [
+        "AI103-A4.03",
+        "AI103-C2.03",
+        "AI103-C2.08",
+        "AI103-E2.01",
+        "AI103-E2.02"
+      ]
+    },
+    {
+      "id": "S046",
+      "title": "How to recognize and translate speech",
+      "url": "https://learn.microsoft.com/azure/ai-services/speech-service/how-to-translate-speech",
+      "snapshot": "sources/snapshots/S046.md",
+      "sha256": "8a73fb1e63f49dde972815b860758a57ff3d620842220f9e29200bccf573c39e",
+      "fetchedAt": "2026-10-08T04:27:31.793Z",
+      "status": "fetched",
+      "objectiveIds": [
+        "AI103-D2.04"
+      ]
+    },
+    {
+      "id": "S039",
+      "title": "Retrieval-Augmented Generation (RAG) evaluators",
+      "url": "https://learn.microsoft.com/azure/foundry/concepts/evaluation-evaluators/rag-evaluators",
+      "snapshot": "sources/snapshots/S039.md",
+      "sha256": "3b16c765be1f1479ac22e04cf9b293be767d473fc1cacb188b90751227074a4b",
+      "fetchedAt": "2026-10-08T04:27:50.669Z",
+      "status": "fetched",
+      "objectiveIds": [
+        "AI103-A3.02",
+        "AI103-A3.03",
+        "AI103-A4.02",
+        "AI103-B1.02",
+        "AI103-B1.04"
+      ]
+    },
+    {
+      "id": "S047",
+      "title": "Prompt engineering techniques",
+      "url": "https://learn.microsoft.com/azure/foundry/openai/concepts/prompt-engineering",
+      "snapshot": "sources/snapshots/S047.md",
+      "sha256": "b4589840f35e640a7d5b7936baa6a05b21af3023e4ec00d3aa471e990ec8fccd",
+      "fetchedAt": "2026-10-08T04:27:50.704Z",
+      "status": "fetched",
+      "objectiveIds": [
+        "AI103-B3.01",
+        "AI103-B3.02",
+        "AI103-D1.04"
+      ]
+    },
+    {
+      "id": "S048",
+      "title": "Azure AI Content Safety Frequently Asked Questions",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/content-safety/faq",
+      "snapshot": "sources/snapshots/S048.md",
+      "sha256": "b63f7ce635fdf749b4a5fcb4859aa2e9f6ef5e5bb69ec1ef6b772a3fdec08db9",
+      "fetchedAt": "2026-10-08T04:29:11.057Z",
+      "status": "fetched",
+      "objectiveIds": [
+        "AI103-C3.01",
+        "AI103-C3.02",
+        "AI103-C3.03",
+        "AI103-D1.02"
+      ]
+    },
+    {
+      "id": "S049",
+      "title": "Overview: Generate image alt text with Image Analysis",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/computer-vision/use-case-alt-text",
+      "snapshot": "sources/snapshots/S049.md",
+      "sha256": "95378c3f712e2832a660c7b6d60a3e066d86d42959477c5f231053fd3ba7ccd4",
+      "fetchedAt": "2026-10-08T04:29:11.771Z",
+      "status": "fetched",
+      "objectiveIds": [
+        "AI103-C2.02",
+        "AI103-C2.04"
+      ]
+    },
+    {
+      "id": "S050",
+      "title": "W3C WAI An alt Decision Tree",
+      "url": "https://www.w3.org/WAI/tutorials/images/decision-tree/",
+      "snapshot": "sources/snapshots/S050.md",
+      "sha256": "fa71070e3609f8825849fe94c3b718fb8632724b4c88ed9f3e5ea54615f36404",
+      "fetchedAt": "2026-10-08T04:38:23.255712+00:00",
+      "status": "fetched",
+      "objectiveIds": [
+        "AI103-C2.04"
+      ]
+    }
+  ],
+  "prompts": {
+    "author": "prompts/author.md",
+    "review": "prompts/review.md"
+  }
+}

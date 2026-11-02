@@ -581,16 +581,13 @@ h3 { font-size: .95rem; font-weight: 700; color: var(--color-muted); text-transf
   font-family: var(--font-mono, "SFMono-Regular", Consolas, monospace);
   font-size: 0.95rem;
   line-height: 2.2;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.25rem;
+  display: block;
   background: var(--color-surface-alt, #f8f9fa);
   border: 1px solid var(--color-border, #ddd);
   border-radius: 6px;
   padding: 0.75rem 1rem;
 }
-.dc-text { white-space: pre; }
+.dc-text { white-space: pre-wrap; }
 .dc-select {
   padding: 0.25rem 0.4rem;
   border: 2px solid var(--color-border, #ddd);
@@ -605,3 +602,27 @@ h3 { font-size: .95rem; font-weight: 700; color: var(--color-muted); text-transf
 .dc-select.dc-correct { border-color: #059669; background: #d1fae5; }
 .dc-select.dc-wrong   { border-color: #dc2626; background: #fee2e2; }
 .dc-feedback { font-size: 0.8rem; white-space: nowrap; margin-left: 0.1rem; }
+
+/* Pack-specific practice setup and study identity */
+#packSelect, #minutesPerQuestion { width: 100%; }
+#setupStatus, #importStatus, .practice-note { color: var(--color-muted); font-size: .82rem; margin: .5rem 0; }
+#setupStatus:empty, #importStatus:empty { display: none; }
+#importFile { max-width: 100%; margin: .5rem 0; }
+#importBtn { margin-top: .5rem; }
+.study-identity { font-size: .85rem; color: var(--color-muted); padding: .6rem 1rem; overflow-wrap: anywhere; }
+.exam-list-identity { font-size: .8rem; color: var(--color-muted); }
+.exam-list-item, .exam-list-right, .exam-list-actions, .exam-pdf-actions { flex-wrap: wrap; gap: .6rem; }
+.exam-pdf-actions { align-items: center; justify-content: flex-end; }
+.exam-pdf-actions label { font-size: .75rem; color: var(--color-muted); }
+.pdf-kind { max-width: 180px; padding: .3rem; border: 1px solid var(--color-border); border-radius: 4px; }
+.pdf-feedback { font-size: .75rem; color: var(--color-muted); }
+.source-refs { font-size: .85rem; padding: .6rem 0; overflow-wrap: anywhere; }
+.source-refs ul { margin-left: 1.2rem; }
+.source-hash { display: block; color: var(--color-muted); font-size: .75rem; }
+.review-header, .analytics-header { flex-wrap: wrap; }
+@media (max-width: 600px) {
+  .exam-list-item { align-items: flex-start; }
+  .exam-list-right { align-items: flex-start; width: 100%; }
+  .exam-list-actions, .exam-pdf-actions { justify-content: flex-start; }
+  .exam-footer { flex-wrap: wrap; }
+}

@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-10-08T03:56:30.322529+00:00",
+  "gitCommit": "6b4eb7527a4a21e7bbfaffbad5771321ad849332",
+  "purpose": "Preservation baseline for tracked GH-600 corpus, PDFs, allowlist, prompts, knowledge and fixture before AI-103 work. This is a checksum manifest, not a backup or content-quality approval. Private attempt data is deliberately excluded.",
+  "summary": {
+    "examCount": 6,
+    "questionCount": 233,
+    "questionCounts": [
+      20,
+      25,
+      10,
+      10,
+      100,
+      68
+    ],
+    "examCodes": [
+      "GH-600"
+    ],
+    "pdfCount": 4,
+    "publishedCount": 4,
+    "publishedIdsResolve": true
+  },
+  "files": [
+    {
+      "path": "data/exams/exams.json",
+      "bytes": 984934,
+      "sha256": "b5413a345a562570422a6af05dcf88e7500eea4488375ab6494c2a1d36c2a8c3"
+    },
+    {
+      "path": "data/exams/gh-600-2026-05-22-100q-a1ac29d0.pdf",
+      "bytes": 1555997,
+      "sha256": "343cdb8b0d703ce1fc84cff9b469e639f78b89dd913bdc22d6f29ff0dc40da04"
+    },
+    {
+      "path": "data/exams/gh-600-2026-05-22-10q-60d9f68f.pdf",
+      "bytes": 262741,
+      "sha256": "609cec721426a5ce7bceb3dfdb78928d9a9e9377faee5382567d97f4694ffb96"
+    },
+    {
+      "path": "data/exams/gh-600-2026-05-22-10q-912c5148.pdf",
+      "bytes": 261233,
+      "sha256": "e9e7218a067e2deccad20a831724dcafab0c4e0da6c7f5d8efcb380c3749e2d2"
+    },
+    {
+      "path": "data/exams/gh-600-2026-05-22-68q-a343206e.pdf",
+      "bytes": 1126471,
+      "sha256": "929731f1f569e004d19401106d7a05b796e5e6fd7907e33a4f41129823d8a990"
+    },
+    {
+      "path": "data/published.json",
+      "bytes": 198,
+      "sha256": "86d0aa8d6130176447399c07362d2313adee0195465a393ddbf819d95182abb0"
+    },
+    {
+      "path": "prompts/anti-bias-review.prompt.md",
+      "bytes": 733,
+      "sha256": "7b9334f43b933e5dbaa823f4566b1311ea73f378ef2847646f05a3170d4df1b1"
+    },
+    {
+      "path": "prompts/assemble-exam.prompt.md",
+      "bytes": 588,
+      "sha256": "b1d55a50978dc80756fff5f63564f8d404ae8783b161ac56fd1cb0ed0c582f28"
+    },
+    {
+      "path": "prompts/blueprint.prompt.md",
+      "bytes": 610,
+      "sha256": "c13c3b8e4d6820d8d9a30acfa559904ca11d87e801e564bbb46d4aa4848919e0"
+    },
+    {
+      "path": "prompts/generate-batch.prompt.md",
+      "bytes": 23429,
+      "sha256": "66be9626acd1454b31fb645fee1e1c1937a0015fdedeec84143e3c457e1625db"
+    },
+    {
+      "path": "prompts/generate-case-study.prompt.md",
+      "bytes": 918,
+      "sha256": "e9c9544f7321e4f13a7cec56eba83d709e15f8dc84ee6a80a620f0574eb2901b"
+    },
+    {
+      "path": "prompts/knowledge/domain-A.md",
+      "bytes": 5572,
+      "sha256": "19c0429dc0794067c5349d4507f7a6089ee1fc8377ce4a83beda6bc6d8a8c27e"
+    },
+    {
+      "path": "prompts/knowledge/domain-B.md",
+      "bytes": 5716,
+      "sha256": "ba05490f02d06f7b6a22ca807d75772259f285c78cd8eda88f450ea6b2d61deb"
+    },
+    {
+      "path": "prompts/knowledge/domain-C.md",
+      "bytes": 3837,
+      "sha256": "0b3bbf0dc0218948515b6ac736cbdd4691d28abfa3dace8d4a2feb62c55bc9be"
+    },
+    {
+      "path": "prompts/knowledge/domain-D.md",
+      "bytes": 4673,
+      "sha256": "ef9b9babb905c4a35705e27fd442785b0c1e891ae4038452346eacd71cdbd6e5"
+    },
+    {
+      "path": "prompts/knowledge/domain-E.md",
+      "bytes": 5422,
+      "sha256": "4b3dcfa89728fc2a4010eb1778521c716b614c322adfe41f9024b0960b3a1759"
+    },
+    {
+      "path": "prompts/knowledge/domain-F.md",
+      "bytes": 5218,
+      "sha256": "2fc82b86377f1fc9cd0b8ca23d0a0358bac1ea80103dbf1a5c65e2507a2d22ed"
+    },
+    {
+      "path": "prompts/knowledge/gh-600-study-guide.md",
+      "bytes": 9213,
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229"
+    },
+    {
+      "path": "prompts/validate-question.prompt.md",
+      "bytes": 631,
+      "sha256": "e04a240c0f866e85daa9e032c4ada78151dda00cf0f4bebdfed0d30113a4aef5"
+    },
+    {
+      "path": "prompts/weakness-drill.prompt.md",
+      "bytes": 646,
+      "sha256": "a2ce6aef6513c9fb3973771ceb8bc549a28688715f06ce1726931aac3e4a7ce3"
+    },
+    {
+      "path": "tests/fixtures/questions.ts",
+      "bytes": 12609,
+      "sha256": "a87fe8da3fab5becb82af51958ac82debaffa8d5df2b252004ef9843526428dd"
+    }
+  ]
+}

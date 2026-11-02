@@ -1,0 +1,66 @@
+[
+  {
+    "id": "S060",
+    "url": "https://learn.microsoft.com/en-us/azure/foundry/how-to/benchmark-model-in-catalog",
+    "resolvedUrl": "https://learn.microsoft.com/en-us/azure/foundry/how-to/benchmark-model-in-catalog?accept=text/markdown",
+    "retrievedAt": "2026-10-11T20:11:56.634843+00:00",
+    "exitCode": 0,
+    "error": ""
+  },
+  {
+    "id": "S061",
+    "url": "https://learn.microsoft.com/en-us/agents/center-of-excellence/measure-report-value",
+    "resolvedUrl": "https://learn.microsoft.com/en-us/agents/center-of-excellence/measure-report-value?accept=text/markdown",
+    "retrievedAt": "2026-10-11T20:11:56.264490+00:00",
+    "exitCode": 0,
+    "error": ""
+  },
+  {
+    "id": "S062",
+    "url": "https://learn.microsoft.com/en-us/azure/ai-services/content-understanding/integrations/agent-framework",
+    "resolvedUrl": "https://learn.microsoft.com/en-us/azure/ai-services/content-understanding/integrations/agent-framework?accept=text/markdown",
+    "retrievedAt": "2026-10-11T20:11:56.190319+00:00",
+    "exitCode": 0,
+    "error": ""
+  },
+  {
+    "id": "S063",
+    "url": "https://learn.microsoft.com/en-us/agent-framework/agents/evaluation",
+    "resolvedUrl": "https://learn.microsoft.com/en-us/agent-framework/agents/evaluation?accept=text/markdown",
+    "retrievedAt": "2026-10-11T20:11:56.388744+00:00",
+    "exitCode": 0,
+    "error": ""
+  },
+  {
+    "id": "S064",
+    "url": "https://learn.microsoft.com/en-us/azure/ai-services/content-understanding/whats-new",
+    "resolvedUrl": "https://learn.microsoft.com/en-us/azure/ai-services/content-understanding/whats-new?accept=text/markdown",
+    "retrievedAt": "2026-10-11T20:11:56.567063+00:00",
+    "exitCode": 0,
+    "error": ""
+  },
+  {
+    "id": "S065",
+    "url": "https://learn.microsoft.com/en-us/azure/machine-learning/how-to-label-data?view=azureml-api-2",
+    "resolvedUrl": "https://learn.microsoft.com/en-us/azure/machine-learning/how-to-label-data?view=azureml-api-2&accept=text/markdown",
+    "retrievedAt": "2026-10-11T20:11:56.281210+00:00",
+    "exitCode": 0,
+    "error": ""
+  },
+  {
+    "id": "S066",
+    "url": "https://learn.microsoft.com/en-us/azure/ai-services/content-safety/faq",
+    "resolvedUrl": "https://learn.microsoft.com/en-us/azure/ai-services/content-safety/faq?accept=text/markdown",
+    "retrievedAt": "2026-10-11T20:11:56.529165+00:00",
+    "exitCode": 0,
+    "error": ""
+  },
+  {
+    "id": "S067",
+    "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/watermarks",
+    "resolvedUrl": "https://learn.microsoft.com/en-us/microsoft-365/copilot/watermarks?accept=text/markdown",
+    "retrievedAt": "2026-10-11T20:11:56.586148+00:00",
+    "exitCode": 0,
+    "error": ""
+  }
+]

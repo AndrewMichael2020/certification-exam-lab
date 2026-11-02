@@ -1,0 +1,128 @@
+[
+  {
+    "sourceId": "S001",
+    "requestedUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-103",
+    "resolvedUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-103?accept=text%2Fmarkdown",
+    "retrievedAt": "2026-10-11T20:36:59.452758+00:00",
+    "snapshotSha256": "c9563cd70964d3dc78d468eb8f30d76d286c24b89ac1fad7eb8f5c96620db410"
+  },
+  {
+    "sourceId": "S048",
+    "requestedUrl": "https://learn.microsoft.com/en-us/azure/ai-services/content-safety/faq",
+    "resolvedUrl": "https://learn.microsoft.com/en-us/azure/ai-services/content-safety/faq?accept=text%2Fmarkdown",
+    "retrievedAt": "2026-10-11T20:36:59.395320+00:00",
+    "snapshotSha256": "1b16f29ac9424c57412c1d41d6e8a1edabe2bac709c1296ffdac09e0439ddadf"
+  },
+  {
+    "sourceId": "S051",
+    "requestedUrl": "https://learn.microsoft.com/en-us/azure/foundry/openai/api-version-lifecycle",
+    "resolvedUrl": "https://learn.microsoft.com/en-us/azure/foundry/openai/api-version-lifecycle?accept=text%2Fmarkdown",
+    "retrievedAt": "2026-10-11T20:36:59.398393+00:00",
+    "snapshotSha256": "8e7e4b2c4e94ad6056ffa3edf4750e4db864ceac16a52777cc13fd2068403803"
+  },
+  {
+    "sourceId": "S052",
+    "requestedUrl": "https://learn.microsoft.com/en-us/azure/developer/ai/keyless-connections",
+    "resolvedUrl": "https://learn.microsoft.com/en-us/azure/developer/ai/keyless-connections?accept=text%2Fmarkdown",
+    "retrievedAt": "2026-10-11T20:36:59.488650+00:00",
+    "snapshotSha256": "4f2b4d850889660d3af96aac661fa1955b8d9e1bf6f454facbef5b11aa59efcd"
+  },
+  {
+    "sourceId": "S053",
+    "requestedUrl": "https://learn.microsoft.com/en-us/azure/foundry/agents/how-to/memory-usage",
+    "resolvedUrl": "https://learn.microsoft.com/en-us/azure/foundry/agents/how-to/memory-usage?accept=text%2Fmarkdown",
+    "retrievedAt": "2026-10-11T20:37:00.240184+00:00",
+    "snapshotSha256": "d118113db20dbe589f686a9150063736c78ce1b6e7b37c649bf28262918d31b6"
+  },
+  {
+    "sourceId": "S054",
+    "requestedUrl": "https://learn.microsoft.com/azure/foundry/agents/concepts/tool-best-practice",
+    "resolvedUrl": "https://learn.microsoft.com/en-us/azure/foundry/agents/concepts/tool-best-practice?accept=text%2Fmarkdown",
+    "retrievedAt": "2026-10-11T20:37:00.368960+00:00",
+    "snapshotSha256": "fbf440754eab789009c34a8bf7636fc60c1d0bd64402cd650b1b903230ffd0f9"
+  },
+  {
+    "sourceId": "S055",
+    "requestedUrl": "https://learn.microsoft.com/en-us/azure/ai-services/translator/reference/known-issues",
+    "resolvedUrl": "https://learn.microsoft.com/en-us/azure/ai-services/translator/reference/known-issues?accept=text%2Fmarkdown",
+    "retrievedAt": "2026-10-11T20:37:00.051015+00:00",
+    "snapshotSha256": "c1b48f37f4dc56c80cbc9c30661bfc67f1f6f75dea4693ef6d9e39beeeb88f1c"
+  },
+  {
+    "sourceId": "S056",
+    "requestedUrl": "https://learn.microsoft.com/en-us/python/api/azure-ai-projects/azure.ai.projects.operations.agentsoperations?view=azure-python",
+    "resolvedUrl": "https://learn.microsoft.com/en-us/python/api/azure-ai-projects/azure.ai.projects.operations.agentsoperations?view=azure-python&accept=text%2Fmarkdown",
+    "retrievedAt": "2026-10-11T20:37:00.267771+00:00",
+    "snapshotSha256": "888658bb603bbc211a4096be874b78aefcabf8c8e5a4b3c0a14e93ad80c2a6a7"
+  },
+  {
+    "sourceId": "S057",
+    "requestedUrl": "https://learn.microsoft.com/en-us/azure/cognitive-services/openai/concepts/advanced-prompt-engineering?pivots=programming-language-chat-completions",
+    "resolvedUrl": "https://learn.microsoft.com/en-us/azure/foundry/openai/concepts/advanced-prompt-engineering?pivots=programming-language-chat-completions&accept=text%2Fmarkdown",
+    "retrievedAt": "2026-10-11T20:37:01.327490+00:00",
+    "snapshotSha256": "8c3d221b7d097fd064d9875f54a48e446f7e44efe81622613ce58cfcb84e87e4"
+  },
+  {
+    "sourceId": "S058",
+    "requestedUrl": "https://learn.microsoft.com/en-us/azure/search/search-how-to-integrated-vectorization",
+    "resolvedUrl": "https://learn.microsoft.com/en-us/azure/search/search-how-to-integrated-vectorization?accept=text%2Fmarkdown",
+    "retrievedAt": "2026-10-11T20:37:00.862210+00:00",
+    "snapshotSha256": "a09c24b08450e2017f75e2fa7d0b107b870d58cb085c863b6531ddb3ab513716"
+  },
+  {
+    "sourceId": "S059",
+    "requestedUrl": "https://learn.microsoft.com/en-us/azure/ai-services/content-understanding/document/overview",
+    "resolvedUrl": "https://learn.microsoft.com/en-us/azure/ai-services/content-understanding/document/overview?accept=text%2Fmarkdown",
+    "retrievedAt": "2026-10-11T20:37:00.839128+00:00",
+    "snapshotSha256": "bf5c315cb4cdc9062a3f9dd797d0167ce02b793bfbcea213c4c3ea8f25903422"
+  },
+  {
+    "sourceId": "S060",
+    "requestedUrl": "https://learn.microsoft.com/en-us/azure/foundry/how-to/benchmark-model-in-catalog",
+    "resolvedUrl": "https://learn.microsoft.com/en-us/azure/foundry/how-to/benchmark-model-in-catalog?accept=text%2Fmarkdown",
+    "retrievedAt": "2026-10-11T20:37:00.973620+00:00",
+    "snapshotSha256": "60d9728c37e43351366d9ae42c78b03d864aa37a00dfe7009852d899f47123cb"
+  },
+  {
+    "sourceId": "S061",
+    "requestedUrl": "https://learn.microsoft.com/en-us/agents/center-of-excellence/measure-report-value",
+    "resolvedUrl": "https://learn.microsoft.com/en-us/agents/center-of-excellence/measure-report-value?accept=text%2Fmarkdown",
+    "retrievedAt": "2026-10-11T20:37:01.453490+00:00",
+    "snapshotSha256": "298a1ecdf8fdcada8d8c6a2d65af733dd5a639b32c6be28d8a8b459168c5da8c"
+  },
+  {
+    "sourceId": "S062",
+    "requestedUrl": "https://learn.microsoft.com/en-us/azure/ai-services/content-understanding/integrations/agent-framework",
+    "resolvedUrl": "https://learn.microsoft.com/en-us/azure/ai-services/content-understanding/integrations/agent-framework?accept=text%2Fmarkdown",
+    "retrievedAt": "2026-10-11T20:37:01.505575+00:00",
+    "snapshotSha256": "523ec8d479c812fe495cbc2d77574a4d1ca60364d5179973454221701d20b1f6"
+  },
+  {
+    "sourceId": "S063",
+    "requestedUrl": "https://learn.microsoft.com/en-us/agent-framework/agents/evaluation",
+    "resolvedUrl": "https://learn.microsoft.com/en-us/agent-framework/agents/evaluation?accept=text%2Fmarkdown",
+    "retrievedAt": "2026-10-11T20:37:01.567556+00:00",
+    "snapshotSha256": "a55bfbdc5a426a8ae858d5a9713d0b985f8cd54df1a6158032989f102aecaa93"
+  },
+  {
+    "sourceId": "S064",
+    "requestedUrl": "https://learn.microsoft.com/en-us/azure/ai-services/content-understanding/whats-new",
+    "resolvedUrl": "https://learn.microsoft.com/en-us/azure/ai-services/content-understanding/whats-new?accept=text%2Fmarkdown",
+    "retrievedAt": "2026-10-11T20:37:02.151472+00:00",
+    "snapshotSha256": "c568ea57a348ea53ff06cd8f0231dd27549a3f630f89e9aebd68a6f0cc8f7891"
+  },
+  {
+    "sourceId": "S065",
+    "requestedUrl": "https://learn.microsoft.com/en-us/azure/machine-learning/how-to-label-data?view=azureml-api-2",
+    "resolvedUrl": "https://learn.microsoft.com/en-us/azure/machine-learning/how-to-label-data?view=azureml-api-2&accept=text%2Fmarkdown",
+    "retrievedAt": "2026-10-11T20:37:02.158217+00:00",
+    "snapshotSha256": "3b01a8bb13e167142be36305cfa36b1a237aa3f27c9aa4e249b3fb8e1377d415"
+  },
+  {
+    "sourceId": "S067",
+    "requestedUrl": "https://learn.microsoft.com/en-us/microsoft-365/copilot/watermarks",
+    "resolvedUrl": "https://learn.microsoft.com/en-us/microsoft-365/copilot/watermarks?accept=text%2Fmarkdown",
+    "retrievedAt": "2026-10-11T20:37:02.100605+00:00",
+    "snapshotSha256": "d63a901e05e3ebdfb6c2968a8e4083c9c187afbbfbcee9a5400475572bce9d0b"
+  }
+]

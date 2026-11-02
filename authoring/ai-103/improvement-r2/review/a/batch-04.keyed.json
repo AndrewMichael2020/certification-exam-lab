@@ -1,0 +1,354 @@
+{
+  "canonicalDraftHash": "06b6490c1b4476a934d6301f1a53263b0e941b691ac9febf2e4522411b324c4a",
+  "questions": [
+    {
+      "domainId": "B",
+      "objectiveTags": [
+        "AI103-B2.02"
+      ],
+      "stem": "North uses one backend principal and {{$userId}} with no header. Which implementation separates authenticated subscribers?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Place the subscriber key only in a natural-language prompt."
+        },
+        {
+          "id": "B",
+          "text": "Send the authenticated subscriber key in x-memory-user-id."
+        },
+        {
+          "id": "C",
+          "text": "Create a new conversation title for each subscriber."
+        },
+        {
+          "id": "D",
+          "text": "Retain the backend identity as the shared user partition."
+        }
+      ],
+      "correctAnswer": "B",
+      "type": "case_study_child",
+      "difficulty": "medium",
+      "explanation": {
+        "whyCorrect": "Without the header the tool falls back to the caller’s Entra identity. North’s caller is the shared backend. Derive an authorized end-user key and send the documented header.",
+        "whyDistractorsWrong": {
+          "C": "A title does not define the memory tool’s scope.",
+          "D": "The shared caller cannot provide separate subscriber partitions.",
+          "A": "Prompt text does not replace the documented scope-resolution input."
+        }
+      },
+      "id": "ai103-improvement-r2-set-a-100-q013",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Implement generative AI and agentic solutions",
+      "caseStudyId": "case-4",
+      "sourceRefs": [
+        {
+          "sourceId": "S053",
+          "title": "Create and use memory in Foundry Agent Service (preview)",
+          "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/how-to/memory-usage",
+          "snapshotSha256": "d118113db20dbe589f686a9150063736c78ce1b6e7b37c649bf28262918d31b6",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-4",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "B",
+      "objectiveTags": [
+        "AI103-B2.02"
+      ],
+      "stem": "North’s administrative job searches low-level memory with the subscriber named only in query text. What must change?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Rely on {{$userId}} being inferred from the query text."
+        },
+        {
+          "id": "B",
+          "text": "Supply the authorized subscriber scope on the direct API call."
+        },
+        {
+          "id": "C",
+          "text": "Use the subscriber’s display name as the conversation title."
+        },
+        {
+          "id": "D",
+          "text": "Attach the query to a longer conversation."
+        }
+      ],
+      "correctAnswer": "B",
+      "type": "case_study_child",
+      "difficulty": "medium",
+      "explanation": {
+        "whyCorrect": "Direct memory operations require explicit scope; automatic identity extraction is a memory-search tool behavior. The admin job must select its authorized subscriber partition.",
+        "whyDistractorsWrong": {
+          "C": "Display naming does not supply the direct operation’s scope.",
+          "D": "Conversation length does not choose a memory partition.",
+          "A": "The low-level API does not infer scope from query text."
+        }
+      },
+      "id": "ai103-improvement-r2-set-a-100-q014",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Implement generative AI and agentic solutions",
+      "caseStudyId": "case-4",
+      "sourceRefs": [
+        {
+          "sourceId": "S053",
+          "title": "Create and use memory in Foundry Agent Service (preview)",
+          "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/how-to/memory-usage",
+          "snapshotSha256": "d118113db20dbe589f686a9150063736c78ce1b6e7b37c649bf28262918d31b6",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-4",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "B",
+      "objectiveTags": [
+        "AI103-B3.01"
+      ],
+      "stem": "North’s Responses builder copied response_format from Chat Completions. Where should its structured-result format be configured?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Chat Completions response_format left unchanged on Responses."
+        },
+        {
+          "id": "B",
+          "text": "The returned function_call_output record."
+        },
+        {
+          "id": "C",
+          "text": "The conversation title."
+        },
+        {
+          "id": "D",
+          "text": "Responses text.format."
+        }
+      ],
+      "correctAnswer": "D",
+      "type": "case_study_child",
+      "difficulty": "medium",
+      "explanation": {
+        "whyCorrect": "The case explicitly uses Responses. Its structured-output request shape places the format under text.format; note’s nullable value and required presence are separate schema concerns.",
+        "whyDistractorsWrong": {
+          "B": "A tool result is not the model response-format configuration.",
+          "C": "Conversation naming does not configure the response schema.",
+          "A": "This retains the request-shape error being diagnosed."
+        }
+      },
+      "id": "ai103-improvement-r2-set-a-100-q015",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Implement generative AI and agentic solutions",
+      "caseStudyId": "case-4",
+      "sourceRefs": [
+        {
+          "sourceId": "S037",
+          "title": "Structured outputs",
+          "url": "https://learn.microsoft.com/azure/foundry/openai/how-to/structured-outputs",
+          "snapshotSha256": "0337c89ce3e5a9ba28d1c2fc18f1644c50b13568eb19edc43420d16b401cacfc",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-4",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "B",
+      "objectiveTags": [
+        "AI103-B3.01"
+      ],
+      "stem": "North wants a domain boundary and clarification when evidence is missing. Which design addresses behavior and enforcement?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Use tone examples as the complete access control."
+        },
+        {
+          "id": "B",
+          "text": "Ask the model to authorize its own booking actions."
+        },
+        {
+          "id": "C",
+          "text": "Define role/fallback, evaluate behavior and enforce host permissions."
+        },
+        {
+          "id": "D",
+          "text": "Lower temperature and remove the system instruction."
+        }
+      ],
+      "correctAnswer": "C",
+      "type": "case_study_child",
+      "difficulty": "medium",
+      "explanation": {
+        "whyCorrect": "System instructions express the domain and fallback, but they do not guarantee compliance. Evaluation and host action controls implement the case’s separate behavioral and permission boundaries.",
+        "whyDistractorsWrong": {
+          "D": "Temperature does not define an allowed domain or fallback.",
+          "A": "Tone examples do not authorize actions.",
+          "B": "The case gives action authority to the host, not model self-approval."
+        }
+      },
+      "id": "ai103-improvement-r2-set-a-100-q016",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Implement generative AI and agentic solutions",
+      "caseStudyId": "case-4",
+      "sourceRefs": [
+        {
+          "sourceId": "S057",
+          "title": "System message design",
+          "url": "https://learn.microsoft.com/en-us/azure/cognitive-services/openai/concepts/advanced-prompt-engineering?pivots=programming-language-chat-completions",
+          "snapshotSha256": "8c3d221b7d097fd064d9875f54a48e446f7e44efe81622613ce58cfcb84e87e4",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-4",
+        "validationStatus": "draft"
+      }
+    }
+  ],
+  "caseStudies": [
+    {
+      "title": "North support memory and response contracts",
+      "intro": "North runs a support assistant for individual subscribers. A web backend authenticates users locally and calls a Foundry prompt agent on their behalf. Subscribers can retain preferences across sessions, ask about current support policies and receive structured summaries. The team is testing the distinction between stored conversation history, persistent memory and curated knowledge.",
+      "sections": [
+        {
+          "heading": "Caller and end user",
+          "body": "All response calls authenticate to Foundry with one backend managed identity. The memory search tool is attached to the agent and uses scope {{$userId}}. In the current implementation the backend sends no x-memory-user-id header. The application has a verified tenant identifier and subscriber identifier in its authenticated session. Those identifiers can be combined into a stable application-owned memory key. The host must derive that key from the authenticated session rather than accept an arbitrary customer identifier from a prompt."
+        },
+        {
+          "heading": "Memory operations",
+          "body": "The service also runs an administrative job that calls the low-level memory search API directly. The job uses the same backend identity. It supplies a subscriber identifier in the query text but omits the explicit scope parameter. The job must search the intended subscriber partition. Current support policy is maintained in a knowledge store, while language and unit preferences may be distilled from conversations. Changing a conversation title does not change either memory’s partition or the lifecycle of the organizational knowledge."
+        },
+        {
+          "heading": "Structured application result",
+          "body": "The client sends requests through Responses, not Chat Completions. A summary object has ticket_id and note properties; note accepts a string or null. Both keys must be present, and unknown properties must be rejected by the supported strict schema. The model supports that schema. A missing note is represented by null. The application handles refusal outcomes separately from successful objects. A developer has copied a response_format field from a Chat Completions example into the Responses request builder."
+        },
+        {
+          "heading": "Behavior and monitoring",
+          "body": "A system instruction limits the assistant to subscriber support and gives an explicit clarification path when evidence is missing. Product staff propose replacing that instruction with a low temperature. A workflow specialist and a retrieval specialist may also be composed, with the host retaining control of routing and result validation. Trace spans record latency and safe user-correlation identifiers; access tokens and full personal messages are redacted before export. These controls must be considered at their own boundaries. Every child observation is independent and requires the fixed case facts rather than an inferred result from a previous child."
+        },
+        {
+          "heading": "Diagnostic exhibit",
+          "body": "Backend exhibit: {\"caller\":\"shared backend principal\",\"memoryToolScope\":\"{{$userId}}\",\"memoryUserHeader\":null,\"directSearchScope\":null}. The Responses request builder also copied the Chat Completions response_format field; these are distinct defects against the stated per-subscriber and output contracts."
+        }
+      ],
+      "id": "case-4",
+      "questionIds": [
+        "ai103-improvement-r2-set-a-100-q013",
+        "ai103-improvement-r2-set-a-100-q014",
+        "ai103-improvement-r2-set-a-100-q015",
+        "ai103-improvement-r2-set-a-100-q016"
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q013",
+      "testedDecision": "North uses one backend principal and {{$userId}} with no header. Which implementation separates authenticated subscribers?",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-B2.02",
+      "itemRevisionHash": "5dfe068f5f98a19f542d711a3b47ac3a438d65fbbe8c56d81a178dee4d1aec42",
+      "sources": [
+        {
+          "sourceId": "S053",
+          "title": "Create and use memory in Foundry Agent Service (preview)",
+          "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/how-to/memory-usage",
+          "snapshotSha256": "d118113db20dbe589f686a9150063736c78ce1b6e7b37c649bf28262918d31b6",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q014",
+      "testedDecision": "North’s administrative job searches low-level memory with the subscriber named only in query text. What must change?",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-B2.02",
+      "itemRevisionHash": "50ce73a5f25f4ab927500b9ac68fc8a025cabde06cc8b8118fe910931fb7dda6",
+      "sources": [
+        {
+          "sourceId": "S053",
+          "title": "Create and use memory in Foundry Agent Service (preview)",
+          "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/how-to/memory-usage",
+          "snapshotSha256": "d118113db20dbe589f686a9150063736c78ce1b6e7b37c649bf28262918d31b6",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q015",
+      "testedDecision": "North’s Responses builder copied response_format from Chat Completions. Where should its structured-result format be configured?",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-B3.01",
+      "itemRevisionHash": "8199fef410314a966a824d294e1110f15c92d9f5749c809fc5747356c435759f",
+      "sources": [
+        {
+          "sourceId": "S037",
+          "title": "Structured outputs",
+          "url": "https://learn.microsoft.com/azure/foundry/openai/how-to/structured-outputs",
+          "snapshotSha256": "0337c89ce3e5a9ba28d1c2fc18f1644c50b13568eb19edc43420d16b401cacfc",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q016",
+      "testedDecision": "North wants a domain boundary and clarification when evidence is missing. Which design addresses behavior and enforcement?",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-B3.01",
+      "itemRevisionHash": "668c679e809880f2102ef8b798a0b212e51059e0d242513a3f5b21f18b47a5bf",
+      "sources": [
+        {
+          "sourceId": "S057",
+          "title": "System message design",
+          "url": "https://learn.microsoft.com/en-us/azure/cognitive-services/openai/concepts/advanced-prompt-engineering?pivots=programming-language-chat-completions",
+          "snapshotSha256": "8c3d221b7d097fd064d9875f54a48e446f7e44efe81622613ce58cfcb84e87e4",
+          "docType": "microsoft_learn"
+        }
+      ]
+    }
+  ]
+}

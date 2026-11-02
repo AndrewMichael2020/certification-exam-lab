@@ -1,0 +1,864 @@
+{
+  "canonicalDraftHash": "06b6490c1b4476a934d6301f1a53263b0e941b691ac9febf2e4522411b324c4a",
+  "questions": [
+    {
+      "domainId": "B",
+      "stem": "A Search tool points at the right service but retrieves an unrelated index. Which agent-tool configuration should be corrected first?",
+      "options": [
+        {
+          "id": "A",
+          "text": "The retrieval filter for the current unrelated index."
+        },
+        {
+          "id": "B",
+          "text": "The tool's maximum result count."
+        },
+        {
+          "id": "C",
+          "text": "The configured index name and project connection."
+        },
+        {
+          "id": "D",
+          "text": "The tool's vector-versus-keyword query mode."
+        }
+      ],
+      "correctAnswer": "C",
+      "difficulty": "easy",
+      "type": "single_choice",
+      "explanation": {
+        "whyCorrect": "The Azure AI Search tool uses a project connection and an index name. Verify both before changing ranking or generation settings.",
+        "whyDistractorsWrong": {
+          "B": "Count limits results but does not choose which index they come from.",
+          "D": "Query mode changes retrieval behavior inside the selected index.",
+          "A": "A filter does not redirect the tool to the intended index."
+        }
+      },
+      "objectiveTags": [
+        "AI103-B1.02"
+      ],
+      "id": "ai103-improvement-r2-set-a-100-q035",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Implement generative AI and agentic solutions",
+      "sourceRefs": [
+        {
+          "sourceId": "S040",
+          "title": "Connect an Azure AI Search index to Foundry agents",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/how-to/tools/ai-search",
+          "snapshotSha256": "67830020b25de8c993ae294ff523035ad2c04c16865c1fe7222f053769316545",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-6",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "B",
+      "stem": "A response is fully supported by context and addresses the question, but omits two required parts of the reference answer. Which additional metric is most targeted?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Response Completeness (preview)."
+        },
+        {
+          "id": "B",
+          "text": "Groundedness repeated against the same supplied context."
+        },
+        {
+          "id": "C",
+          "text": "Response relevance."
+        },
+        {
+          "id": "D",
+          "text": "Response safety screening."
+        }
+      ],
+      "correctAnswer": "A",
+      "difficulty": "easy",
+      "type": "single_choice",
+      "explanation": {
+        "whyCorrect": "Completeness addresses missing required content. Groundedness and relevance can both be strong while the response remains incomplete.",
+        "whyDistractorsWrong": {
+          "B": "Support does not establish coverage of all required parts.",
+          "C": "The stem already establishes topical relevance; missing required parts need completeness assessment.",
+          "D": "Safety screening does not measure coverage of the missing reference-answer parts."
+        }
+      },
+      "objectiveTags": [
+        "AI103-B1.04"
+      ],
+      "id": "ai103-improvement-r2-set-a-100-q036",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Implement generative AI and agentic solutions",
+      "sourceRefs": [
+        {
+          "sourceId": "S039",
+          "title": "Retrieval-Augmented Generation (RAG) evaluators",
+          "url": "https://learn.microsoft.com/azure/foundry/concepts/evaluation-evaluators/rag-evaluators",
+          "snapshotSha256": "3b16c765be1f1479ac22e04cf9b293be767d473fc1cacb188b90751227074a4b",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-6",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "A",
+      "stem": "An agent must remember a user's preferred units across conversations while answering from a maintained engineering manual. Which division of context is appropriate?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Store preferences in the knowledge base and use temporary file search for the engineering manual."
+        },
+        {
+          "id": "B",
+          "text": "Store both preferences and the maintained manual in interaction-derived memory."
+        },
+        {
+          "id": "C",
+          "text": "Store learned preferences in persistent memory and use maintained knowledge for the current manual."
+        },
+        {
+          "id": "D",
+          "text": "Store learned preferences in the prior session conversation history and retrieve the current manual from the maintained knowledge base."
+        }
+      ],
+      "correctAnswer": "C",
+      "difficulty": "easy",
+      "type": "single_choice",
+      "explanation": {
+        "whyCorrect": "Persistent interaction-derived preferences fit memory; curated organizational content fits a knowledge base.",
+        "whyDistractorsWrong": {
+          "D": "Prior session state is not the persistent cross-session memory requested.",
+          "B": "A curated source should remain a maintained knowledge resource.",
+          "A": "This misassigns user-specific memory and the maintained organizational source."
+        }
+      },
+      "objectiveTags": [
+        "AI103-A1.04"
+      ],
+      "id": "ai103-improvement-r2-set-a-100-q037",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Plan and manage an Azure AI solution",
+      "sourceRefs": [
+        {
+          "sourceId": "S006",
+          "title": "Memory in Microsoft Foundry Agent Service (preview)",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/concepts/what-is-memory",
+          "snapshotSha256": "1dd4a33b4885266d1a2a73cee51de011ad50f9e63454609195d46179316746f8",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-7",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "A",
+      "stem": "An agent follows its operating policy and calls the correct tools, but leaves two requested deliverables unfinished. Which evaluator best targets the overall outcome?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Task Completion (preview), assessing whether the agent delivered the requested end-to-end outcome."
+        },
+        {
+          "id": "B",
+          "text": "Tool Selection, focused on the choice of tool for each operation."
+        },
+        {
+          "id": "C",
+          "text": "Task Adherence (preview), using the fact that the agent obeyed its operating policy to judge whether all requested deliverables were completed."
+        },
+        {
+          "id": "D",
+          "text": "Tool Input Accuracy, focused on the arguments supplied to a tool."
+        }
+      ],
+      "correctAnswer": "A",
+      "difficulty": "easy",
+      "type": "single_choice",
+      "explanation": {
+        "whyCorrect": "Task Completion assesses whether the agent accomplished the requested task. Adherence and individual tool metrics measure different properties.",
+        "whyDistractorsWrong": {
+          "C": "Policy adherence does not establish delivery of the entire requested outcome.",
+          "B": "Correct tool choice is already observed.",
+          "D": "Argument quality does not measure the whole requested outcome."
+        }
+      },
+      "objectiveTags": [
+        "AI103-A4.02"
+      ],
+      "id": "ai103-improvement-r2-set-a-100-q038",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Plan and manage an Azure AI solution",
+      "sourceRefs": [
+        {
+          "sourceId": "S014",
+          "title": "Agent evaluators",
+          "url": "https://learn.microsoft.com/azure/foundry/concepts/evaluation-evaluators/agent-evaluators",
+          "snapshotSha256": "0ce17b86785e87efb44074de9d3fdee3ae8290dedcb04a18a68558081be7103f",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-7",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "A",
+      "stem": "A team has query-document relevance labels and wants to compare two retrievers before adding answer generation. Which evaluation is appropriate?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Groundedness, using a hypothetical final answer to infer whether the two retrievers placed all relevant documents at the correct rank positions."
+        },
+        {
+          "id": "B",
+          "text": "Response Completeness evaluated against a reference final answer."
+        },
+        {
+          "id": "C",
+          "text": "Task Adherence evaluated against the agent system instructions."
+        },
+        {
+          "id": "D",
+          "text": "Document Retrieval against the supplied query-document relevance labels for the two candidate retrievers."
+        }
+      ],
+      "correctAnswer": "D",
+      "difficulty": "easy",
+      "type": "single_choice",
+      "explanation": {
+        "whyCorrect": "Ground-truth relevance labels support document-retrieval evaluation. This isolates search quality from generation behavior.",
+        "whyDistractorsWrong": {
+          "A": "Groundedness of an answer is not labeled measurement of the retrieved document ranking.",
+          "B": "This measures answer coverage rather than the retrieved ranking.",
+          "C": "Policy adherence is not the labeled retrieval measurement."
+        }
+      },
+      "objectiveTags": [
+        "AI103-A4.02"
+      ],
+      "id": "ai103-improvement-r2-set-a-100-q039",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Plan and manage an Azure AI solution",
+      "sourceRefs": [
+        {
+          "sourceId": "S039",
+          "title": "Retrieval-Augmented Generation (RAG) evaluators",
+          "url": "https://learn.microsoft.com/azure/foundry/concepts/evaluation-evaluators/rag-evaluators",
+          "snapshotSha256": "3b16c765be1f1479ac22e04cf9b293be767d473fc1cacb188b90751227074a4b",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-7",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "A",
+      "stem": "A retrieved maintenance page tells the agent to ignore its instructions and send credentials to a URL. Which threat category should be evaluated at this boundary?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A factual data-poisoning error that changes a measurement without issuing instructions."
+        },
+        {
+          "id": "B",
+          "text": "A harmful final-answer classification unrelated to the retrieved instruction boundary."
+        },
+        {
+          "id": "C",
+          "text": "A direct user prompt attack originating in the authenticated user message."
+        },
+        {
+          "id": "D",
+          "text": "An indirect prompt attack in external document content."
+        }
+      ],
+      "correctAnswer": "D",
+      "difficulty": "medium",
+      "type": "single_choice",
+      "explanation": {
+        "whyCorrect": "External documents and tool results are lower-trust inputs. Prompt Shields distinguishes these indirect attacks from attacks supplied directly in a user prompt.",
+        "whyDistractorsWrong": {
+          "C": "The attack is embedded in retrieved context rather than the user message.",
+          "A": "The payload explicitly attempts to override instructions and exfiltrate credentials.",
+          "B": "The described threat is an instruction attack entering through external context."
+        }
+      },
+      "objectiveTags": [
+        "AI103-A4.01"
+      ],
+      "id": "ai103-improvement-r2-set-a-100-q040",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Plan and manage an Azure AI solution",
+      "sourceRefs": [
+        {
+          "sourceId": "S015",
+          "title": "Guardrails and controls overview in Microsoft Foundry",
+          "url": "https://learn.microsoft.com/azure/foundry/guardrails/guardrails-overview",
+          "snapshotSha256": "8bff59568b79380dc2ea6df819b965422c98fdf03bf6b06df0b99bc1287e4c54",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S016",
+          "title": "Prompt Shields in Microsoft Foundry",
+          "url": "https://learn.microsoft.com/azure/foundry/openai/concepts/content-filter-prompt-shields",
+          "snapshotSha256": "770228d708d01826dc0d17c9ddafbb8d0e7f412bb2a0ad9a13b2ac54ac84735e",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-7",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "A",
+      "stem": "An organization requires agent state in customer-managed resources in its own subscription. Which agent setup aligns with that storage requirement?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A larger model context window in the existing basic setup."
+        },
+        {
+          "id": "B",
+          "text": "A model deployment changed from Standard to Provisioned throughput."
+        },
+        {
+          "id": "C",
+          "text": "Standard setup with customer-managed supporting resources."
+        },
+        {
+          "id": "D",
+          "text": "Basic setup using Microsoft-managed state storage."
+        }
+      ],
+      "correctAnswer": "C",
+      "difficulty": "easy",
+      "type": "single_choice",
+      "explanation": {
+        "whyCorrect": "The documented basic and standard agent setups differ in state storage ownership. Standard setup uses customer-managed resources.",
+        "whyDistractorsWrong": {
+          "D": "This does not meet the customer-managed storage requirement.",
+          "A": "Context size does not change the backing storage arrangement.",
+          "B": "Model deployment throughput does not choose the agent storage setup."
+        }
+      },
+      "objectiveTags": [
+        "AI103-A2.01"
+      ],
+      "id": "ai103-improvement-r2-set-a-100-q041",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Plan and manage an Azure AI solution",
+      "sourceRefs": [
+        {
+          "sourceId": "S009",
+          "title": "Foundry Agent Service limits, quotas, and regional support",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/concepts/limits-quotas-regions",
+          "snapshotSha256": "d83fd890729d322d4ffa580ca5a8db2bed5bcd783dae47f5da2b05985f4b3041",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-7",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "A",
+      "objectiveTags": [
+        "AI103-A1.02"
+      ],
+      "stem": "A team wants one supported Python client library for extracting document layout, transcribing audio and analyzing recorded video into structured outputs. Which service’s documented client covers all three input modalities?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Azure Language text summarization alone."
+        },
+        {
+          "id": "B",
+          "text": "Azure AI Search OCR skill alone."
+        },
+        {
+          "id": "C",
+          "text": "Azure Document Intelligence Layout alone."
+        },
+        {
+          "id": "D",
+          "text": "Azure AI Content Understanding."
+        }
+      ],
+      "correctAnswer": "D",
+      "type": "single_choice",
+      "difficulty": "easy",
+      "explanation": {
+        "whyCorrect": "The Content Understanding client documents extraction across documents, audio, video and images. The other named capabilities each omit required input modalities.",
+        "whyDistractorsWrong": {
+          "C": "Document layout alone does not supply audio transcription and video analysis.",
+          "A": "Text summarization alone does not perform all three native input analyses.",
+          "B": "OCR enrichment does not provide the required audio and video analysis."
+        }
+      },
+      "id": "ai103-improvement-r2-set-a-100-q042",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Plan and manage an Azure AI solution",
+      "sourceRefs": [
+        {
+          "sourceId": "S021",
+          "title": "Azure AI Content Understanding client library for Python - version 1.1.0",
+          "url": "https://learn.microsoft.com/python/api/overview/azure/ai-contentunderstanding-readme?view=azure-python",
+          "snapshotSha256": "aa5fd0abb99fe608e62d3909ffd7bc4eac9904dc931f427c9e3788351fbc7b42",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-7",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "A",
+      "objectiveTags": [
+        "AI103-A3.04"
+      ],
+      "stem": "Complete the Azure OpenAI v1 client for keyless inference. The calling identity has the inference role at the resource scope.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Complete the configured fields."
+        },
+        {
+          "id": "B",
+          "text": "Inspect all slot choices."
+        }
+      ],
+      "correctAnswer": {
+        "pairs": {
+          "audience": "https://ai.azure.com/.default",
+          "endpoint": "https://resource.openai.azure.com/openai/v1/"
+        }
+      },
+      "type": "dropdown_completion",
+      "difficulty": "medium",
+      "explanation": {
+        "whyCorrect": "The named v1 example uses the ai.azure.com token audience and the resource /openai/v1/ base URL. Authentication still requires authorization on the called resource.",
+        "whyDistractorsWrong": {
+          "audience": "Use the v1 example’s inference token audience, rather than an ARM or Search audience.",
+          "endpoint": "This is the direct resource v1 surface, not project management or Search."
+        }
+      },
+      "statementTemplate": "token_provider = get_bearer_token_provider(credential, \"{{audience}}\")\nclient = OpenAI(base_url=\"{{endpoint}}\", api_key=token_provider)",
+      "slots": [
+        {
+          "id": "audience",
+          "choices": [
+            "https://ai.azure.com/.default",
+            "https://management.azure.com/.default",
+            "https://search.azure.com/.default"
+          ]
+        },
+        {
+          "id": "endpoint",
+          "choices": [
+            "https://resource.openai.azure.com/openai/v1/",
+            "https://resource.services.ai.azure.com/api/projects/support",
+            "https://resource.search.windows.net/"
+          ]
+        }
+      ],
+      "id": "ai103-improvement-r2-set-a-100-q043",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Plan and manage an Azure AI solution",
+      "sourceRefs": [
+        {
+          "sourceId": "S051",
+          "title": "Azure OpenAI v1 API",
+          "url": "https://learn.microsoft.com/en-us/azure/foundry/openai/api-version-lifecycle",
+          "snapshotSha256": "8e7e4b2c4e94ad6056ffa3edf4750e4db864ceac16a52777cc13fd2068403803",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S052",
+          "title": "Use Azure OpenAI without keys",
+          "url": "https://learn.microsoft.com/en-us/azure/developer/ai/keyless-connections",
+          "snapshotSha256": "4f2b4d850889660d3af96aac661fa1955b8d9e1bf6f454facbef5b11aa59efcd",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-7",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "A",
+      "objectiveTags": [
+        "AI103-A2.03"
+      ],
+      "stem": "Complete the AI Projects Python 2.8.0 constructor for project operations.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Inspect all slot choices."
+        },
+        {
+          "id": "B",
+          "text": "Complete the configured fields."
+        }
+      ],
+      "correctAnswer": {
+        "pairs": {
+          "endpoint": "project_endpoint",
+          "credential": "DefaultAzureCredential()"
+        }
+      },
+      "type": "dropdown_completion",
+      "difficulty": "medium",
+      "explanation": {
+        "whyCorrect": "The retained AI Projects 2.8.0 reference uses a Foundry project endpoint and Entra credentials. Project and direct inference clients have different roles.",
+        "whyDistractorsWrong": {
+          "endpoint": "Choose the endpoint of the named project for project operations.",
+          "credential": "The 2.8.0 client supports Entra credentials; a URL is not a credential and resource-key construction is not this client contract."
+        }
+      },
+      "statementTemplate": "project = AIProjectClient(endpoint={{endpoint}}, credential={{credential}})",
+      "slots": [
+        {
+          "id": "endpoint",
+          "choices": [
+            "project_endpoint",
+            "openai_v1_base_url",
+            "search_endpoint"
+          ]
+        },
+        {
+          "id": "credential",
+          "choices": [
+            "DefaultAzureCredential()",
+            "AzureKeyCredential(resource_key)",
+            "project_endpoint"
+          ]
+        }
+      ],
+      "id": "ai103-improvement-r2-set-a-100-q044",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Plan and manage an Azure AI solution",
+      "sourceRefs": [
+        {
+          "sourceId": "S002",
+          "title": "Azure AI Projects client library for Python - version 2.8.0",
+          "url": "https://learn.microsoft.com/python/api/overview/azure/ai-projects-readme?view=azure-python",
+          "snapshotSha256": "2ce3139fd9fb77eb3f63d4a797ecc24deab957376faac5fe5a28d80e8080b266",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S003",
+          "title": "Microsoft Foundry SDKs and endpoints",
+          "url": "https://learn.microsoft.com/azure/foundry/how-to/develop/sdk-overview",
+          "snapshotSha256": "f62e4cfa9a1eeed9aa30383cab18005b8bc8f72d2743a26dedf0bb83d24e046d",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-7",
+        "validationStatus": "draft"
+      }
+    }
+  ],
+  "caseStudies": [],
+  "evidence": [
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q035",
+      "testedDecision": "A Search tool points at the right service but retrieves an unrelated index. Which agent-tool configuration should be corrected first?",
+      "oldItemIds": [
+        "ai103-set-a-q036"
+      ],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-B1.02",
+      "itemRevisionHash": "013d8db6ea51e4175ee9724f7972099abcebb5a08ac45b271b492029f419b830",
+      "sources": [
+        {
+          "sourceId": "S040",
+          "title": "Connect an Azure AI Search index to Foundry agents",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/how-to/tools/ai-search",
+          "snapshotSha256": "67830020b25de8c993ae294ff523035ad2c04c16865c1fe7222f053769316545",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q036",
+      "testedDecision": "A response is fully supported by context and addresses the question, but omits two required parts of the reference answer. Which additional metric is most targeted?",
+      "oldItemIds": [
+        "ai103-set-a-q042"
+      ],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-B1.04",
+      "itemRevisionHash": "49eecffa9e55acedf3549774c6b7f5fcc83f8b85cf7e32948b62c3989079a6f9",
+      "sources": [
+        {
+          "sourceId": "S039",
+          "title": "Retrieval-Augmented Generation (RAG) evaluators",
+          "url": "https://learn.microsoft.com/azure/foundry/concepts/evaluation-evaluators/rag-evaluators",
+          "snapshotSha256": "3b16c765be1f1479ac22e04cf9b293be767d473fc1cacb188b90751227074a4b",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q037",
+      "testedDecision": "An agent must remember a user's preferred units across conversations while answering from a maintained engineering manual. Which division of context is appropriate?",
+      "oldItemIds": [
+        "ai103-set-a-q011"
+      ],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-A1.04",
+      "itemRevisionHash": "9e816482f1cffa0e096ff587506945163535b51e87d39feb93f1e29f17873b22",
+      "sources": [
+        {
+          "sourceId": "S006",
+          "title": "Memory in Microsoft Foundry Agent Service (preview)",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/concepts/what-is-memory",
+          "snapshotSha256": "1dd4a33b4885266d1a2a73cee51de011ad50f9e63454609195d46179316746f8",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q038",
+      "testedDecision": "An agent follows its operating policy and calls the correct tools, but leaves two requested deliverables unfinished. Which evaluator best targets the overall outcome?",
+      "oldItemIds": [
+        "ai103-set-a-q013"
+      ],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-A4.02",
+      "itemRevisionHash": "51771f171506af048eb90bdf3456b4b3a81af81350376629d9e52ef922e0b7f8",
+      "sources": [
+        {
+          "sourceId": "S014",
+          "title": "Agent evaluators",
+          "url": "https://learn.microsoft.com/azure/foundry/concepts/evaluation-evaluators/agent-evaluators",
+          "snapshotSha256": "0ce17b86785e87efb44074de9d3fdee3ae8290dedcb04a18a68558081be7103f",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q039",
+      "testedDecision": "A team has query-document relevance labels and wants to compare two retrievers before adding answer generation. Which evaluation is appropriate?",
+      "oldItemIds": [
+        "ai103-set-a-q014"
+      ],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-A4.02",
+      "itemRevisionHash": "0b872b80483aae05a1a1cce9323b91e852318a7791fca62e1f3c2fda2ceba8fd",
+      "sources": [
+        {
+          "sourceId": "S039",
+          "title": "Retrieval-Augmented Generation (RAG) evaluators",
+          "url": "https://learn.microsoft.com/azure/foundry/concepts/evaluation-evaluators/rag-evaluators",
+          "snapshotSha256": "3b16c765be1f1479ac22e04cf9b293be767d473fc1cacb188b90751227074a4b",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q040",
+      "testedDecision": "A retrieved maintenance page tells the agent to ignore its instructions and send credentials to a URL. Which threat category should be evaluated at this boundary?",
+      "oldItemIds": [
+        "ai103-set-a-q015"
+      ],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-A4.01",
+      "itemRevisionHash": "304fe4676acda1e76bbd84a22d58dbb2bf29af741ccd6c55e9ea7c757b09dc8d",
+      "sources": [
+        {
+          "sourceId": "S015",
+          "title": "Guardrails and controls overview in Microsoft Foundry",
+          "url": "https://learn.microsoft.com/azure/foundry/guardrails/guardrails-overview",
+          "snapshotSha256": "8bff59568b79380dc2ea6df819b965422c98fdf03bf6b06df0b99bc1287e4c54",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S016",
+          "title": "Prompt Shields in Microsoft Foundry",
+          "url": "https://learn.microsoft.com/azure/foundry/openai/concepts/content-filter-prompt-shields",
+          "snapshotSha256": "770228d708d01826dc0d17c9ddafbb8d0e7f412bb2a0ad9a13b2ac54ac84735e",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q041",
+      "testedDecision": "An organization requires agent state in customer-managed resources in its own subscription. Which agent setup aligns with that storage requirement?",
+      "oldItemIds": [
+        "ai103-set-a-q017"
+      ],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-A2.01",
+      "itemRevisionHash": "3377f11c29e825ce621aa2969687bea38ebaad94b19f209aa3ac139eed9da83b",
+      "sources": [
+        {
+          "sourceId": "S009",
+          "title": "Foundry Agent Service limits, quotas, and regional support",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/concepts/limits-quotas-regions",
+          "snapshotSha256": "d83fd890729d322d4ffa580ca5a8db2bed5bcd783dae47f5da2b05985f4b3041",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q042",
+      "testedDecision": "A team wants one supported Python client library for extracting document layout, transcribing audio and analyzing recorded video into structured outputs. Which service’s documented client covers all three input modalities?",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-A1.02",
+      "itemRevisionHash": "45350b532e2d6a616aaca29cb37e6e0a9c47174bae31c7afefe9d9b666d264c4",
+      "sources": [
+        {
+          "sourceId": "S021",
+          "title": "Azure AI Content Understanding client library for Python - version 1.1.0",
+          "url": "https://learn.microsoft.com/python/api/overview/azure/ai-contentunderstanding-readme?view=azure-python",
+          "snapshotSha256": "aa5fd0abb99fe608e62d3909ffd7bc4eac9904dc931f427c9e3788351fbc7b42",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q043",
+      "testedDecision": "Complete the Azure OpenAI v1 client for keyless inference. The calling identity has the inference role at the resource scope.",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-A3.04",
+      "itemRevisionHash": "95012a04e71b6271add4910d6cf080ae5d1a03eec7888425a67a7c5b8b968062",
+      "sources": [
+        {
+          "sourceId": "S051",
+          "title": "Azure OpenAI v1 API",
+          "url": "https://learn.microsoft.com/en-us/azure/foundry/openai/api-version-lifecycle",
+          "snapshotSha256": "8e7e4b2c4e94ad6056ffa3edf4750e4db864ceac16a52777cc13fd2068403803",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S052",
+          "title": "Use Azure OpenAI without keys",
+          "url": "https://learn.microsoft.com/en-us/azure/developer/ai/keyless-connections",
+          "snapshotSha256": "4f2b4d850889660d3af96aac661fa1955b8d9e1bf6f454facbef5b11aa59efcd",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q044",
+      "testedDecision": "Complete the AI Projects Python 2.8.0 constructor for project operations.",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-A2.03",
+      "itemRevisionHash": "ea2e6bb0cfccb550abc30cc7b89418fb91790abc1ac146c3f95d89b25d88f8e8",
+      "sources": [
+        {
+          "sourceId": "S002",
+          "title": "Azure AI Projects client library for Python - version 2.8.0",
+          "url": "https://learn.microsoft.com/python/api/overview/azure/ai-projects-readme?view=azure-python",
+          "snapshotSha256": "2ce3139fd9fb77eb3f63d4a797ecc24deab957376faac5fe5a28d80e8080b266",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S003",
+          "title": "Microsoft Foundry SDKs and endpoints",
+          "url": "https://learn.microsoft.com/azure/foundry/how-to/develop/sdk-overview",
+          "snapshotSha256": "f62e4cfa9a1eeed9aa30383cab18005b8bc8f72d2743a26dedf0bb83d24e046d",
+          "docType": "microsoft_learn"
+        }
+      ]
+    }
+  ]
+}

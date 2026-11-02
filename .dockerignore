@@ -7,3 +7,11 @@ data/attempts
 *.local
 .env
 .env.*
+
+.local-ci
+playwright-report
+test-results
+.DS_Store
+**/.DS_Store
+data/packs
+data/.write-lock

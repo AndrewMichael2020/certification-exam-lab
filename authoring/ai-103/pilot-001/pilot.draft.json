@@ -1,0 +1,917 @@
+{
+  "schemaVersion": 1,
+  "id": "ai103-pilot-001-r1",
+  "revision": "1",
+  "pack": {
+    "id": "ai-103",
+    "version": "1.1.0"
+  },
+  "plan": {
+    "pack": {
+      "id": "ai-103",
+      "version": "1.1.0"
+    },
+    "planningVersion": "exact-quotas-v1",
+    "totalQuestions": 10,
+    "domains": [
+      {
+        "id": "A",
+        "name": "Plan and manage an Azure AI solution",
+        "count": 3
+      },
+      {
+        "id": "B",
+        "name": "Implement generative AI and agentic solutions",
+        "count": 3
+      },
+      {
+        "id": "C",
+        "name": "Implement computer vision solutions",
+        "count": 2
+      },
+      {
+        "id": "D",
+        "name": "Implement text analysis solutions",
+        "count": 1
+      },
+      {
+        "id": "E",
+        "name": "Implement information extraction solutions",
+        "count": 1
+      }
+    ],
+    "itemTypes": {
+      "single_choice": 4,
+      "multi_select": 2,
+      "sequence_order": 1,
+      "matching_magnet": 1,
+      "case_study": 2,
+      "code_or_config_artifact": 0
+    },
+    "caseStudyCount": 1,
+    "difficulty": {
+      "medium": 4,
+      "hard": 4,
+      "very_hard": 2
+    },
+    "batches": [
+      {
+        "id": "batch-1",
+        "domainId": "A",
+        "domainName": "Plan and manage an Azure AI solution",
+        "typeFocus": [
+          "case_study"
+        ],
+        "difficultyFocus": [
+          "medium",
+          "hard",
+          "very_hard"
+        ],
+        "questionCount": 2,
+        "caseStudyId": "case-1"
+      },
+      {
+        "id": "batch-2",
+        "domainId": "B",
+        "domainName": "Implement generative AI and agentic solutions",
+        "typeFocus": [
+          "single_choice"
+        ],
+        "difficultyFocus": [
+          "medium",
+          "hard",
+          "very_hard"
+        ],
+        "questionCount": 3
+      },
+      {
+        "id": "batch-3",
+        "domainId": "C",
+        "domainName": "Implement computer vision solutions",
+        "typeFocus": [
+          "single_choice"
+        ],
+        "difficultyFocus": [
+          "medium",
+          "hard",
+          "very_hard"
+        ],
+        "questionCount": 1
+      },
+      {
+        "id": "batch-4",
+        "domainId": "A",
+        "domainName": "Plan and manage an Azure AI solution",
+        "typeFocus": [
+          "multi_select"
+        ],
+        "difficultyFocus": [
+          "medium",
+          "hard",
+          "very_hard"
+        ],
+        "questionCount": 1
+      },
+      {
+        "id": "batch-5",
+        "domainId": "C",
+        "domainName": "Implement computer vision solutions",
+        "typeFocus": [
+          "multi_select"
+        ],
+        "difficultyFocus": [
+          "medium",
+          "hard",
+          "very_hard"
+        ],
+        "questionCount": 1
+      },
+      {
+        "id": "batch-6",
+        "domainId": "D",
+        "domainName": "Implement text analysis solutions",
+        "typeFocus": [
+          "sequence_order"
+        ],
+        "difficultyFocus": [
+          "medium",
+          "hard",
+          "very_hard"
+        ],
+        "questionCount": 1
+      },
+      {
+        "id": "batch-7",
+        "domainId": "E",
+        "domainName": "Implement information extraction solutions",
+        "typeFocus": [
+          "matching_magnet"
+        ],
+        "difficultyFocus": [
+          "medium",
+          "hard",
+          "very_hard"
+        ],
+        "questionCount": 1
+      }
+    ]
+  },
+  "provenance": {
+    "route": "codex-subscription",
+    "model": "gpt-6-astra",
+    "reasoningEffort": "ultra",
+    "authoredAt": "2026-10-08T05:59:08.589023+00:00"
+  },
+  "status": "draft",
+  "questions": [
+    {
+      "id": "ai103-pilot001-q01",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.1.0"
+      },
+      "revision": "1",
+      "examCode": "AI-103",
+      "domainId": "A",
+      "domainName": "Plan and manage an Azure AI solution",
+      "objectiveTags": [
+        "AI103-A2.02"
+      ],
+      "type": "case_study_child",
+      "difficulty": "medium",
+      "stem": "Which model deployment type meets the case study's processing-boundary, billing and interactive-response requirements?",
+      "caseStudyId": "case-1",
+      "options": [
+        {
+          "id": "A",
+          "text": "Global Standard"
+        },
+        {
+          "id": "B",
+          "text": "Data Zone Standard"
+        },
+        {
+          "id": "C",
+          "text": "Data Zone Provisioned"
+        },
+        {
+          "id": "D",
+          "text": "Data Zone Batch"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": {
+        "whyCorrect": "Data Zone Standard processes requests within the selected data zone and uses pay-per-token billing. It matches the approved EU boundary and an interactive workload without a reserved-throughput commitment.",
+        "whyDistractorsWrong": {
+          "A": "Global Standard uses global processing. Selecting an EU resource location does not convert the global processing boundary into the required EU data-zone boundary.",
+          "C": "Data Zone Provisioned respects the data-zone boundary but uses reserved provisioned throughput units, contrary to the stated billing requirement.",
+          "D": "Data Zone Batch respects the data-zone boundary but is for asynchronous batch workloads, which the case explicitly excludes for interactive responses."
+        }
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "S005",
+          "snapshotSha256": "6c6d5d7b11684c1cbba8d35fd278a313e1420e3853b0ba9f104898c4a8c24c58",
+          "title": "Deployment types for Microsoft Foundry Models",
+          "url": "https://learn.microsoft.com/azure/foundry/foundry-models/concepts/deployment-types",
+          "docType": "official_docs"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-08T05:59:08.589023+00:00",
+        "model": "gpt-6-astra",
+        "reasoningEffort": "ultra",
+        "batchId": "batch-1",
+        "validationStatus": "validated"
+      }
+    },
+    {
+      "id": "ai103-pilot001-q02",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.1.0"
+      },
+      "revision": "1",
+      "examCode": "AI-103",
+      "domainId": "A",
+      "domainName": "Plan and manage an Azure AI solution",
+      "objectiveTags": [
+        "AI103-A3.04"
+      ],
+      "type": "case_study_child",
+      "difficulty": "very_hard",
+      "stem": "Which connection and authorization change addresses the documented retrieval problem while preserving the case study's network and runtime-identity requirements?",
+      "caseStudyId": "case-1",
+      "options": [
+        {
+          "id": "A",
+          "text": "Keep the key-based Search connection; grant Search Index Data Contributor to the developer."
+        },
+        {
+          "id": "B",
+          "text": "Authenticate the Search connection as the deployment pipeline; grant Search Index Data Contributor to that identity."
+        },
+        {
+          "id": "C",
+          "text": "Authenticate the Search connection with the Foundry account's system-assigned managed identity; grant it Foundry User only."
+        },
+        {
+          "id": "D",
+          "text": "Authenticate the Search connection with the Foundry account's system-assigned managed identity; grant it Search Index Data Contributor."
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": {
+        "whyCorrect": "The captured Search tool guide requires managed-identity authentication for private networking. Its keyless setup identifies the system-assigned identity of the Foundry account containing the project and requires both Search Service Contributor and Search Index Data Contributor on Search. The case already grants the first role and enables RBAC; D supplies the missing role and changes the connection to the documented identity. Provisioning access for a developer or pipeline does not substitute for the runtime connection's access.",
+        "whyDistractorsWrong": {
+          "A": "The captured tool guide does not support key-based authentication with private virtual networking. Granting a role to the developer also does not authorize the managed identity used by the connection.",
+          "B": "The documented keyless setup uses the containing Foundry account's system-assigned identity. The pipeline is a provisioning identity in this case, not the configured runtime principal.",
+          "C": "Foundry User is a project role; it does not supply the missing Search Index Data Contributor role on the Search service."
+        }
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "S011",
+          "snapshotSha256": "02eb40fb9bc5fcbd6b27249423b2d0ba26f5df0dd6b6885c881270a7a6fac8b9",
+          "title": "Set up private networking for Foundry Agent Service",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/how-to/virtual-networks",
+          "docType": "official_docs"
+        },
+        {
+          "sourceId": "S040",
+          "snapshotSha256": "67830020b25de8c993ae294ff523035ad2c04c16865c1fe7222f053769316545",
+          "title": "Connect an Azure AI Search index to Foundry agents",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/how-to/tools/ai-search",
+          "docType": "official_docs"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-08T05:59:08.589023+00:00",
+        "model": "gpt-6-astra",
+        "reasoningEffort": "ultra",
+        "batchId": "batch-1",
+        "validationStatus": "validated"
+      }
+    },
+    {
+      "id": "ai103-pilot001-q03",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.1.0"
+      },
+      "revision": "1",
+      "examCode": "AI-103",
+      "domainId": "B",
+      "domainName": "Implement generative AI and agentic solutions",
+      "objectiveTags": [
+        "AI103-B3.01"
+      ],
+      "type": "dropdown_completion",
+      "difficulty": "very_hard",
+      "stem": "Complete the three settings for a supported model using strict structured outputs through the Responses API. Every successful, non-refusal structured output must contain order_id and note; when no note exists, note must be null. Extra properties must be disallowed. The property definitions below are already correct.",
+      "artifact": {
+        "title": "Existing property definitions (illustrative JSON Schema fragment)",
+        "kind": "json",
+        "content": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"order_id\": {\n      \"type\": \"string\"\n    },\n    \"note\": {\n      \"type\": [\n        \"string\",\n        \"null\"\n      ]\n    }\n  }\n}"
+      },
+      "options": [
+        {
+          "id": "required",
+          "text": "Required-property list"
+        },
+        {
+          "id": "additional",
+          "text": "Extra-property setting"
+        },
+        {
+          "id": "format",
+          "text": "Request format location"
+        }
+      ],
+      "statementTemplate": "required: {{required}}\nadditionalProperties: {{additional}}\nResponses request format location: {{format}}",
+      "slots": [
+        {
+          "id": "required",
+          "choices": [
+            "[\"order_id\"]",
+            "[\"order_id\", \"note\"]",
+            "[]"
+          ]
+        },
+        {
+          "id": "additional",
+          "choices": [
+            "true",
+            "false"
+          ]
+        },
+        {
+          "id": "format",
+          "choices": [
+            "response_format",
+            "text.format",
+            "JSON mode without a schema"
+          ]
+        }
+      ],
+      "correctAnswer": {
+        "pairs": {
+          "required": "[\"order_id\", \"note\"]",
+          "additional": "false",
+          "format": "text.format"
+        }
+      },
+      "explanation": {
+        "whyCorrect": "The strict schema includes both properties in required. The existing string-or-null type represents an absent note without omitting its key. additionalProperties must be false. For the Responses API, the strict JSON-schema format is configured under text.format; response_format is the Chat Completions location.",
+        "whyDistractorsWrong": {
+          "required": "Choose [\"order_id\", \"note\"]. Choosing only [\"order_id\"] omits note from the required list, and [] makes neither field required. The captured strict-schema subset requires all defined fields; nullable values provide optional semantics.",
+          "additional": "Choose false. true permits fields outside the declared contract and violates the documented strict-schema requirement. Nullability of note does not permit extra object properties.",
+          "format": "Choose text.format for Responses. response_format belongs to Chat Completions. JSON mode alone guarantees valid JSON without enforcing this schema."
+        }
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "S037",
+          "snapshotSha256": "0337c89ce3e5a9ba28d1c2fc18f1644c50b13568eb19edc43420d16b401cacfc",
+          "title": "Structured outputs",
+          "url": "https://learn.microsoft.com/azure/foundry/openai/how-to/structured-outputs",
+          "docType": "official_docs"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-08T05:59:08.589023+00:00",
+        "model": "gpt-6-astra",
+        "reasoningEffort": "ultra",
+        "batchId": "batch-2",
+        "validationStatus": "validated"
+      }
+    },
+    {
+      "id": "ai103-pilot001-q04",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.1.0"
+      },
+      "revision": "1",
+      "examCode": "AI-103",
+      "domainId": "B",
+      "domainName": "Implement generative AI and agentic solutions",
+      "objectiveTags": [
+        "AI103-B1.03",
+        "AI103-B2.02"
+      ],
+      "type": "log_or_artifact_interpretation",
+      "difficulty": "hard",
+      "stem": "Two function requests in a Responses flow call the same local function for different products. Both local executions succeed. Which change is required when returning the outputs shown in this illustrative trace?",
+      "artifact": {
+        "title": "Illustrative application trace, not a captured Azure error",
+        "kind": "log",
+        "content": "Output strings are decoded below for readability; serialization is already correct.\n\nRequested function calls:\n  call_id=call_red  name=get_stock  arguments={\"sku\":\"R-14\"}\n  call_id=call_blue name=get_stock  arguments={\"sku\":\"B-27\"}\n\nLocal execution results:\n  call_red  -> {\"sku\":\"R-14\",\"available\":0}\n  call_blue -> {\"sku\":\"B-27\",\"available\":8}\n\nCurrent outgoing records:\n  type=function_call_output call_id=get_stock output={\"sku\":\"R-14\",\"available\":0}\n  type=function_call_output call_id=get_stock output={\"sku\":\"B-27\",\"available\":8}"
+      },
+      "options": [
+        {
+          "id": "A",
+          "text": "Keep get_stock as call_id and send the two outputs in the same order as the requests."
+        },
+        {
+          "id": "B",
+          "text": "Combine both results into one output and use get_stock as the identifier for the combined call."
+        },
+        {
+          "id": "C",
+          "text": "Return each result with its originating call_id: call_red for R-14 and call_blue for B-27."
+        },
+        {
+          "id": "D",
+          "text": "Replace call_id with the function name in a tool_call_id field while retaining function_call_output."
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": {
+        "whyCorrect": "A function_call_output must carry the originating function call's call_id. The name identifies the function, while call_red and call_blue distinguish these two invocations. Matching each returned result to its actual call preserves the association before the model continues.",
+        "whyDistractorsWrong": {
+          "A": "Output order does not replace the required call_id association. Both invocations share the same function name, so get_stock is not either originating call identifier.",
+          "B": "The model requested two distinct calls. Merging their results under the shared function name fails to return outputs associated with the two originating call IDs.",
+          "D": "The captured Responses example uses function_call_output with call_id. Substituting a differently named field from another API pattern does not satisfy that contract."
+        }
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "S007",
+          "snapshotSha256": "0d4119f94b15c94d404729f53d2ed5f52a89dfaf35841d1290c0472be3e3e953",
+          "title": "Use function calling with Microsoft Foundry agents",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/how-to/tools/function-calling",
+          "docType": "official_docs"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-08T05:59:08.589023+00:00",
+        "model": "gpt-6-astra",
+        "reasoningEffort": "ultra",
+        "batchId": "batch-2",
+        "validationStatus": "validated"
+      }
+    },
+    {
+      "id": "ai103-pilot001-q05",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.1.0"
+      },
+      "revision": "1",
+      "examCode": "AI-103",
+      "domainId": "B",
+      "domainName": "Implement generative AI and agentic solutions",
+      "objectiveTags": [
+        "AI103-B2.06"
+      ],
+      "type": "single_choice",
+      "difficulty": "medium",
+      "stem": "A user asks an agent for quotes from two carriers and a comparison table with delivery dates. Traces show successful calls to both carriers with correct parameters. The agent follows its system policy against modifying records, but its final response includes only one quote and no comparison table. Which evaluator most directly measures this failure to deliver the requested outcome?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Task Completion (preview)"
+        },
+        {
+          "id": "B",
+          "text": "Tool Call Success"
+        },
+        {
+          "id": "C",
+          "text": "Task Adherence (preview)"
+        },
+        {
+          "id": "D",
+          "text": "Groundedness"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": {
+        "whyCorrect": "Task Completion evaluates whether the agent produced a usable deliverable meeting all user requirements. Successful carrier calls and compliance with the system policy do not establish that the requested two-carrier comparison was delivered.",
+        "whyDistractorsWrong": {
+          "B": "Tool Call Success measures technical success or errors in tool execution. Both calls succeeded here, so that measure does not directly capture the omitted final deliverable.",
+          "C": "Task Adherence measures compliance with assigned rules, procedures and policy constraints. The stated system policy was followed; the described failure is incomplete task delivery.",
+          "D": "Groundedness checks fidelity to supplied context. The single quote could be fully grounded while the response still omits the second quote and comparison table."
+        }
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "S014",
+          "snapshotSha256": "0ce17b86785e87efb44074de9d3fdee3ae8290dedcb04a18a68558081be7103f",
+          "title": "Agent evaluators",
+          "url": "https://learn.microsoft.com/azure/foundry/concepts/evaluation-evaluators/agent-evaluators",
+          "docType": "official_docs"
+        },
+        {
+          "sourceId": "S039",
+          "snapshotSha256": "3b16c765be1f1479ac22e04cf9b293be767d473fc1cacb188b90751227074a4b",
+          "title": "Retrieval-Augmented Generation (RAG) evaluators",
+          "url": "https://learn.microsoft.com/azure/foundry/concepts/evaluation-evaluators/rag-evaluators",
+          "docType": "official_docs"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-08T05:59:08.589023+00:00",
+        "model": "gpt-6-astra",
+        "reasoningEffort": "ultra",
+        "batchId": "batch-2",
+        "validationStatus": "validated"
+      }
+    },
+    {
+      "id": "ai103-pilot001-q06",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.1.0"
+      },
+      "revision": "1",
+      "examCode": "AI-103",
+      "domainId": "C",
+      "domainName": "Implement computer vision solutions",
+      "objectiveTags": [
+        "AI103-C1.04"
+      ],
+      "type": "single_choice",
+      "difficulty": "hard",
+      "stem": "An application uses the captured Sora 2 preview v1 interface to remix a previously completed video. The call returns the result below. Which next step lets the application display the requested edit?",
+      "artifact": {
+        "title": "Illustrative v1 remix request and result",
+        "kind": "markdown",
+        "content": "```python\nvideo = client.videos.remix(\n    video_id=\"video_original_01\",\n    prompt=\"Change only the lighting to warm late-afternoon light.\"\n)\n```\n\n```json\n{\n  \"id\": \"video_remix_02\",\n  \"status\": \"queued\",\n  \"remixed_from_video_id\": \"video_original_01\"\n}\n```"
+      },
+      "options": [
+        {
+          "id": "A",
+          "text": "Download the content for video_original_01, because a remix updates the original video in place."
+        },
+        {
+          "id": "B",
+          "text": "Track video_remix_02 until it completes successfully, then retrieve that new video's content."
+        },
+        {
+          "id": "C",
+          "text": "Display the returned JSON as the completed media, because the remix call succeeded."
+        },
+        {
+          "id": "D",
+          "text": "Submit another videos.create request with the same prompt, because a queued remix cannot complete."
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": {
+        "whyCorrect": "The remix returns a new video operation with its own ID and queued status. The application must track that operation through completion and retrieve its generated content. The original completed video is the remix input, not the newly edited output.",
+        "whyDistractorsWrong": {
+          "A": "The result identifies a new video and separately records remixed_from_video_id. Downloading the original ID retrieves the source video, not the requested edit.",
+          "C": "A successful creation response acknowledges the operation. queued is not a completed state, and the JSON record is status metadata rather than finished video content.",
+          "D": "Queued work is part of the documented asynchronous lifecycle. Submitting a new generation request does not complete or retrieve this remix and can create unnecessary work."
+        }
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "S018",
+          "snapshotSha256": "32257da44487ca802a87e1ebad7ef31dc91f45f034d3334fb60b1c7d53ffb808",
+          "title": "Video generation with Sora 2 (preview)",
+          "url": "https://learn.microsoft.com/azure/foundry/openai/concepts/video-generation",
+          "docType": "official_docs"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-08T05:59:08.589023+00:00",
+        "model": "gpt-6-astra",
+        "reasoningEffort": "ultra",
+        "batchId": "batch-3",
+        "validationStatus": "validated"
+      }
+    },
+    {
+      "id": "ai103-pilot001-q07",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.1.0"
+      },
+      "revision": "1",
+      "examCode": "AI-103",
+      "domainId": "A",
+      "domainName": "Plan and manage an Azure AI solution",
+      "objectiveTags": [
+        "AI103-A3.01"
+      ],
+      "type": "multi_select",
+      "difficulty": "hard",
+      "stem": "Two groups of hosted-agent requests fail as described below. Required persisted session state must be retained, and policy forbids moving either workload to another region. Model token usage is below its quota. Which TWO actions address the reported failure layers without violating those requirements?",
+      "artifact": {
+        "title": "Illustrative error summary",
+        "kind": "log",
+        "content": "Group P: HTTP 429, code=session_quota_exceeded\n  Many sessions no longer need active compute; their required state must be retained.\n\nGroup R: HTTP 429, code=regional_session_quota_exceeded\n  Retrying session creation in the approved region reports insufficient regional capacity."
+      },
+      "options": [
+        {
+          "id": "A",
+          "text": "For group P, stop sessions that no longer need active compute without deleting required retained state."
+        },
+        {
+          "id": "B",
+          "text": "For group P, delete all stored sessions so that neither active compute nor persisted state consumes capacity."
+        },
+        {
+          "id": "C",
+          "text": "For both groups, raise the model deployment's tokens-per-minute quota as the sole corrective action."
+        },
+        {
+          "id": "D",
+          "text": "For group R, route the workload immediately to a different region with spare session capacity."
+        },
+        {
+          "id": "E",
+          "text": "For group R, use bounded retries with exponential backoff and jitter within the approved region."
+        }
+      ],
+      "correctAnswer": [
+        "A",
+        "E"
+      ],
+      "explanation": {
+        "whyCorrect": "Group P reports the concurrent session quota layer; the guide recommends stopping sessions that do not need active compute, deleting state only when no longer needed, or requesting a limit increase. Group R reports regional session capacity; bounded backoff with jitter is compatible with the prohibition on moving regions. The returned codes identify limits distinct from model tokens-per-minute.",
+        "whyDistractorsWrong": {
+          "B": "Deleting all stored sessions violates the explicit requirement to retain required persisted state. The documented choices distinguish stopping unneeded active compute from deleting sessions whose state is no longer needed.",
+          "C": "The errors identify session and regional capacity limits, not the model token quota. Increasing tokens-per-minute alone does not address those reported layers.",
+          "D": "Another region is a documented option in some circumstances, but the scenario explicitly forbids moving either workload outside the approved region."
+        }
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "S009",
+          "snapshotSha256": "d83fd890729d322d4ffa580ca5a8db2bed5bcd783dae47f5da2b05985f4b3041",
+          "title": "Foundry Agent Service limits, quotas, and regional support",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/concepts/limits-quotas-regions",
+          "docType": "official_docs"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-08T05:59:08.589023+00:00",
+        "model": "gpt-6-astra",
+        "reasoningEffort": "ultra",
+        "batchId": "batch-4",
+        "validationStatus": "validated"
+      }
+    },
+    {
+      "id": "ai103-pilot001-q08",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.1.0"
+      },
+      "revision": "1",
+      "examCode": "AI-103",
+      "domainId": "C",
+      "domainName": "Implement computer vision solutions",
+      "objectiveTags": [
+        "AI103-C3.01"
+      ],
+      "type": "multi_select",
+      "difficulty": "medium",
+      "stem": "An app uses the captured Azure Content Safety image:analyze API contract (2024-09-01). Its policy checks all four harm categories, rejects an image when any category is Medium or High, and otherwise allows it. Which TWO implementation choices match that policy and the documented image API?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Allow any image when the API returns HTTP success, because successful analysis means the content is approved."
+        },
+        {
+          "id": "B",
+          "text": "Reject when any returned category has severity 4 or 6; otherwise allow the image under the stated policy."
+        },
+        {
+          "id": "C",
+          "text": "Request EightSeverityLevels for images and reject only severity values 5, 6 or 7."
+        },
+        {
+          "id": "D",
+          "text": "Request only the Violence category, because it includes the other three harm categories."
+        },
+        {
+          "id": "E",
+          "text": "Analyze all four categories using FourSeverityLevels, whose documented values are 0, 2, 4 and 6."
+        }
+      ],
+      "correctAnswer": [
+        "B",
+        "E"
+      ],
+      "explanation": {
+        "whyCorrect": "The documented image moderation contract supports FourSeverityLevels: 0 Safe, 2 Low, 4 Medium and 6 High. Analyzing all four categories and rejecting any result at 4 or 6 implements the stated rule. HTTP success indicates successful analysis; the app still applies its acceptance policy.",
+        "whyDistractorsWrong": {
+          "A": "Successful analysis is not itself a content-approval decision. The result supplies category severities, and acceptance depends on the configured policy.",
+          "C": "The captured image API supports FourSeverityLevels, not the proposed eight-level output. The proposed threshold also fails to follow the stated Medium-or-High rule for the documented values.",
+          "D": "Hate, SelfHarm, Sexual and Violence are separate categories. Requesting only Violence omits signals that the policy explicitly requires."
+        }
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "S042",
+          "snapshotSha256": "6a40b6fdabe9e2a91838a3026f8530d0229c70acd401c4fab094a6c0c63b8670",
+          "title": "QuickStart: Analyze image content",
+          "url": "https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-image",
+          "docType": "official_docs"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-08T05:59:08.589023+00:00",
+        "model": "gpt-6-astra",
+        "reasoningEffort": "ultra",
+        "batchId": "batch-5",
+        "validationStatus": "validated"
+      }
+    },
+    {
+      "id": "ai103-pilot001-q09",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.1.0"
+      },
+      "revision": "1",
+      "examCode": "AI-103",
+      "domainId": "D",
+      "domainName": "Implement text analysis solutions",
+      "objectiveTags": [
+        "AI103-D2.04"
+      ],
+      "type": "sequence_order",
+      "difficulty": "medium",
+      "stem": "Arrange these steps for a Python Speech SDK workflow that translates one Italian utterance into German text and then synthesizes that translated text with a separately configured German voice. Credentials, a supported input device and the German synthesis voice are already available. Assume the recognition/translation succeeds.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Construct TranslationRecognizer with the completed translation configuration and the audio input configuration."
+        },
+        {
+          "id": "B",
+          "text": "Read the German text from result.translations[\"de\"] and pass that text to the separately configured German SpeechSynthesizer."
+        },
+        {
+          "id": "C",
+          "text": "Create SpeechTranslationConfig, set the recognition locale to it-IT, add de as a target language, and create the audio input configuration."
+        },
+        {
+          "id": "D",
+          "text": "Invoke recognize_once() on the recognizer and confirm that the returned reason is TranslatedSpeech."
+        }
+      ],
+      "correctAnswer": {
+        "order": [
+          "C",
+          "A",
+          "D",
+          "B"
+        ]
+      },
+      "explanation": {
+        "whyCorrect": "The recognizer depends on the configuration, recognition/translation depends on the recognizer, and text synthesis depends on the successful translation result. The source recognition locale it-IT and translation target de have distinct roles. A German voice alone does not translate Italian input.",
+        "whyDistractorsWrong": {
+          "A": "This follows C because TranslationRecognizer consumes the configured translation and audio objects. It must precede the recognition call in D.",
+          "B": "This comes last because the German text is obtained from the successful translation result. Synthesizing before that result is available would not use the requested translated text.",
+          "C": "This comes first because the source locale, target language and input must be defined before the recognizer is constructed.",
+          "D": "This follows recognizer construction and precedes extraction/synthesis. The result reason confirms successful speech translation before its translations dictionary is used."
+        }
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "S046",
+          "snapshotSha256": "8a73fb1e63f49dde972815b860758a57ff3d620842220f9e29200bccf573c39e",
+          "title": "How to recognize and translate speech",
+          "url": "https://learn.microsoft.com/azure/ai-services/speech-service/how-to-translate-speech",
+          "docType": "official_docs"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-08T05:59:08.589023+00:00",
+        "model": "gpt-6-astra",
+        "reasoningEffort": "ultra",
+        "batchId": "batch-6",
+        "validationStatus": "validated"
+      }
+    },
+    {
+      "id": "ai103-pilot001-q10",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.1.0"
+      },
+      "revision": "1",
+      "examCode": "AI-103",
+      "domainId": "E",
+      "domainName": "Implement information extraction solutions",
+      "objectiveTags": [
+        "AI103-E1.03"
+      ],
+      "type": "matching_magnet",
+      "difficulty": "hard",
+      "stem": "Match each Azure AI Search ingestion requirement to the component that directly performs it. Choose one component per row; each component may be used at most once, and one choice is unused. All target index fields and required service resources already exist.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Copy an unchanged metadata_storage_name field from the data source into the index field file_name."
+        },
+        {
+          "id": "B",
+          "text": "Copy OCR text already produced at an enrichment-tree path into the target searchable index field."
+        },
+        {
+          "id": "C",
+          "text": "Analyze document structure and emit a Markdown or text representation that preserves layout information."
+        },
+        {
+          "id": "D",
+          "text": "Read characters from the indexer's normalized image inputs and emit extracted text."
+        }
+      ],
+      "matchChoices": [
+        "outputFieldMappings",
+        "OCR skill",
+        "Query-time vectorizer",
+        "fieldMappings",
+        "Document Layout skill"
+      ],
+      "correctAnswer": {
+        "pairs": {
+          "A": "fieldMappings",
+          "B": "outputFieldMappings",
+          "C": "Document Layout skill",
+          "D": "OCR skill"
+        }
+      },
+      "explanation": {
+        "whyCorrect": "fieldMappings maps source fields; outputFieldMappings maps enriched document nodes into index fields. The Document Layout skill uses Document Intelligence layout analysis to produce structured Markdown or text. The OCR skill reads normalized image inputs and emits extracted text. A query-time vectorizer serves query embedding, not these ingestion or field-routing tasks.",
+        "whyDistractorsWrong": {
+          "A": "Use fieldMappings because the value is an unchanged source field. outputFieldMappings is for a node produced in the enrichment tree, which this row does not require.",
+          "B": "Use outputFieldMappings because OCR has already produced an enriched node. Re-running OCR or changing a source-field mapping does not perform the required enriched-node-to-index routing.",
+          "C": "Use Document Layout skill because the requirement is structural analysis and Markdown/text output. OCR focuses on character extraction from images and does not replace the stated layout-analysis contract.",
+          "D": "Use OCR skill because normalized images must be converted into text. The source and output mappings route data but do not themselves recognize characters."
+        }
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "S028",
+          "snapshotSha256": "3d24961260a3a7ca041656383016222704c25dec2dff53743bbaef628236312b",
+          "title": "Skillset concepts in Azure AI Search",
+          "url": "https://learn.microsoft.com/azure/search/cognitive-search-working-with-skillsets",
+          "docType": "official_docs"
+        },
+        {
+          "sourceId": "S029",
+          "snapshotSha256": "eb899b4d8c7fdd95e158072fa95891c8c96388f09c48c00a67683fa10ec4591a",
+          "title": "Document Layout skill",
+          "url": "https://learn.microsoft.com/azure/search/cognitive-search-skill-document-intelligence-layout",
+          "docType": "official_docs"
+        },
+        {
+          "sourceId": "S043",
+          "snapshotSha256": "0a5cdd696dcbae744d32db7fd89a69926f0203462f86d6dc25793ab07d001b3d",
+          "title": "OCR cognitive skill",
+          "url": "https://learn.microsoft.com/azure/search/cognitive-search-skill-ocr",
+          "docType": "official_docs"
+        },
+        {
+          "sourceId": "S026",
+          "snapshotSha256": "45a6b445fbe4f7f65334693eb96b2de7b021e0b50ce46b363ab47c5de0a11f0d",
+          "title": "Integrated vector embedding in Azure AI Search",
+          "url": "https://learn.microsoft.com/azure/search/vector-search-integrated-vectorization",
+          "docType": "official_docs"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-08T05:59:08.589023+00:00",
+        "model": "gpt-6-astra",
+        "reasoningEffort": "ultra",
+        "batchId": "batch-7",
+        "validationStatus": "validated"
+      }
+    }
+  ],
+  "caseStudies": [
+    {
+      "id": "case-1",
+      "title": "Case study: Cedar Atlas support agent",
+      "intro": "Cedar Atlas is a fictional equipment supplier building an internal support agent. Use this shared context for Q1 and Q2. Each question is independent; an answer to Q1 does not change the facts for Q2.",
+      "sections": [
+        {
+          "heading": "Inference and workload requirements",
+          "body": "The agent answers interactive support requests. The approved processing boundary is the EU data zone; processing must not move outside it. Traffic is irregular, and the team wants pay-per-token billing without reserving throughput units. Asynchronous batch processing is unsuitable for the user-facing responses. Assume the chosen model supports all deployment types listed in Q1 and sufficient quota is available."
+        },
+        {
+          "heading": "Retrieval and network requirements",
+          "body": "Company manuals are indexed in Azure AI Search. Foundry Agent Service uses standard setup with private networking. Public access to Search must stay disabled. Private endpoint routing and DNS resolution have been verified from the relevant network. An authorized developer can query the index from that network."
+        },
+        {
+          "heading": "Identity findings",
+          "body": "The agent uses the documented Azure AI Search tool and a project connection to the correct index. The connection currently uses a Search API key. For this setup, the keyless connection principal is the system-assigned managed identity of the Foundry account containing the project. Search RBAC is enabled. That identity already has Search Service Contributor on Search, but lacks Search Index Data Contributor. The developer and deployment pipeline have provisioning permissions; neither is intended as the runtime connection principal. The agent's model calls already succeed."
+        }
+      ],
+      "questionIds": [
+        "ai103-pilot001-q01",
+        "ai103-pilot001-q02"
+      ]
+    }
+  ],
+  "reviews": []
+}

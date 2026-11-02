@@ -1,0 +1,95 @@
+{
+  "templateOnly": true,
+  "packetId": "ai103-improvement-r2-set-a-100-batch-4",
+  "packageId": "ai103-improvement-r2-set-a-100",
+  "revision": "2",
+  "pack": {
+    "id": "ai-103",
+    "version": "1.2.0"
+  },
+  "draftPackageSha256": "06b6490c1b4476a934d6301f1a53263b0e941b691ac9febf2e4522411b324c4a",
+  "reviewer": {
+    "actualModelLabel": null,
+    "visibleModeIfAny": null,
+    "reviewedAtUtc": null
+  },
+  "instructions": "Solve blind first. Assess alternatives, evidence, API/version, objective fit, difficulty and cues. Null verdicts are not reviews.",
+  "items": [
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q013",
+      "itemRevision": "2",
+      "itemSha256": "5dfe068f5f98a19f542d711a3b47ac3a438d65fbbe8c56d81a178dee4d1aec42",
+      "sourceIds": [
+        "S053"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S053",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q014",
+      "itemRevision": "2",
+      "itemSha256": "50ce73a5f25f4ab927500b9ac68fc8a025cabde06cc8b8118fe910931fb7dda6",
+      "sourceIds": [
+        "S053"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S053",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q015",
+      "itemRevision": "2",
+      "itemSha256": "8199fef410314a966a824d294e1110f15c92d9f5749c809fc5747356c435759f",
+      "sourceIds": [
+        "S037"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S037",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q016",
+      "itemRevision": "2",
+      "itemSha256": "668c679e809880f2102ef8b798a0b212e51059e0d242513a3f5b21f18b47a5bf",
+      "sourceIds": [
+        "S057"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S057",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    }
+  ]
+}

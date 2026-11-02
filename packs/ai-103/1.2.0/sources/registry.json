@@ -1,0 +1,1369 @@
+{
+  "capturedAt": "2026-10-11T20:36:59.452758+00:00",
+  "status": "captured-primary-evidence; study supplements separate from answer evidence",
+  "sources": [
+    {
+      "id": "S001",
+      "url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-103",
+      "groups": [],
+      "snapshot": "sources/snapshots/S001-20261011.md",
+      "fetchedAt": "2026-10-11T20:36:59.452758+00:00",
+      "kind": "official-scope",
+      "title": "AI-103 official study guide",
+      "sha256": "c9563cd70964d3dc78d468eb8f30d76d286c24b89ac1fad7eb8f5c96620db410",
+      "documentedUpdateDate": null,
+      "updateDateStatus": "unknown: connector omits authoritative page-update metadata",
+      "versionContext": "Feature-specific qualifications in snapshot; package/API version unknown unless stated in a referenced excerpt.",
+      "objectiveIds": [],
+      "status": "fetched"
+    },
+    {
+      "id": "S002",
+      "url": "https://learn.microsoft.com/python/api/overview/azure/ai-projects-readme?view=azure-python",
+      "groups": [
+        "AI103-A1",
+        "AI103-A2",
+        "AI103-B1",
+        "AI103-B2"
+      ],
+      "title": "Azure AI Projects client library for Python - version 2.8.0",
+      "fetchedAt": "2026-10-08T04:26:06.367Z",
+      "snapshot": "sources/snapshots/S002.md",
+      "kind": "official-documentation",
+      "extractionMethod": "Microsoft Learn connector full page markdown; tool session footer removed",
+      "sha256": "2ce3139fd9fb77eb3f63d4a797ecc24deab957376faac5fe5a28d80e8080b266",
+      "documentedUpdateDate": null,
+      "updateDateStatus": "unknown: connector omits authoritative page-update metadata",
+      "versionContext": "AI Projects Python2.8.0; Entra only; new Foundry2.x",
+      "objectiveIds": [
+        "AI103-A2.03",
+        "AI103-B1.05",
+        "AI103-B1.06"
+      ]
+    },
+    {
+      "id": "S003",
+      "url": "https://learn.microsoft.com/azure/foundry/how-to/develop/sdk-overview",
+      "groups": [
+        "AI103-A1",
+        "AI103-A2",
+        "AI103-B1"
+      ],
+      "title": "Microsoft Foundry SDKs and endpoints",
+      "fetchedAt": "2026-10-08T04:26:06.764Z",
+      "snapshot": "sources/snapshots/S003.md",
+      "kind": "official-documentation",
+      "extractionMethod": "Microsoft Learn connector full page markdown; tool session footer removed",
+      "sha256": "f62e4cfa9a1eeed9aa30383cab18005b8bc8f72d2743a26dedf0bb83d24e046d",
+      "documentedUpdateDate": null,
+      "updateDateStatus": "unknown: connector omits authoritative page-update metadata",
+      "versionContext": "Python2.x(new)>=2.3.0 versus1.0.0(classic); OpenAI>=3.0.0 in captured installation guidance",
+      "objectiveIds": [
+        "AI103-A1.01",
+        "AI103-A2.01",
+        "AI103-A2.03",
+        "AI103-B1.01",
+        "AI103-B1.05",
+        "AI103-B1.06",
+        "AI103-B2.01"
+      ]
+    },
+    {
+      "id": "S004",
+      "url": "https://learn.microsoft.com/azure/foundry/concepts/deployments-overview",
+      "groups": [
+        "AI103-A1",
+        "AI103-A2",
+        "AI103-B1"
+      ],
+      "title": "Deployment overview for Microsoft Foundry Models",
+      "fetchedAt": "2026-10-08T04:26:06.803Z",
+      "snapshot": "sources/snapshots/S004.md",
+      "kind": "official-documentation",
+      "extractionMethod": "Microsoft Learn connector full page markdown; tool session footer removed",
+      "sha256": "91520b0f84e6e2823bb27945cb8e25f716440b7680ffc7ea9689d8025f1d080f",
+      "documentedUpdateDate": null,
+      "updateDateStatus": "unknown: connector omits authoritative page-update metadata",
+      "versionContext": "Serverless plus new managed compute preview; quota is separate from classic VM quota",
+      "objectiveIds": [
+        "AI103-A1.01",
+        "AI103-A2.02",
+        "AI103-A3.01",
+        "AI103-B1.01"
+      ]
+    },
+    {
+      "id": "S005",
+      "url": "https://learn.microsoft.com/azure/foundry/foundry-models/concepts/deployment-types",
+      "groups": [
+        "AI103-A2",
+        "AI103-A3"
+      ],
+      "title": "Deployment types for Microsoft Foundry Models",
+      "fetchedAt": "2026-10-08T04:26:06.582Z",
+      "snapshot": "sources/snapshots/S005.md",
+      "kind": "official-documentation",
+      "extractionMethod": "Microsoft Learn connector full page markdown; tool session footer removed",
+      "sha256": "6c6d5d7b11684c1cbba8d35fd278a313e1420e3853b0ba9f104898c4a8c24c58",
+      "documentedUpdateDate": null,
+      "updateDateStatus": "unknown: connector omits authoritative page-update metadata",
+      "versionContext": "Feature-specific qualifications in snapshot; package/API version unknown unless stated in a referenced excerpt.",
+      "objectiveIds": [
+        "AI103-A2.02"
+      ]
+    },
+    {
+      "id": "S006",
+      "url": "https://learn.microsoft.com/azure/foundry/agents/concepts/what-is-memory",
+      "groups": [
+        "AI103-A1",
+        "AI103-B2"
+      ],
+      "title": "Memory in Microsoft Foundry Agent Service (preview)",
+      "fetchedAt": "2026-10-08T04:26:06.344Z",
+      "snapshot": "sources/snapshots/S006.md",
+      "kind": "official-documentation",
+      "extractionMethod": "Microsoft Learn connector full page markdown; tool session footer removed",
+      "sha256": "1dd4a33b4885266d1a2a73cee51de011ad50f9e63454609195d46179316746f8",
+      "documentedUpdateDate": null,
+      "updateDateStatus": "unknown: connector omits authoritative page-update metadata",
+      "versionContext": "Memory preview; explicit low-level scope; VNet not supported",
+      "objectiveIds": [
+        "AI103-A1.02",
+        "AI103-A1.04",
+        "AI103-B2.01",
+        "AI103-B2.02"
+      ]
+    },
+    {
+      "id": "S007",
+      "url": "https://learn.microsoft.com/azure/foundry/agents/how-to/tools/function-calling",
+      "groups": [
+        "AI103-A4",
+        "AI103-B1",
+        "AI103-B2"
+      ],
+      "title": "Use function calling with Microsoft Foundry agents",
+      "fetchedAt": "2026-10-08T04:26:06.627Z",
+      "snapshot": "sources/snapshots/S007.md",
+      "kind": "official-documentation",
+      "extractionMethod": "Microsoft Learn connector full page markdown; tool session footer removed",
+      "sha256": "0d4119f94b15c94d404729f53d2ed5f52a89dfaf35841d1290c0472be3e3e953",
+      "documentedUpdateDate": null,
+      "updateDateStatus": "unknown: connector omits authoritative page-update metadata",
+      "versionContext": "Mixed page panels: current AI Projects2.x Responses/conversations examples and classic threads/runs material. Current fragments used below; do not transfer classic10-minute run expiry to Responses.",
+      "objectiveIds": [
+        "AI103-A1.04",
+        "AI103-A4.03",
+        "AI103-A4.04",
+        "AI103-B1.03",
+        "AI103-B2.01",
+        "AI103-B2.02",
+        "AI103-B2.03",
+        "AI103-B2.05",
+        "AI103-B3.04",
+        "AI103-E1.05"
+      ]
+    },
+    {
+      "id": "S008",
+      "url": "https://learn.microsoft.com/azure/foundry/agents/concepts/workflow",
+      "groups": [
+        "AI103-A1",
+        "AI103-B1",
+        "AI103-B2",
+        "AI103-B3"
+      ],
+      "title": "Build a workflow in Microsoft Foundry (Preview)",
+      "fetchedAt": "2026-10-08T04:26:06.425Z",
+      "snapshot": "sources/snapshots/S008.md",
+      "kind": "official-documentation",
+      "extractionMethod": "Microsoft Learn connector full page markdown; tool session footer removed",
+      "sha256": "91311aec35bad6e1e44149491430baa72e5eeec37c9f869ba7fbf9356e5497e4",
+      "documentedUpdateDate": null,
+      "updateDateStatus": "unknown: connector omits authoritative page-update metadata",
+      "versionContext": "Visual designer/in-portal workflow execution retires Dec1,2026; hosted YAML migration remains",
+      "objectiveIds": [
+        "AI103-A4.04",
+        "AI103-B1.03",
+        "AI103-B2.04",
+        "AI103-B2.05",
+        "AI103-B3.04"
+      ]
+    },
+    {
+      "id": "S009",
+      "url": "https://learn.microsoft.com/azure/foundry/agents/concepts/limits-quotas-regions",
+      "groups": [
+        "AI103-A2",
+        "AI103-A3"
+      ],
+      "title": "Foundry Agent Service limits, quotas, and regional support",
+      "fetchedAt": "2026-10-08T04:26:06.654Z",
+      "snapshot": "sources/snapshots/S009.md",
+      "kind": "official-documentation",
+      "extractionMethod": "Microsoft Learn connector full page markdown; tool session footer removed",
+      "sha256": "d83fd890729d322d4ffa580ca5a8db2bed5bcd783dae47f5da2b05985f4b3041",
+      "documentedUpdateDate": null,
+      "updateDateStatus": "unknown: connector omits authoritative page-update metadata",
+      "versionContext": "Feature-specific qualifications in snapshot; package/API version unknown unless stated in a referenced excerpt.",
+      "objectiveIds": [
+        "AI103-A2.01",
+        "AI103-A2.03",
+        "AI103-A3.01",
+        "AI103-B3.03"
+      ]
+    },
+    {
+      "id": "S010",
+      "url": "https://learn.microsoft.com/azure/foundry/concepts/rbac-foundry",
+      "groups": [
+        "AI103-A2",
+        "AI103-A3",
+        "AI103-A4"
+      ],
+      "title": "Role-based access control for Microsoft Foundry",
+      "fetchedAt": "2026-10-08T04:26:17.716Z",
+      "snapshot": "sources/snapshots/S010.md",
+      "kind": "official-documentation",
+      "extractionMethod": "Microsoft Learn connector full page markdown; tool session footer removed",
+      "sha256": "c63d1b1d5cb16c4ffbf9019b34ac56ab5e47f81f1457b4e2d7c02a2de16a59f9",
+      "documentedUpdateDate": null,
+      "updateDateStatus": "unknown: connector omits authoritative page-update metadata",
+      "versionContext": "Feature-specific qualifications in snapshot; package/API version unknown unless stated in a referenced excerpt.",
+      "objectiveIds": [
+        "AI103-A3.04"
+      ]
+    },
+    {
+      "id": "S011",
+      "url": "https://learn.microsoft.com/azure/foundry/agents/how-to/virtual-networks",
+      "groups": [
+        "AI103-A2",
+        "AI103-A3"
+      ],
+      "title": "Set up private networking for Foundry Agent Service",
+      "fetchedAt": "2026-10-08T04:26:19.851Z",
+      "snapshot": "sources/snapshots/S011.md",
+      "kind": "official-documentation",
+      "extractionMethod": "Microsoft Learn connector full page markdown; tool session footer removed",
+      "sha256": "02eb40fb9bc5fcbd6b27249423b2d0ba26f5df0dd6b6885c881270a7a6fac8b9",
+      "documentedUpdateDate": null,
+      "updateDateStatus": "unknown: connector omits authoritative page-update metadata",
+      "versionContext": "Feature-specific qualifications in snapshot; package/API version unknown unless stated in a referenced excerpt.",
+      "objectiveIds": [
+        "AI103-A2.01",
+        "AI103-A3.04"
+      ]
+    },
+    {
+      "id": "S012",
+      "url": "https://learn.microsoft.com/azure/foundry/agents/quickstarts/set-up-cicd-hosted-agent",
+      "groups": [
+        "AI103-A2",
+        "AI103-B3"
+      ],
+      "title": "Quickstart: Hosted agent CI/CD templates",
+      "fetchedAt": "2026-10-08T04:26:17.813Z",
+      "snapshot": "sources/snapshots/S012.md",
+      "kind": "official-documentation",
+      "extractionMethod": "Microsoft Learn connector full page markdown; tool session footer removed",
+      "sha256": "e6e53feb7b84553872c1d228d971a02871b943aa30c877cb5f9402e1cb4797c6",
+      "documentedUpdateDate": null,
+      "updateDateStatus": "unknown: connector omits authoritative page-update metadata",
+      "versionContext": "Feature-specific qualifications in snapshot; package/API version unknown unless stated in a referenced excerpt.",
+      "objectiveIds": [
+        "AI103-A2.04"
+      ]
+    },
+    {
+      "id": "S013",
+      "url": "https://learn.microsoft.com/azure/foundry/observability/concepts/trace-agent-concept",
+      "groups": [
+        "AI103-A3",
+        "AI103-A4",
+        "AI103-B2",
+        "AI103-B3"
+      ],
+      "title": "Agent tracing overview",
+      "fetchedAt": "2026-10-08T04:26:17.608Z",
+      "snapshot": "sources/snapshots/S013.md",
+      "kind": "official-documentation",
+      "extractionMethod": "Microsoft Learn connector full page markdown; tool session footer removed",
+      "sha256": "895295a4b74d7cabaa0daf62bd6cd5239daf25b6ea85a2268dc2cdf8483b19e8",
+      "documentedUpdateDate": null,
+      "updateDateStatus": "unknown: connector omits authoritative page-update metadata",
+      "versionContext": "Prompt/hosted tracing GA; workflow/external preview",
+      "objectiveIds": [
+        "AI103-A3.02",
+        "AI103-A4.03",
+        "AI103-B2.06",
+        "AI103-B3.03"
+      ]
+    },
+    {
+      "id": "S014",
+      "url": "https://learn.microsoft.com/azure/foundry/concepts/evaluation-evaluators/agent-evaluators",
+      "groups": [
+        "AI103-A3",
+        "AI103-A4",
+        "AI103-B1",
+        "AI103-B2"
+      ],
+      "title": "Agent evaluators",
+      "fetchedAt": "2026-10-08T04:26:17.939Z",
+      "snapshot": "sources/snapshots/S014.md",
+      "kind": "official-documentation",
+      "extractionMethod": "Microsoft Learn connector full page markdown; tool session footer removed",
+      "sha256": "0ce17b86785e87efb44074de9d3fdee3ae8290dedcb04a18a68558081be7103f",
+      "documentedUpdateDate": null,
+      "updateDateStatus": "unknown: connector omits authoritative page-update metadata",
+      "versionContext": "Evaluator-specific status; task completion/adherence preview",
+      "objectiveIds": [
+        "AI103-A2.04",
+        "AI103-A4.02",
+        "AI103-B1.04",
+        "AI103-B2.06",
+        "AI103-B3.02"
+      ]
+    },
+    {
+      "id": "S015",
+      "url": "https://learn.microsoft.com/azure/foundry/guardrails/guardrails-overview",
+      "groups": [
+        "AI103-A4",
+        "AI103-C3"
+      ],
+      "title": "Guardrails and controls overview in Microsoft Foundry",
+      "fetchedAt": "2026-10-08T04:26:20.223Z",
+      "snapshot": "sources/snapshots/S015.md",
+      "kind": "official-documentation",
+      "extractionMethod": "Microsoft Learn connector full page markdown; tool session footer removed",
+      "sha256": "8bff59568b79380dc2ea6df819b965422c98fdf03bf6b06df0b99bc1287e4c54",
+      "documentedUpdateDate": null,
+      "updateDateStatus": "unknown: connector omits authoritative page-update metadata",
+      "versionContext": "Agent guardrails/tool boundaries preview; severity adjective conflict recorded",
+      "objectiveIds": [
+        "AI103-A4.01",
+        "AI103-A4.04",
+        "AI103-B2.05",
+        "AI103-D1.02"
+      ]
+    },
+    {
+      "id": "S016",
+      "url": "https://learn.microsoft.com/azure/foundry/openai/concepts/content-filter-prompt-shields",
+      "groups": [
+        "AI103-A4",
+        "AI103-C3"
+      ],
+      "title": "Prompt Shields in Microsoft Foundry",
+      "fetchedAt": "2026-10-08T04:26:17.605Z",
+      "snapshot": "sources/snapshots/S016.md",
+      "kind": "official-documentation",
+      "extractionMethod": "Microsoft Learn connector full page markdown; tool session footer removed",
+      "sha256": "770228d708d01826dc0d17c9ddafbb8d0e7f412bb2a0ad9a13b2ac54ac84735e",
+      "documentedUpdateDate": null,
+      "updateDateStatus": "unknown: connector omits authoritative page-update metadata",
+      "versionContext": "Spotlighting preview and Chat Completions only",
+      "objectiveIds": [
+        "AI103-A4.01",
+        "AI103-C3.02"
+      ]
+    },
+    {
+      "id": "S017",
+      "url": "https://learn.microsoft.com/azure/foundry/openai/how-to/dall-e",
+      "groups": [
+        "AI103-C1"
+      ],
+      "title": "Azure OpenAI image generation models",
+      "fetchedAt": "2026-10-08T04:26:18.089Z",
+      "snapshot": "sources/snapshots/S017.md",
+      "kind": "official-documentation",
+      "extractionMethod": "Microsoft Learn connector full page markdown; tool session footer removed",
+      "sha256": "34668770bb5790633413f4ae9432738c85ed36aef328f9f2bdb8b1b82437dca6",
+      "documentedUpdateDate": null,
+      "updateDateStatus": "unknown: connector omits authoritative page-update metadata",
+      "versionContext": "GPT image models with model-specific GA/access/preview; DALL-E3retired",
+      "objectiveIds": [
+        "AI103-C1.01",
+        "AI103-C1.03",
+        "AI103-C1.05"
+      ]
+    },
+    {
+      "id": "S018",
+      "url": "https://learn.microsoft.com/azure/foundry/openai/concepts/video-generation",
+      "groups": [
+        "AI103-C1"
+      ],
+      "title": "Video generation with Sora 2 (preview)",
+      "fetchedAt": "2026-10-08T04:26:19.882Z",
+      "snapshot": "sources/snapshots/S018.md",
+      "kind": "official-documentation",
+      "extractionMethod": "Microsoft Learn connector full page markdown; tool session footer removed",
+      "sha256": "32257da44487ca802a87e1ebad7ef31dc91f45f034d3334fb60b1c7d53ffb808",
+      "documentedUpdateDate": null,
+      "updateDateStatus": "unknown: connector omits authoritative page-update metadata",
+      "versionContext": "Sora2preview; OpenAI v1 videos API; do not mix older jobs samples",
+      "objectiveIds": [
+        "AI103-C1.02",
+        "AI103-C1.04",
+        "AI103-C1.05",
+        "AI103-C3.03"
+      ]
+    },
+    {
+      "id": "S019",
+      "url": "https://learn.microsoft.com/azure/foundry/openai/how-to/gpt-with-vision",
+      "groups": [
+        "AI103-C2"
+      ],
+      "title": "Use vision-enabled chat models",
+      "fetchedAt": "2026-10-08T04:26:34.714Z",
+      "snapshot": "sources/snapshots/S019.md",
+      "kind": "official-documentation",
+      "extractionMethod": "Microsoft Learn connector full page markdown; tool session footer removed",
+      "sha256": "1ce6d9970cccbd4d54714eff5d70bc5e73d4c2c8ad3ea48175c8fcea5d11b2cd",
+      "documentedUpdateDate": null,
+      "updateDateStatus": "unknown: connector omits authoritative page-update metadata",
+      "versionContext": "Feature-specific qualifications in snapshot; package/API version unknown unless stated in a referenced excerpt.",
+      "objectiveIds": [
+        "AI103-C2.01",
+        "AI103-C2.02",
+        "AI103-C2.03",
+        "AI103-C2.04"
+      ]
+    },
+    {
+      "id": "S020",
+      "url": "https://learn.microsoft.com/azure/ai-services/content-understanding/overview",
+      "groups": [
+        "AI103-A1",
+        "AI103-C2",
+        "AI103-E1",
+        "AI103-E2"
+      ],
+      "title": "What is Azure Content Understanding in Foundry Tools?",
+      "fetchedAt": "2026-10-08T04:26:34.198Z",
+      "snapshot": "sources/snapshots/S020.md",
+      "kind": "official-documentation",
+      "extractionMethod": "Microsoft Learn connector full page markdown; tool session footer removed",
+      "sha256": "c371f350d668f0d6040d569a845d3ec43e22834614253c7be6c62115f59ba8df",
+      "documentedUpdateDate": null,
+      "updateDateStatus": "unknown: connector omits authoritative page-update metadata",
+      "versionContext": "GA2025-11-01 versus2026-06-01-preview",
+      "objectiveIds": [
+        "AI103-C2.05",
+        "AI103-C2.07",
+        "AI103-E2.01"
+      ]
+    },
+    {
+      "id": "S021",
+      "url": "https://learn.microsoft.com/python/api/overview/azure/ai-contentunderstanding-readme?view=azure-python",
+      "groups": [
+        "AI103-C2",
+        "AI103-E2"
+      ],
+      "title": "Azure AI Content Understanding client library for Python - version 1.1.0",
+      "fetchedAt": "2026-10-08T04:26:34.224Z",
+      "snapshot": "sources/snapshots/S021.md",
+      "kind": "official-documentation",
+      "extractionMethod": "Microsoft Learn connector full page markdown; tool session footer removed",
+      "sha256": "aa5fd0abb99fe608e62d3909ffd7bc4eac9904dc931f427c9e3788351fbc7b42",
+      "documentedUpdateDate": null,
+      "updateDateStatus": "unknown: connector omits authoritative page-update metadata",
+      "versionContext": "azure-ai-contentunderstanding1.1.0 /API2025-11-01; ContentUnderstandingClient; Entra or key",
+      "objectiveIds": [
+        "AI103-A1.02",
+        "AI103-B2.03",
+        "AI103-C2.05",
+        "AI103-C2.08",
+        "AI103-E1.01",
+        "AI103-E2.01",
+        "AI103-E2.02",
+        "AI103-E2.03"
+      ]
+    },
+    {
+      "id": "S022",
+      "url": "https://learn.microsoft.com/azure/ai-services/content-understanding/video/overview",
+      "groups": [
+        "AI103-C2",
+        "AI103-E1"
+      ],
+      "title": "Azure Content Understanding in Foundry Tools video solutions",
+      "fetchedAt": "2026-10-08T04:26:34.483Z",
+      "snapshot": "sources/snapshots/S022.md",
+      "kind": "official-documentation",
+      "extractionMethod": "Microsoft Learn connector full page markdown; tool session footer removed",
+      "sha256": "3a89d957245350c800482a717244bd3fc27b322ed67dbcbabea8e41782a3a57a",
+      "documentedUpdateDate": null,
+      "updateDateStatus": "unknown: connector omits authoritative page-update metadata",
+      "versionContext": "2026-06-01-preview; about1fps/512x512 sampling limitations",
+      "objectiveIds": [
+        "AI103-C2.06",
+        "AI103-C2.08"
+      ]
+    },
+    {
+      "id": "S023",
+      "url": "https://learn.microsoft.com/azure/ai-services/content-understanding/concepts/agentic-mode",
+      "groups": [
+        "AI103-C2",
+        "AI103-E2"
+      ],
+      "title": "Agentic mode for document analysis (preview)",
+      "fetchedAt": "2026-10-08T04:26:34.767Z",
+      "snapshot": "sources/snapshots/S023.md",
+      "kind": "official-documentation",
+      "extractionMethod": "Microsoft Learn connector full page markdown; tool session footer removed",
+      "sha256": "cdca80161f869225821aa08ca9d9eab4cb30d557431a3b5bb027a8efd1af9846",
+      "documentedUpdateDate": null,
+      "updateDateStatus": "unknown: connector omits authoritative page-update metadata",
+      "versionContext": "agentic2026-06-01-preview; retired pro2025-05-01-preview",
+      "objectiveIds": [
+        "AI103-C2.07"
+      ]
+    },
+    {
+      "id": "S024",
+      "url": "https://learn.microsoft.com/azure/ai-services/content-understanding/how-to/migration-preview-to-ga",
+      "groups": [
+        "AI103-C2",
+        "AI103-E2"
+      ],
+      "title": "Migrate from Azure Content Understanding Preview to GA",
+      "fetchedAt": "2026-10-08T04:26:34.174Z",
+      "snapshot": "sources/snapshots/S024.md",
+      "kind": "official-documentation",
+      "extractionMethod": "Microsoft Learn connector full page markdown; tool session footer removed",
+      "sha256": "fae2f5f5f6b539cd61891a670e03cd73b69517bd45010e6f6a02902e4bd82ad7",
+      "documentedUpdateDate": null,
+      "updateDateStatus": "unknown: connector omits authoritative page-update metadata",
+      "versionContext": "GA2025-11-01migration; keep feature-specific preview qualifiers",
+      "objectiveIds": [
+        "AI103-C2.07",
+        "AI103-E2.03"
+      ]
+    },
+    {
+      "id": "S025",
+      "url": "https://learn.microsoft.com/azure/search/hybrid-search-overview",
+      "groups": [
+        "AI103-A1",
+        "AI103-B1",
+        "AI103-E1"
+      ],
+      "title": "Hybrid search using vectors and full-text search in Azure AI Search",
+      "fetchedAt": "2026-10-08T04:26:34.293Z",
+      "snapshot": "sources/snapshots/S025.md",
+      "kind": "official-documentation",
+      "extractionMethod": "Microsoft Learn connector full page markdown; tool session footer removed",
+      "sha256": "8f766ea87e9528dc1e469ffca3de91350cf9b9393aaf47e5c8c124378457397d",
+      "documentedUpdateDate": null,
+      "updateDateStatus": "unknown: connector omits authoritative page-update metadata",
+      "versionContext": "Feature-specific qualifications in snapshot; package/API version unknown unless stated in a referenced excerpt.",
+      "objectiveIds": [
+        "AI103-A1.03",
+        "AI103-B1.02",
+        "AI103-E1.02"
+      ]
+    },
+    {
+      "id": "S026",
+      "url": "https://learn.microsoft.com/azure/search/vector-search-integrated-vectorization",
+      "groups": [
+        "AI103-A1",
+        "AI103-B1",
+        "AI103-E1"
+      ],
+      "title": "Integrated vector embedding in Azure AI Search",
+      "fetchedAt": "2026-10-08T04:26:34.192Z",
+      "snapshot": "sources/snapshots/S026.md",
+      "kind": "official-documentation",
+      "extractionMethod": "Microsoft Learn connector full page markdown; tool session footer removed",
+      "sha256": "45a6b445fbe4f7f65334693eb96b2de7b021e0b50ce46b363ab47c5de0a11f0d",
+      "documentedUpdateDate": null,
+      "updateDateStatus": "unknown: connector omits authoritative page-update metadata",
+      "versionContext": "Feature-specific qualifications in snapshot; package/API version unknown unless stated in a referenced excerpt.",
+      "objectiveIds": [
+        "AI103-A1.02",
+        "AI103-A1.03",
+        "AI103-B1.02",
+        "AI103-E1.01",
+        "AI103-E1.02",
+        "AI103-E1.04"
+      ]
+    },
+    {
+      "id": "S027",
+      "url": "https://learn.microsoft.com/azure/search/monitor-azure-cognitive-search",
+      "groups": [
+        "AI103-A3",
+        "AI103-E1"
+      ],
+      "title": "Monitor Azure AI Search",
+      "fetchedAt": "2026-10-08T04:26:34.118Z",
+      "snapshot": "sources/snapshots/S027.md",
+      "kind": "official-documentation",
+      "extractionMethod": "Microsoft Learn connector full page markdown; tool session footer removed",
+      "sha256": "fd18e205e7cd88e39eab53a5690757f65c8d457366491f8954875d2bc4f54ca0",
+      "documentedUpdateDate": null,
+      "updateDateStatus": "unknown: connector omits authoritative page-update metadata",
+      "versionContext": "Feature-specific qualifications in snapshot; package/API version unknown unless stated in a referenced excerpt.",
+      "objectiveIds": [
+        "AI103-A3.03"
+      ]
+    },
+    {
+      "id": "S028",
+      "url": "https://learn.microsoft.com/azure/search/cognitive-search-working-with-skillsets",
+      "groups": [
+        "AI103-E1"
+      ],
+      "title": "Skillset concepts in Azure AI Search",
+      "fetchedAt": "2026-10-08T04:26:34.609Z",
+      "snapshot": "sources/snapshots/S028.md",
+      "kind": "official-documentation",
+      "extractionMethod": "Microsoft Learn connector full page markdown; tool session footer removed",
+      "sha256": "3d24961260a3a7ca041656383016222704c25dec2dff53743bbaef628236312b",
+      "documentedUpdateDate": null,
+      "updateDateStatus": "unknown: connector omits authoritative page-update metadata",
+      "versionContext": "Feature-specific qualifications in snapshot; package/API version unknown unless stated in a referenced excerpt.",
+      "objectiveIds": [
+        "AI103-E1.03"
+      ]
+    },
+    {
+      "id": "S029",
+      "url": "https://learn.microsoft.com/azure/search/cognitive-search-skill-document-intelligence-layout",
+      "groups": [
+        "AI103-E1",
+        "AI103-E2"
+      ],
+      "title": "Document Layout skill",
+      "fetchedAt": "2026-10-08T04:26:45.449Z",
+      "snapshot": "sources/snapshots/S029.md",
+      "kind": "official-documentation",
+      "extractionMethod": "Microsoft Learn connector full page markdown; tool session footer removed",
+      "sha256": "eb899b4d8c7fdd95e158072fa95891c8c96388f09c48c00a67683fa10ec4591a",
+      "documentedUpdateDate": null,
+      "updateDateStatus": "unknown: connector omits authoritative page-update metadata",
+      "versionContext": "Feature-specific qualifications in snapshot; package/API version unknown unless stated in a referenced excerpt.",
+      "objectiveIds": [
+        "AI103-E1.03",
+        "AI103-E1.04",
+        "AI103-E2.01"
+      ]
+    },
+    {
+      "id": "S030",
+      "url": "https://learn.microsoft.com/azure/ai-services/language-service/overview",
+      "groups": [
+        "AI103-D1"
+      ],
+      "title": "What is Azure Language in Foundry Tools?",
+      "fetchedAt": "2026-10-08T04:26:45.449Z",
+      "snapshot": "sources/snapshots/S030.md",
+      "kind": "official-documentation",
+      "extractionMethod": "Microsoft Learn connector full page markdown; tool session footer removed",
+      "sha256": "debd3c5f132c72a0d258daa4d82d950834da5b4c89e3b42b20cf32982a169e1d",
+      "documentedUpdateDate": null,
+      "updateDateStatus": "unknown: connector omits authoritative page-update metadata",
+      "versionContext": "Core/legacy features separated",
+      "objectiveIds": [
+        "AI103-D1.01",
+        "AI103-D1.02"
+      ]
+    },
+    {
+      "id": "S031",
+      "url": "https://learn.microsoft.com/azure/ai-services/language-service/summarization/overview",
+      "groups": [
+        "AI103-D1"
+      ],
+      "title": "What is summarization?",
+      "fetchedAt": "2026-10-08T04:26:45.353Z",
+      "snapshot": "sources/snapshots/S031.md",
+      "kind": "official-documentation",
+      "extractionMethod": "Microsoft Learn connector full page markdown; tool session footer removed",
+      "sha256": "2ce54fde2b84248210dcae4d3c5703d0a09a7ab87e8b3ca97cd7e786c37bb6a0",
+      "documentedUpdateDate": null,
+      "updateDateStatus": "unknown: connector omits authoritative page-update metadata",
+      "versionContext": "Summarization retires Mar31,2029; document summary preview",
+      "objectiveIds": [
+        "AI103-D1.04"
+      ]
+    },
+    {
+      "id": "S032",
+      "url": "https://learn.microsoft.com/azure/ai-services/translator/overview",
+      "groups": [
+        "AI103-D1"
+      ],
+      "title": "What is Azure Translator in Foundry Tools?",
+      "fetchedAt": "2026-10-08T04:26:45.353Z",
+      "snapshot": "sources/snapshots/S032.md",
+      "kind": "official-documentation",
+      "extractionMethod": "Microsoft Learn connector full page markdown; tool session footer removed",
+      "sha256": "5bed84630392d9ef61f1f463299425457e14614de81cefd58f484a680615b0df",
+      "documentedUpdateDate": null,
+      "updateDateStatus": "unknown: connector omits authoritative page-update metadata",
+      "versionContext": "Translator v3 and2026-06-06GA; document sync/async differ",
+      "objectiveIds": [
+        "AI103-D1.03"
+      ]
+    },
+    {
+      "id": "S033",
+      "url": "https://learn.microsoft.com/azure/ai-services/speech-service/overview",
+      "groups": [
+        "AI103-D2"
+      ],
+      "title": "What is Azure Speech?",
+      "fetchedAt": "2026-10-08T04:26:45.861Z",
+      "snapshot": "sources/snapshots/S033.md",
+      "kind": "official-documentation",
+      "extractionMethod": "Microsoft Learn connector full page markdown; tool session footer removed",
+      "sha256": "60a8436b0646a9a3c1e779b78f0e1d645948866173ce85449a6283d58c019d54",
+      "documentedUpdateDate": null,
+      "updateDateStatus": "unknown: connector omits authoritative page-update metadata",
+      "versionContext": "Feature-specific qualifications in snapshot; package/API version unknown unless stated in a referenced excerpt.",
+      "objectiveIds": [
+        "AI103-D2.01",
+        "AI103-D2.04"
+      ]
+    },
+    {
+      "id": "S034",
+      "url": "https://learn.microsoft.com/azure/ai-services/speech-service/custom-speech-overview",
+      "groups": [
+        "AI103-D2"
+      ],
+      "title": "What is custom speech?",
+      "fetchedAt": "2026-10-08T04:26:45.527Z",
+      "snapshot": "sources/snapshots/S034.md",
+      "kind": "official-documentation",
+      "extractionMethod": "Microsoft Learn connector full page markdown; tool session footer removed",
+      "sha256": "8bde6391b7bdee42b5e52ea8c995024dcda82d1a0b56acbdfb817207b2a8d511",
+      "documentedUpdateDate": null,
+      "updateDateStatus": "unknown: connector omits authoritative page-update metadata",
+      "versionContext": "Feature-specific qualifications in snapshot; package/API version unknown unless stated in a referenced excerpt.",
+      "objectiveIds": [
+        "AI103-D2.02"
+      ]
+    },
+    {
+      "id": "S035",
+      "url": "https://learn.microsoft.com/azure/ai-services/speech-service/voice-live",
+      "groups": [
+        "AI103-D2"
+      ],
+      "title": "Voice Live API for real-time voice agents",
+      "fetchedAt": "2026-10-08T04:26:45.779Z",
+      "snapshot": "sources/snapshots/S035.md",
+      "kind": "official-documentation",
+      "extractionMethod": "Microsoft Learn connector full page markdown; tool session footer removed",
+      "sha256": "e73bb03416a786c00b45198fdfdb0cc859eb5c76e66e481361d69ba291d440f0",
+      "documentedUpdateDate": null,
+      "updateDateStatus": "unknown: connector omits authoritative page-update metadata",
+      "versionContext": "Feature-specific qualifications in snapshot; package/API version unknown unless stated in a referenced excerpt.",
+      "objectiveIds": [
+        "AI103-D2.01",
+        "AI103-D2.02",
+        "AI103-D2.03"
+      ]
+    },
+    {
+      "id": "S036",
+      "url": "https://learn.microsoft.com/azure/foundry/openai/how-to/realtime-audio",
+      "groups": [
+        "AI103-D2"
+      ],
+      "title": "Use the GPT Realtime API for speech and audio",
+      "fetchedAt": "2026-10-08T04:26:45.463Z",
+      "snapshot": "sources/snapshots/S036.md",
+      "kind": "official-documentation",
+      "extractionMethod": "Microsoft Learn connector full page markdown; tool session footer removed",
+      "sha256": "69134c918deb6d5a8089eb41d86cf44b7a17ded278305d6afb203c2779e889b6",
+      "documentedUpdateDate": null,
+      "updateDateStatus": "unknown: connector omits authoritative page-update metadata",
+      "versionContext": "Feature-specific qualifications in snapshot; package/API version unknown unless stated in a referenced excerpt.",
+      "objectiveIds": [
+        "AI103-D2.03"
+      ]
+    },
+    {
+      "id": "S037",
+      "url": "https://learn.microsoft.com/azure/foundry/openai/how-to/structured-outputs",
+      "groups": [
+        "AI103-D1"
+      ],
+      "title": "Structured outputs",
+      "fetchedAt": "2026-10-08T04:26:45.503Z",
+      "snapshot": "sources/snapshots/S037.md",
+      "kind": "official-documentation",
+      "extractionMethod": "Microsoft Learn connector full page markdown; tool session footer removed",
+      "sha256": "0337c89ce3e5a9ba28d1c2fc18f1644c50b13568eb19edc43420d16b401cacfc",
+      "documentedUpdateDate": null,
+      "updateDateStatus": "unknown: connector omits authoritative page-update metadata",
+      "versionContext": "Chat Completions response_format versus Responses text.format; strict schema subset",
+      "objectiveIds": [
+        "AI103-B3.01",
+        "AI103-D1.01",
+        "AI103-D1.03",
+        "AI103-D1.04"
+      ]
+    },
+    {
+      "id": "S038",
+      "url": "https://learn.microsoft.com/azure/foundry/openai/how-to/reasoning",
+      "groups": [
+        "AI103-B3"
+      ],
+      "title": "Azure OpenAI reasoning models",
+      "fetchedAt": "2026-10-08T04:27:31.451Z",
+      "snapshot": "sources/snapshots/S038.md",
+      "kind": "official-documentation",
+      "extractionMethod": "Microsoft Learn connector full page markdown; tool session footer removed",
+      "sha256": "e70ad3d65055c901703ee0f2faa850aa6c69cd5ee2a4d7e57d3e0a5e0b3cbf34",
+      "documentedUpdateDate": null,
+      "updateDateStatus": "unknown: connector omits authoritative page-update metadata",
+      "versionContext": "Feature-specific qualifications in snapshot; package/API version unknown unless stated in a referenced excerpt.",
+      "objectiveIds": [
+        "AI103-B3.01",
+        "AI103-B3.02"
+      ]
+    },
+    {
+      "id": "S040",
+      "url": "https://learn.microsoft.com/azure/foundry/agents/how-to/tools/ai-search",
+      "groups": [
+        "AI103-A1",
+        "AI103-B1",
+        "AI103-B2",
+        "AI103-E1"
+      ],
+      "title": "Connect an Azure AI Search index to Foundry agents",
+      "fetchedAt": "2026-10-08T04:27:31.726Z",
+      "snapshot": "sources/snapshots/S040.md",
+      "kind": "official-documentation",
+      "extractionMethod": "Microsoft Learn connector full page markdown; tool session footer removed",
+      "sha256": "67830020b25de8c993ae294ff523035ad2c04c16865c1fe7222f053769316545",
+      "documentedUpdateDate": null,
+      "updateDateStatus": "unknown: connector omits authoritative page-update metadata",
+      "versionContext": "Feature-specific qualifications in snapshot; package/API version unknown unless stated in a referenced excerpt.",
+      "objectiveIds": [
+        "AI103-A3.04",
+        "AI103-B1.02",
+        "AI103-B2.02",
+        "AI103-B2.03",
+        "AI103-E1.05"
+      ]
+    },
+    {
+      "id": "S041",
+      "url": "https://learn.microsoft.com/azure/foundry/openai/how-to/model-router",
+      "groups": [
+        "AI103-A1",
+        "AI103-B3"
+      ],
+      "title": "Use model router for Microsoft Foundry",
+      "fetchedAt": "2026-10-08T04:27:31.353Z",
+      "snapshot": "sources/snapshots/S041.md",
+      "kind": "official-documentation",
+      "extractionMethod": "Microsoft Learn connector full page markdown; tool session footer removed",
+      "sha256": "3be91b9f91f1b5fcf1b54983251d4026747960e43c423f8f4caa3191336bf5d1",
+      "documentedUpdateDate": null,
+      "updateDateStatus": "unknown: connector omits authoritative page-update metadata",
+      "versionContext": "Feature-specific qualifications in snapshot; package/API version unknown unless stated in a referenced excerpt.",
+      "objectiveIds": [
+        "AI103-A1.01",
+        "AI103-B3.04"
+      ]
+    },
+    {
+      "id": "S042",
+      "url": "https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-image",
+      "groups": [
+        "AI103-C3"
+      ],
+      "title": "QuickStart: Analyze image content",
+      "fetchedAt": "2026-10-08T04:27:31.323Z",
+      "snapshot": "sources/snapshots/S042.md",
+      "kind": "official-documentation",
+      "extractionMethod": "Microsoft Learn connector full page markdown; tool session footer removed",
+      "sha256": "6a40b6fdabe9e2a91838a3026f8530d0229c70acd401c4fab094a6c0c63b8670",
+      "documentedUpdateDate": null,
+      "updateDateStatus": "unknown: connector omits authoritative page-update metadata",
+      "versionContext": "Feature-specific qualifications in snapshot; package/API version unknown unless stated in a referenced excerpt.",
+      "objectiveIds": [
+        "AI103-C3.01",
+        "AI103-C3.03"
+      ]
+    },
+    {
+      "id": "S043",
+      "url": "https://learn.microsoft.com/azure/search/cognitive-search-skill-ocr",
+      "groups": [
+        "AI103-E1"
+      ],
+      "title": "OCR cognitive skill",
+      "fetchedAt": "2026-10-08T04:27:31.143Z",
+      "snapshot": "sources/snapshots/S043.md",
+      "kind": "official-documentation",
+      "extractionMethod": "Microsoft Learn connector full page markdown; tool session footer removed",
+      "sha256": "0a5cdd696dcbae744d32db7fd89a69926f0203462f86d6dc25793ab07d001b3d",
+      "documentedUpdateDate": null,
+      "updateDateStatus": "unknown: connector omits authoritative page-update metadata",
+      "versionContext": "Feature-specific qualifications in snapshot; package/API version unknown unless stated in a referenced excerpt.",
+      "objectiveIds": [
+        "AI103-C3.02",
+        "AI103-E1.03",
+        "AI103-E1.04"
+      ]
+    },
+    {
+      "id": "S044",
+      "url": "https://learn.microsoft.com/azure/search/search-monitor-indexers",
+      "groups": [
+        "AI103-A3",
+        "AI103-E1"
+      ],
+      "title": "Monitor indexer status and results in Azure AI Search",
+      "fetchedAt": "2026-10-08T04:27:31.159Z",
+      "snapshot": "sources/snapshots/S044.md",
+      "kind": "official-documentation",
+      "extractionMethod": "Microsoft Learn connector full page markdown; tool session footer removed",
+      "sha256": "7b9808eefb69e1d573b537e17a3fff7ab159cf6e259f3b7a254a2ecd1c1a8dcc",
+      "documentedUpdateDate": null,
+      "updateDateStatus": "unknown: connector omits authoritative page-update metadata",
+      "versionContext": "Feature-specific qualifications in snapshot; package/API version unknown unless stated in a referenced excerpt.",
+      "objectiveIds": [
+        "AI103-A3.03"
+      ]
+    },
+    {
+      "id": "S045",
+      "url": "https://learn.microsoft.com/azure/ai-services/content-understanding/document/analyzer-improvement",
+      "groups": [
+        "AI103-C2",
+        "AI103-E2"
+      ],
+      "title": "Validate document analyzer quality with confidence, grounding, and labeled samples",
+      "fetchedAt": "2026-10-08T04:27:31.273Z",
+      "snapshot": "sources/snapshots/S045.md",
+      "kind": "official-documentation",
+      "extractionMethod": "Microsoft Learn connector full page markdown; tool session footer removed",
+      "sha256": "c08a60437bdcc723d00d30d9898b3967040a122cf43b5ff95b5f1a33a3dadd93",
+      "documentedUpdateDate": null,
+      "updateDateStatus": "unknown: connector omits authoritative page-update metadata",
+      "versionContext": "Feature-specific qualifications in snapshot; package/API version unknown unless stated in a referenced excerpt.",
+      "objectiveIds": [
+        "AI103-A4.03",
+        "AI103-C2.03",
+        "AI103-C2.08",
+        "AI103-E2.01",
+        "AI103-E2.02"
+      ]
+    },
+    {
+      "id": "S046",
+      "url": "https://learn.microsoft.com/azure/ai-services/speech-service/how-to-translate-speech",
+      "groups": [
+        "AI103-D2"
+      ],
+      "title": "How to recognize and translate speech",
+      "fetchedAt": "2026-10-08T04:27:31.793Z",
+      "snapshot": "sources/snapshots/S046.md",
+      "kind": "official-documentation",
+      "extractionMethod": "Microsoft Learn connector full page markdown; tool session footer removed",
+      "sha256": "8a73fb1e63f49dde972815b860758a57ff3d620842220f9e29200bccf573c39e",
+      "documentedUpdateDate": null,
+      "updateDateStatus": "unknown: connector omits authoritative page-update metadata",
+      "versionContext": "azure-cognitiveservices-speech; sample SDK version unspecified; translation config/recognizer/synthesis",
+      "objectiveIds": [
+        "AI103-D2.04"
+      ]
+    },
+    {
+      "id": "S039",
+      "url": "https://learn.microsoft.com/azure/foundry/concepts/evaluation-evaluators/rag-evaluators",
+      "groups": [
+        "AI103-A3",
+        "AI103-B1"
+      ],
+      "title": "Retrieval-Augmented Generation (RAG) evaluators",
+      "fetchedAt": "2026-10-08T04:27:50.669Z",
+      "snapshot": "sources/snapshots/S039.md",
+      "kind": "official-documentation",
+      "extractionMethod": "Microsoft Learn connector full page markdown; tool session footer removed",
+      "sha256": "3b16c765be1f1479ac22e04cf9b293be767d473fc1cacb188b90751227074a4b",
+      "documentedUpdateDate": null,
+      "updateDateStatus": "unknown: connector omits authoritative page-update metadata",
+      "versionContext": "Feature-specific qualifications in snapshot; package/API version unknown unless stated in a referenced excerpt.",
+      "objectiveIds": [
+        "AI103-A3.02",
+        "AI103-A3.03",
+        "AI103-A4.02",
+        "AI103-B1.02",
+        "AI103-B1.04"
+      ]
+    },
+    {
+      "id": "S047",
+      "url": "https://learn.microsoft.com/azure/foundry/openai/concepts/prompt-engineering",
+      "groups": [
+        "AI103-B3",
+        "AI103-D1"
+      ],
+      "title": "Prompt engineering techniques",
+      "fetchedAt": "2026-10-08T04:27:50.704Z",
+      "snapshot": "sources/snapshots/S047.md",
+      "kind": "official-documentation",
+      "extractionMethod": "Microsoft Learn connector full page markdown; tool session footer removed",
+      "sha256": "b4589840f35e640a7d5b7936baa6a05b21af3023e4ec00d3aa471e990ec8fccd",
+      "documentedUpdateDate": null,
+      "updateDateStatus": "unknown: connector omits authoritative page-update metadata",
+      "versionContext": "Feature-specific qualifications in snapshot; package/API version unknown unless stated in a referenced excerpt.",
+      "objectiveIds": [
+        "AI103-B3.01",
+        "AI103-B3.02",
+        "AI103-D1.04"
+      ]
+    },
+    {
+      "id": "S048",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/content-safety/faq",
+      "groups": [
+        "AI103-C3"
+      ],
+      "title": "Azure AI Content Safety Frequently Asked Questions",
+      "fetchedAt": "2026-10-11T20:36:59.395320+00:00",
+      "snapshot": "sources/snapshots/S066-20261011.md",
+      "kind": "official-documentation",
+      "extractionMethod": "Microsoft Learn connector full page markdown; tool session footer removed",
+      "sha256": "1b16f29ac9424c57412c1d41d6e8a1edabe2bac709c1296ffdac09e0439ddadf",
+      "documentedUpdateDate": null,
+      "updateDateStatus": "unknown: connector omits authoritative page-update metadata",
+      "versionContext": "Harm moderation image/multimodal; Prompt Shields/protected material/groundedness text-only",
+      "objectiveIds": [
+        "AI103-C3.01",
+        "AI103-C3.02",
+        "AI103-C3.03",
+        "AI103-D1.02"
+      ],
+      "status": "fetched"
+    },
+    {
+      "id": "S049",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/computer-vision/use-case-alt-text",
+      "groups": [
+        "AI103-C2"
+      ],
+      "title": "Overview: Generate image alt text with Image Analysis",
+      "fetchedAt": "2026-10-08T04:29:11.771Z",
+      "snapshot": "sources/snapshots/S049.md",
+      "kind": "official-documentation",
+      "extractionMethod": "Microsoft Learn connector full page markdown; tool session footer removed",
+      "sha256": "95378c3f712e2832a660c7b6d60a3e066d86d42959477c5f231053fd3ba7ccd4",
+      "documentedUpdateDate": null,
+      "updateDateStatus": "unknown: connector omits authoritative page-update metadata",
+      "versionContext": "Image Analysis4.0deprecated; retires Sep25,2028",
+      "objectiveIds": [
+        "AI103-C2.02",
+        "AI103-C2.04"
+      ]
+    },
+    {
+      "id": "S050",
+      "url": "https://www.w3.org/WAI/tutorials/images/decision-tree/",
+      "title": "W3C WAI An alt Decision Tree",
+      "groups": [
+        "AI103-C2"
+      ],
+      "snapshot": "sources/snapshots/S050.md",
+      "rawSnapshot": "sources/snapshots/S050.html",
+      "kind": "primary-accessibility-guidance",
+      "fetchedAt": "2026-10-08T04:38:23.255712+00:00",
+      "extractionMethod": "Public HTTPS capture; standard-library HTMLParser main-content extraction; also opened with web.",
+      "sha256": "fa71070e3609f8825849fe94c3b718fb8632724b4c88ed9f3e5ea54615f36404",
+      "documentedUpdateDate": "2024-05-13",
+      "updateDateStatus": "page footer inspected",
+      "versionContext": "Feature-specific qualifications in snapshot; package/API version unknown unless stated in a referenced excerpt.",
+      "rawSha256": "4e9d1d3b85fe92145d990d9a42726a239ee2f971b982f0024312dc01412d5361",
+      "objectiveIds": [
+        "AI103-C2.04"
+      ]
+    },
+    {
+      "id": "S051",
+      "title": "Azure OpenAI v1 API",
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/openai/api-version-lifecycle",
+      "objectiveIds": [
+        "AI103-A3.04",
+        "AI103-B1.01",
+        "AI103-B1.05"
+      ],
+      "snapshot": "sources/snapshots/S051-20261011.md",
+      "sha256": "8e7e4b2c4e94ad6056ffa3edf4750e4db864ceac16a52777cc13fd2068403803",
+      "status": "fetched",
+      "fetchedAt": "2026-10-11T20:36:59.398393+00:00",
+      "kind": "official-documentation",
+      "groups": [],
+      "versionContext": "Captured 2026-10-11; use only the explicit version/scope in the excerpt."
+    },
+    {
+      "id": "S052",
+      "title": "Use Azure OpenAI without keys",
+      "url": "https://learn.microsoft.com/en-us/azure/developer/ai/keyless-connections",
+      "objectiveIds": [
+        "AI103-A3.04",
+        "AI103-B1.01"
+      ],
+      "snapshot": "sources/snapshots/S052-20261011.md",
+      "sha256": "4f2b4d850889660d3af96aac661fa1955b8d9e1bf6f454facbef5b11aa59efcd",
+      "status": "fetched",
+      "fetchedAt": "2026-10-11T20:36:59.488650+00:00",
+      "kind": "official-documentation",
+      "groups": [],
+      "versionContext": "Captured 2026-10-11; use only the explicit version/scope in the excerpt."
+    },
+    {
+      "id": "S053",
+      "title": "Create and use memory in Foundry Agent Service (preview)",
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/how-to/memory-usage",
+      "objectiveIds": [
+        "AI103-A1.04",
+        "AI103-B2.01",
+        "AI103-B2.02"
+      ],
+      "snapshot": "sources/snapshots/S053-20261011.md",
+      "sha256": "d118113db20dbe589f686a9150063736c78ce1b6e7b37c649bf28262918d31b6",
+      "status": "fetched",
+      "fetchedAt": "2026-10-11T20:37:00.240184+00:00",
+      "kind": "official-documentation",
+      "groups": [],
+      "versionContext": "Captured 2026-10-11; use only the explicit version/scope in the excerpt."
+    },
+    {
+      "id": "S054",
+      "title": "Tool best practices for Microsoft Foundry Agent Service",
+      "url": "https://learn.microsoft.com/azure/foundry/agents/concepts/tool-best-practice",
+      "objectiveIds": [
+        "AI103-A4.04",
+        "AI103-B2.01",
+        "AI103-B2.02",
+        "AI103-B2.05"
+      ],
+      "snapshot": "sources/snapshots/S054-20261011.md",
+      "sha256": "fbf440754eab789009c34a8bf7636fc60c1d0bd64402cd650b1b903230ffd0f9",
+      "status": "fetched",
+      "fetchedAt": "2026-10-11T20:37:00.368960+00:00",
+      "kind": "official-documentation",
+      "groups": [],
+      "versionContext": "Captured 2026-10-11; use only the explicit version/scope in the excerpt."
+    },
+    {
+      "id": "S055",
+      "title": "Azure Translator known issues and troubleshooting",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/translator/reference/known-issues",
+      "objectiveIds": [
+        "AI103-D1.03"
+      ],
+      "snapshot": "sources/snapshots/S055-20261011.md",
+      "sha256": "c1b48f37f4dc56c80cbc9c30661bfc67f1f6f75dea4693ef6d9e39beeeb88f1c",
+      "status": "fetched",
+      "fetchedAt": "2026-10-11T20:37:00.051015+00:00",
+      "kind": "official-documentation",
+      "groups": [],
+      "versionContext": "Captured 2026-10-11; use only the explicit version/scope in the excerpt."
+    },
+    {
+      "id": "S056",
+      "title": "AI Projects AgentsOperations Python reference",
+      "url": "https://learn.microsoft.com/en-us/python/api/azure-ai-projects/azure.ai.projects.operations.agentsoperations?view=azure-python",
+      "objectiveIds": [
+        "AI103-A2.03",
+        "AI103-B1.05",
+        "AI103-B1.06"
+      ],
+      "snapshot": "sources/snapshots/S056-20261011.md",
+      "sha256": "888658bb603bbc211a4096be874b78aefcabf8c8e5a4b3c0a14e93ad80c2a6a7",
+      "status": "fetched",
+      "fetchedAt": "2026-10-11T20:37:00.267771+00:00",
+      "kind": "official-documentation",
+      "groups": [],
+      "versionContext": "Captured 2026-10-11; use only the explicit version/scope in the excerpt."
+    },
+    {
+      "id": "S057",
+      "title": "System message design",
+      "url": "https://learn.microsoft.com/en-us/azure/cognitive-services/openai/concepts/advanced-prompt-engineering?pivots=programming-language-chat-completions",
+      "objectiveIds": [
+        "AI103-B3.01",
+        "AI103-D1.04"
+      ],
+      "snapshot": "sources/snapshots/S057-20261011.md",
+      "sha256": "8c3d221b7d097fd064d9875f54a48e446f7e44efe81622613ce58cfcb84e87e4",
+      "status": "fetched",
+      "fetchedAt": "2026-10-11T20:37:01.327490+00:00",
+      "kind": "official-documentation",
+      "groups": [],
+      "versionContext": "Captured 2026-10-11; use only the explicit version/scope in the excerpt."
+    },
+    {
+      "id": "S058",
+      "title": "Integrated vectorization REST configuration",
+      "url": "https://learn.microsoft.com/en-us/azure/search/search-how-to-integrated-vectorization",
+      "objectiveIds": [
+        "AI103-A1.03",
+        "AI103-B1.02",
+        "AI103-E1.01",
+        "AI103-E1.02",
+        "AI103-E1.03",
+        "AI103-E1.04"
+      ],
+      "snapshot": "sources/snapshots/S058-20261011.md",
+      "sha256": "a09c24b08450e2017f75e2fa7d0b107b870d58cb085c863b6531ddb3ab513716",
+      "status": "fetched",
+      "fetchedAt": "2026-10-11T20:37:00.862210+00:00",
+      "kind": "official-documentation",
+      "groups": [],
+      "versionContext": "Captured 2026-10-11; use only the explicit version/scope in the excerpt."
+    },
+    {
+      "id": "S059",
+      "title": "Content Understanding document solutions",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/content-understanding/document/overview",
+      "objectiveIds": [
+        "AI103-E2.01",
+        "AI103-E2.02",
+        "AI103-E2.03"
+      ],
+      "snapshot": "sources/snapshots/S059-20261011.md",
+      "sha256": "bf5c315cb4cdc9062a3f9dd797d0167ce02b793bfbcea213c4c3ea8f25903422",
+      "status": "fetched",
+      "fetchedAt": "2026-10-11T20:37:00.839128+00:00",
+      "kind": "official-documentation",
+      "groups": [],
+      "versionContext": "Captured 2026-10-11; use only the explicit version/scope in the excerpt."
+    },
+    {
+      "id": "S060",
+      "title": "Model comparison in Foundry",
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/how-to/benchmark-model-in-catalog",
+      "objectiveIds": [
+        "AI103-A1.01"
+      ],
+      "snapshot": "sources/snapshots/S060-20261011.md",
+      "sha256": "60d9728c37e43351366d9ae42c78b03d864aa37a00dfe7009852d899f47123cb",
+      "status": "fetched",
+      "fetchedAt": "2026-10-11T20:37:00.973620+00:00",
+      "kind": "official-documentation",
+      "groups": [],
+      "versionContext": "Captured 2026-10-11; use only the explicit version/scope in the excerpt."
+    },
+    {
+      "id": "S061",
+      "title": "Agent accuracy and drift monitoring",
+      "url": "https://learn.microsoft.com/en-us/agents/center-of-excellence/measure-report-value",
+      "objectiveIds": [
+        "AI103-A3.02"
+      ],
+      "snapshot": "sources/snapshots/S061-20261011.md",
+      "sha256": "298a1ecdf8fdcada8d8c6a2d65af733dd5a639b32c6be28d8a8b459168c5da8c",
+      "status": "fetched",
+      "fetchedAt": "2026-10-11T20:37:01.453490+00:00",
+      "kind": "official-documentation",
+      "groups": [],
+      "versionContext": "Captured 2026-10-11; use only the explicit version/scope in the excerpt."
+    },
+    {
+      "id": "S062",
+      "title": "Content Understanding Agent Framework context provider",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/content-understanding/integrations/agent-framework",
+      "objectiveIds": [
+        "AI103-B2.03"
+      ],
+      "snapshot": "sources/snapshots/S062-20261011.md",
+      "sha256": "523ec8d479c812fe495cbc2d77574a4d1ca60364d5179973454221701d20b1f6",
+      "status": "fetched",
+      "fetchedAt": "2026-10-11T20:37:01.505575+00:00",
+      "kind": "official-documentation",
+      "groups": [],
+      "versionContext": "Captured 2026-10-11; use only the explicit version/scope in the excerpt."
+    },
+    {
+      "id": "S063",
+      "title": "Agent Framework evaluation",
+      "url": "https://learn.microsoft.com/en-us/agent-framework/agents/evaluation",
+      "objectiveIds": [
+        "AI103-B3.02"
+      ],
+      "snapshot": "sources/snapshots/S063-20261011.md",
+      "sha256": "a55bfbdc5a426a8ae858d5a9713d0b985f8cd54df1a6158032989f102aecaa93",
+      "status": "fetched",
+      "fetchedAt": "2026-10-11T20:37:01.567556+00:00",
+      "kind": "official-documentation",
+      "groups": [],
+      "versionContext": "Captured 2026-10-11; use only the explicit version/scope in the excerpt."
+    },
+    {
+      "id": "S064",
+      "title": "Content Understanding version history",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/content-understanding/whats-new",
+      "objectiveIds": [
+        "AI103-C2.07"
+      ],
+      "snapshot": "sources/snapshots/S064-20261011.md",
+      "sha256": "c568ea57a348ea53ff06cd8f0231dd27549a3f630f89e9aebd68a6f0cc8f7891",
+      "status": "fetched",
+      "fetchedAt": "2026-10-11T20:37:02.151472+00:00",
+      "kind": "official-documentation",
+      "groups": [],
+      "versionContext": "Captured 2026-10-11; use only the explicit version/scope in the excerpt."
+    },
+    {
+      "id": "S065",
+      "title": "Azure ML image-region labeling",
+      "url": "https://learn.microsoft.com/en-us/azure/machine-learning/how-to-label-data?view=azureml-api-2",
+      "objectiveIds": [
+        "AI103-C2.08"
+      ],
+      "snapshot": "sources/snapshots/S065-20261011.md",
+      "sha256": "3b01a8bb13e167142be36305cfa36b1a237aa3f27c9aa4e249b3fb8e1377d415",
+      "status": "fetched",
+      "fetchedAt": "2026-10-11T20:37:02.158217+00:00",
+      "kind": "official-documentation",
+      "groups": [],
+      "versionContext": "Captured 2026-10-11; use only the explicit version/scope in the excerpt."
+    },
+    {
+      "id": "S067",
+      "title": "Microsoft 365 watermark policy",
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/watermarks",
+      "objectiveIds": [
+        "AI103-C3.03"
+      ],
+      "snapshot": "sources/snapshots/S067-20261011.md",
+      "sha256": "d63a901e05e3ebdfb6c2968a8e4083c9c187afbbfbcee9a5400475572bce9d0b",
+      "status": "fetched",
+      "fetchedAt": "2026-10-11T20:37:02.100605+00:00",
+      "kind": "official-documentation",
+      "groups": [],
+      "versionContext": "Captured 2026-10-11; use only the explicit version/scope in the excerpt."
+    }
+  ],
+  "resourceCatalog": "sources/resources/catalog.json",
+  "screening": "sources/resources/screening.json",
+  "toolAvailability": {
+    "MicrosoftLearnSearchFetchCodeSearch": "used successfully; samples read, not executed",
+    "web": "used successfully",
+    "YouTube": "Metadata/player accessible; captions empty in main review; videos not watched",
+    "Azure": "No credentials/resources provisioned or SDK operations run"
+  }
+}

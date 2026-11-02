@@ -2,7 +2,8 @@
  * Dev-mode exam generation script.
  *
  * Calls the OpenAI API (requires OPENAI_API_KEY in env), generates a full
- * GH-600 practice exam, and persists it to data/exams/exams.json.
+ * GH-600 draft. The reviewed offline importer is the persistence boundary.
+ * This legacy provider workflow needs a draft/checkpoint upgrade before release.
  * The UI serves pre-generated exams — it never calls OpenAI directly.
  *
  * Usage:
@@ -11,6 +12,7 @@
  */
 
 import { assembleExam, createPlan, generateBatch, validateBatch } from "../src/generation.js";
+import { CURRENT_GH600 } from "../src/packs.js";
 import { saveExam } from "../src/persistence.js";
 import { CaseStudy, PracticeQuestion } from "../src/types.js";
 
@@ -30,7 +32,7 @@ if (isNaN(questionCount) || questionCount < 1 || questionCount > 200) {
 
 console.log(`\n🔧  Generating ${questionCount}-question GH-600 practice exam…\n`);
 
-const plan = createPlan(questionCount);
+const plan = createPlan(questionCount, CURRENT_GH600);
 const allQuestions: PracticeQuestion[] = [];
 const allCaseStudies: CaseStudy[] = [];
 

@@ -1,0 +1,43 @@
+{
+  "pdfs": [
+    {
+      "path": "output/pdf/ai-103-improvement-r2/AI-103-Set-A-100-Questions-Only.pdf",
+      "sha256": "d261eb3564cfad3be84da59b6fae04fd8f0318cba862cb2970192c26c3f943dd",
+      "pages": 47,
+      "questionStemsExactlyOnce": 100,
+      "choicesAndExhibits": "pass",
+      "answersAbsent": true,
+      "quickAnswerKeyMatchesCanonicalJson": false,
+      "sourceLinkTargetsPresent": 0,
+      "contactSheet": "authoring/ai-103/improvement-r2/qa/pdf/a/Questions-Only-contact-sheet.png"
+    },
+    {
+      "path": "output/pdf/ai-103-improvement-r2/AI-103-Set-A-100-Practice-With-Answers.pdf",
+      "sha256": "e8b5e9535cbf428b42a8d4a85945935a6f66e167523c8c77fd80ec213e64ad9a",
+      "pages": 109,
+      "questionStemsExactlyOnce": 100,
+      "choicesAndExhibits": "pass",
+      "answersAndSlotNotesPresent": true,
+      "quickAnswerKeyMatchesCanonicalJson": true,
+      "sourceLinkTargetsPresent": 50,
+      "contactSheet": "authoring/ai-103/improvement-r2/qa/pdf/a/Practice-With-Answers-contact-sheet.png"
+    }
+  ],
+  "completedPythonExamplesAstParse": [
+    "ai103-improvement-r2-set-a-100-q027",
+    "ai103-improvement-r2-set-a-100-q028",
+    "ai103-improvement-r2-set-a-100-q029",
+    "ai103-improvement-r2-set-a-100-q030",
+    "ai103-improvement-r2-set-a-100-q043",
+    "ai103-improvement-r2-set-a-100-q044",
+    "ai103-improvement-r2-set-a-100-q055",
+    "ai103-improvement-r2-set-a-100-q056"
+  ],
+  "azureExecution": "not performed",
+  "visualInspection": "pass: all-page contact sheets and full-size case/code/structured samples inspected",
+  "orphanSourceOnlyPages": "none",
+  "visualSamples": [
+    "Questions-Only case and memory code/OCR exhibits",
+    "Practice memory code, dependency sequence and matching answers"
+  ]
+}

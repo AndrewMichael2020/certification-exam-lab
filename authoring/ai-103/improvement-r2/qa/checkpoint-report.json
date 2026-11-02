@@ -1,0 +1,58 @@
+{
+  "reports": [
+    {
+      "packageId": "ai103-improvement-r2-checkpoint-20",
+      "canonicalDraftHash": "d2d885166ed8a1c2675e6d43bb3fd40f8d70e3d1b48e4a6618b345b2edb424f0",
+      "structure": "pass",
+      "realDraftBrowserFormats": [
+        "case_study_child",
+        "dropdown_completion",
+        "single_choice",
+        "multi_select",
+        "sequence_order",
+        "matching_magnet",
+        "code_or_config_artifact"
+      ],
+      "draftImportRejected": true,
+      "sharedCaseChangesInvalidateChildren": true,
+      "pdfRecords": [
+        {
+          "path": "output/pdf/ai-103-improvement-r2/AI-103-Checkpoint-20-Questions-Only.pdf",
+          "sha256": "75d0fdee071cdcb00a01899f92a3d0712a93cde820a8d36a804d276945c7b9be",
+          "questions": 20,
+          "explanations": 0,
+          "horizontalOverflow": []
+        },
+        {
+          "path": "output/pdf/ai-103-improvement-r2/AI-103-Checkpoint-20-Practice-With-Answers.pdf",
+          "sha256": "1819252d389f8d7e1fff983a9ac88c4cc8b37a2d358f17f52640a5da43d61eca",
+          "questions": 20,
+          "explanations": 20,
+          "horizontalOverflow": []
+        }
+      ]
+    }
+  ],
+  "reproducibility": "canonical hashes identical on two consecutive assemblies",
+  "mechanics": {
+    "syntheticOnly": true,
+    "formats": [
+      "case_study_child",
+      "dropdown_completion",
+      "log_or_artifact_interpretation",
+      "policy_control_selection",
+      "single_choice",
+      "multi_select",
+      "sequence_order",
+      "matching_magnet",
+      "code_or_config_artifact"
+    ],
+    "score": 100,
+    "import": "pass",
+    "review": "pass",
+    "attemptExport": "pass",
+    "pdfExport": "pass",
+    "temporaryStore": true
+  },
+  "independentContentReview": "pending"
+}

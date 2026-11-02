@@ -1,0 +1,15 @@
+{
+  "startingFileCount": 376,
+  "identicalStartingFiles": 375,
+  "allowedModifiedFile": "src/packs.ts: one explicit AI-103 registry entry only",
+  "gh600OriginalHashes": {
+    "checked": 21,
+    "failures": []
+  },
+  "protectedChanges": [],
+  "allowlistedAddedFileCount": 279,
+  "unexpectedAdditions": [],
+  "privateRuntimeHashes": "retained only in ignored .local-ci/improvement-r2",
+  "oldAI103Artifacts": "unchanged",
+  "commitPushDeployment": "not performed"
+}

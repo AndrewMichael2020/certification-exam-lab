@@ -1,0 +1,325 @@
+{
+  "templateOnly": true,
+  "packetId": "ai103-pilot001-audit-r3-focused",
+  "packageId": "ai103-pilot-001-r3",
+  "revision": "3",
+  "pack": {
+    "id": "ai-103",
+    "version": "1.1.0"
+  },
+  "draftPackageSha256": "13bd138a2d24b8bd6be8365393e96b0098b6dea1b76d67a64afa653a66711d68",
+  "reviewType": "focused correction verification after two preserved blind solves",
+  "reviewer": {
+    "actualModelLabel": null,
+    "visibleModeIfAny": null,
+    "reviewedAtUtc": null
+  },
+  "items": [
+    {
+      "itemId": "ai103-pilot001-q01",
+      "itemRevision": "3",
+      "itemSha256": "ca7940b793990fc43f8bd09b0cbd3628372ed279afee50125356d4118a7e8eb7",
+      "sourceIds": [
+        "S005"
+      ],
+      "blindAnswer": "B",
+      "blindAnswerProvenance": {
+        "kind": "preserved-prior-blind-solve-not-new-solve",
+        "packetId": "ai103-pilot001-audit-r2",
+        "draftPackageSha256": "5d3fb8595e92f9e0bd7143fd6fba655bfad32906408a011084d3c6257594f2a8",
+        "auditFileSha256": "cfc2921a7da13d72c3b5e066a9ad103835798b0ef8b06c641b463786ec46c773",
+        "reviewer": {
+          "actualModelLabel": "claude-opus-5-5[1m] (session_context.model; external_metadata.last_served_model: claude-opus-5-5)",
+          "visibleModeIfAny": "effort_level xhigh (session_context.effort_level); permission_mode auto; independent pass 3, no prior audit outputs read",
+          "reviewedAtUtc": "2026-10-08T07:16:08Z"
+        }
+      },
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [],
+      "issues": [],
+      "suggestedCorrection": null,
+      "difficultyAssessment": null
+    },
+    {
+      "itemId": "ai103-pilot001-q02",
+      "itemRevision": "3",
+      "itemSha256": "1f5d996723959cc80e2d463a773ab3ad29d32a7b587878e5a3e1acab72f93586",
+      "sourceIds": [
+        "S011",
+        "S040"
+      ],
+      "blindAnswer": "D",
+      "blindAnswerProvenance": {
+        "kind": "preserved-prior-blind-solve-not-new-solve",
+        "packetId": "ai103-pilot001-audit-r2",
+        "draftPackageSha256": "5d3fb8595e92f9e0bd7143fd6fba655bfad32906408a011084d3c6257594f2a8",
+        "auditFileSha256": "cfc2921a7da13d72c3b5e066a9ad103835798b0ef8b06c641b463786ec46c773",
+        "reviewer": {
+          "actualModelLabel": "claude-opus-5-5[1m] (session_context.model; external_metadata.last_served_model: claude-opus-5-5)",
+          "visibleModeIfAny": "effort_level xhigh (session_context.effort_level); permission_mode auto; independent pass 3, no prior audit outputs read",
+          "reviewedAtUtc": "2026-10-08T07:16:08Z"
+        }
+      },
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [],
+      "issues": [],
+      "suggestedCorrection": null,
+      "difficultyAssessment": null
+    },
+    {
+      "itemId": "ai103-pilot001-q03",
+      "itemRevision": "2",
+      "itemSha256": "31d35d4d2a7e954e8a23d8b9a4cc2e8d77e593b3307bfc6f09fa4a2941dd0745",
+      "sourceIds": [
+        "S037"
+      ],
+      "blindAnswer": {
+        "pairs": {
+          "required": "[\"order_id\", \"note\"]",
+          "additional": "false",
+          "format": "text.format"
+        }
+      },
+      "blindAnswerProvenance": {
+        "kind": "preserved-prior-blind-solve-not-new-solve",
+        "packetId": "ai103-pilot001-audit-r2",
+        "draftPackageSha256": "5d3fb8595e92f9e0bd7143fd6fba655bfad32906408a011084d3c6257594f2a8",
+        "auditFileSha256": "cfc2921a7da13d72c3b5e066a9ad103835798b0ef8b06c641b463786ec46c773",
+        "reviewer": {
+          "actualModelLabel": "claude-opus-5-5[1m] (session_context.model; external_metadata.last_served_model: claude-opus-5-5)",
+          "visibleModeIfAny": "effort_level xhigh (session_context.effort_level); permission_mode auto; independent pass 3, no prior audit outputs read",
+          "reviewedAtUtc": "2026-10-08T07:16:08Z"
+        }
+      },
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [],
+      "issues": [],
+      "suggestedCorrection": null,
+      "difficultyAssessment": null
+    },
+    {
+      "itemId": "ai103-pilot001-q04",
+      "itemRevision": "3",
+      "itemSha256": "59fbf4231d6237e98bda4d81da8ec4fc2b5650e9c070bccbf7647c64d3de0905",
+      "sourceIds": [
+        "S007"
+      ],
+      "blindAnswer": "C",
+      "blindAnswerProvenance": {
+        "kind": "preserved-prior-blind-solve-not-new-solve",
+        "packetId": "ai103-pilot001-audit-r2",
+        "draftPackageSha256": "5d3fb8595e92f9e0bd7143fd6fba655bfad32906408a011084d3c6257594f2a8",
+        "auditFileSha256": "cfc2921a7da13d72c3b5e066a9ad103835798b0ef8b06c641b463786ec46c773",
+        "reviewer": {
+          "actualModelLabel": "claude-opus-5-5[1m] (session_context.model; external_metadata.last_served_model: claude-opus-5-5)",
+          "visibleModeIfAny": "effort_level xhigh (session_context.effort_level); permission_mode auto; independent pass 3, no prior audit outputs read",
+          "reviewedAtUtc": "2026-10-08T07:16:08Z"
+        }
+      },
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [],
+      "issues": [],
+      "suggestedCorrection": null,
+      "difficultyAssessment": null
+    },
+    {
+      "itemId": "ai103-pilot001-q05",
+      "itemRevision": "2",
+      "itemSha256": "2612907e04fc9fdc1d9a90e89c0e765f8b68f2719945c85b38617c13b00f9981",
+      "sourceIds": [
+        "S014",
+        "S039"
+      ],
+      "blindAnswer": "A",
+      "blindAnswerProvenance": {
+        "kind": "preserved-prior-blind-solve-not-new-solve",
+        "packetId": "ai103-pilot001-audit-r2",
+        "draftPackageSha256": "5d3fb8595e92f9e0bd7143fd6fba655bfad32906408a011084d3c6257594f2a8",
+        "auditFileSha256": "cfc2921a7da13d72c3b5e066a9ad103835798b0ef8b06c641b463786ec46c773",
+        "reviewer": {
+          "actualModelLabel": "claude-opus-5-5[1m] (session_context.model; external_metadata.last_served_model: claude-opus-5-5)",
+          "visibleModeIfAny": "effort_level xhigh (session_context.effort_level); permission_mode auto; independent pass 3, no prior audit outputs read",
+          "reviewedAtUtc": "2026-10-08T07:16:08Z"
+        }
+      },
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [],
+      "issues": [],
+      "suggestedCorrection": null,
+      "difficultyAssessment": null
+    },
+    {
+      "itemId": "ai103-pilot001-q06",
+      "itemRevision": "2",
+      "itemSha256": "e7c9fa6faea465dd927be2389e616d5b227e7ccd94510bb2e92e12f36443b261",
+      "sourceIds": [
+        "S018"
+      ],
+      "blindAnswer": "B",
+      "blindAnswerProvenance": {
+        "kind": "preserved-prior-blind-solve-not-new-solve",
+        "packetId": "ai103-pilot001-audit-r2",
+        "draftPackageSha256": "5d3fb8595e92f9e0bd7143fd6fba655bfad32906408a011084d3c6257594f2a8",
+        "auditFileSha256": "cfc2921a7da13d72c3b5e066a9ad103835798b0ef8b06c641b463786ec46c773",
+        "reviewer": {
+          "actualModelLabel": "claude-opus-5-5[1m] (session_context.model; external_metadata.last_served_model: claude-opus-5-5)",
+          "visibleModeIfAny": "effort_level xhigh (session_context.effort_level); permission_mode auto; independent pass 3, no prior audit outputs read",
+          "reviewedAtUtc": "2026-10-08T07:16:08Z"
+        }
+      },
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [],
+      "issues": [],
+      "suggestedCorrection": null,
+      "difficultyAssessment": null
+    },
+    {
+      "itemId": "ai103-pilot001-q07",
+      "itemRevision": "3",
+      "itemSha256": "c849ef09bcc65ea034217ea00de12015357a643fcd8cdf6a11e7b945fecb19f0",
+      "sourceIds": [
+        "S009"
+      ],
+      "blindAnswer": [
+        "A",
+        "E"
+      ],
+      "blindAnswerProvenance": {
+        "kind": "preserved-prior-blind-solve-not-new-solve",
+        "packetId": "ai103-pilot001-audit-r2",
+        "draftPackageSha256": "5d3fb8595e92f9e0bd7143fd6fba655bfad32906408a011084d3c6257594f2a8",
+        "auditFileSha256": "cfc2921a7da13d72c3b5e066a9ad103835798b0ef8b06c641b463786ec46c773",
+        "reviewer": {
+          "actualModelLabel": "claude-opus-5-5[1m] (session_context.model; external_metadata.last_served_model: claude-opus-5-5)",
+          "visibleModeIfAny": "effort_level xhigh (session_context.effort_level); permission_mode auto; independent pass 3, no prior audit outputs read",
+          "reviewedAtUtc": "2026-10-08T07:16:08Z"
+        }
+      },
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [],
+      "issues": [],
+      "suggestedCorrection": null,
+      "difficultyAssessment": null
+    },
+    {
+      "itemId": "ai103-pilot001-q08",
+      "itemRevision": "2",
+      "itemSha256": "3594149034eb4fe2a91754d781ad248cc0c9bbf11757da1642fcc379e2e2d28c",
+      "sourceIds": [
+        "S042"
+      ],
+      "blindAnswer": [
+        "B",
+        "E"
+      ],
+      "blindAnswerProvenance": {
+        "kind": "preserved-prior-blind-solve-not-new-solve",
+        "packetId": "ai103-pilot001-audit-r2",
+        "draftPackageSha256": "5d3fb8595e92f9e0bd7143fd6fba655bfad32906408a011084d3c6257594f2a8",
+        "auditFileSha256": "cfc2921a7da13d72c3b5e066a9ad103835798b0ef8b06c641b463786ec46c773",
+        "reviewer": {
+          "actualModelLabel": "claude-opus-5-5[1m] (session_context.model; external_metadata.last_served_model: claude-opus-5-5)",
+          "visibleModeIfAny": "effort_level xhigh (session_context.effort_level); permission_mode auto; independent pass 3, no prior audit outputs read",
+          "reviewedAtUtc": "2026-10-08T07:16:08Z"
+        }
+      },
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [],
+      "issues": [],
+      "suggestedCorrection": null,
+      "difficultyAssessment": null
+    },
+    {
+      "itemId": "ai103-pilot001-q09",
+      "itemRevision": "2",
+      "itemSha256": "2451ff9a3933330be814baf1438629fc2e85b71a29b9e48c7bffb3a016bc69ef",
+      "sourceIds": [
+        "S046"
+      ],
+      "blindAnswer": {
+        "order": [
+          "C",
+          "A",
+          "D",
+          "B"
+        ]
+      },
+      "blindAnswerProvenance": {
+        "kind": "preserved-prior-blind-solve-not-new-solve",
+        "packetId": "ai103-pilot001-audit-r2",
+        "draftPackageSha256": "5d3fb8595e92f9e0bd7143fd6fba655bfad32906408a011084d3c6257594f2a8",
+        "auditFileSha256": "cfc2921a7da13d72c3b5e066a9ad103835798b0ef8b06c641b463786ec46c773",
+        "reviewer": {
+          "actualModelLabel": "claude-opus-5-5[1m] (session_context.model; external_metadata.last_served_model: claude-opus-5-5)",
+          "visibleModeIfAny": "effort_level xhigh (session_context.effort_level); permission_mode auto; independent pass 3, no prior audit outputs read",
+          "reviewedAtUtc": "2026-10-08T07:16:08Z"
+        }
+      },
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [],
+      "issues": [],
+      "suggestedCorrection": null,
+      "difficultyAssessment": null
+    },
+    {
+      "itemId": "ai103-pilot001-q10",
+      "itemRevision": "2",
+      "itemSha256": "c59dd6128fabe5d321941654c470f313e21645f923c4698f903c2044b60a8034",
+      "sourceIds": [
+        "S028",
+        "S029",
+        "S043",
+        "S026"
+      ],
+      "blindAnswer": {
+        "pairs": {
+          "A": "fieldMappings",
+          "B": "outputFieldMappings",
+          "C": "Document Layout skill",
+          "D": "OCR skill"
+        }
+      },
+      "blindAnswerProvenance": {
+        "kind": "preserved-prior-blind-solve-not-new-solve",
+        "packetId": "ai103-pilot001-audit-r2",
+        "draftPackageSha256": "5d3fb8595e92f9e0bd7143fd6fba655bfad32906408a011084d3c6257594f2a8",
+        "auditFileSha256": "cfc2921a7da13d72c3b5e066a9ad103835798b0ef8b06c641b463786ec46c773",
+        "reviewer": {
+          "actualModelLabel": "claude-opus-5-5[1m] (session_context.model; external_metadata.last_served_model: claude-opus-5-5)",
+          "visibleModeIfAny": "effort_level xhigh (session_context.effort_level); permission_mode auto; independent pass 3, no prior audit outputs read",
+          "reviewedAtUtc": "2026-10-08T07:16:08Z"
+        }
+      },
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [],
+      "issues": [],
+      "suggestedCorrection": null,
+      "difficultyAssessment": null
+    }
+  ],
+  "overall": {
+    "summary": null,
+    "releaseRecommendation": null,
+    "unresolvedSourceGaps": []
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "single_key_longest": [
+    "Q4",
+    "Q7",
+    "Q25"
+  ],
+  "single_total": 15,
+  "single_key_shortest": [],
+  "multi_longest_is_key": [
+    "Q20"
+  ],
+  "multi_total": 5,
+  "multi_keys_two_longest": [],
+  "multi_keys_two_shortest": [],
+  "distractors_with_cue_words": [],
+  "distractor_total": 60,
+  "release_gate_pass": true
+}

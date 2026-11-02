@@ -1,0 +1,39 @@
+{
+  "pdfs": [
+    {
+      "path": "output/pdf/ai-103-improvement-r2/AI-103-Checkpoint-20-Questions-Only.pdf",
+      "sha256": "75d0fdee071cdcb00a01899f92a3d0712a93cde820a8d36a804d276945c7b9be",
+      "pages": 12,
+      "questionStemsExactlyOnce": 20,
+      "choicesAndExhibits": "pass",
+      "answersAbsent": true,
+      "sourceLinkTargetsPresent": 0,
+      "contactSheet": "authoring/ai-103/improvement-r2/qa/pdf/Questions-Only-contact-sheet.png"
+    },
+    {
+      "path": "output/pdf/ai-103-improvement-r2/AI-103-Checkpoint-20-Practice-With-Answers.pdf",
+      "sha256": "1819252d389f8d7e1fff983a9ac88c4cc8b37a2d358f17f52640a5da43d61eca",
+      "pages": 24,
+      "questionStemsExactlyOnce": 20,
+      "choicesAndExhibits": "pass",
+      "answersAndSlotNotesPresent": true,
+      "sourceLinkTargetsPresent": 24,
+      "contactSheet": "authoring/ai-103/improvement-r2/qa/pdf/Practice-With-Answers-contact-sheet.png"
+    }
+  ],
+  "completedPythonExamplesAstParse": [
+    "ai103-improvement-r2-checkpoint-20-q004",
+    "ai103-improvement-r2-checkpoint-20-q005",
+    "ai103-improvement-r2-checkpoint-20-q008",
+    "ai103-improvement-r2-checkpoint-20-q009",
+    "ai103-improvement-r2-checkpoint-20-q010",
+    "ai103-improvement-r2-checkpoint-20-q011"
+  ],
+  "azureExecution": "not performed",
+  "visualInspection": "pass: latest all-page contact sheets inspected; full-size case, memory code and OCR exhibit samples inspected",
+  "fullSizeSamples": [
+    "sample-case.png",
+    "sample-memory-code.png",
+    "sample-ocr-exhibit.png"
+  ]
+}

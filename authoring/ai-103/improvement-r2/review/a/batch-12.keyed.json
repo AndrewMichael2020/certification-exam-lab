@@ -1,0 +1,955 @@
+{
+  "canonicalDraftHash": "06b6490c1b4476a934d6301f1a53263b0e941b691ac9febf2e4522411b324c4a",
+  "questions": [
+    {
+      "domainId": "D",
+      "objectiveTags": [
+        "AI103-D2.01"
+      ],
+      "stem": "A voice assistant uses a text-only response model and a separate speech synthesizer. The application requires its response-text policy check to pass before any answer audio is emitted. Arrange the successful path for one recorded utterance.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Generate a text response from that transcript."
+        },
+        {
+          "id": "B",
+          "text": "Recognize the utterance into finalized text."
+        },
+        {
+          "id": "C",
+          "text": "Apply the required response-text policy check."
+        },
+        {
+          "id": "D",
+          "text": "Synthesize and emit the approved response text."
+        }
+      ],
+      "correctAnswer": {
+        "order": [
+          "B",
+          "A",
+          "C",
+          "D"
+        ]
+      },
+      "type": "sequence_order",
+      "difficulty": "medium",
+      "explanation": {
+        "whyCorrect": "The text-only model needs recognition output. The policy gate consumes its answer and must precede synthesis under this application contract.",
+        "whyDistractorsWrong": {
+          "B": "Recognition supplies text to the response model.",
+          "A": "Generation supplies the candidate answer.",
+          "C": "The policy check requires the candidate answer.",
+          "D": "The specified policy allows audio only from approved text."
+        }
+      },
+      "id": "ai103-improvement-r2-set-a-100-q082",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Implement text analysis solutions",
+      "sourceRefs": [
+        {
+          "sourceId": "S033",
+          "title": "What is Azure Speech?",
+          "url": "https://learn.microsoft.com/azure/ai-services/speech-service/overview",
+          "snapshotSha256": "60a8436b0646a9a3c1e779b78f0e1d645948866173ce85449a6283d58c019d54",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S057",
+          "title": "System message design",
+          "url": "https://learn.microsoft.com/en-us/azure/cognitive-services/openai/concepts/advanced-prompt-engineering?pivots=programming-language-chat-completions",
+          "snapshotSha256": "8c3d221b7d097fd064d9875f54a48e446f7e44efe81622613ce58cfcb84e87e4",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-12",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "D",
+      "objectiveTags": [
+        "AI103-D2.02"
+      ],
+      "stem": "A Custom Speech project and training data are ready. A new model must meet a held-out WER threshold before deployment, and the application will use it for real-time recognition, not batch transcription. Arrange the remaining operations.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Evaluate that model on the held-out set and confirm the WER gate passes."
+        },
+        {
+          "id": "B",
+          "text": "Deploy the approved model to a custom endpoint."
+        },
+        {
+          "id": "C",
+          "text": "Train the custom model with the prepared domain data."
+        },
+        {
+          "id": "D",
+          "text": "Send real-time recognition requests to that custom endpoint."
+        }
+      ],
+      "correctAnswer": {
+        "order": [
+          "C",
+          "A",
+          "B",
+          "D"
+        ]
+      },
+      "type": "sequence_order",
+      "difficulty": "medium",
+      "explanation": {
+        "whyCorrect": "The model must exist before evaluation. The stated release gate precedes deployment, and real-time use requires a deployed custom endpoint; batch usage has a different requirement.",
+        "whyDistractorsWrong": {
+          "C": "Training produces the model being evaluated.",
+          "A": "Evaluation verifies the specified deployment gate.",
+          "B": "Deployment creates the endpoint for this model.",
+          "D": "Real-time requests use that deployed endpoint."
+        }
+      },
+      "id": "ai103-improvement-r2-set-a-100-q083",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Implement text analysis solutions",
+      "sourceRefs": [
+        {
+          "sourceId": "S034",
+          "title": "What is custom speech?",
+          "url": "https://learn.microsoft.com/azure/ai-services/speech-service/custom-speech-overview",
+          "snapshotSha256": "8bde6391b7bdee42b5e52ea8c995024dcda82d1a0b56acbdfb817207b2a8d511",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-12",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "D",
+      "objectiveTags": [
+        "AI103-D2.03"
+      ],
+      "stem": "A Realtime assistant must interpret a recorded inspection question in the context of a written maintenance note for the same equipment. Its supported audio model and transport are ready. Host policy requires checking the returned interpretation against that note before offering a repair action. Arrange the application’s operations.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Prepare the supported audio input and text context for that equipment’s conversation."
+        },
+        {
+          "id": "B",
+          "text": "Check that interpretation against the maintenance note before offering the repair action."
+        },
+        {
+          "id": "C",
+          "text": "Collect the utterance and its associated maintenance note."
+        },
+        {
+          "id": "D",
+          "text": "Submit the prepared input and obtain the successful interpretation."
+        }
+      ],
+      "correctAnswer": {
+        "order": [
+          "C",
+          "A",
+          "D",
+          "B"
+        ]
+      },
+      "type": "sequence_order",
+      "difficulty": "medium",
+      "explanation": {
+        "whyCorrect": "The audio and written context supply the model inputs. The interpretation exists after inference, and the stated host gate consumes it before an action is offered.",
+        "whyDistractorsWrong": {
+          "C": "The associated inputs must exist before they can be prepared.",
+          "A": "Input and conversation context must be prepared before submission.",
+          "D": "Successful inference supplies the interpretation.",
+          "B": "The host check consumes that interpretation and its associated note."
+        }
+      },
+      "id": "ai103-improvement-r2-set-a-100-q084",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Implement text analysis solutions",
+      "sourceRefs": [
+        {
+          "sourceId": "S036",
+          "title": "Use the GPT Realtime API for speech and audio",
+          "url": "https://learn.microsoft.com/azure/foundry/openai/how-to/realtime-audio",
+          "snapshotSha256": "69134c918deb6d5a8089eb41d86cf44b7a17ded278305d6afb203c2779e889b6",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-12",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "D",
+      "objectiveTags": [
+        "AI103-D2.04"
+      ],
+      "stem": "An event-based Speech SDK translator must retain the first completed translated utterance. Credentials and AudioConfig are ready. It uses a TranslationRecognizer whose recognized callback stores successful translations. Arrange initialization so the handler is ready when recognition begins.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Create the TranslationRecognizer from that translation configuration and AudioConfig."
+        },
+        {
+          "id": "B",
+          "text": "Configure SpeechTranslationConfig with the source and target languages."
+        },
+        {
+          "id": "C",
+          "text": "Connect the storage callback to the recognizer’s recognized event."
+        },
+        {
+          "id": "D",
+          "text": "Start continuous recognition on the configured recognizer."
+        }
+      ],
+      "correctAnswer": {
+        "order": [
+          "B",
+          "A",
+          "C",
+          "D"
+        ]
+      },
+      "type": "sequence_order",
+      "difficulty": "medium",
+      "explanation": {
+        "whyCorrect": "The configuration is consumed by the constructor. The event belongs to the created recognizer, and this application must subscribe before starting to avoid losing its first result.",
+        "whyDistractorsWrong": {
+          "B": "The constructor needs the completed translation configuration.",
+          "A": "The recognizer must exist before its event can be subscribed.",
+          "C": "The application requires the callback to be ready before recognition starts.",
+          "D": "Recognition now delivers completed results to the installed handler."
+        }
+      },
+      "id": "ai103-improvement-r2-set-a-100-q085",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Implement text analysis solutions",
+      "sourceRefs": [
+        {
+          "sourceId": "S046",
+          "title": "How to recognize and translate speech",
+          "url": "https://learn.microsoft.com/azure/ai-services/speech-service/how-to-translate-speech",
+          "snapshotSha256": "8a73fb1e63f49dde972815b860758a57ff3d620842220f9e29200bccf573c39e",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-12",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "D",
+      "objectiveTags": [
+        "AI103-D2.04"
+      ],
+      "stem": "A store-and-forward speech translator uses manual synthesis for two target languages. It will deliver an audio file only after synthesis succeeds. Arrange the successful path for the selected target language; no translation result is available initially.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Synthesize that text with a voice supporting the selected target language."
+        },
+        {
+          "id": "B",
+          "text": "Deliver the successfully synthesized audio file."
+        },
+        {
+          "id": "C",
+          "text": "Select the requested language’s text from the successful result’s translations."
+        },
+        {
+          "id": "D",
+          "text": "Recognize and translate the source utterance."
+        }
+      ],
+      "correctAnswer": {
+        "order": [
+          "D",
+          "C",
+          "A",
+          "B"
+        ]
+      },
+      "type": "sequence_order",
+      "difficulty": "medium",
+      "explanation": {
+        "whyCorrect": "The translation result supplies per-language text. Manual synthesis consumes the selected text; this file-delivery contract requires completed audio rather than a streamed partial response.",
+        "whyDistractorsWrong": {
+          "D": "Translation produces the per-language results.",
+          "C": "Selection supplies the requested target text.",
+          "A": "Synthesis consumes that text and produces audio.",
+          "B": "The application delivers a file only after successful synthesis."
+        }
+      },
+      "id": "ai103-improvement-r2-set-a-100-q086",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Implement text analysis solutions",
+      "sourceRefs": [
+        {
+          "sourceId": "S046",
+          "title": "How to recognize and translate speech",
+          "url": "https://learn.microsoft.com/azure/ai-services/speech-service/how-to-translate-speech",
+          "snapshotSha256": "8a73fb1e63f49dde972815b860758a57ff3d620842220f9e29200bccf573c39e",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S033",
+          "title": "What is Azure Speech?",
+          "url": "https://learn.microsoft.com/azure/ai-services/speech-service/overview",
+          "snapshotSha256": "60a8436b0646a9a3c1e779b78f0e1d645948866173ce85449a6283d58c019d54",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-12",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "A",
+      "stem": "Match each workload requirement to its deployment family. Geography and model support have already been checked. Use each selected choice once; one choice is unused.",
+      "type": "matching_magnet",
+      "difficulty": "easy",
+      "explanation": {
+        "whyCorrect": "Standard is usage-based interactive serving; Provisioned allocates throughput; Batch serves asynchronous work. Developer is the unused experimentation choice.",
+        "whyDistractorsWrong": {
+          "B": "Variable interactive demand with per-token charges: Standard.",
+          "C": "Allocated throughput for sustained traffic: Provisioned.",
+          "A": "Deferred asynchronous groups of inference requests: Batch."
+        }
+      },
+      "objectiveTags": [
+        "AI103-A2.02"
+      ],
+      "options": [
+        {
+          "id": "A",
+          "text": "Deferred asynchronous groups of inference requests"
+        },
+        {
+          "id": "B",
+          "text": "Variable interactive demand with per-token charges"
+        },
+        {
+          "id": "C",
+          "text": "Allocated throughput for sustained traffic"
+        }
+      ],
+      "matchChoices": [
+        "Developer",
+        "Batch",
+        "Provisioned",
+        "Standard"
+      ],
+      "correctAnswer": {
+        "pairs": {
+          "B": "Standard",
+          "C": "Provisioned",
+          "A": "Batch"
+        }
+      },
+      "id": "ai103-improvement-r2-set-a-100-q087",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Plan and manage an Azure AI solution",
+      "sourceRefs": [
+        {
+          "sourceId": "S005",
+          "title": "Deployment types for Microsoft Foundry Models",
+          "url": "https://learn.microsoft.com/azure/foundry/foundry-models/concepts/deployment-types",
+          "snapshotSha256": "6c6d5d7b11684c1cbba8d35fd278a313e1420e3853b0ba9f104898c4a8c24c58",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-13",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "A",
+      "stem": "Match each investigation to the most direct evidence source. Use each selected choice once; one choice is unused.",
+      "type": "matching_magnet",
+      "difficulty": "easy",
+      "explanation": {
+        "whyCorrect": "Use operation traces for request-level timing, indexer details for ingestion failures, and service metrics for serving health. An aggregate billing report cannot localize these request, ingestion or serving failures.",
+        "whyDistractorsWrong": {
+          "A": "A slow operation inside one scored agent request: Correlated trace and nested spans.",
+          "B": "Missing source documents after a partially successful run: Indexer item errors and warnings.",
+          "C": "Query-serving throttling during traffic peaks: Search service operational metrics."
+        }
+      },
+      "objectiveTags": [
+        "AI103-A3.03"
+      ],
+      "options": [
+        {
+          "id": "A",
+          "text": "A slow operation inside one scored agent request"
+        },
+        {
+          "id": "B",
+          "text": "Missing source documents after a partially successful run"
+        },
+        {
+          "id": "C",
+          "text": "Query-serving throttling during traffic peaks"
+        }
+      ],
+      "matchChoices": [
+        "Search service operational metrics",
+        "Indexer item errors and warnings",
+        "Correlated trace and nested spans",
+        "Aggregate billing report"
+      ],
+      "correctAnswer": {
+        "pairs": {
+          "A": "Correlated trace and nested spans",
+          "B": "Indexer item errors and warnings",
+          "C": "Search service operational metrics"
+        }
+      },
+      "id": "ai103-improvement-r2-set-a-100-q088",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Plan and manage an Azure AI solution",
+      "sourceRefs": [
+        {
+          "sourceId": "S013",
+          "title": "Agent tracing overview",
+          "url": "https://learn.microsoft.com/azure/foundry/observability/concepts/trace-agent-concept",
+          "snapshotSha256": "895295a4b74d7cabaa0daf62bd6cd5239daf25b6ea85a2268dc2cdf8483b19e8",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S027",
+          "title": "Monitor Azure AI Search",
+          "url": "https://learn.microsoft.com/azure/search/monitor-azure-cognitive-search",
+          "snapshotSha256": "fd18e205e7cd88e39eab53a5690757f65c8d457366491f8954875d2bc4f54ca0",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S044",
+          "title": "Monitor indexer status and results in Azure AI Search",
+          "url": "https://learn.microsoft.com/azure/search/search-monitor-indexers",
+          "snapshotSha256": "7b9808eefb69e1d573b537e17a3fff7ab159cf6e259f3b7a254a2ecd1c1a8dcc",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-13",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "A",
+      "objectiveTags": [
+        "AI103-A3.04"
+      ],
+      "stem": "Match each keyless inference observation to the boundary to inspect. Use each selected choice once; one choice is unused.",
+      "options": [
+        {
+          "id": "A",
+          "text": "A token is acquired but the resource denies inference"
+        },
+        {
+          "id": "B",
+          "text": "The role exists only on a different resource"
+        },
+        {
+          "id": "C",
+          "text": "No Entra token can be acquired"
+        }
+      ],
+      "correctAnswer": {
+        "pairs": {
+          "C": "Credential/authentication configuration",
+          "A": "Inference authorization for the caller",
+          "B": "Role assignment scope covering the called resource"
+        }
+      },
+      "type": "matching_magnet",
+      "difficulty": "easy",
+      "explanation": {
+        "whyCorrect": "Authentication, permission and scope are separate boundaries.",
+        "whyDistractorsWrong": {
+          "C": "No Entra token can be acquired: Credential/authentication configuration.",
+          "A": "A token is acquired but the resource denies inference: Inference authorization for the caller.",
+          "B": "The role exists only on a different resource: Role assignment scope covering the called resource."
+        }
+      },
+      "matchChoices": [
+        "Credential/authentication configuration",
+        "Inference authorization for the caller",
+        "Role assignment scope covering the called resource",
+        "Generation sampling parameters"
+      ],
+      "id": "ai103-improvement-r2-set-a-100-q089",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Plan and manage an Azure AI solution",
+      "sourceRefs": [
+        {
+          "sourceId": "S051",
+          "title": "Azure OpenAI v1 API",
+          "url": "https://learn.microsoft.com/en-us/azure/foundry/openai/api-version-lifecycle",
+          "snapshotSha256": "8e7e4b2c4e94ad6056ffa3edf4750e4db864ceac16a52777cc13fd2068403803",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S052",
+          "title": "Use Azure OpenAI without keys",
+          "url": "https://learn.microsoft.com/en-us/azure/developer/ai/keyless-connections",
+          "snapshotSha256": "4f2b4d850889660d3af96aac661fa1955b8d9e1bf6f454facbef5b11aa59efcd",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S010",
+          "title": "Role-based access control for Microsoft Foundry",
+          "url": "https://learn.microsoft.com/azure/foundry/concepts/rbac-foundry",
+          "snapshotSha256": "c63d1b1d5cb16c4ffbf9019b34ac56ab5e47f81f1457b4e2d7c02a2de16a59f9",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-13",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "A",
+      "objectiveTags": [
+        "AI103-A4.01"
+      ],
+      "stem": "Match each trust boundary to the relevant inspection point. Use each selected choice once; one choice is unused.",
+      "options": [
+        {
+          "id": "A",
+          "text": "An instruction inserted into a retrieved document"
+        },
+        {
+          "id": "B",
+          "text": "A harmful generated response"
+        },
+        {
+          "id": "C",
+          "text": "A user’s submitted attack instruction"
+        }
+      ],
+      "correctAnswer": {
+        "pairs": {
+          "C": "User-input protection",
+          "A": "External-context/indirect-attack protection",
+          "B": "Final-output inspection"
+        }
+      },
+      "type": "matching_magnet",
+      "difficulty": "easy",
+      "explanation": {
+        "whyCorrect": "Protect each content boundary; a safe earlier input does not establish safety of later content.",
+        "whyDistractorsWrong": {
+          "C": "A user’s submitted attack instruction: User-input protection.",
+          "A": "An instruction inserted into a retrieved document: External-context/indirect-attack protection.",
+          "B": "A harmful generated response: Final-output inspection."
+        }
+      },
+      "matchChoices": [
+        "User-input protection",
+        "External-context/indirect-attack protection",
+        "Final-output inspection",
+        "Model token quota"
+      ],
+      "id": "ai103-improvement-r2-set-a-100-q090",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Plan and manage an Azure AI solution",
+      "sourceRefs": [
+        {
+          "sourceId": "S015",
+          "title": "Guardrails and controls overview in Microsoft Foundry",
+          "url": "https://learn.microsoft.com/azure/foundry/guardrails/guardrails-overview",
+          "snapshotSha256": "8bff59568b79380dc2ea6df819b965422c98fdf03bf6b06df0b99bc1287e4c54",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S016",
+          "title": "Prompt Shields in Microsoft Foundry",
+          "url": "https://learn.microsoft.com/azure/foundry/openai/concepts/content-filter-prompt-shields",
+          "snapshotSha256": "770228d708d01826dc0d17c9ddafbb8d0e7f412bb2a0ad9a13b2ac54ac84735e",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-13",
+        "validationStatus": "draft"
+      }
+    }
+  ],
+  "caseStudies": [],
+  "evidence": [
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q082",
+      "testedDecision": "A voice assistant uses a text-only response model and a separate speech synthesizer. The application requires its response-text policy check to pass before any answer audio is emitted. Arrange the successful path for one recorded utterance.",
+      "oldItemIds": [],
+      "dependencyEdges": [
+        {
+          "before": "B",
+          "after": "A",
+          "reason": "Generation supplies the candidate answer."
+        },
+        {
+          "before": "A",
+          "after": "C",
+          "reason": "The policy check requires the candidate answer."
+        },
+        {
+          "before": "C",
+          "after": "D",
+          "reason": "The specified policy allows audio only from approved text."
+        }
+      ],
+      "primaryObjective": "AI103-D2.01",
+      "itemRevisionHash": "1f5aac97e40da7b9b3569208ab7f5a4fc68e816b8825bacac9928dd9a7e183a6",
+      "sources": [
+        {
+          "sourceId": "S033",
+          "title": "What is Azure Speech?",
+          "url": "https://learn.microsoft.com/azure/ai-services/speech-service/overview",
+          "snapshotSha256": "60a8436b0646a9a3c1e779b78f0e1d645948866173ce85449a6283d58c019d54",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S057",
+          "title": "System message design",
+          "url": "https://learn.microsoft.com/en-us/azure/cognitive-services/openai/concepts/advanced-prompt-engineering?pivots=programming-language-chat-completions",
+          "snapshotSha256": "8c3d221b7d097fd064d9875f54a48e446f7e44efe81622613ce58cfcb84e87e4",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q083",
+      "testedDecision": "A Custom Speech project and training data are ready. A new model must meet a held-out WER threshold before deployment, and the application will use it for real-time recognition, not batch transcription. Arrange the remaining operations.",
+      "oldItemIds": [],
+      "dependencyEdges": [
+        {
+          "before": "C",
+          "after": "A",
+          "reason": "Evaluation verifies the specified deployment gate."
+        },
+        {
+          "before": "A",
+          "after": "B",
+          "reason": "Deployment creates the endpoint for this model."
+        },
+        {
+          "before": "B",
+          "after": "D",
+          "reason": "Real-time requests use that deployed endpoint."
+        }
+      ],
+      "primaryObjective": "AI103-D2.02",
+      "itemRevisionHash": "0accddf36020f034e72d31c8063f75568e1fdf61b10bdc910a1d97331427cb5d",
+      "sources": [
+        {
+          "sourceId": "S034",
+          "title": "What is custom speech?",
+          "url": "https://learn.microsoft.com/azure/ai-services/speech-service/custom-speech-overview",
+          "snapshotSha256": "8bde6391b7bdee42b5e52ea8c995024dcda82d1a0b56acbdfb817207b2a8d511",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q084",
+      "testedDecision": "A Realtime assistant must interpret a recorded inspection question in the context of a written maintenance note for the same equipment. Its supported audio model and transport are ready. Host policy requires checking the returned interpretation against that note before offering a repair action. Arrange the application’s operations.",
+      "oldItemIds": [],
+      "dependencyEdges": [
+        {
+          "before": "C",
+          "after": "A",
+          "reason": "Input and conversation context must be prepared before submission."
+        },
+        {
+          "before": "A",
+          "after": "D",
+          "reason": "Successful inference supplies the interpretation."
+        },
+        {
+          "before": "D",
+          "after": "B",
+          "reason": "The host check consumes that interpretation and its associated note."
+        }
+      ],
+      "primaryObjective": "AI103-D2.03",
+      "itemRevisionHash": "e6c6722a31c27377e6cde44e648e368894b030903ad19ea6756053486f16950a",
+      "sources": [
+        {
+          "sourceId": "S036",
+          "title": "Use the GPT Realtime API for speech and audio",
+          "url": "https://learn.microsoft.com/azure/foundry/openai/how-to/realtime-audio",
+          "snapshotSha256": "69134c918deb6d5a8089eb41d86cf44b7a17ded278305d6afb203c2779e889b6",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q085",
+      "testedDecision": "An event-based Speech SDK translator must retain the first completed translated utterance. Credentials and AudioConfig are ready. It uses a TranslationRecognizer whose recognized callback stores successful translations. Arrange initialization so the handler is ready when recognition begins.",
+      "oldItemIds": [],
+      "dependencyEdges": [
+        {
+          "before": "B",
+          "after": "A",
+          "reason": "The recognizer must exist before its event can be subscribed."
+        },
+        {
+          "before": "A",
+          "after": "C",
+          "reason": "The application requires the callback to be ready before recognition starts."
+        },
+        {
+          "before": "C",
+          "after": "D",
+          "reason": "Recognition now delivers completed results to the installed handler."
+        }
+      ],
+      "primaryObjective": "AI103-D2.04",
+      "itemRevisionHash": "468f12489fd5a17e4348b8ab31f37426f0cfb37212b1782b6c743debb540647b",
+      "sources": [
+        {
+          "sourceId": "S046",
+          "title": "How to recognize and translate speech",
+          "url": "https://learn.microsoft.com/azure/ai-services/speech-service/how-to-translate-speech",
+          "snapshotSha256": "8a73fb1e63f49dde972815b860758a57ff3d620842220f9e29200bccf573c39e",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q086",
+      "testedDecision": "A store-and-forward speech translator uses manual synthesis for two target languages. It will deliver an audio file only after synthesis succeeds. Arrange the successful path for the selected target language; no translation result is available initially.",
+      "oldItemIds": [],
+      "dependencyEdges": [
+        {
+          "before": "D",
+          "after": "C",
+          "reason": "Selection supplies the requested target text."
+        },
+        {
+          "before": "C",
+          "after": "A",
+          "reason": "Synthesis consumes that text and produces audio."
+        },
+        {
+          "before": "A",
+          "after": "B",
+          "reason": "The application delivers a file only after successful synthesis."
+        }
+      ],
+      "primaryObjective": "AI103-D2.04",
+      "itemRevisionHash": "fa96dca4ef610a49b472a333aa85fe6efef11d44e1bc2a78cbd557cfae51f493",
+      "sources": [
+        {
+          "sourceId": "S046",
+          "title": "How to recognize and translate speech",
+          "url": "https://learn.microsoft.com/azure/ai-services/speech-service/how-to-translate-speech",
+          "snapshotSha256": "8a73fb1e63f49dde972815b860758a57ff3d620842220f9e29200bccf573c39e",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S033",
+          "title": "What is Azure Speech?",
+          "url": "https://learn.microsoft.com/azure/ai-services/speech-service/overview",
+          "snapshotSha256": "60a8436b0646a9a3c1e779b78f0e1d645948866173ce85449a6283d58c019d54",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q087",
+      "testedDecision": "Match each workload requirement to its deployment family. Geography and model support have already been checked. Use each selected choice once; one choice is unused.",
+      "oldItemIds": [
+        "ai103-set-a-q093"
+      ],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-A2.02",
+      "itemRevisionHash": "7327546da9c94479c60814af49a827e6e0e7ff3994096eb03304abdcebb46598",
+      "sources": [
+        {
+          "sourceId": "S005",
+          "title": "Deployment types for Microsoft Foundry Models",
+          "url": "https://learn.microsoft.com/azure/foundry/foundry-models/concepts/deployment-types",
+          "snapshotSha256": "6c6d5d7b11684c1cbba8d35fd278a313e1420e3853b0ba9f104898c4a8c24c58",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q088",
+      "testedDecision": "Match each investigation to the most direct evidence source. Use each selected choice once; one choice is unused.",
+      "oldItemIds": [
+        "ai103-set-a-q094"
+      ],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-A3.03",
+      "itemRevisionHash": "b4538807ea4ec51611ed58507a0f735b68eeae7007c554ae448035f4129802ce",
+      "sources": [
+        {
+          "sourceId": "S013",
+          "title": "Agent tracing overview",
+          "url": "https://learn.microsoft.com/azure/foundry/observability/concepts/trace-agent-concept",
+          "snapshotSha256": "895295a4b74d7cabaa0daf62bd6cd5239daf25b6ea85a2268dc2cdf8483b19e8",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S027",
+          "title": "Monitor Azure AI Search",
+          "url": "https://learn.microsoft.com/azure/search/monitor-azure-cognitive-search",
+          "snapshotSha256": "fd18e205e7cd88e39eab53a5690757f65c8d457366491f8954875d2bc4f54ca0",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S044",
+          "title": "Monitor indexer status and results in Azure AI Search",
+          "url": "https://learn.microsoft.com/azure/search/search-monitor-indexers",
+          "snapshotSha256": "7b9808eefb69e1d573b537e17a3fff7ab159cf6e259f3b7a254a2ecd1c1a8dcc",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q089",
+      "testedDecision": "Match each keyless inference observation to the boundary to inspect. Use each selected choice once; one choice is unused.",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-A3.04",
+      "itemRevisionHash": "a211baf3584bbca6ccd587343a2ea9151d610080e169124b6f7bd75f6b5db1b1",
+      "sources": [
+        {
+          "sourceId": "S051",
+          "title": "Azure OpenAI v1 API",
+          "url": "https://learn.microsoft.com/en-us/azure/foundry/openai/api-version-lifecycle",
+          "snapshotSha256": "8e7e4b2c4e94ad6056ffa3edf4750e4db864ceac16a52777cc13fd2068403803",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S052",
+          "title": "Use Azure OpenAI without keys",
+          "url": "https://learn.microsoft.com/en-us/azure/developer/ai/keyless-connections",
+          "snapshotSha256": "4f2b4d850889660d3af96aac661fa1955b8d9e1bf6f454facbef5b11aa59efcd",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S010",
+          "title": "Role-based access control for Microsoft Foundry",
+          "url": "https://learn.microsoft.com/azure/foundry/concepts/rbac-foundry",
+          "snapshotSha256": "c63d1b1d5cb16c4ffbf9019b34ac56ab5e47f81f1457b4e2d7c02a2de16a59f9",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q090",
+      "testedDecision": "Match each trust boundary to the relevant inspection point. Use each selected choice once; one choice is unused.",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-A4.01",
+      "itemRevisionHash": "9da2389c5f7bc5aaeceb02a09369886e35594ee62b4bbb1a1b00e6c338d88cc6",
+      "sources": [
+        {
+          "sourceId": "S015",
+          "title": "Guardrails and controls overview in Microsoft Foundry",
+          "url": "https://learn.microsoft.com/azure/foundry/guardrails/guardrails-overview",
+          "snapshotSha256": "8bff59568b79380dc2ea6df819b965422c98fdf03bf6b06df0b99bc1287e4c54",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S016",
+          "title": "Prompt Shields in Microsoft Foundry",
+          "url": "https://learn.microsoft.com/azure/foundry/openai/concepts/content-filter-prompt-shields",
+          "snapshotSha256": "770228d708d01826dc0d17c9ddafbb8d0e7f412bb2a0ad9a13b2ac54ac84735e",
+          "docType": "microsoft_learn"
+        }
+      ]
+    }
+  ]
+}

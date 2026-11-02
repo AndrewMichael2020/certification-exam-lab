@@ -1,9 +1,6 @@
-name: CI / Deploy
+name: Archived CI (manual only)
 
 on:
-  push:
-    branches: ["**"]
-  pull_request:
   workflow_dispatch:
 
 # ---------------------------------------------------------------------------

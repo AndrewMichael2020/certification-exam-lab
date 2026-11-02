@@ -1,0 +1,427 @@
+{
+  "status": "corrected revision-2 draft; independent re-audit pending",
+  "items": [
+    {
+      "itemId": "ai103-pilot001-q01",
+      "objectiveIds": [
+        "AI103-A2.02"
+      ],
+      "claimIds": [
+        "F005A",
+        "F005B"
+      ],
+      "sourceIds": [
+        "S005"
+      ],
+      "evidenceLocators": [
+        {
+          "sourceId": "S005",
+          "snapshot": "packs/ai-103/1.1.0/sources/snapshots/S005.md",
+          "lineStart": 3,
+          "lineEnd": 11,
+          "snapshotSha256": "6c6d5d7b11684c1cbba8d35fd278a313e1420e3853b0ba9f104898c4a8c24c58"
+        },
+        {
+          "sourceId": "S005",
+          "snapshot": "packs/ai-103/1.1.0/sources/snapshots/S005.md",
+          "lineStart": 21,
+          "lineEnd": 25,
+          "snapshotSha256": "6c6d5d7b11684c1cbba8d35fd278a313e1420e3853b0ba9f104898c4a8c24c58"
+        },
+        {
+          "sourceId": "S005",
+          "snapshot": "packs/ai-103/1.1.0/sources/snapshots/S005.md",
+          "lineStart": 39,
+          "lineEnd": 49,
+          "snapshotSha256": "6c6d5d7b11684c1cbba8d35fd278a313e1420e3853b0ba9f104898c4a8c24c58"
+        }
+      ],
+      "itemSha256": "ff2516e6617fe35b8db17fad20d6c898b0473c479a421a49284349540fb61710"
+    },
+    {
+      "itemId": "ai103-pilot001-q02",
+      "objectiveIds": [
+        "AI103-A3.04"
+      ],
+      "claimIds": [
+        "F011A",
+        "F040B"
+      ],
+      "sourceIds": [
+        "S011",
+        "S040"
+      ],
+      "evidenceLocators": [
+        {
+          "sourceId": "S011",
+          "snapshot": "packs/ai-103/1.1.0/sources/snapshots/S011.md",
+          "lineStart": 58,
+          "lineEnd": 74,
+          "snapshotSha256": "02eb40fb9bc5fcbd6b27249423b2d0ba26f5df0dd6b6885c881270a7a6fac8b9"
+        },
+        {
+          "sourceId": "S040",
+          "snapshot": "packs/ai-103/1.1.0/sources/snapshots/S040.md",
+          "lineStart": 5,
+          "lineEnd": 5,
+          "snapshotSha256": "67830020b25de8c993ae294ff523035ad2c04c16865c1fe7222f053769316545"
+        },
+        {
+          "sourceId": "S040",
+          "snapshot": "packs/ai-103/1.1.0/sources/snapshots/S040.md",
+          "lineStart": 45,
+          "lineEnd": 47,
+          "snapshotSha256": "67830020b25de8c993ae294ff523035ad2c04c16865c1fe7222f053769316545"
+        },
+        {
+          "sourceId": "S040",
+          "snapshot": "packs/ai-103/1.1.0/sources/snapshots/S040.md",
+          "lineStart": 881,
+          "lineEnd": 892,
+          "snapshotSha256": "67830020b25de8c993ae294ff523035ad2c04c16865c1fe7222f053769316545"
+        }
+      ],
+      "itemSha256": "40c4ea6f85bc00579fc708a78f11b1ed270ecd022d0af4cae6356412621e3e63"
+    },
+    {
+      "itemId": "ai103-pilot001-q03",
+      "objectiveIds": [
+        "AI103-B3.01"
+      ],
+      "claimIds": [
+        "F037A",
+        "F037B"
+      ],
+      "sourceIds": [
+        "S037"
+      ],
+      "evidenceLocators": [
+        {
+          "sourceId": "S037",
+          "snapshot": "packs/ai-103/1.1.0/sources/snapshots/S037.md",
+          "lineStart": 1,
+          "lineEnd": 5,
+          "snapshotSha256": "0337c89ce3e5a9ba28d1c2fc18f1644c50b13568eb19edc43420d16b401cacfc"
+        },
+        {
+          "sourceId": "S037",
+          "snapshot": "packs/ai-103/1.1.0/sources/snapshots/S037.md",
+          "lineStart": 1036,
+          "lineEnd": 1039,
+          "snapshotSha256": "0337c89ce3e5a9ba28d1c2fc18f1644c50b13568eb19edc43420d16b401cacfc"
+        },
+        {
+          "sourceId": "S037",
+          "snapshot": "packs/ai-103/1.1.0/sources/snapshots/S037.md",
+          "lineStart": 977,
+          "lineEnd": 1039,
+          "snapshotSha256": "0337c89ce3e5a9ba28d1c2fc18f1644c50b13568eb19edc43420d16b401cacfc"
+        }
+      ],
+      "itemSha256": "31d35d4d2a7e954e8a23d8b9a4cc2e8d77e593b3307bfc6f09fa4a2941dd0745"
+    },
+    {
+      "itemId": "ai103-pilot001-q04",
+      "objectiveIds": [
+        "AI103-B1.03",
+        "AI103-B2.02"
+      ],
+      "claimIds": [
+        "F007A",
+        "F007B"
+      ],
+      "sourceIds": [
+        "S007"
+      ],
+      "evidenceLocators": [
+        {
+          "sourceId": "S007",
+          "snapshot": "packs/ai-103/1.1.0/sources/snapshots/S007.md",
+          "lineStart": 113,
+          "lineEnd": 130,
+          "snapshotSha256": "0d4119f94b15c94d404729f53d2ed5f52a89dfaf35841d1290c0472be3e3e953"
+        }
+      ],
+      "itemSha256": "7a2910a2963af9a93ca5ed8d22cdec871047aaf94582caf1b03280109896838d"
+    },
+    {
+      "itemId": "ai103-pilot001-q05",
+      "objectiveIds": [
+        "AI103-B2.06"
+      ],
+      "claimIds": [
+        "F014A",
+        "F014B",
+        "F039A"
+      ],
+      "sourceIds": [
+        "S014",
+        "S039"
+      ],
+      "evidenceLocators": [
+        {
+          "sourceId": "S014",
+          "snapshot": "packs/ai-103/1.1.0/sources/snapshots/S014.md",
+          "lineStart": 17,
+          "lineEnd": 30,
+          "snapshotSha256": "0ce17b86785e87efb44074de9d3fdee3ae8290dedcb04a18a68558081be7103f"
+        },
+        {
+          "sourceId": "S039",
+          "snapshot": "packs/ai-103/1.1.0/sources/snapshots/S039.md",
+          "lineStart": 8,
+          "lineEnd": 12,
+          "snapshotSha256": "3b16c765be1f1479ac22e04cf9b293be767d473fc1cacb188b90751227074a4b"
+        }
+      ],
+      "itemSha256": "2612907e04fc9fdc1d9a90e89c0e765f8b68f2719945c85b38617c13b00f9981"
+    },
+    {
+      "itemId": "ai103-pilot001-q06",
+      "objectiveIds": [
+        "AI103-C1.04"
+      ],
+      "claimIds": [
+        "F018A",
+        "F018B"
+      ],
+      "sourceIds": [
+        "S018"
+      ],
+      "evidenceLocators": [
+        {
+          "sourceId": "S018",
+          "snapshot": "packs/ai-103/1.1.0/sources/snapshots/S018.md",
+          "lineStart": 633,
+          "lineEnd": 635,
+          "snapshotSha256": "32257da44487ca802a87e1ebad7ef31dc91f45f034d3334fb60b1c7d53ffb808"
+        },
+        {
+          "sourceId": "S018",
+          "snapshot": "packs/ai-103/1.1.0/sources/snapshots/S018.md",
+          "lineStart": 666,
+          "lineEnd": 675,
+          "snapshotSha256": "32257da44487ca802a87e1ebad7ef31dc91f45f034d3334fb60b1c7d53ffb808"
+        },
+        {
+          "sourceId": "S018",
+          "snapshot": "packs/ai-103/1.1.0/sources/snapshots/S018.md",
+          "lineStart": 882,
+          "lineEnd": 883,
+          "snapshotSha256": "32257da44487ca802a87e1ebad7ef31dc91f45f034d3334fb60b1c7d53ffb808"
+        },
+        {
+          "sourceId": "S018",
+          "snapshot": "packs/ai-103/1.1.0/sources/snapshots/S018.md",
+          "lineStart": 1131,
+          "lineEnd": 1131,
+          "snapshotSha256": "32257da44487ca802a87e1ebad7ef31dc91f45f034d3334fb60b1c7d53ffb808"
+        },
+        {
+          "sourceId": "S018",
+          "snapshot": "packs/ai-103/1.1.0/sources/snapshots/S018.md",
+          "lineStart": 1147,
+          "lineEnd": 1150,
+          "snapshotSha256": "32257da44487ca802a87e1ebad7ef31dc91f45f034d3334fb60b1c7d53ffb808"
+        },
+        {
+          "sourceId": "S018",
+          "snapshot": "packs/ai-103/1.1.0/sources/snapshots/S018.md",
+          "lineStart": 1201,
+          "lineEnd": 1201,
+          "snapshotSha256": "32257da44487ca802a87e1ebad7ef31dc91f45f034d3334fb60b1c7d53ffb808"
+        }
+      ],
+      "itemSha256": "e7c9fa6faea465dd927be2389e616d5b227e7ccd94510bb2e92e12f36443b261"
+    },
+    {
+      "itemId": "ai103-pilot001-q07",
+      "objectiveIds": [
+        "AI103-A3.01"
+      ],
+      "claimIds": [
+        "F009A",
+        "F009B"
+      ],
+      "sourceIds": [
+        "S009"
+      ],
+      "evidenceLocators": [
+        {
+          "sourceId": "S009",
+          "snapshot": "packs/ai-103/1.1.0/sources/snapshots/S009.md",
+          "lineStart": 225,
+          "lineEnd": 229,
+          "snapshotSha256": "d83fd890729d322d4ffa580ca5a8db2bed5bcd783dae47f5da2b05985f4b3041"
+        },
+        {
+          "sourceId": "S009",
+          "snapshot": "packs/ai-103/1.1.0/sources/snapshots/S009.md",
+          "lineStart": 259,
+          "lineEnd": 259,
+          "snapshotSha256": "d83fd890729d322d4ffa580ca5a8db2bed5bcd783dae47f5da2b05985f4b3041"
+        },
+        {
+          "sourceId": "S009",
+          "snapshot": "packs/ai-103/1.1.0/sources/snapshots/S009.md",
+          "lineStart": 302,
+          "lineEnd": 305,
+          "snapshotSha256": "d83fd890729d322d4ffa580ca5a8db2bed5bcd783dae47f5da2b05985f4b3041"
+        }
+      ],
+      "itemSha256": "c97da0405ba27044292bef1c51b198cc626e416df579925a5360f922ed9e55b0"
+    },
+    {
+      "itemId": "ai103-pilot001-q08",
+      "objectiveIds": [
+        "AI103-C3.01"
+      ],
+      "claimIds": [
+        "F042A"
+      ],
+      "sourceIds": [
+        "S042"
+      ],
+      "evidenceLocators": [
+        {
+          "sourceId": "S042",
+          "snapshot": "packs/ai-103/1.1.0/sources/snapshots/S042.md",
+          "lineStart": 33,
+          "lineEnd": 33,
+          "snapshotSha256": "6a40b6fdabe9e2a91838a3026f8530d0229c70acd401c4fab094a6c0c63b8670"
+        },
+        {
+          "sourceId": "S042",
+          "snapshot": "packs/ai-103/1.1.0/sources/snapshots/S042.md",
+          "lineStart": 93,
+          "lineEnd": 102,
+          "snapshotSha256": "6a40b6fdabe9e2a91838a3026f8530d0229c70acd401c4fab094a6c0c63b8670"
+        },
+        {
+          "sourceId": "S042",
+          "snapshot": "packs/ai-103/1.1.0/sources/snapshots/S042.md",
+          "lineStart": 125,
+          "lineEnd": 129,
+          "snapshotSha256": "6a40b6fdabe9e2a91838a3026f8530d0229c70acd401c4fab094a6c0c63b8670"
+        }
+      ],
+      "itemSha256": "3594149034eb4fe2a91754d781ad248cc0c9bbf11757da1642fcc379e2e2d28c"
+    },
+    {
+      "itemId": "ai103-pilot001-q09",
+      "objectiveIds": [
+        "AI103-D2.04"
+      ],
+      "claimIds": [
+        "F046A"
+      ],
+      "sourceIds": [
+        "S046"
+      ],
+      "evidenceLocators": [
+        {
+          "sourceId": "S046",
+          "snapshot": "packs/ai-103/1.1.0/sources/snapshots/S046.md",
+          "lineStart": 76,
+          "lineEnd": 95,
+          "snapshotSha256": "8a73fb1e63f49dde972815b860758a57ff3d620842220f9e29200bccf573c39e"
+        },
+        {
+          "sourceId": "S046",
+          "snapshot": "packs/ai-103/1.1.0/sources/snapshots/S046.md",
+          "lineStart": 102,
+          "lineEnd": 118,
+          "snapshotSha256": "8a73fb1e63f49dde972815b860758a57ff3d620842220f9e29200bccf573c39e"
+        },
+        {
+          "sourceId": "S046",
+          "snapshot": "packs/ai-103/1.1.0/sources/snapshots/S046.md",
+          "lineStart": 134,
+          "lineEnd": 137,
+          "snapshotSha256": "8a73fb1e63f49dde972815b860758a57ff3d620842220f9e29200bccf573c39e"
+        },
+        {
+          "sourceId": "S046",
+          "snapshot": "packs/ai-103/1.1.0/sources/snapshots/S046.md",
+          "lineStart": 174,
+          "lineEnd": 185,
+          "snapshotSha256": "8a73fb1e63f49dde972815b860758a57ff3d620842220f9e29200bccf573c39e"
+        },
+        {
+          "sourceId": "S046",
+          "snapshot": "packs/ai-103/1.1.0/sources/snapshots/S046.md",
+          "lineStart": 340,
+          "lineEnd": 342,
+          "snapshotSha256": "8a73fb1e63f49dde972815b860758a57ff3d620842220f9e29200bccf573c39e"
+        },
+        {
+          "sourceId": "S046",
+          "snapshot": "packs/ai-103/1.1.0/sources/snapshots/S046.md",
+          "lineStart": 373,
+          "lineEnd": 386,
+          "snapshotSha256": "8a73fb1e63f49dde972815b860758a57ff3d620842220f9e29200bccf573c39e"
+        }
+      ],
+      "itemSha256": "2451ff9a3933330be814baf1438629fc2e85b71a29b9e48c7bffb3a016bc69ef"
+    },
+    {
+      "itemId": "ai103-pilot001-q10",
+      "objectiveIds": [
+        "AI103-E1.03"
+      ],
+      "claimIds": [
+        "F028A",
+        "F029A",
+        "F043A",
+        "F026A"
+      ],
+      "sourceIds": [
+        "S028",
+        "S029",
+        "S043",
+        "S026"
+      ],
+      "evidenceLocators": [
+        {
+          "sourceId": "S028",
+          "snapshot": "packs/ai-103/1.1.0/sources/snapshots/S028.md",
+          "lineStart": 151,
+          "lineEnd": 156,
+          "snapshotSha256": "3d24961260a3a7ca041656383016222704c25dec2dff53743bbaef628236312b"
+        },
+        {
+          "sourceId": "S029",
+          "snapshot": "packs/ai-103/1.1.0/sources/snapshots/S029.md",
+          "lineStart": 7,
+          "lineEnd": 7,
+          "snapshotSha256": "eb899b4d8c7fdd95e158072fa95891c8c96388f09c48c00a67683fa10ec4591a"
+        },
+        {
+          "sourceId": "S029",
+          "snapshot": "packs/ai-103/1.1.0/sources/snapshots/S029.md",
+          "lineStart": 74,
+          "lineEnd": 75,
+          "snapshotSha256": "eb899b4d8c7fdd95e158072fa95891c8c96388f09c48c00a67683fa10ec4591a"
+        },
+        {
+          "sourceId": "S043",
+          "snapshot": "packs/ai-103/1.1.0/sources/snapshots/S043.md",
+          "lineStart": 46,
+          "lineEnd": 55,
+          "snapshotSha256": "0a5cdd696dcbae744d32db7fd89a69926f0203462f86d6dc25793ab07d001b3d"
+        },
+        {
+          "sourceId": "S026",
+          "snapshot": "packs/ai-103/1.1.0/sources/snapshots/S026.md",
+          "lineStart": 25,
+          "lineEnd": 40,
+          "snapshotSha256": "45a6b445fbe4f7f65334693eb96b2de7b021e0b50ce46b363ab47c5de0a11f0d"
+        }
+      ],
+      "itemSha256": "c59dd6128fabe5d321941654c470f313e21645f923c4698f903c2044b60a8034"
+    }
+  ],
+  "packageId": "ai103-pilot-001-r2",
+  "revision": "2",
+  "packageSha256": "5d3fb8595e92f9e0bd7143fd6fba655bfad32906408a011084d3c6257594f2a8"
+}

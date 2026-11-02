@@ -1,0 +1,890 @@
+{
+  "canonicalDraftHash": "06b6490c1b4476a934d6301f1a53263b0e941b691ac9febf2e4522411b324c4a",
+  "questions": [
+    {
+      "domainId": "B",
+      "stem": "Match each observed agent defect to the targeted tool evaluator. Use each selected choice once; one choice is unused.",
+      "type": "matching_magnet",
+      "difficulty": "easy",
+      "explanation": {
+        "whyCorrect": "Selection concerns the chosen capability, input accuracy concerns arguments, and output utilization concerns returned information. Task Completion is a broader outcome metric.",
+        "whyDistractorsWrong": {
+          "B": "The model invokes translation when inventory lookup is needed: Tool Selection.",
+          "C": "The correct tool receives the warehouse ID as a part ID: Tool Input Accuracy.",
+          "A": "A correct returned quantity is misrepresented in the answer: Tool Output Utilization."
+        }
+      },
+      "objectiveTags": [
+        "AI103-B2.06"
+      ],
+      "options": [
+        {
+          "id": "A",
+          "text": "A correct returned quantity is misrepresented in the answer"
+        },
+        {
+          "id": "B",
+          "text": "The model invokes translation when inventory lookup is needed"
+        },
+        {
+          "id": "C",
+          "text": "The correct tool receives the warehouse ID as a part ID"
+        }
+      ],
+      "matchChoices": [
+        "Tool Input Accuracy",
+        "Task Completion (preview)",
+        "Tool Output Utilization",
+        "Tool Selection"
+      ],
+      "correctAnswer": {
+        "pairs": {
+          "B": "Tool Selection",
+          "C": "Tool Input Accuracy",
+          "A": "Tool Output Utilization"
+        }
+      },
+      "id": "ai103-improvement-r2-set-a-100-q091",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Implement generative AI and agentic solutions",
+      "sourceRefs": [
+        {
+          "sourceId": "S014",
+          "title": "Agent evaluators",
+          "url": "https://learn.microsoft.com/azure/foundry/concepts/evaluation-evaluators/agent-evaluators",
+          "snapshotSha256": "0ce17b86785e87efb44074de9d3fdee3ae8290dedcb04a18a68558081be7103f",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-14",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "B",
+      "stem": "Match each information need to the documented context capability. Use each selected choice once; one choice is unused.",
+      "type": "matching_magnet",
+      "difficulty": "easy",
+      "explanation": {
+        "whyCorrect": "Memory, curated knowledge and file search serve different origins and lifecycles of information. Routing selects among models.",
+        "whyDistractorsWrong": {
+          "B": "A preference learned from prior conversations: Persistent memory.",
+          "A": "A maintained corporate handbook: Curated knowledge base.",
+          "C": "A receipt uploaded for the current interaction: File search."
+        }
+      },
+      "objectiveTags": [
+        "AI103-B2.02"
+      ],
+      "options": [
+        {
+          "id": "A",
+          "text": "A maintained corporate handbook"
+        },
+        {
+          "id": "B",
+          "text": "A preference learned from prior conversations"
+        },
+        {
+          "id": "C",
+          "text": "A receipt uploaded for the current interaction"
+        }
+      ],
+      "matchChoices": [
+        "Persistent memory",
+        "Model router",
+        "Curated knowledge base",
+        "File search"
+      ],
+      "correctAnswer": {
+        "pairs": {
+          "B": "Persistent memory",
+          "A": "Curated knowledge base",
+          "C": "File search"
+        }
+      },
+      "id": "ai103-improvement-r2-set-a-100-q092",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Implement generative AI and agentic solutions",
+      "sourceRefs": [
+        {
+          "sourceId": "S006",
+          "title": "Memory in Microsoft Foundry Agent Service (preview)",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/concepts/what-is-memory",
+          "snapshotSha256": "1dd4a33b4885266d1a2a73cee51de011ad50f9e63454609195d46179316746f8",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-14",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "B",
+      "objectiveTags": [
+        "AI103-B2.01"
+      ],
+      "stem": "Match each response-turn requirement to the documented tool_choice mode. Use each selected choice once; one choice is unused.",
+      "options": [
+        {
+          "id": "A",
+          "text": "The turn must produce no tool calls"
+        },
+        {
+          "id": "B",
+          "text": "One or more tool calls are necessary"
+        },
+        {
+          "id": "C",
+          "text": "Model may decide whether a tool helps"
+        }
+      ],
+      "correctAnswer": {
+        "pairs": {
+          "C": "auto",
+          "B": "required",
+          "A": "none"
+        }
+      },
+      "type": "matching_magnet",
+      "difficulty": "easy",
+      "explanation": {
+        "whyCorrect": "Request modes control tool invocation intent; execution and receipts remain host responsibilities.",
+        "whyDistractorsWrong": {
+          "C": "Model may decide whether a tool helps: auto.",
+          "B": "One or more tool calls are necessary: required.",
+          "A": "The turn must produce no tool calls: none."
+        }
+      },
+      "matchChoices": [
+        "auto",
+        "required",
+        "none",
+        "A specific tool execution receipt"
+      ],
+      "id": "ai103-improvement-r2-set-a-100-q093",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Implement generative AI and agentic solutions",
+      "sourceRefs": [
+        {
+          "sourceId": "S054",
+          "title": "Tool best practices for Microsoft Foundry Agent Service",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/concepts/tool-best-practice",
+          "snapshotSha256": "fbf440754eab789009c34a8bf7636fc60c1d0bd64402cd650b1b903230ffd0f9",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-14",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "C",
+      "stem": "Match each webpage image role to the appropriate alternative-text approach. Use each selected choice once; one choice is unused.",
+      "type": "matching_magnet",
+      "difficulty": "easy",
+      "explanation": {
+        "whyCorrect": "Image purpose determines its alternative. A complex chart needs access to its detailed information in addition to a suitable concise alternative.",
+        "whyDistractorsWrong": {
+          "B": "An image that submits a search form: Communicate the action.",
+          "C": "A purely decorative background flourish: Use empty alt.",
+          "A": "A complex chart whose details cannot fit concise alt text: Provide the detailed information elsewhere on the page."
+        }
+      },
+      "objectiveTags": [
+        "AI103-C2.04"
+      ],
+      "options": [
+        {
+          "id": "A",
+          "text": "A complex chart whose details cannot fit concise alt text"
+        },
+        {
+          "id": "B",
+          "text": "An image that submits a search form"
+        },
+        {
+          "id": "C",
+          "text": "A purely decorative background flourish"
+        }
+      ],
+      "matchChoices": [
+        "Provide the detailed information elsewhere on the page",
+        "Use the image filename",
+        "Communicate the action",
+        "Use empty alt"
+      ],
+      "correctAnswer": {
+        "pairs": {
+          "B": "Communicate the action",
+          "C": "Use empty alt",
+          "A": "Provide the detailed information elsewhere on the page"
+        }
+      },
+      "id": "ai103-improvement-r2-set-a-100-q094",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Implement computer vision solutions",
+      "sourceRefs": [
+        {
+          "sourceId": "S050",
+          "title": "W3C WAI An alt Decision Tree",
+          "url": "https://www.w3.org/WAI/tutorials/images/decision-tree/",
+          "snapshotSha256": "fa71070e3609f8825849fe94c3b718fb8632724b4c88ed9f3e5ea54615f36404",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-15",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "E",
+      "objectiveTags": [
+        "AI103-E1.04"
+      ],
+      "stem": "The index has no OCR text. Which one configuration defect in this exhibit blocks the OCR input path?",
+      "options": [
+        {
+          "id": "A",
+          "text": "The index’s ocr_text field is searchable."
+        },
+        {
+          "id": "B",
+          "text": "The text output mapping names the correct enriched node."
+        },
+        {
+          "id": "C",
+          "text": "The blob indexer’s imageAction is none."
+        },
+        {
+          "id": "D",
+          "text": "The OCR skill uses the normalized image wildcard."
+        }
+      ],
+      "correctAnswer": "C",
+      "type": "code_or_config_artifact",
+      "difficulty": "medium",
+      "explanation": {
+        "whyCorrect": "The normalized image collection must exist for the OCR skill input. The exhibit’s output path is already correct.",
+        "whyDistractorsWrong": {
+          "B": "This correctly maps the produced node after the skill runs.",
+          "A": "Searchability is appropriate for retrieval.",
+          "D": "The wildcard matches the skill’s normalized-image input."
+        }
+      },
+      "artifact": {
+        "title": "Blob OCR pipeline",
+        "kind": "json",
+        "content": "{\n  \"indexer\": {\n    \"parameters\": {\"configuration\": {\"imageAction\": \"none\"}},\n    \"outputFieldMappings\": [{\n      \"sourceFieldName\": \"/document/normalized_images/*/text\",\n      \"targetFieldName\": \"ocr_text\"\n    }]\n  },\n  \"skill\": {\n    \"@odata.type\": \"#Microsoft.Skills.Vision.OcrSkill\",\n    \"context\": \"/document/normalized_images/*\",\n    \"inputs\": [{\"name\": \"image\", \"source\": \"/document/normalized_images/*\"}],\n    \"outputs\": [{\"name\": \"text\", \"targetName\": \"text\"}]\n  },\n  \"indexField\": {\"name\": \"ocr_text\", \"type\": \"Collection(Edm.String)\", \"searchable\": true}\n}"
+      },
+      "id": "ai103-improvement-r2-set-a-100-q095",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Implement information extraction solutions",
+      "sourceRefs": [
+        {
+          "sourceId": "S043",
+          "title": "OCR cognitive skill",
+          "url": "https://learn.microsoft.com/azure/search/cognitive-search-skill-ocr",
+          "snapshotSha256": "0a5cdd696dcbae744d32db7fd89a69926f0203462f86d6dc25793ab07d001b3d",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S028",
+          "title": "Skillset concepts in Azure AI Search",
+          "url": "https://learn.microsoft.com/azure/search/cognitive-search-working-with-skillsets",
+          "snapshotSha256": "3d24961260a3a7ca041656383016222704c25dec2dff53743bbaef628236312b",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-16",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "E",
+      "objectiveTags": [
+        "AI103-E1.03"
+      ],
+      "stem": "The pipeline needs layout-derived Markdown for indexing. Which producing capability should replace the enrichment stage in this exhibit?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A field mapper without a producing skill."
+        },
+        {
+          "id": "B",
+          "text": "A semantic query configuration."
+        },
+        {
+          "id": "C",
+          "text": "OCR only, with no layout extraction."
+        },
+        {
+          "id": "D",
+          "text": "Document Intelligence Layout skill."
+        }
+      ],
+      "correctAnswer": "D",
+      "type": "code_or_config_artifact",
+      "difficulty": "medium",
+      "explanation": {
+        "whyCorrect": "The Layout skill extracts document layout into Markdown and related structure for enrichment. OCR alone does not supply this layout-aware representation.",
+        "whyDistractorsWrong": {
+          "C": "OCR supplies text, not the requested layout capability.",
+          "B": "Query-time semantics do not produce ingestion output.",
+          "A": "A mapping cannot create the missing representation."
+        }
+      },
+      "artifact": {
+        "title": "Required enrichment output",
+        "kind": "json",
+        "content": "{\"input\":\"source document\",\"requiredOutput\":\"layout-aware Markdown\",\"consumer\":\"Search indexer skillset\"}"
+      },
+      "id": "ai103-improvement-r2-set-a-100-q096",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Implement information extraction solutions",
+      "sourceRefs": [
+        {
+          "sourceId": "S029",
+          "title": "Document Layout skill",
+          "url": "https://learn.microsoft.com/azure/search/cognitive-search-skill-document-intelligence-layout",
+          "snapshotSha256": "eb899b4d8c7fdd95e158072fa95891c8c96388f09c48c00a67683fa10ec4591a",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S059",
+          "title": "Content Understanding document solutions",
+          "url": "https://learn.microsoft.com/en-us/azure/ai-services/content-understanding/document/overview",
+          "snapshotSha256": "bf5c315cb4cdc9062a3f9dd797d0167ce02b793bfbcea213c4c3ea8f25903422",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-16",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "E",
+      "objectiveTags": [
+        "AI103-E2.03"
+      ],
+      "stem": "A custom extractor uses the following result. What should happen before the application posts the invoice amount?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Verify grounded field evidence and business rules."
+        },
+        {
+          "id": "B",
+          "text": "Use the confidence as payment authorization."
+        },
+        {
+          "id": "C",
+          "text": "Replace the source amount with the highest nearby number."
+        },
+        {
+          "id": "D",
+          "text": "Post because the JSON parsed."
+        }
+      ],
+      "correctAnswer": "A",
+      "type": "code_or_config_artifact",
+      "difficulty": "medium",
+      "explanation": {
+        "whyCorrect": "The result carries low confidence and source grounding for inspection. Extraction does not authorize payment or resolve the business rule.",
+        "whyDistractorsWrong": {
+          "D": "Parsing verifies shape, not the amount or payment permission.",
+          "B": "Confidence estimates extraction, not authority.",
+          "C": "A nearby number need not be the required field."
+        }
+      },
+      "artifact": {
+        "title": "Invoice analyzer result",
+        "kind": "json",
+        "content": "{\"total\":{\"value\":1460.00,\"confidence\":0.42,\"source\":{\"page\":2,\"span\":\"invoice total\"}},\"rule\":\"verified totals only\"}"
+      },
+      "id": "ai103-improvement-r2-set-a-100-q097",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Implement information extraction solutions",
+      "sourceRefs": [
+        {
+          "sourceId": "S045",
+          "title": "Validate document analyzer quality with confidence, grounding, and labeled samples",
+          "url": "https://learn.microsoft.com/azure/ai-services/content-understanding/document/analyzer-improvement",
+          "snapshotSha256": "c08a60437bdcc723d00d30d9898b3967040a122cf43b5ff95b5f1a33a3dadd93",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S059",
+          "title": "Content Understanding document solutions",
+          "url": "https://learn.microsoft.com/en-us/azure/ai-services/content-understanding/document/overview",
+          "snapshotSha256": "bf5c315cb4cdc9062a3f9dd797d0167ce02b793bfbcea213c4c3ea8f25903422",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-16",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "C",
+      "stem": "The image:analyze 2024-09-01 contract uses FourSeverityLevels. Policy rejects an image when any harm category is Medium or High. What comparison should implement the policy?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Reject if any analyzed category has severity 4 or 6."
+        },
+        {
+          "id": "B",
+          "text": "Average the returned category severities and reject when that average reaches 4."
+        },
+        {
+          "id": "C",
+          "text": "Reject when every category equals 6."
+        },
+        {
+          "id": "D",
+          "text": "Reject when a category equals 3."
+        }
+      ],
+      "correctAnswer": "A",
+      "difficulty": "medium",
+      "type": "code_or_config_artifact",
+      "explanation": {
+        "whyCorrect": "The image API's severity values are 0, 2, 4 and 6. The stated any-category policy rejects Medium (4) and High (6).",
+        "whyDistractorsWrong": {
+          "D": "The documented four-level values are 0, 2, 4 and 6.",
+          "B": "Averages can conceal one category that independently meets the rejection condition.",
+          "C": "The policy triggers on any Medium or High category."
+        }
+      },
+      "objectiveTags": [
+        "AI103-C3.01"
+      ],
+      "artifact": {
+        "title": "Image harm policy",
+        "kind": "json",
+        "content": "{\"apiVersion\":\"2024-09-01\",\"outputType\":\"FourSeverityLevels\",\"rejectWhen\":\"any category is Medium or High\"}"
+      },
+      "id": "ai103-improvement-r2-set-a-100-q098",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Implement computer vision solutions",
+      "sourceRefs": [
+        {
+          "sourceId": "S042",
+          "title": "QuickStart: Analyze image content",
+          "url": "https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-image",
+          "snapshotSha256": "6a40b6fdabe9e2a91838a3026f8530d0229c70acd401c4fab094a6c0c63b8670",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-17",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "C",
+      "objectiveTags": [
+        "AI103-C2.05"
+      ],
+      "stem": "This audio-analysis worker passes an operation handle to its transcript consumer and the consumer rejects it. Which change obtains the completed analysis output in the pinned SDK?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Wait for poller.result() and consume the returned analysis result."
+        },
+        {
+          "id": "B",
+          "text": "Read the operation ID as the transcript and retry the consumer."
+        },
+        {
+          "id": "C",
+          "text": "Cast the poller to a dictionary before sending it to the consumer."
+        },
+        {
+          "id": "D",
+          "text": "Change the audio filename extension and reuse the operation handle."
+        }
+      ],
+      "correctAnswer": "A",
+      "type": "code_or_config_artifact",
+      "difficulty": "medium",
+      "explanation": {
+        "whyCorrect": "begin_analyze returns a long-running operation poller. The SDK example waits with result() before using completed content; the operation handle is not a transcript.",
+        "whyDistractorsWrong": {
+          "B": "The operation ID identifies work, not the analyzed content.",
+          "C": "Casting a control object does not obtain successful analysis output.",
+          "D": "Renaming the input does not complete or retrieve the existing operation."
+        }
+      },
+      "artifact": {
+        "title": "Python SDK 1.1.0 / API 2025-11-01",
+        "kind": "markdown",
+        "content": "poller = client.begin_analyze(analyzer_id=\"prebuilt-audioSearch\", inputs=inputs)\ntranscript_consumer(poller)"
+      },
+      "id": "ai103-improvement-r2-set-a-100-q099",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Implement computer vision solutions",
+      "sourceRefs": [
+        {
+          "sourceId": "S021",
+          "title": "Azure AI Content Understanding client library for Python - version 1.1.0",
+          "url": "https://learn.microsoft.com/python/api/overview/azure/ai-contentunderstanding-readme?view=azure-python",
+          "snapshotSha256": "aa5fd0abb99fe608e62d3909ffd7bc4eac9904dc931f427c9e3788351fbc7b42",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-17",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "D",
+      "objectiveTags": [
+        "AI103-D1.03"
+      ],
+      "stem": "The translation result leaves part of this input unchanged. Which cause and response best fit the documented condition?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A detected language and HTTP success establish complete translation."
+        },
+        {
+          "id": "B",
+          "text": "Source autodetection must be forced to German for the whole sentence."
+        },
+        {
+          "id": "C",
+          "text": "A text request should become an autodetected document translation job."
+        },
+        {
+          "id": "D",
+          "text": "Mixed source languages; segment and translate with intended source labels."
+        }
+      ],
+      "correctAnswer": "D",
+      "type": "code_or_config_artifact",
+      "difficulty": "medium",
+      "explanation": {
+        "whyCorrect": "The known-issues page identifies mixed-language sentences as a text translation limitation. A detected language for the whole input does not resolve the mixture.",
+        "whyDistractorsWrong": {
+          "B": "Choosing one language for the whole mixture does not separate its English span.",
+          "C": "Changing endpoints while retaining the mixture does not resolve the documented condition.",
+          "A": "Detection and transport success do not verify every span was translated."
+        }
+      },
+      "artifact": {
+        "title": "Text translation diagnosis",
+        "kind": "json",
+        "content": "{\"text\":\"Replace the filter, dann starten Sie die Pumpe.\",\"detectedLanguage\":\"en\",\"target\":\"fr\",\"symptom\":\"German clause unchanged\"}"
+      },
+      "id": "ai103-improvement-r2-set-a-100-q100",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Implement text analysis solutions",
+      "sourceRefs": [
+        {
+          "sourceId": "S055",
+          "title": "Azure Translator known issues and troubleshooting",
+          "url": "https://learn.microsoft.com/en-us/azure/ai-services/translator/reference/known-issues",
+          "snapshotSha256": "c1b48f37f4dc56c80cbc9c30661bfc67f1f6f75dea4693ef6d9e39beeeb88f1c",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-18",
+        "validationStatus": "draft"
+      }
+    }
+  ],
+  "caseStudies": [],
+  "evidence": [
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q091",
+      "testedDecision": "Match each observed agent defect to the targeted tool evaluator. Use each selected choice once; one choice is unused.",
+      "oldItemIds": [
+        "ai103-set-a-q095"
+      ],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-B2.06",
+      "itemRevisionHash": "f23898a6914c772696e0735857762ea0a7ca7f4e7639f08156daf24143db5d75",
+      "sources": [
+        {
+          "sourceId": "S014",
+          "title": "Agent evaluators",
+          "url": "https://learn.microsoft.com/azure/foundry/concepts/evaluation-evaluators/agent-evaluators",
+          "snapshotSha256": "0ce17b86785e87efb44074de9d3fdee3ae8290dedcb04a18a68558081be7103f",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q092",
+      "testedDecision": "Match each information need to the documented context capability. Use each selected choice once; one choice is unused.",
+      "oldItemIds": [
+        "ai103-set-a-q096"
+      ],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-B2.02",
+      "itemRevisionHash": "d46bbc39a622c3ca76e66201348bc6be1ac35f562589a56e4643653a359823fa",
+      "sources": [
+        {
+          "sourceId": "S006",
+          "title": "Memory in Microsoft Foundry Agent Service (preview)",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/concepts/what-is-memory",
+          "snapshotSha256": "1dd4a33b4885266d1a2a73cee51de011ad50f9e63454609195d46179316746f8",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q093",
+      "testedDecision": "Match each response-turn requirement to the documented tool_choice mode. Use each selected choice once; one choice is unused.",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-B2.01",
+      "itemRevisionHash": "d710a8773d1395e80a84417e706d57ac9179de8e5b994c75b6d37a1297b6c32e",
+      "sources": [
+        {
+          "sourceId": "S054",
+          "title": "Tool best practices for Microsoft Foundry Agent Service",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/concepts/tool-best-practice",
+          "snapshotSha256": "fbf440754eab789009c34a8bf7636fc60c1d0bd64402cd650b1b903230ffd0f9",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q094",
+      "testedDecision": "Match each webpage image role to the appropriate alternative-text approach. Use each selected choice once; one choice is unused.",
+      "oldItemIds": [
+        "ai103-set-a-q097"
+      ],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-C2.04",
+      "itemRevisionHash": "87e623116c2ba8745eb48a939b3de2a19ea6bde45e6ac86ff3298e5cc94297a2",
+      "sources": [
+        {
+          "sourceId": "S050",
+          "title": "W3C WAI An alt Decision Tree",
+          "url": "https://www.w3.org/WAI/tutorials/images/decision-tree/",
+          "snapshotSha256": "fa71070e3609f8825849fe94c3b718fb8632724b4c88ed9f3e5ea54615f36404",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q095",
+      "testedDecision": "The index has no OCR text. Which one configuration defect in this exhibit blocks the OCR input path?",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-E1.04",
+      "itemRevisionHash": "8af89ab15d09144771547a59b6d9d2956d8b0e41d9dd79fda75add56967bb4a2",
+      "sources": [
+        {
+          "sourceId": "S043",
+          "title": "OCR cognitive skill",
+          "url": "https://learn.microsoft.com/azure/search/cognitive-search-skill-ocr",
+          "snapshotSha256": "0a5cdd696dcbae744d32db7fd89a69926f0203462f86d6dc25793ab07d001b3d",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S028",
+          "title": "Skillset concepts in Azure AI Search",
+          "url": "https://learn.microsoft.com/azure/search/cognitive-search-working-with-skillsets",
+          "snapshotSha256": "3d24961260a3a7ca041656383016222704c25dec2dff53743bbaef628236312b",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q096",
+      "testedDecision": "The pipeline needs layout-derived Markdown for indexing. Which producing capability should replace the enrichment stage in this exhibit?",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-E1.03",
+      "itemRevisionHash": "c4e3f19b961d00854579a0fe876c332d7f188d9221ae59d864fdc3f71b69200e",
+      "sources": [
+        {
+          "sourceId": "S029",
+          "title": "Document Layout skill",
+          "url": "https://learn.microsoft.com/azure/search/cognitive-search-skill-document-intelligence-layout",
+          "snapshotSha256": "eb899b4d8c7fdd95e158072fa95891c8c96388f09c48c00a67683fa10ec4591a",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S059",
+          "title": "Content Understanding document solutions",
+          "url": "https://learn.microsoft.com/en-us/azure/ai-services/content-understanding/document/overview",
+          "snapshotSha256": "bf5c315cb4cdc9062a3f9dd797d0167ce02b793bfbcea213c4c3ea8f25903422",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q097",
+      "testedDecision": "A custom extractor uses the following result. What should happen before the application posts the invoice amount?",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-E2.03",
+      "itemRevisionHash": "c79c68c18e38b5506dedc88c92cac14d0ebfdb773c97217d8bc350cfd9e4302b",
+      "sources": [
+        {
+          "sourceId": "S045",
+          "title": "Validate document analyzer quality with confidence, grounding, and labeled samples",
+          "url": "https://learn.microsoft.com/azure/ai-services/content-understanding/document/analyzer-improvement",
+          "snapshotSha256": "c08a60437bdcc723d00d30d9898b3967040a122cf43b5ff95b5f1a33a3dadd93",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S059",
+          "title": "Content Understanding document solutions",
+          "url": "https://learn.microsoft.com/en-us/azure/ai-services/content-understanding/document/overview",
+          "snapshotSha256": "bf5c315cb4cdc9062a3f9dd797d0167ce02b793bfbcea213c4c3ea8f25903422",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q098",
+      "testedDecision": "The image:analyze 2024-09-01 contract uses FourSeverityLevels. Policy rejects an image when any harm category is Medium or High. What comparison should implement the policy?",
+      "oldItemIds": [
+        "ai103-set-a-q047"
+      ],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-C3.01",
+      "itemRevisionHash": "92238656acb456d513ef305880291d087ea3921b9463aabfe76320b2eec08aa3",
+      "sources": [
+        {
+          "sourceId": "S042",
+          "title": "QuickStart: Analyze image content",
+          "url": "https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-image",
+          "snapshotSha256": "6a40b6fdabe9e2a91838a3026f8530d0229c70acd401c4fab094a6c0c63b8670",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q099",
+      "testedDecision": "This audio-analysis worker passes an operation handle to its transcript consumer and the consumer rejects it. Which change obtains the completed analysis output in the pinned SDK?",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-C2.05",
+      "itemRevisionHash": "b6a6b032792b0ccfbeaa3be86c4c143d3569b0698c72aeb1b807eae5f8252478",
+      "sources": [
+        {
+          "sourceId": "S021",
+          "title": "Azure AI Content Understanding client library for Python - version 1.1.0",
+          "url": "https://learn.microsoft.com/python/api/overview/azure/ai-contentunderstanding-readme?view=azure-python",
+          "snapshotSha256": "aa5fd0abb99fe608e62d3909ffd7bc4eac9904dc931f427c9e3788351fbc7b42",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q100",
+      "testedDecision": "The translation result leaves part of this input unchanged. Which cause and response best fit the documented condition?",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-D1.03",
+      "itemRevisionHash": "a9bf9bcab5ae71f955abaca200c7f50b19c23dd5ed2a4824ffe6b5f6a7ca9ca1",
+      "sources": [
+        {
+          "sourceId": "S055",
+          "title": "Azure Translator known issues and troubleshooting",
+          "url": "https://learn.microsoft.com/en-us/azure/ai-services/translator/reference/known-issues",
+          "snapshotSha256": "c1b48f37f4dc56c80cbc9c30661bfc67f1f6f75dea4693ef6d9e39beeeb88f1c",
+          "docType": "microsoft_learn"
+        }
+      ]
+    }
+  ]
+}

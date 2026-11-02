@@ -1,0 +1,382 @@
+{
+  "canonicalDraftHash": "06b6490c1b4476a934d6301f1a53263b0e941b691ac9febf2e4522411b324c4a",
+  "questions": [
+    {
+      "domainId": "B",
+      "objectiveTags": [
+        "AI103-B1.02"
+      ],
+      "stem": "Harbor must serve HX-104 identifiers and descriptions of symptoms. Which retrieval approach combines those signals?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Semantic reranking without initial retrieval."
+        },
+        {
+          "id": "B",
+          "text": "Hybrid keyword and vector retrieval with ranked-list fusion."
+        },
+        {
+          "id": "C",
+          "text": "Vector search followed by alphabetical identifier sorting."
+        },
+        {
+          "id": "D",
+          "text": "Keyword retrieval followed by increasing generation temperature."
+        }
+      ],
+      "correctAnswer": "B",
+      "type": "case_study_child",
+      "difficulty": "medium",
+      "explanation": {
+        "whyCorrect": "Harbor’s exact identifiers benefit from keyword retrieval and descriptive queries benefit from vectors. Hybrid search fuses the ranked candidates; a semantic reranker can operate afterward.",
+        "whyDistractorsWrong": {
+          "A": "Reranking requires retrieved candidates and does not replace retrieval.",
+          "C": "Alphabetical sorting is not a keyword relevance ranking.",
+          "D": "Generation temperature does not add vector retrieval."
+        }
+      },
+      "id": "ai103-improvement-r2-set-a-100-q005",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Implement generative AI and agentic solutions",
+      "caseStudyId": "case-2",
+      "sourceRefs": [
+        {
+          "sourceId": "S025",
+          "title": "Hybrid search using vectors and full-text search in Azure AI Search",
+          "url": "https://learn.microsoft.com/azure/search/hybrid-search-overview",
+          "snapshotSha256": "8f766ea87e9528dc1e469ffca3de91350cf9b9393aaf47e5c8c124378457397d",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-2",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "B",
+      "objectiveTags": [
+        "AI103-B1.02"
+      ],
+      "stem": "Harbor tests harbor-embed-y for queries while content remains from harbor-embed-x. Equal dimensions did not preserve relevance. Which correction targets the mismatch?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Normalize vector magnitudes and retain both current embedding models."
+        },
+        {
+          "id": "B",
+          "text": "Enable semantic ranking and leave embedding compatibility unresolved."
+        },
+        {
+          "id": "C",
+          "text": "Use a validated compatible embedding configuration for content and queries."
+        },
+        {
+          "id": "D",
+          "text": "Increase vector candidate count and retain the unrelated query model."
+        }
+      ],
+      "correctAnswer": "C",
+      "type": "case_study_child",
+      "difficulty": "medium",
+      "explanation": {
+        "whyCorrect": "The case uses unrelated models. Dimension compatibility is necessary for vector fields but does not create a shared semantic space.",
+        "whyDistractorsWrong": {
+          "D": "Candidate count does not align the two embedding spaces.",
+          "A": "Magnitude normalization does not align learned semantic spaces.",
+          "B": "Reranking is an additional stage and does not repair the vector representation contract."
+        }
+      },
+      "id": "ai103-improvement-r2-set-a-100-q006",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Implement generative AI and agentic solutions",
+      "caseStudyId": "case-2",
+      "sourceRefs": [
+        {
+          "sourceId": "S026",
+          "title": "Integrated vector embedding in Azure AI Search",
+          "url": "https://learn.microsoft.com/azure/search/vector-search-integrated-vectorization",
+          "snapshotSha256": "45a6b445fbe4f7f65334693eb96b2de7b021e0b50ce46b363ab47c5de0a11f0d",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S058",
+          "title": "Integrated vectorization REST configuration",
+          "url": "https://learn.microsoft.com/en-us/azure/search/search-how-to-integrated-vectorization",
+          "snapshotSha256": "a09c24b08450e2017f75e2fa7d0b107b870d58cb085c863b6531ddb3ab513716",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-2",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "B",
+      "objectiveTags": [
+        "AI103-B1.04"
+      ],
+      "stem": "Harbor answers twenty-four months from a passage saying twelve. It stays on topic. Which evaluation isolates this defect?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Groundedness"
+        },
+        {
+          "id": "B",
+          "text": "Tool selection"
+        },
+        {
+          "id": "C",
+          "text": "Query latency"
+        },
+        {
+          "id": "D",
+          "text": "Relevance"
+        }
+      ],
+      "correctAnswer": "A",
+      "type": "case_study_child",
+      "difficulty": "medium",
+      "explanation": {
+        "whyCorrect": "The warranty claim contradicts the supplied passage. Groundedness examines answer support in context, distinct from topical relevance.",
+        "whyDistractorsWrong": {
+          "D": "The answer can be on topic while unsupported.",
+          "C": "Transport timing does not assess factual support.",
+          "B": "The defect described is a generated claim, not a selected tool."
+        }
+      },
+      "id": "ai103-improvement-r2-set-a-100-q007",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Implement generative AI and agentic solutions",
+      "caseStudyId": "case-2",
+      "sourceRefs": [
+        {
+          "sourceId": "S039",
+          "title": "Retrieval-Augmented Generation (RAG) evaluators",
+          "url": "https://learn.microsoft.com/azure/foundry/concepts/evaluation-evaluators/rag-evaluators",
+          "snapshotSha256": "3b16c765be1f1479ac22e04cf9b293be767d473fc1cacb188b90751227074a4b",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-2",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "B",
+      "objectiveTags": [
+        "AI103-B1.02"
+      ],
+      "stem": "Harbor’s employee is authorized for one department. Which control enforces that boundary before passages reach the model?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Remove other departments from citations after the answer is generated."
+        },
+        {
+          "id": "B",
+          "text": "Use the employee’s department in a system instruction after retrieval."
+        },
+        {
+          "id": "C",
+          "text": "Rerank the unfiltered results and retain only the highest-scoring passage."
+        },
+        {
+          "id": "D",
+          "text": "Apply the authenticated employee’s department as a retrieval filter."
+        }
+      ],
+      "correctAnswer": "D",
+      "type": "case_study_child",
+      "difficulty": "medium",
+      "explanation": {
+        "whyCorrect": "The case requires access filtering before evidence is returned. A supported filter on the filterable department field narrows retrieval; the host supplies the authorized value.",
+        "whyDistractorsWrong": {
+          "B": "The policy requires filtering before passages enter context.",
+          "A": "Post-generation citation filtering is too late for this boundary.",
+          "C": "Relevance is not the employee authorization rule."
+        }
+      },
+      "id": "ai103-improvement-r2-set-a-100-q008",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Implement generative AI and agentic solutions",
+      "caseStudyId": "case-2",
+      "sourceRefs": [
+        {
+          "sourceId": "S040",
+          "title": "Connect an Azure AI Search index to Foundry agents",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/how-to/tools/ai-search",
+          "snapshotSha256": "67830020b25de8c993ae294ff523035ad2c04c16865c1fe7222f053769316545",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S054",
+          "title": "Tool best practices for Microsoft Foundry Agent Service",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/concepts/tool-best-practice",
+          "snapshotSha256": "fbf440754eab789009c34a8bf7636fc60c1d0bd64402cd650b1b903230ffd0f9",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-2",
+        "validationStatus": "draft"
+      }
+    }
+  ],
+  "caseStudies": [
+    {
+      "title": "Harbor maintenance knowledge",
+      "intro": "Harbor maintains manuals for several equipment departments. Its new assistant must answer policy and catalog questions with current evidence and distinguish factual support from useful but unrelated prose. Search, embedding and generation are separately observable components. Each child question uses the same architecture and an independent observation.",
+      "sections": [
+        {
+          "heading": "Corpus and index",
+          "body": "The Search index stores chunk text, a filterable department field, a catalog identifier and one vector field. Maintenance staff often search by exact identifiers such as HX-104 as well as by descriptions of symptoms. The current corpus was embedded with deployment harbor-embed-x. A proposed query deployment harbor-embed-y has the same vector dimensions but uses an unrelated model. The index is not automatically regenerated when a developer changes a query-time setting. The source documents and their department labels are authoritative."
+        },
+        {
+          "heading": "Access and retrieval",
+          "body": "The application authenticates each employee and derives an allowed department from its own authorization service. Department boundaries apply before evidence is returned to the model. A generated instruction asking the model to ignore unauthorized passages is not the access filter. The team can configure keyword retrieval, vector retrieval and hybrid retrieval. An optional semantic reranker operates on retrieved candidates; it does not create content embeddings or rename index fields. Query vectors must be compatible with the content vectors being searched."
+        },
+        {
+          "heading": "Evaluation evidence",
+          "body": "A held-out test includes queries, relevance judgments for candidate documents, retrieved passages and generated answers. One passage says the repair warranty lasts twelve months. An answer says twenty-four months while staying on the user’s topic. Another answer quotes the twelve-month passage correctly but responds to a shipping-time question. The team wants separate measurements for retrieval quality, contextual support and response relevance rather than one total score. A successful query response establishes transport success, not answer correctness."
+        },
+        {
+          "heading": "Operations",
+          "body": "Indexer logs record document-level errors and warnings. An overall successful run still requires checking whether required documents entered the index. An embedding model change needs a planned reindexing path and evaluation before rollout. Engineers retain safe request identifiers to correlate Search requests with agent traces. They do not put service credentials in model-visible tool errors. A reviewer should combine the named corpus, access and evaluation facts to choose each answer; previous child answers are not prerequisites and do not alter the configuration in this case."
+        },
+        {
+          "heading": "Diagnostic exhibit",
+          "body": "Evaluation exhibit: {\"contentEmbedding\":\"harbor-embed-x\",\"queryEmbedding\":\"harbor-embed-y\",\"dimensionsMatch\":true,\"passageWarrantyMonths\":12,\"answerWarrantyMonths\":24}. The authorized department is derived from the employee session, not either deployment name."
+        }
+      ],
+      "id": "case-2",
+      "questionIds": [
+        "ai103-improvement-r2-set-a-100-q005",
+        "ai103-improvement-r2-set-a-100-q006",
+        "ai103-improvement-r2-set-a-100-q007",
+        "ai103-improvement-r2-set-a-100-q008"
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q005",
+      "testedDecision": "Harbor must serve HX-104 identifiers and descriptions of symptoms. Which retrieval approach combines those signals?",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-B1.02",
+      "itemRevisionHash": "994bd3c019afb75b91064c69e2d24d5ec8f42d65d0b28676410e263e963a5d15",
+      "sources": [
+        {
+          "sourceId": "S025",
+          "title": "Hybrid search using vectors and full-text search in Azure AI Search",
+          "url": "https://learn.microsoft.com/azure/search/hybrid-search-overview",
+          "snapshotSha256": "8f766ea87e9528dc1e469ffca3de91350cf9b9393aaf47e5c8c124378457397d",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q006",
+      "testedDecision": "Harbor tests harbor-embed-y for queries while content remains from harbor-embed-x. Equal dimensions did not preserve relevance. Which correction targets the mismatch?",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-B1.02",
+      "itemRevisionHash": "e65e10dd04ee8bd28756a2a6a2bdbbe1fef416a8cedea150c14cb50050772511",
+      "sources": [
+        {
+          "sourceId": "S026",
+          "title": "Integrated vector embedding in Azure AI Search",
+          "url": "https://learn.microsoft.com/azure/search/vector-search-integrated-vectorization",
+          "snapshotSha256": "45a6b445fbe4f7f65334693eb96b2de7b021e0b50ce46b363ab47c5de0a11f0d",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S058",
+          "title": "Integrated vectorization REST configuration",
+          "url": "https://learn.microsoft.com/en-us/azure/search/search-how-to-integrated-vectorization",
+          "snapshotSha256": "a09c24b08450e2017f75e2fa7d0b107b870d58cb085c863b6531ddb3ab513716",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q007",
+      "testedDecision": "Harbor answers twenty-four months from a passage saying twelve. It stays on topic. Which evaluation isolates this defect?",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-B1.04",
+      "itemRevisionHash": "81d3a24c33afae81101dfc9b56e4f163c71449244f7bf6ac9be02c8aeeb6d04e",
+      "sources": [
+        {
+          "sourceId": "S039",
+          "title": "Retrieval-Augmented Generation (RAG) evaluators",
+          "url": "https://learn.microsoft.com/azure/foundry/concepts/evaluation-evaluators/rag-evaluators",
+          "snapshotSha256": "3b16c765be1f1479ac22e04cf9b293be767d473fc1cacb188b90751227074a4b",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q008",
+      "testedDecision": "Harbor’s employee is authorized for one department. Which control enforces that boundary before passages reach the model?",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-B1.02",
+      "itemRevisionHash": "7a3795bbb03ab1d4cd3f28cbc8e618d622773f88ffe2b1e8df57edae8dbc09a7",
+      "sources": [
+        {
+          "sourceId": "S040",
+          "title": "Connect an Azure AI Search index to Foundry agents",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/how-to/tools/ai-search",
+          "snapshotSha256": "67830020b25de8c993ae294ff523035ad2c04c16865c1fe7222f053769316545",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S054",
+          "title": "Tool best practices for Microsoft Foundry Agent Service",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/concepts/tool-best-practice",
+          "snapshotSha256": "fbf440754eab789009c34a8bf7636fc60c1d0bd64402cd650b1b903230ffd0f9",
+          "docType": "microsoft_learn"
+        }
+      ]
+    }
+  ]
+}

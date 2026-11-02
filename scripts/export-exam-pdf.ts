@@ -1,34 +1,23 @@
-/**
- * Export an exam as a human-readable PDF in Practice mode:
- * all questions with correct answers highlighted and full explanations.
- *
- * Usage:
- *   npx tsx scripts/export-exam-pdf.ts [examId]
- *
- * If no examId is given the most-recently-created exam is used.
- * Output: data/exams/<examId>.pdf
- */
-
-import fs from "fs";
-import path from "path";
-import { generateExamPdf } from "../src/pdfExport.js";
-import { ExamSet } from "../src/types.js";
+/** Export either legacy or imported exams using the same pack-aware renderer as the API. */
+import { getExam, listExams } from "../src/persistence.js";
+import { generateExamPdf, pdfKindSchema } from "../src/pdfExport.js";
 
 async function main() {
-  const examsPath = path.join(process.cwd(), "data/exams/exams.json");
-  const exams: ExamSet[] = JSON.parse(fs.readFileSync(examsPath, "utf8"));
-  if (!exams.length) throw new Error("No exams found in data/exams/exams.json");
-
-  const targetId = process.argv[2];
-  const exam = targetId
-    ? exams.find((e) => e.id === targetId || e.id.startsWith(targetId))
-    : exams.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())[0];
-
-  if (!exam) throw new Error(`Exam not found: ${targetId}`);
-
-  console.log(`Exporting exam ${exam.id} (${exam.questions.length} questions)…`);
-  const { outPath } = await generateExamPdf(exam);
-  console.log(`✅  PDF saved → ${outPath}`);
+  const args = process.argv.slice(2);
+  const kindIndex = args.indexOf("--kind");
+  const kind = pdfKindSchema.parse(kindIndex >= 0 ? args[kindIndex + 1] : "practice");
+  if (kindIndex >= 0) args.splice(kindIndex, 2);
+  if (args.length > 1 || args.some(a => a.startsWith("--"))) throw new Error("Usage: npm run export-pdf -- [examId] [--kind practice|questions|answers]");
+  const summaries = await listExams();
+  const target = args[0];
+  const exact = target ? summaries.find(e => e.id === target) : undefined;
+  const matches = exact ? [exact] : target ? summaries.filter(e => e.id.startsWith(target)) : [];
+  if (target && matches.length !== 1) throw new Error("Exam ID must match exactly one stored exam");
+  const id = target ? matches[0].id : summaries.sort((a, b) => Date.parse(b.createdAt) - Date.parse(a.createdAt))[0]?.id;
+  if (!id) throw new Error("No exams found");
+  const exam = await getExam(id);
+  if (!exam) throw new Error("Exam not found");
+  const result = await generateExamPdf(exam, kind);
+  console.log(JSON.stringify({ id: exam.id, pack: exam.pack, kind, path: result.outPath, filename: result.filename }));
 }
-
-main().catch((err) => { console.error(err); process.exit(1); });
+main().catch(error => { console.error(error instanceof Error ? error.message : "Export failed"); process.exitCode = 1; });

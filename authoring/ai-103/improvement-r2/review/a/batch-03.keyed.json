@@ -1,0 +1,382 @@
+{
+  "canonicalDraftHash": "06b6490c1b4476a934d6301f1a53263b0e941b691ac9febf2e4522411b324c4a",
+  "questions": [
+    {
+      "domainId": "A",
+      "objectiveTags": [
+        "AI103-A2.02"
+      ],
+      "stem": "Which deployment fits Lumen’s interactive EU-processing and on-demand billing requirements?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Global Standard in an EU resource."
+        },
+        {
+          "id": "B",
+          "text": "Data Zone Standard in the EU."
+        },
+        {
+          "id": "C",
+          "text": "Data Zone Provisioned."
+        },
+        {
+          "id": "D",
+          "text": "Data Zone Batch."
+        }
+      ],
+      "correctAnswer": "B",
+      "type": "case_study_child",
+      "difficulty": "medium",
+      "explanation": {
+        "whyCorrect": "Lumen permits EU-wide processing, requires interactive completion and wants token billing. Data Zone Standard satisfies those constraints given the stated model availability and quota.",
+        "whyDistractorsWrong": {
+          "A": "The resource region alone does not constrain Global processing to the EU.",
+          "D": "Batch is asynchronous and conflicts with the interactive workload.",
+          "C": "Provisioned introduces reserved throughput rather than the requested on-demand billing."
+        }
+      },
+      "id": "ai103-improvement-r2-set-a-100-q009",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Plan and manage an Azure AI solution",
+      "caseStudyId": "case-3",
+      "sourceRefs": [
+        {
+          "sourceId": "S005",
+          "title": "Deployment types for Microsoft Foundry Models",
+          "url": "https://learn.microsoft.com/azure/foundry/foundry-models/concepts/deployment-types",
+          "snapshotSha256": "6c6d5d7b11684c1cbba8d35fd278a313e1420e3853b0ba9f104898c4a8c24c58",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-3",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "A",
+      "objectiveTags": [
+        "AI103-A3.04"
+      ],
+      "stem": "Lumen’s runtime obtains a token but Reader-only inference is denied. Which documented role at the called Azure OpenAI resource supplies inference permission?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A deployment workflow’s role on another project."
+        },
+        {
+          "id": "B",
+          "text": "Reader on the Foundry project only."
+        },
+        {
+          "id": "C",
+          "text": "Cognitive Services OpenAI User."
+        },
+        {
+          "id": "D",
+          "text": "Search Index Data Reader."
+        }
+      ],
+      "correctAnswer": "C",
+      "type": "case_study_child",
+      "difficulty": "medium",
+      "explanation": {
+        "whyCorrect": "The named /openai/v1/ endpoint requires the runtime identity’s inference permission. Cognitive Services OpenAI User is the documented inference role; scope must cover the called resource.",
+        "whyDistractorsWrong": {
+          "B": "Management reading does not grant the named inference permission.",
+          "D": "That role applies to Search data, not Azure OpenAI inference.",
+          "A": "A different principal and different resource scope do not authorize this runtime call."
+        }
+      },
+      "id": "ai103-improvement-r2-set-a-100-q010",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Plan and manage an Azure AI solution",
+      "caseStudyId": "case-3",
+      "sourceRefs": [
+        {
+          "sourceId": "S051",
+          "title": "Azure OpenAI v1 API",
+          "url": "https://learn.microsoft.com/en-us/azure/foundry/openai/api-version-lifecycle",
+          "snapshotSha256": "8e7e4b2c4e94ad6056ffa3edf4750e4db864ceac16a52777cc13fd2068403803",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S052",
+          "title": "Use Azure OpenAI without keys",
+          "url": "https://learn.microsoft.com/en-us/azure/developer/ai/keyless-connections",
+          "snapshotSha256": "4f2b4d850889660d3af96aac661fa1955b8d9e1bf6f454facbef5b11aa59efcd",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-3",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "A",
+      "objectiveTags": [
+        "AI103-A3.04"
+      ],
+      "stem": "Lumen’s Search role is correct, but the runtime resolves Search publicly. What should be repaired first?",
+      "options": [
+        {
+          "id": "A",
+          "text": "The runtime principal’s model-token quota."
+        },
+        {
+          "id": "B",
+          "text": "The semantic configuration on the Search index."
+        },
+        {
+          "id": "C",
+          "text": "The developer laptop’s working Search role."
+        },
+        {
+          "id": "D",
+          "text": "Private DNS resolution and subnet links."
+        }
+      ],
+      "correctAnswer": "D",
+      "type": "case_study_child",
+      "difficulty": "medium",
+      "explanation": {
+        "whyCorrect": "Public access is disabled and the runtime resolves to a public address. Repair its private DNS path and connectivity; the laptop observation is from another network.",
+        "whyDistractorsWrong": {
+          "A": "Model quota does not change Search hostname resolution.",
+          "C": "The case already distinguishes the developer from the runtime network.",
+          "B": "Semantic relevance settings do not repair the network path."
+        }
+      },
+      "id": "ai103-improvement-r2-set-a-100-q011",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Plan and manage an Azure AI solution",
+      "caseStudyId": "case-3",
+      "sourceRefs": [
+        {
+          "sourceId": "S011",
+          "title": "Set up private networking for Foundry Agent Service",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/how-to/virtual-networks",
+          "snapshotSha256": "02eb40fb9bc5fcbd6b27249423b2d0ba26f5df0dd6b6885c881270a7a6fac8b9",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-3",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "A",
+      "objectiveTags": [
+        "AI103-A2.04"
+      ],
+      "stem": "Lumen’s OIDC token succeeds but deployment is denied. Which authorization correction targets the case defect?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Change the runtime Search role."
+        },
+        {
+          "id": "B",
+          "text": "Use the endpoint string as a credential."
+        },
+        {
+          "id": "C",
+          "text": "Scope the workflow’s deployment role to the intended project."
+        },
+        {
+          "id": "D",
+          "text": "Rotate a long-lived secret into GitHub."
+        }
+      ],
+      "correctAnswer": "C",
+      "type": "case_study_child",
+      "difficulty": "medium",
+      "explanation": {
+        "whyCorrect": "Authentication works. The workflow role is scoped to a different project; align deployment authorization with the target while retaining federation.",
+        "whyDistractorsWrong": {
+          "D": "Changing credential style does not correct the role’s resource scope.",
+          "A": "Runtime Search access belongs to a different operation and principal.",
+          "B": "An endpoint locates a service and is not an authentication credential."
+        }
+      },
+      "id": "ai103-improvement-r2-set-a-100-q012",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Plan and manage an Azure AI solution",
+      "caseStudyId": "case-3",
+      "sourceRefs": [
+        {
+          "sourceId": "S012",
+          "title": "Quickstart: Hosted agent CI/CD templates",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/quickstarts/set-up-cicd-hosted-agent",
+          "snapshotSha256": "e6e53feb7b84553872c1d228d971a02871b943aa30c877cb5f9402e1cb4797c6",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S010",
+          "title": "Role-based access control for Microsoft Foundry",
+          "url": "https://learn.microsoft.com/azure/foundry/concepts/rbac-foundry",
+          "snapshotSha256": "c63d1b1d5cb16c4ffbf9019b34ac56ab5e47f81f1457b4e2d7c02a2de16a59f9",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-3",
+        "validationStatus": "draft"
+      }
+    }
+  ],
+  "caseStudies": [
+    {
+      "title": "Lumen regional engineering assistant",
+      "intro": "Lumen operates an engineering assistant for staff in the European Union. Its platform team is designing deployment, identity and retrieval controls together, with separate principals for deployment and runtime. The service must answer interactively and retain existing learner and operational records during the migration described here.",
+      "sections": [
+        {
+          "heading": "Workload boundary",
+          "body": "The processing policy permits inference across EU countries but forbids processing outside that data zone. Interactive requests cannot wait for a nightly batch. Demand varies across the day and procurement wants on-demand token billing rather than reserved throughput. The selected model is available for every deployment family considered in the questions, and the relevant quota has already been confirmed. The resource’s region alone is not the organization’s definition of the inference processing boundary."
+        },
+        {
+          "heading": "Inference identity",
+          "body": "The backend calls an Azure OpenAI resource through its /openai/v1/ endpoint using Microsoft Entra credentials. Its runtime managed identity currently has Reader on that resource and no inference data role. Token acquisition succeeds, but inference is denied. The team wants the documented inference role at the resource scope without granting model-management permissions. Developers’ personal roles and the GitHub deployment principal are separate from the runtime identity. A resource key is not part of the approved runtime design."
+        },
+        {
+          "heading": "Project and Search",
+          "body": "An AI Projects Python 2.8.0 client is used for Foundry project operations, with a project endpoint and an Entra credential. Search public access is disabled. The private endpoint exists, and the agent connection is explicitly pinned to the named runtime principal. That principal has Search Index Data Reader for the target index. From the runtime subnet, however, the Search hostname resolves to a public address. From a developer laptop on another network it resolves privately and querying succeeds. The network observations do not transfer from the laptop to the agent subnet."
+        },
+        {
+          "heading": "Release process",
+          "body": "A GitHub deployment workflow obtains a token using an established OIDC trust. It does not store a client secret. The workflow principal’s project role is assigned on a different project, while its endpoint variable points to the intended Lumen project. An authorization denial therefore needs identity and scope analysis after authentication succeeds. Operations retain redacted request spans and release identifiers to investigate failures. Each question asks for a single independent decision; repairing one defect is not assumed to repair the others. A proposed change must satisfy the named runtime, region and billing facts rather than simply resemble a working developer setup."
+        },
+        {
+          "heading": "Diagnostic exhibit",
+          "body": "Runtime exhibit: {\"tokenAcquired\":true,\"inferenceRole\":\"Reader\",\"searchRole\":\"Search Index Data Reader\",\"searchDns\":\"public address\",\"publicSearchAccess\":false}. These observations belong to the runtime identity and subnet; the developer’s successful call uses a different network."
+        }
+      ],
+      "id": "case-3",
+      "questionIds": [
+        "ai103-improvement-r2-set-a-100-q009",
+        "ai103-improvement-r2-set-a-100-q010",
+        "ai103-improvement-r2-set-a-100-q011",
+        "ai103-improvement-r2-set-a-100-q012"
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q009",
+      "testedDecision": "Which deployment fits Lumen’s interactive EU-processing and on-demand billing requirements?",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-A2.02",
+      "itemRevisionHash": "c35d4b1506aa5dc42a3680f7f1282934e7c5b8a2350775ffdb1d07aecb21ee3f",
+      "sources": [
+        {
+          "sourceId": "S005",
+          "title": "Deployment types for Microsoft Foundry Models",
+          "url": "https://learn.microsoft.com/azure/foundry/foundry-models/concepts/deployment-types",
+          "snapshotSha256": "6c6d5d7b11684c1cbba8d35fd278a313e1420e3853b0ba9f104898c4a8c24c58",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q010",
+      "testedDecision": "Lumen’s runtime obtains a token but Reader-only inference is denied. Which documented role at the called Azure OpenAI resource supplies inference permission?",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-A3.04",
+      "itemRevisionHash": "1d6591803b4e4b10a17b651c08e411779974ce1b0677261b039ecd8c51ca0f94",
+      "sources": [
+        {
+          "sourceId": "S051",
+          "title": "Azure OpenAI v1 API",
+          "url": "https://learn.microsoft.com/en-us/azure/foundry/openai/api-version-lifecycle",
+          "snapshotSha256": "8e7e4b2c4e94ad6056ffa3edf4750e4db864ceac16a52777cc13fd2068403803",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S052",
+          "title": "Use Azure OpenAI without keys",
+          "url": "https://learn.microsoft.com/en-us/azure/developer/ai/keyless-connections",
+          "snapshotSha256": "4f2b4d850889660d3af96aac661fa1955b8d9e1bf6f454facbef5b11aa59efcd",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q011",
+      "testedDecision": "Lumen’s Search role is correct, but the runtime resolves Search publicly. What should be repaired first?",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-A3.04",
+      "itemRevisionHash": "7db21261479f0d84d52dcc4102b1b00669f6d926a532f093ae6c31a304f8574a",
+      "sources": [
+        {
+          "sourceId": "S011",
+          "title": "Set up private networking for Foundry Agent Service",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/how-to/virtual-networks",
+          "snapshotSha256": "02eb40fb9bc5fcbd6b27249423b2d0ba26f5df0dd6b6885c881270a7a6fac8b9",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q012",
+      "testedDecision": "Lumen’s OIDC token succeeds but deployment is denied. Which authorization correction targets the case defect?",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-A2.04",
+      "itemRevisionHash": "385fb0fbea81b0439596a021fb3891f9625b4e84af047bbe806925dcfffe599f",
+      "sources": [
+        {
+          "sourceId": "S012",
+          "title": "Quickstart: Hosted agent CI/CD templates",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/quickstarts/set-up-cicd-hosted-agent",
+          "snapshotSha256": "e6e53feb7b84553872c1d228d971a02871b943aa30c877cb5f9402e1cb4797c6",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S010",
+          "title": "Role-based access control for Microsoft Foundry",
+          "url": "https://learn.microsoft.com/azure/foundry/concepts/rbac-foundry",
+          "snapshotSha256": "c63d1b1d5cb16c4ffbf9019b34ac56ab5e47f81f1457b4e2d7c02a2de16a59f9",
+          "docType": "microsoft_learn"
+        }
+      ]
+    }
+  ]
+}

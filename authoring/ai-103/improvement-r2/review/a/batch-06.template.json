@@ -1,0 +1,202 @@
+{
+  "templateOnly": true,
+  "packetId": "ai103-improvement-r2-set-a-100-batch-6",
+  "packageId": "ai103-improvement-r2-set-a-100",
+  "revision": "2",
+  "pack": {
+    "id": "ai-103",
+    "version": "1.2.0"
+  },
+  "draftPackageSha256": "06b6490c1b4476a934d6301f1a53263b0e941b691ac9febf2e4522411b324c4a",
+  "reviewer": {
+    "actualModelLabel": null,
+    "visibleModeIfAny": null,
+    "reviewedAtUtc": null
+  },
+  "instructions": "Solve blind first. Assess alternatives, evidence, API/version, objective fit, difficulty and cues. Null verdicts are not reviews.",
+  "items": [
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q026",
+      "itemRevision": "2",
+      "itemSha256": "3f75541947992c41bce13b1011bb8f10c692db46e28ff96f757b39ffb33def08",
+      "sourceIds": [
+        "S027",
+        "S044"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S027",
+          "lines": null,
+          "supports": null
+        },
+        {
+          "sourceId": "S044",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q027",
+      "itemRevision": "2",
+      "itemSha256": "6414d7f37590957d1563299dd49776a959d1dca08b186da9872d09f6c9df41f5",
+      "sourceIds": [
+        "S002",
+        "S056"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S002",
+          "lines": null,
+          "supports": null
+        },
+        {
+          "sourceId": "S056",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q028",
+      "itemRevision": "2",
+      "itemSha256": "7948dab189232eeec9f1fa3135eb663bfa98efb0b4ba0fc058d883e556c1570e",
+      "sourceIds": [
+        "S053"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S053",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q029",
+      "itemRevision": "2",
+      "itemSha256": "ac2b28d27360812b6dd96140091de0ae27181cf4d6db1adad63daa3c728bd776",
+      "sourceIds": [
+        "S054"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S054",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q030",
+      "itemRevision": "2",
+      "itemSha256": "f82cc7af5f1486f70f85e22aa0b50c87c129321899759e91aa3850372ca48557",
+      "sourceIds": [
+        "S037"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S037",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q031",
+      "itemRevision": "2",
+      "itemSha256": "fb5c9fc1b7dcfe4a28d6e023c7eb0b76b4605b5d45606f1677d0fbf3dee3fc99",
+      "sourceIds": [
+        "S038"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S038",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q032",
+      "itemRevision": "2",
+      "itemSha256": "d782fee40b337677ee2d383fc2f9e5c103aa674d3b22bb5e2b74a8f1ee2c980f",
+      "sourceIds": [
+        "S057"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S057",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q033",
+      "itemRevision": "2",
+      "itemSha256": "d8c3cab219aa256a7eecb1b6838497195ccfd729cec4d360987bd3eba8391864",
+      "sourceIds": [
+        "S008"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S008",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q034",
+      "itemRevision": "2",
+      "itemSha256": "63b4f584369a1ad5988142b072ec250374ad0fd41f6774a8e1daef5c0667f906",
+      "sourceIds": [
+        "S014"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S014",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    }
+  ]
+}

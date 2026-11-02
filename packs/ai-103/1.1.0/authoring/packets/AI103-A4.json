@@ -1,0 +1,311 @@
+{
+  "schemaVersion": 1,
+  "packRef": {
+    "id": "ai-103",
+    "version": "1.1.0"
+  },
+  "parentObjectiveId": "AI103-A4",
+  "title": "Implement responsible AI across generative AI and agentic systems",
+  "state": "evidence-packet-only; no questions",
+  "allowedObjectiveIds": [
+    "AI103-A4.01",
+    "AI103-A4.02",
+    "AI103-A4.03",
+    "AI103-A4.04"
+  ],
+  "allowedScope": [
+    {
+      "objectiveId": "AI103-A4.01",
+      "claims": [
+        "F015A",
+        "F016A",
+        "F016B"
+      ],
+      "choice": "Apply safety controls at the relevant input/tool/output boundary; distinguish content harm from prompt injection.",
+      "configuration": "Configure risk, severity, intervention point, and response action; preserve agent/Spotlighting preview and API conditions. S015 has conflicting most/least-restrictive labels beside flagging ranges: use explicit severity levels and configured action; avoid those ambiguous adjectives.",
+      "comparison": "Filtering only final text leaves malicious tool-return instructions and dangerous proposed tool arguments unexamined.",
+      "judgment": "An agent reading external pages needs document-attack protection and tool-access constraints in addition to output moderation."
+    },
+    {
+      "objectiveId": "AI103-A4.02",
+      "claims": [
+        "F014A",
+        "F014B",
+        "F039A"
+      ],
+      "choice": "Use evaluations suited to answer quality, tool behavior, and instruction adherence; combine quality evidence with safety controls.",
+      "configuration": "Supply the evaluator's expected conversation/context/tool schema and ground truth where needed; preserve preview labels.",
+      "comparison": "A safety filter pass does not establish factual grounding, and tool-call correctness does not establish complete user-task resolution.",
+      "judgment": "An agent that calls the correct API but omits a requested deliverable needs task-completion evaluation as well as tool accuracy."
+    },
+    {
+      "objectiveId": "AI103-A4.03",
+      "claims": [
+        "F013A",
+        "F013B",
+        "F045B",
+        "F007C"
+      ],
+      "choice": "Tie operational traces to evidence provenance and explicit approvals for actions with side effects.",
+      "configuration": "Retain trace/evaluation IDs, content source locators, tool-call decisions, and approval records while redacting secrets.",
+      "comparison": "Logging full prompts can expose sensitive material without proving where an answer came from.",
+      "judgment": "A document-based approval should preserve the source clause/location and approval event; telemetry access needs the same controls as production logs."
+    },
+    {
+      "objectiveId": "AI103-A4.04",
+      "claims": [
+        "F007C",
+        "F015A",
+        "F008A"
+      ],
+      "choice": "Enforce tool permissions in the application/runtime and use explicit oversight at meaningful action boundaries.",
+      "configuration": "Validate arguments; allowlist tools/operations; require appropriate approval; inspect tool-call and tool-response controls.",
+      "comparison": "A prompt saying 'be careful' does not implement runtime authorization or prevent an unrestricted tool from changing data.",
+      "judgment": "A billing agent may inspect invoice data freely within scope while a payment action requires a validated amount and an approval boundary."
+    }
+  ],
+  "excludedObjectives": [],
+  "evidence": [
+    {
+      "claimId": "F007C",
+      "statement": "Validate tool arguments and outputs, minimize secrets, apply least privilege, and require intended confirmation for side effects.",
+      "sourceId": "S007",
+      "sourceUrl": "https://learn.microsoft.com/azure/foundry/agents/how-to/tools/function-calling",
+      "versionContext": "Mixed page panels: current AI Projects2.x Responses/conversations examples and classic threads/runs material. Current fragments used below; do not transfer classic10-minute run expiry to Responses.",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S007.md",
+          "lineStart": 825,
+          "lineEnd": 829,
+          "heading": "## Security and data considerations",
+          "needle": "Treat tool arguments and tool outputs",
+          "excerpt": "\n- Treat tool arguments and tool outputs as untrusted input. Validate and sanitize values before using them.\n- Don't pass secrets (API keys, tokens, connection strings) in tool output. Return only the data the model needs.\n- Apply least privilege to the identity used by `DefaultAzureCredential`.\n- Avoid side effects unless you explicitly intend them. For example, restrict function tools to safe operations, or require explicit user confirmation for actions that change data.",
+          "sourceSha256": "0d4119f94b15c94d404729f53d2ed5f52a89dfaf35841d1290c0472be3e3e953"
+        }
+      ]
+    },
+    {
+      "claimId": "F008A",
+      "statement": "Sequential orchestration passes results in a defined order; group chat routes control dynamically; human-in-loop patterns wait for approval or missing input.",
+      "sourceId": "S008",
+      "sourceUrl": "https://learn.microsoft.com/azure/foundry/agents/concepts/workflow",
+      "versionContext": "Visual designer/in-portal workflow execution retires Dec1,2026; hosted YAML migration remains",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S008.md",
+          "lineStart": 40,
+          "lineEnd": 44,
+          "heading": "## Understand workflow patterns",
+          "needle": "| Sequential |",
+          "excerpt": "| Human in the loop | Asks the user a question and awaits user input to proceed | Creating approval requests during workflow execution and waiting for human approval, or obtaining information from the user |\n| Sequential | Passes the result from one agent to the next in a defined order | Step-by-step workflows, pipelines, or multiple-stage processing |\n| Group chat | Dynamically passes control between agents based on context or rules | Dynamic workflows, escalation, fallback, or expert handoff scenarios |\n\nFor more information, see [Microsoft Agent Framework workflow orchestrations](/en-us/agent-framework/user-guide/workflows/orchestrations/overview).",
+          "sourceSha256": "91311aec35bad6e1e44149491430baa72e5eeec37c9f869ba7fbf9356e5497e4"
+        }
+      ]
+    },
+    {
+      "claimId": "F013A",
+      "statement": "A trace represents a request journey; nested spans represent operations with timing and attributes, exported to Application Insights for agent observability.",
+      "sourceId": "S013",
+      "sourceUrl": "https://learn.microsoft.com/azure/foundry/observability/concepts/trace-agent-concept",
+      "versionContext": "Prompt/hosted tracing GA; workflow/external preview",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S013.md",
+          "lineStart": 42,
+          "lineEnd": 46,
+          "heading": "## Trace key concepts",
+          "needle": "Spans are the building blocks",
+          "excerpt": "| Traces | Traces capture the journey of a request or workflow through your application by recording events and state changes (function calls, values, system events). See [OpenTelemetry Traces](https://opentelemetry.io/docs/concepts/signals/traces/). |\n| Spans | Spans are the building blocks of traces, representing single operations within a trace. Each span captures start and end times, attributes, and can be nested to show hierarchical relationships, so you can see the full call stack and sequence of operations. |\n| Attributes | Attributes are key-value pairs attached to traces and spans, providing contextual metadata such as function parameters, return values, or custom annotations. These enrich trace data, making it more informative and useful for analysis. |\n| Semantic conventions | OpenTelemetry defines semantic conventions to standardize names and formats for trace data attributes, making it easier to interpret and analyze across tools and platforms. To learn more, see the [OpenTelemetry GenAI semantic conventions](https://github.com/open-telemetry/semantic-conventions-genai). |\n| Trace exporters | Trace exporters send trace data to backend systems for storage and analysis. In Foundry, traces are stored in Azure Monitor Application Insights. To learn how to enable and view traces, see [How to set up tracing in Microsoft Foundry](../how-to/trace-agent-setup). |",
+          "sourceSha256": "895295a4b74d7cabaa0daf62bd6cd5239daf25b6ea85a2268dc2cdf8483b19e8"
+        },
+        {
+          "snapshot": "sources/snapshots/S013.md",
+          "lineStart": 45,
+          "lineEnd": 48,
+          "heading": "## Trace key concepts",
+          "needle": "traces are stored in Azure Monitor Application Insights",
+          "excerpt": "| Semantic conventions | OpenTelemetry defines semantic conventions to standardize names and formats for trace data attributes, making it easier to interpret and analyze across tools and platforms. To learn more, see the [OpenTelemetry GenAI semantic conventions](https://github.com/open-telemetry/semantic-conventions-genai). |\n| Trace exporters | Trace exporters send trace data to backend systems for storage and analysis. In Foundry, traces are stored in Azure Monitor Application Insights. To learn how to enable and view traces, see [How to set up tracing in Microsoft Foundry](../how-to/trace-agent-setup). |\n\n## How tracing works in Foundry",
+          "sourceSha256": "895295a4b74d7cabaa0daf62bd6cd5239daf25b6ea85a2268dc2cdf8483b19e8"
+        }
+      ]
+    },
+    {
+      "claimId": "F013B",
+      "statement": "Correlate traces with evaluation runs and redact personal data, credentials, and secrets before telemetry is stored.",
+      "sourceId": "S013",
+      "sourceUrl": "https://learn.microsoft.com/azure/foundry/observability/concepts/trace-agent-concept",
+      "versionContext": "Prompt/hosted tracing GA; workflow/external preview",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S013.md",
+          "lineStart": 95,
+          "lineEnd": 99,
+          "heading": "## Best practices",
+          "needle": "Correlate evaluation run IDs",
+          "excerpt": "- **Use consistent span attributes**: Apply the same attribute names and formats across all agents and tools to simplify querying and analysis.\n- **Correlate evaluation run IDs**: Link trace data with evaluation runs to analyze both quality and performance in a unified view.\n- **Redact sensitive content**: Remove or mask personal data, secrets, and credentials from prompts, tool arguments, and span attributes before they reach telemetry.\n\n## Security and privacy",
+          "sourceSha256": "895295a4b74d7cabaa0daf62bd6cd5239daf25b6ea85a2268dc2cdf8483b19e8"
+        },
+        {
+          "snapshot": "sources/snapshots/S013.md",
+          "lineStart": 102,
+          "lineEnd": 105,
+          "heading": "## Security and privacy",
+          "needle": "Don't store secrets",
+          "excerpt": "\n- Don't store secrets, credentials, or tokens in prompts, tool arguments, or span attributes.\n- Redact or minimize personal data and other sensitive content before it appears in telemetry.\n- Treat trace data as production telemetry and apply the same access controls and retention policies you use for logs and metrics.",
+          "sourceSha256": "895295a4b74d7cabaa0daf62bd6cd5239daf25b6ea85a2268dc2cdf8483b19e8"
+        }
+      ]
+    },
+    {
+      "claimId": "F014A",
+      "statement": "The agent evaluator table separates tool selection, input accuracy, output utilization, and overall call accuracy, each evaluating a different part of tool use.",
+      "sourceId": "S014",
+      "sourceUrl": "https://learn.microsoft.com/azure/foundry/concepts/evaluation-evaluators/agent-evaluators",
+      "versionContext": "Evaluator-specific status; task completion/adherence preview",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S014.md",
+          "lineStart": 24,
+          "lineEnd": 30,
+          "heading": "# Agent evaluators",
+          "needle": "| Tool Input Accuracy |",
+          "excerpt": "| Tool Selection | Process evaluation | Validating tool choice quality in orchestration platforms, ensuring efficient tool usage without redundancy | Measures whether the agent selected the correct tools without selecting unnecessary ones | Binary: Pass/Fail |\n| Tool Input Accuracy | Process evaluation | Strict validation of tool parameters in production environments, API integration tests, critical workflows requiring 100% parameter correctness | Measures if all tool call parameters are correct across six strict criteria: groundedness, type compliance, format compliance, required parameters, no unexpected parameters, and value appropriateness | Binary: Pass/Fail |\n| Tool Output Utilization | Process evaluation | Validating correct use of API responses, database query results, search outputs in agent reasoning and responses | Measures if the agent correctly understood and used tool call results contextually in its reasoning and final response | Binary: Pass/Fail |\n| Tool Call Success | Process evaluation | Monitoring tool reliability, detecting API failures, timeout issues, or technical errors in tool execution | Measures if tool calls succeeded or resulted in technical errors or exceptions | Binary: Pass/Fail |\n| Quality Grader (preview) | Quality evaluation | Assesses overall response quality at the turn level, including relevance, abstention, answer completeness, and optionally groundedness and context coverage | Enables quality evaluation across multiple dimensions in a single evaluator instead of running individual evaluators separately | Binary: Pass/Fail |\n| Output Quality (preview) | System and quality evaluation | Assessing response quality and task outcomes across several dimensions while reducing evaluation cost and latency | Batches Fluency, Coherence, Intent Resolution, Task Adherence, Groundedness, and Task Completion into one LLM judge call | Composite: component scores with Pass/Fail |\n| Tool Use Quality (preview) | Process evaluation | Assessing the complete tool-use process while reducing evaluation cost and latency | Batches Tool Call Accuracy, Tool Call Success, Tool Input Accuracy, Tool Output Utilization, and Tool Selection into one LLM judge call | Composite: component scores with Pass/Fail |",
+          "sourceSha256": "0ce17b86785e87efb44074de9d3fdee3ae8290dedcb04a18a68558081be7103f"
+        }
+      ]
+    },
+    {
+      "claimId": "F014B",
+      "statement": "Task completion and task adherence measure different end-to-end properties and are preview evaluators in the captured reference.",
+      "sourceId": "S014",
+      "sourceUrl": "https://learn.microsoft.com/azure/foundry/concepts/evaluation-evaluators/agent-evaluators",
+      "versionContext": "Evaluator-specific status; task completion/adherence preview",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S014.md",
+          "lineStart": 17,
+          "lineEnd": 30,
+          "heading": "# Agent evaluators",
+          "needle": "| Task Completion (preview) |",
+          "excerpt": "| --- | --- | --- | --- | --- |\n| Task Completion (preview) | System evaluation | Assessing end-to-end task success in workflow automation, goal-oriented AI interactions, or any scenario where full task completion is critical | Measures if the agent completed the requested task with a usable deliverable that meets all user requirements | Binary: Pass/Fail |\n| Customer Satisfaction (preview) | System evaluation | Measuring overall user satisfaction across a conversation, detecting user frustration | Measures holistic user satisfaction across six dimensions: helpfulness, completeness, clarity, tone, resolution, and adaptability | 1-5 Likert scale |\n| Task Adherence (preview) | System evaluation | Ensuring agents follow system instructions, validating compliance in regulated environments | Measures if the agent's actions adhere to its assigned tasks according to rules, procedures, and policy constraints, based on its system message and prior steps | Binary: Pass/Fail |\n| Task Navigation Efficiency | System evaluation | Optimizing agent workflows, reducing unnecessary steps, validating against known optimal paths (requires ground truth) | Measures whether the agent made tool calls efficiently to complete a task by comparing them to expected tool sequences | Binary: Pass/Fail |\n| Intent Resolution (preview) | System evaluation | Customer support scenarios, conversational AI, FAQ systems where understanding user intent is essential | Measures whether the agent correctly identifies the user's intent | Binary: Pass/Fail based on threshold (1-5 scale) |\n| Tool Call Accuracy | Process evaluation | Overall tool call quality assessment in agent systems with tool integration, API interactions to complete its tasks | Measures whether the agent made the right tool calls with correct parameters to complete its task | Binary: Pass/Fail based on threshold (1-5 scale) |\n| Tool Selection | Process evaluation | Validating tool choice quality in orchestration platforms, ensuring efficient tool usage without redundancy | Measures whether the agent selected the correct tools without selecting unnecessary ones | Binary: Pass/Fail |\n| Tool Input Accuracy | Process evaluation | Strict validation of tool parameters in production environments, API integration tests, critical workflows requiring 100% parameter correctness | Measures if all tool call parameters are correct across six strict criteria: groundedness, type compliance, format compliance, required parameters, no unexpected parameters, and value appropriateness | Binary: Pass/Fail |\n| Tool Output Utilization | Process evaluation | Validating correct use of API responses, database query results, search outputs in agent reasoning and responses | Measures if the agent correctly understood and used tool call results contextually in its reasoning and final response | Binary: Pass/Fail |\n| Tool Call Success | Process evaluation | Monitoring tool reliability, detecting API failures, timeout issues, or technical errors in tool execution | Measures if tool calls succeeded or resulted in technical errors or exceptions | Binary: Pass/Fail |\n| Quality Grader (preview) | Quality evaluation | Assesses overall response quality at the turn level, including relevance, abstention, answer completeness, and optionally groundedness and context coverage | Enables quality evaluation across multiple dimensions in a single evaluator instead of running individual evaluators separately | Binary: Pass/Fail |\n| Output Quality (preview) | System and quality evaluation | Assessing response quality and task outcomes across several dimensions while reducing evaluation cost and latency | Batches Fluency, Coherence, Intent Resolution, Task Adherence, Groundedness, and Task Completion into one LLM judge call | Composite: component scores with Pass/Fail |\n| Tool Use Quality (preview) | Process evaluation | Assessing the complete tool-use process while reducing evaluation cost and latency | Batches Tool Call Accuracy, Tool Call Success, Tool Input Accuracy, Tool Output Utilization, and Tool Selection into one LLM judge call | Composite: component scores with Pass/Fail |",
+          "sourceSha256": "0ce17b86785e87efb44074de9d3fdee3ae8290dedcb04a18a68558081be7103f"
+        }
+      ]
+    },
+    {
+      "claimId": "F015A",
+      "statement": "Agent guardrails can scan user input, tool calls, tool responses, and final output; agent controls and tool intervention points are preview in this capture.",
+      "sourceId": "S015",
+      "sourceUrl": "https://learn.microsoft.com/azure/foundry/guardrails/guardrails-overview",
+      "versionContext": "Agent guardrails/tool boundaries preview; severity adjective conflict recorded",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S015.md",
+          "lineStart": 2,
+          "lineEnd": 5,
+          "heading": "# Guardrails and controls overview in Microsoft Foundry",
+          "needle": "Agent guardrails are in preview",
+          "excerpt": "\nMicrosoft Foundry provides safety and security guardrails that you can apply to core models and agents. Agent guardrails are in preview. Guardrails consist of a set of controls. The controls define a risk to be detected, intervention points to scan for the risk, and the response action to take in the model or agent when the risk is detected.\n\nA **guardrail** is a named collection of **controls**. Variations in API configurations and application design might affect completions and thus filtering behavior.",
+          "sourceSha256": "8bff59568b79380dc2ea6df819b965422c98fdf03bf6b06df0b99bc1287e4c54"
+        },
+        {
+          "snapshot": "sources/snapshots/S015.md",
+          "lineStart": 9,
+          "lineEnd": 12,
+          "heading": "# Guardrails and controls overview in Microsoft Foundry",
+          "needle": "**Tool call** (Preview)",
+          "excerpt": "- **User input** — The prompt sent to a model or agent.\n- **Tool call** (Preview) — The action and data the agent proposes to send to a tool. Agents only.\n- **Tool response** (Preview) — The content returned from a tool to the agent. Agents only.\n- **Output** — The final completion returned to the user.",
+          "sourceSha256": "8bff59568b79380dc2ea6df819b965422c98fdf03bf6b06df0b99bc1287e4c54"
+        },
+        {
+          "snapshot": "sources/snapshots/S015.md",
+          "lineStart": 11,
+          "lineEnd": 14,
+          "heading": "# Guardrails and controls overview in Microsoft Foundry",
+          "needle": "**Output**",
+          "excerpt": "- **Tool response** (Preview) — The content returned from a tool to the agent. Agents only.\n- **Output** — The final completion returned to the user.\n\nFor more information about intervention points, see [Intervention points and controls](intervention-points).",
+          "sourceSha256": "8bff59568b79380dc2ea6df819b965422c98fdf03bf6b06df0b99bc1287e4c54"
+        }
+      ]
+    },
+    {
+      "claimId": "F016A",
+      "statement": "Prompt Shields separates direct user attacks from malicious instructions in external documents or tool responses.",
+      "sourceId": "S016",
+      "sourceUrl": "https://learn.microsoft.com/azure/foundry/openai/concepts/content-filter-prompt-shields",
+      "versionContext": "Spotlighting preview and Chat Completions only",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S016.md",
+          "lineStart": 9,
+          "lineEnd": 12,
+          "heading": "# Prompt Shields in Microsoft Foundry",
+          "needle": "**Document attacks** are hidden instructions",
+          "excerpt": "- **User prompt attacks** are malicious prompts that attempt to bypass system instructions or safety training. In Microsoft Foundry, the system scans for these attacks at the **user input** intervention point.\n- **Document attacks** are hidden instructions in third-party content, such as documents, emails, and web pages, that attempt to take control of the model session. In Foundry, the system scans for these attacks at the **user input** and **tool response** intervention points.\n\nIn Foundry, Prompt Shields is part of the [guardrails and controls system](/en-us/azure/foundry/guardrails/guardrails-overview). You can enable Prompt Shields when you [configure guardrail controls](/en-us/azure/foundry/guardrails/how-to-create-guardrails) for model deployments or agents. The annotations for a request contain `detected` and `filtered` Boolean values.",
+          "sourceSha256": "770228d708d01826dc0d17c9ddafbb8d0e7f412bb2a0ad9a13b2ac54ac84735e"
+        }
+      ]
+    },
+    {
+      "claimId": "F016B",
+      "statement": "Preview Spotlighting encodes lower-trust documents, increases input token consumption, and is supported only through Chat Completions in the captured guide.",
+      "sourceId": "S016",
+      "sourceUrl": "https://learn.microsoft.com/azure/foundry/openai/concepts/content-filter-prompt-shields",
+      "versionContext": "Spotlighting preview and Chat Completions only",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S016.md",
+          "lineStart": 125,
+          "lineEnd": 128,
+          "heading": "### Spotlighting cost and limitations",
+          "needle": "Spotlighting is available only",
+          "excerpt": "\nSpotlighting has no direct cost. However, base64 encoding increases the number of document tokens, which can increase model usage costs or cause a lengthy document to exceed the input limit. Spotlighting is available only for models used through the Chat Completions API.\n\nSpotlighting is off by default. Enable it when you [configure document attack controls](/en-us/azure/foundry/guardrails/how-to-create-guardrails) in the Foundry portal.",
+          "sourceSha256": "770228d708d01826dc0d17c9ddafbb8d0e7f412bb2a0ad9a13b2ac54ac84735e"
+        }
+      ]
+    },
+    {
+      "claimId": "F039A",
+      "statement": "Groundedness tests fidelity to supplied context; relevance tests how the response addresses the query; neither alone demonstrates complete coverage.",
+      "sourceId": "S039",
+      "sourceUrl": "https://learn.microsoft.com/azure/foundry/concepts/evaluation-evaluators/rag-evaluators",
+      "versionContext": "Feature-specific qualifications in snapshot; package/API version unknown unless stated in a referenced excerpt.",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S039.md",
+          "lineStart": 8,
+          "lineEnd": 12,
+          "heading": "# Retrieval-Augmented Generation (RAG) evaluators",
+          "needle": "| Groundedness |",
+          "excerpt": "| Retrieval | Process evaluation | You want to assess textual quality of retrieved context, but you don't have ground truths | Measures how relevant the retrieved context chunks are to addressing a query using an LLM judge | Binary: Pass/Fail based on threshold (1-5 scale) |\n| Groundedness | System evaluation | You want a well-rounded groundedness definition that works with agent inputs, and bring your own GPT models as the LLM-judge | Measures how well the generated response aligns with the given context without fabricating content (precision aspect) | Binary: Pass/Fail based on threshold (1-5 scale) |\n| Groundedness Pro (preview) | System evaluation | You want a strict groundedness definition powered by Azure AI Content Safety and use our service model | Detects if the response is strictly consistent with the context using the Azure AI Content Safety service | Binary: True/False |\n| Relevance | System evaluation | You want to assess how well the RAG response addresses the query but don't have ground truths | Measures the accuracy, completeness, and direct relevance of the response to the query | Binary: Pass/Fail based on threshold (1-5 scale) |\n| Response Completeness (preview) | System evaluation | You want to ensure the RAG response doesn't miss critical information (recall aspect) from your ground truth | Measures how completely the response covers the expected information compared to ground truth | Binary: Pass/Fail based on threshold (1-5 scale) |",
+          "sourceSha256": "3b16c765be1f1479ac22e04cf9b293be767d473fc1cacb188b90751227074a4b"
+        }
+      ]
+    },
+    {
+      "claimId": "F045B",
+      "statement": "Content Understanding grounding links fields to document pages, coordinates, and spans; retaining these references supports verification of downstream answers.",
+      "sourceId": "S045",
+      "sourceUrl": "https://learn.microsoft.com/azure/ai-services/content-understanding/document/analyzer-improvement",
+      "versionContext": "Feature-specific qualifications in snapshot; package/API version unknown unless stated in a referenced excerpt.",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S045.md",
+          "lineStart": 51,
+          "lineEnd": 54,
+          "heading": "## Grounding: Trace every result to its source",
+          "needle": "page number and spatial coordinates",
+          "excerpt": "\nGrounding ensures that every field, answer, or classification includes a reference to its original location in the document. This includes source information (page number and spatial coordinates) and spans (offset and length).\n\n### Why grounding matters",
+          "sourceSha256": "c08a60437bdcc723d00d30d9898b3967040a122cf43b5ff95b5f1a33a3dadd93"
+        }
+      ]
+    }
+  ],
+  "constraints": [
+    "Only listed facts with conditions establish answer keys. Cite correct answers and distractor rationales.",
+    "Preserve API/SDK generation, preview, retirement and region/model qualifiers.",
+    "No unshown methods, asserted execution, GH-600 material, dumps, remembered assessments or official format parity.",
+    "Ready is bounded evidence support; later content review and manual solve-first audit are still required.",
+    "Avoid ambiguous most/least-restrictive severity adjectives; use explicit detected levels and action."
+  ]
+}

@@ -1,0 +1,2832 @@
+{
+  "id": "gh-600",
+  "version": "1.1.0",
+  "examCode": "GH-600",
+  "title": "GitHub Agentic AI Developer",
+  "objectiveEffectiveDate": null,
+  "status": "ready",
+  "planningVersion": "exact-quotas-v1",
+  "domainIdPolicy": "inherited-tags",
+  "domains": [
+    {
+      "id": "A",
+      "name": "Agent architecture and SDLC integration",
+      "weight": 17,
+      "objectives": [
+        {
+          "id": "actions-approval",
+          "title": "actions-approval"
+        },
+        {
+          "id": "actions-workflows",
+          "title": "actions-workflows"
+        },
+        {
+          "id": "adoption",
+          "title": "adoption"
+        },
+        {
+          "id": "agent-anti-patterns",
+          "title": "agent-anti-patterns"
+        },
+        {
+          "id": "agent-autonomy-guardrails",
+          "title": "agent-autonomy-guardrails"
+        },
+        {
+          "id": "agent-boundaries",
+          "title": "agent-boundaries"
+        },
+        {
+          "id": "agent-catalog",
+          "title": "agent-catalog"
+        },
+        {
+          "id": "agent-configuration-protection",
+          "title": "agent-configuration-protection"
+        },
+        {
+          "id": "agent-control",
+          "title": "agent-control"
+        },
+        {
+          "id": "agent-control-plane",
+          "title": "agent-control-plane"
+        },
+        {
+          "id": "agent-environment",
+          "title": "agent-environment"
+        },
+        {
+          "id": "agent-invocation",
+          "title": "agent-invocation"
+        },
+        {
+          "id": "agent-lifecycle",
+          "title": "agent-lifecycle"
+        },
+        {
+          "id": "agent-limitations",
+          "title": "agent-limitations"
+        },
+        {
+          "id": "agent-observability",
+          "title": "agent-observability"
+        },
+        {
+          "id": "agent-output-review",
+          "title": "agent-output-review"
+        },
+        {
+          "id": "agent-pr-governance",
+          "title": "agent-pr-governance"
+        },
+        {
+          "id": "agent-profile-lifecycle",
+          "title": "agent-profile-lifecycle"
+        },
+        {
+          "id": "agent-release-process",
+          "title": "agent-release-process"
+        },
+        {
+          "id": "agent-responsibilities",
+          "title": "agent-responsibilities"
+        },
+        {
+          "id": "agent-runtime-preparation",
+          "title": "agent-runtime-preparation"
+        },
+        {
+          "id": "agent-scope",
+          "title": "agent-scope"
+        },
+        {
+          "id": "agent-sdlc",
+          "title": "agent-sdlc"
+        },
+        {
+          "id": "agent-testing",
+          "title": "agent-testing"
+        },
+        {
+          "id": "agent-workflow-control",
+          "title": "agent-workflow-control"
+        },
+        {
+          "id": "agent-workflow-sequencing",
+          "title": "agent-workflow-sequencing"
+        },
+        {
+          "id": "agents-secrets",
+          "title": "agents-secrets"
+        },
+        {
+          "id": "anti-patterns",
+          "title": "anti-patterns"
+        },
+        {
+          "id": "approval-before-action",
+          "title": "approval-before-action"
+        },
+        {
+          "id": "approval-gate",
+          "title": "approval-gate"
+        },
+        {
+          "id": "approval-gates",
+          "title": "approval-gates"
+        },
+        {
+          "id": "artifacts",
+          "title": "artifacts"
+        },
+        {
+          "id": "auditability",
+          "title": "auditability"
+        },
+        {
+          "id": "autonomous-tools",
+          "title": "autonomous-tools"
+        },
+        {
+          "id": "autonomy-guardrails",
+          "title": "autonomy-guardrails"
+        },
+        {
+          "id": "autonomy-levels",
+          "title": "autonomy-levels"
+        },
+        {
+          "id": "branch-protection",
+          "title": "branch-protection"
+        },
+        {
+          "id": "branch-protection-codeowners",
+          "title": "branch-protection-codeowners"
+        },
+        {
+          "id": "codeowners",
+          "title": "codeowners"
+        },
+        {
+          "id": "configuration-review",
+          "title": "configuration-review"
+        },
+        {
+          "id": "configuration-syntax",
+          "title": "configuration-syntax"
+        },
+        {
+          "id": "configuration-validation",
+          "title": "configuration-validation"
+        },
+        {
+          "id": "content-exclusions",
+          "title": "content-exclusions"
+        },
+        {
+          "id": "context-boundaries",
+          "title": "context-boundaries"
+        },
+        {
+          "id": "context-control",
+          "title": "context-control"
+        },
+        {
+          "id": "contributor-model",
+          "title": "contributor-model"
+        },
+        {
+          "id": "control-boundaries",
+          "title": "control-boundaries"
+        },
+        {
+          "id": "control-design",
+          "title": "control-design"
+        },
+        {
+          "id": "control-loop",
+          "title": "control-loop"
+        },
+        {
+          "id": "control-plane",
+          "title": "control-plane"
+        },
+        {
+          "id": "controlled-rollout",
+          "title": "controlled-rollout"
+        },
+        {
+          "id": "copilot-setup-steps",
+          "title": "copilot-setup-steps"
+        },
+        {
+          "id": "custom-agent-architecture",
+          "title": "custom-agent-architecture"
+        },
+        {
+          "id": "custom-agent-configuration",
+          "title": "custom-agent-configuration"
+        },
+        {
+          "id": "custom-agent-governance",
+          "title": "custom-agent-governance"
+        },
+        {
+          "id": "custom-agent-pilot",
+          "title": "custom-agent-pilot"
+        },
+        {
+          "id": "custom-agent-placement",
+          "title": "custom-agent-placement"
+        },
+        {
+          "id": "custom-agent-profile",
+          "title": "custom-agent-profile"
+        },
+        {
+          "id": "custom-agent-release",
+          "title": "custom-agent-release"
+        },
+        {
+          "id": "custom-agent-release-process",
+          "title": "custom-agent-release-process"
+        },
+        {
+          "id": "custom-agent-tool-scope",
+          "title": "custom-agent-tool-scope"
+        },
+        {
+          "id": "custom-agent-tools",
+          "title": "custom-agent-tools"
+        },
+        {
+          "id": "custom-agents",
+          "title": "custom-agents"
+        },
+        {
+          "id": "data-exfiltration-risk",
+          "title": "data-exfiltration-risk"
+        },
+        {
+          "id": "dependency-management",
+          "title": "dependency-management"
+        },
+        {
+          "id": "deployment-gates",
+          "title": "deployment-gates"
+        },
+        {
+          "id": "deployment-governance",
+          "title": "deployment-governance"
+        },
+        {
+          "id": "draft-pr-process",
+          "title": "draft-pr-process"
+        },
+        {
+          "id": "draft-prs",
+          "title": "draft-prs"
+        },
+        {
+          "id": "environment-configuration",
+          "title": "environment-configuration"
+        },
+        {
+          "id": "environment-gates",
+          "title": "environment-gates"
+        },
+        {
+          "id": "environment-preparation",
+          "title": "environment-preparation"
+        },
+        {
+          "id": "environment-protection",
+          "title": "environment-protection"
+        },
+        {
+          "id": "environment-readiness",
+          "title": "environment-readiness"
+        },
+        {
+          "id": "error-surfacing",
+          "title": "error-surfacing"
+        },
+        {
+          "id": "evaluate-stage",
+          "title": "evaluate-stage"
+        },
+        {
+          "id": "evaluation",
+          "title": "evaluation"
+        },
+        {
+          "id": "evaluation-loop",
+          "title": "evaluation-loop"
+        },
+        {
+          "id": "execution-environment",
+          "title": "execution-environment"
+        },
+        {
+          "id": "fail-open-risk",
+          "title": "fail-open-risk"
+        },
+        {
+          "id": "failure-analysis",
+          "title": "failure-analysis"
+        },
+        {
+          "id": "firewall",
+          "title": "firewall"
+        },
+        {
+          "id": "github-control-plane",
+          "title": "github-control-plane"
+        },
+        {
+          "id": "github-private",
+          "title": "github-private"
+        },
+        {
+          "id": "github-system-of-record",
+          "title": "github-system-of-record"
+        },
+        {
+          "id": "governance",
+          "title": "governance"
+        },
+        {
+          "id": "governance-files",
+          "title": "governance-files"
+        },
+        {
+          "id": "guardrails",
+          "title": "guardrails"
+        },
+        {
+          "id": "human-approval",
+          "title": "human-approval"
+        },
+        {
+          "id": "human-approval-gates",
+          "title": "human-approval-gates"
+        },
+        {
+          "id": "human-checkpoint",
+          "title": "human-checkpoint"
+        },
+        {
+          "id": "human-checkpoints",
+          "title": "human-checkpoints"
+        },
+        {
+          "id": "human-in-the-loop",
+          "title": "human-in-the-loop"
+        },
+        {
+          "id": "human-intervention",
+          "title": "human-intervention"
+        },
+        {
+          "id": "human-review",
+          "title": "human-review"
+        },
+        {
+          "id": "inputs-outputs-success",
+          "title": "inputs-outputs-success"
+        },
+        {
+          "id": "inputs-outputs-success-criteria",
+          "title": "inputs-outputs-success-criteria"
+        },
+        {
+          "id": "inspectable-artifacts",
+          "title": "inspectable-artifacts"
+        },
+        {
+          "id": "least-privilege",
+          "title": "least-privilege"
+        },
+        {
+          "id": "least-privilege-rollout",
+          "title": "least-privilege-rollout"
+        },
+        {
+          "id": "manual-agent-selection",
+          "title": "manual-agent-selection"
+        },
+        {
+          "id": "manual-selection",
+          "title": "manual-selection"
+        },
+        {
+          "id": "mcp-governance",
+          "title": "mcp-governance"
+        },
+        {
+          "id": "mcp-secrets",
+          "title": "mcp-secrets"
+        },
+        {
+          "id": "mitigation",
+          "title": "mitigation"
+        },
+        {
+          "id": "network-boundaries",
+          "title": "network-boundaries"
+        },
+        {
+          "id": "network-controls",
+          "title": "network-controls"
+        },
+        {
+          "id": "network-guardrails",
+          "title": "network-guardrails"
+        },
+        {
+          "id": "observability",
+          "title": "observability"
+        },
+        {
+          "id": "observability-and-control",
+          "title": "observability-and-control"
+        },
+        {
+          "id": "organization-agent-architecture",
+          "title": "organization-agent-architecture"
+        },
+        {
+          "id": "organization-agent-release",
+          "title": "organization-agent-release"
+        },
+        {
+          "id": "organization-agent-repository",
+          "title": "organization-agent-repository"
+        },
+        {
+          "id": "organization-agent-setup",
+          "title": "organization-agent-setup"
+        },
+        {
+          "id": "organization-governance",
+          "title": "organization-governance"
+        },
+        {
+          "id": "organization-rollout",
+          "title": "organization-rollout"
+        },
+        {
+          "id": "organization-scope",
+          "title": "organization-scope"
+        },
+        {
+          "id": "organization-setup",
+          "title": "organization-setup"
+        },
+        {
+          "id": "outcome-metrics",
+          "title": "outcome-metrics"
+        },
+        {
+          "id": "pilot-before-release",
+          "title": "pilot-before-release"
+        },
+        {
+          "id": "plan-act-boundary",
+          "title": "plan-act-boundary"
+        },
+        {
+          "id": "plan-act-evaluate",
+          "title": "plan-act-evaluate"
+        },
+        {
+          "id": "planning-action-boundary",
+          "title": "planning-action-boundary"
+        },
+        {
+          "id": "planning-agent",
+          "title": "planning-agent"
+        },
+        {
+          "id": "planning-boundary",
+          "title": "planning-boundary"
+        },
+        {
+          "id": "planning-execution-boundaries",
+          "title": "planning-execution-boundaries"
+        },
+        {
+          "id": "planning-execution-boundary",
+          "title": "planning-execution-boundary"
+        },
+        {
+          "id": "planning-reasoning-action-boundaries",
+          "title": "planning-reasoning-action-boundaries"
+        },
+        {
+          "id": "pr-based-control",
+          "title": "pr-based-control"
+        },
+        {
+          "id": "pr-governance",
+          "title": "pr-governance"
+        },
+        {
+          "id": "pull-request-iteration",
+          "title": "pull-request-iteration"
+        },
+        {
+          "id": "pull-request-review",
+          "title": "pull-request-review"
+        },
+        {
+          "id": "pull-request-workflow",
+          "title": "pull-request-workflow"
+        },
+        {
+          "id": "release-governance",
+          "title": "release-governance"
+        },
+        {
+          "id": "release-process",
+          "title": "release-process"
+        },
+        {
+          "id": "repository-boundaries",
+          "title": "repository-boundaries"
+        },
+        {
+          "id": "repository-scope",
+          "title": "repository-scope"
+        },
+        {
+          "id": "requirements-change",
+          "title": "requirements-change"
+        },
+        {
+          "id": "review-agent",
+          "title": "review-agent"
+        },
+        {
+          "id": "review-readiness",
+          "title": "review-readiness"
+        },
+        {
+          "id": "runner-isolation",
+          "title": "runner-isolation"
+        },
+        {
+          "id": "runtime-boundaries",
+          "title": "runtime-boundaries"
+        },
+        {
+          "id": "runtime-configuration",
+          "title": "runtime-configuration"
+        },
+        {
+          "id": "sdlc-boundaries",
+          "title": "sdlc-boundaries"
+        },
+        {
+          "id": "sdlc-contract",
+          "title": "sdlc-contract"
+        },
+        {
+          "id": "sdlc-control-plane",
+          "title": "sdlc-control-plane"
+        },
+        {
+          "id": "sdlc-design",
+          "title": "sdlc-design"
+        },
+        {
+          "id": "sdlc-governance",
+          "title": "sdlc-governance"
+        },
+        {
+          "id": "sdlc-integration",
+          "title": "sdlc-integration"
+        },
+        {
+          "id": "sdlc-monitoring",
+          "title": "sdlc-monitoring"
+        },
+        {
+          "id": "sdlc-reliability",
+          "title": "sdlc-reliability"
+        },
+        {
+          "id": "sdlc-stage-mapping",
+          "title": "sdlc-stage-mapping"
+        },
+        {
+          "id": "sdlc-standardization",
+          "title": "sdlc-standardization"
+        },
+        {
+          "id": "secret-boundaries",
+          "title": "secret-boundaries"
+        },
+        {
+          "id": "secrets-governance",
+          "title": "secrets-governance"
+        },
+        {
+          "id": "sensitive-files",
+          "title": "sensitive-files"
+        },
+        {
+          "id": "session-logs",
+          "title": "session-logs"
+        },
+        {
+          "id": "session-steering",
+          "title": "session-steering"
+        },
+        {
+          "id": "setup-steps",
+          "title": "setup-steps"
+        },
+        {
+          "id": "specialized-agents",
+          "title": "specialized-agents"
+        },
+        {
+          "id": "standard-tooling",
+          "title": "standard-tooling"
+        },
+        {
+          "id": "structured-agent-output",
+          "title": "structured-agent-output"
+        },
+        {
+          "id": "structured-agent-plans",
+          "title": "structured-agent-plans"
+        },
+        {
+          "id": "structured-agent-task",
+          "title": "structured-agent-task"
+        },
+        {
+          "id": "structured-agent-tasks",
+          "title": "structured-agent-tasks"
+        },
+        {
+          "id": "structured-artifacts",
+          "title": "structured-artifacts"
+        },
+        {
+          "id": "structured-output",
+          "title": "structured-output"
+        },
+        {
+          "id": "structured-plan",
+          "title": "structured-plan"
+        },
+        {
+          "id": "structured-planning",
+          "title": "structured-planning"
+        },
+        {
+          "id": "structured-planning-artifacts",
+          "title": "structured-planning-artifacts"
+        },
+        {
+          "id": "structured-plans",
+          "title": "structured-plans"
+        },
+        {
+          "id": "structured-task-definition",
+          "title": "structured-task-definition"
+        },
+        {
+          "id": "structured-workflow",
+          "title": "structured-workflow"
+        },
+        {
+          "id": "success-criteria",
+          "title": "success-criteria"
+        },
+        {
+          "id": "system-of-record",
+          "title": "system-of-record"
+        },
+        {
+          "id": "task-boundaries",
+          "title": "task-boundaries"
+        },
+        {
+          "id": "task-definition",
+          "title": "task-definition"
+        },
+        {
+          "id": "task-scope",
+          "title": "task-scope"
+        },
+        {
+          "id": "timeout",
+          "title": "timeout"
+        },
+        {
+          "id": "tool-allowlist",
+          "title": "tool-allowlist"
+        },
+        {
+          "id": "tool-boundaries",
+          "title": "tool-boundaries"
+        },
+        {
+          "id": "traceability",
+          "title": "traceability"
+        },
+        {
+          "id": "visibility",
+          "title": "visibility"
+        },
+        {
+          "id": "workflow-approval",
+          "title": "workflow-approval"
+        },
+        {
+          "id": "workflow-handoffs",
+          "title": "workflow-handoffs"
+        }
+      ]
+    },
+    {
+      "id": "B",
+      "name": "MCP/tool use and environment permissions",
+      "weight": 21,
+      "objectives": [
+        {
+          "id": "actions-permissions",
+          "title": "actions-permissions"
+        },
+        {
+          "id": "agent-firewall",
+          "title": "agent-firewall"
+        },
+        {
+          "id": "agent-profile",
+          "title": "agent-profile"
+        },
+        {
+          "id": "agent-profile-yaml",
+          "title": "agent-profile-yaml"
+        },
+        {
+          "id": "agent-secrets",
+          "title": "agent-secrets"
+        },
+        {
+          "id": "agent-tool-permissions",
+          "title": "agent-tool-permissions"
+        },
+        {
+          "id": "agent-tool-scoping",
+          "title": "agent-tool-scoping"
+        },
+        {
+          "id": "agents-secrets",
+          "title": "agents-secrets"
+        },
+        {
+          "id": "artifact-evaluation",
+          "title": "artifact-evaluation"
+        },
+        {
+          "id": "ci-invocation",
+          "title": "ci-invocation"
+        },
+        {
+          "id": "cloud-agent-support",
+          "title": "cloud-agent-support"
+        },
+        {
+          "id": "configuration-validation",
+          "title": "configuration-validation"
+        },
+        {
+          "id": "copilot-cli",
+          "title": "copilot-cli"
+        },
+        {
+          "id": "copilot-environment-secrets",
+          "title": "copilot-environment-secrets"
+        },
+        {
+          "id": "copilot-sdk",
+          "title": "copilot-sdk"
+        },
+        {
+          "id": "copilot-setup-steps",
+          "title": "copilot-setup-steps"
+        },
+        {
+          "id": "cross-repository-context",
+          "title": "cross-repository-context"
+        },
+        {
+          "id": "custom-agent-config",
+          "title": "custom-agent-config"
+        },
+        {
+          "id": "custom-agent-target",
+          "title": "custom-agent-target"
+        },
+        {
+          "id": "custom-agent-tools",
+          "title": "custom-agent-tools"
+        },
+        {
+          "id": "custom-agent-yaml",
+          "title": "custom-agent-yaml"
+        },
+        {
+          "id": "custom-agents",
+          "title": "custom-agents"
+        },
+        {
+          "id": "environment-configuration",
+          "title": "environment-configuration"
+        },
+        {
+          "id": "environment-constraints",
+          "title": "environment-constraints"
+        },
+        {
+          "id": "environment-permissions",
+          "title": "environment-permissions"
+        },
+        {
+          "id": "error-handling",
+          "title": "error-handling"
+        },
+        {
+          "id": "escalation",
+          "title": "escalation"
+        },
+        {
+          "id": "execution-environment",
+          "title": "execution-environment"
+        },
+        {
+          "id": "fine-grained-pat",
+          "title": "fine-grained-pat"
+        },
+        {
+          "id": "firewall",
+          "title": "firewall"
+        },
+        {
+          "id": "github-mcp",
+          "title": "github-mcp"
+        },
+        {
+          "id": "github-mcp-server",
+          "title": "github-mcp-server"
+        },
+        {
+          "id": "headers",
+          "title": "headers"
+        },
+        {
+          "id": "least-privilege",
+          "title": "least-privilege"
+        },
+        {
+          "id": "least-privilege-tooling",
+          "title": "least-privilege-tooling"
+        },
+        {
+          "id": "local-remote-mcp",
+          "title": "local-remote-mcp"
+        },
+        {
+          "id": "mcp-allowlist",
+          "title": "mcp-allowlist"
+        },
+        {
+          "id": "mcp-artifact-evaluation",
+          "title": "mcp-artifact-evaluation"
+        },
+        {
+          "id": "mcp-authentication",
+          "title": "mcp-authentication"
+        },
+        {
+          "id": "mcp-configuration",
+          "title": "mcp-configuration"
+        },
+        {
+          "id": "mcp-configuration-migration",
+          "title": "mcp-configuration-migration"
+        },
+        {
+          "id": "mcp-governance",
+          "title": "mcp-governance"
+        },
+        {
+          "id": "mcp-json",
+          "title": "mcp-json"
+        },
+        {
+          "id": "mcp-migration",
+          "title": "mcp-migration"
+        },
+        {
+          "id": "mcp-registries",
+          "title": "mcp-registries"
+        },
+        {
+          "id": "mcp-schema",
+          "title": "mcp-schema"
+        },
+        {
+          "id": "mcp-secrets",
+          "title": "mcp-secrets"
+        },
+        {
+          "id": "mcp-server-setup",
+          "title": "mcp-server-setup"
+        },
+        {
+          "id": "mcp-server-tools",
+          "title": "mcp-server-tools"
+        },
+        {
+          "id": "mcp-tool-allowlist",
+          "title": "mcp-tool-allowlist"
+        },
+        {
+          "id": "mcp-tool-filtering",
+          "title": "mcp-tool-filtering"
+        },
+        {
+          "id": "mcp-tool-scoping",
+          "title": "mcp-tool-scoping"
+        },
+        {
+          "id": "mcp-tools",
+          "title": "mcp-tools"
+        },
+        {
+          "id": "mcp-validation",
+          "title": "mcp-validation"
+        },
+        {
+          "id": "network-allowlist",
+          "title": "network-allowlist"
+        },
+        {
+          "id": "network-controls",
+          "title": "network-controls"
+        },
+        {
+          "id": "organization-policy",
+          "title": "organization-policy"
+        },
+        {
+          "id": "proxy-configuration",
+          "title": "proxy-configuration"
+        },
+        {
+          "id": "remote-mcp",
+          "title": "remote-mcp"
+        },
+        {
+          "id": "remote-mcp-authentication",
+          "title": "remote-mcp-authentication"
+        },
+        {
+          "id": "repository-scope",
+          "title": "repository-scope"
+        },
+        {
+          "id": "rollback",
+          "title": "rollback"
+        },
+        {
+          "id": "runner-compatibility",
+          "title": "runner-compatibility"
+        },
+        {
+          "id": "runner-networking",
+          "title": "runner-networking"
+        },
+        {
+          "id": "safe-execution",
+          "title": "safe-execution"
+        },
+        {
+          "id": "safe-execution-boundaries",
+          "title": "safe-execution-boundaries"
+        },
+        {
+          "id": "safe-tool-execution",
+          "title": "safe-tool-execution"
+        },
+        {
+          "id": "safe-validation",
+          "title": "safe-validation"
+        },
+        {
+          "id": "secret-precedence",
+          "title": "secret-precedence"
+        },
+        {
+          "id": "secret-prefix",
+          "title": "secret-prefix"
+        },
+        {
+          "id": "secret-scope",
+          "title": "secret-scope"
+        },
+        {
+          "id": "secret-substitution",
+          "title": "secret-substitution"
+        },
+        {
+          "id": "self-hosted-runners",
+          "title": "self-hosted-runners"
+        },
+        {
+          "id": "sub-agent-isolation",
+          "title": "sub-agent-isolation"
+        },
+        {
+          "id": "tool-aliases",
+          "title": "tool-aliases"
+        },
+        {
+          "id": "tool-allowlist",
+          "title": "tool-allowlist"
+        },
+        {
+          "id": "tool-allowlisting",
+          "title": "tool-allowlisting"
+        },
+        {
+          "id": "tool-filters",
+          "title": "tool-filters"
+        },
+        {
+          "id": "tool-selection",
+          "title": "tool-selection"
+        },
+        {
+          "id": "toolsets",
+          "title": "toolsets"
+        },
+        {
+          "id": "vs-code-migration",
+          "title": "vs-code-migration"
+        },
+        {
+          "id": "vs-code-to-cloud-agent",
+          "title": "vs-code-to-cloud-agent"
+        },
+        {
+          "id": "workflow-yaml",
+          "title": "workflow-yaml"
+        }
+      ]
+    },
+    {
+      "id": "C",
+      "name": "Memory, state, and execution",
+      "weight": 14,
+      "objectives": [
+        {
+          "id": "branch-head",
+          "title": "branch-head"
+        },
+        {
+          "id": "checkpoints",
+          "title": "checkpoints"
+        },
+        {
+          "id": "code-review-memory",
+          "title": "code-review-memory"
+        },
+        {
+          "id": "context-drift",
+          "title": "context-drift"
+        },
+        {
+          "id": "context-window",
+          "title": "context-window"
+        },
+        {
+          "id": "copilot-cli",
+          "title": "copilot-cli"
+        },
+        {
+          "id": "copilot-memory",
+          "title": "copilot-memory"
+        },
+        {
+          "id": "copilot-memory-curation",
+          "title": "copilot-memory-curation"
+        },
+        {
+          "id": "cross-repository-continuity",
+          "title": "cross-repository-continuity"
+        },
+        {
+          "id": "curation",
+          "title": "curation"
+        },
+        {
+          "id": "durable-artifacts",
+          "title": "durable-artifacts"
+        },
+        {
+          "id": "durable-checkpoints",
+          "title": "durable-checkpoints"
+        },
+        {
+          "id": "durable-state",
+          "title": "durable-state"
+        },
+        {
+          "id": "ephemeral-environment",
+          "title": "ephemeral-environment"
+        },
+        {
+          "id": "execution-state",
+          "title": "execution-state"
+        },
+        {
+          "id": "external-memory",
+          "title": "external-memory"
+        },
+        {
+          "id": "feature-boundaries",
+          "title": "feature-boundaries"
+        },
+        {
+          "id": "memory-enablement",
+          "title": "memory-enablement"
+        },
+        {
+          "id": "memory-expiration",
+          "title": "memory-expiration"
+        },
+        {
+          "id": "memory-pruning",
+          "title": "memory-pruning"
+        },
+        {
+          "id": "memory-reset",
+          "title": "memory-reset"
+        },
+        {
+          "id": "memory-retention",
+          "title": "memory-retention"
+        },
+        {
+          "id": "memory-scope",
+          "title": "memory-scope"
+        },
+        {
+          "id": "memory-strategy",
+          "title": "memory-strategy"
+        },
+        {
+          "id": "memory-strategy-selection",
+          "title": "memory-strategy-selection"
+        },
+        {
+          "id": "memory-validation",
+          "title": "memory-validation"
+        },
+        {
+          "id": "prevent-stale-context",
+          "title": "prevent-stale-context"
+        },
+        {
+          "id": "repository-facts",
+          "title": "repository-facts"
+        },
+        {
+          "id": "repository-scope",
+          "title": "repository-scope"
+        },
+        {
+          "id": "resume-execution",
+          "title": "resume-execution"
+        },
+        {
+          "id": "resume-work",
+          "title": "resume-work"
+        },
+        {
+          "id": "retention",
+          "title": "retention"
+        },
+        {
+          "id": "stale-context",
+          "title": "stale-context"
+        },
+        {
+          "id": "stale-context-prevention",
+          "title": "stale-context-prevention"
+        },
+        {
+          "id": "state-artifact",
+          "title": "state-artifact"
+        },
+        {
+          "id": "state-persistence",
+          "title": "state-persistence"
+        },
+        {
+          "id": "state-resume",
+          "title": "state-resume"
+        },
+        {
+          "id": "user-preferences",
+          "title": "user-preferences"
+        },
+        {
+          "id": "workflow-gate",
+          "title": "workflow-gate"
+        }
+      ]
+    },
+    {
+      "id": "D",
+      "name": "Evaluation, telemetry, error analysis, and tuning",
+      "weight": 17,
+      "objectives": [
+        {
+          "id": "agent-evaluation-signals",
+          "title": "agent-evaluation-signals"
+        },
+        {
+          "id": "agent-instruction-tuning",
+          "title": "agent-instruction-tuning"
+        },
+        {
+          "id": "agent-iteration",
+          "title": "agent-iteration"
+        },
+        {
+          "id": "agent-tuning",
+          "title": "agent-tuning"
+        },
+        {
+          "id": "automated-scanning",
+          "title": "automated-scanning"
+        },
+        {
+          "id": "ci-validation",
+          "title": "ci-validation"
+        },
+        {
+          "id": "codeql",
+          "title": "codeql"
+        },
+        {
+          "id": "configuration-review",
+          "title": "configuration-review"
+        },
+        {
+          "id": "context-drift",
+          "title": "context-drift"
+        },
+        {
+          "id": "copilot-memory",
+          "title": "copilot-memory"
+        },
+        {
+          "id": "custom-agent-configuration",
+          "title": "custom-agent-configuration"
+        },
+        {
+          "id": "custom-agent-instructions",
+          "title": "custom-agent-instructions"
+        },
+        {
+          "id": "custom-agent-tuning",
+          "title": "custom-agent-tuning"
+        },
+        {
+          "id": "custom-instructions",
+          "title": "custom-instructions"
+        },
+        {
+          "id": "dependency-review",
+          "title": "dependency-review"
+        },
+        {
+          "id": "development-intent-alignment",
+          "title": "development-intent-alignment"
+        },
+        {
+          "id": "error-analysis",
+          "title": "error-analysis"
+        },
+        {
+          "id": "evaluation-gates",
+          "title": "evaluation-gates"
+        },
+        {
+          "id": "evaluation-signals",
+          "title": "evaluation-signals"
+        },
+        {
+          "id": "failure-analysis",
+          "title": "failure-analysis"
+        },
+        {
+          "id": "failure-evidence",
+          "title": "failure-evidence"
+        },
+        {
+          "id": "failure-remediation",
+          "title": "failure-remediation"
+        },
+        {
+          "id": "failure-root-cause-analysis",
+          "title": "failure-root-cause-analysis"
+        },
+        {
+          "id": "implementation-adherence",
+          "title": "implementation-adherence"
+        },
+        {
+          "id": "implementation-planning",
+          "title": "implementation-planning"
+        },
+        {
+          "id": "instruction-tuning",
+          "title": "instruction-tuning"
+        },
+        {
+          "id": "logs",
+          "title": "logs"
+        },
+        {
+          "id": "mcp-tools",
+          "title": "mcp-tools"
+        },
+        {
+          "id": "memory-curation",
+          "title": "memory-curation"
+        },
+        {
+          "id": "memory-tuning",
+          "title": "memory-tuning"
+        },
+        {
+          "id": "opentelemetry",
+          "title": "opentelemetry"
+        },
+        {
+          "id": "plan-adherence",
+          "title": "plan-adherence"
+        },
+        {
+          "id": "plan-artifact-analysis",
+          "title": "plan-artifact-analysis"
+        },
+        {
+          "id": "plans-vs-diffs",
+          "title": "plans-vs-diffs"
+        },
+        {
+          "id": "qualitative-metrics",
+          "title": "qualitative-metrics"
+        },
+        {
+          "id": "qualitative-signals",
+          "title": "qualitative-signals"
+        },
+        {
+          "id": "quantitative-signals",
+          "title": "quantitative-signals"
+        },
+        {
+          "id": "reasoning-errors",
+          "title": "reasoning-errors"
+        },
+        {
+          "id": "root-cause-classification",
+          "title": "root-cause-classification"
+        },
+        {
+          "id": "security-evaluation",
+          "title": "security-evaluation"
+        },
+        {
+          "id": "security-scanning",
+          "title": "security-scanning"
+        },
+        {
+          "id": "session-logs",
+          "title": "session-logs"
+        },
+        {
+          "id": "success-criteria",
+          "title": "success-criteria"
+        },
+        {
+          "id": "telemetry",
+          "title": "telemetry"
+        },
+        {
+          "id": "telemetry-gap",
+          "title": "telemetry-gap"
+        },
+        {
+          "id": "tool-access",
+          "title": "tool-access"
+        },
+        {
+          "id": "tool-access-refinement",
+          "title": "tool-access-refinement"
+        },
+        {
+          "id": "tool-access-tuning",
+          "title": "tool-access-tuning"
+        },
+        {
+          "id": "tool-misuse",
+          "title": "tool-misuse"
+        },
+        {
+          "id": "tool-scope-refinement",
+          "title": "tool-scope-refinement"
+        },
+        {
+          "id": "tool-usage-refinement",
+          "title": "tool-usage-refinement"
+        },
+        {
+          "id": "trace-context",
+          "title": "trace-context"
+        },
+        {
+          "id": "tuning",
+          "title": "tuning"
+        },
+        {
+          "id": "tuning-instructions",
+          "title": "tuning-instructions"
+        },
+        {
+          "id": "workflow-artifacts",
+          "title": "workflow-artifacts"
+        },
+        {
+          "id": "workflow-constraints",
+          "title": "workflow-constraints"
+        }
+      ]
+    },
+    {
+      "id": "E",
+      "name": "Multi-agent orchestration and incident response",
+      "weight": 18,
+      "objectives": [
+        {
+          "id": "add-agent",
+          "title": "add-agent"
+        },
+        {
+          "id": "agent-conflict",
+          "title": "agent-conflict"
+        },
+        {
+          "id": "agent-conflict-prevention",
+          "title": "agent-conflict-prevention"
+        },
+        {
+          "id": "agent-conflict-resolution",
+          "title": "agent-conflict-resolution"
+        },
+        {
+          "id": "agent-exclusive-tools",
+          "title": "agent-exclusive-tools"
+        },
+        {
+          "id": "agent-isolation",
+          "title": "agent-isolation"
+        },
+        {
+          "id": "agent-lifecycle",
+          "title": "agent-lifecycle"
+        },
+        {
+          "id": "agent-profile",
+          "title": "agent-profile"
+        },
+        {
+          "id": "agent-profile-configuration",
+          "title": "agent-profile-configuration"
+        },
+        {
+          "id": "agent-retirement",
+          "title": "agent-retirement"
+        },
+        {
+          "id": "architectural-decision",
+          "title": "architectural-decision"
+        },
+        {
+          "id": "audit-continuity",
+          "title": "audit-continuity"
+        },
+        {
+          "id": "audit-trail",
+          "title": "audit-trail"
+        },
+        {
+          "id": "auditability",
+          "title": "auditability"
+        },
+        {
+          "id": "contradictory-outputs",
+          "title": "contradictory-outputs"
+        },
+        {
+          "id": "custom-agent-isolation",
+          "title": "custom-agent-isolation"
+        },
+        {
+          "id": "custom-agent-rollout",
+          "title": "custom-agent-rollout"
+        },
+        {
+          "id": "custom-agent-routing",
+          "title": "custom-agent-routing"
+        },
+        {
+          "id": "custom-agents",
+          "title": "custom-agents"
+        },
+        {
+          "id": "debate-consensus",
+          "title": "debate-consensus"
+        },
+        {
+          "id": "degraded-behavior",
+          "title": "degraded-behavior"
+        },
+        {
+          "id": "event-correlation",
+          "title": "event-correlation"
+        },
+        {
+          "id": "execution-tree",
+          "title": "execution-tree"
+        },
+        {
+          "id": "explicit-delegation",
+          "title": "explicit-delegation"
+        },
+        {
+          "id": "failure-prevention",
+          "title": "failure-prevention"
+        },
+        {
+          "id": "handoff",
+          "title": "handoff"
+        },
+        {
+          "id": "handoff-documentation",
+          "title": "handoff-documentation"
+        },
+        {
+          "id": "human-in-the-loop",
+          "title": "human-in-the-loop"
+        },
+        {
+          "id": "human-in-the-loop-recovery",
+          "title": "human-in-the-loop-recovery"
+        },
+        {
+          "id": "human-review",
+          "title": "human-review"
+        },
+        {
+          "id": "incident-response",
+          "title": "incident-response"
+        },
+        {
+          "id": "least-privilege",
+          "title": "least-privilege"
+        },
+        {
+          "id": "least-privilege-orchestration",
+          "title": "least-privilege-orchestration"
+        },
+        {
+          "id": "lifecycle-management",
+          "title": "lifecycle-management"
+        },
+        {
+          "id": "manual-selection",
+          "title": "manual-selection"
+        },
+        {
+          "id": "multi-agent-conflict",
+          "title": "multi-agent-conflict"
+        },
+        {
+          "id": "multi-agent-delegation",
+          "title": "multi-agent-delegation"
+        },
+        {
+          "id": "multi-agent-observability",
+          "title": "multi-agent-observability"
+        },
+        {
+          "id": "multi-agent-recovery",
+          "title": "multi-agent-recovery"
+        },
+        {
+          "id": "observability",
+          "title": "observability"
+        },
+        {
+          "id": "observability-bug",
+          "title": "observability-bug"
+        },
+        {
+          "id": "observability-ui",
+          "title": "observability-ui"
+        },
+        {
+          "id": "operational-observability",
+          "title": "operational-observability"
+        },
+        {
+          "id": "operational-signals",
+          "title": "operational-signals"
+        },
+        {
+          "id": "orchestration-pattern-selection",
+          "title": "orchestration-pattern-selection"
+        },
+        {
+          "id": "orchestrator-worker",
+          "title": "orchestrator-worker"
+        },
+        {
+          "id": "parallel-execution",
+          "title": "parallel-execution"
+        },
+        {
+          "id": "parallel-execution-safety",
+          "title": "parallel-execution-safety"
+        },
+        {
+          "id": "partial-failure",
+          "title": "partial-failure"
+        },
+        {
+          "id": "pipeline-pattern",
+          "title": "pipeline-pattern"
+        },
+        {
+          "id": "post-hoc-analysis",
+          "title": "post-hoc-analysis"
+        },
+        {
+          "id": "retirement",
+          "title": "retirement"
+        },
+        {
+          "id": "sequential-dependencies",
+          "title": "sequential-dependencies"
+        },
+        {
+          "id": "session-logs",
+          "title": "session-logs"
+        },
+        {
+          "id": "stalled-execution",
+          "title": "stalled-execution"
+        },
+        {
+          "id": "subagent-events",
+          "title": "subagent-events"
+        },
+        {
+          "id": "subagent-failures",
+          "title": "subagent-failures"
+        },
+        {
+          "id": "subagent-observability",
+          "title": "subagent-observability"
+        },
+        {
+          "id": "tool-scope",
+          "title": "tool-scope"
+        },
+        {
+          "id": "workflow-continuity",
+          "title": "workflow-continuity"
+        }
+      ]
+    },
+    {
+      "id": "F",
+      "name": "Guardrails, safety, accountability, and governance",
+      "weight": 13,
+      "objectives": [
+        {
+          "id": "accountability",
+          "title": "accountability"
+        },
+        {
+          "id": "actions-guardrails",
+          "title": "actions-guardrails"
+        },
+        {
+          "id": "agent-configuration-governance",
+          "title": "agent-configuration-governance"
+        },
+        {
+          "id": "auditability",
+          "title": "auditability"
+        },
+        {
+          "id": "autonomy-classification",
+          "title": "autonomy-classification"
+        },
+        {
+          "id": "autonomy-levels",
+          "title": "autonomy-levels"
+        },
+        {
+          "id": "built-in-protections",
+          "title": "built-in-protections"
+        },
+        {
+          "id": "change-control",
+          "title": "change-control"
+        },
+        {
+          "id": "codeowners",
+          "title": "codeowners"
+        },
+        {
+          "id": "codeowners-protection",
+          "title": "codeowners-protection"
+        },
+        {
+          "id": "compliance-sensitive-changes",
+          "title": "compliance-sensitive-changes"
+        },
+        {
+          "id": "configuration-governance",
+          "title": "configuration-governance"
+        },
+        {
+          "id": "configuration-protection",
+          "title": "configuration-protection"
+        },
+        {
+          "id": "copilot-setup-steps",
+          "title": "copilot-setup-steps"
+        },
+        {
+          "id": "critical-actions",
+          "title": "critical-actions"
+        },
+        {
+          "id": "custom-agents",
+          "title": "custom-agents"
+        },
+        {
+          "id": "deployment-governance",
+          "title": "deployment-governance"
+        },
+        {
+          "id": "environment-protection",
+          "title": "environment-protection"
+        },
+        {
+          "id": "environment-secrets",
+          "title": "environment-secrets"
+        },
+        {
+          "id": "github-token-permissions",
+          "title": "github-token-permissions"
+        },
+        {
+          "id": "guardrail-selection",
+          "title": "guardrail-selection"
+        },
+        {
+          "id": "guardrails",
+          "title": "guardrails"
+        },
+        {
+          "id": "human-in-the-loop",
+          "title": "human-in-the-loop"
+        },
+        {
+          "id": "human-review",
+          "title": "human-review"
+        },
+        {
+          "id": "incident-containment",
+          "title": "incident-containment"
+        },
+        {
+          "id": "least-privilege",
+          "title": "least-privilege"
+        },
+        {
+          "id": "mcp-tool-governance",
+          "title": "mcp-tool-governance"
+        },
+        {
+          "id": "production-deployment",
+          "title": "production-deployment"
+        },
+        {
+          "id": "prompt-injection",
+          "title": "prompt-injection"
+        },
+        {
+          "id": "prompt-injection-mitigation",
+          "title": "prompt-injection-mitigation"
+        },
+        {
+          "id": "review-controls",
+          "title": "review-controls"
+        },
+        {
+          "id": "risk-classification",
+          "title": "risk-classification"
+        },
+        {
+          "id": "rulesets",
+          "title": "rulesets"
+        },
+        {
+          "id": "secrets-boundaries",
+          "title": "secrets-boundaries"
+        },
+        {
+          "id": "secrets-boundary",
+          "title": "secrets-boundary"
+        },
+        {
+          "id": "session-logs",
+          "title": "session-logs"
+        },
+        {
+          "id": "setup-steps",
+          "title": "setup-steps"
+        },
+        {
+          "id": "traceability",
+          "title": "traceability"
+        },
+        {
+          "id": "trigger-controls",
+          "title": "trigger-controls"
+        },
+        {
+          "id": "workflow-approval",
+          "title": "workflow-approval"
+        }
+      ]
+    }
+  ],
+  "supportedFormats": [
+    "single_choice",
+    "multi_select",
+    "sequence_order",
+    "matching_magnet",
+    "dropdown_completion",
+    "case_study_child",
+    "code_or_config_artifact",
+    "log_or_artifact_interpretation",
+    "policy_control_selection"
+  ],
+  "timing": {
+    "minutesPerQuestion": 1.2,
+    "kind": "practice"
+  },
+  "providerGeneration": false,
+  "sources": [
+    {
+      "id": "gh-source-1",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/articles/about-required-reviews-for-pull-requests",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-2",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/copilot/concepts/about-copilot-coding-agent",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-3",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/copilot/concepts/agents/copilot-memory",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-4",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/copilot/how-tos/agents/copilot-coding-agent/reviewing-a-pull-request-created-by-copilot",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-5",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/configure-secrets-and-variables",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-6",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/copilot/how-tos/use-copilot-agents/coding-agent/customize-the-agent-firewall",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-7",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/copilot/reference/customization-cheat-sheet",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-8",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/copilot/tutorials/coding-agent/improve-a-project",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-9",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/copilot/using-github-copilot/coding-agent/using-the-copilot-coding-agent-logs",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-10",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/actions/how-tos/deploy/configure-and-manage-deployments/review-deployments",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-11",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/actions/reference/deployments-and-environments",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-12",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/actions/reference/environments",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-13",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-14",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/code-security/code-scanning",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-15",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/code-security/code-scanning/introduction-to-code-scanning/about-code-scanning",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-16",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/code-security/secret-scanning/introduction/about-secret-scanning",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-17",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/code-security/supply-chain-security/understanding-your-software-supply-chain/about-dependency-review",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-18",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/code-security/supply-chain-security/understanding-your-software-supply-chain/about-the-dependency-graph",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-19",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/code-security/supply-chain-security/understanding-your-software-supply-chain/configuring-the-dependency-review-action",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-20",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/code-security/supply-chain-security/understanding-your-software-supply-chain/enforcing-dependency-review-across-an-organization",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-21",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/copilot/concepts/about-assigning-tasks-to-copilot",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-22",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/copilot/concepts/about-copilot-coding-agent",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-23",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/copilot/concepts/agents/cloud-agent/about-cloud-agent",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-24",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/copilot/concepts/agents/cloud-agent/about-custom-agents",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-25",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/copilot/concepts/agents/cloud-agent/mcp-and-cloud-agent",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-26",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/copilot/concepts/agents/cloud-agent/risks-and-mitigations",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-27",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/copilot/concepts/agents/copilot-cli/about-custom-agents",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-28",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/copilot/concepts/agents/copilot-cli/context-management",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-29",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/copilot/concepts/agents/copilot-cli/fleet",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-30",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/copilot/concepts/agents/copilot-memory",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-31",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/copilot/concepts/coding-agent/coding-agent",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-32",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/copilot/concepts/coding-agent/mcp-and-coding-agent",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-33",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/copilot/concepts/context/copilot-extensions",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-34",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/copilot/concepts/context/mcp",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-35",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/copilot/concepts/copilot-usage-metrics/copilot-metrics",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-36",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/copilot/customizing-copilot/adding-repository-custom-instructions-for-github-copilot",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-37",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/copilot/customizing-copilot/customizing-the-development-environment-for-copilot-coding-agent",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-38",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/copilot/how-tos/administer-copilot/manage-for-enterprise/manage-agents/monitor-agentic-activity",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-39",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/copilot/how-tos/administer-copilot/manage-for-organization/prepare-for-custom-agents",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-40",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/copilot/how-tos/administer-copilot/manage-mcp-usage/configure-mcp-registry",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-41",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/copilot/how-tos/administer-copilot/manage-mcp-usage/configure-mcp-server-access",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-42",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/copilot/how-tos/agents/copilot-coding-agent/reviewing-a-pull-request-created-by-copilot",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-43",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/copilot/how-tos/agents/copilot-coding-agent/using-the-copilot-coding-agent-logs",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-44",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/copilot/how-tos/copilot-cli/automate-copilot-cli/run-cli-programmatically",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-45",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/copilot/how-tos/copilot-cli/automate-with-actions",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-46",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/create-custom-agents-for-cli",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-47",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/configure-secrets-and-variables",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-48",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/create-custom-agents",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-49",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/customize-the-agent-environment",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-50",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/customize-the-agent-environment#customizing-copilots-development-environment-with-copilot-setup-steps",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-51",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/customize-the-agent-environment#using-self-hosted-github-actions-runners",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-52",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/customize-the-agent-firewall",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-53",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/extend-cloud-agent-with-mcp",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-54",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/extend-cloud-agent-with-mcp#customizing-the-built-in-github-mcp-server",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-55",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/extend-cloud-agent-with-mcp#reusing-your-mcp-configuration-from-visual-studio-code",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-56",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/extend-cloud-agent-with-mcp#variable-substitution",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-57",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/test-custom-agents",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-58",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/use-copilot-agents/kick-off-a-task",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-59",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/use-copilot-agents/manage-and-track-agents",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-60",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/use-copilot-agents/research-plan-iterate",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-61",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/use-copilot-agents/review-copilot-output",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-62",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/copilot/how-tos/copilot-sdk/observability/opentelemetry",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-63",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/copilot/how-tos/copilot-sdk/use-copilot-sdk/custom-agents",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-64",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/copilot/how-tos/copilot-sdk/use-copilot-sdk/custom-agents#listening-to-sub-agent-events",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-65",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/copilot/how-tos/copilot-sdk/use-copilot-sdk/streaming-events",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-66",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/copilot/how-tos/custom-instructions/adding-repository-custom-instructions-for-github-copilot",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-67",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/copilot/how-tos/use-copilot-agents/cloud-agent/configuring-agent-settings",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-68",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/copilot/how-tos/use-copilot-agents/cloud-agent/create-custom-agents",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-69",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/copilot/how-tos/use-copilot-agents/cloud-agent/research-plan-iterate",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-70",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/copilot/how-tos/use-copilot-agents/cloud-agent/review-copilot-prs",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-71",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/copilot/how-tos/use-copilot-agents/cloud-agent/track-copilot-sessions",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-72",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/assign-copilot-to-an-issue",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-73",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/create-custom-agents",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-74",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/customize-the-agent-environment",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-75",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/extend-coding-agent-with-mcp",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-76",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/test-custom-agents",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-77",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/copilot/how-tos/use-copilot-agents/copilot-memory",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-78",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/copilot/how-tos/use-copilot-agents/manage-agents",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-79",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/copilot/managing-copilot/managing-github-copilot-in-your-organization/reviewing-activity-related-to-github-copilot-in-your-organization/reviewing-audit-logs-for-copilot-business",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-80",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/copilot/reference/agentic-audit-log-events",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-81",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/copilot/reference/copilot-allowlist-reference",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-82",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-config-dir-reference",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-83",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/copilot/reference/custom-agents-configuration",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-84",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/copilot/reference/custom-agents-configuration#mcp-server-configuration-details",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-85",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/copilot/reference/custom-agents-configuration#tools",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-86",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/copilot/reference/customization-cheat-sheet",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-87",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/copilot/reference/mcp-allowlist-enforcement",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-88",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/copilot/reference/proxy-server-and-firewall-settings-for-copilot",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-89",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/copilot/responsible-use/copilot-cloud-agent",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-90",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/copilot/responsible-use/copilot-coding-agent",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-91",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/copilot/tutorials/cloud-agent/build-guardrails",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-92",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/copilot/tutorials/customization-library/custom-agents/implementation-planner",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-93",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/copilot/using-github-copilot/coding-agent/about-assigning-tasks-to-copilot",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-94",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/copilot/using-github-copilot/coding-agent/asking-copilot-to-create-a-pull-request",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-95",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/copilot/using-github-copilot/coding-agent/best-practices-for-using-copilot-to-work-on-tasks",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-96",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/copilot/using-github-copilot/coding-agent/reviewing-a-pull-request-created-by-copilot",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-97",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/copilot/using-github-copilot/coding-agent/using-the-copilot-coding-agent-logs",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-98",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/enterprise-cloud@latest/copilot/reference/customization-cheat-sheet",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-99",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/enterprise-cloud@latest/copilot/tutorials/cloud-agent/build-guardrails",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-100",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-101",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-102",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/available-rules-for-rulesets",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-103",
+      "title": "Inherited GH-600 citation",
+      "url": "https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-104",
+      "title": "Inherited GH-600 citation",
+      "url": "https://github.com/github/github-mcp-server",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-105",
+      "title": "Inherited GH-600 citation",
+      "url": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-600",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-106",
+      "title": "Inherited GH-600 citation",
+      "url": "https://learn.microsoft.com/en-us/security/zero-trust/sfi/manage-agentic-risk",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-107",
+      "title": "Inherited GH-600 citation",
+      "url": "https://learn.microsoft.com/en-us/security/zero-trust/sfi/observability-ai-systems",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-108",
+      "title": "Inherited GH-600 citation",
+      "url": "https://learn.microsoft.com/en-us/training/modules/agent-tooling-mcp-execution-environments/",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-109",
+      "title": "Inherited GH-600 citation",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    },
+    {
+      "id": "gh-source-110",
+      "title": "Inherited GH-600 citation",
+      "url": "https://learn.microsoft.com/en-us/training/modules/foundations-agentic-ai/",
+      "snapshot": "knowledge/gh-600-study-guide.md",
+      "sha256": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+      "status": "inherited"
+    }
+  ],
+  "knowledge": {
+    "A": "knowledge/domain-A.md",
+    "B": "knowledge/domain-B.md",
+    "C": "knowledge/domain-C.md",
+    "D": "knowledge/domain-D.md",
+    "E": "knowledge/domain-E.md",
+    "F": "knowledge/domain-F.md"
+  },
+  "prompts": {
+    "author": "prompts/generate-batch.prompt.md",
+    "review": "prompts/validate-question.prompt.md"
+  },
+  "assets": {
+    "knowledge/domain-D.md": "ef9b9babb905c4a35705e27fd442785b0c1e891ae4038452346eacd71cdbd6e5",
+    "knowledge/domain-A.md": "19c0429dc0794067c5349d4507f7a6089ee1fc8377ce4a83beda6bc6d8a8c27e",
+    "knowledge/gh-600-study-guide.md": "87de39e8c8fc905f57f85b956f57ec411a3246f667b2398c0f0c64abe00b4229",
+    "knowledge/domain-E.md": "4b3dcfa89728fc2a4010eb1778521c716b614c322adfe41f9024b0960b3a1759",
+    "knowledge/domain-B.md": "ba05490f02d06f7b6a22ca807d75772259f285c78cd8eda88f450ea6b2d61deb",
+    "knowledge/domain-F.md": "2fc82b86377f1fc9cd0b8ca23d0a0358bac1ea80103dbf1a5c65e2507a2d22ed",
+    "knowledge/domain-C.md": "0b3bbf0dc0218948515b6ac736cbdd4691d28abfa3dace8d4a2feb62c55bc9be",
+    "prompts/weakness-drill.prompt.md": "a2ce6aef6513c9fb3973771ceb8bc549a28688715f06ce1726931aac3e4a7ce3",
+    "prompts/blueprint.prompt.md": "c13c3b8e4d6820d8d9a30acfa559904ca11d87e801e564bbb46d4aa4848919e0",
+    "prompts/generate-batch.prompt.md": "66be9626acd1454b31fb645fee1e1c1937a0015fdedeec84143e3c457e1625db",
+    "prompts/validate-question.prompt.md": "e04a240c0f866e85daa9e032c4ada78151dda00cf0f4bebdfed0d30113a4aef5",
+    "prompts/generate-case-study.prompt.md": "e9c9544f7321e4f13a7cec56eba83d709e15f8dc84ee6a80a620f0574eb2901b",
+    "prompts/anti-bias-review.prompt.md": "7b9334f43b933e5dbaa823f4566b1311ea73f378ef2847646f05a3170d4df1b1",
+    "prompts/assemble-exam.prompt.md": "b1d55a50978dc80756fff5f63564f8d404ae8783b161ac56fd1cb0ed0c582f28"
+  }
+}

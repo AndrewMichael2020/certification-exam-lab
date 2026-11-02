@@ -1,0 +1,127 @@
+{
+  "canonicalDraftHash": "d2d885166ed8a1c2675e6d43bb3fd40f8d70e3d1b48e4a6618b345b2edb424f0",
+  "questions": [
+    {
+      "domainId": "A",
+      "objectiveTags": [
+        "AI103-A3.04"
+      ],
+      "stem": "Lumen’s runtime obtains a token but Reader-only inference is denied. Which documented role at the called Azure OpenAI resource supplies inference permission?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Search Index Data Reader."
+        },
+        {
+          "id": "B",
+          "text": "Cognitive Services OpenAI User."
+        },
+        {
+          "id": "C",
+          "text": "Reader on the Foundry project only."
+        },
+        {
+          "id": "D",
+          "text": "A deployment workflow’s role on another project."
+        }
+      ],
+      "correctAnswer": "B",
+      "type": "case_study_child",
+      "difficulty": "medium",
+      "explanation": {
+        "whyCorrect": "The named /openai/v1/ endpoint requires the runtime identity’s inference permission. Cognitive Services OpenAI User is the documented inference role; scope must cover the called resource.",
+        "whyDistractorsWrong": {
+          "C": "Management reading does not grant the named inference permission.",
+          "A": "That role applies to Search data, not Azure OpenAI inference.",
+          "D": "A different principal and different resource scope do not authorize this runtime call."
+        }
+      },
+      "id": "ai103-improvement-r2-checkpoint-20-q003",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Plan and manage an Azure AI solution",
+      "caseStudyId": "case-2",
+      "sourceRefs": [
+        {
+          "sourceId": "S051",
+          "title": "Azure OpenAI v1 API",
+          "url": "https://learn.microsoft.com/en-us/azure/foundry/openai/api-version-lifecycle",
+          "snapshotSha256": "8e7e4b2c4e94ad6056ffa3edf4750e4db864ceac16a52777cc13fd2068403803",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S052",
+          "title": "Use Azure OpenAI without keys",
+          "url": "https://learn.microsoft.com/en-us/azure/developer/ai/keyless-connections",
+          "snapshotSha256": "4f2b4d850889660d3af96aac661fa1955b8d9e1bf6f454facbef5b11aa59efcd",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:37:42Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-2",
+        "validationStatus": "draft"
+      }
+    }
+  ],
+  "caseStudies": [
+    {
+      "title": "Lumen regional engineering assistant",
+      "intro": "Lumen operates an engineering assistant for staff in the European Union. Its platform team is designing deployment, identity and retrieval controls together, with separate principals for deployment and runtime. The service must answer interactively and retain existing learner and operational records during the migration described here.",
+      "sections": [
+        {
+          "heading": "Workload boundary",
+          "body": "The processing policy permits inference across EU countries but forbids processing outside that data zone. Interactive requests cannot wait for a nightly batch. Demand varies across the day and procurement wants on-demand token billing rather than reserved throughput. The selected model is available for every deployment family considered in the questions, and the relevant quota has already been confirmed. The resource’s region alone is not the organization’s definition of the inference processing boundary."
+        },
+        {
+          "heading": "Inference identity",
+          "body": "The backend calls an Azure OpenAI resource through its /openai/v1/ endpoint using Microsoft Entra credentials. Its runtime managed identity currently has Reader on that resource and no inference data role. Token acquisition succeeds, but inference is denied. The team wants the documented inference role at the resource scope without granting model-management permissions. Developers’ personal roles and the GitHub deployment principal are separate from the runtime identity. A resource key is not part of the approved runtime design."
+        },
+        {
+          "heading": "Project and Search",
+          "body": "An AI Projects Python 2.8.0 client is used for Foundry project operations, with a project endpoint and an Entra credential. Search public access is disabled. The private endpoint exists, and the agent connection is explicitly pinned to the named runtime principal. That principal has Search Index Data Reader for the target index. From the runtime subnet, however, the Search hostname resolves to a public address. From a developer laptop on another network it resolves privately and querying succeeds. The network observations do not transfer from the laptop to the agent subnet."
+        },
+        {
+          "heading": "Release process",
+          "body": "A GitHub deployment workflow obtains a token using an established OIDC trust. It does not store a client secret. The workflow principal’s project role is assigned on a different project, while its endpoint variable points to the intended Lumen project. An authorization denial therefore needs identity and scope analysis after authentication succeeds. Operations retain redacted request spans and release identifiers to investigate failures. Each question asks for a single independent decision; repairing one defect is not assumed to repair the others. A proposed change must satisfy the named runtime, region and billing facts rather than simply resemble a working developer setup."
+        }
+      ],
+      "id": "case-2",
+      "questionIds": [
+        "ai103-improvement-r2-checkpoint-20-q003"
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "itemId": "ai103-improvement-r2-checkpoint-20-q003",
+      "testedDecision": "Lumen’s runtime obtains a token but Reader-only inference is denied. Which documented role at the called Azure OpenAI resource supplies inference permission?",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-A3.04",
+      "itemRevisionHash": "4146b0330866b11c26c54dcfdf2acd25e26ffbab60a860eb308e55b420e4f8cf",
+      "sources": [
+        {
+          "sourceId": "S051",
+          "title": "Azure OpenAI v1 API",
+          "url": "https://learn.microsoft.com/en-us/azure/foundry/openai/api-version-lifecycle",
+          "snapshotSha256": "8e7e4b2c4e94ad6056ffa3edf4750e4db864ceac16a52777cc13fd2068403803",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S052",
+          "title": "Use Azure OpenAI without keys",
+          "url": "https://learn.microsoft.com/en-us/azure/developer/ai/keyless-connections",
+          "snapshotSha256": "4f2b4d850889660d3af96aac661fa1955b8d9e1bf6f454facbef5b11aa59efcd",
+          "docType": "microsoft_learn"
+        }
+      ]
+    }
+  ]
+}

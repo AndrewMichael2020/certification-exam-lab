@@ -1,0 +1,198 @@
+{
+  "templateOnly": true,
+  "packetId": "ai103-pilot001-audit-r1",
+  "packageId": "ai103-pilot-001-r1",
+  "revision": "1",
+  "pack": {
+    "id": "ai-103",
+    "version": "1.1.0"
+  },
+  "draftPackageSha256": "0ceafb2d5784ffa424193a00ff62ffb47731c6f902e9c766010db3fe582b358b",
+  "reviewer": {
+    "actualModelLabel": null,
+    "visibleModeIfAny": null,
+    "reviewedAtUtc": null
+  },
+  "instructions": "Fill every item after the two-stage audit. Preserve your blind answer. Allowed verdicts: accept, revise, reject, unverifiable. No default acceptance. Nulls must be completed, or explicitly describe unavailable information. Cite sourceId and line ranges. Return this JSON plus a concise overall summary. This is an audit response, not an importable review package.",
+  "rubric": [
+    "correct answer and source support under the stated version",
+    "one defensible answer (or exact multi-select set); no hidden prerequisites",
+    "plausible, unambiguously wrong distractors under the scenario",
+    "every explanation and structured step/slot is supported",
+    "objective alignment and realistic difficulty; no exam-parity claim",
+    "case-child independence and cross-item answer leakage"
+  ],
+  "items": [
+    {
+      "itemId": "ai103-pilot001-q01",
+      "itemRevision": "1",
+      "itemSha256": "88268cdf183f7d13476c0c67e2fce969096c1b65d2a410e009627dba60133d10",
+      "sourceIds": [
+        "S005"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [],
+      "issues": [],
+      "suggestedCorrection": null,
+      "difficultyAssessment": null
+    },
+    {
+      "itemId": "ai103-pilot001-q02",
+      "itemRevision": "1",
+      "itemSha256": "a137efa41e0e79e90094adcb6c97acab1c1b27ec8f125c355b2cd3313cf20ece",
+      "sourceIds": [
+        "S011",
+        "S040"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [],
+      "issues": [],
+      "suggestedCorrection": null,
+      "difficultyAssessment": null
+    },
+    {
+      "itemId": "ai103-pilot001-q03",
+      "itemRevision": "1",
+      "itemSha256": "624c26da0a23c47516773028503499c0527a4adc46925943cef2470786d6ffcf",
+      "sourceIds": [
+        "S037"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [],
+      "issues": [],
+      "suggestedCorrection": null,
+      "difficultyAssessment": null
+    },
+    {
+      "itemId": "ai103-pilot001-q04",
+      "itemRevision": "1",
+      "itemSha256": "b8087677071536fd7beb195cb7656004d5e5947477864dd6a2dc3dd657e5bbb9",
+      "sourceIds": [
+        "S007"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [],
+      "issues": [],
+      "suggestedCorrection": null,
+      "difficultyAssessment": null
+    },
+    {
+      "itemId": "ai103-pilot001-q05",
+      "itemRevision": "1",
+      "itemSha256": "6ff7672fc7463cc6b0118e17ba49669360e83543aaabe87a27967b05caf9f8e5",
+      "sourceIds": [
+        "S014",
+        "S039"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [],
+      "issues": [],
+      "suggestedCorrection": null,
+      "difficultyAssessment": null
+    },
+    {
+      "itemId": "ai103-pilot001-q06",
+      "itemRevision": "1",
+      "itemSha256": "4658dd9a64cd01897a1b0184bde266770491dfe762fb11c934778d0a7ab0497e",
+      "sourceIds": [
+        "S018"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [],
+      "issues": [],
+      "suggestedCorrection": null,
+      "difficultyAssessment": null
+    },
+    {
+      "itemId": "ai103-pilot001-q07",
+      "itemRevision": "1",
+      "itemSha256": "185a0440ceac077610e2ad81ead5b8db6acef3933c27f96806f7a1f326c27ceb",
+      "sourceIds": [
+        "S009"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [],
+      "issues": [],
+      "suggestedCorrection": null,
+      "difficultyAssessment": null
+    },
+    {
+      "itemId": "ai103-pilot001-q08",
+      "itemRevision": "1",
+      "itemSha256": "e2c17a6009fcc757ef690691025bab1f9e67dcb76e0124b67c688125bd1a5bc2",
+      "sourceIds": [
+        "S042"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [],
+      "issues": [],
+      "suggestedCorrection": null,
+      "difficultyAssessment": null
+    },
+    {
+      "itemId": "ai103-pilot001-q09",
+      "itemRevision": "1",
+      "itemSha256": "8e3336da727d7bd44d3c5b413a95a9ee7e39f7b05933ff7e446e4f2e9da932a2",
+      "sourceIds": [
+        "S046"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [],
+      "issues": [],
+      "suggestedCorrection": null,
+      "difficultyAssessment": null
+    },
+    {
+      "itemId": "ai103-pilot001-q10",
+      "itemRevision": "1",
+      "itemSha256": "607c29550929f6fe7972a3cb30dc263c7d08bb624df9fa6a2033c65e5216f549",
+      "sourceIds": [
+        "S028",
+        "S029",
+        "S043",
+        "S026"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [],
+      "issues": [],
+      "suggestedCorrection": null,
+      "difficultyAssessment": null
+    }
+  ],
+  "overall": {
+    "summary": null,
+    "releaseRecommendation": null,
+    "unresolvedSourceGaps": [],
+    "difficultyAndCoverageFindings": []
+  }
+}

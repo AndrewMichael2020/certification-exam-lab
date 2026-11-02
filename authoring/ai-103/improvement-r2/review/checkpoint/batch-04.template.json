@@ -1,0 +1,189 @@
+{
+  "templateOnly": true,
+  "packetId": "ai103-improvement-r2-checkpoint-20-batch-4",
+  "packageId": "ai103-improvement-r2-checkpoint-20",
+  "revision": "2",
+  "pack": {
+    "id": "ai-103",
+    "version": "1.2.0"
+  },
+  "draftPackageSha256": "d2d885166ed8a1c2675e6d43bb3fd40f8d70e3d1b48e4a6618b345b2edb424f0",
+  "reviewer": {
+    "actualModelLabel": null,
+    "visibleModeIfAny": null,
+    "reviewedAtUtc": null
+  },
+  "instructions": "Solve blind first. Assess alternatives, evidence, API/version, objective fit, difficulty and cues. Null verdicts are not reviews.",
+  "items": [
+    {
+      "itemId": "ai103-improvement-r2-checkpoint-20-q012",
+      "itemRevision": "2",
+      "itemSha256": "d4b20eb4b80b5eaf87db7a729d9df6e8f9ee4841f15c0ede76876e0b202f7aca",
+      "sourceIds": [
+        "S042"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S042",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-checkpoint-20-q013",
+      "itemRevision": "2",
+      "itemSha256": "0708a89a85a35593c1521059eaff6ac27f2d8ebabb93ef75ddee31d49990faf2",
+      "sourceIds": [
+        "S017"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S017",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-checkpoint-20-q014",
+      "itemRevision": "2",
+      "itemSha256": "47734af93d793451bed20b201d72448cef2479bfbb45f7779b100af72088bbaa",
+      "sourceIds": [
+        "S022"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S022",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-checkpoint-20-q015",
+      "itemRevision": "2",
+      "itemSha256": "ba08d378e15880f00aff9dc5a83195b924a7aa88dce01daf0216fdf1fb101629",
+      "sourceIds": [
+        "S055"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S055",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-checkpoint-20-q016",
+      "itemRevision": "2",
+      "itemSha256": "ee2a94b8caebf98397d9fc4921aa185dfcd71ff0147cd102a9429f86ecb32db1",
+      "sourceIds": [
+        "S026",
+        "S058"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S026",
+          "lines": null,
+          "supports": null
+        },
+        {
+          "sourceId": "S058",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-checkpoint-20-q017",
+      "itemRevision": "2",
+      "itemSha256": "40a17af2a766b2729396f65f34edb98f571dc20725aae07750411dd8c2c4e8ef",
+      "sourceIds": [
+        "S021"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S021",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-checkpoint-20-q018",
+      "itemRevision": "2",
+      "itemSha256": "8f59edf663d98227702cf67235bbe8a9d05c6fc9b0c8619e78538a0e8d8abc06",
+      "sourceIds": [
+        "S033",
+        "S034",
+        "S046"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S033",
+          "lines": null,
+          "supports": null
+        },
+        {
+          "sourceId": "S034",
+          "lines": null,
+          "supports": null
+        },
+        {
+          "sourceId": "S046",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-checkpoint-20-q019",
+      "itemRevision": "2",
+      "itemSha256": "ab9b8766c1fe8a310e18d36c7845df525f6916a770aa9f4e479e776dae2d645e",
+      "sourceIds": [
+        "S030"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S030",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    }
+  ]
+}

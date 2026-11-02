@@ -48,7 +48,7 @@ describe("generateBatchRequestSchema", () => {
   it("accepts a bounded batch-generation request", () => {
     expect(
       generateBatchRequestSchema.safeParse({
-        plan: { batches: [validBatch] },
+        plan: { pack: { id: "gh-600", version: "1.1.0" }, batches: [validBatch] },
         batch: validBatch,
         existingQuestionStems: [],
       }).success
@@ -58,7 +58,7 @@ describe("generateBatchRequestSchema", () => {
   it("rejects oversized question counts before generation", () => {
     expect(
       generateBatchRequestSchema.safeParse({
-        plan: { batches: [{ ...validBatch, questionCount: 100_000_000 }] },
+        plan: { pack: { id: "gh-600", version: "1.1.0" }, batches: [{ ...validBatch, questionCount: 100_000_000 }] },
         batch: { ...validBatch, questionCount: 100_000_000 },
         existingQuestionStems: [],
       }).success

@@ -1,12 +1,14 @@
 import express from "express";
+import { ZodError } from "zod";
+import { dataPath, host, offline } from "./runtime.js";
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
-import { examPdfStem, generateExamPdf } from "./pdfExport.js";
+import { legacyPdfStem, generateExamPdf, pdfLocation, pdfKindSchema } from "./pdfExport.js";
 import { v4 as uuidv4 } from "uuid";
 
 const IS_DEV = process.env.NODE_ENV !== "production";
 
-const PUBLISHED_PATH = path.join(process.cwd(), "data", "published.json");
+const PUBLISHED_PATH = dataPath("published.json");
 
 /** Always reads published.json; returns [] if missing/invalid. */
 function readPublishedIds(): string[] {
@@ -35,16 +37,26 @@ function isExamPublished(examId: string): boolean {
 
 import { assembleExam, createPlan, generateBatch, validateBatch } from "./generation.js";
 import { getAttempt, getExam, listExams, saveAttempt, saveExam } from "./persistence.js";
+import { packCatalog } from "./presentation.js";
+import { buildBlueprint } from "./blueprint.js";
+import { assertStoragePath } from "./persistence.js";
+import { identifierSchema } from "./importValidation.js";
+import { assembleImportedExam } from "./importer.js";
+import { contentHash, packRefSchema, resolvePack } from "./packs.js";
+import { attemptInputSchema, validateAttemptInput } from "./attemptValidation.js";
 import { scoreAttempt } from "./scoring.js";
 import { buildDomainSubskillDrill, buildMistakeReplay, buildWeakDomainDrill } from "./studyLoops.js";
 import { Attempt, BatchPlan, GenerationPlan } from "./types.js";
 import {
-  assembleRequestSchema,
-  attemptRequestSchema,
   blueprintRequestSchema,
   generateBatchRequestSchema,
   validateBatchRequestSchema,
 } from "./validators.js";
+
+function reqPack(query: express.Request["query"]) {
+  if (query.packId === undefined && query.packVersion === undefined) return undefined;
+  return packRefSchema.parse({ id: query.packId, version: query.packVersion });
+}
 
 const app = express();
 app.use(express.json({ limit: "2mb" }));
@@ -63,16 +75,24 @@ app.get("/api/config", async (_req, res) => {
   const visible = published ? exams.filter((e) => published.includes(e.id)) : exams;
   return res.json({
     isDev: IS_DEV,
-    hasApiKey: Boolean(process.env.OPENAI_API_KEY),
+    hasApiKey: !offline && Boolean(process.env.OPENAI_API_KEY),
     examCount: visible.length,
   });
+});
+
+app.get("/api/packs", (_req, res) => res.json(packCatalog()));
+app.get("/api/packs/:id/blueprint", (req, res) => {
+  const ref = packRefSchema.parse({ id: req.params.id, version: req.query.version });
+  return res.json(buildBlueprint(Number(req.query.questionCount), ref));
 });
 
 // List stored exams (summary only — no questions).
 // In production returns only exams listed in data/published.json.
 // In dev, returns all exams with an `isPublished` flag on each.
 app.get("/api/exams", async (_req, res) => {
-  const all = await listExams();
+  const pack = _req.query.packId !== undefined && _req.query.packVersion === undefined
+    ? packRefSchema.shape.id.parse(_req.query.packId) : reqPack(_req.query);
+  const all = await listExams(pack);
   const published = loadPublishedIds();
   if (published) {
     // Production: filter to published list only
@@ -84,7 +104,8 @@ app.get("/api/exams", async (_req, res) => {
 });
 
 const windowMs = 60_000;
-const maxPerWindow = 120;
+const configuredLimit = Number(process.env.REQUESTS_PER_MINUTE ?? 120);
+const maxPerWindow = Number.isInteger(configuredLimit) && configuredLimit > 0 ? configuredLimit : 120;
 const requestTracker = new Map<string, { count: number; resetAt: number }>();
 
 function pruneExpiredRequestBuckets(now = Date.now()): void {
@@ -123,12 +144,12 @@ app.use("/exams", async (req, res, next) => {
   const published = loadPublishedIds() ?? [];
   for (const id of published) {
     const exam = await getExam(id);
-    if (exam && `${examPdfStem(exam)}.pdf` === requested) return next();
+    if (exam && `${legacyPdfStem(exam)}.pdf` === requested) return next();
   }
 
   return res.status(404).json({ error: "Exam not found" });
 });
-app.use("/exams", express.static(path.join(process.cwd(), "data/exams")));
+app.use("/exams", express.static(dataPath("exams")));
 
 function requireDevMode(_req: express.Request, res: express.Response, next: express.NextFunction) {
   if (!IS_DEV) {
@@ -137,13 +158,18 @@ function requireDevMode(_req: express.Request, res: express.Response, next: expr
   return next();
 }
 
+function requireProviderGeneration(_req: express.Request, res: express.Response, next: express.NextFunction) {
+  if (offline) return res.status(503).json({ error: "Provider generation is disabled in offline study mode." });
+  return next();
+}
+
 app.post("/api/exams/blueprint", requireDevMode, (req, res) => {
   const parsed = blueprintRequestSchema.safeParse(req.body);
   if (!parsed.success) return res.status(400).json({ error: parsed.error.flatten() });
-  return res.json(createPlan(parsed.data.questionCount));
+  return res.json(createPlan(parsed.data.questionCount, parsed.data.pack));
 });
 
-app.post("/api/questions/generate-batch", requireDevMode, async (req, res) => {
+app.post("/api/questions/generate-batch", requireDevMode, requireProviderGeneration, async (req, res) => {
   const parsed = generateBatchRequestSchema.safeParse(req.body);
   if (!parsed.success) return res.status(400).json({ error: parsed.error.flatten() });
   const { questions, caseStudy } = await generateBatch(
@@ -160,23 +186,27 @@ app.post("/api/questions/validate-batch", requireDevMode, (req, res) => {
   return res.json({ questions: validateBatch(parsed.data.questions) });
 });
 
-app.post("/api/exams/assemble", requireDevMode, async (req, res) => {
-  const parsed = assembleRequestSchema.safeParse(req.body);
-  if (!parsed.success) return res.status(400).json({ error: parsed.error.flatten() });
-  const exam = assembleExam(parsed.data.plan, parsed.data.questions, parsed.data.caseStudies);
+const importExam: express.RequestHandler = async (req, res) => {
+  const exam = assembleImportedExam(req.body);
   await saveExam(exam);
-  return res.json(exam);
-});
+  return res.status(201).json(exam);
+};
+app.post("/api/exams/import", requireDevMode, importExam);
+// Assembly uses the same review gate; it cannot bypass the importer.
+app.post("/api/exams/assemble", requireDevMode, importExam);
 
 app.post("/api/attempts", async (req, res) => {
-  const parsed = attemptRequestSchema.safeParse(req.body);
+  const parsed = attemptInputSchema.safeParse(req.body);
   if (!parsed.success) return res.status(400).json({ error: parsed.error.flatten() });
   const exam = await getExam(parsed.data.examId);
   if (!exam) return res.status(404).json({ error: "Exam not found" });
+  validateAttemptInput(exam, parsed.data);
   const score = scoreAttempt(exam.questions, parsed.data.answers);
   const attempt: Attempt = {
     id: uuidv4(),
     examId: exam.id,
+    pack: exam.pack,
+    examSha256: contentHash(exam),
     createdAt: new Date().toISOString(),
     answers: parsed.data.answers,
     confidence: parsed.data.confidence,
@@ -215,42 +245,55 @@ app.post("/api/exams/:id/publish", (req, res) => {
 // GET  /api/exams/:id/pdf-status  → { exists: bool, url: string|null, filename: string|null }
 // POST /api/exams/:id/pdf         → triggers Playwright PDF build
 
+async function findPdf(exam: import("./types.js").ExamSet, kind: import("./pdfExport.js").PdfKind) {
+  const { resolvePdfStatus } = await import("./storage.js");
+  const location = pdfLocation(exam, kind);
+  await assertStoragePath(location.outPath);
+  const current = await resolvePdfStatus(location.filename, location.localDir, location.url, location.objectName);
+  if (current.exists) return { ...location, ...current, historical: false };
+  if (kind === "practice" && exam.compatibility) {
+    const filename = `${legacyPdfStem(exam)}.pdf`;
+    const outPath = dataPath("exams", filename);
+    await assertStoragePath(outPath);
+    const old = await resolvePdfStatus(filename, dataPath("exams"));
+    if (old.exists) return { filename, outPath, ...old, historical: true };
+  }
+  return { ...location, ...current, historical: false };
+}
 app.get("/api/exams/:id/pdf-status", async (req, res) => {
   if (!isExamPublished(req.params.id)) return res.status(404).json({ error: "Exam not found" });
   const exam = await getExam(req.params.id);
   if (!exam) return res.status(404).json({ error: "Exam not found" });
-  const { resolvePdfStatus } = await import("./storage.js");
-  const stem = examPdfStem(exam);
-  const filename = `${stem}.pdf`;
-  const localDir = path.join(process.cwd(), "data/exams");
-  const { exists, url } = await resolvePdfStatus(filename, localDir);
-  return res.json({ exists, url, filename: exists ? filename : null });
+  const kind = pdfKindSchema.parse(req.query.kind ?? "practice");
+  const status = await findPdf(exam, kind);
+  return res.json({ exists: status.exists, url: status.url, filename: status.exists ? status.filename : null, kind, pack: exam.pack, historical: status.historical });
 });
-
-app.post("/api/exams/:id/pdf", async (req, res) => {
-  if (!IS_DEV) return res.status(403).json({ error: "PDF generation is only available in dev mode." });
-
-  const examId = req.params.id;
-  const exam = await getExam(examId);
+app.get("/api/exams/:id/pdf-file", async (req, res) => {
+  if (!isExamPublished(req.params.id)) return res.status(404).json({ error: "Exam not found" });
+  const exam = await getExam(req.params.id);
   if (!exam) return res.status(404).json({ error: "Exam not found" });
-
-  try {
-    const { outPath, filename, gcsUrl } = await generateExamPdf(exam);
-    const url = gcsUrl ?? `/exams/${filename}`;
-    return res.json({ ok: true, url, filename, path: outPath });
-  } catch (err: unknown) {
-    const msg = err instanceof Error ? err.message : String(err);
-    console.error("[PDF] Generation failed:", msg);
-    return res.status(500).json({ error: msg });
-  }
+  const status = await findPdf(exam, pdfKindSchema.parse(req.query.kind ?? "practice"));
+  if (!status.exists) return res.status(404).json({ error: "PDF not found" });
+  if (status.url?.startsWith("https://")) return res.redirect(status.url);
+  return res.download(status.outPath, status.filename);
 });
-
+app.post("/api/exams/:id/pdf", requireDevMode, async (req, res) => {
+  const exam = await getExam(identifierSchema.parse(req.params.id));
+  if (!exam) return res.status(404).json({ error: "Exam not found" });
+  const kind = pdfKindSchema.parse(req.query.kind ?? "practice");
+  const result = await generateExamPdf(exam, kind);
+  return res.json({ ok: true, kind, pack: exam.pack, url: result.gcsUrl ?? result.url, filename: result.filename, path: result.outPath });
+});
 
 // The client connects once; the server streams batch progress and sends the
 // finished exam on completion.  The generation terminal is never exposed to
 // the user — they only see a progress overlay with human-readable status.
-app.get("/api/exams/generate", requireDevMode, async (req, res) => {
-  const questionCount = Math.max(1, Math.min(200, Number(req.query.questionCount || 30)));
+app.get("/api/exams/generate", requireDevMode, requireProviderGeneration, async (req, res) => {
+  const parsed = blueprintRequestSchema.safeParse({ questionCount: Number(req.query.questionCount), pack: reqPack(req.query) });
+  if (!parsed.success) return res.status(400).json({ error: parsed.error.flatten() });
+  const plan = createPlan(parsed.data.questionCount, parsed.data.pack);
+  if (!resolvePack(plan.pack).providerGeneration) return res.status(400).json({ error: "Use offline import for this pack" });
+  const questionCount = parsed.data.questionCount;
 
   res.setHeader("Content-Type", "text/event-stream");
   res.setHeader("Cache-Control", "no-cache");
@@ -276,7 +319,6 @@ app.get("/api/exams/generate", requireDevMode, async (req, res) => {
   console.log(`[SSE] Generation started — questionCount=${questionCount}`);
 
   try {
-    const plan = createPlan(questionCount);
     console.log(`[SSE] Plan created — ${plan.batches.length} batches, ${plan.totalQuestions} questions`);
     send({ type: "plan", totalBatches: plan.batches.length, totalQuestions: plan.totalQuestions });
 
@@ -321,6 +363,7 @@ app.get("/api/exams/generate", requireDevMode, async (req, res) => {
       send({ type: "batch_done", index: i, accepted: accepted.length, running: allQuestions.length });
     }
 
+    if (closed) return;
     const exam = assembleExam(
       plan,
       allQuestions as import("./types.js").PracticeQuestion[],
@@ -383,6 +426,8 @@ app.get("/api/exports/attempt/:attemptId", async (req, res) => {
     generatedAt: new Date().toISOString(),
     attemptId: attempt.id,
     examId: exam.id,
+    pack: exam.pack,
+    examSha256: contentHash(exam),
     score: attempt.score,
     flagged: attempt.flagged,
     confidence: attempt.confidence,
@@ -395,8 +440,18 @@ app.get("/api/exports/attempt/:attemptId", async (req, res) => {
   return res.send(JSON.stringify(payload, null, 2));
 });
 
+app.use((error: unknown, _req: express.Request, res: express.Response, _next: express.NextFunction) => {
+  if (error instanceof ZodError) {
+    const fields = [...new Set(error.issues.map(issue => issue.path.join(".") || "package"))];
+    return res.status(400).json({ error: `Invalid fields: ${fields.slice(0, 8).join(", ")}${fields.length > 8 ? ", …" : ""}. Check the package and retry.` });
+  }
+  const message = error instanceof Error ? error.message : "Request failed";
+  const status = message.includes("write is in progress") || message.includes("already exists") ? 409 : 400;
+  return res.status(status).json({ error: message });
+});
+
 const port = Number(process.env.PORT || 3000);
-app.listen(port, () => {
-  console.log(`GH-600 prep app running on http://localhost:${port}`);
+app.listen(port, host, () => {
+  console.log(`Certification Exam Lab running on http://${host}:${port}`);
   console.log(`[CONFIG] model=${process.env.OPENAI_MODEL ?? "gpt-5.5"} hasApiKey=${Boolean(process.env.OPENAI_API_KEY)} effort=${process.env.OPENAI_REASONING_EFFORT ?? "medium"}`);
 });

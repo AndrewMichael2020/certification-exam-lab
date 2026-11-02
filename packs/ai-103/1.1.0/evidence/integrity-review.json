@@ -1,0 +1,27 @@
+{
+  "checkedAt": "2026-10-08T04:44:10.404794+00:00",
+  "scopeBullets": 64,
+  "exactLiveVersusFoundationOutlineMatch": true,
+  "uniqueLocalIds": true,
+  "allObjectivesHaveNotesAndClaims": true,
+  "allClaimLocatorsResolve": true,
+  "sourceHashesRecorded": true,
+  "ready": 56,
+  "partial": 8,
+  "limits": [
+    "Evidence-integrity review only; not application/Azure testing.",
+    "Main review/integration pending.",
+    "No questions, manual audit, or activation."
+  ],
+  "primarySources": 50,
+  "claims": 79,
+  "notes": 64,
+  "authoringPackets": 14,
+  "codeFragments": 9,
+  "packetLocatorsMatchLedger": true,
+  "codeFencesBalanced": true,
+  "codeFragmentSourceRangesMatch": true,
+  "allExplicitFactCitationsResolve": true,
+  "mainReview": "Primary notes/summaries/claim nuances reviewed by main during drafting; final integration/acceptance remains main-owned.",
+  "studyResources": 17
+}

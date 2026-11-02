@@ -1,0 +1,794 @@
+{
+  "canonicalDraftHash": "06b6490c1b4476a934d6301f1a53263b0e941b691ac9febf2e4522411b324c4a",
+  "questions": [
+    {
+      "domainId": "A",
+      "stem": "An indexer reports Success, but several known source documents are absent from Search. Where should the investigation start?",
+      "options": [
+        {
+          "id": "A",
+          "text": "The successful run label and aggregate index document count."
+        },
+        {
+          "id": "B",
+          "text": "The semantic ranker configuration used by the question-answering application."
+        },
+        {
+          "id": "C",
+          "text": "The run's document-level errors and warnings."
+        },
+        {
+          "id": "D",
+          "text": "The service's query-latency dashboard for searches made after the run."
+        }
+      ],
+      "correctAnswer": "C",
+      "difficulty": "medium",
+      "type": "single_choice",
+      "explanation": {
+        "whyCorrect": "Review detailed indexer execution results. A run-level Success status does not establish successful processing of every document.",
+        "whyDistractorsWrong": {
+          "D": "Query metrics do not identify failed ingestion items.",
+          "A": "A successful run can still include document-level errors.",
+          "B": "Reranking does not explain documents that failed ingestion."
+        }
+      },
+      "objectiveTags": [
+        "AI103-A3.03"
+      ],
+      "id": "ai103-improvement-r2-set-a-100-q026",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Plan and manage an Azure AI solution",
+      "sourceRefs": [
+        {
+          "sourceId": "S027",
+          "title": "Monitor Azure AI Search",
+          "url": "https://learn.microsoft.com/azure/search/monitor-azure-cognitive-search",
+          "snapshotSha256": "fd18e205e7cd88e39eab53a5690757f65c8d457366491f8954875d2bc4f54ca0",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S044",
+          "title": "Monitor indexer status and results in Azure AI Search",
+          "url": "https://learn.microsoft.com/azure/search/search-monitor-indexers",
+          "snapshotSha256": "7b9808eefb69e1d573b537e17a3fff7ab159cf6e259f3b7a254a2ecd1c1a8dcc",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-5",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "B",
+      "objectiveTags": [
+        "AI103-B1.06"
+      ],
+      "stem": "Complete the current Python client calls for an existing agent named helpdesk and its project OpenAI client.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Inspect all slot choices."
+        },
+        {
+          "id": "B",
+          "text": "Complete the configured fields."
+        }
+      ],
+      "correctAnswer": {
+        "pairs": {
+          "operation": "get",
+          "client": "get_openai_client"
+        }
+      },
+      "type": "dropdown_completion",
+      "difficulty": "medium",
+      "explanation": {
+        "whyCorrect": "The current operations reference exposes get(agent_name). The retained 2.8.0 project library provides get_openai_client for Responses and conversations.",
+        "whyDistractorsWrong": {
+          "operation": "Retrieve the existing named definition; do not mix classic retrieval or create a new version.",
+          "client": "Obtain the documented OpenAI client for Responses operations."
+        }
+      },
+      "statementTemplate": "agent = project.agents.{{operation}}(agent_name=\"helpdesk\")\nclient = project.{{client}}()",
+      "slots": [
+        {
+          "id": "operation",
+          "choices": [
+            "get",
+            "get_agent",
+            "create_version"
+          ]
+        },
+        {
+          "id": "client",
+          "choices": [
+            "get_openai_client",
+            "get_search_client",
+            "get_agent_client"
+          ]
+        }
+      ],
+      "id": "ai103-improvement-r2-set-a-100-q027",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Implement generative AI and agentic solutions",
+      "sourceRefs": [
+        {
+          "sourceId": "S002",
+          "title": "Azure AI Projects client library for Python - version 2.8.0",
+          "url": "https://learn.microsoft.com/python/api/overview/azure/ai-projects-readme?view=azure-python",
+          "snapshotSha256": "2ce3139fd9fb77eb3f63d4a797ecc24deab957376faac5fe5a28d80e8080b266",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S056",
+          "title": "AI Projects AgentsOperations Python reference",
+          "url": "https://learn.microsoft.com/en-us/python/api/azure-ai-projects/azure.ai.projects.operations.agentsoperations?view=azure-python",
+          "snapshotSha256": "888658bb603bbc211a4096be874b78aefcabf8c8e5a4b3c0a14e93ad80c2a6a7",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-6",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "B",
+      "objectiveTags": [
+        "AI103-B2.02"
+      ],
+      "stem": "Complete a backend memory-search tool definition and response header for per-user preferences. user_key is derived from the authenticated session.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Inspect all slot choices."
+        },
+        {
+          "id": "B",
+          "text": "Complete the configured fields."
+        }
+      ],
+      "correctAnswer": {
+        "pairs": {
+          "scope": "{{$userId}}",
+          "header": "x-memory-user-id"
+        }
+      },
+      "type": "dropdown_completion",
+      "difficulty": "medium",
+      "explanation": {
+        "whyCorrect": "The memory tool resolves the placeholder from the memory-user header, falling back to caller TID/OID without it. A backend must supply its authenticated end-user key.",
+        "whyDistractorsWrong": {
+          "scope": "Use the documented per-user placeholder; static scope pools users and a title is not a partition key.",
+          "header": "The memory-user header carries end-user identity; a trace ID does not select a user and Authorization identifies the calling service."
+        }
+      },
+      "statementTemplate": "from azure.ai.projects.models import MemorySearchPreviewTool, PromptAgentDefinition\ntool = MemorySearchPreviewTool(memory_store_name=\"preferences\", scope=\"{{scope}}\")\nagent = project.agents.create_version(agent_name=\"support\",\n    definition=PromptAgentDefinition(model=deployment, tools=[tool]))\nresponse = client.responses.create(input=message,\n    extra_body={\"agent_reference\": {\"name\": agent.name, \"type\": \"agent_reference\"}},\n    extra_headers={\"{{header}}\": user_key})",
+      "slots": [
+        {
+          "id": "scope",
+          "choices": [
+            "{{$userId}}",
+            "backend-shared",
+            "conversation-title"
+          ]
+        },
+        {
+          "id": "header",
+          "choices": [
+            "x-memory-user-id",
+            "x-request-id",
+            "Authorization"
+          ]
+        }
+      ],
+      "id": "ai103-improvement-r2-set-a-100-q028",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Implement generative AI and agentic solutions",
+      "sourceRefs": [
+        {
+          "sourceId": "S053",
+          "title": "Create and use memory in Foundry Agent Service (preview)",
+          "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/how-to/memory-usage",
+          "snapshotSha256": "d118113db20dbe589f686a9150063736c78ce1b6e7b37c649bf28262918d31b6",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-6",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "B",
+      "objectiveTags": [
+        "AI103-B2.01"
+      ],
+      "stem": "A Responses turn must consult at least one attached tool. Complete the request-level control.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Inspect all slot choices."
+        },
+        {
+          "id": "B",
+          "text": "Complete the configured fields."
+        }
+      ],
+      "correctAnswer": {
+        "pairs": {
+          "mode": "required"
+        }
+      },
+      "type": "dropdown_completion",
+      "difficulty": "medium",
+      "explanation": {
+        "whyCorrect": "required demands one or more calls. It does not by itself select one exact function, execute host code or grant permission.",
+        "whyDistractorsWrong": {
+          "mode": "auto leaves tool use to the model; none prevents it. The host remains responsible for validation and execution."
+        }
+      },
+      "statementTemplate": "response = client.responses.create(model=deployment, input=message, tools=tools, tool_choice=\"{{mode}}\")",
+      "slots": [
+        {
+          "id": "mode",
+          "choices": [
+            "auto",
+            "required",
+            "none"
+          ]
+        }
+      ],
+      "id": "ai103-improvement-r2-set-a-100-q029",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Implement generative AI and agentic solutions",
+      "sourceRefs": [
+        {
+          "sourceId": "S054",
+          "title": "Tool best practices for Microsoft Foundry Agent Service",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/concepts/tool-best-practice",
+          "snapshotSha256": "fbf440754eab789009c34a8bf7636fc60c1d0bd64402cd650b1b903230ffd0f9",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-6",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "B",
+      "objectiveTags": [
+        "AI103-B3.01"
+      ],
+      "stem": "Complete a supported strict Responses schema: note must be present and can be null; unknown properties are rejected.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Complete the configured fields."
+        },
+        {
+          "id": "B",
+          "text": "Inspect all slot choices."
+        }
+      ],
+      "correctAnswer": {
+        "pairs": {
+          "required": "[\"note\"]",
+          "extra": "False",
+          "location": "format"
+        }
+      },
+      "type": "dropdown_completion",
+      "difficulty": "medium",
+      "explanation": {
+        "whyCorrect": "Nullable value types do not make a property optional in the supported strict subset. Responses uses text.format, unlike the Chat Completions field.",
+        "whyDistractorsWrong": {
+          "required": "Require the key while retaining a nullable value type.",
+          "extra": "additionalProperties false disallows unknown fields.",
+          "location": "Use the documented Responses request shape."
+        }
+      },
+      "statementTemplate": "schema = {\"type\": \"object\", \"properties\": {\"note\": {\"type\": [\"string\", \"null\"]}},\n          \"required\": {{required}}, \"additionalProperties\": {{extra}}}\n# response text.{{location}} contains the json_schema format",
+      "slots": [
+        {
+          "id": "required",
+          "choices": [
+            "[\"note\"]",
+            "[]",
+            "[\"string\", \"null\"]"
+          ]
+        },
+        {
+          "id": "extra",
+          "choices": [
+            "False",
+            "True"
+          ]
+        },
+        {
+          "id": "location",
+          "choices": [
+            "format",
+            "response_format",
+            "metadata"
+          ]
+        }
+      ],
+      "id": "ai103-improvement-r2-set-a-100-q030",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Implement generative AI and agentic solutions",
+      "sourceRefs": [
+        {
+          "sourceId": "S037",
+          "title": "Structured outputs",
+          "url": "https://learn.microsoft.com/azure/foundry/openai/how-to/structured-outputs",
+          "snapshotSha256": "0337c89ce3e5a9ba28d1c2fc18f1644c50b13568eb19edc43420d16b401cacfc",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-6",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "B",
+      "stem": "A supported reasoning model returns a reasoning summary through Responses. A product manager wants to label it 'the model's complete internal reasoning'. Which description is accurate?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A policy-adherence score produced by an agent evaluator."
+        },
+        {
+          "id": "B",
+          "text": "An API-provided reasoning summary."
+        },
+        {
+          "id": "C",
+          "text": "A raw transcript containing each internal reasoning step."
+        },
+        {
+          "id": "D",
+          "text": "A deterministic execution log for the model's hidden operations."
+        }
+      ],
+      "correctAnswer": "B",
+      "difficulty": "easy",
+      "type": "single_choice",
+      "explanation": {
+        "whyCorrect": "Reasoning summaries are a supported response feature for applicable models. They should not be represented as the full internal reasoning process.",
+        "whyDistractorsWrong": {
+          "C": "The summary does not expose all internal reasoning.",
+          "D": "The response is not a complete operational execution log.",
+          "A": "The returned reasoning summary is not an evaluator result."
+        }
+      },
+      "objectiveTags": [
+        "AI103-B3.01"
+      ],
+      "id": "ai103-improvement-r2-set-a-100-q031",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Implement generative AI and agentic solutions",
+      "sourceRefs": [
+        {
+          "sourceId": "S038",
+          "title": "Azure OpenAI reasoning models",
+          "url": "https://learn.microsoft.com/azure/foundry/openai/how-to/reasoning",
+          "snapshotSha256": "e70ad3d65055c901703ee0f2faa850aa6c69cd5ee2a4d7e57d3e0a5e0b3cbf34",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-6",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "B",
+      "objectiveTags": [
+        "AI103-B3.01"
+      ],
+      "stem": "A support assistant should stay within product support and ask for clarification when evidence is insufficient. Which prompt control expresses both?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A system-defined domain and missing-evidence fallback."
+        },
+        {
+          "id": "B",
+          "text": "More tone examples without defining scope."
+        },
+        {
+          "id": "C",
+          "text": "A low temperature with no role instructions."
+        },
+        {
+          "id": "D",
+          "text": "A larger retrieval top-k value alone."
+        }
+      ],
+      "correctAnswer": "A",
+      "type": "single_choice",
+      "difficulty": "easy",
+      "explanation": {
+        "whyCorrect": "System messages express role, scope and fallback. Test behavior and apply other mitigations because instructions do not guarantee compliance.",
+        "whyDistractorsWrong": {
+          "C": "Temperature affects sampling rather than defining the task boundary.",
+          "D": "Retrieval quantity does not state domain behavior.",
+          "B": "Examples of tone do not replace an explicit scope/fallback contract."
+        }
+      },
+      "id": "ai103-improvement-r2-set-a-100-q032",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Implement generative AI and agentic solutions",
+      "sourceRefs": [
+        {
+          "sourceId": "S057",
+          "title": "System message design",
+          "url": "https://learn.microsoft.com/en-us/azure/cognitive-services/openai/concepts/advanced-prompt-engineering?pivots=programming-language-chat-completions",
+          "snapshotSha256": "8c3d221b7d097fd064d9875f54a48e446f7e44efe81622613ce58cfcb84e87e4",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-6",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "B",
+      "objectiveTags": [
+        "AI103-B2.04"
+      ],
+      "stem": "A deterministic workflow sends a request to a retrieval specialist and then a policy specialist. What must its orchestration represent?",
+      "options": [
+        {
+          "id": "A",
+          "text": "One larger model context replacing all flow rules."
+        },
+        {
+          "id": "B",
+          "text": "Separate trace IDs with no shared request context."
+        },
+        {
+          "id": "C",
+          "text": "Explicit specialist handoff and completion conditions."
+        },
+        {
+          "id": "D",
+          "text": "Tool descriptions treated as executable routing code."
+        }
+      ],
+      "correctAnswer": "C",
+      "type": "single_choice",
+      "difficulty": "easy",
+      "explanation": {
+        "whyCorrect": "Multi-agent orchestration needs explicit workflow control and termination conditions. Distinct specialist roles do not themselves supply a valid process.",
+        "whyDistractorsWrong": {
+          "A": "Context size does not define routing or completion.",
+          "D": "Descriptions are not the orchestrator’s executable flow.",
+          "B": "Uncorrelated telemetry makes diagnosis harder and does not define completion."
+        }
+      },
+      "id": "ai103-improvement-r2-set-a-100-q033",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Implement generative AI and agentic solutions",
+      "sourceRefs": [
+        {
+          "sourceId": "S008",
+          "title": "Build a workflow in Microsoft Foundry (Preview)",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/concepts/workflow",
+          "snapshotSha256": "91311aec35bad6e1e44149491430baa72e5eeec37c9f869ba7fbf9356e5497e4",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-6",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "B",
+      "stem": "An agent calls the translation tool for a request that requires stock availability. The translation call is valid and succeeds. Which evaluation pinpoints the mistake?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Tool Call Success."
+        },
+        {
+          "id": "B",
+          "text": "Tool Output Utilization."
+        },
+        {
+          "id": "C",
+          "text": "Tool Selection."
+        },
+        {
+          "id": "D",
+          "text": "Tool Input Accuracy."
+        }
+      ],
+      "correctAnswer": "C",
+      "difficulty": "easy",
+      "type": "single_choice",
+      "explanation": {
+        "whyCorrect": "Tool Selection measures whether the selected tool is appropriate. A valid and successful invocation can still be the wrong tool for the task.",
+        "whyDistractorsWrong": {
+          "A": "Execution success is not the same as choosing the right tool.",
+          "D": "The scenario says the call was valid.",
+          "B": "Output use is downstream of choosing the wrong capability."
+        }
+      },
+      "objectiveTags": [
+        "AI103-B2.06"
+      ],
+      "id": "ai103-improvement-r2-set-a-100-q034",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Implement generative AI and agentic solutions",
+      "sourceRefs": [
+        {
+          "sourceId": "S014",
+          "title": "Agent evaluators",
+          "url": "https://learn.microsoft.com/azure/foundry/concepts/evaluation-evaluators/agent-evaluators",
+          "snapshotSha256": "0ce17b86785e87efb44074de9d3fdee3ae8290dedcb04a18a68558081be7103f",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-6",
+        "validationStatus": "draft"
+      }
+    }
+  ],
+  "caseStudies": [],
+  "evidence": [
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q026",
+      "testedDecision": "An indexer reports Success, but several known source documents are absent from Search. Where should the investigation start?",
+      "oldItemIds": [
+        "ai103-set-a-q010"
+      ],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-A3.03",
+      "itemRevisionHash": "3f75541947992c41bce13b1011bb8f10c692db46e28ff96f757b39ffb33def08",
+      "sources": [
+        {
+          "sourceId": "S027",
+          "title": "Monitor Azure AI Search",
+          "url": "https://learn.microsoft.com/azure/search/monitor-azure-cognitive-search",
+          "snapshotSha256": "fd18e205e7cd88e39eab53a5690757f65c8d457366491f8954875d2bc4f54ca0",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S044",
+          "title": "Monitor indexer status and results in Azure AI Search",
+          "url": "https://learn.microsoft.com/azure/search/search-monitor-indexers",
+          "snapshotSha256": "7b9808eefb69e1d573b537e17a3fff7ab159cf6e259f3b7a254a2ecd1c1a8dcc",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q027",
+      "testedDecision": "Complete the current Python client calls for an existing agent named helpdesk and its project OpenAI client.",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-B1.06",
+      "itemRevisionHash": "6414d7f37590957d1563299dd49776a959d1dca08b186da9872d09f6c9df41f5",
+      "sources": [
+        {
+          "sourceId": "S002",
+          "title": "Azure AI Projects client library for Python - version 2.8.0",
+          "url": "https://learn.microsoft.com/python/api/overview/azure/ai-projects-readme?view=azure-python",
+          "snapshotSha256": "2ce3139fd9fb77eb3f63d4a797ecc24deab957376faac5fe5a28d80e8080b266",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S056",
+          "title": "AI Projects AgentsOperations Python reference",
+          "url": "https://learn.microsoft.com/en-us/python/api/azure-ai-projects/azure.ai.projects.operations.agentsoperations?view=azure-python",
+          "snapshotSha256": "888658bb603bbc211a4096be874b78aefcabf8c8e5a4b3c0a14e93ad80c2a6a7",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q028",
+      "testedDecision": "Complete a backend memory-search tool definition and response header for per-user preferences. user_key is derived from the authenticated session.",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-B2.02",
+      "itemRevisionHash": "7948dab189232eeec9f1fa3135eb663bfa98efb0b4ba0fc058d883e556c1570e",
+      "sources": [
+        {
+          "sourceId": "S053",
+          "title": "Create and use memory in Foundry Agent Service (preview)",
+          "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/how-to/memory-usage",
+          "snapshotSha256": "d118113db20dbe589f686a9150063736c78ce1b6e7b37c649bf28262918d31b6",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q029",
+      "testedDecision": "A Responses turn must consult at least one attached tool. Complete the request-level control.",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-B2.01",
+      "itemRevisionHash": "ac2b28d27360812b6dd96140091de0ae27181cf4d6db1adad63daa3c728bd776",
+      "sources": [
+        {
+          "sourceId": "S054",
+          "title": "Tool best practices for Microsoft Foundry Agent Service",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/concepts/tool-best-practice",
+          "snapshotSha256": "fbf440754eab789009c34a8bf7636fc60c1d0bd64402cd650b1b903230ffd0f9",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q030",
+      "testedDecision": "Complete a supported strict Responses schema: note must be present and can be null; unknown properties are rejected.",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-B3.01",
+      "itemRevisionHash": "f82cc7af5f1486f70f85e22aa0b50c87c129321899759e91aa3850372ca48557",
+      "sources": [
+        {
+          "sourceId": "S037",
+          "title": "Structured outputs",
+          "url": "https://learn.microsoft.com/azure/foundry/openai/how-to/structured-outputs",
+          "snapshotSha256": "0337c89ce3e5a9ba28d1c2fc18f1644c50b13568eb19edc43420d16b401cacfc",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q031",
+      "testedDecision": "A supported reasoning model returns a reasoning summary through Responses. A product manager wants to label it 'the model's complete internal reasoning'. Which description is accurate?",
+      "oldItemIds": [
+        "ai103-set-a-q032"
+      ],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-B3.01",
+      "itemRevisionHash": "fb5c9fc1b7dcfe4a28d6e023c7eb0b76b4605b5d45606f1677d0fbf3dee3fc99",
+      "sources": [
+        {
+          "sourceId": "S038",
+          "title": "Azure OpenAI reasoning models",
+          "url": "https://learn.microsoft.com/azure/foundry/openai/how-to/reasoning",
+          "snapshotSha256": "e70ad3d65055c901703ee0f2faa850aa6c69cd5ee2a4d7e57d3e0a5e0b3cbf34",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q032",
+      "testedDecision": "A support assistant should stay within product support and ask for clarification when evidence is insufficient. Which prompt control expresses both?",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-B3.01",
+      "itemRevisionHash": "d782fee40b337677ee2d383fc2f9e5c103aa674d3b22bb5e2b74a8f1ee2c980f",
+      "sources": [
+        {
+          "sourceId": "S057",
+          "title": "System message design",
+          "url": "https://learn.microsoft.com/en-us/azure/cognitive-services/openai/concepts/advanced-prompt-engineering?pivots=programming-language-chat-completions",
+          "snapshotSha256": "8c3d221b7d097fd064d9875f54a48e446f7e44efe81622613ce58cfcb84e87e4",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q033",
+      "testedDecision": "A deterministic workflow sends a request to a retrieval specialist and then a policy specialist. What must its orchestration represent?",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-B2.04",
+      "itemRevisionHash": "d8c3cab219aa256a7eecb1b6838497195ccfd729cec4d360987bd3eba8391864",
+      "sources": [
+        {
+          "sourceId": "S008",
+          "title": "Build a workflow in Microsoft Foundry (Preview)",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/concepts/workflow",
+          "snapshotSha256": "91311aec35bad6e1e44149491430baa72e5eeec37c9f869ba7fbf9356e5497e4",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q034",
+      "testedDecision": "An agent calls the translation tool for a request that requires stock availability. The translation call is valid and succeeds. Which evaluation pinpoints the mistake?",
+      "oldItemIds": [
+        "ai103-set-a-q037"
+      ],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-B2.06",
+      "itemRevisionHash": "63b4f584369a1ad5988142b072ec250374ad0fd41f6774a8e1daef5c0667f906",
+      "sources": [
+        {
+          "sourceId": "S014",
+          "title": "Agent evaluators",
+          "url": "https://learn.microsoft.com/azure/foundry/concepts/evaluation-evaluators/agent-evaluators",
+          "snapshotSha256": "0ce17b86785e87efb44074de9d3fdee3ae8290dedcb04a18a68558081be7103f",
+          "docType": "microsoft_learn"
+        }
+      ]
+    }
+  ]
+}

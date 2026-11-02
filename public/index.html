@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Agentic AI Developer Practice</title>
+    <title>Certification Exam Lab</title>
     <link rel="stylesheet" href="/styles.css" />
   </head>
   <body>
@@ -13,34 +13,40 @@
       <div class="setup-card">
         <div class="setup-header">
           <div class="gh-logo">⚡</div>
-          <h1>GitHub Certified: Agentic AI Developer</h1>
-          <p class="subtitle">GH-600 Beta</p>
+          <h1>Certification Exam Lab</h1>
+          <p class="subtitle" id="packSubtitle">Choose a practice pack</p>
         </div>
 
-        <!-- Exam list — shown when pre-generated exams exist -->
+        <div class="form-section">
+          <label class="form-label" for="packSelect">Practice pack</label>
+          <select id="packSelect" class="custom-input" disabled></select>
+        </div>
+        <p id="setupStatus" role="status" aria-live="polite"></p>
+        <section id="planningSection" class="hidden">
+          <h2 class="section-title">Practice plan</h2>
+          <div class="form-section">
+            <label class="form-label" for="questionCount">Preview question count</label>
+            <input id="questionCount" type="number" min="1" max="200" value="30" class="custom-input" />
+          </div>
+          <div class="form-section">
+            <label class="form-label" for="minutesPerQuestion">Practice minutes per question</label>
+            <input id="minutesPerQuestion" type="number" min="0.1" max="10" step="0.1" value="1.2" class="custom-input" />
+            <p class="practice-note">Used when you open a timed exam. Practice mode is untimed.</p>
+          </div>
+          <div id="domainDistPreview" class="domain-dist-preview" aria-live="polite"></div>
+          <p class="practice-note">This is our practice allocation and timing, not an official exam format, duration or scaled score.</p>
+        </section>
         <section id="examListSection" class="hidden">
           <h2 class="section-title">Available Exams</h2>
           <ul id="examList" class="exam-list"></ul>
         </section>
-
-        <!-- No exams + no API key -->
-        <p id="noExamsMsg" class="no-exams-msg hidden">
-          No practice exams have been generated yet. A developer must run
-          <code>npm run generate</code> to create exams.
-        </p>
-
-        <!-- Generation form — shown only in dev mode (NODE_ENV !== production) -->
-        <section id="generateSection" class="hidden">
-          <h2 class="section-title">Generate New Exam</h2>
-
-          <div class="form-section">
-            <label class="form-label" for="questionCount">Number of questions</label>
-            <input id="questionCount" type="number" min="1" max="200" value="30" class="custom-input" />
-          </div>
-
-          <div id="domainDistPreview" class="domain-dist-preview"></div>
-
-          <button id="startBtn" class="btn btn-primary btn-full">Generate Exam</button>
+        <p id="noExamsMsg" class="no-exams-msg hidden">No practice exams are available in this pack yet.</p>
+        <section id="importSection" class="hidden">
+          <h2 class="section-title">Import reviewed practice material</h2>
+          <label class="form-label" for="importFile">Local exam package (JSON)</label>
+          <input id="importFile" type="file" accept=".json,application/json" />
+          <button id="importBtn" class="btn btn-secondary">Import package</button>
+          <p id="importStatus" role="status" aria-live="polite"></p>
         </section>
       </div>
     </div>
@@ -61,6 +67,7 @@
 
     <!-- ── EXAM VIEW ───────────────────────────────────────────────── -->
     <div id="view-exam" class="view hidden">
+      <div id="examIdentity" class="study-identity"></div>
       <header class="exam-header">
         <div class="exam-meta">
           <span class="badge badge-domain" id="domainBadge">Domain A</span>
@@ -87,6 +94,7 @@
     <!-- ── RESULTS VIEW ────────────────────────────────────────────── -->
     <div id="view-results" class="view hidden">
       <div class="results-card">
+        <p id="resultsIdentity" class="study-identity"></p>
         <div class="score-ring-wrap">
           <svg class="score-ring" viewBox="0 0 120 120">
             <circle class="ring-bg" cx="60" cy="60" r="50"/>
@@ -95,7 +103,7 @@
           </svg>
           <div class="score-text">
             <span id="scorePercent">0%</span>
-            <span class="score-label">Score</span>
+            <span class="score-label">Practice score</span>
           </div>
         </div>
 
@@ -116,6 +124,7 @@
       <div class="review-header">
         <button class="btn btn-ghost" id="backToResultsBtn">← Results</button>
         <h2>Answer Review</h2>
+        <p id="reviewIdentity" class="study-identity"></p>
         <div class="review-filters">
           <button class="filter-pill active" data-filter="all">All</button>
           <button class="filter-pill" data-filter="wrong">Wrong ❌</button>
@@ -131,11 +140,12 @@
         <div class="analytics-header">
           <button class="btn btn-ghost" id="backToResultsBtn2">← Results</button>
           <h2>Study Tools</h2>
+          <p id="analyticsIdentity" class="study-identity"></p>
         </div>
 
         <div class="analytics-grid">
           <div class="stat-card">
-            <div class="stat-label">Overall score</div>
+            <div class="stat-label">Practice score</div>
             <div class="stat-value" id="statScore">—</div>
           </div>
           <div class="stat-card">

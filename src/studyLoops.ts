@@ -1,6 +1,14 @@
 import { Attempt, PracticeQuestion } from "./types.js";
+import { samePack } from "./packs.js";
+
+function assertDrillPack(questions: PracticeQuestion[], attempt: Attempt): void {
+  if (attempt.pack && questions.some(q => !samePack(q.pack, attempt.pack))) throw new Error("Drill questions do not belong to the attempt pack");
+  if (!attempt.pack && questions.some(q => q.pack)) throw new Error("Explicit question packs require an identified attempt pack");
+}
+
 
 export function buildWeakDomainDrill(questions: PracticeQuestion[], attempt: Attempt, limit = 10): PracticeQuestion[] {
+  assertDrillPack(questions, attempt);
   const incorrect = new Set(attempt.score.incorrectQuestionIds);
   const byDomain = Object.entries(attempt.score.byDomain).sort((a, b) => a[1] - b[1]);
   const weakestDomain = byDomain[0]?.[0];
@@ -14,11 +22,13 @@ export function buildWeakDomainDrill(questions: PracticeQuestion[], attempt: Att
 }
 
 export function buildMistakeReplay(questions: PracticeQuestion[], attempt: Attempt, limit = 20): PracticeQuestion[] {
+  assertDrillPack(questions, attempt);
   const incorrect = new Set(attempt.score.incorrectQuestionIds);
   return questions.filter((q) => incorrect.has(q.id)).slice(0, Math.max(1, limit));
 }
 
 export function buildDomainSubskillDrill(questions: PracticeQuestion[], attempt: Attempt, limit = 12): PracticeQuestion[] {
+  assertDrillPack(questions, attempt);
   const incorrect = new Set(attempt.score.incorrectQuestionIds);
   const weakestDomain = Object.entries(attempt.score.byDomain).sort((a, b) => a[1] - b[1])[0]?.[0];
   const scoped = weakestDomain ? questions.filter((q) => q.domainId === weakestDomain) : questions;

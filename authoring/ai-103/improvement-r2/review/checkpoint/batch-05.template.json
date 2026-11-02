@@ -1,0 +1,44 @@
+{
+  "templateOnly": true,
+  "packetId": "ai103-improvement-r2-checkpoint-20-batch-5",
+  "packageId": "ai103-improvement-r2-checkpoint-20",
+  "revision": "2",
+  "pack": {
+    "id": "ai-103",
+    "version": "1.2.0"
+  },
+  "draftPackageSha256": "d2d885166ed8a1c2675e6d43bb3fd40f8d70e3d1b48e4a6618b345b2edb424f0",
+  "reviewer": {
+    "actualModelLabel": null,
+    "visibleModeIfAny": null,
+    "reviewedAtUtc": null
+  },
+  "instructions": "Solve blind first. Assess alternatives, evidence, API/version, objective fit, difficulty and cues. Null verdicts are not reviews.",
+  "items": [
+    {
+      "itemId": "ai103-improvement-r2-checkpoint-20-q020",
+      "itemRevision": "2",
+      "itemSha256": "4b1d1623856ab11cdf3c741f943b57e12dd877ad0b999c56e9fa3ef85eda9ab4",
+      "sourceIds": [
+        "S043",
+        "S028"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S043",
+          "lines": null,
+          "supports": null
+        },
+        {
+          "sourceId": "S028",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,2159 @@
+{
+  "templateOnly": true,
+  "packetId": "ai103-improvement-r2-set-a-100-manual-audit",
+  "packageId": "ai103-improvement-r2-set-a-100",
+  "revision": "2",
+  "pack": {
+    "id": "ai-103",
+    "version": "1.2.0"
+  },
+  "draftPackageSha256": "06b6490c1b4476a934d6301f1a53263b0e941b691ac9febf2e4522411b324c4a",
+  "reviewer": {
+    "actualModelLabel": null,
+    "visibleModeIfAny": null,
+    "reviewedAtUtc": null
+  },
+  "instructions": "Solve blind first. Assess alternatives, evidence, API/version, objective fit, difficulty and cues. Null verdicts are not reviews.",
+  "items": [
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q001",
+      "itemRevision": "2",
+      "itemSha256": "2a0fef3b06e3043ba60916634b3dd62a14da8c52d764e5e5835422c9bc8bd3dd",
+      "sourceIds": [
+        "S007"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S007",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q002",
+      "itemRevision": "2",
+      "itemSha256": "5c78e38def68f93ff38e7db757682d6241687bc2fbf0bd57fd2cce7fda4bd3b6",
+      "sourceIds": [
+        "S054",
+        "S007"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S054",
+          "lines": null,
+          "supports": null
+        },
+        {
+          "sourceId": "S007",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q003",
+      "itemRevision": "2",
+      "itemSha256": "94ebc6f9efaf8ca2ee8deafe2796ee0a4ddbec116362a682580dbdef071dc467",
+      "sourceIds": [
+        "S007",
+        "S054"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S007",
+          "lines": null,
+          "supports": null
+        },
+        {
+          "sourceId": "S054",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q004",
+      "itemRevision": "2",
+      "itemSha256": "2e2054a7e0b7830b5baca47d5282c49aeb0f0f7f6ec06d967d7721abe7898eea",
+      "sourceIds": [
+        "S007",
+        "S054"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S007",
+          "lines": null,
+          "supports": null
+        },
+        {
+          "sourceId": "S054",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q005",
+      "itemRevision": "2",
+      "itemSha256": "994bd3c019afb75b91064c69e2d24d5ec8f42d65d0b28676410e263e963a5d15",
+      "sourceIds": [
+        "S025"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S025",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q006",
+      "itemRevision": "2",
+      "itemSha256": "e65e10dd04ee8bd28756a2a6a2bdbbe1fef416a8cedea150c14cb50050772511",
+      "sourceIds": [
+        "S026",
+        "S058"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S026",
+          "lines": null,
+          "supports": null
+        },
+        {
+          "sourceId": "S058",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q007",
+      "itemRevision": "2",
+      "itemSha256": "81d3a24c33afae81101dfc9b56e4f163c71449244f7bf6ac9be02c8aeeb6d04e",
+      "sourceIds": [
+        "S039"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S039",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q008",
+      "itemRevision": "2",
+      "itemSha256": "7a3795bbb03ab1d4cd3f28cbc8e618d622773f88ffe2b1e8df57edae8dbc09a7",
+      "sourceIds": [
+        "S040",
+        "S054"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S040",
+          "lines": null,
+          "supports": null
+        },
+        {
+          "sourceId": "S054",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q009",
+      "itemRevision": "2",
+      "itemSha256": "c35d4b1506aa5dc42a3680f7f1282934e7c5b8a2350775ffdb1d07aecb21ee3f",
+      "sourceIds": [
+        "S005"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S005",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q010",
+      "itemRevision": "2",
+      "itemSha256": "1d6591803b4e4b10a17b651c08e411779974ce1b0677261b039ecd8c51ca0f94",
+      "sourceIds": [
+        "S051",
+        "S052"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S051",
+          "lines": null,
+          "supports": null
+        },
+        {
+          "sourceId": "S052",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q011",
+      "itemRevision": "2",
+      "itemSha256": "7db21261479f0d84d52dcc4102b1b00669f6d926a532f093ae6c31a304f8574a",
+      "sourceIds": [
+        "S011"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S011",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q012",
+      "itemRevision": "2",
+      "itemSha256": "385fb0fbea81b0439596a021fb3891f9625b4e84af047bbe806925dcfffe599f",
+      "sourceIds": [
+        "S012",
+        "S010"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S012",
+          "lines": null,
+          "supports": null
+        },
+        {
+          "sourceId": "S010",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q013",
+      "itemRevision": "2",
+      "itemSha256": "5dfe068f5f98a19f542d711a3b47ac3a438d65fbbe8c56d81a178dee4d1aec42",
+      "sourceIds": [
+        "S053"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S053",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q014",
+      "itemRevision": "2",
+      "itemSha256": "50ce73a5f25f4ab927500b9ac68fc8a025cabde06cc8b8118fe910931fb7dda6",
+      "sourceIds": [
+        "S053"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S053",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q015",
+      "itemRevision": "2",
+      "itemSha256": "8199fef410314a966a824d294e1110f15c92d9f5749c809fc5747356c435759f",
+      "sourceIds": [
+        "S037"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S037",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q016",
+      "itemRevision": "2",
+      "itemSha256": "668c679e809880f2102ef8b798a0b212e51059e0d242513a3f5b21f18b47a5bf",
+      "sourceIds": [
+        "S057"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S057",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q017",
+      "itemRevision": "2",
+      "itemSha256": "9fca0d8a7198783b0099f79c8421788bee25dcd04d7face7c3f7b431d3e1831e",
+      "sourceIds": [
+        "S005"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S005",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q018",
+      "itemRevision": "2",
+      "itemSha256": "fa68d4d8b956448648b6a11f003ac682d9c1a51378c378b262cc80e4cead32a2",
+      "sourceIds": [
+        "S005"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S005",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q019",
+      "itemRevision": "2",
+      "itemSha256": "2db0805857d105791720b987b330d937de87ceddfe12d2cadb9d00d3242931f4",
+      "sourceIds": [
+        "S010"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S010",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q020",
+      "itemRevision": "2",
+      "itemSha256": "4b2cd407efb9c0b42f84d07eac73f1bd7a3d0b241d241d33f1a98a5c06cf79b2",
+      "sourceIds": [
+        "S011"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S011",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q021",
+      "itemRevision": "2",
+      "itemSha256": "cc4a9030d9d7969cc48d7a75b6daee4826b295edd9ce8f2c85cad390732df4fe",
+      "sourceIds": [
+        "S004"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S004",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q022",
+      "itemRevision": "2",
+      "itemSha256": "09a1e9747474dbf74a1745e032512bc61608e5919eaa99a23209df43e5e1c1ab",
+      "sourceIds": [
+        "S009"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S009",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q023",
+      "itemRevision": "2",
+      "itemSha256": "daf2c16a7ee6f9ad30831f186824c579d4cf25699d9f47dc77fa26d4e2ce6031",
+      "sourceIds": [
+        "S012"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S012",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q024",
+      "itemRevision": "2",
+      "itemSha256": "f72beffbd9483c3e09c7131dbe2c26ac701763c48529755a04499b3e6c056fb5",
+      "sourceIds": [
+        "S013"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S013",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q025",
+      "itemRevision": "2",
+      "itemSha256": "9e983edc9466f2f968c6992840c8b80b2ef3b7d10b3adb46def6ce3435c31275",
+      "sourceIds": [
+        "S013"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S013",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q026",
+      "itemRevision": "2",
+      "itemSha256": "3f75541947992c41bce13b1011bb8f10c692db46e28ff96f757b39ffb33def08",
+      "sourceIds": [
+        "S027",
+        "S044"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S027",
+          "lines": null,
+          "supports": null
+        },
+        {
+          "sourceId": "S044",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q027",
+      "itemRevision": "2",
+      "itemSha256": "6414d7f37590957d1563299dd49776a959d1dca08b186da9872d09f6c9df41f5",
+      "sourceIds": [
+        "S002",
+        "S056"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S002",
+          "lines": null,
+          "supports": null
+        },
+        {
+          "sourceId": "S056",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q028",
+      "itemRevision": "2",
+      "itemSha256": "7948dab189232eeec9f1fa3135eb663bfa98efb0b4ba0fc058d883e556c1570e",
+      "sourceIds": [
+        "S053"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S053",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q029",
+      "itemRevision": "2",
+      "itemSha256": "ac2b28d27360812b6dd96140091de0ae27181cf4d6db1adad63daa3c728bd776",
+      "sourceIds": [
+        "S054"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S054",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q030",
+      "itemRevision": "2",
+      "itemSha256": "f82cc7af5f1486f70f85e22aa0b50c87c129321899759e91aa3850372ca48557",
+      "sourceIds": [
+        "S037"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S037",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q031",
+      "itemRevision": "2",
+      "itemSha256": "fb5c9fc1b7dcfe4a28d6e023c7eb0b76b4605b5d45606f1677d0fbf3dee3fc99",
+      "sourceIds": [
+        "S038"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S038",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q032",
+      "itemRevision": "2",
+      "itemSha256": "d782fee40b337677ee2d383fc2f9e5c103aa674d3b22bb5e2b74a8f1ee2c980f",
+      "sourceIds": [
+        "S057"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S057",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q033",
+      "itemRevision": "2",
+      "itemSha256": "d8c3cab219aa256a7eecb1b6838497195ccfd729cec4d360987bd3eba8391864",
+      "sourceIds": [
+        "S008"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S008",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q034",
+      "itemRevision": "2",
+      "itemSha256": "63b4f584369a1ad5988142b072ec250374ad0fd41f6774a8e1daef5c0667f906",
+      "sourceIds": [
+        "S014"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S014",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q035",
+      "itemRevision": "2",
+      "itemSha256": "013d8db6ea51e4175ee9724f7972099abcebb5a08ac45b271b492029f419b830",
+      "sourceIds": [
+        "S040"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S040",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q036",
+      "itemRevision": "2",
+      "itemSha256": "49eecffa9e55acedf3549774c6b7f5fcc83f8b85cf7e32948b62c3989079a6f9",
+      "sourceIds": [
+        "S039"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S039",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q037",
+      "itemRevision": "2",
+      "itemSha256": "9e816482f1cffa0e096ff587506945163535b51e87d39feb93f1e29f17873b22",
+      "sourceIds": [
+        "S006"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S006",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q038",
+      "itemRevision": "2",
+      "itemSha256": "51771f171506af048eb90bdf3456b4b3a81af81350376629d9e52ef922e0b7f8",
+      "sourceIds": [
+        "S014"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S014",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q039",
+      "itemRevision": "2",
+      "itemSha256": "0b872b80483aae05a1a1cce9323b91e852318a7791fca62e1f3c2fda2ceba8fd",
+      "sourceIds": [
+        "S039"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S039",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q040",
+      "itemRevision": "2",
+      "itemSha256": "304fe4676acda1e76bbd84a22d58dbb2bf29af741ccd6c55e9ea7c757b09dc8d",
+      "sourceIds": [
+        "S015",
+        "S016"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S015",
+          "lines": null,
+          "supports": null
+        },
+        {
+          "sourceId": "S016",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q041",
+      "itemRevision": "2",
+      "itemSha256": "3377f11c29e825ce621aa2969687bea38ebaad94b19f209aa3ac139eed9da83b",
+      "sourceIds": [
+        "S009"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S009",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q042",
+      "itemRevision": "2",
+      "itemSha256": "45350b532e2d6a616aaca29cb37e6e0a9c47174bae31c7afefe9d9b666d264c4",
+      "sourceIds": [
+        "S021"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S021",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q043",
+      "itemRevision": "2",
+      "itemSha256": "95012a04e71b6271add4910d6cf080ae5d1a03eec7888425a67a7c5b8b968062",
+      "sourceIds": [
+        "S051",
+        "S052"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S051",
+          "lines": null,
+          "supports": null
+        },
+        {
+          "sourceId": "S052",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q044",
+      "itemRevision": "2",
+      "itemSha256": "ea2e6bb0cfccb550abc30cc7b89418fb91790abc1ac146c3f95d89b25d88f8e8",
+      "sourceIds": [
+        "S002",
+        "S003"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S002",
+          "lines": null,
+          "supports": null
+        },
+        {
+          "sourceId": "S003",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q045",
+      "itemRevision": "2",
+      "itemSha256": "4f9c98b06a6355dfde8e6fa331d4adabacf38e8767ac87bcc0e31635ee343ec6",
+      "sourceIds": [
+        "S025",
+        "S026"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S025",
+          "lines": null,
+          "supports": null
+        },
+        {
+          "sourceId": "S026",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q046",
+      "itemRevision": "2",
+      "itemSha256": "724fb7d8f627c1e5dababcf7d0cb416633f7f855467f17f997528193d21b3d20",
+      "sourceIds": [
+        "S054"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S054",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q047",
+      "itemRevision": "2",
+      "itemSha256": "ef53aab6371364bfeacdfa558ed3def37d86b44978bbcd3782771fa7328690ce",
+      "sourceIds": [
+        "S017"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S017",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q048",
+      "itemRevision": "2",
+      "itemSha256": "c30593a7c8669cdda51b746e2c504c173dffa1f4a5e7f1691e2f9a84302e3012",
+      "sourceIds": [
+        "S017"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S017",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q049",
+      "itemRevision": "2",
+      "itemSha256": "af7e0c79697ad288f8954548ab54c4168dfec44902343135f57a3d1dc3fda8b9",
+      "sourceIds": [
+        "S019"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S019",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q050",
+      "itemRevision": "2",
+      "itemSha256": "e61010146809b7214f923c9bd80cabab06fb5c78b89718e705d270eee82b9e05",
+      "sourceIds": [
+        "S050"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S050",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q051",
+      "itemRevision": "2",
+      "itemSha256": "34b350479a27a6d01753f415819895de7d01dac6988a57cce711718b153495ba",
+      "sourceIds": [
+        "S022"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S022",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q052",
+      "itemRevision": "2",
+      "itemSha256": "ba94deab30f8c667ba34f32065ab668e7a27b5cd867ac1cb42d857f64dd3f8c8",
+      "sourceIds": [
+        "S020"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S020",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q053",
+      "itemRevision": "2",
+      "itemSha256": "2fd0ad122c221cec195968c5e54080a48bb203f7379e4d110a38f3e8a75a58f7",
+      "sourceIds": [
+        "S042",
+        "S048"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S042",
+          "lines": null,
+          "supports": null
+        },
+        {
+          "sourceId": "S048",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q054",
+      "itemRevision": "2",
+      "itemSha256": "22006f688ce2aa84c1d81d0b4fb267299578460ac7eea33b8b80603cdcdec42f",
+      "sourceIds": [
+        "S019"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S019",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q055",
+      "itemRevision": "2",
+      "itemSha256": "f469df2c72be27190f5fd1c3b032617b71d450ce4b7b0a5cec5b2f829081937a",
+      "sourceIds": [
+        "S019"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S019",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q056",
+      "itemRevision": "2",
+      "itemSha256": "7b5a38945b2a0e32bd237458987affb66f463bf22352f7829fc9f3e58a2cdd4e",
+      "sourceIds": [
+        "S017"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S017",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q057",
+      "itemRevision": "2",
+      "itemSha256": "b467a5e17d5544a341e52b88811b68643981fb5ccceca01e0e3aaa04384ecb66",
+      "sourceIds": [
+        "S055"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S055",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q058",
+      "itemRevision": "2",
+      "itemSha256": "90047a916e2f2ee68f8fe76154c9c447a13288bbe60212e91843d7aed897cfec",
+      "sourceIds": [
+        "S057"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S057",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q059",
+      "itemRevision": "2",
+      "itemSha256": "bfb186d648fc843d174a3cd8a8aa92cf6eb55db511f33a44339592942f65a3fa",
+      "sourceIds": [
+        "S043",
+        "S028"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S043",
+          "lines": null,
+          "supports": null
+        },
+        {
+          "sourceId": "S028",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q060",
+      "itemRevision": "2",
+      "itemSha256": "6c64fddd3cf76405ff9917f2f9d0660137031b6fe92983c5be26b41e0115c9a8",
+      "sourceIds": [
+        "S021",
+        "S020"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S021",
+          "lines": null,
+          "supports": null
+        },
+        {
+          "sourceId": "S020",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q061",
+      "itemRevision": "2",
+      "itemSha256": "e0d225722487bcda6d43f84985d64ec87fc69b7eae050743aff0bbac6cef47e7",
+      "sourceIds": [
+        "S045",
+        "S059"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S045",
+          "lines": null,
+          "supports": null
+        },
+        {
+          "sourceId": "S059",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q062",
+      "itemRevision": "2",
+      "itemSha256": "359dbcc06ec591cd6b290b6f9f2a8e4ab22fdf01fe3e87a3e6a79487b4a8cbc8",
+      "sourceIds": [
+        "S058",
+        "S026"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S058",
+          "lines": null,
+          "supports": null
+        },
+        {
+          "sourceId": "S026",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q063",
+      "itemRevision": "2",
+      "itemSha256": "22f89d783d1be13f6bb0bfe0ef7796485727e5e8bbae4df62e5e2e35ab3e29d6",
+      "sourceIds": [
+        "S025",
+        "S058"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S025",
+          "lines": null,
+          "supports": null
+        },
+        {
+          "sourceId": "S058",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q064",
+      "itemRevision": "2",
+      "itemSha256": "83451f6e24fa742a93f448d7a32a979f0fdea4cfc2cf08f812c9cabc43429c3e",
+      "sourceIds": [
+        "S029",
+        "S043"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S029",
+          "lines": null,
+          "supports": null
+        },
+        {
+          "sourceId": "S043",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q065",
+      "itemRevision": "2",
+      "itemSha256": "f3914f8cb82aba0f5d19cece46a826f61158311cf34d4249a9d20d5bf9276911",
+      "sourceIds": [
+        "S040",
+        "S054"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S040",
+          "lines": null,
+          "supports": null
+        },
+        {
+          "sourceId": "S054",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q066",
+      "itemRevision": "2",
+      "itemSha256": "e36b1f070255b29a4b58279507edf826f0030455dec17ef5c8b215817092c828",
+      "sourceIds": [
+        "S059",
+        "S045"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S059",
+          "lines": null,
+          "supports": null
+        },
+        {
+          "sourceId": "S045",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q067",
+      "itemRevision": "2",
+      "itemSha256": "669a0d76720eb306aa021d657c67308ffb5cedaa600b61f15e70eab76234e129",
+      "sourceIds": [
+        "S059",
+        "S021"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S059",
+          "lines": null,
+          "supports": null
+        },
+        {
+          "sourceId": "S021",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q068",
+      "itemRevision": "2",
+      "itemSha256": "15930e9f729389e1610ade9aa64cd125ab8a1129164d9a2775bb647671ad2720",
+      "sourceIds": [
+        "S059",
+        "S045"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S059",
+          "lines": null,
+          "supports": null
+        },
+        {
+          "sourceId": "S045",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q069",
+      "itemRevision": "2",
+      "itemSha256": "4f885550d8d48bd56b9793ff0aaf6439429fd96059e326dac87e052c633ddd2f",
+      "sourceIds": [
+        "S007"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S007",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q070",
+      "itemRevision": "2",
+      "itemSha256": "b6dffadd10643fb43f54c8b4a4077ecb22bf9c97704e2d4f734329d66537a97a",
+      "sourceIds": [
+        "S037"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S037",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q071",
+      "itemRevision": "2",
+      "itemSha256": "8cb79a3349c27dce78ed37ce644a321b02515e45debcac81c8094b4835320008",
+      "sourceIds": [
+        "S025",
+        "S026"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S025",
+          "lines": null,
+          "supports": null
+        },
+        {
+          "sourceId": "S026",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q072",
+      "itemRevision": "2",
+      "itemSha256": "6ab8c5c2496fc619454b0be833f6b53eafb40b8dfe44c604bb7a137ed691145f",
+      "sourceIds": [
+        "S015",
+        "S016"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S015",
+          "lines": null,
+          "supports": null
+        },
+        {
+          "sourceId": "S016",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q073",
+      "itemRevision": "2",
+      "itemSha256": "f7b715fe6219a8307a535d7146c8081f8c4c3946b824e72bd84c0cf8b134d704",
+      "sourceIds": [
+        "S006"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S006",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q074",
+      "itemRevision": "2",
+      "itemSha256": "9b7504afb9884e83dbcb555e757f181b1db52ff407605d42fc33a2447b8a9128",
+      "sourceIds": [
+        "S053"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S053",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q075",
+      "itemRevision": "2",
+      "itemSha256": "dcccf4bf78bcd8b9633e84dec2be7135e3a55ff5d6aeecb16ec8b045dd4e2e33",
+      "sourceIds": [
+        "S057"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S057",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q076",
+      "itemRevision": "2",
+      "itemSha256": "b8b633fd3c844cce46ab43578fc181074cb8539a6351b3c6e17170b97cd73daf",
+      "sourceIds": [
+        "S008",
+        "S007"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S008",
+          "lines": null,
+          "supports": null
+        },
+        {
+          "sourceId": "S007",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q077",
+      "itemRevision": "2",
+      "itemSha256": "2640b1391bc6a26b8828aa560440d58cbc6b0c51b734f8a8a888e6ef2031abdf",
+      "sourceIds": [
+        "S037"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S037",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q078",
+      "itemRevision": "2",
+      "itemSha256": "95f1f4d8605d78b1af6061f91ca358fe588a7994dc18f24ff5e792c8f2907b24",
+      "sourceIds": [
+        "S030",
+        "S037"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S030",
+          "lines": null,
+          "supports": null
+        },
+        {
+          "sourceId": "S037",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q079",
+      "itemRevision": "2",
+      "itemSha256": "3c26a35d8b6d4ce7b25304403e0409f5344c1ee5c87cf261e1315a67f44f1f0c",
+      "sourceIds": [
+        "S030"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S030",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q080",
+      "itemRevision": "2",
+      "itemSha256": "8aca20007a07a998178362d63aa0267a4a689a5af9cd6f7e30ac8a75c4a21894",
+      "sourceIds": [
+        "S055",
+        "S032"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S055",
+          "lines": null,
+          "supports": null
+        },
+        {
+          "sourceId": "S032",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q081",
+      "itemRevision": "2",
+      "itemSha256": "75d96560a5afe49c5ea9e29b1f8cc82323b835e575bca332cf6edc0169e13a00",
+      "sourceIds": [
+        "S057",
+        "S037"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S057",
+          "lines": null,
+          "supports": null
+        },
+        {
+          "sourceId": "S037",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q082",
+      "itemRevision": "2",
+      "itemSha256": "1f5aac97e40da7b9b3569208ab7f5a4fc68e816b8825bacac9928dd9a7e183a6",
+      "sourceIds": [
+        "S033",
+        "S057"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S033",
+          "lines": null,
+          "supports": null
+        },
+        {
+          "sourceId": "S057",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q083",
+      "itemRevision": "2",
+      "itemSha256": "0accddf36020f034e72d31c8063f75568e1fdf61b10bdc910a1d97331427cb5d",
+      "sourceIds": [
+        "S034"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S034",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q084",
+      "itemRevision": "2",
+      "itemSha256": "e6c6722a31c27377e6cde44e648e368894b030903ad19ea6756053486f16950a",
+      "sourceIds": [
+        "S036"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S036",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q085",
+      "itemRevision": "2",
+      "itemSha256": "468f12489fd5a17e4348b8ab31f37426f0cfb37212b1782b6c743debb540647b",
+      "sourceIds": [
+        "S046"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S046",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q086",
+      "itemRevision": "2",
+      "itemSha256": "fa96dca4ef610a49b472a333aa85fe6efef11d44e1bc2a78cbd557cfae51f493",
+      "sourceIds": [
+        "S046",
+        "S033"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S046",
+          "lines": null,
+          "supports": null
+        },
+        {
+          "sourceId": "S033",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q087",
+      "itemRevision": "2",
+      "itemSha256": "7327546da9c94479c60814af49a827e6e0e7ff3994096eb03304abdcebb46598",
+      "sourceIds": [
+        "S005"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S005",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q088",
+      "itemRevision": "2",
+      "itemSha256": "b4538807ea4ec51611ed58507a0f735b68eeae7007c554ae448035f4129802ce",
+      "sourceIds": [
+        "S013",
+        "S027",
+        "S044"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S013",
+          "lines": null,
+          "supports": null
+        },
+        {
+          "sourceId": "S027",
+          "lines": null,
+          "supports": null
+        },
+        {
+          "sourceId": "S044",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q089",
+      "itemRevision": "2",
+      "itemSha256": "a211baf3584bbca6ccd587343a2ea9151d610080e169124b6f7bd75f6b5db1b1",
+      "sourceIds": [
+        "S051",
+        "S052",
+        "S010"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S051",
+          "lines": null,
+          "supports": null
+        },
+        {
+          "sourceId": "S052",
+          "lines": null,
+          "supports": null
+        },
+        {
+          "sourceId": "S010",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q090",
+      "itemRevision": "2",
+      "itemSha256": "9da2389c5f7bc5aaeceb02a09369886e35594ee62b4bbb1a1b00e6c338d88cc6",
+      "sourceIds": [
+        "S015",
+        "S016"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S015",
+          "lines": null,
+          "supports": null
+        },
+        {
+          "sourceId": "S016",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q091",
+      "itemRevision": "2",
+      "itemSha256": "f23898a6914c772696e0735857762ea0a7ca7f4e7639f08156daf24143db5d75",
+      "sourceIds": [
+        "S014"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S014",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q092",
+      "itemRevision": "2",
+      "itemSha256": "d46bbc39a622c3ca76e66201348bc6be1ac35f562589a56e4643653a359823fa",
+      "sourceIds": [
+        "S006"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S006",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q093",
+      "itemRevision": "2",
+      "itemSha256": "d710a8773d1395e80a84417e706d57ac9179de8e5b994c75b6d37a1297b6c32e",
+      "sourceIds": [
+        "S054"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S054",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q094",
+      "itemRevision": "2",
+      "itemSha256": "87e623116c2ba8745eb48a939b3de2a19ea6bde45e6ac86ff3298e5cc94297a2",
+      "sourceIds": [
+        "S050"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S050",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q095",
+      "itemRevision": "2",
+      "itemSha256": "8af89ab15d09144771547a59b6d9d2956d8b0e41d9dd79fda75add56967bb4a2",
+      "sourceIds": [
+        "S043",
+        "S028"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S043",
+          "lines": null,
+          "supports": null
+        },
+        {
+          "sourceId": "S028",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q096",
+      "itemRevision": "2",
+      "itemSha256": "c4e3f19b961d00854579a0fe876c332d7f188d9221ae59d864fdc3f71b69200e",
+      "sourceIds": [
+        "S029",
+        "S059"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S029",
+          "lines": null,
+          "supports": null
+        },
+        {
+          "sourceId": "S059",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q097",
+      "itemRevision": "2",
+      "itemSha256": "c79c68c18e38b5506dedc88c92cac14d0ebfdb773c97217d8bc350cfd9e4302b",
+      "sourceIds": [
+        "S045",
+        "S059"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S045",
+          "lines": null,
+          "supports": null
+        },
+        {
+          "sourceId": "S059",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q098",
+      "itemRevision": "2",
+      "itemSha256": "92238656acb456d513ef305880291d087ea3921b9463aabfe76320b2eec08aa3",
+      "sourceIds": [
+        "S042"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S042",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q099",
+      "itemRevision": "2",
+      "itemSha256": "b6a6b032792b0ccfbeaa3be86c4c143d3569b0698c72aeb1b807eae5f8252478",
+      "sourceIds": [
+        "S021"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S021",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q100",
+      "itemRevision": "2",
+      "itemSha256": "a9bf9bcab5ae71f955abaca200c7f50b19c23dd5ed2a4824ffe6b5f6a7ca9ca1",
+      "sourceIds": [
+        "S055"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S055",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "method": "Observed attribution, source relevance and evidence; no nationality filter. Screening is not a malware audit. No downloaded code executed.",
+  "items": [
+    {
+      "url": "https://github.com/MicrosoftLearnHub/AI-103---Designing-and-Implementing-a-Microsoft-Azure-AI-Solution",
+      "decision": "exclude-from-authoritative-set",
+      "reason": "Microsoft-like account name is not the verified MicrosoftLearning account. Search result uses an older certification title. Ownership and technical accuracy not established; no malicious-code allegation."
+    },
+    {
+      "domain": "pass4success.com",
+      "decision": "exclude",
+      "reason": "Search results promote practice banks alongside claimed actual exam details and repetitive pass testimonials. Unnecessary for source-grounded learning; did not inspect or reproduce the questions."
+    },
+    {
+      "domain": "itexamreview.com",
+      "decision": "exclude",
+      "reason": "Advertises valid exam dumps and purported real exam question answers."
+    },
+    {
+      "domain": "actualexamdumps.com",
+      "decision": "exclude",
+      "reason": "Markets actual exam questions and percentage reuse claims."
+    },
+    {
+      "domain": "testpassed.com",
+      "decision": "exclude",
+      "reason": "Markets exam dumps and a paid test engine; neither downloaded nor executed."
+    },
+    {
+      "url": "https://www.reddit.com/r/AzureCertification/",
+      "decision": "discovery-only",
+      "reason": "Anonymous pass reports vary on counts, timing and emphasis and include commercial promotions. No authoritative exam mechanics or technical facts derived from them."
+    },
+    {
+      "url": "https://jamiemaguire.net/index.php/2026/09/12/passing-the-azure-ai-apps-and-agents-developer-associate-ai-103/",
+      "decision": "include-preparation-context",
+      "reason": "Named author, direct dated first-person account, established technical blog and about page; claimed certificate not independently authenticated. Reported first-attempt failure shows that practical experience can leave recall gaps. His no-prep choice is not recommended for this study deadline."
+    }
+  ]
+}

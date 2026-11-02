@@ -1,0 +1,63 @@
+{
+  "templateOnly": true,
+  "packetId": "ai103-improvement-r2-checkpoint-20-batch-1",
+  "packageId": "ai103-improvement-r2-checkpoint-20",
+  "revision": "2",
+  "pack": {
+    "id": "ai-103",
+    "version": "1.2.0"
+  },
+  "draftPackageSha256": "d2d885166ed8a1c2675e6d43bb3fd40f8d70e3d1b48e4a6618b345b2edb424f0",
+  "reviewer": {
+    "actualModelLabel": null,
+    "visibleModeIfAny": null,
+    "reviewedAtUtc": null
+  },
+  "instructions": "Solve blind first. Assess alternatives, evidence, API/version, objective fit, difficulty and cues. Null verdicts are not reviews.",
+  "items": [
+    {
+      "itemId": "ai103-improvement-r2-checkpoint-20-q001",
+      "itemRevision": "2",
+      "itemSha256": "4a770a05e824f01095ad94987dd236ec8946b0923314c3568922d0341e3dc25c",
+      "sourceIds": [
+        "S007"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S007",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-checkpoint-20-q002",
+      "itemRevision": "2",
+      "itemSha256": "c45d6bd94f0afb2da4febf8b965a5a62177d17be95118efb553667a20423c725",
+      "sourceIds": [
+        "S054",
+        "S007"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S054",
+          "lines": null,
+          "supports": null
+        },
+        {
+          "sourceId": "S007",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    }
+  ]
+}

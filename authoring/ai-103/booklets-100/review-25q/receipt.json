@@ -1,0 +1,25 @@
+{
+  "reviewedPdfSha256": "c7bdb05cd4b655811ddb5ff58ba3b8ab5e51f2327a223b5fe9114961fbf9f2ae",
+  "files": [
+    {
+      "name": "review-25q.md",
+      "sha256": "c3ba17089a1eace1380411839ad12088d8b878965a7b43ab417bc474d1d306ba"
+    },
+    {
+      "name": "length-balance-25q.md",
+      "sha256": "6c990285af47193bdd5112a057faa6ed67d3d806a6e4d88e03099457383c6343"
+    },
+    {
+      "name": "blind-solve-25q.md",
+      "sha256": "ef2e137ca00d9bd9f0587958679bb9d427dc27b069fef66238741b6c2064bd42"
+    },
+    {
+      "name": "verdicts-25q.claude.json",
+      "sha256": "d356b596050d0fc1b1bb89a8734bba0130168888e4a84bc742358afafefbc8f0"
+    },
+    {
+      "name": "option-lengths-25q.csv",
+      "sha256": "03ea92e255f063f21f1fdec7f18f787612be8d0379f219dda09406a7ec426762"
+    }
+  ]
+}

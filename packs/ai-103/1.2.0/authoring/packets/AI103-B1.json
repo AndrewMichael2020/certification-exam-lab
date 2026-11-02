@@ -1,0 +1,408 @@
+{
+  "schemaVersion": 1,
+  "packRef": {
+    "id": "ai-103",
+    "version": "1.1.0"
+  },
+  "parentObjectiveId": "AI103-B1",
+  "title": "Build generative applications by using Foundry",
+  "state": "evidence-packet-only; no questions",
+  "allowedObjectiveIds": [
+    "AI103-B1.01",
+    "AI103-B1.02",
+    "AI103-B1.03",
+    "AI103-B1.04",
+    "AI103-B1.05",
+    "AI103-B1.06"
+  ],
+  "allowedScope": [
+    {
+      "objectiveId": "AI103-B1.01",
+      "claims": [
+        "F003A",
+        "F003B",
+        "F004A"
+      ],
+      "choice": "Consume an eligible deployed model through the SDK/API that supports its modality and operation.",
+      "configuration": "Use the deployment name, correct project/model endpoint, credentials, and supported request shape; keep Python generation fixed.",
+      "comparison": "A code-model label does not establish tool support, vision capability, or the right inference endpoint.",
+      "judgment": "When switching a text completion feature to image questions, verify multimodal eligibility and request content schema before keeping the old client call."
+    },
+    {
+      "objectiveId": "AI103-B1.02",
+      "claims": [
+        "F025A",
+        "F026A",
+        "F040A",
+        "F039A"
+      ],
+      "choice": "Build RAG as retrieve relevant evidence, assemble grounded context, generate the answer, and retain citations.",
+      "configuration": "Ingest/chunk/embed data; configure index and query; connect retrieval to generation; evaluate grounding and relevance separately.",
+      "comparison": "RAG reduces reliance on model memory but retrieved irrelevant content can still yield a polished wrong answer.",
+      "judgment": "A correct policy answer must be supported by retrieved current clauses, not merely sound plausible."
+    },
+    {
+      "objectiveId": "AI103-B1.03",
+      "claims": [
+        "F007A",
+        "F007B",
+        "F008A"
+      ],
+      "choice": "Separate deterministic workflow order from model-requested tool actions and reasoning stages.",
+      "configuration": "Define tool schemas; execute validated calls; correlate outputs; route/branch with explicit conditions or orchestration.",
+      "comparison": "A function schema advertises an operation; the model does not automatically execute the local business function.",
+      "judgment": "A product lookup followed by price calculation should expose clear tool boundaries and return real results before the final answer."
+    },
+    {
+      "objectiveId": "AI103-B1.04",
+      "claims": [
+        "F039A",
+        "F039B",
+        "F014A"
+      ],
+      "choice": "Evaluate generated responses, retrieved context, and tool behavior with different measures.",
+      "configuration": "Choose ground-truth retrieval metrics when labels exist; otherwise treat an LLM judge as a fallible evaluator; inspect errors and compare versions.",
+      "comparison": "Groundedness can be high for an incomplete answer; relevance can be high for unsupported detail.",
+      "judgment": "A support answer that repeats only one of three required remedies needs completeness review even if its stated remedy is grounded."
+    },
+    {
+      "objectiveId": "AI103-B1.05",
+      "claims": [
+        "F003A",
+        "F003B",
+        "F002A"
+      ],
+      "choice": "Select the current Foundry SDK for project operations and supported OpenAI/Tools clients for their own APIs.",
+      "configuration": "Pin a compatible package generation; obtain client connections through documented project APIs; keep endpoint families explicit.",
+      "comparison": "A tutorial's import/class can become incompatible even while its conceptual workflow remains useful.",
+      "judgment": "A sample from classic Foundry should be rewritten within that generation or deliberately migrated; copying only its method names into current code is unsafe."
+    },
+    {
+      "objectiveId": "AI103-B1.06",
+      "claims": [
+        "F002A",
+        "F003A"
+      ],
+      "choice": "Construct AIProjectClient with the project endpoint and an authenticated Entra credential.",
+      "configuration": "Use https://<resource>.services.ai.azure.com/api/projects/<project>; verify caller RBAC and model deployment access; get the OpenAI client from the project when required.",
+      "comparison": "An Azure OpenAI model root is not a project endpoint, and a Foundry API key is not the captured AIProjectClient authentication method.",
+      "judgment": "If authentication succeeds but project operations fail, verify project identity/scope and endpoint before adjusting generation parameters."
+    }
+  ],
+  "excludedObjectives": [],
+  "evidence": [
+    {
+      "claimId": "F002A",
+      "statement": "The captured AI Projects 2.8.0 client uses Microsoft Entra ID authentication; obtain its OpenAI client through get_openai_client for Responses and conversation operations.",
+      "sourceId": "S002",
+      "sourceUrl": "https://learn.microsoft.com/python/api/overview/azure/ai-projects-readme?view=azure-python",
+      "versionContext": "AI Projects Python2.8.0; Entra only; new Foundry2.x",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S002.md",
+          "lineStart": 82,
+          "lineEnd": 85,
+          "heading": "### Create and authenticate the client with Entra ID",
+          "needle": "Entra ID is the only",
+          "excerpt": "\nEntra ID is the only authentication method currently supported by the client.\n\nTo construct a synchronous client using a context manager:",
+          "sourceSha256": "2ce3139fd9fb77eb3f63d4a797ecc24deab957376faac5fe5a28d80e8080b266"
+        },
+        {
+          "snapshot": "sources/snapshots/S002.md",
+          "lineStart": 29,
+          "lineEnd": 42,
+          "heading": "# Azure AI Projects client library for Python - version 2.8.0",
+          "needle": ".get_openai_client()",
+          "excerpt": "    - Work IQ (Preview)\n- **Get an OpenAI client** using `.get_openai_client()` method to run Responses, Conversations, Evaluations and Fine-Tuning operations with your Agent.\n- **Create and version toolboxes** that bundle collections of tools and skills for your agents, using `.toolboxes` operations.\n- **Fine-tune** AI Models on your data.\n- **Enumerate AI Models** deployed to your Foundry Project using `.deployments` operations.\n- **Enumerate connected Azure resources** in your Foundry project using `.connections` operations.\n- **Upload documents and create Datasets** to reference them using `.datasets` operations.\n- **Create and enumerate Search Indexes** using `.indexes` operations.\n- **Explore additional evaluation tools (some in preview)** to assess the performance of your generative AI application, using `.evaluation_rules`, `.beta.evaluation_taxonomies`, `.beta.evaluators`, `.beta.insights`, and `.beta.schedules` operations.\n- **Manage memory stores (preview)** for Agent conversations, using `.beta.memory_stores` operations.\n- **Register and manage local AI model weights (preview)** using `.beta.models` operations.\n- **Run Red Team scans (preview)** to identify risks associated with your generative AI application, using `.beta.red_teams` operations.\n- **Create and manage routines (preview)** that execute triggered actions based on configured conditions, using `.beta.routines` operations.\n- **Manage skills (preview)** as reusable capabilities that can be included in toolboxes and agents, using `.beta.skills` operations.",
+          "sourceSha256": "2ce3139fd9fb77eb3f63d4a797ecc24deab957376faac5fe5a28d80e8080b266"
+        }
+      ]
+    },
+    {
+      "claimId": "F003A",
+      "statement": "The Python SDK table separates new Foundry azure-ai-projects 2.x from classic 1.x; examples must use a compatible project endpoint and package generation.",
+      "sourceId": "S003",
+      "sourceUrl": "https://learn.microsoft.com/azure/foundry/how-to/develop/sdk-overview",
+      "versionContext": "Python2.x(new)>=2.3.0 versus1.0.0(classic); OpenAI>=3.0.0 in captured installation guidance",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S003.md",
+          "lineStart": 126,
+          "lineEnd": 130,
+          "heading": "### Install the Foundry SDK",
+          "needle": "| 2.x | Foundry (new)",
+          "excerpt": "| --- | --- | --- | --- |\n| 2.x | Foundry (new) | Stable | `azure-ai-projects>=2.3.0` |\n| 1.x | Foundry (classic) | Stable | `azure-ai-projects==1.0.0` |\n\nThe [Azure AI Projects client library for Python](/en-us/python/api/overview/azure/ai-projects-readme) is a unified library that enables you to use multiple client libraries together by connecting to a single project endpoint. Starting in version 2.3.0, hosted-agent and toolbox operations use stable clients instead of beta namespaces.",
+          "sourceSha256": "f62e4cfa9a1eeed9aa30383cab18005b8bc8f72d2743a26dedf0bb83d24e046d"
+        }
+      ]
+    },
+    {
+      "claimId": "F003B",
+      "statement": "Foundry project, Azure OpenAI v1, Anthropic, and individual Foundry Tools use different endpoint families; choose the SDK for the operation and endpoint.",
+      "sourceId": "S003",
+      "sourceUrl": "https://learn.microsoft.com/azure/foundry/how-to/develop/sdk-overview",
+      "versionContext": "Python2.x(new)>=2.3.0 versus1.0.0(classic); OpenAI>=3.0.0 in captured installation guidance",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S003.md",
+          "lineStart": 10,
+          "lineEnd": 13,
+          "heading": "# Microsoft Foundry SDKs and endpoints",
+          "needle": "| **OpenAI SDK**",
+          "excerpt": "| **Agent Framework** | Unified multi-agent orchestration for hosted agents and multi-agent systems, available in C#/.NET and Python. The `foundry` package depends on the Foundry SDK for project access. | Responses API in the project endpoint, via `FoundryChatClient`. |\n| **OpenAI SDK** | Full OpenAI API surface, including embeddings and Foundry Models sold by Azure through Chat Completions. Best latency and maximum OpenAI compatibility. | `https://<resource-name>.openai.azure.com/openai/v1` |\n| **Anthropic SDK** | Anthropic Claude models deployed in Foundry. | `https://<resource-name>.services.ai.azure.com/anthropic` |\n| **Foundry Tools SDKs** | Prebuilt solutions (Vision, Speech, Content Safety, and more). | Tool-specific endpoints. |",
+          "sourceSha256": "f62e4cfa9a1eeed9aa30383cab18005b8bc8f72d2743a26dedf0bb83d24e046d"
+        },
+        {
+          "snapshot": "sources/snapshots/S003.md",
+          "lineStart": 8,
+          "lineEnd": 13,
+          "heading": "# Microsoft Foundry SDKs and endpoints",
+          "needle": "| **Foundry SDK**",
+          "excerpt": "| --- | --- | --- |\n| **Foundry SDK** | Thin-client SDK over all Foundry project APIs. Access to Foundry Models and platform tools (file search, code interpreter, web search, memory, SharePoint, WorkIQ, Fabric IQ, MCP). | `https://<resource-name>.services.ai.azure.com/api/projects/<project-name>` |\n| **Agent Framework** | Unified multi-agent orchestration for hosted agents and multi-agent systems, available in C#/.NET and Python. The `foundry` package depends on the Foundry SDK for project access. | Responses API in the project endpoint, via `FoundryChatClient`. |\n| **OpenAI SDK** | Full OpenAI API surface, including embeddings and Foundry Models sold by Azure through Chat Completions. Best latency and maximum OpenAI compatibility. | `https://<resource-name>.openai.azure.com/openai/v1` |\n| **Anthropic SDK** | Anthropic Claude models deployed in Foundry. | `https://<resource-name>.services.ai.azure.com/anthropic` |\n| **Foundry Tools SDKs** | Prebuilt solutions (Vision, Speech, Content Safety, and more). | Tool-specific endpoints. |",
+          "sourceSha256": "f62e4cfa9a1eeed9aa30383cab18005b8bc8f72d2743a26dedf0bb83d24e046d"
+        },
+        {
+          "snapshot": "sources/snapshots/S003.md",
+          "lineStart": 12,
+          "lineEnd": 15,
+          "heading": "# Microsoft Foundry SDKs and endpoints",
+          "needle": "| **Foundry Tools SDKs**",
+          "excerpt": "| **Anthropic SDK** | Anthropic Claude models deployed in Foundry. | `https://<resource-name>.services.ai.azure.com/anthropic` |\n| **Foundry Tools SDKs** | Prebuilt solutions (Vision, Speech, Content Safety, and more). | Tool-specific endpoints. |\n\n**Choose your SDK**:",
+          "sourceSha256": "f62e4cfa9a1eeed9aa30383cab18005b8bc8f72d2743a26dedf0bb83d24e046d"
+        }
+      ]
+    },
+    {
+      "claimId": "F004A",
+      "statement": "Current Foundry offers serverless API deployments and preview managed compute; serverless API supports standard, provisioned, batch, and developer deployment types.",
+      "sourceId": "S004",
+      "sourceUrl": "https://learn.microsoft.com/azure/foundry/concepts/deployments-overview",
+      "versionContext": "Serverless plus new managed compute preview; quota is separate from classic VM quota",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S004.md",
+          "lineStart": 12,
+          "lineEnd": 16,
+          "heading": "## Deployment options",
+          "needle": "**Serverless API** —",
+          "excerpt": "\n- **Serverless API** — For Foundry Models, including [Foundry Models sold by Azure](../foundry-models/concepts/models-sold-directly-by-azure) and [select Models from partners and community](../foundry-models/concepts/models-from-partners). This option is the preferred and most capable deployment path. It includes the standard, provisioned throughput, batch, and developer deployment types.\n- **Managed compute (preview)** — For open-source, partner, and custom models that run on dedicated GPU capacity that Foundry manages for you.\n\nFoundry selects the appropriate deployment option based on the model you choose.",
+          "sourceSha256": "91520b0f84e6e2823bb27945cb8e25f716440b7680ffc7ea9689d8025f1d080f"
+        },
+        {
+          "snapshot": "sources/snapshots/S004.md",
+          "lineStart": 13,
+          "lineEnd": 16,
+          "heading": "## Deployment options",
+          "needle": "**Managed compute (preview)**",
+          "excerpt": "- **Serverless API** — For Foundry Models, including [Foundry Models sold by Azure](../foundry-models/concepts/models-sold-directly-by-azure) and [select Models from partners and community](../foundry-models/concepts/models-from-partners). This option is the preferred and most capable deployment path. It includes the standard, provisioned throughput, batch, and developer deployment types.\n- **Managed compute (preview)** — For open-source, partner, and custom models that run on dedicated GPU capacity that Foundry manages for you.\n\nFoundry selects the appropriate deployment option based on the model you choose.",
+          "sourceSha256": "91520b0f84e6e2823bb27945cb8e25f716440b7680ffc7ea9689d8025f1d080f"
+        }
+      ]
+    },
+    {
+      "claimId": "F007A",
+      "statement": "A function-call tool gives the model a name, description, and parameter schema; the application executes the requested function and returns the result.",
+      "sourceId": "S007",
+      "sourceUrl": "https://learn.microsoft.com/azure/foundry/agents/how-to/tools/function-calling",
+      "versionContext": "Mixed page panels: current AI Projects2.x Responses/conversations examples and classic threads/runs material. Current fragments used below; do not transfer classic10-minute run expiry to Responses.",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S007.md",
+          "lineStart": 2,
+          "lineEnd": 5,
+          "heading": "# Use function calling with Microsoft Foundry agents",
+          "needle": "Your app executes the function",
+          "excerpt": "\nMicrosoft Foundry agents support function calling, which lets you extend agents with custom capabilities. Define a function with its name, parameters, and description, and the agent's Foundry model can request your app to call it. Your app executes the function and returns the output. The agent then uses the result to continue the conversation with accurate, real-time data from your systems.\n\nImportant",
+          "sourceSha256": "0d4119f94b15c94d404729f53d2ed5f52a89dfaf35841d1290c0472be3e3e953"
+        }
+      ]
+    },
+    {
+      "claimId": "F007B",
+      "statement": "Function output must be correlated with the originating call_id before the response continues; the documented Python example emits function_call_output.",
+      "sourceId": "S007",
+      "sourceUrl": "https://learn.microsoft.com/azure/foundry/agents/how-to/tools/function-calling",
+      "versionContext": "Mixed page panels: current AI Projects2.x Responses/conversations examples and classic threads/runs material. Current fragments used below; do not transfer classic10-minute run expiry to Responses.",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S007.md",
+          "lineStart": 123,
+          "lineEnd": 127,
+          "heading": "# Process function calls",
+          "needle": "call_id=item.call_id",
+          "excerpt": "                    type=\"function_call_output\",\n                    call_id=item.call_id,\n                    output=json.dumps({\"horoscope\": horoscope}),\n                )\n            )",
+          "sourceSha256": "0d4119f94b15c94d404729f53d2ed5f52a89dfaf35841d1290c0472be3e3e953"
+        }
+      ]
+    },
+    {
+      "claimId": "F008A",
+      "statement": "Sequential orchestration passes results in a defined order; group chat routes control dynamically; human-in-loop patterns wait for approval or missing input.",
+      "sourceId": "S008",
+      "sourceUrl": "https://learn.microsoft.com/azure/foundry/agents/concepts/workflow",
+      "versionContext": "Visual designer/in-portal workflow execution retires Dec1,2026; hosted YAML migration remains",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S008.md",
+          "lineStart": 40,
+          "lineEnd": 44,
+          "heading": "## Understand workflow patterns",
+          "needle": "| Sequential |",
+          "excerpt": "| Human in the loop | Asks the user a question and awaits user input to proceed | Creating approval requests during workflow execution and waiting for human approval, or obtaining information from the user |\n| Sequential | Passes the result from one agent to the next in a defined order | Step-by-step workflows, pipelines, or multiple-stage processing |\n| Group chat | Dynamically passes control between agents based on context or rules | Dynamic workflows, escalation, fallback, or expert handoff scenarios |\n\nFor more information, see [Microsoft Agent Framework workflow orchestrations](/en-us/agent-framework/user-guide/workflows/orchestrations/overview).",
+          "sourceSha256": "91311aec35bad6e1e44149491430baa72e5eeec37c9f869ba7fbf9356e5497e4"
+        }
+      ]
+    },
+    {
+      "claimId": "F014A",
+      "statement": "The agent evaluator table separates tool selection, input accuracy, output utilization, and overall call accuracy, each evaluating a different part of tool use.",
+      "sourceId": "S014",
+      "sourceUrl": "https://learn.microsoft.com/azure/foundry/concepts/evaluation-evaluators/agent-evaluators",
+      "versionContext": "Evaluator-specific status; task completion/adherence preview",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S014.md",
+          "lineStart": 24,
+          "lineEnd": 30,
+          "heading": "# Agent evaluators",
+          "needle": "| Tool Input Accuracy |",
+          "excerpt": "| Tool Selection | Process evaluation | Validating tool choice quality in orchestration platforms, ensuring efficient tool usage without redundancy | Measures whether the agent selected the correct tools without selecting unnecessary ones | Binary: Pass/Fail |\n| Tool Input Accuracy | Process evaluation | Strict validation of tool parameters in production environments, API integration tests, critical workflows requiring 100% parameter correctness | Measures if all tool call parameters are correct across six strict criteria: groundedness, type compliance, format compliance, required parameters, no unexpected parameters, and value appropriateness | Binary: Pass/Fail |\n| Tool Output Utilization | Process evaluation | Validating correct use of API responses, database query results, search outputs in agent reasoning and responses | Measures if the agent correctly understood and used tool call results contextually in its reasoning and final response | Binary: Pass/Fail |\n| Tool Call Success | Process evaluation | Monitoring tool reliability, detecting API failures, timeout issues, or technical errors in tool execution | Measures if tool calls succeeded or resulted in technical errors or exceptions | Binary: Pass/Fail |\n| Quality Grader (preview) | Quality evaluation | Assesses overall response quality at the turn level, including relevance, abstention, answer completeness, and optionally groundedness and context coverage | Enables quality evaluation across multiple dimensions in a single evaluator instead of running individual evaluators separately | Binary: Pass/Fail |\n| Output Quality (preview) | System and quality evaluation | Assessing response quality and task outcomes across several dimensions while reducing evaluation cost and latency | Batches Fluency, Coherence, Intent Resolution, Task Adherence, Groundedness, and Task Completion into one LLM judge call | Composite: component scores with Pass/Fail |\n| Tool Use Quality (preview) | Process evaluation | Assessing the complete tool-use process while reducing evaluation cost and latency | Batches Tool Call Accuracy, Tool Call Success, Tool Input Accuracy, Tool Output Utilization, and Tool Selection into one LLM judge call | Composite: component scores with Pass/Fail |",
+          "sourceSha256": "0ce17b86785e87efb44074de9d3fdee3ae8290dedcb04a18a68558081be7103f"
+        }
+      ]
+    },
+    {
+      "claimId": "F025A",
+      "statement": "Hybrid search executes keyword and vector retrieval in parallel and combines ranked lists with RRF; semantic reranking is an additional stage rather than the vector embedding step.",
+      "sourceId": "S025",
+      "sourceUrl": "https://learn.microsoft.com/azure/search/hybrid-search-overview",
+      "versionContext": "Feature-specific qualifications in snapshot; package/API version unknown unless stated in a referenced excerpt.",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S025.md",
+          "lineStart": 10,
+          "lineEnd": 13,
+          "heading": "# Hybrid search using vectors and full-text search in Azure AI Search",
+          "needle": "Reciprocal Rank Fusion (RRF)",
+          "excerpt": "- Runs full-text search and vector search in parallel.\n- Merges results from each query by using [Reciprocal Rank Fusion (RRF)](hybrid-search-ranking).\n\nThis article explains the concepts, benefits, and limitations of hybrid search. Links at the end provide usage instructions and next steps. You can also watch the embedded video for an explanation of how hybrid retrieval contributes to high-quality generative search applications.",
+          "sourceSha256": "8f766ea87e9528dc1e469ffca3de91350cf9b9393aaf47e5c8c124378457397d"
+        },
+        {
+          "snapshot": "sources/snapshots/S025.md",
+          "lineStart": 16,
+          "lineEnd": 19,
+          "heading": "## Why use hybrid search?",
+          "needle": "semantic ranking",
+          "excerpt": "\nHybrid search combines the strengths of vector search and keyword search. The advantage of vector search is finding information that's conceptually similar to your search query, even if there are no keyword matches in the inverted index. The advantage of keyword or full-text search is precision, with the ability to apply optional semantic ranking that improves the quality of the initial results. Some scenarios, such as querying over product codes, highly specialized jargon, dates, and people's names, perform better with keyword search because it can identify exact matches.\n\nBenchmark testing on real-world and benchmark datasets indicates that hybrid retrieval with semantic ranker offers significant benefits in search relevance.",
+          "sourceSha256": "8f766ea87e9528dc1e469ffca3de91350cf9b9393aaf47e5c8c124378457397d"
+        }
+      ]
+    },
+    {
+      "claimId": "F026A",
+      "statement": "Query-time vectorization must use the embedding model compatible with indexed content vectors; integrated indexing adds chunking and embedding skills.",
+      "sourceId": "S026",
+      "sourceUrl": "https://learn.microsoft.com/azure/search/vector-search-integrated-vectorization",
+      "versionContext": "Feature-specific qualifications in snapshot; package/API version unknown unless stated in a referenced excerpt.",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S026.md",
+          "lineStart": 39,
+          "lineEnd": 47,
+          "heading": "## Using integrated vectorization in queries",
+          "needle": "must match the embedding model",
+          "excerpt": "- A text string that's converted to a vector at query time.\n- [A vectorizer](vector-search-how-to-configure-vectorizer), defined in the index schema, assigned to a vector field, and used automatically at query time to convert a text query to a vector. The vectorizer you set up must match the embedding model used to encode your content.\n\n    | Embedding skill | Vectorizer |\n    | --- | --- |\n    | [AzureOpenAIEmbedding skill](cognitive-search-skill-azure-openai-embedding) | [Azure OpenAI vectorizer](vector-search-vectorizer-azure-open-ai) |\n    | [Custom skill](cognitive-search-custom-skill-web-api) | [Custom Web API vectorizer](vector-search-vectorizer-custom-web-api) |\n    | [Azure Vision multimodal embeddings skill (preview)](cognitive-search-skill-vision-vectorize) | [Azure Vision vectorizer](vector-search-vectorizer-ai-services-vision) |\n    | [AML skill pointing to the model catalog in Foundry portal](cognitive-search-aml-skill) | [Microsoft Foundry model catalog vectorizer (preview)](vector-search-vectorizer-azure-machine-learning-ai-studio-catalog) |",
+          "sourceSha256": "45a6b445fbe4f7f65334693eb96b2de7b021e0b50ce46b363ab47c5de0a11f0d"
+        },
+        {
+          "snapshot": "sources/snapshots/S026.md",
+          "lineStart": 25,
+          "lineEnd": 32,
+          "heading": "## Using integrated vectorization during indexing",
+          "needle": "A chunking strategy",
+          "excerpt": "\n    - A chunking strategy: [Text Split skill](cognitive-search-skill-textsplit), [Azure Content Understanding skill](cognitive-search-skill-content-understanding), or one of the [document parsing modes](vector-search-how-to-chunk-documents#common-chunking-techniques).\n    - An embedding skill, used to generate vector arrays, which can be any of the following:\n\n        - [AzureOpenAIEmbedding skill](cognitive-search-skill-azure-openai-embedding), attached to text-embedding-ada-002,text-embedding-3-small, text-embedding-3-large on Azure OpenAI.\n        - [Custom skill](cognitive-search-custom-skill-web-api) that points to another embedding model on Azure or on another site.\n        - [Azure Vision multimodal embeddings skill (preview)](cognitive-search-skill-vision-vectorize) that points to the multimodal API for Azure Vision.\n        - [AML skill](cognitive-search-aml-skill) that points to select models in the Microsoft Foundry model catalog.",
+          "sourceSha256": "45a6b445fbe4f7f65334693eb96b2de7b021e0b50ce46b363ab47c5de0a11f0d"
+        }
+      ]
+    },
+    {
+      "claimId": "F039A",
+      "statement": "Groundedness tests fidelity to supplied context; relevance tests how the response addresses the query; neither alone demonstrates complete coverage.",
+      "sourceId": "S039",
+      "sourceUrl": "https://learn.microsoft.com/azure/foundry/concepts/evaluation-evaluators/rag-evaluators",
+      "versionContext": "Feature-specific qualifications in snapshot; package/API version unknown unless stated in a referenced excerpt.",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S039.md",
+          "lineStart": 8,
+          "lineEnd": 12,
+          "heading": "# Retrieval-Augmented Generation (RAG) evaluators",
+          "needle": "| Groundedness |",
+          "excerpt": "| Retrieval | Process evaluation | You want to assess textual quality of retrieved context, but you don't have ground truths | Measures how relevant the retrieved context chunks are to addressing a query using an LLM judge | Binary: Pass/Fail based on threshold (1-5 scale) |\n| Groundedness | System evaluation | You want a well-rounded groundedness definition that works with agent inputs, and bring your own GPT models as the LLM-judge | Measures how well the generated response aligns with the given context without fabricating content (precision aspect) | Binary: Pass/Fail based on threshold (1-5 scale) |\n| Groundedness Pro (preview) | System evaluation | You want a strict groundedness definition powered by Azure AI Content Safety and use our service model | Detects if the response is strictly consistent with the context using the Azure AI Content Safety service | Binary: True/False |\n| Relevance | System evaluation | You want to assess how well the RAG response addresses the query but don't have ground truths | Measures the accuracy, completeness, and direct relevance of the response to the query | Binary: Pass/Fail based on threshold (1-5 scale) |\n| Response Completeness (preview) | System evaluation | You want to ensure the RAG response doesn't miss critical information (recall aspect) from your ground truth | Measures how completely the response covers the expected information compared to ground truth | Binary: Pass/Fail based on threshold (1-5 scale) |",
+          "sourceSha256": "3b16c765be1f1479ac22e04cf9b293be767d473fc1cacb188b90751227074a4b"
+        }
+      ]
+    },
+    {
+      "claimId": "F039B",
+      "statement": "Document-retrieval evaluation with relevance ground truth measures search quality; retrieval evaluation without labels uses an LLM judge.",
+      "sourceId": "S039",
+      "sourceUrl": "https://learn.microsoft.com/azure/foundry/concepts/evaluation-evaluators/rag-evaluators",
+      "versionContext": "Feature-specific qualifications in snapshot; package/API version unknown unless stated in a referenced excerpt.",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S039.md",
+          "lineStart": 6,
+          "lineEnd": 12,
+          "heading": "# Retrieval-Augmented Generation (RAG) evaluators",
+          "needle": "| Document Retrieval |",
+          "excerpt": "| --- | --- | --- | --- | --- |\n| Document Retrieval | Process evaluation | Retrieval quality is a bottleneck for your RAG, and you have query relevance labels (ground truth) for precise search quality metrics for debugging and parameter optimization | Measures search quality metrics (Fidelity, NDCG, XDCG, Max Relevance, Holes) by comparing retrieved documents against ground truth labels | Composite: Fidelity, NDCG, XDCG, Max Relevance, Holes (with Pass/Fail) |\n| Retrieval | Process evaluation | You want to assess textual quality of retrieved context, but you don't have ground truths | Measures how relevant the retrieved context chunks are to addressing a query using an LLM judge | Binary: Pass/Fail based on threshold (1-5 scale) |\n| Groundedness | System evaluation | You want a well-rounded groundedness definition that works with agent inputs, and bring your own GPT models as the LLM-judge | Measures how well the generated response aligns with the given context without fabricating content (precision aspect) | Binary: Pass/Fail based on threshold (1-5 scale) |\n| Groundedness Pro (preview) | System evaluation | You want a strict groundedness definition powered by Azure AI Content Safety and use our service model | Detects if the response is strictly consistent with the context using the Azure AI Content Safety service | Binary: True/False |\n| Relevance | System evaluation | You want to assess how well the RAG response addresses the query but don't have ground truths | Measures the accuracy, completeness, and direct relevance of the response to the query | Binary: Pass/Fail based on threshold (1-5 scale) |\n| Response Completeness (preview) | System evaluation | You want to ensure the RAG response doesn't miss critical information (recall aspect) from your ground truth | Measures how completely the response covers the expected information compared to ground truth | Binary: Pass/Fail based on threshold (1-5 scale) |",
+          "sourceSha256": "3b16c765be1f1479ac22e04cf9b293be767d473fc1cacb188b90751227074a4b"
+        }
+      ]
+    },
+    {
+      "claimId": "F040A",
+      "statement": "An Azure AI Search agent tool requires a project connection and index name; query_type selects simple/vector/semantic/hybrid modes and retrieval filters scope the returned content.",
+      "sourceId": "S040",
+      "sourceUrl": "https://learn.microsoft.com/azure/foundry/agents/how-to/tools/ai-search",
+      "versionContext": "Feature-specific qualifications in snapshot; package/API version unknown unless stated in a referenced excerpt.",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S040.md",
+          "lineStart": 52,
+          "lineEnd": 57,
+          "heading": "## Configure tool parameters",
+          "needle": "| `project_connection_id` |",
+          "excerpt": "| --- | --- | --- |\n| `project_connection_id` | Yes | The resource ID of the project connection to Azure AI Search. |\n| `index_name` | Yes | The name of the index in your Azure AI Search resource. |\n| `top_k` | No | Defaults to 5. |\n| `query_type` | No | Defaults to `vector_semantic_hybrid`. Supported values: `simple`, `vector`, `semantic`, `vector_simple_hybrid`, `vector_semantic_hybrid`. |\n| `filter` | No | Applies to all queries the agent makes to the index. |",
+          "sourceSha256": "67830020b25de8c993ae294ff523035ad2c04c16865c1fe7222f053769316545"
+        },
+        {
+          "snapshot": "sources/snapshots/S040.md",
+          "lineStart": 55,
+          "lineEnd": 59,
+          "heading": "## Configure tool parameters",
+          "needle": "| `query_type` |",
+          "excerpt": "| `top_k` | No | Defaults to 5. |\n| `query_type` | No | Defaults to `vector_semantic_hybrid`. Supported values: `simple`, `vector`, `semantic`, `vector_simple_hybrid`, `vector_semantic_hybrid`. |\n| `filter` | No | Applies to all queries the agent makes to the index. |\n\n## Add Azure AI Search to a toolbox",
+          "sourceSha256": "67830020b25de8c993ae294ff523035ad2c04c16865c1fe7222f053769316545"
+        },
+        {
+          "snapshot": "sources/snapshots/S040.md",
+          "lineStart": 56,
+          "lineEnd": 59,
+          "heading": "## Configure tool parameters",
+          "needle": "| `filter` |",
+          "excerpt": "| `query_type` | No | Defaults to `vector_semantic_hybrid`. Supported values: `simple`, `vector`, `semantic`, `vector_simple_hybrid`, `vector_semantic_hybrid`. |\n| `filter` | No | Applies to all queries the agent makes to the index. |\n\n## Add Azure AI Search to a toolbox",
+          "sourceSha256": "67830020b25de8c993ae294ff523035ad2c04c16865c1fe7222f053769316545"
+        }
+      ]
+    }
+  ],
+  "constraints": [
+    "Only listed facts with conditions establish answer keys. Cite correct answers and distractor rationales.",
+    "Preserve API/SDK generation, preview, retirement and region/model qualifiers.",
+    "No unshown methods, asserted execution, GH-600 material, dumps, remembered assessments or official format parity.",
+    "Ready is bounded evidence support; later content review and manual solve-first audit are still required.",
+    "Orchestration scope is documented pattern/tool/approval semantics; current Framework code requires matching pinned evidence."
+  ]
+}

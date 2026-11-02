@@ -1,0 +1,50 @@
+{
+  "reviewer": "Main Codex agent; Astra high as requested by user",
+  "reviewedAt": "2026-10-08T04:47:03.636365+00:00",
+  "scope": "KB1-KB5 study/evidence artifacts; engine implementation remains paused",
+  "semanticReview": {
+    "objectiveDraftsRead": 64,
+    "domainSummariesRead": 5,
+    "claimStatementsRead": 79,
+    "sourceReview": "Targeted primary-source spot checks and consequential conflict review; not independent execution of Azure examples",
+    "corrections": [
+      "Multi-locator support for compound claims",
+      "Text-only Prompt Shields versus multimodal harm classification",
+      "Official exam pro-mode wording versus retired API/current agentic mode",
+      "Workflow retirement limited to visual designer and in-portal execution",
+      "Ambiguous guardrail severity adjectives excluded from answer keys",
+      "Current versus classic function-call panels separated",
+      "Video metadata durations/publisher provenance distinguished from viewing",
+      "Code excerpt fences, truncation and prose spacing checked"
+    ]
+  },
+  "acceptance": "accepted-staged-knowledge; bounded authoring only",
+  "appTestsRun": false,
+  "azureCodeExecuted": false,
+  "questionAuthoringPerformed": false,
+  "claudeAuditPerformed": false,
+  "checks": {
+    "exactOfficialObjectiveOrderAndWording": 64,
+    "uniqueSourcesWithVerifiedHashes": 50,
+    "claimsWithValidReferences": 79,
+    "exactExcerptLocatorsWithHashes": 130,
+    "objectiveNotes": 64,
+    "domainSummaries": 5,
+    "readyOnlyPackets": 14,
+    "readyObjectivesIncludedOnce": 56,
+    "partialObjectivesExcluded": 8,
+    "sourceMatchedCodeFragments": 9,
+    "authoredMarkdownFilesChecked": 75,
+    "localLinksResolve": 338,
+    "studySupplements": 17,
+    "preResearchFilesUnchanged": 76,
+    "originalGh600FilesUnchanged": 21
+  },
+  "limits": [
+    "Documentation interpretation and static evidence checks, not Azure execution or exhaustive correctness proof.",
+    "Videos inspected through publisher/player metadata and chapter indexes; not watched/transcript-reviewed.",
+    "Repository publisher/commit metadata inspected; code not executed or security audited.",
+    "Eight objectives remain partial. No questions or release approval.",
+    "Earlier Session 1 app checks predate paused Session 2A; current app tests were not run."
+  ]
+}

@@ -1,0 +1,739 @@
+{
+  "canonicalDraftHash": "06b6490c1b4476a934d6301f1a53263b0e941b691ac9febf2e4522411b324c4a",
+  "questions": [
+    {
+      "domainId": "A",
+      "objectiveTags": [
+        "AI103-A1.03"
+      ],
+      "stem": "A catalog requires exact part-code matches and semantic symptom matches. Which design combines both retrieval signals before optional reranking?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Vector retrieval alone, with a larger candidate count."
+        },
+        {
+          "id": "B",
+          "text": "Semantic reranking of keyword-only candidates."
+        },
+        {
+          "id": "C",
+          "text": "Keyword and vector retrieval with fused rankings."
+        },
+        {
+          "id": "D",
+          "text": "Keyword retrieval alone, with boosted identifier fields."
+        }
+      ],
+      "correctAnswer": "C",
+      "type": "single_choice",
+      "difficulty": "medium",
+      "explanation": {
+        "whyCorrect": "Keyword evidence complements semantic vectors. Evaluate hybrid retrieval for the actual query set; ranking quality is distinct from generation and authentication.",
+        "whyDistractorsWrong": {
+          "A": "A larger vector candidate count does not add keyword retrieval.",
+          "D": "Boosted keyword fields do not add vector retrieval.",
+          "B": "Reranking keyword candidates does not combine keyword and vector retrieval."
+        }
+      },
+      "id": "ai103-improvement-r2-set-a-100-q045",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Plan and manage an Azure AI solution",
+      "sourceRefs": [
+        {
+          "sourceId": "S025",
+          "title": "Hybrid search using vectors and full-text search in Azure AI Search",
+          "url": "https://learn.microsoft.com/azure/search/hybrid-search-overview",
+          "snapshotSha256": "8f766ea87e9528dc1e469ffca3de91350cf9b9393aaf47e5c8c124378457397d",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S026",
+          "title": "Integrated vector embedding in Azure AI Search",
+          "url": "https://learn.microsoft.com/azure/search/vector-search-integrated-vectorization",
+          "snapshotSha256": "45a6b445fbe4f7f65334693eb96b2de7b021e0b50ce46b363ab47c5de0a11f0d",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-7",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "A",
+      "objectiveTags": [
+        "AI103-A4.04"
+      ],
+      "stem": "An agent proposes a consequential account change. Which host boundary should decide whether it executes?",
+      "options": [
+        {
+          "id": "A",
+          "text": "The host’s caller authorization and action approval gate."
+        },
+        {
+          "id": "B",
+          "text": "A valid model response schema."
+        },
+        {
+          "id": "C",
+          "text": "A lower generation temperature."
+        },
+        {
+          "id": "D",
+          "text": "A more detailed tool description."
+        }
+      ],
+      "correctAnswer": "A",
+      "type": "single_choice",
+      "difficulty": "easy",
+      "explanation": {
+        "whyCorrect": "The host controls operations and validates values and authority. Descriptions and structured output help represent intent but are not action permission.",
+        "whyDistractorsWrong": {
+          "C": "Sampling does not establish caller authority.",
+          "D": "Descriptions are not an executable permission check.",
+          "B": "A response schema does not authorize an action."
+        }
+      },
+      "id": "ai103-improvement-r2-set-a-100-q046",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Plan and manage an Azure AI solution",
+      "sourceRefs": [
+        {
+          "sourceId": "S054",
+          "title": "Tool best practices for Microsoft Foundry Agent Service",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/concepts/tool-best-practice",
+          "snapshotSha256": "fbf440754eab789009c34a8bf7636fc60c1d0bd64402cd650b1b903230ffd0f9",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-7",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "C",
+      "objectiveTags": [
+        "AI103-C1.01"
+      ],
+      "stem": "A catalog app must create a new product-scene image from a text brief, with no source image supplied. Its supported GPT image deployment is available. Which operation matches this input contract?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Call images.edit with the brief as its source image file."
+        },
+        {
+          "id": "B",
+          "text": "Send the brief to a vision chat request and treat the text response as image bytes."
+        },
+        {
+          "id": "C",
+          "text": "Call images.edit with a mask but no source image."
+        },
+        {
+          "id": "D",
+          "text": "Call images.generate with the deployment and text prompt."
+        }
+      ],
+      "correctAnswer": "D",
+      "type": "single_choice",
+      "difficulty": "easy",
+      "explanation": {
+        "whyCorrect": "Image generation accepts the text prompt to create an image. Editing requires source image input; vision chat interprets supplied images rather than returning generated image bytes.",
+        "whyDistractorsWrong": {
+          "A": "A text brief is not the source image input for editing.",
+          "B": "Vision chat text is not a generated image file.",
+          "C": "A mask does not supply the missing source image."
+        }
+      },
+      "id": "ai103-improvement-r2-set-a-100-q047",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Implement computer vision solutions",
+      "sourceRefs": [
+        {
+          "sourceId": "S017",
+          "title": "Azure OpenAI image generation models",
+          "url": "https://learn.microsoft.com/azure/foundry/openai/how-to/dall-e",
+          "snapshotSha256": "34668770bb5790633413f4ae9432738c85ed36aef328f9f2bdb8b1b82437dca6",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-8",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "C",
+      "stem": "An application switches between two GPT image deployments with different quality and size options. What should its request builder use?",
+      "options": [
+        {
+          "id": "A",
+          "text": "One fixed list copied from an older image model."
+        },
+        {
+          "id": "B",
+          "text": "The union of both models' parameters, sent to each deployment for consistency."
+        },
+        {
+          "id": "C",
+          "text": "The supported controls of the selected deployed image model."
+        },
+        {
+          "id": "D",
+          "text": "The default size accepted by a different deployment in the same resource."
+        }
+      ],
+      "correctAnswer": "C",
+      "difficulty": "easy",
+      "type": "single_choice",
+      "explanation": {
+        "whyCorrect": "Image models differ in supported editing, size and quality controls. Build requests against the selected deployment's documented capabilities.",
+        "whyDistractorsWrong": {
+          "A": "Parameter support varies by model.",
+          "B": "A parameter supported by one model need not be supported by the other.",
+          "D": "Another deployment does not define the chosen model's accepted controls."
+        }
+      },
+      "objectiveTags": [
+        "AI103-C1.05"
+      ],
+      "id": "ai103-improvement-r2-set-a-100-q048",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Implement computer vision solutions",
+      "sourceRefs": [
+        {
+          "sourceId": "S017",
+          "title": "Azure OpenAI image generation models",
+          "url": "https://learn.microsoft.com/azure/foundry/openai/how-to/dall-e",
+          "snapshotSha256": "34668770bb5790633413f4ae9432738c85ed36aef328f9f2bdb8b1b82437dca6",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-8",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "C",
+      "stem": "A vision-enabled chat model must describe damage visible in a supplied photograph. Which message construction gives it the actual visual input?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Include text instructions and image_url content in the message."
+        },
+        {
+          "id": "B",
+          "text": "Enable image output formatting on the text-only message."
+        },
+        {
+          "id": "C",
+          "text": "Put the image filename in a text message."
+        },
+        {
+          "id": "D",
+          "text": "Describe an image path in the system prompt while keeping the image local to the client."
+        }
+      ],
+      "correctAnswer": "A",
+      "difficulty": "easy",
+      "type": "single_choice",
+      "explanation": {
+        "whyCorrect": "Vision chat messages can combine text and image_url content. Supply the image in the supported representation along with the task instructions.",
+        "whyDistractorsWrong": {
+          "C": "A filename does not transmit the image content.",
+          "D": "An inaccessible path does not supply visual input to the service.",
+          "B": "Output configuration does not supply visual input."
+        }
+      },
+      "objectiveTags": [
+        "AI103-C2.01"
+      ],
+      "id": "ai103-improvement-r2-set-a-100-q049",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Implement computer vision solutions",
+      "sourceRefs": [
+        {
+          "sourceId": "S019",
+          "title": "Use vision-enabled chat models",
+          "url": "https://learn.microsoft.com/azure/foundry/openai/how-to/gpt-with-vision",
+          "snapshotSha256": "1ce6d9970cccbd4d54714eff5d70bc5e73d4c2c8ad3ea48175c8fcea5d11b2cd",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-8",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "C",
+      "stem": "A magnifying-glass image is the visible label of a search button. Which text alternative best communicates the function?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Small circular lens with a diagonal handle on a blue background."
+        },
+        {
+          "id": "B",
+          "text": "search-icon-v3.png."
+        },
+        {
+          "id": "C",
+          "text": "Magnifying glass icon."
+        },
+        {
+          "id": "D",
+          "text": "Search the catalog."
+        }
+      ],
+      "correctAnswer": "D",
+      "difficulty": "easy",
+      "type": "single_choice",
+      "explanation": {
+        "whyCorrect": "For an image serving as a control, communicate its action or destination. Here the functional label is the search action.",
+        "whyDistractorsWrong": {
+          "C": "The visual shape does not name the action.",
+          "A": "A visual description is less useful than the button's function.",
+          "B": "A filename is not an accessible action label."
+        }
+      },
+      "objectiveTags": [
+        "AI103-C2.04"
+      ],
+      "id": "ai103-improvement-r2-set-a-100-q050",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Implement computer vision solutions",
+      "sourceRefs": [
+        {
+          "sourceId": "S050",
+          "title": "W3C WAI An alt Decision Tree",
+          "url": "https://www.w3.org/WAI/tutorials/images/decision-tree/",
+          "snapshotSha256": "fa71070e3609f8825849fe94c3b718fb8632724b4c88ed9f3e5ea54615f36404",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-8",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "C",
+      "stem": "A Content Understanding video preview samples about one frame per second. A safety event lasts 0.2 seconds and the output does not mention it. Which conclusion is justified?",
+      "options": [
+        {
+          "id": "A",
+          "text": "The absence of a mention proves the event did not occur."
+        },
+        {
+          "id": "B",
+          "text": "Increase output length to recover source frames omitted by the sampling stage."
+        },
+        {
+          "id": "C",
+          "text": "The sampled analysis may have missed the brief event."
+        },
+        {
+          "id": "D",
+          "text": "The analyzer must have sampled every source frame because the request succeeded."
+        }
+      ],
+      "correctAnswer": "C",
+      "difficulty": "easy",
+      "type": "single_choice",
+      "explanation": {
+        "whyCorrect": "Brief events can fall between sampled frames. Absence from the output is not proof that the event was absent from the original video.",
+        "whyDistractorsWrong": {
+          "A": "Sampling cannot establish complete observation of rapid events.",
+          "B": "Output length cannot recover visual evidence that was not sampled.",
+          "D": "Successful analysis does not change the documented sampling behavior."
+        }
+      },
+      "objectiveTags": [
+        "AI103-C2.06"
+      ],
+      "id": "ai103-improvement-r2-set-a-100-q051",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Implement computer vision solutions",
+      "sourceRefs": [
+        {
+          "sourceId": "S022",
+          "title": "Azure Content Understanding in Foundry Tools video solutions",
+          "url": "https://learn.microsoft.com/azure/ai-services/content-understanding/video/overview",
+          "snapshotSha256": "3a89d957245350c800482a717244bd3fc27b322ed67dbcbabea8e41782a3a57a",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-8",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "C",
+      "stem": "A production document-image workflow needs capabilities available in Content Understanding 2025-11-01. A newer preview offers unrelated features. Which API selection follows the documented production guidance?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Use the 2025-11-01 GA API for the required production capabilities."
+        },
+        {
+          "id": "B",
+          "text": "Use the retired 2025-05-01-preview because its examples are familiar."
+        },
+        {
+          "id": "C",
+          "text": "Use 2026-06-01-preview because its date is newer."
+        },
+        {
+          "id": "D",
+          "text": "Alternate API versions randomly to compare response speed in production."
+        }
+      ],
+      "correctAnswer": "A",
+      "difficulty": "easy",
+      "type": "single_choice",
+      "explanation": {
+        "whyCorrect": "The documentation recommends the GA API for production and the newer preview for evaluation of new capabilities. Match feature needs to an explicit version.",
+        "whyDistractorsWrong": {
+          "C": "The documented guidance favors GA for supported production needs.",
+          "B": "Retired API examples are not the production target.",
+          "D": "Random version changes do not provide a stable application contract."
+        }
+      },
+      "objectiveTags": [
+        "AI103-C2.05"
+      ],
+      "id": "ai103-improvement-r2-set-a-100-q052",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Implement computer vision solutions",
+      "sourceRefs": [
+        {
+          "sourceId": "S020",
+          "title": "What is Azure Content Understanding in Foundry Tools?",
+          "url": "https://learn.microsoft.com/azure/ai-services/content-understanding/overview",
+          "snapshotSha256": "c371f350d668f0d6040d569a845d3ec43e22834614253c7be6c62115f59ba8df",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-8",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "C",
+      "objectiveTags": [
+        "AI103-C3.01"
+      ],
+      "stem": "A poster has a low visual harm score but includes text telling an agent to reveal credentials. Which conclusion follows from the harm result?",
+      "options": [
+        {
+          "id": "A",
+          "text": "The image harm score is a groundedness measurement."
+        },
+        {
+          "id": "B",
+          "text": "Visual harm severity; instruction trust is a separate check."
+        },
+        {
+          "id": "C",
+          "text": "A successful harm request establishes the text is authorized."
+        },
+        {
+          "id": "D",
+          "text": "The poster text has passed instruction-trust validation."
+        }
+      ],
+      "correctAnswer": "B",
+      "type": "single_choice",
+      "difficulty": "medium",
+      "explanation": {
+        "whyCorrect": "Visual harm classification is distinct from text prompt-attack detection. The FAQ describes text-only Prompt Shields; the harm score does not authorize instructions.",
+        "whyDistractorsWrong": {
+          "D": "Harm classification does not establish instruction trust.",
+          "C": "HTTP success is not authorization of embedded text.",
+          "A": "Groundedness is a different assessment."
+        }
+      },
+      "id": "ai103-improvement-r2-set-a-100-q053",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Implement computer vision solutions",
+      "sourceRefs": [
+        {
+          "sourceId": "S042",
+          "title": "QuickStart: Analyze image content",
+          "url": "https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-image",
+          "snapshotSha256": "6a40b6fdabe9e2a91838a3026f8530d0229c70acd401c4fab094a6c0c63b8670",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S048",
+          "title": "Azure AI Content Safety Frequently Asked Questions",
+          "url": "https://learn.microsoft.com/en-us/azure/ai-services/content-safety/faq",
+          "snapshotSha256": "1b16f29ac9424c57412c1d41d6e8a1edabe2bac709c1296ffdac09e0439ddadf",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-8",
+        "validationStatus": "draft"
+      }
+    }
+  ],
+  "caseStudies": [],
+  "evidence": [
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q045",
+      "testedDecision": "A catalog requires exact part-code matches and semantic symptom matches. Which design combines both retrieval signals before optional reranking?",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-A1.03",
+      "itemRevisionHash": "4f9c98b06a6355dfde8e6fa331d4adabacf38e8767ac87bcc0e31635ee343ec6",
+      "sources": [
+        {
+          "sourceId": "S025",
+          "title": "Hybrid search using vectors and full-text search in Azure AI Search",
+          "url": "https://learn.microsoft.com/azure/search/hybrid-search-overview",
+          "snapshotSha256": "8f766ea87e9528dc1e469ffca3de91350cf9b9393aaf47e5c8c124378457397d",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S026",
+          "title": "Integrated vector embedding in Azure AI Search",
+          "url": "https://learn.microsoft.com/azure/search/vector-search-integrated-vectorization",
+          "snapshotSha256": "45a6b445fbe4f7f65334693eb96b2de7b021e0b50ce46b363ab47c5de0a11f0d",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q046",
+      "testedDecision": "An agent proposes a consequential account change. Which host boundary should decide whether it executes?",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-A4.04",
+      "itemRevisionHash": "724fb7d8f627c1e5dababcf7d0cb416633f7f855467f17f997528193d21b3d20",
+      "sources": [
+        {
+          "sourceId": "S054",
+          "title": "Tool best practices for Microsoft Foundry Agent Service",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/concepts/tool-best-practice",
+          "snapshotSha256": "fbf440754eab789009c34a8bf7636fc60c1d0bd64402cd650b1b903230ffd0f9",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q047",
+      "testedDecision": "A catalog app must create a new product-scene image from a text brief, with no source image supplied. Its supported GPT image deployment is available. Which operation matches this input contract?",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-C1.01",
+      "itemRevisionHash": "ef53aab6371364bfeacdfa558ed3def37d86b44978bbcd3782771fa7328690ce",
+      "sources": [
+        {
+          "sourceId": "S017",
+          "title": "Azure OpenAI image generation models",
+          "url": "https://learn.microsoft.com/azure/foundry/openai/how-to/dall-e",
+          "snapshotSha256": "34668770bb5790633413f4ae9432738c85ed36aef328f9f2bdb8b1b82437dca6",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q048",
+      "testedDecision": "An application switches between two GPT image deployments with different quality and size options. What should its request builder use?",
+      "oldItemIds": [
+        "ai103-set-a-q044"
+      ],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-C1.05",
+      "itemRevisionHash": "c30593a7c8669cdda51b746e2c504c173dffa1f4a5e7f1691e2f9a84302e3012",
+      "sources": [
+        {
+          "sourceId": "S017",
+          "title": "Azure OpenAI image generation models",
+          "url": "https://learn.microsoft.com/azure/foundry/openai/how-to/dall-e",
+          "snapshotSha256": "34668770bb5790633413f4ae9432738c85ed36aef328f9f2bdb8b1b82437dca6",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q049",
+      "testedDecision": "A vision-enabled chat model must describe damage visible in a supplied photograph. Which message construction gives it the actual visual input?",
+      "oldItemIds": [
+        "ai103-set-a-q045"
+      ],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-C2.01",
+      "itemRevisionHash": "af7e0c79697ad288f8954548ab54c4168dfec44902343135f57a3d1dc3fda8b9",
+      "sources": [
+        {
+          "sourceId": "S019",
+          "title": "Use vision-enabled chat models",
+          "url": "https://learn.microsoft.com/azure/foundry/openai/how-to/gpt-with-vision",
+          "snapshotSha256": "1ce6d9970cccbd4d54714eff5d70bc5e73d4c2c8ad3ea48175c8fcea5d11b2cd",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q050",
+      "testedDecision": "A magnifying-glass image is the visible label of a search button. Which text alternative best communicates the function?",
+      "oldItemIds": [
+        "ai103-set-a-q046"
+      ],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-C2.04",
+      "itemRevisionHash": "e61010146809b7214f923c9bd80cabab06fb5c78b89718e705d270eee82b9e05",
+      "sources": [
+        {
+          "sourceId": "S050",
+          "title": "W3C WAI An alt Decision Tree",
+          "url": "https://www.w3.org/WAI/tutorials/images/decision-tree/",
+          "snapshotSha256": "fa71070e3609f8825849fe94c3b718fb8632724b4c88ed9f3e5ea54615f36404",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q051",
+      "testedDecision": "A Content Understanding video preview samples about one frame per second. A safety event lasts 0.2 seconds and the output does not mention it. Which conclusion is justified?",
+      "oldItemIds": [
+        "ai103-set-a-q049"
+      ],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-C2.06",
+      "itemRevisionHash": "34b350479a27a6d01753f415819895de7d01dac6988a57cce711718b153495ba",
+      "sources": [
+        {
+          "sourceId": "S022",
+          "title": "Azure Content Understanding in Foundry Tools video solutions",
+          "url": "https://learn.microsoft.com/azure/ai-services/content-understanding/video/overview",
+          "snapshotSha256": "3a89d957245350c800482a717244bd3fc27b322ed67dbcbabea8e41782a3a57a",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q052",
+      "testedDecision": "A production document-image workflow needs capabilities available in Content Understanding 2025-11-01. A newer preview offers unrelated features. Which API selection follows the documented production guidance?",
+      "oldItemIds": [
+        "ai103-set-a-q050"
+      ],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-C2.05",
+      "itemRevisionHash": "ba94deab30f8c667ba34f32065ab668e7a27b5cd867ac1cb42d857f64dd3f8c8",
+      "sources": [
+        {
+          "sourceId": "S020",
+          "title": "What is Azure Content Understanding in Foundry Tools?",
+          "url": "https://learn.microsoft.com/azure/ai-services/content-understanding/overview",
+          "snapshotSha256": "c371f350d668f0d6040d569a845d3ec43e22834614253c7be6c62115f59ba8df",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q053",
+      "testedDecision": "A poster has a low visual harm score but includes text telling an agent to reveal credentials. Which conclusion follows from the harm result?",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-C3.01",
+      "itemRevisionHash": "2fd0ad122c221cec195968c5e54080a48bb203f7379e4d110a38f3e8a75a58f7",
+      "sources": [
+        {
+          "sourceId": "S042",
+          "title": "QuickStart: Analyze image content",
+          "url": "https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-image",
+          "snapshotSha256": "6a40b6fdabe9e2a91838a3026f8530d0229c70acd401c4fab094a6c0c63b8670",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S048",
+          "title": "Azure AI Content Safety Frequently Asked Questions",
+          "url": "https://learn.microsoft.com/en-us/azure/ai-services/content-safety/faq",
+          "snapshotSha256": "1b16f29ac9424c57412c1d41d6e8a1edabe2bac709c1296ffdac09e0439ddadf",
+          "docType": "microsoft_learn"
+        }
+      ]
+    }
+  ]
+}

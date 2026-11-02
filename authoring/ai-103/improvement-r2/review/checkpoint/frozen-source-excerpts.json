@@ -1,0 +1,875 @@
+{
+  "state": "evidence for manual review; no review verdicts",
+  "sources": [
+    {
+      "sourceId": "S002",
+      "url": "https://learn.microsoft.com/python/api/overview/azure/ai-projects-readme?view=azure-python",
+      "snapshot": "sources/snapshots/S002.md",
+      "snapshotSha256": "2ce3139fd9fb77eb3f63d4a797ecc24deab957376faac5fe5a28d80e8080b266",
+      "fetchedAt": "2026-10-08T04:26:06.367Z",
+      "excerpts": [
+        {
+          "claimLocator": "AIProjectClient",
+          "lineStart": 87,
+          "lineEnd": 97,
+          "text": "```python\nimport os\nfrom azure.ai.projects import AIProjectClient\nfrom azure.identity import DefaultAzureCredential\n\nwith (\n    DefaultAzureCredential() as credential,\n    AIProjectClient(\n        endpoint=os.environ[\"FOUNDRY_PROJECT_ENDPOINT\"],\n        credential=credential\n    ) as project_client,"
+        },
+        {
+          "claimLocator": "AIProjectClient",
+          "lineStart": 92,
+          "lineEnd": 102,
+          "text": "with (\n    DefaultAzureCredential() as credential,\n    AIProjectClient(\n        endpoint=os.environ[\"FOUNDRY_PROJECT_ENDPOINT\"],\n        credential=credential\n    ) as project_client,\n):\n```\n\nTo construct an asynchronous client, install the additional package [aiohttp](https://pypi.org/project/aiohttp/):\n"
+        },
+        {
+          "claimLocator": "DefaultAzureCredential",
+          "lineStart": 60,
+          "lineEnd": 70,
+          "text": "- A [project in Microsoft Foundry](/en-us/azure/foundry/how-to/create-projects).\n- A Foundry project endpoint URL of the form `https://your-ai-services-account-name.services.ai.azure.com/api/projects/your-project-name`. It can be found in your Microsoft Foundry Project home page. Below we will assume the environment variable `FOUNDRY_PROJECT_ENDPOINT` was defined to hold this value.\n- Client authentication is done using Entra ID. To authenticate, your application needs an object that implements the [TokenCredential](/en-us/python/api/azure-core/azure.core.credentials.tokencredential) interface. Code samples here use [DefaultAzureCredential](/en-us/python/api/azure-identity/azure.identity.defaultazurecredential). To get that working, you will need:\n    - An appropriate role assignment. See [Role-based access control in Microsoft Foundry portal](/en-us/azure/foundry/concepts/rbac-foundry). Role assignment can be done via the \"Access Control (IAM)\" tab of your Azure AI Project resource in the Azure portal.\n    - [Azure CLI](/en-us/cli/azure/install-azure-cli) installed.\n    - You are logged into your Azure account by running `az login`.\n\n### Install the package\n\n```bash\npip install azure-ai-projects"
+        },
+        {
+          "claimLocator": "DefaultAzureCredential",
+          "lineStart": 88,
+          "lineEnd": 98,
+          "text": "import os\nfrom azure.ai.projects import AIProjectClient\nfrom azure.identity import DefaultAzureCredential\n\nwith (\n    DefaultAzureCredential() as credential,\n    AIProjectClient(\n        endpoint=os.environ[\"FOUNDRY_PROJECT_ENDPOINT\"],\n        credential=credential\n    ) as project_client,\n):"
+        },
+        {
+          "claimLocator": "get_openai_client",
+          "lineStart": 28,
+          "lineEnd": 38,
+          "text": "    - Web Search\n    - Work IQ (Preview)\n- **Get an OpenAI client** using `.get_openai_client()` method to run Responses, Conversations, Evaluations and Fine-Tuning operations with your Agent.\n- **Create and version toolboxes** that bundle collections of tools and skills for your agents, using `.toolboxes` operations.\n- **Fine-tune** AI Models on your data.\n- **Enumerate AI Models** deployed to your Foundry Project using `.deployments` operations.\n- **Enumerate connected Azure resources** in your Foundry project using `.connections` operations.\n- **Upload documents and create Datasets** to reference them using `.datasets` operations.\n- **Create and enumerate Search Indexes** using `.indexes` operations.\n- **Explore additional evaluation tools (some in preview)** to assess the performance of your generative AI application, using `.evaluation_rules`, `.beta.evaluation_taxonomies`, `.beta.evaluators`, `.beta.insights`, and `.beta.schedules` operations.\n- **Manage memory stores (preview)** for Agent conversations, using `.beta.memory_stores` operations."
+        },
+        {
+          "claimLocator": "get_openai_client",
+          "lineStart": 124,
+          "lineEnd": 134,
+          "text": "### Performing Responses operations using OpenAI client\n\nUse the `.get_openai_client()` method to obtain an authenticated [OpenAI](https://github.com/openai/openai-python) client and run Responses, Conversations, Evaluations, Files, and Fine-Tuning operations. See the **responses**, **agents**, **evaluations**, **files**, and **finetuning** folders in the [samples](https://aka.ms/azsdk/azure-ai-projects-v2/python/samples/) for complete working examples.\n\nThe code below assumes the environment variable `FOUNDRY_MODEL_NAME` is defined. It's the deployment name of an AI model in your Foundry Project. See first column titled \"Name\" in the \"Deployed models\" table in your Foundry Project.\n\n```python\nwith project_client.get_openai_client() as openai_client:\n    response = openai_client.responses.create(\n        model=os.environ[\"FOUNDRY_MODEL_NAME\"],\n        input=\"What is the size of France in square miles?\","
+        }
+      ],
+      "serviceExecution": "not performed"
+    },
+    {
+      "sourceId": "S003",
+      "url": "https://learn.microsoft.com/azure/foundry/how-to/develop/sdk-overview",
+      "snapshot": "sources/snapshots/S003.md",
+      "snapshotSha256": "f62e4cfa9a1eeed9aa30383cab18005b8bc8f72d2743a26dedf0bb83d24e046d",
+      "fetchedAt": "2026-10-08T04:26:06.764Z",
+      "excerpts": [
+        {
+          "claimLocator": "project endpoint",
+          "lineStart": 3,
+          "lineEnd": 13,
+          "text": "A Foundry resource provides unified access to models, agents, and tools. This article explains which SDK and endpoint to use for your scenario.\n\nThe **Foundry SDK** is a thin-client SDK that exposes all of the Foundry project APIs through a single project endpoint. Higher-level SDKs build on it — for example, the Agent Framework `foundry` package depends on the Foundry SDK to access Foundry models, tools, and project configuration.\n\n| SDK | What it's for | Endpoint |\n| --- | --- | --- |\n| **Foundry SDK** | Thin-client SDK over all Foundry project APIs. Access to Foundry Models and platform tools (file search, code interpreter, web search, memory, SharePoint, WorkIQ, Fabric IQ, MCP). | `https://<resource-name>.services.ai.azure.com/api/projects/<project-name>` |\n| **Agent Framework** | Unified multi-agent orchestration for hosted agents and multi-agent systems, available in C#/.NET and Python. The `foundry` package depends on the Foundry SDK for project access. | Responses API in the project endpoint, via `FoundryChatClient`. |\n| **OpenAI SDK** | Full OpenAI API surface, including embeddings and Foundry Models sold by Azure through Chat Completions. Best latency and maximum OpenAI compatibility. | `https://<resource-name>.openai.azure.com/openai/v1` |\n| **Anthropic SDK** | Anthropic Claude models deployed in Foundry. | `https://<resource-name>.services.ai.azure.com/anthropic` |\n| **Foundry Tools SDKs** | Prebuilt solutions (Vision, Speech, Content Safety, and more). | Tool-specific endpoints. |"
+        },
+        {
+          "claimLocator": "project endpoint",
+          "lineStart": 8,
+          "lineEnd": 18,
+          "text": "| --- | --- | --- |\n| **Foundry SDK** | Thin-client SDK over all Foundry project APIs. Access to Foundry Models and platform tools (file search, code interpreter, web search, memory, SharePoint, WorkIQ, Fabric IQ, MCP). | `https://<resource-name>.services.ai.azure.com/api/projects/<project-name>` |\n| **Agent Framework** | Unified multi-agent orchestration for hosted agents and multi-agent systems, available in C#/.NET and Python. The `foundry` package depends on the Foundry SDK for project access. | Responses API in the project endpoint, via `FoundryChatClient`. |\n| **OpenAI SDK** | Full OpenAI API surface, including embeddings and Foundry Models sold by Azure through Chat Completions. Best latency and maximum OpenAI compatibility. | `https://<resource-name>.openai.azure.com/openai/v1` |\n| **Anthropic SDK** | Anthropic Claude models deployed in Foundry. | `https://<resource-name>.services.ai.azure.com/anthropic` |\n| **Foundry Tools SDKs** | Prebuilt solutions (Vision, Speech, Content Safety, and more). | Tool-specific endpoints. |\n\n**Choose your SDK**:\n\n- Use **Foundry SDK** when building apps with agents, evaluations, or Foundry-specific features\n- Use **Agent Framework** for hosted agents or multi-agent systems in code using the Responses API in C#/.NET or Python"
+        },
+        {
+          "claimLocator": "DefaultAzureCredential",
+          "lineStart": 25,
+          "lineEnd": 35,
+          "text": "**Resource types:** A Foundry resource provides all endpoints previously listed. An Azure OpenAI resource provides only the `/openai/v1` endpoint.\n\n**Authentication:** Samples here use Microsoft Entra ID (`DefaultAzureCredential`). API keys work on `/openai/v1`. Pass the key as `api_key` instead of a token provider.\n\n## Prerequisites\n\n- An Azure account with an active subscription. If you don't have one, create a [free Azure account, which includes a free trial subscription](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).\n- Have the Azure RBAC role required for your task at the narrowest scope:\n\n    - **Foundry User** on the Foundry project for day-to-day development.\n"
+        },
+        {
+          "claimLocator": "DefaultAzureCredential",
+          "lineStart": 240,
+          "lineEnd": 250,
+          "text": "```python\nfrom azure.ai.projects import AIProjectClient\nfrom azure.identity import DefaultAzureCredential\n\nproject_endpoint = (\n    \"https://<resource-name>.services.ai.azure.com/api/projects/<project-name>\"\n)\n\nproject = AIProjectClient(\n    endpoint=project_endpoint,\n    credential=DefaultAzureCredential(),"
+        }
+      ],
+      "serviceExecution": "not performed"
+    },
+    {
+      "sourceId": "S007",
+      "url": "https://learn.microsoft.com/azure/foundry/agents/how-to/tools/function-calling",
+      "snapshot": "sources/snapshots/S007.md",
+      "snapshotSha256": "0d4119f94b15c94d404729f53d2ed5f52a89dfaf35841d1290c0472be3e3e953",
+      "fetchedAt": "2026-10-08T04:26:06.627Z",
+      "excerpts": [
+        {
+          "claimLocator": "call_id",
+          "lineStart": 122,
+          "lineEnd": 132,
+          "text": "                FunctionCallOutput(\n                    type=\"function_call_output\",\n                    call_id=item.call_id,\n                    output=json.dumps({\"horoscope\": horoscope}),\n                )\n            )\n\n# Submit function results and get the final response\nresponse = openai.responses.create(\n    input=input_list,\n    conversation=conversation.id,"
+        },
+        {
+          "claimLocator": "call_id",
+          "lineStart": 556,
+          "lineEnd": 566,
+          "text": "    {\n      \"type\": \"function_call\",\n      \"call_id\": \"call_xyz789\",\n      \"name\": \"getCurrentWeather\",\n      \"arguments\": \"{\\\"location\\\": \\\"Dar es Salaam, Tanzania\\\", \\\"unit\\\": \\\"c\\\"}\"\n    }\n  ]\n}\n```\n\nAfter you process the function call and provide the output back to the agent, the final response includes the weather information in natural language."
+        },
+        {
+          "claimLocator": "function_call_output",
+          "lineStart": 121,
+          "lineEnd": 131,
+          "text": "            input_list.append(\n                FunctionCallOutput(\n                    type=\"function_call_output\",\n                    call_id=item.call_id,\n                    output=json.dumps({\"horoscope\": horoscope}),\n                )\n            )\n\n# Submit function results and get the final response\nresponse = openai.responses.create(\n    input=input_list,"
+        },
+        {
+          "claimLocator": "function_call_output",
+          "lineStart": 579,
+          "lineEnd": 589,
+          "text": "    \"input\": [\n      {\n        \"type\": \"function_call_output\",\n        \"call_id\": \"<CALL_ID>\",\n        \"output\": \"{\\\"temperature\\\": \\\"30\\\", \\\"unit\\\": \\\"c\\\", \\\"description\\\": \\\"Sunny\\\"}\"\n      }\n    ]\n  }'\n```\n\nReplace `<CALL_ID>` with the `call_id` value from the function call in the previous response. The agent uses the function output to generate a natural language answer."
+        }
+      ],
+      "serviceExecution": "not performed"
+    },
+    {
+      "sourceId": "S011",
+      "url": "https://learn.microsoft.com/azure/foundry/agents/how-to/virtual-networks",
+      "snapshot": "sources/snapshots/S011.md",
+      "snapshotSha256": "02eb40fb9bc5fcbd6b27249423b2d0ba26f5df0dd6b6885c881270a7a6fac8b9",
+      "fetchedAt": "2026-10-08T04:26:19.851Z",
+      "excerpts": [
+        {
+          "claimLocator": "DNS",
+          "lineStart": 139,
+          "lineEnd": 149,
+          "text": "1. **Confirm subnet delegation**: In the Azure portal, navigate to your VNet &gt; **Subnets** and verify the agent subnet shows delegation to `Microsoft.App/environments`.\n2. **Check public network access**: Open each resource (Foundry, Azure AI Search, Azure Storage, Azure Cosmos DB) and confirm **Public network access** is set to **Disabled**.\n3. **Validate private endpoint DNS resolution**: From a machine connected to the VNet, run `nslookup` against each endpoint listed in the DNS zone configurations summary.\n4. **Test agent connectivity**: Access your Foundry project from within the VNet (see Access your secured agents) and confirm you can create and run an agent.\n5. **Configure Role assignments**: Run the following commands to assign the required roles. The first grants Managed Identity Operator on the user-assigned managed identity, and the second grants Network Contributor on the remote VNet for cross-tenant access.\n\n```\naz role assignment create \\\n   --assignee <your-principal-id> \\\n   --role \"Managed Identity Operator\" \\\n   --scope \"/subscriptions/<subscription-id>/resourceGroups/<resource-group>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<id>\""
+        },
+        {
+          "claimLocator": "DNS",
+          "lineStart": 169,
+          "lineEnd": 179,
+          "text": "- **Agent subnet size**: The recommended size of the delegated Agent subnet is /24 (256 addresses) due to the delegation of the subnet to `Microsoft.App/environments`. For more on subnet sizing, see [Configuring virtual networks for Azure Container Apps](/en-us/azure/container-apps/custom-virtual-networks?tabs=workload-profiles-env#subnet).\n- **Agent subnet name length**: For Azure Container Apps-backed deployments, the delegated agent subnet name must not exceed 63 UTF-8 bytes. This limit applies to the subnet name, not the virtual network name or the full subnet resource ID.\n- **Agent subnet egress firewall allow list**: If you integrate an Azure Firewall with your private network secured standard agent, add `control-{region}.identity.azure.net`, `{region}.login.microsoft.com`, and `login.microsoftonline.com` to the firewall allow list. Replace `{region}` with the Azure region where you deploy the agent. Also add the Fully Qualified Domain Names (FQDNs) listed under **Managed Identity** in the [Integrate with Azure Firewall](/en-us/azure/container-apps/use-azure-firewall#application-rules) article, or add the **AzureActiveDirectory**service tag. If you apply Network Security Groups (NSGs) to the delegated agent subnet or related subnets, configure matching outbound allow rules for required dependencies, including the AzureActiveDirectory service tag for Microsoft Entra ID authentication. If either firewall or NSG rules block required dependencies, agent provisioning and runtime operations can fail.\n    - Verify that no TLS inspection happens in the firewall that could add a self-signed certificate. During failures, inspect whether any traffic reaches the firewall and what traffic is blocked.\n    - For source-code agent deployments, also allow the deployment endpoints listed in [Firewall requirements for private virtual networks](deploy-hosted-agent-code#firewall-requirements-for-private-virtual-networks).\n- **The Foundry resource must be deployed in the same region as the virtual network (VNet)**. Other Azure resources, such as Azure Cosmos DB, Azure AI Search, and Azure Storage, can be deployed in different regions. Consider the cost implications of cross-region deployments.\n- **Region availability**:\n    - For supported regions for model deployments, see: [Azure OpenAI model region support](../../foundry-models/concepts/models-sold-directly-by-azure).\n- **Azure Blob Storage**: Using Azure Blob Storage files with the File Search tool isn't supported.\n- **Code Interpreter file limitations**: In a private network (BYO) configuration, Code Interpreter only works in scenarios that don't involve file uploads or downloads. The tool can't retrieve files from the storage account in this setup. If you need to use files with Code Interpreter, you must use the SDK to create a container explicitly with the required files and then pass the `container_id` to Code Interpreter. This workaround is only available through the SDK; the Foundry portal UI doesn't support it.\n- **Grounding with Bing Search**: Only the following regions are supported: West Europe, Canada East, Switzerland North, Spain Central, UAE North, Korea Central, Poland Central, Southeast Asia, West US, West US 2, West US 3, East US, East US 2, Central US, South India, Japan East, UK South, France Central, Norway East, Australia East, Canada Central, Sweden Central, South Africa North, Italy North, Brazil South"
+        },
+        {
+          "claimLocator": "private",
+          "lineStart": 1,
+          "lineEnd": 9,
+          "text": "# Set up private networking for Foundry Agent Service\n\nFor background on the network architecture, subnet sizing, and IP allocation model behind these steps, see [Deep dive into Foundry Agent Service networking](../concepts/agents-networking-deep-dive).\n\nThis article describes two approaches. Use the **Portal or templates** path to provision a network-secured Foundry environment with Bicep or Terraform. Use the **Azure Developer CLI** path to place the dependencies of an `azd` hosted agent project behind private endpoints. Choose a method with the selector.\n\n::: zone pivot=\"templates\"\n\nFoundry Agent Service offers a **Standard Setup with private networking** environment. This setup creates an isolated network environment that enables secure access to data while maintaining full control over your network infrastructure."
+        },
+        {
+          "claimLocator": "private",
+          "lineStart": 3,
+          "lineEnd": 13,
+          "text": "For background on the network architecture, subnet sizing, and IP allocation model behind these steps, see [Deep dive into Foundry Agent Service networking](../concepts/agents-networking-deep-dive).\n\nThis article describes two approaches. Use the **Portal or templates** path to provision a network-secured Foundry environment with Bicep or Terraform. Use the **Azure Developer CLI** path to place the dependencies of an `azd` hosted agent project behind private endpoints. Choose a method with the selector.\n\n::: zone pivot=\"templates\"\n\nFoundry Agent Service offers a **Standard Setup with private networking** environment. This setup creates an isolated network environment that enables secure access to data while maintaining full control over your network infrastructure.\n\nBy default, the Standard Setup with private networking ensures:\n\n- **No public egress**: Foundational infrastructure provides the right authentication and security for your agents and tools, without requiring trusted service bypass."
+        }
+      ],
+      "serviceExecution": "not performed"
+    },
+    {
+      "sourceId": "S017",
+      "url": "https://learn.microsoft.com/azure/foundry/openai/how-to/dall-e",
+      "snapshot": "sources/snapshots/S017.md",
+      "snapshotSha256": "34668770bb5790633413f4ae9432738c85ed36aef328f9f2bdb8b1b82437dca6",
+      "fetchedAt": "2026-10-08T04:26:18.089Z",
+      "excerpts": [
+        {
+          "claimLocator": "mask",
+          "lineStart": 23,
+          "lineEnd": 33,
+          "text": "| **Quality Options** | `low`, `medium`, `high`, `xhigh`, `max`, `auto` | `low`, `medium`, `high`, `xhigh`, `max`, `auto` | Reworked quality controls: `low`, `medium`, `high`; `low` is optimized for latency-sensitive use cases | `low`, `medium`, `high` (default = high) | `low`, `medium`, `high` (default = high) | `low`, `medium`, `high` (default = medium) |\n| **Number of Images per Request** | 1–10 images per request | 1–10 images per request | 1–10 images per request (`n` parameter) | 1–10 images per request (`n` parameter) | 1–10 images per request (`n` parameter) | 1–10 images per request (`n` parameter) |\n| **Editing (inpainting / variations)** | ✅ Supports inpainting | ✅ Supports inpainting | ✅ Improved editing performance with inpainting and variations | ✅ Supports inpainting and variations with mask + prompt | ✅ Supports inpainting and variations with mask + prompt | ✅ Supports inpainting and variations with mask + prompt |\n| **Face Preservation** |  |  | ✅ Advanced **face preservation** for realistic, consistent results | ✅ Advanced **face preservation** for realistic, consistent results | ✅ Advanced **face preservation** for realistic, consistent results | ❌ No dedicated face preservation; better for **non-portrait/general creative** imagery |\n| **Performance & Cost** | Highest-fidelity model; optimized for editing precision | Optimized for speed and cost for high-quality, everyday generation | High-fidelity, **realism-optimized** model; higher latency and cost | High-fidelity, **realism-optimized** model; improved efficiency and latency over GPT-Image-1 | High-fidelity, **realism-optimized** model; higher latency and cost | **Cost-efficient** and **faster** for large-scale or iterative generation |\n\n## Quickstart\n\n::: zone pivot=\"rest-api\"\n\nUse this guide to get started calling the Azure OpenAI in Microsoft Foundry Models image generation REST APIs by using Python."
+        },
+        {
+          "claimLocator": "mask",
+          "lineStart": 153,
+          "lineEnd": 163,
+          "text": "    files = {\n      \"image\": (\"generated_image_1.png\", open(\"generated_image_1.png\", \"rb\"), \"image/png\"),\n      # You can use a mask to specify which parts of the image you want to edit.\n      # The mask must be the same size as the input image.\n      # \"mask\": (\"mask.png\", open(\"mask.png\", \"rb\"), \"image/png\"),\n    }\n    edit_response = requests.post(\n      edit_url,\n      headers={'Api-Key': subscription_key},\n      data=edit_body,\n      files=files"
+        },
+        {
+          "claimLocator": "edit",
+          "lineStart": 18,
+          "lineEnd": 28,
+          "text": "| --- | --- | --- | --- | --- | --- | --- |\n| **Availability** | Generally Available | Generally Available | Generally Available | Limited access preview ([Apply for GPT-image-1.5 access](https://aka.ms/oai/gptimage1.5access)) | Limited access preview ([Apply for GPT-image-1 access](https://aka.ms/oai/gptimage1access)) | Limited access preview ([Apply for GPT-image-1 access](https://aka.ms/oai/gptimage1access)) |\n| **Strengths** | Most capable model for image generation and editing; best when editing precision matters most | Fastest model for high-quality, everyday image generation | Best for high-resolution and 4K generation, improved image editing, and broad aspect-ratio support | Best for realism, instruction-following, multimodal context, and improved speed/cost | Best for realism, instruction-following, and multimodal context | Best for fast prototyping, bulk generation, or cost-sensitive use cases |\n| **Input / Output Modalities & Format** | Accepts **text + image** inputs; outputs images. | Accepts **text + image** inputs; outputs images. | Accepts **text + image** inputs; outputs images only in **base64** (no URL option). | Accepts **text + image** inputs; outputs images only in **base64** (no URL option). | Accepts **text + image** inputs; outputs images only in **base64** (no URL option). | Accepts **text + image** inputs; outputs images only in **base64** (no URL option). |\n| **Image Sizes / Resolutions** | Custom `WIDTHxHEIGHT` dimensions (for example, `1536x864`). Both edges must be multiples of 16 px; aspect ratio between 1:3 and 3:1; neither edge exceeds 3,840 px; total pixels 655,360–8,294,400 (4K). Resolutions above `2560x1440` are experimental. | Custom `WIDTHxHEIGHT` dimensions (for example, `1536x864`). Both edges must be multiples of 16 px; aspect ratio between 1:3 and 3:1; neither edge exceeds 3,840 px; total pixels 655,360–8,294,400 (4K). Resolutions above `2560x1440` are experimental. | Arbitrary resolutions: both edges must be multiples of 16 px; long edge up to 3,840 px (4K); aspect ratio up to 3:1; pixel count 655,360–8,294,400 | 1024×1024, 1024×1536, 1536×1024 | 1024×1024, 1024×1536, 1536×1024 | 1024×1024, 1024×1536, 1536×1024 |\n| **Quality Options** | `low`, `medium`, `high`, `xhigh`, `max`, `auto` | `low`, `medium`, `high`, `xhigh`, `max`, `auto` | Reworked quality controls: `low`, `medium`, `high`; `low` is optimized for latency-sensitive use cases | `low`, `medium`, `high` (default = high) | `low`, `medium`, `high` (default = high) | `low`, `medium`, `high` (default = medium) |\n| **Number of Images per Request** | 1–10 images per request | 1–10 images per request | 1–10 images per request (`n` parameter) | 1–10 images per request (`n` parameter) | 1–10 images per request (`n` parameter) | 1–10 images per request (`n` parameter) |\n| **Editing (inpainting / variations)** | ✅ Supports inpainting | ✅ Supports inpainting | ✅ Improved editing performance with inpainting and variations | ✅ Supports inpainting and variations with mask + prompt | ✅ Supports inpainting and variations with mask + prompt | ✅ Supports inpainting and variations with mask + prompt |\n| **Face Preservation** |  |  | ✅ Advanced **face preservation** for realistic, consistent results | ✅ Advanced **face preservation** for realistic, consistent results | ✅ Advanced **face preservation** for realistic, consistent results | ❌ No dedicated face preservation; better for **non-portrait/general creative** imagery |\n| **Performance & Cost** | Highest-fidelity model; optimized for editing precision | Optimized for speed and cost for high-quality, everyday generation | High-fidelity, **realism-optimized** model; higher latency and cost | High-fidelity, **realism-optimized** model; improved efficiency and latency over GPT-Image-1 | High-fidelity, **realism-optimized** model; higher latency and cost | **Cost-efficient** and **faster** for large-scale or iterative generation |\n"
+        },
+        {
+          "claimLocator": "edit",
+          "lineStart": 23,
+          "lineEnd": 33,
+          "text": "| **Quality Options** | `low`, `medium`, `high`, `xhigh`, `max`, `auto` | `low`, `medium`, `high`, `xhigh`, `max`, `auto` | Reworked quality controls: `low`, `medium`, `high`; `low` is optimized for latency-sensitive use cases | `low`, `medium`, `high` (default = high) | `low`, `medium`, `high` (default = high) | `low`, `medium`, `high` (default = medium) |\n| **Number of Images per Request** | 1–10 images per request | 1–10 images per request | 1–10 images per request (`n` parameter) | 1–10 images per request (`n` parameter) | 1–10 images per request (`n` parameter) | 1–10 images per request (`n` parameter) |\n| **Editing (inpainting / variations)** | ✅ Supports inpainting | ✅ Supports inpainting | ✅ Improved editing performance with inpainting and variations | ✅ Supports inpainting and variations with mask + prompt | ✅ Supports inpainting and variations with mask + prompt | ✅ Supports inpainting and variations with mask + prompt |\n| **Face Preservation** |  |  | ✅ Advanced **face preservation** for realistic, consistent results | ✅ Advanced **face preservation** for realistic, consistent results | ✅ Advanced **face preservation** for realistic, consistent results | ❌ No dedicated face preservation; better for **non-portrait/general creative** imagery |\n| **Performance & Cost** | Highest-fidelity model; optimized for editing precision | Optimized for speed and cost for high-quality, everyday generation | High-fidelity, **realism-optimized** model; higher latency and cost | High-fidelity, **realism-optimized** model; improved efficiency and latency over GPT-Image-1 | High-fidelity, **realism-optimized** model; higher latency and cost | **Cost-efficient** and **faster** for large-scale or iterative generation |\n\n## Quickstart\n\n::: zone pivot=\"rest-api\"\n\nUse this guide to get started calling the Azure OpenAI in Microsoft Foundry Models image generation REST APIs by using Python."
+        },
+        {
+          "claimLocator": "fully transparent pixels",
+          "lineStart": 1985,
+          "lineEnd": 1995,
+          "text": "#### Mask\n\nThe *mask* parameter uses the same type as the main *image* input parameter. It defines the area of the image that you want the model to edit, using fully transparent pixels (alpha of zero) in those areas. The mask must be a PNG file and have the same dimensions as the input image.\n\n#### Streaming\n\nUse the *stream* parameter to enable streaming responses. When set to `true`, the API returns partial images as they're generated. This feature provides faster visual feedback for users and improves perceived latency. Set the *partial\\_images* parameter to control how many partial images are generated (1-3).\n\n#### Transparency\n\nGPT-image-1 only: set the *background* parameter to `transparent` and *output\\_format* to `PNG` on an image generate request to get an image with a transparent background."
+        }
+      ],
+      "serviceExecution": "not performed"
+    },
+    {
+      "sourceId": "S021",
+      "url": "https://learn.microsoft.com/python/api/overview/azure/ai-contentunderstanding-readme?view=azure-python",
+      "snapshot": "sources/snapshots/S021.md",
+      "snapshotSha256": "aa5fd0abb99fe608e62d3909ffd7bc4eac9904dc931f427c9e3788351fbc7b42",
+      "fetchedAt": "2026-10-08T04:26:34.224Z",
+      "excerpts": [
+        {
+          "claimLocator": "result",
+          "lineStart": 308,
+          "lineEnd": 318,
+          "text": "\n1. **Begin Analysis** - Start the analysis operation (returns immediately with an operation location)\n2. **Poll for Results** - Poll the operation location until the analysis completes\n3. **Process Results** - Extract and display the structured results\n\nThe SDK provides `LROPoller` types that handle polling automatically when using `.result()`. For analysis operations, the SDK returns a poller that provides access to the operation ID via the `operation_id` property. This operation ID can be used with `get_result_file*` and `delete_result*` methods.\n\n### Main classes\n\n- **`ContentUnderstandingClient`** - The main client for analyzing content, as well as creating, managing, and configuring analyzers\n- **`AnalysisResult`** - Contains the structured results of an analysis operation, including content elements, markdown, and metadata"
+        },
+        {
+          "claimLocator": "result",
+          "lineStart": 309,
+          "lineEnd": 319,
+          "text": "1. **Begin Analysis** - Start the analysis operation (returns immediately with an operation location)\n2. **Poll for Results** - Poll the operation location until the analysis completes\n3. **Process Results** - Extract and display the structured results\n\nThe SDK provides `LROPoller` types that handle polling automatically when using `.result()`. For analysis operations, the SDK returns a poller that provides access to the operation ID via the `operation_id` property. This operation ID can be used with `get_result_file*` and `delete_result*` methods.\n\n### Main classes\n\n- **`ContentUnderstandingClient`** - The main client for analyzing content, as well as creating, managing, and configuring analyzers\n- **`AnalysisResult`** - Contains the structured results of an analysis operation, including content elements, markdown, and metadata\n"
+        },
+        {
+          "claimLocator": "begin_analyze",
+          "lineStart": 412,
+          "lineEnd": 422,
+          "text": "        \n        # Analyze document using prebuilt-documentSearch\n        poller = await client.begin_analyze(\n            analyzer_id=\"prebuilt-documentSearch\", \n            inputs=[AnalysisInput(url=file_url)]\n        )\n        result: AnalysisResult = await poller.result()\n        \n        # Extract markdown content\n        content: AnalysisContent = result.contents[0]\n        print(\"Markdown Content:\")"
+        },
+        {
+          "claimLocator": "begin_analyze",
+          "lineStart": 464,
+          "lineEnd": 474,
+          "text": "        \n        # Analyze invoice using prebuilt-invoice analyzer\n        poller = await client.begin_analyze(\n            analyzer_id=\"prebuilt-invoice\", \n            inputs=[AnalysisInput(url=file_url)]\n        )\n        result: AnalysisResult = await poller.result()\n        \n        # Extract invoice fields\n        content: DocumentContent = result.contents[0]  # type: ignore\n        "
+        }
+      ],
+      "serviceExecution": "not performed"
+    },
+    {
+      "sourceId": "S022",
+      "url": "https://learn.microsoft.com/azure/ai-services/content-understanding/video/overview",
+      "snapshot": "sources/snapshots/S022.md",
+      "snapshotSha256": "3a89d957245350c800482a717244bd3fc27b322ed67dbcbabea8e41782a3a57a",
+      "fetchedAt": "2026-10-08T04:26:34.483Z",
+      "excerpts": [
+        {
+          "claimLocator": "sampling",
+          "lineStart": 195,
+          "lineEnd": 205,
+          "text": "Specific limitations of video processing to keep in mind:\n\n- **Frame sampling (~ 1 FPS)**: The analyzer inspects about one frame per second. Rapid motions or single-frame events might be missed.\n- **Frame resolution (512 × 512 px)**: Sampled frames are resized to 512 pixels square. Small text or distant objects can be lost.\n- **Speech**: Only spoken words are transcribed. Music, sound effects, and ambient noise are ignored.\n\n## Input requirements\n\nFor supported formats, see [Service quotas and limits](../service-limits).\n\n## Supported languages and regions"
+        },
+        {
+          "claimLocator": "512",
+          "lineStart": 196,
+          "lineEnd": 206,
+          "text": "\n- **Frame sampling (~ 1 FPS)**: The analyzer inspects about one frame per second. Rapid motions or single-frame events might be missed.\n- **Frame resolution (512 × 512 px)**: Sampled frames are resized to 512 pixels square. Small text or distant objects can be lost.\n- **Speech**: Only spoken words are transcribed. Music, sound effects, and ambient noise are ignored.\n\n## Input requirements\n\nFor supported formats, see [Service quotas and limits](../service-limits).\n\n## Supported languages and regions\n"
+        },
+        {
+          "claimLocator": "small",
+          "lineStart": 196,
+          "lineEnd": 206,
+          "text": "\n- **Frame sampling (~ 1 FPS)**: The analyzer inspects about one frame per second. Rapid motions or single-frame events might be missed.\n- **Frame resolution (512 × 512 px)**: Sampled frames are resized to 512 pixels square. Small text or distant objects can be lost.\n- **Speech**: Only spoken words are transcribed. Music, sound effects, and ambient noise are ignored.\n\n## Input requirements\n\nFor supported formats, see [Service quotas and limits](../service-limits).\n\n## Supported languages and regions\n"
+        }
+      ],
+      "serviceExecution": "not performed"
+    },
+    {
+      "sourceId": "S025",
+      "url": "https://learn.microsoft.com/azure/search/hybrid-search-overview",
+      "snapshot": "sources/snapshots/S025.md",
+      "snapshotSha256": "8f766ea87e9528dc1e469ffca3de91350cf9b9393aaf47e5c8c124378457397d",
+      "fetchedAt": "2026-10-08T04:26:34.293Z",
+      "excerpts": [
+        {
+          "claimLocator": "hybrid",
+          "lineStart": 1,
+          "lineEnd": 9,
+          "text": "# Hybrid search using vectors and full-text search in Azure AI Search\n\nNote\n\nAzure AI Search is available through the [Azure portal](https://portal.azure.com), [REST APIs](/en-us/azure/search/search-api-versions#rest-apis), and [Azure SDKs](/en-us/azure/search/search-api-versions#all-azure-sdks). It also underpins [Foundry IQ](/en-us/azure/foundry/agents/concepts/what-is-foundry-iq), the managed knowledge layer that transforms enterprise content into reusable, permission-aware knowledge bases for agents in the [Microsoft Foundry portal](https://ai.azure.com/?cid=learnDocs).\n\nHybrid search is a single query request configured for both full-text and vector queries. It runs against a search index that contains searchable, plain-text content and generated embeddings. For query purposes, hybrid search:\n\n- Is a single query request that includes both `search` and `vectorQueries` query parameters."
+        },
+        {
+          "claimLocator": "hybrid",
+          "lineStart": 5,
+          "lineEnd": 15,
+          "text": "Azure AI Search is available through the [Azure portal](https://portal.azure.com), [REST APIs](/en-us/azure/search/search-api-versions#rest-apis), and [Azure SDKs](/en-us/azure/search/search-api-versions#all-azure-sdks). It also underpins [Foundry IQ](/en-us/azure/foundry/agents/concepts/what-is-foundry-iq), the managed knowledge layer that transforms enterprise content into reusable, permission-aware knowledge bases for agents in the [Microsoft Foundry portal](https://ai.azure.com/?cid=learnDocs).\n\nHybrid search is a single query request configured for both full-text and vector queries. It runs against a search index that contains searchable, plain-text content and generated embeddings. For query purposes, hybrid search:\n\n- Is a single query request that includes both `search` and `vectorQueries` query parameters.\n- Runs full-text search and vector search in parallel.\n- Merges results from each query by using [Reciprocal Rank Fusion (RRF)](hybrid-search-ranking).\n\nThis article explains the concepts, benefits, and limitations of hybrid search. Links at the end provide usage instructions and next steps. You can also watch the embedded video for an explanation of how hybrid retrieval contributes to high-quality generative search applications.\n\n## Why use hybrid search?"
+        },
+        {
+          "claimLocator": "RRF",
+          "lineStart": 9,
+          "lineEnd": 19,
+          "text": "- Is a single query request that includes both `search` and `vectorQueries` query parameters.\n- Runs full-text search and vector search in parallel.\n- Merges results from each query by using [Reciprocal Rank Fusion (RRF)](hybrid-search-ranking).\n\nThis article explains the concepts, benefits, and limitations of hybrid search. Links at the end provide usage instructions and next steps. You can also watch the embedded video for an explanation of how hybrid retrieval contributes to high-quality generative search applications.\n\n## Why use hybrid search?\n\nHybrid search combines the strengths of vector search and keyword search. The advantage of vector search is finding information that's conceptually similar to your search query, even if there are no keyword matches in the inverted index. The advantage of keyword or full-text search is precision, with the ability to apply optional semantic ranking that improves the quality of the initial results. Some scenarios, such as querying over product codes, highly specialized jargon, dates, and people's names, perform better with keyword search because it can identify exact matches.\n\nBenchmark testing on real-world and benchmark datasets indicates that hybrid retrieval with semantic ranker offers significant benefits in search relevance."
+        },
+        {
+          "claimLocator": "RRF",
+          "lineStart": 25,
+          "lineEnd": 35,
+          "text": "In a search index, vector fields containing embeddings coexist with textual and numerical fields. You can formulate hybrid queries that execute simultaneously. Hybrid queries take advantage of existing text-based functionality like filtering, faceting, sorting, scoring profiles, and [semantic ranking](semantic-search-overview) on your text fields, while executing a similarity search against vectors in a single search request.\n\nHybrid search combines results from both full-text and vector queries, which use different ranking functions such as BM25 for text, and Hierarchical Navigable Small World (HNSW) and exhaustive K Nearest Neighbors (eKNN) for vectors. An [RRF](hybrid-search-ranking) algorithm merges the results. The query response provides just one result set, using RRF to rank the unified results.\n\n## Structure of a hybrid query\n\nHybrid search relies on a search index that contains fields of various [data types](/en-us/rest/api/searchservice/supported-data-types), including plain text and numbers, geo coordinates if you want geospatial search, and vectors to mathematically represent a chunk of text. You can use almost all query capabilities in Azure AI Search with a vector query, except for pure text client-side interactions, such as autocomplete and suggestions.\n\nA representative hybrid query might look like the following. For brevity, the vector queries have placeholder values.\n\n```http"
+        }
+      ],
+      "serviceExecution": "not performed"
+    },
+    {
+      "sourceId": "S026",
+      "url": "https://learn.microsoft.com/azure/search/vector-search-integrated-vectorization",
+      "snapshot": "sources/snapshots/S026.md",
+      "snapshotSha256": "45a6b445fbe4f7f65334693eb96b2de7b021e0b50ce46b363ab47c5de0a11f0d",
+      "fetchedAt": "2026-10-08T04:26:34.192Z",
+      "excerpts": [
+        {
+          "claimLocator": "chunk",
+          "lineStart": 10,
+          "lineEnd": 20,
+          "text": "- Vector encoding during queries\n\n[Data chunking](vector-search-how-to-chunk-documents) isn't a hard requirement, but unless your raw documents are small, chunking is necessary for meeting the token input requirements of embedding models.\n\nVector conversions are one-way: nonvector-to-vector. For example, there's no vector-to-text conversion for queries or results, such as converting a vector result to a human-readable string, which is why indexes contain both vector and nonvector fields.\n\nIntegrated vectorization speeds up the development and minimizes maintenance tasks during data ingestion and query time because there are fewer operations that you have to implement manually.\n\n## Using integrated vectorization during indexing\n\nFor integrated data chunking and vector conversions, you're taking a dependency on the following components:"
+        },
+        {
+          "claimLocator": "chunk",
+          "lineStart": 18,
+          "lineEnd": 28,
+          "text": "## Using integrated vectorization during indexing\n\nFor integrated data chunking and vector conversions, you're taking a dependency on the following components:\n\n- [An indexer](search-indexer-overview), which retrieves raw data from a [supported data source](search-indexer-overview#supported-data-sources) and drives the pipeline engine.\n- [A search index](search-what-is-an-index) to receive the chunked and vectorized content.\n- [A skillset](cognitive-search-working-with-skillsets) configured for:\n\n    - A chunking strategy: [Text Split skill](cognitive-search-skill-textsplit), [Azure Content Understanding skill](cognitive-search-skill-content-understanding), or one of the [document parsing modes](vector-search-how-to-chunk-documents#common-chunking-techniques).\n    - An embedding skill, used to generate vector arrays, which can be any of the following:\n"
+        },
+        {
+          "claimLocator": "embedding",
+          "lineStart": 1,
+          "lineEnd": 9,
+          "text": "# Integrated vector embedding in Azure AI Search\n\nNote\n\nAzure AI Search is available through the [Azure portal](https://portal.azure.com), [REST APIs](/en-us/azure/search/search-api-versions#rest-apis), and [Azure SDKs](/en-us/azure/search/search-api-versions#all-azure-sdks). It also underpins [Foundry IQ](/en-us/azure/foundry/agents/concepts/what-is-foundry-iq), the managed knowledge layer that transforms enterprise content into reusable, permission-aware knowledge bases for agents in the [Microsoft Foundry portal](https://ai.azure.com/?cid=learnDocs).\n\nIntegrated vectorization is an extension of the indexing and query pipelines in Azure AI Search. It adds the following capabilities:\n\n- Vector encoding during indexer-driven indexing"
+        },
+        {
+          "claimLocator": "embedding",
+          "lineStart": 10,
+          "lineEnd": 20,
+          "text": "- Vector encoding during queries\n\n[Data chunking](vector-search-how-to-chunk-documents) isn't a hard requirement, but unless your raw documents are small, chunking is necessary for meeting the token input requirements of embedding models.\n\nVector conversions are one-way: nonvector-to-vector. For example, there's no vector-to-text conversion for queries or results, such as converting a vector result to a human-readable string, which is why indexes contain both vector and nonvector fields.\n\nIntegrated vectorization speeds up the development and minimizes maintenance tasks during data ingestion and query time because there are fewer operations that you have to implement manually.\n\n## Using integrated vectorization during indexing\n\nFor integrated data chunking and vector conversions, you're taking a dependency on the following components:"
+        }
+      ],
+      "serviceExecution": "not performed"
+    },
+    {
+      "sourceId": "S028",
+      "url": "https://learn.microsoft.com/azure/search/cognitive-search-working-with-skillsets",
+      "snapshot": "sources/snapshots/S028.md",
+      "snapshotSha256": "3d24961260a3a7ca041656383016222704c25dec2dff53743bbaef628236312b",
+      "fetchedAt": "2026-10-08T04:26:34.609Z",
+      "excerpts": [
+        {
+          "claimLocator": "outputFieldMappings",
+          "lineStart": 152,
+          "lineEnd": 162,
+          "text": "\n- [\"fieldMappings\"](search-indexer-field-mappings) map a source field to a search field.\n- [\"outputFieldMappings\"](cognitive-search-output-field-mapping) map a node in an enriched document to a search field.\n\nThe \"sourceFieldName\" property specifies either a field in your data source or a node in an enrichment tree. The \"targetFieldName\" property specifies the search field in an index that receives the content.\n\n## Enrichment example\n\nUsing the [hotel reviews skillset](https://github.com/Azure-Samples/azure-search-sample-data/blob/main/hotelreviews/HotelReviews_skillset.json) as a reference point, this example explains how an [enrichment tree](cognitive-search-working-with-skillsets#enrichment-tree) evolves through skill execution using conceptual diagrams.\n\nThis example also shows:"
+        },
+        {
+          "claimLocator": "normalized_images",
+          "lineStart": 177,
+          "lineEnd": 187,
+          "text": "![enrichment tree after document cracking](media/cognitive-search-working-with-skillsets/enrichment-tree-doc-cracking.png)\n\nThe root node for all enrichments is `\"/document\"`. When you're working with blob indexers, the `\"/document\"` node has child nodes of `\"/document/content\"` and `\"/document/normalized_images\"`. When the data is CSV, as in this example, the column names map to nodes beneath `\"/document\"`.\n\n### Skill #1: Split skill\n\nWhen source content consists of large chunks of text, it's helpful to break it into smaller components for [integrated vectorization](vector-search-integrated-vectorization), or for greater accuracy of language, sentiment, and key phrase detection. There are two grains available: pages and sentences. A page consists of approximately 5,000 characters.\n\nAn alternative to chunking with the Split skill is through the [Azure Content Understanding skill](cognitive-search-skill-content-understanding), but that skill is out of scope for this article.\n\nWhen chunking is required, the Split skill is typically first in a skillset."
+        }
+      ],
+      "serviceExecution": "not performed"
+    },
+    {
+      "sourceId": "S030",
+      "url": "https://learn.microsoft.com/azure/ai-services/language-service/overview",
+      "snapshot": "sources/snapshots/S030.md",
+      "snapshotSha256": "debd3c5f132c72a0d258daa4d82d950834da5b4c89e3b42b20cf32982a169e1d",
+      "fetchedAt": "2026-10-08T04:26:45.449Z",
+      "excerpts": [
+        {
+          "claimLocator": "personally",
+          "lineStart": 22,
+          "lineEnd": 32,
+          "text": "[**Microsoft Foundry**](https://ai.azure.com/) enables you to use most of the following service features without the need to write code.\n\n### Personally identifiable information (PII) detection\n\nImportant\n\nThe Azure Language in Foundry Tools text personally identifiable information (PII) detection anonymization feature (synthetic replacement) is currently available in `preview` and licensed to you as part of your Azure subscription. Your use of this feature is subject to the terms applicable to **Previews** as described in the [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms) and the [Microsoft Products and Services Data Protection Addendum (DPA)](https://www.microsoft.com/licensing/docs/view/microsoft-products-and-services-data-protection-addendum-dpa).\n\n[Personally identifiable information (PII) detection](personally-identifiable-information/overview) identifies entities in text and conversations (chat or transcripts) that are associated with individuals.\n\n***Conversation PII***"
+        },
+        {
+          "claimLocator": "personally",
+          "lineStart": 26,
+          "lineEnd": 36,
+          "text": "Important\n\nThe Azure Language in Foundry Tools text personally identifiable information (PII) detection anonymization feature (synthetic replacement) is currently available in `preview` and licensed to you as part of your Azure subscription. Your use of this feature is subject to the terms applicable to **Previews** as described in the [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms) and the [Microsoft Products and Services Data Protection Addendum (DPA)](https://www.microsoft.com/licensing/docs/view/microsoft-products-and-services-data-protection-addendum-dpa).\n\n[Personally identifiable information (PII) detection](personally-identifiable-information/overview) identifies entities in text and conversations (chat or transcripts) that are associated with individuals.\n\n***Conversation PII***\n\n[![A screenshot of conversation personally identifying information in Foundry.](media/overview/conversation-pii.png)](media/overview/conversation-pii.png#lightbox)\n\n***Text PII***"
+        },
+        {
+          "claimLocator": "language",
+          "lineStart": 1,
+          "lineEnd": 9,
+          "text": "# What is Azure Language in Foundry Tools?\n\nAzure Language is a cloud-based service that provides Natural Language Processing (NLP) features for understanding and analyzing text. Use this service to help build intelligent applications using the web-based Microsoft Foundry, REST APIs, and client libraries. For AI agent development, the service capabilities are also available as tools in Azure Language MCP server, which is available both as a remote server in the **Microsoft Foundry Tool Catalog** and as a local server for self-hosted environments.\n\n## Core capabilities\n\n**Recommended for new development**\n\nCore capabilities are the primary, actively evolving features of Azure Language. These features receive ongoing investment and feature updates, and are recommended for new development and long-term planning. If you are starting a new project or designing a future architecture, use core capabilities as the foundation for your natural language processing workflows."
+        },
+        {
+          "claimLocator": "language",
+          "lineStart": 1,
+          "lineEnd": 11,
+          "text": "# What is Azure Language in Foundry Tools?\n\nAzure Language is a cloud-based service that provides Natural Language Processing (NLP) features for understanding and analyzing text. Use this service to help build intelligent applications using the web-based Microsoft Foundry, REST APIs, and client libraries. For AI agent development, the service capabilities are also available as tools in Azure Language MCP server, which is available both as a remote server in the **Microsoft Foundry Tool Catalog** and as a local server for self-hosted environments.\n\n## Core capabilities\n\n**Recommended for new development**\n\nCore capabilities are the primary, actively evolving features of Azure Language. These features receive ongoing investment and feature updates, and are recommended for new development and long-term planning. If you are starting a new project or designing a future architecture, use core capabilities as the foundation for your natural language processing workflows.\n\n- PII detection"
+        },
+        {
+          "claimLocator": "entity",
+          "lineStart": 11,
+          "lineEnd": 21,
+          "text": "- PII detection\n- Language detection\n- **Named entity recognition (NER)**\n    - Custom NER\n    - Prebuilt NER\n- Text analytics for health\n\nTip\n\nUnsure which feature to use? See Which Azure Language core feature should I use to help you decide.\n"
+        },
+        {
+          "claimLocator": "entity",
+          "lineStart": 40,
+          "lineEnd": 50,
+          "text": "***Document PII***\n\nThe Document PII playground in Microsoft Foundry is generally available. It ships with curated sample documents and expected outputs, so you can evaluate detection of common PII types - including names, addresses, financial IDs, and health identifiers - without uploading your own data. A single view lets you compare detection results across entity types before you transition to uploading real documents for live testing. The playground uses the same Document PII model and policies as the production API, so results align with production behavior. For more information, see [Document-based PII overview](personally-identifiable-information/document-based-pii-overview).\n\n### Language detection\n\n[Language detection](language-detection/overview) evaluates text and detects a wide range of languages and variant dialects.\n\n[![A screenshot of language detection in Foundry.](media/overview/language-detection.png)](media/overview/language-detection.png#lightbox)\n\n### Custom NER"
+        }
+      ],
+      "serviceExecution": "not performed"
+    },
+    {
+      "sourceId": "S033",
+      "url": "https://learn.microsoft.com/azure/ai-services/speech-service/overview",
+      "snapshot": "sources/snapshots/S033.md",
+      "snapshotSha256": "60a8436b0646a9a3c1e779b78f0e1d645948866173ce85449a6283d58c019d54",
+      "fetchedAt": "2026-10-08T04:26:45.861Z",
+      "excerpts": [
+        {
+          "claimLocator": "speech",
+          "lineStart": 1,
+          "lineEnd": 9,
+          "text": "# What is Azure Speech?\n\n[Azure Speech in Foundry Tools](speech-features-foundry) provides speech to text, text to speech, and other capabilities through a [Microsoft Foundry resource](../multi-service-resource?pivots=azportal). You can transcribe speech to text with high accuracy, produce natural-sounding text-to-speech voices, translate spoken audio, and conduct live AI voice conversations.\n\n![Screenshot of tiles that highlight some Azure Speech features.](media/overview/speech-features-highlight.png)\n\nYou can create custom voices, add specific words to your base vocabulary, or build your own models. Run Azure Speech anywhere, in the cloud or at the edge in containers. Enable your applications, tools, and devices for speech by using the [Speech CLI](spx-overview), [Speech SDK](speech-sdk), and [REST APIs](rest-speech-to-text).\n\nAzure Speech is available for many [languages](language-support), [regions](regions), and [price points](https://azure.microsoft.com/pricing/details/cognitive-services/speech-services/)."
+        },
+        {
+          "claimLocator": "speech",
+          "lineStart": 1,
+          "lineEnd": 11,
+          "text": "# What is Azure Speech?\n\n[Azure Speech in Foundry Tools](speech-features-foundry) provides speech to text, text to speech, and other capabilities through a [Microsoft Foundry resource](../multi-service-resource?pivots=azportal). You can transcribe speech to text with high accuracy, produce natural-sounding text-to-speech voices, translate spoken audio, and conduct live AI voice conversations.\n\n![Screenshot of tiles that highlight some Azure Speech features.](media/overview/speech-features-highlight.png)\n\nYou can create custom voices, add specific words to your base vocabulary, or build your own models. Run Azure Speech anywhere, in the cloud or at the edge in containers. Enable your applications, tools, and devices for speech by using the [Speech CLI](spx-overview), [Speech SDK](speech-sdk), and [REST APIs](rest-speech-to-text).\n\nAzure Speech is available for many [languages](language-support), [regions](regions), and [price points](https://azure.microsoft.com/pricing/details/cognitive-services/speech-services/).\n\n## Scenarios"
+        },
+        {
+          "claimLocator": "translation",
+          "lineStart": 18,
+          "lineEnd": 28,
+          "text": "- [Language learning](language-learning-overview): Provide pronunciation assessment feedback to language learners, support real-time transcription for remote learning conversations, and read aloud teaching materials with neural voices.\n- [Voice Live](voice-live): Create natural, humanlike conversational interfaces for applications and experiences. The Voice Live feature provides fast, reliable interaction between a human and an agent implementation.\n- [Speech translation](speech-translation): Generate high-quality speech-to-speech translation in real time, or automatically generate translated videos in a broad range of languages.\n- [Video avatar creation](/en-us/azure/ai-services/speech-service/text-to-speech-avatar/what-is-text-to-speech-avatar): Create lifelike and high-quality synthetic talking avatar videos for various real-time and batch applications while adhering to responsible AI practices.\n\nMicrosoft uses Azure Speech for many scenarios, such as captioning in Microsoft Teams, dictation in Microsoft Office 365, and Read Aloud in the Microsoft Edge browser.\n\n![Screenshot that shows logos of Microsoft products that use Azure Speech.](media/overview/microsoft-uses-speech.png)\n\n## Capabilities\n"
+        },
+        {
+          "claimLocator": "translation",
+          "lineStart": 54,
+          "lineEnd": 64,
+          "text": "You can choose from a range of standard voices for the avatar. The language support for text-to-speech avatar is the same as the language support for text to speech.\n\n### Speech translation\n\n[Speech translation](speech-translation) enables real-time, multilingual translation of speech to your applications, tools, and devices. Use this feature for speech-to-speech and speech-to-text translation.\n\n### LLM speech (preview)\n\nTake advantage of a large language model (LLM)-enhanced speech model in [LLM speech](llm-speech). This feature currently supports the following tasks:\n\n- `transcribe`: Convert pre-recorded audio into text."
+        }
+      ],
+      "serviceExecution": "not performed"
+    },
+    {
+      "sourceId": "S034",
+      "url": "https://learn.microsoft.com/azure/ai-services/speech-service/custom-speech-overview",
+      "snapshot": "sources/snapshots/S034.md",
+      "snapshotSha256": "8bde6391b7bdee42b5e52ea8c995024dcda82d1a0b56acbdfb817207b2a8d511",
+      "fetchedAt": "2026-10-08T04:26:45.527Z",
+      "excerpts": [
+        {
+          "claimLocator": "custom",
+          "lineStart": 1,
+          "lineEnd": 9,
+          "text": "# What is custom speech?\n\nWith custom speech, you can evaluate and improve the accuracy of speech recognition for your applications and products. A custom speech model can be used for [real-time speech to text](speech-to-text), [speech translation](speech-translation), and [batch transcription](batch-transcription).\n\nOut of the box, speech recognition utilizes a Universal Language Model as a base model that is trained with Microsoft-owned data and reflects commonly used spoken language. The base model is pretrained with dialects and phonetics representing various common domains. When you make a speech recognition request, the most recent base model for each [supported language](language-support?tabs=stt) is used by default. The base model works well in most speech recognition scenarios.\n\nA custom model can be used to augment the base model to improve recognition of domain-specific vocabulary specific to the application by providing text data to train the model. It can also be used to improve recognition based for the specific audio conditions of the application by providing audio data with reference transcriptions.\n\nYou can also train a model with structured text when the data follows a pattern, to specify custom pronunciations, and to customize display text formatting with custom inverse text normalization, custom rewrite, and custom profanity filtering."
+        },
+        {
+          "claimLocator": "custom",
+          "lineStart": 1,
+          "lineEnd": 11,
+          "text": "# What is custom speech?\n\nWith custom speech, you can evaluate and improve the accuracy of speech recognition for your applications and products. A custom speech model can be used for [real-time speech to text](speech-to-text), [speech translation](speech-translation), and [batch transcription](batch-transcription).\n\nOut of the box, speech recognition utilizes a Universal Language Model as a base model that is trained with Microsoft-owned data and reflects commonly used spoken language. The base model is pretrained with dialects and phonetics representing various common domains. When you make a speech recognition request, the most recent base model for each [supported language](language-support?tabs=stt) is used by default. The base model works well in most speech recognition scenarios.\n\nA custom model can be used to augment the base model to improve recognition of domain-specific vocabulary specific to the application by providing text data to train the model. It can also be used to improve recognition based for the specific audio conditions of the application by providing audio data with reference transcriptions.\n\nYou can also train a model with structured text when the data follows a pattern, to specify custom pronunciations, and to customize display text formatting with custom inverse text normalization, custom rewrite, and custom profanity filtering.\n\n## How does it work?"
+        },
+        {
+          "claimLocator": "domain",
+          "lineStart": 3,
+          "lineEnd": 13,
+          "text": "With custom speech, you can evaluate and improve the accuracy of speech recognition for your applications and products. A custom speech model can be used for [real-time speech to text](speech-to-text), [speech translation](speech-translation), and [batch transcription](batch-transcription).\n\nOut of the box, speech recognition utilizes a Universal Language Model as a base model that is trained with Microsoft-owned data and reflects commonly used spoken language. The base model is pretrained with dialects and phonetics representing various common domains. When you make a speech recognition request, the most recent base model for each [supported language](language-support?tabs=stt) is used by default. The base model works well in most speech recognition scenarios.\n\nA custom model can be used to augment the base model to improve recognition of domain-specific vocabulary specific to the application by providing text data to train the model. It can also be used to improve recognition based for the specific audio conditions of the application by providing audio data with reference transcriptions.\n\nYou can also train a model with structured text when the data follows a pattern, to specify custom pronunciations, and to customize display text formatting with custom inverse text normalization, custom rewrite, and custom profanity filtering.\n\n## How does it work?\n\nWith custom speech, you can upload your own data, test and train a custom model, compare accuracy between models, and deploy a model to a custom endpoint."
+        },
+        {
+          "claimLocator": "domain",
+          "lineStart": 5,
+          "lineEnd": 15,
+          "text": "Out of the box, speech recognition utilizes a Universal Language Model as a base model that is trained with Microsoft-owned data and reflects commonly used spoken language. The base model is pretrained with dialects and phonetics representing various common domains. When you make a speech recognition request, the most recent base model for each [supported language](language-support?tabs=stt) is used by default. The base model works well in most speech recognition scenarios.\n\nA custom model can be used to augment the base model to improve recognition of domain-specific vocabulary specific to the application by providing text data to train the model. It can also be used to improve recognition based for the specific audio conditions of the application by providing audio data with reference transcriptions.\n\nYou can also train a model with structured text when the data follows a pattern, to specify custom pronunciations, and to customize display text formatting with custom inverse text normalization, custom rewrite, and custom profanity filtering.\n\n## How does it work?\n\nWith custom speech, you can upload your own data, test and train a custom model, compare accuracy between models, and deploy a model to a custom endpoint.\n\n![Diagram that highlights the components that make up the custom speech area of the Speech Studio.](media/custom-speech/custom-speech-overview.png)"
+        }
+      ],
+      "serviceExecution": "not performed"
+    },
+    {
+      "sourceId": "S037",
+      "url": "https://learn.microsoft.com/azure/foundry/openai/how-to/structured-outputs",
+      "snapshot": "sources/snapshots/S037.md",
+      "snapshotSha256": "0337c89ce3e5a9ba28d1c2fc18f1644c50b13568eb19edc43420d16b401cacfc",
+      "fetchedAt": "2026-10-08T04:26:45.503Z",
+      "excerpts": [
+        {
+          "claimLocator": "additionalProperties",
+          "lineStart": 343,
+          "lineEnd": 353,
+          "text": "                            },\n                            \"required\": [\"explanation\", \"output\"],\n                            \"additionalProperties\": false\n                        }\n                    },\n                    \"final_answer\": { \"type\": \"string\" }\n                },\n                \"required\": [\"steps\", \"final_answer\"],\n                \"additionalProperties\": false\n            }\n            \"\"\"u8.ToArray()),"
+        },
+        {
+          "claimLocator": "additionalProperties",
+          "lineStart": 349,
+          "lineEnd": 359,
+          "text": "                },\n                \"required\": [\"steps\", \"final_answer\"],\n                \"additionalProperties\": false\n            }\n            \"\"\"u8.ToArray()),\n        jsonSchemaIsStrict: true)\n};\n\n// Create a list of ChatMessage objects\nChatCompletion completion = client.CompleteChat(\n    ["
+        },
+        {
+          "claimLocator": "required",
+          "lineStart": 342,
+          "lineEnd": 352,
+          "text": "                                \"output\": { \"type\": \"string\" }\n                            },\n                            \"required\": [\"explanation\", \"output\"],\n                            \"additionalProperties\": false\n                        }\n                    },\n                    \"final_answer\": { \"type\": \"string\" }\n                },\n                \"required\": [\"steps\", \"final_answer\"],\n                \"additionalProperties\": false\n            }"
+        },
+        {
+          "claimLocator": "required",
+          "lineStart": 348,
+          "lineEnd": 358,
+          "text": "                    \"final_answer\": { \"type\": \"string\" }\n                },\n                \"required\": [\"steps\", \"final_answer\"],\n                \"additionalProperties\": false\n            }\n            \"\"\"u8.ToArray()),\n        jsonSchemaIsStrict: true)\n};\n\n// Create a list of ChatMessage objects\nChatCompletion completion = client.CompleteChat("
+        },
+        {
+          "claimLocator": "text.format",
+          "lineStart": 1,
+          "lineEnd": 11,
+          "text": "# Structured outputs\n\nStructured outputs make a model follow a [JSON Schema](https://json-schema.org/overview/what-is-jsonschema) definition that you provide as part of your inference API call. Both the Chat Completions API and Responses API support structured outputs. For Chat Completions, define the schema in `response_format`. For Responses, define the schema in `text.format`. This approach contrasts with the older [JSON mode](json-mode) feature, which guaranteed valid JSON but couldn't ensure strict adherence to the supplied schema. Use structured outputs for function calling, extracting structured data, and building complex multi-step workflows.\n\n::: zone pivot=\"programming-language-python\"\n\n## Getting started\n\n# [Python (Microsoft Entra ID)](#tab/python-secure)\nYou can use [`Pydantic`](https://docs.pydantic.dev/latest/) to define object schemas in Python. Depending on what version of the [OpenAI](https://pypi.org/project/openai/) and [`Pydantic` libraries](https://pypi.org/project/pydantic/) you're running you might need to upgrade to a newer version. These examples were tested against `openai 1.42.0` and `pydantic 2.8.2`.\n"
+        },
+        {
+          "claimLocator": "text.format",
+          "lineStart": 173,
+          "lineEnd": 183,
+          "text": "## Use structured outputs with the Responses API\n\nFor the Responses API, use OpenAI Python 2.x and pass a Pydantic model to `responses.parse` by using the `text_format` parameter. The SDK converts the model to a JSON Schema under `text.format` and returns the parsed value in `output_parsed`.\n\n```python\nfrom azure.identity import DefaultAzureCredential, get_bearer_token_provider\nfrom openai import OpenAI\nfrom pydantic import BaseModel\n\n# Configure access.\nendpoint = \"https://YOUR-RESOURCE-NAME.openai.azure.com/openai/v1/\""
+        }
+      ],
+      "serviceExecution": "not performed"
+    },
+    {
+      "sourceId": "S042",
+      "url": "https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-image",
+      "snapshot": "sources/snapshots/S042.md",
+      "snapshotSha256": "6a40b6fdabe9e2a91838a3026f8530d0229c70acd401c4fab094a6c0c63b8670",
+      "fetchedAt": "2026-10-08T04:27:31.323Z",
+      "excerpts": [
+        {
+          "claimLocator": "2024-09-01",
+          "lineStart": 91,
+          "lineEnd": 101,
+          "text": "\n```shell\ncurl --location --request POST '<endpoint>/contentsafety/image:analyze?api-version=2024-09-01' \\\n--header 'Ocp-Apim-Subscription-Key: <your_subscription_key>' \\\n--header 'Content-Type: application/json' \\\n--data-raw '{\n  \"image\": {\n    \"content\": \"<base_64_string>\"\n  },\n  \"categories\": [\"Hate\", \"SelfHarm\", \"Sexual\", \"Violence\"],\n  \"outputType\": \"FourSeverityLevels\""
+        },
+        {
+          "claimLocator": "2024-09-01",
+          "lineStart": 119,
+          "lineEnd": 129,
+          "text": "| Name | Required? | Description | Type |\n| --- | --- | --- | --- |\n| **API Version** | Required | This is the API version to be checked. Current version is: `api-version=2024-09-01`. Example: `<endpoint>/contentsafety/image:analyze?api-version=2024-09-01` | String |\n\nThe parameters in the request body are defined in this table:\n\n| Name | Required? | Description | Type |\n| --- | --- | --- | --- |\n| **content** | Required | The content or blob URL of the image. I can be either base64-encoded bytes or a blob URL. If both are given, the request is refused. The maximum allowed size of the image is 7,200 x 7,200 pixels, and the maximum file size is 4 MB. The minimum size of the image is 50 pixels x 50 pixels. | String |\n| **categories** | Optional | This is assumed to be an array of category names. See the [Harm categories guide](concepts/harm-categories) for a list of available category names. If no categories are specified, all four categories are used. We use multiple categories to get scores in a single request. | String |\n| **outputType** | Optional | Image moderation API only supports `\"FourSeverityLevels\"`. Output severities in four levels. The value can be `0,2,4,6` | String |"
+        },
+        {
+          "claimLocator": "FourSeverityLevels",
+          "lineStart": 99,
+          "lineEnd": 109,
+          "text": "  },\n  \"categories\": [\"Hate\", \"SelfHarm\", \"Sexual\", \"Violence\"],\n  \"outputType\": \"FourSeverityLevels\"\n}'\n```\n\nNote\n\nIf you're using a blob storage URL, the request body should look like this:\n\n```"
+        },
+        {
+          "claimLocator": "FourSeverityLevels",
+          "lineStart": 127,
+          "lineEnd": 137,
+          "text": "| **content** | Required | The content or blob URL of the image. I can be either base64-encoded bytes or a blob URL. If both are given, the request is refused. The maximum allowed size of the image is 7,200 x 7,200 pixels, and the maximum file size is 4 MB. The minimum size of the image is 50 pixels x 50 pixels. | String |\n| **categories** | Optional | This is assumed to be an array of category names. See the [Harm categories guide](concepts/harm-categories) for a list of available category names. If no categories are specified, all four categories are used. We use multiple categories to get scores in a single request. | String |\n| **outputType** | Optional | Image moderation API only supports `\"FourSeverityLevels\"`. Output severities in four levels. The value can be `0,2,4,6` | String |\n\nOpen a command prompt window and run the cURL command.\n\n### Output\n\nYou should see the image moderation results displayed as JSON data in the console. For example:\n\n```json"
+        }
+      ],
+      "serviceExecution": "not performed"
+    },
+    {
+      "sourceId": "S043",
+      "url": "https://learn.microsoft.com/azure/search/cognitive-search-skill-ocr",
+      "snapshot": "sources/snapshots/S043.md",
+      "snapshotSha256": "0a5cdd696dcbae744d32db7fd89a69926f0203462f86d6dc25793ab07d001b3d",
+      "fetchedAt": "2026-10-08T04:27:31.143Z",
+      "excerpts": [
+        {
+          "claimLocator": "imageAction",
+          "lineStart": 44,
+          "lineEnd": 54,
+          "text": "| Input name | Description |\n| --- | --- |\n| `image` | Complex Type. Currently only works with \"/document/normalized\\_images\" field, produced by the Azure blob indexer when `imageAction` is set to a value other than `none`. |\n\n## Skill outputs\n\n| Output name | Description |\n| --- | --- |\n| `text` | Plain text extracted from the image. |\n| `layoutText` | Complex type that describes the extracted text and the location where the text was found. |\n"
+        },
+        {
+          "claimLocator": "imageAction",
+          "lineStart": 187,
+          "lineEnd": 197,
+          "text": "```\n\nThe above skillset example assumes that a normalized-images field exists. To generate this field, set the *imageAction* configuration in your indexer definition to *generateNormalizedImages* as shown below:\n\n```json\n{\n  //...rest of your indexer definition goes here ...\n  \"parameters\": {\n    \"configuration\": {\n      \"dataToExtract\":\"contentAndMetadata\",\n      \"imageAction\":\"generateNormalizedImages\""
+        },
+        {
+          "claimLocator": "normalized_images",
+          "lineStart": 63,
+          "lineEnd": 73,
+          "text": "      \"description\": \"Extracts text (plain and structured) from image.\",\n      \"@odata.type\": \"#Microsoft.Skills.Vision.OcrSkill\",\n      \"context\": \"/document/normalized_images/*\",\n      \"defaultLanguageCode\": null,\n      \"detectOrientation\": true,\n      \"inputs\": [\n        {\n          \"name\": \"image\",\n          \"source\": \"/document/normalized_images/*\"\n        }\n      ],"
+        },
+        {
+          "claimLocator": "normalized_images",
+          "lineStart": 69,
+          "lineEnd": 79,
+          "text": "        {\n          \"name\": \"image\",\n          \"source\": \"/document/normalized_images/*\"\n        }\n      ],\n      \"outputs\": [\n        {\n          \"name\": \"text\",\n          \"targetName\": \"myText\"\n        },\n        {"
+        }
+      ],
+      "serviceExecution": "not performed"
+    },
+    {
+      "sourceId": "S046",
+      "url": "https://learn.microsoft.com/azure/ai-services/speech-service/how-to-translate-speech",
+      "snapshot": "sources/snapshots/S046.md",
+      "snapshotSha256": "8a73fb1e63f49dde972815b860758a57ff3d620842220f9e29200bccf573c39e",
+      "fetchedAt": "2026-10-08T04:27:31.793Z",
+      "excerpts": [
+        {
+          "claimLocator": "translation",
+          "lineStart": 7,
+          "lineEnd": 17,
+          "text": "## Availability\n\nYou can use the REST API for speech translation, but we haven't yet included a guide here. Please select another programming language to get started and learn about the concepts.\n\n::: zone-end\n\n::: zone pivot=\"programming-language-python\"\n\n[Reference documentation](/en-us/python/api/azure-cognitiveservices-speech/) | [Package (PyPi)](https://pypi.org/project/azure-cognitiveservices-speech/) | [Additional samples on GitHub](https://aka.ms/speech/github-python)\n\nIn this how-to guide, you learn how to recognize human speech and translate it to another language."
+        },
+        {
+          "claimLocator": "translation",
+          "lineStart": 17,
+          "lineEnd": 27,
+          "text": "In this how-to guide, you learn how to recognize human speech and translate it to another language.\n\nSee the speech translation [overview](speech-translation) for more information about:\n\n- Translating speech to text\n- Translating speech to multiple target languages\n- Performing direct speech to speech translation\n\n## Sensitive data and environment variables\n\nThe example source code in this article depends on environment variables for storing sensitive data, such as the Speech resource's subscription key and region. The Python code file contains two values that are assigned from the host machine's environment variables: `SPEECH__SUBSCRIPTION__KEY` and `SPEECH__SERVICE__REGION`. Both of these variables are at the global scope, so they're accessible within the function definition of the code file:"
+        },
+        {
+          "claimLocator": "synthesis",
+          "lineStart": 45,
+          "lineEnd": 55,
+          "text": "Tip\n\nRegardless of whether you're performing speech recognition, speech synthesis, translation, or intent recognition, you'll always create a configuration.\n\nYou can initialize `SpeechTranslationConfig` in a few ways:\n\n- With a subscription: pass in a key and the associated region.\n- With an endpoint: pass in a Speech service endpoint. A key or authorization token is optional.\n- With a host: pass in a host address. A key or authorization token is optional.\n- With an authorization token: pass in an authorization token and the associated region.\n"
+        },
+        {
+          "claimLocator": "synthesis",
+          "lineStart": 277,
+          "lineEnd": 287,
+          "text": "After a successful speech recognition and translation, the result contains all the translations in a dictionary. The [`translations`](/en-us/python/api/azure-cognitiveservices-speech/azure.cognitiveservices.speech.translation.translationrecognitionresult#translations) dictionary key is the target translation language, and the value is the translated text. Recognized speech can be translated and then synthesized in a different language (speech-to-speech).\n\n### Event-based synthesis\n\nThe `TranslationRecognizer` object exposes a `Synthesizing` event. The event fires several times and provides a mechanism to retrieve the synthesized audio from the translation recognition result. If you're translating to multiple languages, see Manual synthesis.\n\nSpecify the synthesis voice by assigning a [`voice_name`](/en-us/python/api/azure-cognitiveservices-speech/azure.cognitiveservices.speech.translation.speechtranslationconfig#voice-name) instance, and provide an event handler for the `Synthesizing` event to get the audio. The following example saves the translated audio as a .wav file.\n\nImportant\n\nThe event-based synthesis works only with a single translation. *Do not* add multiple target translation languages. Additionally, the [`voice_name`](/en-us/python/api/azure-cognitiveservices-speech/azure.cognitiveservices.speech.translation.speechtranslationconfig#voice-name) value should be the same language as the target translation language. For example, `\"de\"` could map to `\"de-DE-Hedda\"`."
+        }
+      ],
+      "serviceExecution": "not performed"
+    },
+    {
+      "sourceId": "S051",
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/openai/api-version-lifecycle",
+      "snapshot": "sources/snapshots/S051-20261011.md",
+      "snapshotSha256": "8e7e4b2c4e94ad6056ffa3edf4750e4db864ceac16a52777cc13fd2068403803",
+      "fetchedAt": "2026-10-11T20:36:59.398393+00:00",
+      "excerpts": [
+        {
+          "claimLocator": "Cognitive Services OpenAI User",
+          "lineStart": 70,
+          "lineEnd": 80,
+          "text": "- A [Foundry resource](../../ai-services/multi-service-resource) or [Azure OpenAI resource](/en-us/azure/ai-foundry/openai/how-to/create-resource) deployed in a [supported region](https://azure.microsoft.com/explore/global-infrastructure/products-by-region/?products=cognitive-services)\n- At least one [model deployment](../foundry-models/how-to/deploy-foundry-models)\n- For Microsoft Entra ID authentication: the `Cognitive Services OpenAI User` role assigned to your identity. For more information, see [Role-based access control for Azure OpenAI](/en-us/azure/ai-foundry/openai/how-to/role-based-access-control)\n\n## API evolution\n\nPreviously, Azure OpenAI received monthly updates of new API versions. Taking advantage of new features required constantly updating code and environment variables with each new API release. Azure OpenAI also required the extra step of using Azure specific clients which created overhead when migrating code between OpenAI and Azure OpenAI.\n\nStarting in August 2025, you can opt in to the next generation v1 Azure OpenAI APIs which add support for:\n\n- Ongoing access to the latest features with no need to specify new `api-version`'s each month."
+        },
+        {
+          "claimLocator": "https://ai.azure.com/.default",
+          "lineStart": 151,
+          "lineEnd": 161,
+          "text": "\ntoken_provider = get_bearer_token_provider(\n    DefaultAzureCredential(), \"https://ai.azure.com/.default\"\n)\n\nclient = OpenAI(  \n  base_url = \"https://YOUR-RESOURCE-NAME.openai.azure.com/openai/v1/\",  \n  api_key = token_provider  \n)\n\nresponse = client.responses.create("
+        },
+        {
+          "claimLocator": "https://ai.azure.com/.default",
+          "lineStart": 193,
+          "lineEnd": 203,
+          "text": "BearerTokenPolicy tokenPolicy = new(\n    new DefaultAzureCredential(),\n    \"https://ai.azure.com/.default\");\nOpenAIClient client = new(\n    authenticationPolicy: tokenPolicy,\n    options: new OpenAIClientOptions()\n    {\n        Endpoint = new(\"https://YOUR-RESOURCE-NAME.openai.azure.com/openai/v1/\"),\n    })\n```\n"
+        },
+        {
+          "claimLocator": "/openai/v1/",
+          "lineStart": 88,
+          "lineEnd": 98,
+          "text": "Examples:\n\n- When `/openai/v1/evals` was previously in preview, it required passing an `\"aoai-evals\":\"preview\"` header. **/evals is no longer in preview.**\n- `/openai/v1/fine_tuning/alpha/graders/` is in preview and requires no custom header due to the presence of `alpha` in the API path.\n\nFor the initial v1 Generally Available (GA) API launch, only a subset of the inference and authoring API capabilities are supported. All GA features are supported for use in production. Support for more capabilities is being added rapidly.\n\n## Code changes\n\n# [Python](#tab/python)\n### v1 API"
+        },
+        {
+          "claimLocator": "/openai/v1/",
+          "lineStart": 89,
+          "lineEnd": 99,
+          "text": "\n- When `/openai/v1/evals` was previously in preview, it required passing an `\"aoai-evals\":\"preview\"` header. **/evals is no longer in preview.**\n- `/openai/v1/fine_tuning/alpha/graders/` is in preview and requires no custom header due to the presence of `alpha` in the API path.\n\nFor the initial v1 Generally Available (GA) API launch, only a subset of the inference and authoring API capabilities are supported. All GA features are supported for use in production. Support for more capabilities is being added rapidly.\n\n## Code changes\n\n# [Python](#tab/python)\n### v1 API\n"
+        }
+      ],
+      "serviceExecution": "not performed"
+    },
+    {
+      "sourceId": "S052",
+      "url": "https://learn.microsoft.com/en-us/azure/developer/ai/keyless-connections",
+      "snapshot": "sources/snapshots/S052-20261011.md",
+      "snapshotSha256": "4f2b4d850889660d3af96aac661fa1955b8d9e1bf6f454facbef5b11aa59efcd",
+      "fetchedAt": "2026-10-11T20:36:59.488650+00:00",
+      "excerpts": [
+        {
+          "claimLocator": "Cognitive Services OpenAI User",
+          "lineStart": 147,
+          "lineEnd": 157,
+          "text": "    | --- | --- | --- |\n    | Assistants | `Cognitive Services OpenAI Contributor` | `a001fd3d-188f-4b5d-821b-7da978bf7442` |\n    | Chat completions | `Cognitive Services OpenAI User` | `5e0bd9bd-7b93-4f28-af87-19fc36ad61bd` |\n3. Select an identity type to use.\n\n    - **Personal identity**: Your personal identity tied to your sign in to Azure.\n    - **Managed identity**: An identity managed by and created for use on Azure. For [managed identity](/en-us/entra/identity/managed-identities-azure-resources/how-manage-user-assigned-managed-identities?pivots=identity-mi-methods-azp#create-a-user-assigned-managed-identity), create a [user-assigned managed identity](/en-us/entra/identity/managed-identities-azure-resources/how-manage-user-assigned-managed-identities?pivots=identity-mi-methods-azp#create-a-user-assigned-managed-identity). When you create the managed identity, you need the `Client ID`, also known as the `app ID`.\n4. To find your personal identity, use one of the following commands. Use the ID as the `<identity-id>` in the next step.\n\n# [Azure CLI](#tab/azure-cli)\nFor local development, to get your own identity ID, use the following command. You need to sign in with `az login` before using this command."
+        },
+        {
+          "claimLocator": "Cognitive Services OpenAI User",
+          "lineStart": 200,
+          "lineEnd": 210,
+          "text": "    ```azurecli\n    az role assignment create \\\n        --role \"Cognitive Services OpenAI User\" \\\n        --assignee \"<identity-id>\" \\\n        --scope \"/subscriptions/<subscription-id>/resourceGroups/<resource-group-name>\"\n    ```\n\n# [Azure PowerShell](#tab/azure-powershell)\nTo grant your application permissions to your Azure OpenAI resource through RBAC, assign a role using the Azure PowerShell cmdlet [New-AzRoleAssignment](/en-us/powershell/module/az.resources/new-azroleassignment).\n\n    ```azurepowershell"
+        }
+      ],
+      "serviceExecution": "not performed"
+    },
+    {
+      "sourceId": "S053",
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/how-to/memory-usage",
+      "snapshot": "sources/snapshots/S053-20261011.md",
+      "snapshotSha256": "d118113db20dbe589f686a9150063736c78ce1b6e7b37c649bf28262918d31b6",
+      "fetchedAt": "2026-10-11T20:37:00.240184+00:00",
+      "excerpts": [
+        {
+          "claimLocator": "x-memory-user-id",
+          "lineStart": 226,
+          "lineEnd": 236,
+          "text": "When you attach the memory search tool to an agent, set `scope` to `{{$userId}}` to enable per-user memory isolation without hard-coding identifiers. The system automatically resolves the end user's identity on each response call from one of two sources:\n\n- **`x-memory-user-id` request header:** If present, the header value is used as the user ID. Use this in proxy or backend scenarios where your service calls the API on behalf of an end user.\n- **Microsoft Entra authentication token:** If the header isn't set, the system falls back to the caller's tenant ID (TID) and object ID (OID). This is the default in frontend scenarios where users authenticate directly with Microsoft Entra.\n\nIf you don't need per-user isolation, use a static `scope` value instead.\n\n### Via low-level memory APIs\n\nWhen you call memory APIs directly, specify `scope` explicitly in each request. You can pass a static value, such as a universally unique identifier (UUID) or another stable identifier from your system. Automatic identity extraction isn't supported for these operations.\n"
+        },
+        {
+          "claimLocator": "x-memory-user-id",
+          "lineStart": 627,
+          "lineEnd": 637,
+          "text": "Tip\n\nTo scope memories to an individual end user, set `scope` to `\"{{$userId}}\"` in the tool definition and pass `x-memory-user-id: <user-id>` as a header on each response call. The system resolves the scope to that user's identity. Without the header, the scope falls back to the caller's Microsoft Entra identity (TID and OID). For more information, see Understand scope.\n\n::: zone pivot=\"python\"\n\n```python\nfrom azure.ai.projects.models import MemorySearchPreviewTool, PromptAgentDefinition\n\n# Set scope to associate the memories with\nscope = \"user_123\""
+        },
+        {
+          "claimLocator": "MemorySearchPreviewTool",
+          "lineStart": 632,
+          "lineEnd": 642,
+          "text": "\n```python\nfrom azure.ai.projects.models import MemorySearchPreviewTool, PromptAgentDefinition\n\n# Set scope to associate the memories with\nscope = \"user_123\"\n\nopenai_client = project_client.get_openai_client()\n\n# Create memory search tool\ntool = MemorySearchPreviewTool("
+        },
+        {
+          "claimLocator": "MemorySearchPreviewTool",
+          "lineStart": 640,
+          "lineEnd": 650,
+          "text": "\n# Create memory search tool\ntool = MemorySearchPreviewTool(\n    memory_store_name=memory_store_name,\n    scope=scope,\n    update_delay=1, # Wait 1 second of inactivity before updating memories\n    # In a real application, set this to a higher value like 300 (5 minutes, default)\n)\n\n# Create a prompt agent with memory search tool\nagent = project_client.agents.create_version("
+        },
+        {
+          "claimLocator": "specify `scope` explicitly",
+          "lineStart": 233,
+          "lineEnd": 243,
+          "text": "### Via low-level memory APIs\n\nWhen you call memory APIs directly, specify `scope` explicitly in each request. You can pass a static value, such as a universally unique identifier (UUID) or another stable identifier from your system. Automatic identity extraction isn't supported for these operations.\n\n## Create a memory store\n\nCreate a dedicated memory store for each agent to establish clear boundaries for memory access and optimization. When you create a memory store, specify the chat model and embedding model deployments that process your memory content.\n\nUse memory store options to control extraction behavior and retention defaults. In the latest preview, you can enable procedural memory and set a default TTL (seconds) for newly created memory entries.\n\n::: zone pivot=\"python\""
+        },
+        {
+          "claimLocator": "agent_reference",
+          "lineStart": 819,
+          "lineEnd": 829,
+          "text": "    input=\"I prefer dark roast coffee\",\n    conversation=conversation.id,\n    extra_body={\"agent_reference\": {\"name\": agent.name, \"type\": \"agent_reference\"}},\n    # To scope memories to an end user, uncomment:\n    # extra_headers={\"x-memory-user-id\": \"<user-id>\"},\n)\n\nprint(f\"Response output: {response.output_text}\")\n\n# After an inactivity in the conversation, memories will be extracted from the conversation and stored\nprint(\"Waiting for memories to be stored...\")"
+        },
+        {
+          "claimLocator": "agent_reference",
+          "lineStart": 838,
+          "lineEnd": 848,
+          "text": "    input=\"Please order my usual coffee\",\n    conversation=new_conversation.id,\n    extra_body={\"agent_reference\": {\"name\": agent.name, \"type\": \"agent_reference\"}},\n)\n\nprint(f\"Response output: {new_response.output_text}\")\n```\n\n::: zone-end\n\n::: zone pivot=\"csharp\""
+        }
+      ],
+      "serviceExecution": "not performed"
+    },
+    {
+      "sourceId": "S054",
+      "url": "https://learn.microsoft.com/azure/foundry/agents/concepts/tool-best-practice",
+      "snapshot": "sources/snapshots/S054-20261011.md",
+      "snapshotSha256": "fbf440754eab789009c34a8bf7636fc60c1d0bd64402cd650b1b903230ffd0f9",
+      "fetchedAt": "2026-10-11T20:37:00.368960+00:00",
+      "excerpts": [
+        {
+          "claimLocator": "required",
+          "lineStart": 73,
+          "lineEnd": 83,
+          "text": "- Access to a Foundry project in the Foundry portal with the **Azure AI Developer** role or equivalent permissions.\n- A model deployed in the same project.\n- Any required connections configured for the tools you plan to use (for example, Azure AI Search, SharePoint, or Bing grounding).\n- A model and project region that both support the tool. See [Tool support by region and model](limits-quotas-regions#tool-support-by-region-and-model).\n\n## Configure and validate tool usage\n\n- Organize tools and connections in a toolbox. See [Create and manage a toolbox in Foundry](../how-to/tools/toolbox).\n- Review traces to confirm when your agent calls tools and to inspect tool inputs and outputs. For setup guidance, see [Set up tracing for Foundry agents](../../observability/how-to/trace-agent-setup).\n\n## Improve tool-calling reliability"
+        },
+        {
+          "claimLocator": "required",
+          "lineStart": 89,
+          "lineEnd": 99,
+          "text": "- Use native function tools when the connected client must perform the action.\n- Use MCP or toolbox tools when the agent service or Voice Live integration performs the tool call.\n- Set `tool_choice` deliberately for opening or other time-sensitive turns. Use `none` when the agent should speak without calling a tool, `auto` when the model decides, or `required` when a tool call is necessary.\n- Test interruptions and tool failures in a live voice session. The agent should remain usable when a caller speaks while a tool is running or when a tool returns no result.\n\nFor setup, see [Quickstart: Create a voice-based prompt agent](../quickstarts/prompt-voice-agent).\n\n### Control tool calling with `tool_choice`\n\nUse `tool_choice` for the most deterministic control over tool calling.\n"
+        },
+        {
+          "claimLocator": "auto",
+          "lineStart": 89,
+          "lineEnd": 99,
+          "text": "- Use native function tools when the connected client must perform the action.\n- Use MCP or toolbox tools when the agent service or Voice Live integration performs the tool call.\n- Set `tool_choice` deliberately for opening or other time-sensitive turns. Use `none` when the agent should speak without calling a tool, `auto` when the model decides, or `required` when a tool call is necessary.\n- Test interruptions and tool failures in a live voice session. The agent should remain usable when a caller speaks while a tool is running or when a tool returns no result.\n\nFor setup, see [Quickstart: Create a voice-based prompt agent](../quickstarts/prompt-voice-agent).\n\n### Control tool calling with `tool_choice`\n\nUse `tool_choice` for the most deterministic control over tool calling.\n"
+        },
+        {
+          "claimLocator": "auto",
+          "lineStart": 98,
+          "lineEnd": 108,
+          "text": "Use `tool_choice` for the most deterministic control over tool calling.\n\n- `auto`: The model decides whether to call tools.\n- `required`: The model must call one or more tools.\n- `none`: The model doesn't call tools.\n\nFor details, see `tool_choice` in the [Foundry project REST reference](https://ai.azure.com/api-reference/responses).\n\n### Write effective tool instructions\n\n- Keep instructions specific and consistent with your tool setup."
+        },
+        {
+          "claimLocator": "none",
+          "lineStart": 89,
+          "lineEnd": 99,
+          "text": "- Use native function tools when the connected client must perform the action.\n- Use MCP or toolbox tools when the agent service or Voice Live integration performs the tool call.\n- Set `tool_choice` deliberately for opening or other time-sensitive turns. Use `none` when the agent should speak without calling a tool, `auto` when the model decides, or `required` when a tool call is necessary.\n- Test interruptions and tool failures in a live voice session. The agent should remain usable when a caller speaks while a tool is running or when a tool returns no result.\n\nFor setup, see [Quickstart: Create a voice-based prompt agent](../quickstarts/prompt-voice-agent).\n\n### Control tool calling with `tool_choice`\n\nUse `tool_choice` for the most deterministic control over tool calling.\n"
+        },
+        {
+          "claimLocator": "none",
+          "lineStart": 100,
+          "lineEnd": 110,
+          "text": "- `auto`: The model decides whether to call tools.\n- `required`: The model must call one or more tools.\n- `none`: The model doesn't call tools.\n\nFor details, see `tool_choice` in the [Foundry project REST reference](https://ai.azure.com/api-reference/responses).\n\n### Write effective tool instructions\n\n- Keep instructions specific and consistent with your tool setup.\n- Tell the model what each tool is for.\n- If you have multiple tools that overlap, add a decision rule (for example, \"Use File Search before Web Search for internal content.\")."
+        }
+      ],
+      "serviceExecution": "not performed"
+    },
+    {
+      "sourceId": "S055",
+      "url": "https://learn.microsoft.com/en-us/azure/ai-services/translator/reference/known-issues",
+      "snapshot": "sources/snapshots/S055-20261011.md",
+      "snapshotSha256": "c1b48f37f4dc56c80cbc9c30661bfc67f1f6f75dea4693ef6d9e39beeeb88f1c",
+      "fetchedAt": "2026-10-11T20:37:00.051015+00:00",
+      "excerpts": [
+        {
+          "claimLocator": "1006",
+          "lineStart": 71,
+          "lineEnd": 81,
+          "text": "| **Issue ID** | **Category / Feature Area** | **Title** | **Description** | **Workaround** | **Issues publish date** |\n| --- | --- | --- | --- | --- | --- |\n| `1006` | Content | Translating sentences with mixed language text | The Text translation API doesn't support translating sentences that contain mixed language input. As a result, translations can be incorrect or incomplete when a single sentence includes multiple languages. | Specify the intended source language, remove the mixed-language sentence, or split the text into single-language segments. | February 5, 2025 |\n| `1004` | Model | Preserving context and pronouns | Some translation models don't handle pronouns well; especially third-person pronouns. This issue is due to an inherent problem with sentence-level training and inference where context isn't preserved. We're actively working to shift all our models to document-level training and inference to preserve the context. | Currently, there's no direct workaround. Users should manually review and adjust pronoun usage as needed. | February 5, 2025 |\n\n### Document translation current known issues\n\nThe following table lists active, service-confirmed issues in the Azure Translator `document translation` feature, including issue category, observed behavior, documented workaround, initial publish date, and scenarios involving complex or mixed-content inputs.\n\n| Issue ID | Category | Title | Description | Workaround | Publication date |\n| --- | --- | --- | --- | --- | --- |"
+        },
+        {
+          "claimLocator": "3007",
+          "lineStart": 83,
+          "lineEnd": 86,
+          "text": "| **3009** | Formatting | Translating documents containing borderless charts and tables | Complex tables and charts can present significant challenges during translation, especially when they're large and intricate. Charts and tables with mixed horizontal and vertical text, varying cell sizes, or grid structures that are borderless, are difficult to format accurately. These types of tables may require added processing to ensure precision without compromising overall performance. | To improve the quality of translation output, consider recreating documents using bordered tables and charts rather than borderless ones. | April 1, 2025 |\n| **3008** | File types | Translating complex documents | Translating documents with thousands of intricate pages can be challenging. These documents often include images, embedded text within images, and manually typed text. As a result, the batch translation request can encounter failures during the extraction, translation, and reassembly processes. | Split the large document into smaller sections (for example, divide a 1000-page file into approximately 10 files of 100 pages each) and submit them individually for the best results. | February 5, 2025 |\n| **3007** | Content | Translating documents with mixed source languages | In some cases, document translation doesn't translate source documents with multiple languages leading to incorrect or incomplete results. For example, a sentence that contains more than one language. | To ensure that the desired language is translated to the target language, specify the intended source language. Alternatively, remove the mixed-language sentence, or split the text into segments containing only one language. | February 5, 2025 |\n| **3001** | Formatting | Formatting of mathematical expressions | In some cases, translated documents don't fully retain the formatting of mathematical expressions. Superscript and subscript numbers can be reformatted incorrectly, leading to discrepancies between expected and actual output. | Currently, there's no direct workaround. Users should manually adjust the formatting of mathematical expressions as needed. | February 5, 2025 |"
+        },
+        {
+          "claimLocator": "mixed",
+          "lineStart": 71,
+          "lineEnd": 81,
+          "text": "| **Issue ID** | **Category / Feature Area** | **Title** | **Description** | **Workaround** | **Issues publish date** |\n| --- | --- | --- | --- | --- | --- |\n| `1006` | Content | Translating sentences with mixed language text | The Text translation API doesn't support translating sentences that contain mixed language input. As a result, translations can be incorrect or incomplete when a single sentence includes multiple languages. | Specify the intended source language, remove the mixed-language sentence, or split the text into single-language segments. | February 5, 2025 |\n| `1004` | Model | Preserving context and pronouns | Some translation models don't handle pronouns well; especially third-person pronouns. This issue is due to an inherent problem with sentence-level training and inference where context isn't preserved. We're actively working to shift all our models to document-level training and inference to preserve the context. | Currently, there's no direct workaround. Users should manually review and adjust pronoun usage as needed. | February 5, 2025 |\n\n### Document translation current known issues\n\nThe following table lists active, service-confirmed issues in the Azure Translator `document translation` feature, including issue category, observed behavior, documented workaround, initial publish date, and scenarios involving complex or mixed-content inputs.\n\n| Issue ID | Category | Title | Description | Workaround | Publication date |\n| --- | --- | --- | --- | --- | --- |"
+        },
+        {
+          "claimLocator": "mixed",
+          "lineStart": 76,
+          "lineEnd": 86,
+          "text": "### Document translation current known issues\n\nThe following table lists active, service-confirmed issues in the Azure Translator `document translation` feature, including issue category, observed behavior, documented workaround, initial publish date, and scenarios involving complex or mixed-content inputs.\n\n| Issue ID | Category | Title | Description | Workaround | Publication date |\n| --- | --- | --- | --- | --- | --- |\n| **3010** | Content | Translating documents containing visible watermarks or seals | Documents with visible watermarks or seals can significantly hinder the translation process, as the watermarks may overlap with the text, making it difficult for the models to accurately recognize and process the content. This issue can result in the document remaining untranslated or only partially translated. | For optimal translation results, use clean, watermark-free documents. Files without visible watermarks or seals translate accurately and as expected. | May 21, 2025 |\n| **3009** | Formatting | Translating documents containing borderless charts and tables | Complex tables and charts can present significant challenges during translation, especially when they're large and intricate. Charts and tables with mixed horizontal and vertical text, varying cell sizes, or grid structures that are borderless, are difficult to format accurately. These types of tables may require added processing to ensure precision without compromising overall performance. | To improve the quality of translation output, consider recreating documents using bordered tables and charts rather than borderless ones. | April 1, 2025 |\n| **3008** | File types | Translating complex documents | Translating documents with thousands of intricate pages can be challenging. These documents often include images, embedded text within images, and manually typed text. As a result, the batch translation request can encounter failures during the extraction, translation, and reassembly processes. | Split the large document into smaller sections (for example, divide a 1000-page file into approximately 10 files of 100 pages each) and submit them individually for the best results. | February 5, 2025 |\n| **3007** | Content | Translating documents with mixed source languages | In some cases, document translation doesn't translate source documents with multiple languages leading to incorrect or incomplete results. For example, a sentence that contains more than one language. | To ensure that the desired language is translated to the target language, specify the intended source language. Alternatively, remove the mixed-language sentence, or split the text into segments containing only one language. | February 5, 2025 |\n| **3001** | Formatting | Formatting of mathematical expressions | In some cases, translated documents don't fully retain the formatting of mathematical expressions. Superscript and subscript numbers can be reformatted incorrectly, leading to discrepancies between expected and actual output. | Currently, there's no direct workaround. Users should manually adjust the formatting of mathematical expressions as needed. | February 5, 2025 |"
+        }
+      ],
+      "serviceExecution": "not performed"
+    },
+    {
+      "sourceId": "S056",
+      "url": "https://learn.microsoft.com/en-us/python/api/azure-ai-projects/azure.ai.projects.operations.agentsoperations?view=azure-python",
+      "snapshot": "sources/snapshots/S056-20261011.md",
+      "snapshotSha256": "888658bb603bbc211a4096be874b78aefcabf8c8e5a4b3c0a14e93ad80c2a6a7",
+      "fetchedAt": "2026-10-11T20:37:00.267771+00:00",
+      "excerpts": [
+        {
+          "claimLocator": "get(agent_name",
+          "lineStart": 650,
+          "lineEnd": 660,
+          "text": "\n```python\nget(agent_name: str, **kwargs: Any) -> AgentDetails\n```\n\n#### Parameters\n\n| Name | Description |\n| --- | --- |\n| agent\\_name<br><br>Required | [str](https://docs.python.org/3/builtins/stdtypes.html#str)<br><br>The name of the agent to retrieve. Required. |\n"
+        },
+        {
+          "claimLocator": "agent_name",
+          "lineStart": 180,
+          "lineEnd": 190,
+          "text": "\n```python\ncreate_session(agent_name: str, body: ~collections.abc.MutableMapping[str, ~typing.Any] | ~typing.IO[bytes] = <object object>, *, version_indicator: ~azure.ai.projects.models._models.VersionIndicator = <object object>, agent_session_id: str | None = None, **kwargs: ~typing.Any) -> AgentSessionResource\n```\n\n#### Parameters\n\n| Name | Description |\n| --- | --- |\n| agent\\_name<br><br>Required | [str](https://docs.python.org/3/builtins/stdtypes.html#str)<br><br>The name of the agent to create a session for. Required. |\n| body | &lt;xref:JSON&gt; or [IO](https://docs.python.org/3/library/typing.html#typing.IO)[[bytes](https://docs.python.org/3/builtins/stdtypes.html#bytes)] <br><br>Is either a JSON type or a IO[bytes] type. Required. |"
+        },
+        {
+          "claimLocator": "agent_name",
+          "lineStart": 216,
+          "lineEnd": 226,
+          "text": "\n```python\ncreate_version(agent_name: str, *, definition: _models.AgentDefinition, content_type: str = 'application/json', metadata: dict[str, str] | None = None, description: str | None = None, blueprint_reference: _models.AgentBlueprintReference | None = None, draft: bool | None = None, **kwargs: Any) -> _models.AgentVersionDetails\n```\n\n#### Parameters\n\n| Name | Description |\n| --- | --- |\n| agent\\_name<br><br>Required | [str](https://docs.python.org/3/builtins/stdtypes.html#str)<br><br><br>The unique name that identifies the agent. Name can be used to retrieve/update/delete the agent.<br><br>- Must start and end with alphanumeric characters,<br>- Can contain hyphens in the middle<br>- Must not exceed 63 characters. Required. |\n| body | &lt;xref:JSON&gt; or [IO](https://docs.python.org/3/library/typing.html#typing.IO)[[bytes](https://docs.python.org/3/builtins/stdtypes.html#bytes)] <br><br>Is either a JSON type or a IO[bytes] type. Required. |"
+        }
+      ],
+      "serviceExecution": "not performed"
+    },
+    {
+      "sourceId": "S058",
+      "url": "https://learn.microsoft.com/en-us/azure/search/search-how-to-integrated-vectorization",
+      "snapshot": "sources/snapshots/S058-20261011.md",
+      "snapshotSha256": "a09c24b08450e2017f75e2fa7d0b107b870d58cb085c863b6531ddb3ab513716",
+      "fetchedAt": "2026-10-11T20:37:00.862210+00:00",
+      "excerpts": [
+        {
+          "claimLocator": "Text Split",
+          "lineStart": 69,
+          "lineEnd": 79,
+          "text": "You're responsible for carefully reviewing and testing applications you build in the context of your specific use cases and making all appropriate decisions and customizations. This includes implementing your own responsible AI mitigations, such as metaprompts, content filters, or other safety systems, and ensuring your applications meet appropriate quality, reliability, security, and trustworthiness standards. For more information, see the [Azure AI Search Transparency Note](/en-us/azure/foundry/responsible-ai/search/transparency-note).\n\nIn this article, you learn how to use a skillset to chunk and vectorize content from a supported data source. The skillset calls the [Text Split skill](cognitive-search-skill-textsplit) or [Document Layout skill](cognitive-search-skill-document-intelligence-layout) for chunking and an embedding skill that's attached to a supported embedding model for chunk vectorization. You also learn how to store the chunked and vectorized content in a [vector index](vector-search-how-to-create-index).\n\nThis article describes the end-to-end workflow for [integrated vectorization](vector-search-integrated-vectorization) using REST. For portal-based instructions, see [Quickstart: Vectorize text and images in the Azure portal](search-get-started-portal-import-vectors).\n\n## Prerequisites\n\n- An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).\n- An [Azure AI Search service](search-create-service-portal). We recommend the Basic tier or higher.\n- A supported data source."
+        },
+        {
+          "claimLocator": "Text Split",
+          "lineStart": 348,
+          "lineEnd": 358,
+          "text": "Partitioning your content into chunks helps you meet the requirements of your embedding model and prevents data loss due to truncation. For more information about chunking, see [Chunk large documents for vector search solutions](vector-search-how-to-chunk-documents).\n\nFor built-in data chunking, Azure AI Search offers the [Text Split skill](cognitive-search-skill-textsplit) and [Azure Content Understanding skill](cognitive-search-skill-content-understanding). The Text Split skill breaks text into sentences or pages of a particular length, while the Azure Content Understanding skill performs semantic, layout-aware chunking that respects paragraph boundaries.\n\n1. Use [Create Skillset](/en-us/rest/api/searchservice/skillsets/create) to define a skillset.\n\n    ```HTTP\n    ### Create a skillset\n    POST {{baseUrl}}/skillsets?api-version=2026-04-01  HTTP/1.1\n      Content-Type: application/json\n      Authorization: Bearer {{token}}"
+        },
+        {
+          "claimLocator": "embedding",
+          "lineStart": 69,
+          "lineEnd": 79,
+          "text": "You're responsible for carefully reviewing and testing applications you build in the context of your specific use cases and making all appropriate decisions and customizations. This includes implementing your own responsible AI mitigations, such as metaprompts, content filters, or other safety systems, and ensuring your applications meet appropriate quality, reliability, security, and trustworthiness standards. For more information, see the [Azure AI Search Transparency Note](/en-us/azure/foundry/responsible-ai/search/transparency-note).\n\nIn this article, you learn how to use a skillset to chunk and vectorize content from a supported data source. The skillset calls the [Text Split skill](cognitive-search-skill-textsplit) or [Document Layout skill](cognitive-search-skill-document-intelligence-layout) for chunking and an embedding skill that's attached to a supported embedding model for chunk vectorization. You also learn how to store the chunked and vectorized content in a [vector index](vector-search-how-to-create-index).\n\nThis article describes the end-to-end workflow for [integrated vectorization](vector-search-integrated-vectorization) using REST. For portal-based instructions, see [Quickstart: Vectorize text and images in the Azure portal](search-get-started-portal-import-vectors).\n\n## Prerequisites\n\n- An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).\n- An [Azure AI Search service](search-create-service-portal). We recommend the Basic tier or higher.\n- A supported data source."
+        },
+        {
+          "claimLocator": "embedding",
+          "lineStart": 78,
+          "lineEnd": 88,
+          "text": "- An [Azure AI Search service](search-create-service-portal). We recommend the Basic tier or higher.\n- A supported data source.\n- A supported embedding model.\n- Completion of [Quickstart: Connect without keys](search-get-started-rbac) and [Configure a system-assigned managed identity](search-how-to-managed-identities#create-a-system-managed-identity). Although you can use key-based authentication for data plane operations, this article assumes roles and managed identities, which are more secure.\n- [Visual Studio Code](https://code.visualstudio.com/download) with the [REST Client extension](https://marketplace.visualstudio.com/items?itemName=humao.rest-client).\n\n### Supported data sources\n\nIntegrated vectorization works with [all supported data sources](search-indexer-overview#supported-data-sources). However, this article focuses on the most commonly used data sources, which are described in the following table.\n\n| Data source | Description |"
+        },
+        {
+          "claimLocator": "vectorizer",
+          "lineStart": 581,
+          "lineEnd": 591,
+          "text": "    | Azure Vision | `1024` |\n\n## Add a vectorizer to the index\n\nIn this section, you enable vectorization at query time by [defining a vectorizer](vector-search-how-to-configure-vectorizer) in your index. The vectorizer uses the embedding model that indexes your data to decode a search string or image into a vector for vector search.\n\n1. Add the [Azure OpenAI vectorizer](vector-search-vectorizer-azure-open-ai) or [Azure Vision vectorizer (preview)](vector-search-vectorizer-ai-services-vision) after `vectorSearch.profiles`. You can paste one of the following definitions.\n\n    ```HTTP\n          \"profiles\": [ ... ],\n          \"vectorizers\": ["
+        },
+        {
+          "claimLocator": "vectorizer",
+          "lineStart": 583,
+          "lineEnd": 593,
+          "text": "## Add a vectorizer to the index\n\nIn this section, you enable vectorization at query time by [defining a vectorizer](vector-search-how-to-configure-vectorizer) in your index. The vectorizer uses the embedding model that indexes your data to decode a search string or image into a vector for vector search.\n\n1. Add the [Azure OpenAI vectorizer](vector-search-vectorizer-azure-open-ai) or [Azure Vision vectorizer (preview)](vector-search-vectorizer-ai-services-vision) after `vectorSearch.profiles`. You can paste one of the following definitions.\n\n    ```HTTP\n          \"profiles\": [ ... ],\n          \"vectorizers\": [\n            {\n              \"name\": \"my-openai-vectorizer\","
+        }
+      ],
+      "serviceExecution": "not performed"
+    }
+  ]
+}

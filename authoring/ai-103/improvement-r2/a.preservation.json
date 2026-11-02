@@ -1,0 +1,19 @@
+{
+  "startingFileCount": 652,
+  "identicalStartingFiles": 646,
+  "allowedChangedFiles": [
+    "authoring/ai-103/improvement-r2/run.py",
+    "authoring/ai-103/improvement-r2/qa.ts",
+    "authoring/ai-103/improvement-r2/verify-pdf.py",
+    "authoring/ai-103/improvement-r2/assemble.ts",
+    "authoring/ai-103/improvement-r2/README.md",
+    "docs/AI-103-IMPROVEMENT-CLOSEOUT.md"
+  ],
+  "gh600OriginalHashesChecked": 21,
+  "gh600Failures": [],
+  "oldAI103AndCheckpointArtifacts": "all unchanged",
+  "sharedCodeAndRealLearnerStore": "all unchanged",
+  "allowlistedAddedFileCount": 239,
+  "privateRuntimeHashes": "ignored local storage only",
+  "localImportCommitPushDeployment": "not performed"
+}

@@ -1,5 +1,7 @@
 // ── State ───────────────────────────────────────────────────────────
 const state = {
+  catalog: [], selectedPackKey: null, activePack: null, isDev: false,
+  setupEpoch: 0, previewEpoch: 0, submitting: false, timerSeconds: 0,
   exam: null,
   attempt: null,
   mode: "exam",
@@ -26,36 +28,74 @@ function showView(id) {
   });
 }
 
-// ── Initialise setup view ───────────────────────────────────────────
-// Fetches /api/config and /api/exams on load.
-// · If exams exist  → renders the exam list (users pick a pre-built exam).
-// · If hasApiKey    → shows the generation form (dev mode only).
-// · If neither      → shows a "no exams" message.
+async function fetchJson(url, options) {
+  const response = await fetch(url, options);
+  const data = await response.json();
+  if (!response.ok) throw new Error(typeof data.error === "string" ? data.error : `Request failed (${response.status})`);
+  return data;
+}
+function packSelectionValue(pack) {
+  const first = state.catalog.find(p => p.id === pack.id && p.canPlan);
+  return first?.version === pack.version ? pack.id : `${pack.id}@${pack.version}`;
+}
+function planningPack() {
+  return state.catalog.find(p => p.canPlan && packSelectionValue(p) === state.selectedPackKey);
+}
+function packFor(ref) {
+  const pack = state.catalog.find(p => p.id === ref?.id && p.version === ref?.version);
+  if (!pack) throw new Error("Exam pack metadata is unavailable");
+  return pack;
+}
+function identityLabel(exam = state.exam) {
+  const pack = packFor(exam.pack);
+  const status = exam.release?.status === "synthetic" ? "Synthetic mechanics fixture" : exam.compatibility ? "Historical practice" : exam.release?.status === "released" ? "Reviewed practice" : "Draft preview - audit pending";
+  return `${pack.examCode} · v${pack.version} · ${status}`;
+}
+function setStudyIdentity() {
+  const label = identityLabel();
+  for (const id of ["examIdentity", "resultsIdentity", "reviewIdentity", "analyticsIdentity"]) document.getElementById(id).textContent = label;
+  document.title = `${state.activePack.examCode} practice - Certification Exam Lab`;
+}
 async function initSetupView() {
-  const [cfg, exams] = await Promise.all([
-    fetch("/api/config").then((r) => r.json()).catch(() => ({ isDev: false, hasApiKey: false, examCount: 0 })),
-    fetch("/api/exams").then((r) => r.json()).catch(() => []),
-  ]);
-
-  if (exams.length > 0) {
-    renderExamList(exams, cfg.isDev);
-    document.getElementById("examListSection").classList.remove("hidden");
-  }
-
-  if (cfg.isDev && cfg.hasApiKey) {
-    document.getElementById("generateSection").classList.remove("hidden");
-    renderDistPreview(state.questionCount);
-  } else if (exams.length === 0) {
-    document.getElementById("noExamsMsg").classList.remove("hidden");
-  }
+  try {
+    const [cfg, packs] = await Promise.all([fetchJson("/api/config"), fetchJson("/api/packs")]);
+    state.catalog = packs; state.isDev = cfg.isDev;
+    const available = packs.filter(p => p.canPlan);
+    state.selectedPackKey = available.some(p => p.id === "gh-600") ? "gh-600" : available[0]?.id;
+    const select = document.getElementById("packSelect");
+    select.innerHTML = available.map(p => `<option value="${escHtml(packSelectionValue(p))}">${escHtml(p.examCode)} v${escHtml(p.version)}: ${escHtml(p.title)}</option>`).join("");
+    select.value = state.selectedPackKey; select.disabled = false;
+    document.getElementById("planningSection").classList.remove("hidden");
+    document.getElementById("importSection").classList.toggle("hidden", !cfg.isDev);
+    document.getElementById("minutesPerQuestion").value = planningPack().timing.minutesPerQuestion;
+    await refreshSetup();
+  } catch (error) { document.getElementById("setupStatus").textContent = error.message; }
+}
+async function refreshSetup() {
+  const epoch = ++state.setupEpoch;
+  const pack = planningPack();
+  document.getElementById("packSubtitle").textContent = `${pack.examCode} · ${pack.title} · planning v${pack.version}`;
+  document.getElementById("setupStatus").textContent = "Loading practice library…";
+  document.getElementById("examListSection").classList.add("hidden");
+  document.getElementById("noExamsMsg").classList.add("hidden");
+  renderDistPreview(document.getElementById("questionCount").value);
+  try {
+    const exams = await fetchJson(`/api/exams?packId=${encodeURIComponent(pack.id)}`);
+    if (epoch !== state.setupEpoch) return;
+    await renderExamList(exams, state.isDev, epoch);
+    if (epoch !== state.setupEpoch) return;
+    document.getElementById("examListSection").classList.toggle("hidden", exams.length === 0);
+    document.getElementById("noExamsMsg").classList.toggle("hidden", exams.length !== 0);
+    document.getElementById("setupStatus").textContent = pack.partialObjectiveCount ? `${pack.partialObjectiveCount} objectives remain outside released practice material while evidence is incomplete.` : "";
+  } catch (error) { if (epoch === state.setupEpoch) document.getElementById("setupStatus").textContent = error.message; }
 }
 
-async function renderExamList(exams, isDev = false) {
+async function renderExamList(exams, isDev = false, epoch = state.setupEpoch) {
   const ul = document.getElementById("examList");
 
   // Fetch PDF status for all exams in parallel (dev only)
   let pdfStatusMap = {};
-  if (isDev) {
+  {
     const statuses = await Promise.all(
       exams.map((e) =>
         fetch(`/api/exams/${e.id}/pdf-status`)
@@ -66,6 +106,7 @@ async function renderExamList(exams, isDev = false) {
     exams.forEach((e, i) => { pdfStatusMap[e.id] = statuses[i]; });
   }
 
+  if (epoch !== state.setupEpoch) return;
   ul.innerHTML = exams
     .slice()
     .reverse() // newest first
@@ -81,21 +122,18 @@ async function renderExamList(exams, isDev = false) {
           ${e.isPublished ? "✅ Published" : "🔒 Unpublished"}
         </button>
       ` : "";
-      const pdfButtons = isDev ? `
-        <div class="exam-pdf-actions">
-          <button class="btn btn-outline btn-sm btn-pdf-generate" data-exam-id="${escHtml(e.id)}" title="Generate Practice PDF (takes ~30s)">
-            📄 Generate PDF
-          </button>
-          ${pdfStatus.exists ? `
-          <a class="btn btn-outline btn-sm btn-pdf-download" href="${escHtml(pdfStatus.url)}" download title="Download PDF">
-            ⬇ Download PDF
-          </a>` : `
-          <span class="btn btn-outline btn-sm btn-pdf-download hidden" data-exam-id="${escHtml(e.id)}"></span>`}
-        </div>
-      ` : "";
+      const pdfButtons = `<div class="exam-pdf-actions">
+        <label>PDF <select class="pdf-kind" aria-label="PDF contents for ${escHtml(e.id)}">
+          <option value="practice">Practice with answers</option><option value="questions">Questions only</option><option value="answers">Answer review</option>
+        </select></label>
+        ${isDev ? `<button class="btn btn-outline btn-sm btn-pdf-generate" data-exam-id="${escHtml(e.id)}">Build PDF</button>` : ""}
+        <a class="btn btn-outline btn-sm btn-pdf-download${pdfStatus.exists ? "" : " hidden"}" href="${escHtml(pdfStatus.url ?? "#")}" download>Download PDF</a>
+        <span class="pdf-feedback" role="status"></span>
+      </div>`;
       return `<li class="exam-list-item${isDev ? " exam-list-item--dev" : ""}">
         <div class="exam-list-meta">
           <span class="exam-list-date">${escHtml(date)}</span>
+          <span class="exam-list-identity">${escHtml(packFor(e.pack).examCode)} · v${escHtml(e.pack.version)} · ${escHtml(e.releaseStatus === "synthetic" ? "Synthetic mechanics fixture" : e.releaseStatus === "legacy" ? "Historical practice" : e.releaseStatus === "draft" ? "Draft preview - audit pending" : "Reviewed practice")}</span>
           <span class="exam-list-count">${e.questionCount} questions</span>
         </div>
         <div class="exam-list-right">
@@ -117,6 +155,16 @@ async function renderExamList(exams, isDev = false) {
     });
   });
 
+  ul.querySelectorAll(".pdf-kind").forEach(select => select.addEventListener("change", async () => {
+    const li = select.closest("li"); const id = li.querySelector("[data-exam-id]").dataset.examId;
+    const kind = select.value; const link = li.querySelector(".btn-pdf-download"); link.classList.add("hidden");
+    try {
+      const status = await fetchJson(`/api/exams/${id}/pdf-status?kind=${kind}`);
+      if (kind !== select.value || select.disabled) return;
+      link.href = status.url ?? "#"; link.classList.toggle("hidden", !status.exists);
+      li.querySelector(".pdf-feedback").textContent = status.exists ? (status.historical ? "Original PDF" : "PDF ready") : "PDF has not been built.";
+    } catch (error) { li.querySelector(".pdf-feedback").textContent = error.message; }
+  }));
   if (isDev) {
     ul.querySelectorAll(".btn-pdf-generate").forEach((btn) => {
       btn.addEventListener("click", () => triggerPdfGeneration(btn.dataset.examId, btn));
@@ -134,6 +182,18 @@ async function loadExam(examId) {
     return;
   }
   state.exam = exam;
+  state.activePack = structuredClone(packFor(exam.pack));
+  state.attempt = null;
+  state.submitting = false;
+  const minutes = Number(document.getElementById("minutesPerQuestion").value);
+  if (!Number.isFinite(minutes) || minutes < 0.1 || minutes > 10) {
+    document.getElementById("setupStatus").textContent = "Use practice timing between 0.1 and 10 minutes per question.";
+    state.exam = null; return;
+  }
+  state.timerSeconds = Math.round(exam.questions.length * minutes * 60);
+  document.getElementById("packSelect").disabled = true;
+  document.getElementById("minutesPerQuestion").disabled = true;
+  setStudyIdentity();
   state.currentIndex = 0;
   state.answers = {};
   state.confidence = {};
@@ -147,39 +207,15 @@ initSetupView();
 // ── PDF generation trigger ───────────────────────────────────────────
 async function triggerPdfGeneration(examId, triggerBtn) {
   const li = triggerBtn.closest("li");
-  triggerBtn.disabled = true;
-  triggerBtn.textContent = "⏳ Building PDF…";
-
+  const select = li.querySelector(".pdf-kind"); const kind = select.value;
+  triggerBtn.disabled = true; select.disabled = true;
+  const feedback = li.querySelector(".pdf-feedback"); feedback.textContent = "Building PDF…";
   try {
-    const res = await fetch(`/api/exams/${examId}/pdf`, { method: "POST" });
-    // Read as text first so a non-JSON response doesn't swallow the real error
-    const text = await res.text();
-    let data;
-    try { data = JSON.parse(text); } catch { throw new Error(text || `HTTP ${res.status}`); }
-    if (!res.ok) throw new Error(data.error ?? `HTTP ${res.status}`);
-
-    triggerBtn.textContent = "📄 Regenerate PDF";
-    triggerBtn.disabled = false;
-
-    // Show / update the download link
-    const dlBtn = li.querySelector(".btn-pdf-download");
-    if (dlBtn && dlBtn.tagName === "SPAN") {
-      // Replace placeholder span with a real anchor
-      const a = document.createElement("a");
-      a.className = "btn btn-outline btn-sm btn-pdf-download";
-      a.href = data.url;
-      a.download = "";
-      a.title = "Download PDF";
-      a.textContent = "⬇ Download PDF";
-      dlBtn.replaceWith(a);
-    } else if (dlBtn && dlBtn.tagName === "A") {
-      dlBtn.href = data.url;
-    }
-  } catch (err) {
-    triggerBtn.textContent = "📄 Generate PDF";
-    triggerBtn.disabled = false;
-    alert(`PDF generation failed:\n${err.message}`);
-  }
+    const data = await fetchJson(`/api/exams/${examId}/pdf?kind=${kind}`, { method: "POST" });
+    const link = li.querySelector(".btn-pdf-download"); link.href = data.url; link.classList.remove("hidden");
+    feedback.textContent = "PDF ready";
+  } catch (error) { feedback.textContent = error.message; }
+  finally { triggerBtn.disabled = false; select.disabled = false; }
 }
 
 // ── Publish toggle ───────────────────────────────────────────────────
@@ -213,132 +249,45 @@ async function togglePublish(examId, btn) {
 }
 
 
-const DOMAIN_BASES = [
-  { id: "A", name: "Agent architecture & SDLC", count: 17 },
-  { id: "B", name: "MCP & permissions",          count: 21 },
-  { id: "C", name: "Memory & state",              count: 14 },
-  { id: "D", name: "Evaluation & telemetry",      count: 17 },
-  { id: "E", name: "Multi-agent orchestration",   count: 18 },
-  { id: "F", name: "Guardrails & governance",     count: 13 },
-];
-
-function calcDomainDist(total) {
-  if (total < 1) return [];
-  const scaled = DOMAIN_BASES.map((d) => ({ ...d, count: Math.floor((d.count / 100) * total) }));
-  let rem = total - scaled.reduce((s, d) => s + d.count, 0);
-  const order = [...scaled].sort((a, b) => b.count - a.count);
-  let i = 0;
-  while (rem-- > 0) {
-    scaled.find((d) => d.id === order[i % order.length].id).count += 1;
-    i++;
-  }
-  return scaled;
-}
-
-function renderDistPreview(total) {
+async function renderDistPreview(total) {
+  const epoch = ++state.previewEpoch;
   const el = document.getElementById("domainDistPreview");
-  if (!el) return;
-  const n = Number(total);
-  if (!n || n < 1) { el.innerHTML = ""; return; }
-  const domains = calcDomainDist(n);
-  const maxCount = Math.max(...domains.map((d) => d.count), 1);
-
-  const caseQs  = n >= 100 ? 16 : n >= 70 ? 12 : n >= 30 ? 8 : n >= 10 ? 4 : 0;
-  const matchQs = n >= 100 ? 18 : Math.max(0, Math.floor(n * 0.18));
-
-  el.innerHTML = `
-    <p class="form-label" style="margin-bottom:.2rem">Distribution</p>
-    ${domains.map((d) => `
-      <div class="dist-row">
-        <span class="dist-label">${escHtml(d.id)}</span>
-        <span class="dist-name">${escHtml(d.name)}</span>
-        <span class="dist-count">${d.count}q</span>
-        <div class="dist-bar-wrap" style="grid-column:1/-1">
-          <div class="dist-bar-fill" style="width:${Math.round((d.count / maxCount) * 100)}%"></div>
-        </div>
-      </div>`).join("")}
-    <p class="dist-special">+ ~${caseQs} case-study questions · ~${matchQs} matching/sequence</p>`;
+  const n = Number(total); const pack = planningPack();
+  if (!pack) return;
+  if (!Number.isInteger(n) || n < 1 || n > 200) { el.textContent = "Use a whole question count between 1 and 200."; return; }
+  state.questionCount = n; el.textContent = "Loading practice allocation…";
+  try {
+    const plan = await fetchJson(`/api/packs/${pack.id}/blueprint?version=${pack.version}&questionCount=${n}`);
+    if (epoch !== state.previewEpoch) return;
+    const max = Math.max(...plan.domains.map(d => d.count), 1);
+    el.innerHTML = `<p class="form-label">${escHtml(pack.examCode)} v${escHtml(pack.version)} · ${plan.totalQuestions} questions</p>${plan.domains.map(d => `<div class="dist-row" data-domain="${escHtml(d.id)}"><span class="dist-label">${escHtml(d.id)}</span><span class="dist-name">${escHtml(d.name)}</span><span class="dist-count">${d.count}q</span><div class="dist-bar-wrap" style="grid-column:1/-1"><div class="dist-bar-fill" style="width:${d.count / max * 100}%"></div></div></div>`).join("")}<p class="dist-special">Practice formats: ${Object.entries(plan.itemTypes).map(([type, count]) => `${escHtml(type.replace(/_/g, " "))}: ${count}`).join(" · ")} (${plan.caseStudyCount} case groups)</p>`;
+  } catch (error) { if (epoch === state.previewEpoch) el.textContent = error.message; }
 }
-
-// ── Setup form (generation) ─────────────────────────────────────────
-document.getElementById("questionCount").addEventListener("input", (e) => {
-  const v = Number(e.target.value);
-  if (v > 0) { state.questionCount = v; renderDistPreview(v); }
+let previewTimer;
+document.getElementById("questionCount").addEventListener("input", event => {
+  ++state.previewEpoch; clearTimeout(previewTimer);
+  previewTimer = setTimeout(() => renderDistPreview(event.target.value), 150);
 });
-
-document.getElementById("startBtn").addEventListener("click", startGeneration);
-
-// ── Generation (SSE) ────────────────────────────────────────────────
-function startGeneration() {
-  showView("view-loading");
-  document.getElementById("loadingBar").style.width = "0%";
-  document.getElementById("loadingStatus").textContent = "Building exam blueprint…";
-  document.getElementById("loadingDetail").textContent = "";
-  document.getElementById("batchLog").innerHTML = "";
-
-  const url = `/api/exams/generate?questionCount=${state.questionCount}`;
-  const es = new EventSource(url);
-
-  es.onmessage = (e) => {
-    const data = JSON.parse(e.data);
-
-    if (data.type === "plan") {
-      document.getElementById("loadingStatus").textContent =
-        `Generating ${data.totalQuestions} questions across ${data.totalBatches} batches…`;
-    }
-
-    if (data.type === "batch_start") {
-      const pct = Math.round((data.index / data.total) * 90);
-      document.getElementById("loadingBar").style.width = pct + "%";
-
-      const domainLabel = data.domainName
-        ? `Domain ${data.domainId}: ${data.domainName}`
-        : data.typeFocus?.join(", ") ?? "Special batch";
-      document.getElementById("loadingDetail").textContent = `Generating ${domainLabel}…`;
-
-      const li = document.createElement("li");
-      li.id = `bl-${data.index}`;
-      li.className = "active";
-      li.innerHTML = `<span>⏳</span> <span>${domainLabel}</span>`;
-      document.getElementById("batchLog").appendChild(li);
-      li.scrollIntoView({ block: "nearest" });
-    }
-
-    if (data.type === "batch_done") {
-      const li = document.getElementById(`bl-${data.index}`);
-      if (li) {
-        li.className = "done";
-        li.innerHTML = `<span>✅</span> <span>${li.querySelector("span:last-child").textContent.replace("…", "")} (${data.accepted}q)</span>`;
-      }
-    }
-
-    if (data.type === "complete") {
-      es.close();
-      document.getElementById("loadingBar").style.width = "100%";
-      document.getElementById("loadingStatus").textContent = "Exam generated — choose it below to begin.";
-      setTimeout(async () => {
-        // Refresh exam list and return to setup view so user picks mode there.
-        const exams = await fetch("/api/exams").then((r) => r.json()).catch(() => []);
-        renderExamList(exams);
-        document.getElementById("examListSection").classList.remove("hidden");
-        showView("view-setup");
-      }, 600);
-    }
-
-    if (data.type === "error") {
-      es.close();
-      document.getElementById("loadingStatus").textContent = "Generation failed — " + data.message;
-      document.getElementById("loadingDetail").textContent = "Please try again.";
-      setTimeout(() => showView("view-setup"), 3000);
-    }
-  };
-
-  es.onerror = () => {
-    es.close();
-    document.getElementById("loadingStatus").textContent = "Connection error. Please try again.";
-    setTimeout(() => showView("view-setup"), 3000);
-  };
-}
+document.getElementById("packSelect").addEventListener("change", () => {
+  if (state.exam) return;
+  state.selectedPackKey = document.getElementById("packSelect").value;
+  document.getElementById("minutesPerQuestion").value = planningPack().timing.minutesPerQuestion;
+  refreshSetup();
+});
+document.getElementById("importBtn").addEventListener("click", async () => {
+  const button = document.getElementById("importBtn"), status = document.getElementById("importStatus");
+  const file = document.getElementById("importFile").files[0];
+  if (!file) { status.textContent = "Choose a local JSON package."; return; }
+  if (file.size > 2 * 1024 * 1024) { status.textContent = "The package exceeds the 2 MB import limit."; return; }
+  button.disabled = true;
+  try {
+    const exam = await fetchJson("/api/exams/import", { method: "POST", headers: { "Content-Type": "application/json" }, body: await file.text() });
+    state.selectedPackKey = packSelectionValue(packFor(exam.pack)); document.getElementById("packSelect").value = state.selectedPackKey;
+    document.getElementById("minutesPerQuestion").value = planningPack().timing.minutesPerQuestion;
+    await refreshSetup(); status.textContent = `Imported ${exam.questions.length} questions for ${identityLabel(exam)}.`;
+  } catch (error) { status.textContent = error.message; }
+  finally { button.disabled = false; }
+});
 
 // ── Exam start ──────────────────────────────────────────────────────
 function startExam() {
@@ -352,21 +301,23 @@ function startExam() {
 // ── Timer ───────────────────────────────────────────────────────────
 function startTimer() {
   clearInterval(state.timerInterval);
-  state.secondsLeft = Math.round(state.exam.questions.length * 1.2) * 60;
-  tickTimer();
+  state.secondsLeft = state.timerSeconds;
+  updateTimerDisplay();
   state.timerInterval = setInterval(tickTimer, 1000);
 }
 
-function tickTimer() {
-  state.secondsLeft = Math.max(0, state.secondsLeft - 1);
+function updateTimerDisplay() {
   const mm = String(Math.floor(state.secondsLeft / 60)).padStart(2, "0");
   const ss = String(state.secondsLeft % 60).padStart(2, "0");
   const el = document.getElementById("examTimer");
-  el.textContent = `${mm}:${ss}`;
-  const total = Math.round(state.exam.questions.length * 1.2) * 60;
+  el.textContent = `Practice timer · ${mm}:${ss}`;
+  const total = state.timerSeconds;
   const ratio = state.secondsLeft / total;
   el.classList.toggle("warning", ratio < 0.25 && ratio >= 0.1);
   el.classList.toggle("danger",  ratio < 0.1);
+}
+function tickTimer() {
+  state.secondsLeft = Math.max(0, state.secondsLeft - 1); updateTimerDisplay();
   if (state.secondsLeft === 0) submitExam();
 }
 
@@ -393,7 +344,7 @@ function renderQuestion() {
   let artifactHtml = "";
   if (q.artifact) {
     artifactHtml = `<div class="q-artifact">
-      <div class="q-artifact-title">📄 ${q.artifact.title}</div>
+      <div class="q-artifact-title">📄 ${escHtml(q.artifact.title)}</div>
       <pre><code>${escHtml(q.artifact.content)}</code></pre>
     </div>`;
   }
@@ -452,7 +403,6 @@ function renderOptions(q) {
 function wireOptionListeners(q) {
   document.querySelectorAll("#optionsContainer .option-btn").forEach((btn) => {
     btn.addEventListener("click", () => {
-      if (state.mode === "review") return;
       const id = btn.dataset.opt;
       if (q.type === "multi_select") {
         const cur = new Set(Array.isArray(state.answers[q.id]) ? state.answers[q.id] : []);
@@ -533,7 +483,7 @@ function renderStructuredInteraction(q) {
         const isWrong = showResult && selected !== correct;
         return `<div class="match-row ${showResult ? (isCorr ? "match-correct" : (selected ? "match-wrong" : "")) : ""}">
           <label class="match-label">${escHtml(opt.text)}</label>
-          <select class="match-select" data-match-key="${opt.id}"${showResult ? " disabled" : ""}>
+          <select class="match-select" data-match-key="${opt.id}">
             <option value="">-- Select --</option>
             ${choices.map((c) => `<option value="${escHtml(c)}"${selected === c ? " selected" : ""}>${escHtml(c)}</option>`).join("")}
           </select>
@@ -564,7 +514,7 @@ function renderStructuredInteraction(q) {
       const isWrong = showResult && selected && selected !== correct;
       let cls = "dc-select";
       if (showResult) cls += isCorr ? " dc-correct" : (isWrong ? " dc-wrong" : "");
-      return `<select class="${cls}" data-match-key="${slotId}"${showResult ? " disabled" : ""}>
+      return `<select class="${cls}" data-match-key="${slotId}">
         <option value="">▼</option>
         ${slot.choices.map((c) => `<option value="${escHtml(c)}"${selected === c ? " selected" : ""}>${escHtml(c)}</option>`).join("")}
       </select>${showResult ? `<span class="dc-feedback">${isCorr ? "✅" : (isWrong ? `❌ → ${escHtml(correct)}` : "")}</span>` : ""}`;
@@ -607,7 +557,7 @@ function renderExplanation(q, open = false) {
   if (!q.explanation) return "";
   const o = open ? " open" : "";
   const whyWrong = Object.entries(q.explanation.whyDistractorsWrong ?? {})
-    .map(([k, v]) => `<li><strong>${k}:</strong> ${escHtml(String(v))}</li>`)
+    .map(([k, v]) => `<li><strong>${escHtml(k)}:</strong> ${escHtml(String(v))}</li>`)
     .join("");
   return `<div class="explanation-block">
     <details${o}>
@@ -619,9 +569,10 @@ function renderExplanation(q, open = false) {
       <div class="exp-body"><ul class="exp-why-list">${whyWrong}</ul></div>
     </details>` : ""}
     ${q.explanation.examStrategyNote ? `<div class="strategy-note">💡 ${escHtml(q.explanation.examStrategyNote)}</div>` : ""}
+    <div class="source-refs"><strong>Sources</strong><ul>${q.sourceRefs.map(source => `<li>${source.url && /^https?:\/\//i.test(source.url) ? `<a href="${escHtml(source.url)}" target="_blank" rel="noopener noreferrer">${escHtml(source.title)}</a>` : escHtml(source.title)}${source.sourceId ? ` · ${escHtml(source.sourceId)}` : ""}${source.snapshotSha256 ? `<span class="source-hash">Snapshot ${escHtml(source.snapshotSha256.slice(0, 12))}</span>` : ""}</li>`).join("")}</ul></div>
     <details>
       <summary>🏷 Objective tags</summary>
-      <div class="exp-body">${q.objectiveTags.map((t) => `<span class="badge badge-type">${t}</span>`).join(" ")}</div>
+      <div class="exp-body">${q.objectiveTags.map((t) => `<span class="badge badge-type">${escHtml(t)}</span>`).join(" ")}</div>
     </details>
   </div>`;
 }
@@ -702,17 +653,18 @@ document.getElementById("questionCard").addEventListener("change", (e) => {
   if (input.value.trim()) pairs[input.dataset.matchKey] = input.value.trim();
   else delete pairs[input.dataset.matchKey];
   state.answers[q.id] = { pairs };
+  if (state.mode === "review") { recordTime(); renderQuestion(); renderQMap(); }
 });
 
 // ── Submit ──────────────────────────────────────────────────────────
 document.getElementById("submitBtn").addEventListener("click", submitExam);
 
 async function submitExam() {
-  if (!state.exam) return;
-  recordTime();
-  clearInterval(state.timerInterval);
-
-  const res = await fetch("/api/attempts", {
+  if (!state.exam || state.submitting) return;
+  state.submitting = true; document.getElementById("submitBtn").disabled = true;
+  recordTime(); clearInterval(state.timerInterval);
+  try {
+  const data = await fetchJson("/api/attempts", {
     method: "POST",
     headers: { "content-type": "application/json" },
     body: JSON.stringify({
@@ -722,15 +674,16 @@ async function submitExam() {
       confidence: state.confidence,
     }),
   });
-  state.attempt = await res.json();
-  showResults();
+  state.attempt = data; showResults();
+  } catch (error) { alert(error.message); }
+  finally { state.submitting = false; document.getElementById("submitBtn").disabled = false; }
 }
 
 // ── Results view ────────────────────────────────────────────────────
 function showResults() {
   showView("view-results");
   const score = state.attempt.score;
-  const pct = Math.round((score.correct / score.total) * 100);
+  const pct = score.overall;
 
   // Animated ring
   document.getElementById("scorePercent").textContent = pct + "%";
@@ -738,27 +691,21 @@ function showResults() {
   const offset = circumference - (circumference * pct) / 100;
   setTimeout(() => {
     document.getElementById("ringFill").style.strokeDashoffset = offset;
-    document.getElementById("ringFill").style.stroke = pct >= 70 ? "var(--color-success)" : pct >= 50 ? "var(--color-warning)" : "var(--color-danger)";
+    document.getElementById("ringFill").style.stroke = "var(--color-primary)";
   }, 100);
 
-  const pass = pct >= 70;
-  document.getElementById("scoreSummary").innerHTML = `
-    <h2>${pass ? "🎉 Passed!" : "📚 Keep studying"}</h2>
-    <p>${score.correct} / ${score.total} correct · ${pct}%</p>
-  `;
+  const fullyCorrect = score.total - score.incorrectQuestionIds.length;
+  document.getElementById("scoreSummary").innerHTML = `<h2>Practice score</h2><p>${fullyCorrect} / ${score.total} correct · ${pct}% including partial credit</p><p class="practice-note">Learning feedback; this percentage is not an official scaled score or pass prediction.</p>`;
 
   // Domain breakdown
   const breakdown = document.getElementById("domainBreakdown");
-  const domainNames = {
-    A: "Agent architecture", B: "MCP & permissions", C: "Memory & state",
-    D: "Evaluation & telemetry", E: "Multi-agent orchestration", F: "Guardrails & governance",
-  };
+  const domainNames = Object.fromEntries(state.activePack.domains.map(d => [d.id, d.name]));
   breakdown.innerHTML = Object.entries(score.byDomain).map(([domain, domScore]) => {
     const dpct = Math.round(Number(domScore));
     const cls = dpct >= 70 ? "good" : dpct >= 50 ? "" : "bad";
     return `<div class="domain-row">
       <div class="domain-row-label">
-        <strong>Domain ${domain}: ${domainNames[domain] ?? domain}</strong>
+        <strong>Domain ${domain}: ${escHtml(domainNames[domain] ?? domain)}</strong>
         <span>${dpct}%</span>
       </div>
       <div class="domain-bar-track">
@@ -781,7 +728,11 @@ document.getElementById("analyticsBtn").addEventListener("click", () => {
 document.getElementById("newExamBtn").addEventListener("click", () => {
   clearInterval(state.timerInterval);
   state.exam = null; state.attempt = null;
-  showView("view-setup");
+  document.getElementById("packSelect").disabled = false;
+  document.getElementById("packSelect").value = state.selectedPackKey;
+  document.getElementById("minutesPerQuestion").disabled = false;
+  document.title = "Certification Exam Lab";
+  showView("view-setup"); refreshSetup();
 });
 
 document.getElementById("backToResultsBtn").addEventListener("click", () => showView("view-results"));
@@ -804,7 +755,7 @@ function buildReviewView(filter) {
 
     const userLabel = user === undefined ? "(no answer)" : JSON.stringify(user);
     const correctLabel = JSON.stringify(q.correctAnswer);
-    const sameAnswer = userLabel === correctLabel;
+    const sameAnswer = correct;
     const cs = state.exam?.caseStudies?.find((c) => c.id === q.caseStudyId);
 
     const optionsHtml = q.type === "matching_magnet"
@@ -891,12 +842,13 @@ function buildReviewView(filter) {
         ${renderCaseStudyPanelMarkup(cs)}
         <p class="q-stem">${escHtml(q.stem)}</p>
         ${q.scenario ? `<div class="q-scenario">${escHtml(q.scenario)}</div>` : ""}
+        ${q.artifact ? `<div class="q-artifact"><div class="q-artifact-title">${escHtml(q.artifact.title)}</div><pre><code>${escHtml(q.artifact.content)}</code></pre></div>` : ""}
         ${optionsHtml}
         <div class="review-answers">
           ${sameAnswer
-            ? `<span class="ans-same">✅ Your answer: ${userLabel}</span>`
-            : `<span class="ans-user">Your answer: ${userLabel}</span>
-               <span class="ans-correct">Correct: ${correctLabel}</span>`}
+            ? `<span class="ans-same">✅ Your answer: ${escHtml(userLabel)}</span>`
+            : `<span class="ans-user">Your answer: ${escHtml(userLabel)}</span>
+               <span class="ans-correct">Correct: ${escHtml(correctLabel)}</span>`}
         </div>
         ${renderExplanation(q, true)}
       </div>
@@ -913,7 +865,7 @@ document.querySelectorAll(".filter-pill").forEach((p) => {
 // ── Analytics view ──────────────────────────────────────────────────
 function buildAnalyticsView() {
   const score = state.attempt.score;
-  const pct = Math.round((score.correct / score.total) * 100);
+  const pct = score.overall;
   document.getElementById("statScore").textContent = `${pct}% (${score.correct}/${score.total})`;
   document.getElementById("statFlagged").textContent = state.flagged.size;
 
@@ -921,16 +873,13 @@ function buildAnalyticsView() {
   const avgSec = (totalMs / Math.max(1, state.exam.questions.length) / 1000).toFixed(1);
   document.getElementById("statAvgTime").textContent = `${avgSec}s`;
 
-  const domainNames = {
-    A: "Agent architecture", B: "MCP & permissions", C: "Memory & state",
-    D: "Evaluation & telemetry", E: "Multi-agent orchestration", F: "Guardrails & governance",
-  };
+  const domainNames = Object.fromEntries(state.activePack.domains.map(d => [d.id, d.name]));
   document.getElementById("analyticsBreakdown").innerHTML = Object.entries(score.byDomain).map(([d, v]) => {
     const dpct = Math.round(Number(v));
     const cls = dpct >= 70 ? "good" : dpct >= 50 ? "" : "bad";
     return `<div class="domain-row">
       <div class="domain-row-label">
-        <strong>Domain ${d}: ${domainNames[d] ?? d}</strong><span>${dpct}%</span>
+        <strong>Domain ${d}: ${escHtml(domainNames[d] ?? d)}</strong><span>${dpct}%</span>
       </div>
       <div class="domain-bar-track"><div class="domain-bar-fill ${cls}" style="width:${Math.min(dpct, 100)}%"></div></div>
     </div>`;
@@ -974,14 +923,14 @@ document.getElementById("exportAttemptBtn").addEventListener("click", async () =
   const blob = await resp.blob();
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
-  a.href = url; a.download = `attempt-${state.attempt.id}.json`; a.click();
+  a.href = url; a.download = `${state.exam.pack.id}-v${state.exam.pack.version}-attempt-${state.attempt.id}.json`; a.click();
   URL.revokeObjectURL(url);
 });
 
 function showDrillResult(title, questions) {
   const el = document.getElementById("drillResult");
   el.classList.remove("hidden");
-  el.innerHTML = `<strong>${title}</strong> — ${questions.length} questions
+  el.innerHTML = `<p>${escHtml(identityLabel())}</p><strong>${escHtml(title)}</strong> — ${questions.length} questions
     <ul>${questions.slice(0, 15).map((q) => `<li>${escHtml(q.stem?.slice(0, 100) ?? q.id)}…</li>`).join("")}</ul>
     ${questions.length > 15 ? `<p>…and ${questions.length - 15} more.</p>` : ""}`;
 }
@@ -989,7 +938,7 @@ function showDrillResult(title, questions) {
 // ── Helpers ─────────────────────────────────────────────────────────
 function isCorrect(q, answer) {
   if (answer === undefined) return false;
-  return JSON.stringify(answer) === JSON.stringify(q.correctAnswer);
+  return !state.attempt.score.incorrectQuestionIds.includes(q.id);
 }
 
 function escHtml(str) {

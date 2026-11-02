@@ -1,0 +1,12 @@
+{
+  "acceptedOn": "2026-11-02",
+  "acceptedBy": "repository owner",
+  "acceptanceType": "owner content approval",
+  "scope": "Current AI-103 single 100-question set and its two learner PDF outputs",
+  "statement": "I approve content",
+  "artifacts": {
+    "authoring/ai-103/improvement-r2/a.draft.json": "f3c25a14fa7e2356bfcde31e89fcb6022fd60e2e40e4157c55c897700f9c0590",
+    "output/pdf/ai-103-improvement-r2/AI-103-Set-A-100-Questions-Only.pdf": "d261eb3564cfad3be84da59b6fae04fd8f0318cba862cb2970192c26c3f943dd",
+    "output/pdf/ai-103-improvement-r2/AI-103-Set-A-100-Practice-With-Answers.pdf": "e8b5e9535cbf428b42a8d4a85945935a6f66e167523c8c77fd80ec213e64ad9a"
+  }
+}

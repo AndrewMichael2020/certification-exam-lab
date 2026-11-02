@@ -1,0 +1,907 @@
+{
+  "canonicalDraftHash": "06b6490c1b4476a934d6301f1a53263b0e941b691ac9febf2e4522411b324c4a",
+  "questions": [
+    {
+      "domainId": "B",
+      "stem": "A support agent needs a remembered user preference, current corporate policy and a receipt uploaded for this interaction. Which TWO assignments are appropriate? Select TWO answers.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Use memory as the maintained full-text corporate policy repository."
+        },
+        {
+          "id": "B",
+          "text": "Use the knowledge base for policy and file search for the receipt."
+        },
+        {
+          "id": "C",
+          "text": "Use conversation state as the cross-session preference store."
+        },
+        {
+          "id": "D",
+          "text": "Use the temporary receipt as the source of the company's standing policy."
+        },
+        {
+          "id": "E",
+          "text": "Use persistent memory for interaction-derived preferences."
+        }
+      ],
+      "correctAnswer": [
+        "E",
+        "B"
+      ],
+      "difficulty": "medium",
+      "type": "multi_select",
+      "explanation": {
+        "whyCorrect": "Memory, curated knowledge and temporary document search serve different information needs. Assign each source according to its origin and lifecycle.",
+        "whyDistractorsWrong": {
+          "C": "Session state is short-term context.",
+          "A": "Curated policy belongs in a maintained knowledge source.",
+          "D": "The uploaded transaction document is not the curated policy authority."
+        }
+      },
+      "objectiveTags": [
+        "AI103-B2.02"
+      ],
+      "id": "ai103-improvement-r2-set-a-100-q073",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Implement generative AI and agentic solutions",
+      "sourceRefs": [
+        {
+          "sourceId": "S006",
+          "title": "Memory in Microsoft Foundry Agent Service (preview)",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/concepts/what-is-memory",
+          "snapshotSha256": "1dd4a33b4885266d1a2a73cee51de011ad50f9e63454609195d46179316746f8",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-11",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "B",
+      "objectiveTags": [
+        "AI103-B2.02"
+      ],
+      "stem": "A proxy calls a memory-enabled prompt agent for two users using one managed identity. Which TWO requirements implement separate preferences? Select TWO answers.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Use a single static scope for every resident."
+        },
+        {
+          "id": "B",
+          "text": "Put user display names only in the prompt."
+        },
+        {
+          "id": "C",
+          "text": "Use the memory tool’s {{$userId}} scope."
+        },
+        {
+          "id": "D",
+          "text": "Rely on new conversation IDs as memory partitions."
+        },
+        {
+          "id": "E",
+          "text": "Send a verified user key through x-memory-user-id."
+        }
+      ],
+      "correctAnswer": [
+        "C",
+        "E"
+      ],
+      "type": "multi_select",
+      "difficulty": "medium",
+      "explanation": {
+        "whyCorrect": "The tool’s scope-resolution mechanism is separate from conversation lifecycle. The backend must provide an authorized end-user key.",
+        "whyDistractorsWrong": {
+          "A": "A static scope intentionally shares memory.",
+          "B": "Prompt naming does not select the tool’s partition.",
+          "D": "A conversation ID does not substitute for the memory tool’s scope."
+        }
+      },
+      "id": "ai103-improvement-r2-set-a-100-q074",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Implement generative AI and agentic solutions",
+      "sourceRefs": [
+        {
+          "sourceId": "S053",
+          "title": "Create and use memory in Foundry Agent Service (preview)",
+          "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/how-to/memory-usage",
+          "snapshotSha256": "d118113db20dbe589f686a9150063736c78ce1b6e7b37c649bf28262918d31b6",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-11",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "B",
+      "objectiveTags": [
+        "AI103-B3.01"
+      ],
+      "stem": "A support agent needs a domain boundary and a measurable fallback for missing evidence. Which TWO activities address those requirements? Select TWO answers.",
+      "options": [
+        {
+          "id": "A",
+          "text": "State the domain and fallback in system instructions."
+        },
+        {
+          "id": "B",
+          "text": "Assume one successful example establishes compliance."
+        },
+        {
+          "id": "C",
+          "text": "Evaluate representative and adversarial queries against that behavior."
+        },
+        {
+          "id": "D",
+          "text": "Remove the fallback to reduce prompt length."
+        },
+        {
+          "id": "E",
+          "text": "Treat a low temperature as complete policy enforcement."
+        }
+      ],
+      "correctAnswer": [
+        "A",
+        "C"
+      ],
+      "type": "multi_select",
+      "difficulty": "medium",
+      "explanation": {
+        "whyCorrect": "Instructions specify desired behavior, and evaluation checks it. Add host/filter controls when the task requires enforcement.",
+        "whyDistractorsWrong": {
+          "E": "Temperature does not guarantee policy compliance.",
+          "B": "One example does not establish behavior across cases.",
+          "D": "Removing fallback leaves missing-evidence behavior unspecified."
+        }
+      },
+      "id": "ai103-improvement-r2-set-a-100-q075",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Implement generative AI and agentic solutions",
+      "sourceRefs": [
+        {
+          "sourceId": "S057",
+          "title": "System message design",
+          "url": "https://learn.microsoft.com/en-us/azure/cognitive-services/openai/concepts/advanced-prompt-engineering?pivots=programming-language-chat-completions",
+          "snapshotSha256": "8c3d221b7d097fd064d9875f54a48e446f7e44efe81622613ce58cfcb84e87e4",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-11",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "B",
+      "objectiveTags": [
+        "AI103-B3.04"
+      ],
+      "stem": "A specialist agent proposes an action that a deterministic host rule must approve. Which TWO responsibilities should the design keep explicit? Select TWO answers.",
+      "options": [
+        {
+          "id": "A",
+          "text": "The host’s rule/authorization gate before action execution."
+        },
+        {
+          "id": "B",
+          "text": "The orchestration’s handoff and completion conditions."
+        },
+        {
+          "id": "C",
+          "text": "The model’s acknowledgement treated as business approval."
+        },
+        {
+          "id": "D",
+          "text": "A trace display label treated as an executable rule."
+        },
+        {
+          "id": "E",
+          "text": "Tool registration treated as universal caller permission."
+        }
+      ],
+      "correctAnswer": [
+        "A",
+        "B"
+      ],
+      "type": "multi_select",
+      "difficulty": "medium",
+      "explanation": {
+        "whyCorrect": "Hybrid orchestration separates proposals from deterministic rules and supplies explicit flow control. Tool availability does not grant permission.",
+        "whyDistractorsWrong": {
+          "C": "A model statement does not supply the required approval.",
+          "E": "Registration does not authorize every caller.",
+          "D": "A label is not a rule implementation."
+        }
+      },
+      "id": "ai103-improvement-r2-set-a-100-q076",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Implement generative AI and agentic solutions",
+      "sourceRefs": [
+        {
+          "sourceId": "S008",
+          "title": "Build a workflow in Microsoft Foundry (Preview)",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/concepts/workflow",
+          "snapshotSha256": "91311aec35bad6e1e44149491430baa72e5eeec37c9f869ba7fbf9356e5497e4",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S007",
+          "title": "Use function calling with Microsoft Foundry agents",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/how-to/tools/function-calling",
+          "snapshotSha256": "0d4119f94b15c94d404729f53d2ed5f52a89dfaf35841d1290c0472be3e3e953",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-11",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "D",
+      "objectiveTags": [
+        "AI103-D1.01"
+      ],
+      "stem": "A Python OpenAI 2.x application extracts events with Responses structured output. The client is configured and the supported model is deployed. On the successful non-refusal path, arrange these operations; business validation needs the parsed field values.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Read the successful response.output_parsed object."
+        },
+        {
+          "id": "B",
+          "text": "Define the Pydantic event model."
+        },
+        {
+          "id": "C",
+          "text": "Call responses.parse with the event model as text_format."
+        },
+        {
+          "id": "D",
+          "text": "Validate the parsed date and participants against application rules."
+        }
+      ],
+      "correctAnswer": {
+        "order": [
+          "B",
+          "C",
+          "A",
+          "D"
+        ]
+      },
+      "type": "sequence_order",
+      "difficulty": "medium",
+      "explanation": {
+        "whyCorrect": "The type defines the request schema; the response supplies the parsed object. Schema conformance does not validate the event against business rules.",
+        "whyDistractorsWrong": {
+          "B": "The event type must exist before it can configure the request.",
+          "C": "The request consumes that type and returns the response.",
+          "A": "The successful response supplies the parsed values.",
+          "D": "Business checks consume those values rather than the request schema."
+        }
+      },
+      "id": "ai103-improvement-r2-set-a-100-q077",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Implement text analysis solutions",
+      "sourceRefs": [
+        {
+          "sourceId": "S037",
+          "title": "Structured outputs",
+          "url": "https://learn.microsoft.com/azure/foundry/openai/how-to/structured-outputs",
+          "snapshotSha256": "0337c89ce3e5a9ba28d1c2fc18f1644c50b13568eb19edc43420d16b401cacfc",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-12",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "D",
+      "objectiveTags": [
+        "AI103-D1.01"
+      ],
+      "stem": "A Language NER pipeline must send organization and location records to a JSON-consuming application. The host constructs the records from returned entity categories and verifies the resulting JSON against the consumer’s schema. Arrange the data dependencies.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Construct JSON records from the returned organization and location entities."
+        },
+        {
+          "id": "B",
+          "text": "Read the source text into the extraction worker."
+        },
+        {
+          "id": "C",
+          "text": "Run named entity recognition on that text."
+        },
+        {
+          "id": "D",
+          "text": "Validate the constructed JSON against the consumer schema before sending it."
+        }
+      ],
+      "correctAnswer": {
+        "order": [
+          "B",
+          "C",
+          "A",
+          "D"
+        ]
+      },
+      "type": "sequence_order",
+      "difficulty": "medium",
+      "explanation": {
+        "whyCorrect": "NER consumes source text and returns categorized entities. The host builds its records from that result, then validates the actual serialized payload for the consumer.",
+        "whyDistractorsWrong": {
+          "B": "The text supplies the NER input.",
+          "C": "NER supplies the categorized entities.",
+          "A": "The records are constructed from those entities.",
+          "D": "Validation requires the actual constructed payload."
+        }
+      },
+      "id": "ai103-improvement-r2-set-a-100-q078",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Implement text analysis solutions",
+      "sourceRefs": [
+        {
+          "sourceId": "S030",
+          "title": "What is Azure Language in Foundry Tools?",
+          "url": "https://learn.microsoft.com/azure/ai-services/language-service/overview",
+          "snapshotSha256": "debd3c5f132c72a0d258daa4d82d950834da5b4c89e3b42b20cf32982a169e1d",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S037",
+          "title": "Structured outputs",
+          "url": "https://learn.microsoft.com/azure/foundry/openai/how-to/structured-outputs",
+          "snapshotSha256": "0337c89ce3e5a9ba28d1c2fc18f1644c50b13568eb19edc43420d16b401cacfc",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-12",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "D",
+      "objectiveTags": [
+        "AI103-D1.02"
+      ],
+      "stem": "A transcript may be held temporarily in a restricted worker. The searchable store may receive only a version redacted using the entities returned by PII detection. The worker has no existing detection result. Arrange the data dependencies.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Read the transcript into the restricted worker."
+        },
+        {
+          "id": "B",
+          "text": "Build the redacted representation using the returned detected entities."
+        },
+        {
+          "id": "C",
+          "text": "Write that redacted representation to the searchable store."
+        },
+        {
+          "id": "D",
+          "text": "Analyze that text with PII detection."
+        }
+      ],
+      "correctAnswer": {
+        "order": [
+          "A",
+          "D",
+          "B",
+          "C"
+        ]
+      },
+      "type": "sequence_order",
+      "difficulty": "medium",
+      "explanation": {
+        "whyCorrect": "PII detection identifies entities in the original text. The host uses those results to create the representation required by the stated storage policy before indexing.",
+        "whyDistractorsWrong": {
+          "A": "The worker supplies the analysis input.",
+          "D": "Detection must process the input before its output exists.",
+          "B": "The detected entities supply the host’s redaction targets.",
+          "C": "Indexing the original text first would breach the specified boundary."
+        }
+      },
+      "id": "ai103-improvement-r2-set-a-100-q079",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Implement text analysis solutions",
+      "sourceRefs": [
+        {
+          "sourceId": "S030",
+          "title": "What is Azure Language in Foundry Tools?",
+          "url": "https://learn.microsoft.com/azure/ai-services/language-service/overview",
+          "snapshotSha256": "debd3c5f132c72a0d258daa4d82d950834da5b4c89e3b42b20cf32982a169e1d",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-12",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "D",
+      "objectiveTags": [
+        "AI103-D1.03"
+      ],
+      "stem": "A mixed-language notice must be translated into French. Its language spans are known, and quality review compares the complete reconstructed notice with the original, including references across segments. Arrange this application workflow.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Translate each prepared segment to French with its source language specified."
+        },
+        {
+          "id": "B",
+          "text": "Reconstruct the notice from the successful segment translations."
+        },
+        {
+          "id": "C",
+          "text": "Review the complete translated notice against the original before delivery."
+        },
+        {
+          "id": "D",
+          "text": "Prepare single-language segments with their intended source-language labels."
+        }
+      ],
+      "correctAnswer": {
+        "order": [
+          "D",
+          "A",
+          "B",
+          "C"
+        ]
+      },
+      "type": "sequence_order",
+      "difficulty": "medium",
+      "explanation": {
+        "whyCorrect": "Single-language preparation addresses the documented mixture limitation. Reconstruction consumes translations; this review explicitly requires the complete notice.",
+        "whyDistractorsWrong": {
+          "D": "Prepared segments and labels are inputs to the translation calls.",
+          "A": "Translation produces the target-language segments.",
+          "B": "Reconstruction combines those outputs.",
+          "C": "The specified cross-segment review needs the reconstructed notice."
+        }
+      },
+      "id": "ai103-improvement-r2-set-a-100-q080",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Implement text analysis solutions",
+      "sourceRefs": [
+        {
+          "sourceId": "S055",
+          "title": "Azure Translator known issues and troubleshooting",
+          "url": "https://learn.microsoft.com/en-us/azure/ai-services/translator/reference/known-issues",
+          "snapshotSha256": "c1b48f37f4dc56c80cbc9c30661bfc67f1f6f75dea4693ef6d9e39beeeb88f1c",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S032",
+          "title": "What is Azure Translator in Foundry Tools?",
+          "url": "https://learn.microsoft.com/azure/ai-services/translator/overview",
+          "snapshotSha256": "5bed84630392d9ef61f1f463299425457e14614de81cefd58f484a680615b0df",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-12",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "D",
+      "objectiveTags": [
+        "AI103-D1.04"
+      ],
+      "stem": "A compliance extractor may forward a result for approval only after its cited fields are verified against the supplied policy. Its model, client and policy are ready, but its domain instructions and strict output schema have not been defined. Arrange these operations.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Define the domain boundary, missing-evidence fallback and supported field schema."
+        },
+        {
+          "id": "B",
+          "text": "Check the successful extracted fields and citations against the supplied policy."
+        },
+        {
+          "id": "C",
+          "text": "Forward the verified result to the authorized approval queue."
+        },
+        {
+          "id": "D",
+          "text": "Request extraction using those instructions, schema and policy text."
+        }
+      ],
+      "correctAnswer": {
+        "order": [
+          "A",
+          "D",
+          "B",
+          "C"
+        ]
+      },
+      "type": "sequence_order",
+      "difficulty": "medium",
+      "explanation": {
+        "whyCorrect": "Instructions and schema configure extraction. The host verifies evidence before forwarding; neither instructions nor valid JSON replace that gate.",
+        "whyDistractorsWrong": {
+          "A": "The request needs the domain and output contracts.",
+          "D": "Inference produces the candidate extraction.",
+          "B": "Evidence checks require that candidate and its source.",
+          "C": "The stated queue gate requires successful verification."
+        }
+      },
+      "id": "ai103-improvement-r2-set-a-100-q081",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Implement text analysis solutions",
+      "sourceRefs": [
+        {
+          "sourceId": "S057",
+          "title": "System message design",
+          "url": "https://learn.microsoft.com/en-us/azure/cognitive-services/openai/concepts/advanced-prompt-engineering?pivots=programming-language-chat-completions",
+          "snapshotSha256": "8c3d221b7d097fd064d9875f54a48e446f7e44efe81622613ce58cfcb84e87e4",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S037",
+          "title": "Structured outputs",
+          "url": "https://learn.microsoft.com/azure/foundry/openai/how-to/structured-outputs",
+          "snapshotSha256": "0337c89ce3e5a9ba28d1c2fc18f1644c50b13568eb19edc43420d16b401cacfc",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-12",
+        "validationStatus": "draft"
+      }
+    }
+  ],
+  "caseStudies": [],
+  "evidence": [
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q073",
+      "testedDecision": "A support agent needs a remembered user preference, current corporate policy and a receipt uploaded for this interaction. Which TWO assignments are appropriate? Select TWO answers.",
+      "oldItemIds": [
+        "ai103-set-a-q074"
+      ],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-B2.02",
+      "itemRevisionHash": "f7b715fe6219a8307a535d7146c8081f8c4c3946b824e72bd84c0cf8b134d704",
+      "sources": [
+        {
+          "sourceId": "S006",
+          "title": "Memory in Microsoft Foundry Agent Service (preview)",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/concepts/what-is-memory",
+          "snapshotSha256": "1dd4a33b4885266d1a2a73cee51de011ad50f9e63454609195d46179316746f8",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q074",
+      "testedDecision": "A proxy calls a memory-enabled prompt agent for two users using one managed identity. Which TWO requirements implement separate preferences? Select TWO answers.",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-B2.02",
+      "itemRevisionHash": "9b7504afb9884e83dbcb555e757f181b1db52ff407605d42fc33a2447b8a9128",
+      "sources": [
+        {
+          "sourceId": "S053",
+          "title": "Create and use memory in Foundry Agent Service (preview)",
+          "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/how-to/memory-usage",
+          "snapshotSha256": "d118113db20dbe589f686a9150063736c78ce1b6e7b37c649bf28262918d31b6",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q075",
+      "testedDecision": "A support agent needs a domain boundary and a measurable fallback for missing evidence. Which TWO activities address those requirements? Select TWO answers.",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-B3.01",
+      "itemRevisionHash": "dcccf4bf78bcd8b9633e84dec2be7135e3a55ff5d6aeecb16ec8b045dd4e2e33",
+      "sources": [
+        {
+          "sourceId": "S057",
+          "title": "System message design",
+          "url": "https://learn.microsoft.com/en-us/azure/cognitive-services/openai/concepts/advanced-prompt-engineering?pivots=programming-language-chat-completions",
+          "snapshotSha256": "8c3d221b7d097fd064d9875f54a48e446f7e44efe81622613ce58cfcb84e87e4",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q076",
+      "testedDecision": "A specialist agent proposes an action that a deterministic host rule must approve. Which TWO responsibilities should the design keep explicit? Select TWO answers.",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-B3.04",
+      "itemRevisionHash": "b8b633fd3c844cce46ab43578fc181074cb8539a6351b3c6e17170b97cd73daf",
+      "sources": [
+        {
+          "sourceId": "S008",
+          "title": "Build a workflow in Microsoft Foundry (Preview)",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/concepts/workflow",
+          "snapshotSha256": "91311aec35bad6e1e44149491430baa72e5eeec37c9f869ba7fbf9356e5497e4",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S007",
+          "title": "Use function calling with Microsoft Foundry agents",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/how-to/tools/function-calling",
+          "snapshotSha256": "0d4119f94b15c94d404729f53d2ed5f52a89dfaf35841d1290c0472be3e3e953",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q077",
+      "testedDecision": "A Python OpenAI 2.x application extracts events with Responses structured output. The client is configured and the supported model is deployed. On the successful non-refusal path, arrange these operations; business validation needs the parsed field values.",
+      "oldItemIds": [],
+      "dependencyEdges": [
+        {
+          "before": "B",
+          "after": "C",
+          "reason": "The request consumes that type and returns the response."
+        },
+        {
+          "before": "C",
+          "after": "A",
+          "reason": "The successful response supplies the parsed values."
+        },
+        {
+          "before": "A",
+          "after": "D",
+          "reason": "Business checks consume those values rather than the request schema."
+        }
+      ],
+      "primaryObjective": "AI103-D1.01",
+      "itemRevisionHash": "2640b1391bc6a26b8828aa560440d58cbc6b0c51b734f8a8a888e6ef2031abdf",
+      "sources": [
+        {
+          "sourceId": "S037",
+          "title": "Structured outputs",
+          "url": "https://learn.microsoft.com/azure/foundry/openai/how-to/structured-outputs",
+          "snapshotSha256": "0337c89ce3e5a9ba28d1c2fc18f1644c50b13568eb19edc43420d16b401cacfc",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q078",
+      "testedDecision": "A Language NER pipeline must send organization and location records to a JSON-consuming application. The host constructs the records from returned entity categories and verifies the resulting JSON against the consumer’s schema. Arrange the data dependencies.",
+      "oldItemIds": [],
+      "dependencyEdges": [
+        {
+          "before": "B",
+          "after": "C",
+          "reason": "NER supplies the categorized entities."
+        },
+        {
+          "before": "C",
+          "after": "A",
+          "reason": "The records are constructed from those entities."
+        },
+        {
+          "before": "A",
+          "after": "D",
+          "reason": "Validation requires the actual constructed payload."
+        }
+      ],
+      "primaryObjective": "AI103-D1.01",
+      "itemRevisionHash": "95f1f4d8605d78b1af6061f91ca358fe588a7994dc18f24ff5e792c8f2907b24",
+      "sources": [
+        {
+          "sourceId": "S030",
+          "title": "What is Azure Language in Foundry Tools?",
+          "url": "https://learn.microsoft.com/azure/ai-services/language-service/overview",
+          "snapshotSha256": "debd3c5f132c72a0d258daa4d82d950834da5b4c89e3b42b20cf32982a169e1d",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S037",
+          "title": "Structured outputs",
+          "url": "https://learn.microsoft.com/azure/foundry/openai/how-to/structured-outputs",
+          "snapshotSha256": "0337c89ce3e5a9ba28d1c2fc18f1644c50b13568eb19edc43420d16b401cacfc",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q079",
+      "testedDecision": "A transcript may be held temporarily in a restricted worker. The searchable store may receive only a version redacted using the entities returned by PII detection. The worker has no existing detection result. Arrange the data dependencies.",
+      "oldItemIds": [],
+      "dependencyEdges": [
+        {
+          "before": "A",
+          "after": "D",
+          "reason": "Detection must process the input before its output exists."
+        },
+        {
+          "before": "D",
+          "after": "B",
+          "reason": "The detected entities supply the host’s redaction targets."
+        },
+        {
+          "before": "B",
+          "after": "C",
+          "reason": "Indexing the original text first would breach the specified boundary."
+        }
+      ],
+      "primaryObjective": "AI103-D1.02",
+      "itemRevisionHash": "3c26a35d8b6d4ce7b25304403e0409f5344c1ee5c87cf261e1315a67f44f1f0c",
+      "sources": [
+        {
+          "sourceId": "S030",
+          "title": "What is Azure Language in Foundry Tools?",
+          "url": "https://learn.microsoft.com/azure/ai-services/language-service/overview",
+          "snapshotSha256": "debd3c5f132c72a0d258daa4d82d950834da5b4c89e3b42b20cf32982a169e1d",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q080",
+      "testedDecision": "A mixed-language notice must be translated into French. Its language spans are known, and quality review compares the complete reconstructed notice with the original, including references across segments. Arrange this application workflow.",
+      "oldItemIds": [],
+      "dependencyEdges": [
+        {
+          "before": "D",
+          "after": "A",
+          "reason": "Translation produces the target-language segments."
+        },
+        {
+          "before": "A",
+          "after": "B",
+          "reason": "Reconstruction combines those outputs."
+        },
+        {
+          "before": "B",
+          "after": "C",
+          "reason": "The specified cross-segment review needs the reconstructed notice."
+        }
+      ],
+      "primaryObjective": "AI103-D1.03",
+      "itemRevisionHash": "8aca20007a07a998178362d63aa0267a4a689a5af9cd6f7e30ac8a75c4a21894",
+      "sources": [
+        {
+          "sourceId": "S055",
+          "title": "Azure Translator known issues and troubleshooting",
+          "url": "https://learn.microsoft.com/en-us/azure/ai-services/translator/reference/known-issues",
+          "snapshotSha256": "c1b48f37f4dc56c80cbc9c30661bfc67f1f6f75dea4693ef6d9e39beeeb88f1c",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S032",
+          "title": "What is Azure Translator in Foundry Tools?",
+          "url": "https://learn.microsoft.com/azure/ai-services/translator/overview",
+          "snapshotSha256": "5bed84630392d9ef61f1f463299425457e14614de81cefd58f484a680615b0df",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q081",
+      "testedDecision": "A compliance extractor may forward a result for approval only after its cited fields are verified against the supplied policy. Its model, client and policy are ready, but its domain instructions and strict output schema have not been defined. Arrange these operations.",
+      "oldItemIds": [],
+      "dependencyEdges": [
+        {
+          "before": "A",
+          "after": "D",
+          "reason": "Inference produces the candidate extraction."
+        },
+        {
+          "before": "D",
+          "after": "B",
+          "reason": "Evidence checks require that candidate and its source."
+        },
+        {
+          "before": "B",
+          "after": "C",
+          "reason": "The stated queue gate requires successful verification."
+        }
+      ],
+      "primaryObjective": "AI103-D1.04",
+      "itemRevisionHash": "75d96560a5afe49c5ea9e29b1f8cc82323b835e575bca332cf6edc0169e13a00",
+      "sources": [
+        {
+          "sourceId": "S057",
+          "title": "System message design",
+          "url": "https://learn.microsoft.com/en-us/azure/cognitive-services/openai/concepts/advanced-prompt-engineering?pivots=programming-language-chat-completions",
+          "snapshotSha256": "8c3d221b7d097fd064d9875f54a48e446f7e44efe81622613ce58cfcb84e87e4",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S037",
+          "title": "Structured outputs",
+          "url": "https://learn.microsoft.com/azure/foundry/openai/how-to/structured-outputs",
+          "snapshotSha256": "0337c89ce3e5a9ba28d1c2fc18f1644c50b13568eb19edc43420d16b401cacfc",
+          "docType": "microsoft_learn"
+        }
+      ]
+    }
+  ]
+}

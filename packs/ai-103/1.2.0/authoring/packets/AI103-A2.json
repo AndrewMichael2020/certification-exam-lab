@@ -1,0 +1,363 @@
+{
+  "schemaVersion": 1,
+  "packRef": {
+    "id": "ai-103",
+    "version": "1.1.0"
+  },
+  "parentObjectiveId": "AI103-A2",
+  "title": "Set up AI solutions in Foundry",
+  "state": "evidence-packet-only; no questions",
+  "allowedObjectiveIds": [
+    "AI103-A2.01",
+    "AI103-A2.02",
+    "AI103-A2.03",
+    "AI103-A2.04"
+  ],
+  "allowedScope": [
+    {
+      "objectiveId": "AI103-A2.01",
+      "claims": [
+        "F009C",
+        "F011A",
+        "F003B"
+      ],
+      "choice": "Select basic or customer-managed standard agent storage according to control/residency needs, then design project and dependency connectivity.",
+      "configuration": "Separate provisioning identity from runtime access; plan secured dependency endpoints/DNS when private networking is required.",
+      "comparison": "A private Foundry endpoint alone does not prove all downstream storage/search traffic follows the intended path.",
+      "judgment": "For a company requiring subscription-owned state and private dependencies, start with the documented standard secured setup and inspect every dependency."
+    },
+    {
+      "objectiveId": "AI103-A2.02",
+      "claims": [
+        "F004A",
+        "F004B",
+        "F005A",
+        "F005B"
+      ],
+      "choice": "Select standard for flexible token billing, provisioned for capacity needs, and batch for asynchronous work; select processing geography separately.",
+      "configuration": "Check SKU/model availability, quota, residency, and latency requirements; keep current managed compute distinct from classic VM-backed recipes.",
+      "comparison": "A Global deployment does not enforce a chosen regional processing boundary; Azure VM quota cannot satisfy current Foundry managed-compute quota.",
+      "judgment": "A large overnight enrichment job and interactive low-latency agent require different deployment/throughput choices."
+    },
+    {
+      "objectiveId": "AI103-A2.03",
+      "claims": [
+        "F002A",
+        "F003A",
+        "F009A"
+      ],
+      "choice": "Create the compatible project/model deployment and agent definition within one SDK generation.",
+      "configuration": "Use the project endpoint with Entra credentials; reference the actual deployment name, compatible model, and agent tools; distinguish current conversations/responses from classic threads/runs.",
+      "comparison": "Using a resource root instead of a project endpoint or mixing 1.x and 2.x examples causes failures before prompt quality matters.",
+      "judgment": "When a sample fails on project connection, inspect endpoint/package/authentication first; inspect task instructions only after calls can reach the correct deployment."
+    },
+    {
+      "objectiveId": "AI103-A2.04",
+      "claims": [
+        "F012A",
+        "F014B"
+      ],
+      "choice": "Use an OIDC-authenticated pipeline with explicit deployment identity and a post-deployment invocation, then add evaluation gates for release quality.",
+      "configuration": "Provide non-secret project variables and required role assignments; provision target infrastructure before using the captured hosted-agent template.",
+      "comparison": "A successful invocation proves reachability and response production, not groundedness or safe task completion.",
+      "judgment": "A pull request that changes tool selection should run representative agent evaluations in addition to deployment smoke invocation."
+    }
+  ],
+  "excludedObjectives": [],
+  "evidence": [
+    {
+      "claimId": "F002A",
+      "statement": "The captured AI Projects 2.8.0 client uses Microsoft Entra ID authentication; obtain its OpenAI client through get_openai_client for Responses and conversation operations.",
+      "sourceId": "S002",
+      "sourceUrl": "https://learn.microsoft.com/python/api/overview/azure/ai-projects-readme?view=azure-python",
+      "versionContext": "AI Projects Python2.8.0; Entra only; new Foundry2.x",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S002.md",
+          "lineStart": 82,
+          "lineEnd": 85,
+          "heading": "### Create and authenticate the client with Entra ID",
+          "needle": "Entra ID is the only",
+          "excerpt": "\nEntra ID is the only authentication method currently supported by the client.\n\nTo construct a synchronous client using a context manager:",
+          "sourceSha256": "2ce3139fd9fb77eb3f63d4a797ecc24deab957376faac5fe5a28d80e8080b266"
+        },
+        {
+          "snapshot": "sources/snapshots/S002.md",
+          "lineStart": 29,
+          "lineEnd": 42,
+          "heading": "# Azure AI Projects client library for Python - version 2.8.0",
+          "needle": ".get_openai_client()",
+          "excerpt": "    - Work IQ (Preview)\n- **Get an OpenAI client** using `.get_openai_client()` method to run Responses, Conversations, Evaluations and Fine-Tuning operations with your Agent.\n- **Create and version toolboxes** that bundle collections of tools and skills for your agents, using `.toolboxes` operations.\n- **Fine-tune** AI Models on your data.\n- **Enumerate AI Models** deployed to your Foundry Project using `.deployments` operations.\n- **Enumerate connected Azure resources** in your Foundry project using `.connections` operations.\n- **Upload documents and create Datasets** to reference them using `.datasets` operations.\n- **Create and enumerate Search Indexes** using `.indexes` operations.\n- **Explore additional evaluation tools (some in preview)** to assess the performance of your generative AI application, using `.evaluation_rules`, `.beta.evaluation_taxonomies`, `.beta.evaluators`, `.beta.insights`, and `.beta.schedules` operations.\n- **Manage memory stores (preview)** for Agent conversations, using `.beta.memory_stores` operations.\n- **Register and manage local AI model weights (preview)** using `.beta.models` operations.\n- **Run Red Team scans (preview)** to identify risks associated with your generative AI application, using `.beta.red_teams` operations.\n- **Create and manage routines (preview)** that execute triggered actions based on configured conditions, using `.beta.routines` operations.\n- **Manage skills (preview)** as reusable capabilities that can be included in toolboxes and agents, using `.beta.skills` operations.",
+          "sourceSha256": "2ce3139fd9fb77eb3f63d4a797ecc24deab957376faac5fe5a28d80e8080b266"
+        }
+      ]
+    },
+    {
+      "claimId": "F003A",
+      "statement": "The Python SDK table separates new Foundry azure-ai-projects 2.x from classic 1.x; examples must use a compatible project endpoint and package generation.",
+      "sourceId": "S003",
+      "sourceUrl": "https://learn.microsoft.com/azure/foundry/how-to/develop/sdk-overview",
+      "versionContext": "Python2.x(new)>=2.3.0 versus1.0.0(classic); OpenAI>=3.0.0 in captured installation guidance",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S003.md",
+          "lineStart": 126,
+          "lineEnd": 130,
+          "heading": "### Install the Foundry SDK",
+          "needle": "| 2.x | Foundry (new)",
+          "excerpt": "| --- | --- | --- | --- |\n| 2.x | Foundry (new) | Stable | `azure-ai-projects>=2.3.0` |\n| 1.x | Foundry (classic) | Stable | `azure-ai-projects==1.0.0` |\n\nThe [Azure AI Projects client library for Python](/en-us/python/api/overview/azure/ai-projects-readme) is a unified library that enables you to use multiple client libraries together by connecting to a single project endpoint. Starting in version 2.3.0, hosted-agent and toolbox operations use stable clients instead of beta namespaces.",
+          "sourceSha256": "f62e4cfa9a1eeed9aa30383cab18005b8bc8f72d2743a26dedf0bb83d24e046d"
+        }
+      ]
+    },
+    {
+      "claimId": "F003B",
+      "statement": "Foundry project, Azure OpenAI v1, Anthropic, and individual Foundry Tools use different endpoint families; choose the SDK for the operation and endpoint.",
+      "sourceId": "S003",
+      "sourceUrl": "https://learn.microsoft.com/azure/foundry/how-to/develop/sdk-overview",
+      "versionContext": "Python2.x(new)>=2.3.0 versus1.0.0(classic); OpenAI>=3.0.0 in captured installation guidance",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S003.md",
+          "lineStart": 10,
+          "lineEnd": 13,
+          "heading": "# Microsoft Foundry SDKs and endpoints",
+          "needle": "| **OpenAI SDK**",
+          "excerpt": "| **Agent Framework** | Unified multi-agent orchestration for hosted agents and multi-agent systems, available in C#/.NET and Python. The `foundry` package depends on the Foundry SDK for project access. | Responses API in the project endpoint, via `FoundryChatClient`. |\n| **OpenAI SDK** | Full OpenAI API surface, including embeddings and Foundry Models sold by Azure through Chat Completions. Best latency and maximum OpenAI compatibility. | `https://<resource-name>.openai.azure.com/openai/v1` |\n| **Anthropic SDK** | Anthropic Claude models deployed in Foundry. | `https://<resource-name>.services.ai.azure.com/anthropic` |\n| **Foundry Tools SDKs** | Prebuilt solutions (Vision, Speech, Content Safety, and more). | Tool-specific endpoints. |",
+          "sourceSha256": "f62e4cfa9a1eeed9aa30383cab18005b8bc8f72d2743a26dedf0bb83d24e046d"
+        },
+        {
+          "snapshot": "sources/snapshots/S003.md",
+          "lineStart": 8,
+          "lineEnd": 13,
+          "heading": "# Microsoft Foundry SDKs and endpoints",
+          "needle": "| **Foundry SDK**",
+          "excerpt": "| --- | --- | --- |\n| **Foundry SDK** | Thin-client SDK over all Foundry project APIs. Access to Foundry Models and platform tools (file search, code interpreter, web search, memory, SharePoint, WorkIQ, Fabric IQ, MCP). | `https://<resource-name>.services.ai.azure.com/api/projects/<project-name>` |\n| **Agent Framework** | Unified multi-agent orchestration for hosted agents and multi-agent systems, available in C#/.NET and Python. The `foundry` package depends on the Foundry SDK for project access. | Responses API in the project endpoint, via `FoundryChatClient`. |\n| **OpenAI SDK** | Full OpenAI API surface, including embeddings and Foundry Models sold by Azure through Chat Completions. Best latency and maximum OpenAI compatibility. | `https://<resource-name>.openai.azure.com/openai/v1` |\n| **Anthropic SDK** | Anthropic Claude models deployed in Foundry. | `https://<resource-name>.services.ai.azure.com/anthropic` |\n| **Foundry Tools SDKs** | Prebuilt solutions (Vision, Speech, Content Safety, and more). | Tool-specific endpoints. |",
+          "sourceSha256": "f62e4cfa9a1eeed9aa30383cab18005b8bc8f72d2743a26dedf0bb83d24e046d"
+        },
+        {
+          "snapshot": "sources/snapshots/S003.md",
+          "lineStart": 12,
+          "lineEnd": 15,
+          "heading": "# Microsoft Foundry SDKs and endpoints",
+          "needle": "| **Foundry Tools SDKs**",
+          "excerpt": "| **Anthropic SDK** | Anthropic Claude models deployed in Foundry. | `https://<resource-name>.services.ai.azure.com/anthropic` |\n| **Foundry Tools SDKs** | Prebuilt solutions (Vision, Speech, Content Safety, and more). | Tool-specific endpoints. |\n\n**Choose your SDK**:",
+          "sourceSha256": "f62e4cfa9a1eeed9aa30383cab18005b8bc8f72d2743a26dedf0bb83d24e046d"
+        }
+      ]
+    },
+    {
+      "claimId": "F004A",
+      "statement": "Current Foundry offers serverless API deployments and preview managed compute; serverless API supports standard, provisioned, batch, and developer deployment types.",
+      "sourceId": "S004",
+      "sourceUrl": "https://learn.microsoft.com/azure/foundry/concepts/deployments-overview",
+      "versionContext": "Serverless plus new managed compute preview; quota is separate from classic VM quota",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S004.md",
+          "lineStart": 12,
+          "lineEnd": 16,
+          "heading": "## Deployment options",
+          "needle": "**Serverless API** —",
+          "excerpt": "\n- **Serverless API** — For Foundry Models, including [Foundry Models sold by Azure](../foundry-models/concepts/models-sold-directly-by-azure) and [select Models from partners and community](../foundry-models/concepts/models-from-partners). This option is the preferred and most capable deployment path. It includes the standard, provisioned throughput, batch, and developer deployment types.\n- **Managed compute (preview)** — For open-source, partner, and custom models that run on dedicated GPU capacity that Foundry manages for you.\n\nFoundry selects the appropriate deployment option based on the model you choose.",
+          "sourceSha256": "91520b0f84e6e2823bb27945cb8e25f716440b7680ffc7ea9689d8025f1d080f"
+        },
+        {
+          "snapshot": "sources/snapshots/S004.md",
+          "lineStart": 13,
+          "lineEnd": 16,
+          "heading": "## Deployment options",
+          "needle": "**Managed compute (preview)**",
+          "excerpt": "- **Serverless API** — For Foundry Models, including [Foundry Models sold by Azure](../foundry-models/concepts/models-sold-directly-by-azure) and [select Models from partners and community](../foundry-models/concepts/models-from-partners). This option is the preferred and most capable deployment path. It includes the standard, provisioned throughput, batch, and developer deployment types.\n- **Managed compute (preview)** — For open-source, partner, and custom models that run on dedicated GPU capacity that Foundry manages for you.\n\nFoundry selects the appropriate deployment option based on the model you choose.",
+          "sourceSha256": "91520b0f84e6e2823bb27945cb8e25f716440b7680ffc7ea9689d8025f1d080f"
+        }
+      ]
+    },
+    {
+      "claimId": "F004B",
+      "statement": "Current managed-compute preview quota is per accelerator SKU and region, separate from Azure VM quota; the older classic VM-quota recipe is a different generation.",
+      "sourceId": "S004",
+      "sourceUrl": "https://learn.microsoft.com/azure/foundry/concepts/deployments-overview",
+      "versionContext": "Serverless plus new managed compute preview; quota is separate from classic VM quota",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S004.md",
+          "lineStart": 89,
+          "lineEnd": 92,
+          "heading": "### Billing and quota",
+          "needle": "Quota is granted per accelerator",
+          "excerpt": "\nQuota is granted per accelerator SKU per region through the **Foundry quota process** and is **separate from Azure VM quota**. Azure virtual machines are an infrastructure-as-a-service (IaaS) offering with regional SKUs; managed compute is a PaaS offering that leads with Global and Data Zone processing. Existing Azure VM quota can't be applied to a managed compute deployment.\n\nManaged compute is currently available for global deployment. For rate estimates, see the [Azure pricing calculator](https://azure.microsoft.com/pricing/calculator/).",
+          "sourceSha256": "91520b0f84e6e2823bb27945cb8e25f716440b7680ffc7ea9689d8025f1d080f"
+        }
+      ]
+    },
+    {
+      "claimId": "F005A",
+      "statement": "A serverless model deployment type controls processing location, charging model, and performance; standard, provisioned, and batch answer different workload needs.",
+      "sourceId": "S005",
+      "sourceUrl": "https://learn.microsoft.com/azure/foundry/foundry-models/concepts/deployment-types",
+      "versionContext": "Feature-specific qualifications in snapshot; package/API version unknown unless stated in a referenced excerpt.",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S005.md",
+          "lineStart": 4,
+          "lineEnd": 7,
+          "heading": "# Deployment types for Microsoft Foundry Models",
+          "needle": "**Where your data is processed**",
+          "excerpt": "\n- **Where your data is processed** (global, data zone, or Azure geography)\n- **How you pay** (pay-per-token or reserved capacity)\n- **Performance characteristics** (latency variance, throughput limits)",
+          "sourceSha256": "6c6d5d7b11684c1cbba8d35fd278a313e1420e3853b0ba9f104898c4a8c24c58"
+        }
+      ]
+    },
+    {
+      "claimId": "F005B",
+      "statement": "Global, data-zone, and Azure-geography deployment options have different processing boundaries; choose the required boundary explicitly.",
+      "sourceId": "S005",
+      "sourceUrl": "https://learn.microsoft.com/azure/foundry/foundry-models/concepts/deployment-types",
+      "versionContext": "Feature-specific qualifications in snapshot; package/API version unknown unless stated in a referenced excerpt.",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S005.md",
+          "lineStart": 43,
+          "lineEnd": 49,
+          "heading": "## Deployment type comparison",
+          "needle": "| Data Zone Standard |",
+          "excerpt": "| Global Batch | `GlobalBatch` | Any Azure region | 50% discount, 24-hr | Large async jobs |\n| Data Zone Standard | `DataZoneStandard` | Within data zone | Pay-per-token | EU/US/APAC data zone compliance |\n| Data Zone Provisioned | `DataZoneProvisionedManaged` | Within data zone | Reserved PTU | Data zone + predictable throughput |\n| Data Zone Batch | `DataZoneBatch` | Within data zone | 50% discount | Large async jobs with data zone |\n| Standard | `Standard` | Within Azure geography | Pay-per-token | Geography compliance, low volume |\n| Regional Provisioned | `ProvisionedManaged` | Within Azure geography | Reserved PTU | Geography compliance + throughput |\n| Developer | `DeveloperTier` | Any Azure region | Pay-per-token | Fine-tuned model evaluation only (24-hour lifetime, no SLA or data-residency guarantee) |",
+          "sourceSha256": "6c6d5d7b11684c1cbba8d35fd278a313e1420e3853b0ba9f104898c4a8c24c58"
+        }
+      ]
+    },
+    {
+      "claimId": "F009A",
+      "statement": "An agent uses its underlying model deployment quotas as well as agent-service limits; troubleshoot the returned limit code rather than assuming one universal quota.",
+      "sourceId": "S009",
+      "sourceUrl": "https://learn.microsoft.com/azure/foundry/agents/concepts/limits-quotas-regions",
+      "versionContext": "Feature-specific qualifications in snapshot; package/API version unknown unless stated in a referenced excerpt.",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S009.md",
+          "lineStart": 336,
+          "lineEnd": 339,
+          "heading": "## Model quotas and rate limits",
+          "needle": "Agents follow the quotas and rate limits",
+          "excerpt": "\nAgents follow the quotas and rate limits for the model deployments they use.\n\nFor current model quotas and limits, see:",
+          "sourceSha256": "d83fd890729d322d4ffa580ca5a8db2bed5bcd783dae47f5da2b05985f4b3041"
+        }
+      ]
+    },
+    {
+      "claimId": "F009C",
+      "statement": "Basic agent setup stores state in Microsoft-managed storage; standard setup stores state in customer-managed resources in the subscription.",
+      "sourceId": "S009",
+      "sourceUrl": "https://learn.microsoft.com/azure/foundry/agents/concepts/limits-quotas-regions",
+      "versionContext": "Feature-specific qualifications in snapshot; package/API version unknown unless stated in a referenced excerpt.",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S009.md",
+          "lineStart": 243,
+          "lineEnd": 251,
+          "heading": "## Where Agent Service stores your data",
+          "needle": "**Basic setup** stores agent state",
+          "excerpt": "\n- **Basic setup** stores agent state in secure, Microsoft-managed storage that's logically separated. This is the default when you don't configure your own resources.\n- **Standard setup** stores agent state in customer-managed, single-tenant Azure resources in your own subscription, which gives you full control over data residency and access.\n\n| Data type | Basic setup | Standard setup |\n| --- | --- | --- |\n| Files, uploads, and attachments | Microsoft-managed storage | Azure Storage (Blob Storage) |\n| Vector stores, embeddings, and retrieval indexes | Microsoft-managed vector search | Azure AI Search |\n| Threads, conversation history, messages, and agent definitions | Microsoft-managed storage | Azure Cosmos DB |",
+          "sourceSha256": "d83fd890729d322d4ffa580ca5a8db2bed5bcd783dae47f5da2b05985f4b3041"
+        }
+      ]
+    },
+    {
+      "claimId": "F011A",
+      "statement": "Private agent networking uses a standard secured setup and dependency endpoints; successful private access also depends on DNS and correct runtime identities.",
+      "sourceId": "S011",
+      "sourceUrl": "https://learn.microsoft.com/azure/foundry/agents/how-to/virtual-networks",
+      "versionContext": "Feature-specific qualifications in snapshot; package/API version unknown unless stated in a referenced excerpt.",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S011.md",
+          "lineStart": 8,
+          "lineEnd": 11,
+          "heading": "# Set up private networking for Foundry Agent Service",
+          "needle": "Standard Setup with private networking",
+          "excerpt": "\nFoundry Agent Service offers a **Standard Setup with private networking** environment. This setup creates an isolated network environment that enables secure access to data while maintaining full control over your network infrastructure.\n\nBy default, the Standard Setup with private networking ensures:",
+          "sourceSha256": "02eb40fb9bc5fcbd6b27249423b2d0ba26f5df0dd6b6885c881270a7a6fac8b9"
+        },
+        {
+          "snapshot": "sources/snapshots/S011.md",
+          "lineStart": 140,
+          "lineEnd": 143,
+          "heading": "## Verify the deployment",
+          "needle": "DNS",
+          "excerpt": "2. **Check public network access**: Open each resource (Foundry, Azure AI Search, Azure Storage, Azure Cosmos DB) and confirm **Public network access** is set to **Disabled**.\n3. **Validate private endpoint DNS resolution**: From a machine connected to the VNet, run `nslookup` against each endpoint listed in the DNS zone configurations summary.\n4. **Test agent connectivity**: Access your Foundry project from within the VNet (see Access your secured agents) and confirm you can create and run an agent.\n5. **Configure Role assignments**: Run the following commands to assign the required roles. The first grants Managed Identity Operator on the user-assigned managed identity, and the second grants Network Contributor on the remote VNet for cross-tenant access.",
+          "sourceSha256": "02eb40fb9bc5fcbd6b27249423b2d0ba26f5df0dd6b6885c881270a7a6fac8b9"
+        },
+        {
+          "snapshot": "sources/snapshots/S011.md",
+          "lineStart": 71,
+          "lineEnd": 74,
+          "heading": "### Runtime access after deployment",
+          "needle": "Runtime access after deployment",
+          "excerpt": "\n### Runtime access after deployment\n\nThe project managed identity is what running agents use to reach Azure Cosmos DB, Azure AI Search, and Azure Storage. Grant it data-plane roles on each resource before agents run. The caller roles in the previous table enable capability settings provisioning only. They don't replace the roles the project managed identity needs at runtime. For portal and legacy capability host REST API deployments, the project managed identity also performs provisioning. For the per-resource role list, see [Standard agent setup](../concepts/standard-agent-setup).",
+          "sourceSha256": "02eb40fb9bc5fcbd6b27249423b2d0ba26f5df0dd6b6885c881270a7a6fac8b9"
+        }
+      ]
+    },
+    {
+      "claimId": "F012A",
+      "statement": "The hosted-agent GitHub pipeline uses an OIDC-federated workflow identity with deployment permissions and non-secret project variables; its template deploys and invokes an existing agent.",
+      "sourceId": "S012",
+      "sourceUrl": "https://learn.microsoft.com/azure/foundry/agents/quickstarts/set-up-cicd-hosted-agent",
+      "versionContext": "Feature-specific qualifications in snapshot; package/API version unknown unless stated in a referenced excerpt.",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S012.md",
+          "lineStart": 26,
+          "lineEnd": 29,
+          "heading": "### Prerequisites",
+          "needle": "GitHub OIDC configuration",
+          "excerpt": "| Hosted agent project | Your repository contains an agent project created with `azd init`. Run `azd provision` and `azd deploy` before using this CI/CD pipeline so that a Foundry project and hosted agent already exist in the cloud. |\n| GitHub OIDC configuration | Configure a Microsoft Entra application or federated credential that allows your GitHub workflow to sign in to Azure with OIDC. For more information, see [Use the Azure login action with OpenID Connect](/en-us/azure/developer/github/connect-from-azure#use-the-azure-login-action-with-openid-connect). |\n| Deployment permissions | After you create the OIDC federated credential, assign roles to the workflow identity. For code deployment (`azd ai agent init --deploy-mode code`), grant the Foundry User role and Contributor role on the target Foundry project. If your project uses container deployment (`--deploy-mode container`), also grant the Azure RBAC permissions required to build, push, and deploy the container image and access related Azure resources. |\n| Repository variables | Store non-secret configuration such as subscription ID, tenant ID, client ID, project endpoint, project ID, location, model deployment name, and test prompt as GitHub Actions variables. The specific variables to configure are listed later in this quickstart. |",
+          "sourceSha256": "e6e53feb7b84553872c1d228d971a02871b943aa30c877cb5f9402e1cb4797c6"
+        },
+        {
+          "snapshot": "sources/snapshots/S012.md",
+          "lineStart": 4,
+          "lineEnd": 8,
+          "heading": "# Quickstart: Hosted agent CI/CD templates",
+          "needle": "The pipeline performs two tasks:",
+          "excerpt": "\nThe pipeline performs two tasks:\n\n1. Deploy the updated hosted agent code.\n2. Invoke the agent and verify that it returns a response.",
+          "sourceSha256": "e6e53feb7b84553872c1d228d971a02871b943aa30c877cb5f9402e1cb4797c6"
+        },
+        {
+          "snapshot": "sources/snapshots/S012.md",
+          "lineStart": 28,
+          "lineEnd": 31,
+          "heading": "### Prerequisites",
+          "needle": "Repository variables",
+          "excerpt": "| Deployment permissions | After you create the OIDC federated credential, assign roles to the workflow identity. For code deployment (`azd ai agent init --deploy-mode code`), grant the Foundry User role and Contributor role on the target Foundry project. If your project uses container deployment (`--deploy-mode container`), also grant the Azure RBAC permissions required to build, push, and deploy the container image and access related Azure resources. |\n| Repository variables | Store non-secret configuration such as subscription ID, tenant ID, client ID, project endpoint, project ID, location, model deployment name, and test prompt as GitHub Actions variables. The specific variables to configure are listed later in this quickstart. |\n\n### Set up pipeline with GitHub",
+          "sourceSha256": "e6e53feb7b84553872c1d228d971a02871b943aa30c877cb5f9402e1cb4797c6"
+        }
+      ]
+    },
+    {
+      "claimId": "F014B",
+      "statement": "Task completion and task adherence measure different end-to-end properties and are preview evaluators in the captured reference.",
+      "sourceId": "S014",
+      "sourceUrl": "https://learn.microsoft.com/azure/foundry/concepts/evaluation-evaluators/agent-evaluators",
+      "versionContext": "Evaluator-specific status; task completion/adherence preview",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S014.md",
+          "lineStart": 17,
+          "lineEnd": 30,
+          "heading": "# Agent evaluators",
+          "needle": "| Task Completion (preview) |",
+          "excerpt": "| --- | --- | --- | --- | --- |\n| Task Completion (preview) | System evaluation | Assessing end-to-end task success in workflow automation, goal-oriented AI interactions, or any scenario where full task completion is critical | Measures if the agent completed the requested task with a usable deliverable that meets all user requirements | Binary: Pass/Fail |\n| Customer Satisfaction (preview) | System evaluation | Measuring overall user satisfaction across a conversation, detecting user frustration | Measures holistic user satisfaction across six dimensions: helpfulness, completeness, clarity, tone, resolution, and adaptability | 1-5 Likert scale |\n| Task Adherence (preview) | System evaluation | Ensuring agents follow system instructions, validating compliance in regulated environments | Measures if the agent's actions adhere to its assigned tasks according to rules, procedures, and policy constraints, based on its system message and prior steps | Binary: Pass/Fail |\n| Task Navigation Efficiency | System evaluation | Optimizing agent workflows, reducing unnecessary steps, validating against known optimal paths (requires ground truth) | Measures whether the agent made tool calls efficiently to complete a task by comparing them to expected tool sequences | Binary: Pass/Fail |\n| Intent Resolution (preview) | System evaluation | Customer support scenarios, conversational AI, FAQ systems where understanding user intent is essential | Measures whether the agent correctly identifies the user's intent | Binary: Pass/Fail based on threshold (1-5 scale) |\n| Tool Call Accuracy | Process evaluation | Overall tool call quality assessment in agent systems with tool integration, API interactions to complete its tasks | Measures whether the agent made the right tool calls with correct parameters to complete its task | Binary: Pass/Fail based on threshold (1-5 scale) |\n| Tool Selection | Process evaluation | Validating tool choice quality in orchestration platforms, ensuring efficient tool usage without redundancy | Measures whether the agent selected the correct tools without selecting unnecessary ones | Binary: Pass/Fail |\n| Tool Input Accuracy | Process evaluation | Strict validation of tool parameters in production environments, API integration tests, critical workflows requiring 100% parameter correctness | Measures if all tool call parameters are correct across six strict criteria: groundedness, type compliance, format compliance, required parameters, no unexpected parameters, and value appropriateness | Binary: Pass/Fail |\n| Tool Output Utilization | Process evaluation | Validating correct use of API responses, database query results, search outputs in agent reasoning and responses | Measures if the agent correctly understood and used tool call results contextually in its reasoning and final response | Binary: Pass/Fail |\n| Tool Call Success | Process evaluation | Monitoring tool reliability, detecting API failures, timeout issues, or technical errors in tool execution | Measures if tool calls succeeded or resulted in technical errors or exceptions | Binary: Pass/Fail |\n| Quality Grader (preview) | Quality evaluation | Assesses overall response quality at the turn level, including relevance, abstention, answer completeness, and optionally groundedness and context coverage | Enables quality evaluation across multiple dimensions in a single evaluator instead of running individual evaluators separately | Binary: Pass/Fail |\n| Output Quality (preview) | System and quality evaluation | Assessing response quality and task outcomes across several dimensions while reducing evaluation cost and latency | Batches Fluency, Coherence, Intent Resolution, Task Adherence, Groundedness, and Task Completion into one LLM judge call | Composite: component scores with Pass/Fail |\n| Tool Use Quality (preview) | Process evaluation | Assessing the complete tool-use process while reducing evaluation cost and latency | Batches Tool Call Accuracy, Tool Call Success, Tool Input Accuracy, Tool Output Utilization, and Tool Selection into one LLM judge call | Composite: component scores with Pass/Fail |",
+          "sourceSha256": "0ce17b86785e87efb44074de9d3fdee3ae8290dedcb04a18a68558081be7103f"
+        }
+      ]
+    }
+  ],
+  "constraints": [
+    "Only listed facts with conditions establish answer keys. Cite correct answers and distractor rationales.",
+    "Preserve API/SDK generation, preview, retirement and region/model qualifiers.",
+    "No unshown methods, asserted execution, GH-600 material, dumps, remembered assessments or official format parity.",
+    "Ready is bounded evidence support; later content review and manual solve-first audit are still required."
+  ]
+}

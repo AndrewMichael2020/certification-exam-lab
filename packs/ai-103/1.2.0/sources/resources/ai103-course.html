@@ -1,0 +1,1127 @@
+ <!DOCTYPE html>
+		<html
+			class="layout layout-single    course show-breadcrumb default-focus"
+			lang="en-us"
+			dir="ltr"
+			data-authenticated="false"
+			data-auth-status-determined="false"
+			data-target="docs"
+			x-ms-format-detection="none"
+		>
+			
+		<head>
+			<title>Course AI-103T00-A: Develop AI apps and agents on Azure - Training | Microsoft Learn</title>
+			<meta charset="utf-8" />
+			<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+			<meta name="color-scheme" content="light dark" />
+
+			<meta name="description" content="Course AI-103T00-A: Develop AI apps and agents on Azure" />
+			<link rel="canonical" href="https://learn.microsoft.com/en-us/training/courses/ai-103t00" /> 
+
+			<!-- Non-customizable open graph and sharing-related metadata -->
+			<meta name="twitter:card" content="summary_large_image" />
+			<meta name="twitter:site" content="@MicrosoftLearn" />
+			<meta property="og:type" content="website" />
+			<meta property="og:image:alt" content="Microsoft Learn" />
+			<meta property="og:image" content="https://learn.microsoft.com/en-us/media/open-graph-image.png" />
+			<!-- Page specific open graph and sharing-related metadata -->
+			<meta property="og:title" content="Course AI-103T00-A: Develop AI apps and agents on Azure - Training" />
+			<meta property="og:url" content="https://learn.microsoft.com/en-us/training/courses/ai-103t00" />
+			<meta property="og:description" content="Course AI-103T00-A: Develop AI apps and agents on Azure" />
+			<meta name="platform_id" content="1d540b0e-7d0c-9a40-a491-6efbe8bc6dad" /> 
+			<meta name="locale" content="en-us" />
+			 
+			<meta name="uhfHeaderId" content="MSDocsHeader-Learn" />
+
+			<meta name="page_type" content="learn" />
+
+			<!--page specific meta tags-->
+			
+
+			<!-- custom meta tags -->
+			
+		<meta name="uid" content="course.ai-103t00" />
+	
+		<meta name="courseNumber" content="AI-103T00" />
+	
+		<meta name="hoursToComplete" content="96" />
+	
+		<meta name="schema" content="Course" />
+	
+		<meta name="breadcrumb_path" content="/breadcrumb/toc.json" />
+	
+		<meta name="feedback_system" content="None" />
+	
+		<meta name="iltScheduling" content="false" />
+	
+		<meta name="author" content="wwlpublish" />
+	
+		<meta name="document_id" content="62e6fab4-9294-c687-c255-f7e719834899" />
+	
+		<meta name="document_version_independent_id" content="62e6fab4-9294-c687-c255-f7e719834899" />
+	
+		<meta name="updated_at" content="2026-04-17T20:59:00Z" />
+	
+		<meta name="original_content_git_url" content="https://github.com/MicrosoftDocs/learn-certs-pr/blob/live/training/courses/ai-103t00.yml" />
+	
+		<meta name="gitcommit" content="https://github.com/MicrosoftDocs/learn-certs-pr/blob/900c4cc29f8c407a5bb2fedb0727b1c8214d4234/training/courses/ai-103t00.yml" />
+	
+		<meta name="git_commit_id" content="900c4cc29f8c407a5bb2fedb0727b1c8214d4234" />
+	
+		<meta name="site_name" content="Docs" />
+	
+		<meta name="depot_name" content="MSDN.courses" />
+	
+		<meta name="page_kind" content="course" />
+	
+		<meta name="learn_item" content="learn.wwl.develop-generative-ai-apps" />
+	
+		<meta name="learn_item" content="learn.wwl.develop-ai-agents-azure" />
+	
+		<meta name="learn_item" content="learn.wwl.develop-language-solutions-azure-ai" />
+	
+		<meta name="learn_item" content="learn.extract-insights-visual-data-azure" />
+	
+		<meta name="feedback_product_url" content="" />
+	
+		<meta name="feedback_help_link_type" content="" />
+	
+		<meta name="feedback_help_link_url" content="" />
+	
+		<meta name="asset_id" content="courses/ai-103t00" />
+	
+		<meta name="moniker_range_name" content="" />
+	
+		<meta name="item_type" content="Content" />
+	
+		<meta name="source_path" content="training/courses/ai-103t00.yml" />
+	
+		<meta name="github_feedback_content_git_url" content="https://github.com/MicrosoftDocs/learn-certs-pr/blob/live/training/courses/ai-103t00.yml" />
+	
+		<meta name="markdown_url" content="https://learn.microsoft.com/en-us/training/courses/ai-103t00?accept=text/markdown" />
+	 
+		<meta name="cmProducts" content="https://authoring-docs-microsoft.poolparty.biz/devrel/68ec7f3a-2bc6-459f-b959-19beb729907d" data-source="generated" />
+	
+		<meta name="spProducts" content="https://authoring-docs-microsoft.poolparty.biz/devrel/90370425-aca4-4a39-9533-d52e5e002a5d" data-source="generated" />
+	
+
+			<!-- Apply persisted/system theme before first paint to prevent wrong-theme flash when scripts are deferred. -->
+			<script id="theme-preference">
+				(function () {
+			try {
+				var stored = localStorage.getItem('theme');
+				var theme = /^(light|dark|high-contrast)$/.test(stored)
+					? stored
+					: matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+				document.documentElement.classList.add('theme-' + theme);
+			} catch (e) {}
+		})();;
+			</script>
+
+			<script id="atlas-layout-preferences">
+				(function () {
+			try {
+				var state = JSON.parse(localStorage.getItem('atlas-layout-preferences') || '{}');
+				var view = state["Course"] || {};
+				var excludesKey = "";
+				var blocked = {};
+				if (excludesKey) {
+					var exclusions = JSON.parse(localStorage.getItem('atlas-layout-exclusions') || '{}');
+					if (Object.prototype.hasOwnProperty.call(exclusions, excludesKey)) {
+						var scoped = exclusions[excludesKey];
+						if (scoped) {
+							if (typeof scoped === 'object') blocked = scoped;
+						}
+					}
+				}
+				var html = document.documentElement;
+				for (var c in view) {
+					if (Object.prototype.hasOwnProperty.call(blocked, c)) continue;
+					if (view[c]) html.classList.add(c);
+					else html.classList.remove(c);
+				}
+			} catch (e) {}
+		})();;
+			</script>
+
+			<!-- assets and js globals -->
+			
+			<link rel="stylesheet" href="/static/assets/0.4.03564.8276-6f650523/styles/site.css" />
+			
+			<script src="https://wcpstatic.microsoft.com/mscc/lib/v2/wcp-consent.js"></script>
+			<!-- Keep this URL in sync with oneDSScriptSelector in instrumentation/one-ds.ts. -->
+			<script async src="https://js.monitor.azure.com/scripts/c/ms.jsll-4.min.js"></script>
+			
+
+			<!-- msdocs global object -->
+			<script id="msdocs-script">
+		var msDocs = {
+  "environment": {
+    "accessLevel": "online",
+    "azurePortalHostname": "portal.azure.com",
+    "reviewFeatures": false,
+    "supportLevel": "production",
+    "systemContent": true,
+    "siteName": "learn",
+    "legacyHosting": false
+  },
+  "data": {
+    "contentLocale": "en-us",
+    "contentDir": "ltr",
+    "userLocale": "en-us",
+    "userDir": "ltr",
+    "pageTemplate": "Course",
+    "layoutStateStorageKey": "Course",
+    "brand": "",
+    "context": {},
+    "standardFeedback": false,
+    "showFeedbackReport": false,
+    "feedbackHelpLinkType": "",
+    "feedbackHelpLinkUrl": "",
+    "feedbackSystem": "None",
+    "feedbackGitHubRepo": "",
+    "feedbackProductUrl": "",
+    "extendBreadcrumb": true,
+    "isEditDisplayable": false,
+    "isPrivateUnauthorized": false,
+    "hideViewSource": false,
+    "isPermissioned": false,
+    "hasRecommendations": false
+  },
+  "functions": {}
+};;
+	</script>
+
+			<!-- base scripts, msdocs global should be before this -->
+			
+				<script
+					src="/static/assets/0.4.03564.8276-6f650523/scripts/en-us/index-learner-experience.js"
+					async
+				></script>
+			
+			
+
+			<!-- json-ld -->
+			
+		</head>
+	
+			<body
+				id="body"
+				data-bi-name="body"
+				class="layout-body "
+				lang="en-us"
+				dir="ltr"
+			>
+				<header class="layout-body-header background-color-body-medium">
+		<div class="header-holder has-default-focus">
+			
+		<a
+			href="#main"
+			
+			style="z-index: 1070"
+			class="outline-color-text visually-hidden-until-focused position-fixed inner-focus focus-visible top-0 left-0 right-0 padding-xs text-align-center background-color-body"
+			
+		>
+			Skip to main content
+		</a>
+	
+
+			<div hidden id="cookie-consent-holder" data-test-id="cookie-consent-container"></div>
+			<!-- Unsupported browser warning -->
+			<div
+				id="unsupported-browser"
+				style="background-color: white; color: black; padding: 16px; border-bottom: 1px solid grey;"
+				hidden
+			>
+				<div style="max-width: 800px; margin: 0 auto;">
+					<p style="font-size: 24px">This browser is no longer supported.</p>
+					<p style="font-size: 16px; margin-top: 16px;">
+						Upgrade to Microsoft Edge to take advantage of the latest features, security updates, and technical support.
+					</p>
+					<div style="margin-top: 12px;">
+						<a
+							href="https://go.microsoft.com/fwlink/p/?LinkID=2092881 "
+							style="background-color: #0078d4; border: 1px solid #0078d4; color: white; padding: 6px 12px; border-radius: 2px; display: inline-block;"
+						>
+							Download Microsoft Edge
+						</a>
+						<a
+							href="https://learn.microsoft.com/en-us/lifecycle/faq/internet-explorer-microsoft-edge"
+							style="background-color: white; padding: 6px 12px; border: 1px solid #505050; color: #171717; border-radius: 2px; display: inline-block;"
+						>
+							More info about Internet Explorer and Microsoft Edge
+						</a>
+					</div>
+				</div>
+			</div>
+			<!-- site header -->
+			<div
+				id="ms--site-header"
+				data-test-id="site-header-wrapper"
+				itemscope="itemscope"
+				itemtype="http://schema.org/Organization"
+			>
+				<div
+					id="ms--mobile-nav"
+					class="site-header display-none-tablet padding-inline-none gap-none"
+					data-bi-name="mobile-header"
+					data-test-id="mobile-header"
+				></div>
+				<div
+					id="ms--primary-nav"
+					class="site-header display-none display-flex-tablet"
+					data-bi-name="L1-header"
+					data-test-id="primary-header"
+				></div>
+				<div
+					id="ms--secondary-nav"
+					class="site-header display-none display-flex-tablet"
+					data-bi-name="L2-header"
+					data-test-id="secondary-header"
+					
+				></div>
+			</div>
+			
+		<!-- banner -->
+		<div data-banner>
+			<div id="disclaimer-holder"></div>
+			
+		</div>
+		<!-- banner end -->
+	
+		</div>
+	</header>
+				 
+
+				<main
+					id="main"
+					role="main"
+					class="layout-body-main "
+					data-bi-name="content"
+					lang="en-us"
+					dir="ltr"
+				>
+					
+			<div
+				data-main-column
+				class=""
+			>
+				<div class="">
+					
+		<div id="article-header" class="background-color-body display-none-print">
+			<div class="display-flex align-items-center justify-content-space-between uhf-container">
+				
+		<details
+			id="article-header-breadcrumbs-overflow-popover"
+			class="popover popover-left"
+			data-for="article-header-breadcrumbs"
+		>
+			<summary
+				class="button button-clear button-primary button-sm inner-focus"
+				aria-label="All breadcrumbs"
+			>
+				<span class="icon" aria-hidden="true">
+					<span class="docon docon-more"></span>
+				</span>
+			</summary>
+			<div id="article-header-breadcrumbs-overflow" class="popover-content"></div>
+		</details>
+
+		<bread-crumbs
+			id="article-header-breadcrumbs"
+			role="group"
+			aria-label="Breadcrumbs"
+			data-test-id="article-header-breadcrumbs"
+			class="overflow-hidden flex-grow-1 margin-right-sm margin-right-md-tablet margin-right-lg-desktop margin-left-negative-xxs padding-left-xxs"
+		></bread-crumbs>
+	 
+		<div
+			id="article-header-page-actions"
+			class="opacity-none margin-left-auto display-flex flex-wrap-no-wrap align-items-stretch"
+		>
+			 
+
+			<details class="popover popover-right" id="article-header-page-actions-overflow">
+				<summary
+					class="justify-content-flex-start button button-clear button-sm button-primary inner-focus"
+					aria-label="More actions"
+					aria-expanded="false"
+					title="More actions"
+				>
+					<span class="icon" aria-hidden="true">
+						<span class="docon docon-more-vertical"></span>
+					</span>
+				</summary>
+				<div class="popover-content">
+					  
+		<a
+			id="lang-link-overflow"
+			class="button-sm inner-focus button button-clear button-block justify-content-flex-start text-align-left"
+			data-bi-name="language-toggle"
+			data-page-action-item="overflow-all"
+			data-check-hidden="true"
+			data-read-in-link
+			href="#"
+			hidden
+		>
+			<span class="icon" aria-hidden="true" data-read-in-link-icon>
+				<span class="docon docon-locale-globe"></span>
+			</span>
+			<span data-read-in-link-text>Read in English</span>
+		</a>
+	
+					
+		<button
+			type="button"
+			class="collection button button-clear button-sm button-block justify-content-flex-start text-align-left inner-focus"
+			data-list-type="collection"
+			data-bi-name="collection"
+			data-page-action-item="overflow-all"
+			data-check-hidden="true"
+			data-popover-close
+		>
+			<span class="icon" aria-hidden="true">
+				<span class="docon docon-circle-addition"></span>
+			</span>
+			<span class="collection-status">Add</span>
+		</button>
+	 
+		<button
+			type="button"
+			class="collection button button-block button-clear button-sm justify-content-flex-start text-align-left inner-focus"
+			data-list-type="plan"
+			data-bi-name="plan"
+			data-page-action-item="overflow-all"
+			data-check-hidden="true"
+			data-popover-close
+			hidden
+		>
+			<span class="icon" aria-hidden="true">
+				<span class="docon docon-circle-addition"></span>
+			</span>
+			<span class="plan-status">Add to Plans</span>
+		</button>
+	 
+					  
+				</div>
+			</details>
+		</div>
+	
+			</div>
+		</div>
+	 
+					<div data-page-content class=""><section id="course-hero" class="hero hero-sm hero-image background-color-body-accent gradient-border-right gradient-border-body-accent margin-bottom-lg" style="
+		--hero-background-image-light: url('/training/media/training/hero/training_hero_300px_light.png');
+		--hero-background-image-dark: url('/training/media/training/hero/training_hero_300px_dark.png');
+	">
+	<div class="hero-content">
+		<div class="margin-right-xs-tablet margin-bottom-xs">
+			<figure class="image is-64x64">
+				<img role="presentation" class="object-fit-contain" src="
+							/media/learn/certification/course.svg
+" alt="" data-linktype="relative-path">
+			</figure>
+		</div>
+		<div>
+			<p class="supertitle is-spaced font-size-sm letter-spacing-wide is-uppercase margin-bottom-xxs">
+				Course
+			</p>
+			<h1 class="title is-2 is-responsive margin-bottom-xs">Develop AI apps and agents on Azure</h1>
+					<p class="color-text-subtle font-size-lg margin-bottom-xs">
+						Course AI-103T00-A: Develop AI apps and agents on Azure
+					</p>
+			<div class="buttons">
+					<a data-bi-name="get-started-self-directed-learning" class="button button-filled button-primary" href="#course-syllabus" data-linktype="self-bookmark">
+						Get started with self-directed learning
+					</a>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="modular-content-container padding-inline-xs margin-bottom-lg">
+<div id="at-a-glance" class="padding-sm background-color-body-medium border-radius-lg">
+	<h2 class="title is-4 gradient-text-purple-blue display-inline-block has-line-height-reset">
+		At a glance
+	</h2>
+	<ul class="columns is-multiline">
+<li class=" column is-half">
+	<div class="media">
+		<div class="media-left">
+			<span class="icon">
+				<span class="docon docon-dial-shape1" aria-hidden="true"></span>
+			</span>
+		</div>
+		<div class="media-content">
+			<p class="list-label is-capitalized font-weight-semibold">
+				Level
+			</p>
+			<div class="list-container is-comma-delimited ">
+
+							<a class="browse-page-link" href="/en-us/training/browse/?levels=intermediate&amp;resource_type=course" data-linktype="absolute-path">Intermediate</a>
+
+
+			</div>
+		</div>
+	</div>
+</li>
+<li class=" column is-half">
+	<div class="media">
+		<div class="media-left">
+			<span class="icon">
+				<span class="docon docon-product" aria-hidden="true"></span>
+			</span>
+		</div>
+		<div class="media-content">
+			<p class="list-label is-capitalized font-weight-semibold">
+				Product
+			</p>
+			<div class="list-container is-comma-delimited ">
+
+							<a class="browse-page-link" href="/en-us/training/browse/?products=azure&amp;resource_type=course" data-linktype="absolute-path">Azure</a>
+
+
+							<a class="browse-page-link" href="/en-us/training/browse/?products=microsoft-foundry&amp;resource_type=course" data-linktype="absolute-path">Microsoft Foundry</a>
+
+
+			</div>
+		</div>
+	</div>
+</li>
+<li class=" column is-half">
+	<div class="media">
+		<div class="media-left">
+			<span class="icon">
+				<span class="docon docon-contact" aria-hidden="true"></span>
+			</span>
+		</div>
+		<div class="media-content">
+			<p class="list-label is-capitalized font-weight-semibold">
+				Role
+			</p>
+			<div class="list-container is-comma-delimited ">
+
+							<a class="browse-page-link" href="/en-us/training/browse/?roles=ai-engineer&amp;resource_type=course" data-linktype="absolute-path">AI Engineer</a>
+
+
+							<a class="browse-page-link" href="/en-us/training/browse/?roles=developer&amp;resource_type=course" data-linktype="absolute-path">Developer</a>
+
+
+			</div>
+		</div>
+	</div>
+</li>
+<li data-test-id="subject-link-list-item" class=" column is-half">
+	<div class="media">
+		<div class="media-left">
+			<span class="icon">
+				<span class="docon docon-text-document" aria-hidden="true"></span>
+			</span>
+		</div>
+		<div class="media-content">
+			<p class="list-label is-capitalized font-weight-semibold">
+				Subject
+			</p>
+			<div class="list-container is-comma-delimited ">
+
+							<a class="browse-page-link" href="/en-us/training/browse/?subjects=artificial-intelligence&amp;resource_type=course" data-linktype="absolute-path">Artificial intelligence</a>
+
+
+			</div>
+		</div>
+	</div>
+</li>
+<li class=" column is-half">
+	<div class="media">
+		<div class="media-left">
+			<span class="icon">
+				<span class="docon docon-localize-language" aria-hidden="true"></span>
+			</span>
+		</div>
+		<div class="media-content">
+			<p class="list-label is-capitalized font-weight-semibold">
+				Languages
+			</p>
+			<div class="list-container is-comma-delimited ">
+
+
+							<span class="browse-page-link">English</span>
+
+
+							<span class="browse-page-link">Arabic</span>
+
+
+							<span class="browse-page-link">Chinese (Simplified)</span>
+
+
+							<span class="browse-page-link">Chinese (Traditional)</span>
+
+
+							<span class="browse-page-link">French</span>
+
+
+							<span class="browse-page-link">German</span>
+
+
+							<span class="browse-page-link">Indonesian</span>
+
+
+							<span class="browse-page-link">Italian</span>
+
+
+							<span class="browse-page-link">Japanese</span>
+
+
+							<span class="browse-page-link">Korean</span>
+
+
+							<span class="browse-page-link">Portuguese (Brazil)</span>
+
+
+							<span class="browse-page-link">Spanish</span>
+
+			</div>
+		</div>
+	</div>
+</li>
+<li class=" column is-half">
+	<div class="media">
+		<div class="media-left">
+			<span class="icon">
+				<span class="docon docon-clock" aria-hidden="true"></span>
+			</span>
+		</div>
+		<div class="media-content">
+			<p class="list-label is-capitalized font-weight-semibold">
+				Course Duration
+			</p>
+			<div class="list-container is-comma-delimited ">
+
+
+							<span class="">4 days</span>
+
+			</div>
+		</div>
+	</div>
+</li>
+<li data-test-id="related-certifications-link-list-item" class=" column is-half">
+	<div class="media">
+		<div class="media-left">
+			<span class="icon">
+				<span class="docon docon-code-notebook" aria-hidden="true"></span>
+			</span>
+		</div>
+		<div class="media-content">
+			<p class="list-label is-capitalized font-weight-semibold">
+				Related certifications
+			</p>
+			<div class="list-container is-comma-delimited ">
+
+
+
+							<span class="">
+								<a href="/en-us/credentials/certifications/azure-ai-apps-and-agents-developer-associate/" data-linktype="absolute-path">Microsoft Certified: Azure AI Apps and Agents Developer Associate</a>
+							</span>
+			</div>
+		</div>
+	</div>
+</li>
+	</ul>
+</div>
+<div id="partner-and-code-container" class="text-align-center padding-block-md background-color-secondary-light" hidden="">
+	<div id="request-code-achievement-container" hidden="">
+		<p class="margin-bottom-xxs"><strong>Achievement Code</strong></p>
+		<p class="margin-bottom-xs">Would you like to request an achievement code?</p>
+		<button class="button button-clear button-sm border" data-bi-name="request-achievement-code" data-show-modal="">Request achievement code</button>
+	</div>
+</div>
+</section>
+<section class="modular-content-container padding-inline-xs margin-bottom-lg">
+	<h2 class="margin-bottom-xxs font-size-h3 gradient-text-purple-blue display-inline-block">Overview</h2>
+	<div class="content"><p>This course&nbsp;is intended for software developers wanting to build AI infused
+applications that leverage Microsoft&nbsp;Foundry.&nbsp;Topics
+in this course include developing generative AI apps, building AI agents, and
+solutions that implement knowledge connections or tools in your agentic
+applications. This course also covers multimodal capabilities and understanding of complex content.</p>
+<h4 id="audience-profile">Audience Profile</h4>
+<p>This course was designed for software engineers concerned with
+building, managing and deploying AI solutions that leverage Microsoft Foundry.
+They are familiar with&nbsp;Python and have knowledge on using APIs and SDKs to
+build agents and generative AI&nbsp;solutions on Azure.</p>
+</div>
+</section>
+	<div id="skill-badge-list-container">
+		<div class="modular-content-container padding-inline-xs margin-bottom-lg">
+<div id="skill-badge-list-section">
+	<h3 class="title is-5">Skills earned upon completion</h3>
+	<ul id="skill-badge-list">
+		<li class="display-inline">
+			<a class="button button-sm line-clamp-1 display-inline-block-tablet is-loading" href="#" data-linktype="self-bookmark">
+				<span>Loading...</span>
+			</a>
+		</li>
+		<li class="display-inline">
+			<a class="button button-sm line-clamp-1 display-inline-block-tablet is-loading" href="#" data-linktype="self-bookmark">
+				<span>Loading...</span>
+			</a>
+		</li>
+		<li class="display-inline">
+			<a class="button button-sm line-clamp-1 display-inline-block-tablet is-loading" href="#" data-linktype="self-bookmark">
+				<span>Loading...</span>
+			</a>
+		</li>
+	</ul>
+</div>
+		</div>
+	</div>
+	<section id="course-syllabus" class="modular-content-container padding-inline-xs margin-bottom-lg">
+		<h2 class="margin-bottom-xxs font-size-h3 gradient-text-purple-blue display-inline-block">Course Syllabus</h2>
+		<p>You can prepare in instructor-led training or self-paced study</p>
+<div id="study-guide">
+	<div class="level margin-none padding-bottom-sm">
+		<div class="level-left margin-none padding-none">
+			<div class="level-item flex-shrink-1 justify-content-flex-start has-line-height-reset">
+				
+			</div>
+		</div>
+		<div class="level-right authenticated margin-top-xxs margin-top-none-tablet">
+			<div class="level-item justify-content-flex-start">
+				<label id="hide-completed-study-guide-label" class="checkbox checkbox-sm is-hidden authenticated">
+					<input id="study-guide-section-hide-completed" type="checkbox">
+					<span class="checkbox-check" role="presentation"></span>
+					<span class="checkbox-text font-weight-semibold">Hide completed</span>
+				</label>
+			</div>
+		</div>
+	</div>
+	<div class="padding-bottom-none margin-bottom-xxs">
+		<ul id="study-guide-list" aria-live="polite" aria-relevant="additions" data-learn-type="path" class="grid is-horizontal margin-left-none">
+			<li class="grid-item margin-bottom-sm ">
+				<article class="card border-color-accent border-left-lg has-loading-skeleton" aria-label="Learning Paths" data-learn-uid="learn.wwl.develop-generative-ai-apps">
+					<div class="card-template">
+						<p class="card-supertitle"></p>
+						<button class="card-title link-button"></button>
+						<img aria-hidden="true" class="card-template-icon" src="">
+						<div class="card-template-detail">
+							<ul class="card-content-metadata margin-top-xxs has-bullets" id="">
+								<li class="margin-bottom-none margin-bottom-xxs-tablet">
+								</li>
+							</ul>
+							<ul class="metadata page-metadata font-size-xs" id="learn.wwl.develop-generative-ai-apps_tags">
+								<li></li>
+								<li></li>
+								<li></li>
+							</ul>
+						</div>
+						<p class="margin-top-xxs">
+							<button class="start-learn-path button button-sm button-primary button-filled" data-bi-name="study-guide-start">
+								<span>Start course</span>
+							</button>
+						</p>
+					</div>
+					<div class="card-footer">
+						<div class="card-footer-item is-hidden">
+							<progress class="progress-bar progress-bar-success" value="0" max="100"></progress><span class="progress-label"></span>
+						</div>
+						<div class="card-footer-item">
+							<div class="buttons">
+								<button class="button button-clear button-sm"></button>
+								<button class="button button-primary button-filled button-sm" type="button"></button>
+							</div>
+						</div>
+					</div>
+				</article>
+			</li>
+			<li class="grid-item margin-bottom-sm ">
+				<article class="card border-color-accent border-left-lg has-loading-skeleton" aria-label="Learning Paths" data-learn-uid="learn.wwl.develop-ai-agents-azure">
+					<div class="card-template">
+						<p class="card-supertitle"></p>
+						<button class="card-title link-button"></button>
+						<img aria-hidden="true" class="card-template-icon" src="">
+						<div class="card-template-detail">
+							<ul class="card-content-metadata margin-top-xxs has-bullets" id="">
+								<li class="margin-bottom-none margin-bottom-xxs-tablet">
+								</li>
+							</ul>
+							<ul class="metadata page-metadata font-size-xs" id="learn.wwl.develop-ai-agents-azure_tags">
+								<li></li>
+								<li></li>
+								<li></li>
+							</ul>
+						</div>
+						<p class="margin-top-xxs">
+							<button class="start-learn-path button button-sm button-primary button-filled" data-bi-name="study-guide-start">
+								<span>Start course</span>
+							</button>
+						</p>
+					</div>
+					<div class="card-footer">
+						<div class="card-footer-item is-hidden">
+							<progress class="progress-bar progress-bar-success" value="0" max="100"></progress><span class="progress-label"></span>
+						</div>
+						<div class="card-footer-item">
+							<div class="buttons">
+								<button class="button button-clear button-sm"></button>
+								<button class="button button-primary button-filled button-sm" type="button"></button>
+							</div>
+						</div>
+					</div>
+				</article>
+			</li>
+			<li class="grid-item margin-bottom-sm ">
+				<article class="card border-color-accent border-left-lg has-loading-skeleton" aria-label="Learning Paths" data-learn-uid="learn.wwl.develop-language-solutions-azure-ai">
+					<div class="card-template">
+						<p class="card-supertitle"></p>
+						<button class="card-title link-button"></button>
+						<img aria-hidden="true" class="card-template-icon" src="">
+						<div class="card-template-detail">
+							<ul class="card-content-metadata margin-top-xxs has-bullets" id="">
+								<li class="margin-bottom-none margin-bottom-xxs-tablet">
+								</li>
+							</ul>
+							<ul class="metadata page-metadata font-size-xs" id="learn.wwl.develop-language-solutions-azure-ai_tags">
+								<li></li>
+								<li></li>
+								<li></li>
+							</ul>
+						</div>
+						<p class="margin-top-xxs">
+							<button class="start-learn-path button button-sm button-primary button-filled" data-bi-name="study-guide-start">
+								<span>Start course</span>
+							</button>
+						</p>
+					</div>
+					<div class="card-footer">
+						<div class="card-footer-item is-hidden">
+							<progress class="progress-bar progress-bar-success" value="0" max="100"></progress><span class="progress-label"></span>
+						</div>
+						<div class="card-footer-item">
+							<div class="buttons">
+								<button class="button button-clear button-sm"></button>
+								<button class="button button-primary button-filled button-sm" type="button"></button>
+							</div>
+						</div>
+					</div>
+				</article>
+			</li>
+			<li class="grid-item margin-bottom-sm ">
+				<article class="card border-color-accent border-left-lg has-loading-skeleton" aria-label="Learning Paths" data-learn-uid="learn.extract-insights-visual-data-azure">
+					<div class="card-template">
+						<p class="card-supertitle"></p>
+						<button class="card-title link-button"></button>
+						<img aria-hidden="true" class="card-template-icon" src="">
+						<div class="card-template-detail">
+							<ul class="card-content-metadata margin-top-xxs has-bullets" id="">
+								<li class="margin-bottom-none margin-bottom-xxs-tablet">
+								</li>
+							</ul>
+							<ul class="metadata page-metadata font-size-xs" id="learn.extract-insights-visual-data-azure_tags">
+								<li></li>
+								<li></li>
+								<li></li>
+							</ul>
+						</div>
+						<p class="margin-top-xxs">
+							<button class="start-learn-path button button-sm button-primary button-filled" data-bi-name="study-guide-start">
+								<span>Start course</span>
+							</button>
+						</p>
+					</div>
+					<div class="card-footer">
+						<div class="card-footer-item is-hidden">
+							<progress class="progress-bar progress-bar-success" value="0" max="100"></progress><span class="progress-label"></span>
+						</div>
+						<div class="card-footer-item">
+							<div class="buttons">
+								<button class="button button-clear button-sm"></button>
+								<button class="button button-primary button-filled button-sm" type="button"></button>
+							</div>
+						</div>
+					</div>
+				</article>
+			</li>
+		</ul>
+	</div>
+	
+</div>
+	</section>
+</div>
+					
+				</div>
+				
+			</div>
+		
+				</main>
+				  <div class="layout-body-footer " data-bi-name="layout-footer">
+		<footer
+			id="footer"
+			data-test-id="footer"
+			data-bi-name="footer"
+			class="footer-layout padding-xs padding-sm-desktop has-default-focus border-top"
+			role="contentinfo"
+		>
+			<div class="display-flex gap-xs flex-wrap-wrap is-full-height padding-right-lg-desktop">
+				
+		<a
+			data-mscc-ic="false"
+			href="#"
+			data-bi-name="select-locale"
+			class="locale-selector-link flex-shrink-0 button button-sm button-clear external-link-indicator"
+			id=""
+			title=""
+			><span class="icon" aria-hidden="true"
+				><span class="docon docon-world"></span></span
+			><span class="local-selector-link-text">en-us</span></a
+		>
+	 <div class="ccpa-privacy-link" data-ccpa-privacy-link hidden>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://aka.ms/yourcaliforniaprivacychoices"
+			data-bi-name="your-privacy-choices"
+			class="button button-sm button-clear flex-shrink-0 external-link-indicator"
+			id=""
+			title=""
+			>
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			viewBox="0 0 30 14"
+			xml:space="preserve"
+			height="16"
+			width="43"
+			aria-hidden="true"
+			focusable="false"
+		>
+			<path
+				d="M7.4 12.8h6.8l3.1-11.6H7.4C4.2 1.2 1.6 3.8 1.6 7s2.6 5.8 5.8 5.8z"
+				style="fill-rule:evenodd;clip-rule:evenodd;fill:#fff"
+			></path>
+			<path
+				d="M22.6 0H7.4c-3.9 0-7 3.1-7 7s3.1 7 7 7h15.2c3.9 0 7-3.1 7-7s-3.2-7-7-7zm-21 7c0-3.2 2.6-5.8 5.8-5.8h9.9l-3.1 11.6H7.4c-3.2 0-5.8-2.6-5.8-5.8z"
+				style="fill-rule:evenodd;clip-rule:evenodd;fill:#06f"
+			></path>
+			<path
+				d="M24.6 4c.2.2.2.6 0 .8L22.5 7l2.2 2.2c.2.2.2.6 0 .8-.2.2-.6.2-.8 0l-2.2-2.2-2.2 2.2c-.2.2-.6.2-.8 0-.2-.2-.2-.6 0-.8L20.8 7l-2.2-2.2c-.2-.2-.2-.6 0-.8.2-.2.6-.2.8 0l2.2 2.2L23.8 4c.2-.2.6-.2.8 0z"
+				style="fill:#fff"
+			></path>
+			<path
+				d="M12.7 4.1c.2.2.3.6.1.8L8.6 9.8c-.1.1-.2.2-.3.2-.2.1-.5.1-.7-.1L5.4 7.7c-.2-.2-.2-.6 0-.8.2-.2.6-.2.8 0L8 8.6l3.8-4.5c.2-.2.6-.2.9 0z"
+				style="fill:#06f"
+			></path>
+		</svg>
+	
+			<span>Your Privacy Choices</span></a
+		>
+	
+	</div>
+				<div class="flex-shrink-0">
+		<div class="dropdown has-caret-up">
+			<button
+				data-test-id="theme-selector-button"
+				class="dropdown-trigger button button-clear button-sm inner-focus theme-dropdown-trigger"
+				aria-controls="{{ themeMenuId }}"
+				aria-haspopup="true"
+				aria-expanded="false"
+				data-bi-name="theme"
+			>
+				<span class="icon" aria-hidden="true"><span class="docon docon-sun"></span></span>
+				<span>Theme</span>
+				<span class="icon expanded-indicator" aria-hidden="true">
+					<span class="docon docon-chevron-down-light"></span>
+				</span>
+			</button>
+			<div class="dropdown-menu" id="{{ themeMenuId }}" role="menu">
+				<ul class="theme-selector padding-xxs" data-test-id="theme-dropdown-menu" role="none">
+					<li class="theme display-block" role="none">
+						<button
+							class="button button-clear button-sm theme-control button-block justify-content-flex-start text-align-left"
+							role="menuitemradio"
+							aria-checked="false"
+							data-theme-to="light"
+							tabindex="-1"
+						>
+							<span class="theme-light margin-right-xxs">
+								<span
+									class="theme-selector-icon border display-inline-block has-body-background"
+									aria-hidden="true"
+								>
+									<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+										<rect width="22" height="14" class="has-fill-body-background" />
+										<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+										<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+										<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+										<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+										<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+										<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+										<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+									</svg>
+								</span>
+							</span>
+							<span> Light </span>
+						</button>
+					</li>
+					<li class="theme display-block" role="none">
+						<button
+							class="button button-clear button-sm theme-control button-block justify-content-flex-start text-align-left"
+							role="menuitemradio"
+							aria-checked="false"
+							data-theme-to="dark"
+							tabindex="-1"
+						>
+							<span class="theme-dark margin-right-xxs">
+								<span
+									class="border theme-selector-icon display-inline-block has-body-background"
+									aria-hidden="true"
+								>
+									<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+										<rect width="22" height="14" class="has-fill-body-background" />
+										<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+										<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+										<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+										<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+										<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+										<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+										<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+									</svg>
+								</span>
+							</span>
+							<span> Dark </span>
+						</button>
+					</li>
+					<li class="theme display-block" role="none">
+						<button
+							class="button button-clear button-sm theme-control button-block justify-content-flex-start text-align-left"
+							role="menuitemradio"
+							aria-checked="false"
+							data-theme-to="high-contrast"
+							tabindex="-1"
+						>
+							<span class="theme-high-contrast margin-right-xxs">
+								<span
+									class="border theme-selector-icon display-inline-block has-body-background"
+									aria-hidden="true"
+								>
+									<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+										<rect width="22" height="14" class="has-fill-body-background" />
+										<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+										<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+										<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+										<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+										<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+										<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+										<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+									</svg>
+								</span>
+							</span>
+							<span> High contrast </span>
+						</button>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+			</div>
+			<ul class="links" data-bi-name="footerlinks">
+				<li class="manage-cookies-holder" hidden=""></li>
+				<li>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://learn.microsoft.com/en-us/principles-for-ai-generated-content"
+			data-bi-name="aiDisclaimer"
+			class=" external-link-indicator"
+			id=""
+			title=""
+			>AI Disclaimer</a
+		>
+	
+	</li><li>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://learn.microsoft.com/en-us/previous-versions/"
+			data-bi-name="archivelink"
+			class=" external-link-indicator"
+			id=""
+			title=""
+			>Previous Versions</a
+		>
+	
+	</li> <li>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://techcommunity.microsoft.com/t5/microsoft-learn-blog/bg-p/MicrosoftLearnBlog"
+			data-bi-name="bloglink"
+			class=" external-link-indicator"
+			id=""
+			title=""
+			>Blog</a
+		>
+	
+	</li> <li>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://learn.microsoft.com/en-us/contribute"
+			data-bi-name="contributorGuide"
+			class=" external-link-indicator"
+			id=""
+			title=""
+			>Contribute</a
+		>
+	
+	</li><li>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://go.microsoft.com/fwlink/?LinkId=521839"
+			data-bi-name="privacy"
+			class=" external-link-indicator"
+			id=""
+			title=""
+			>Privacy</a
+		>
+	
+	</li><li>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://go.microsoft.com/fwlink/?linkid=2259814"
+			data-bi-name="consumer-health-privacy"
+			class=" external-link-indicator"
+			id=""
+			title=""
+			>Consumer Health Privacy</a
+		>
+	
+	</li><li>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://learn.microsoft.com/en-us/legal/termsofuse"
+			data-bi-name="termsofuse"
+			class=" external-link-indicator"
+			id=""
+			title=""
+			>Terms of Use</a
+		>
+	
+	</li><li>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://www.microsoft.com/legal/intellectualproperty/Trademarks/"
+			data-bi-name="trademarks"
+			class=" external-link-indicator"
+			id=""
+			title=""
+			>Trademarks</a
+		>
+	
+	</li>
+				<li>&copy; Microsoft 2026</li>
+			</ul>
+		</footer>
+	</footer>
+			</body>
+		</html>

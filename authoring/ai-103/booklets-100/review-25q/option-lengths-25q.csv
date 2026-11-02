@@ -1,0 +1,21 @@
+item,format,keyed,len_A,len_B,len_C,len_D,len_E,longest,keyed_is_longest,keyed_rank_by_length,keyed_margin_vs_longest_other_pct
+Q1,single,C,71,86,119,96,,C,yes,1,24
+Q2,single,A,170,114,100,109,,A,yes,1,49
+Q3,single,B,15,18,21,15,,C,no,2,-14
+Q4,single,D,91,116,123,135,,D,yes,1,10
+Q6,single,C,85,95,90,100,,D,no,3,-10
+Q7,single,A,25,17,24,12,,A,yes,1,4
+Q8,single,D,82,127,98,129,,D,yes,1,2
+Q9,single,B,93,136,106,132,,B,yes,1,3
+Q10,single,C,88,105,73,88,,B,no,4,-30
+Q11,single,D,46,74,78,147,,D,yes,1,88
+Q12,single,A,77,65,103,60,,C,no,2,-25
+Q13,single,C,54,55,95,58,,C,yes,1,64
+Q14,single,B,74,130,75,69,,B,yes,1,73
+Q15,single,D,84,86,85,148,,D,yes,1,72
+Q16,multi (2 of 5),B+E,109,105,81,88,96,A,no,2+3,
+Q17,multi (2 of 5),A+D,78,87,66,83,86,B,no,4+3,
+Q18,multi (2 of 5),B+E,89,90,51,95,58,D,no,2+4,
+Q19,multi (2 of 5),A+C,105,84,86,79,83,A,yes,1+2,
+Q20,multi (2 of 5),B+D,83,76,62,122,109,D,yes,4+1,
+Q25,single,B,67,103,98,102,,B,yes,1,1

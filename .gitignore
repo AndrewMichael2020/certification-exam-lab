@@ -4,3 +4,12 @@ dist/
 data/exams/*.json
 !data/exams/exams.json
 data/attempts/*.json
+.local-ci/
+playwright-report/
+data/packs/
+data/.write-lock
+
+.DS_Store
+__pycache__/
+*.py[cod]
+test-results/

@@ -1,0 +1,282 @@
+{
+  "schemaVersion": 1,
+  "packRef": {
+    "id": "ai-103",
+    "version": "1.1.0"
+  },
+  "parentObjectiveId": "AI103-D1",
+  "title": "Apply language model text analysis",
+  "state": "evidence-packet-only; no questions",
+  "allowedObjectiveIds": [
+    "AI103-D1.01",
+    "AI103-D1.02",
+    "AI103-D1.03",
+    "AI103-D1.04"
+  ],
+  "allowedScope": [
+    {
+      "objectiveId": "AI103-D1.01",
+      "claims": [
+        "F030A",
+        "F037A",
+        "F037B"
+      ],
+      "choice": "Choose supported NER/PII tools for their defined tasks and schema-constrained generation for domain extraction/summaries.",
+      "configuration": "Define entity/output schema and instructions; use strict supported JSON Schema with required/null fields; validate semantic accuracy separately.",
+      "comparison": "Valid JSON can still omit required semantics; generic JSON mode does not guarantee the application schema.",
+      "judgment": "For a compliance record, specify explicit fields and evidence locations rather than asking only for a paragraph summary."
+    },
+    {
+      "objectiveId": "AI103-D1.02",
+      "claims": [
+        "F030A",
+        "F015A",
+        "F048A"
+      ],
+      "choice": "Distinguish sentiment/tone interpretation, PII/sensitive data detection, and harmful-content classification.",
+      "configuration": "Choose the corresponding tool/model and configure output categories/thresholds; review legacy status for existing Language sentiment integrations.",
+      "comparison": "Negative customer sentiment is not automatically harmful content, and a safety pass does not mean PII is absent.",
+      "judgment": "An angry but legitimate support message may need sentiment routing and PII redaction without being rejected as disallowed content."
+    },
+    {
+      "objectiveId": "AI103-D1.03",
+      "claims": [
+        "F032A",
+        "F037A"
+      ],
+      "choice": "Use Translator for documented translation modes and customizable terminology; use an LLM flow only with evaluated task-specific instructions.",
+      "configuration": "Select text versus document mode, source/target language, supported customization, and output validation; retain terminology and source context.",
+      "comparison": "Text, synchronous-document and asynchronous-document translation differ in input, formatting and storage; a generic LLM rewrite can alter required terminology.",
+      "judgment": "For a batch of documents with domain terminology, use an eligible document/custom translation workflow rather than assuming a generic chat reply preserves structure and vocabulary."
+    },
+    {
+      "objectiveId": "AI103-D1.04",
+      "claims": [
+        "F037A",
+        "F037B",
+        "F047A",
+        "F031A"
+      ],
+      "choice": "Define domain-specific instructions, examples, schema, and grounding for compliance summarization/extraction.",
+      "configuration": "Check model compatibility; require citations/evidence locations and supported output fields; evaluate representative domain cases and keep retirement context visible.",
+      "comparison": "A model-authored summary is not a legal/compliance determination; strict format alone does not prove correctness.",
+      "judgment": "For a clause summary, constrain extraction to supplied text and preserve clause references for review."
+    }
+  ],
+  "excludedObjectives": [],
+  "evidence": [
+    {
+      "claimId": "F015A",
+      "statement": "Agent guardrails can scan user input, tool calls, tool responses, and final output; agent controls and tool intervention points are preview in this capture.",
+      "sourceId": "S015",
+      "sourceUrl": "https://learn.microsoft.com/azure/foundry/guardrails/guardrails-overview",
+      "versionContext": "Agent guardrails/tool boundaries preview; severity adjective conflict recorded",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S015.md",
+          "lineStart": 2,
+          "lineEnd": 5,
+          "heading": "# Guardrails and controls overview in Microsoft Foundry",
+          "needle": "Agent guardrails are in preview",
+          "excerpt": "\nMicrosoft Foundry provides safety and security guardrails that you can apply to core models and agents. Agent guardrails are in preview. Guardrails consist of a set of controls. The controls define a risk to be detected, intervention points to scan for the risk, and the response action to take in the model or agent when the risk is detected.\n\nA **guardrail** is a named collection of **controls**. Variations in API configurations and application design might affect completions and thus filtering behavior.",
+          "sourceSha256": "8bff59568b79380dc2ea6df819b965422c98fdf03bf6b06df0b99bc1287e4c54"
+        },
+        {
+          "snapshot": "sources/snapshots/S015.md",
+          "lineStart": 9,
+          "lineEnd": 12,
+          "heading": "# Guardrails and controls overview in Microsoft Foundry",
+          "needle": "**Tool call** (Preview)",
+          "excerpt": "- **User input** — The prompt sent to a model or agent.\n- **Tool call** (Preview) — The action and data the agent proposes to send to a tool. Agents only.\n- **Tool response** (Preview) — The content returned from a tool to the agent. Agents only.\n- **Output** — The final completion returned to the user.",
+          "sourceSha256": "8bff59568b79380dc2ea6df819b965422c98fdf03bf6b06df0b99bc1287e4c54"
+        },
+        {
+          "snapshot": "sources/snapshots/S015.md",
+          "lineStart": 11,
+          "lineEnd": 14,
+          "heading": "# Guardrails and controls overview in Microsoft Foundry",
+          "needle": "**Output**",
+          "excerpt": "- **Tool response** (Preview) — The content returned from a tool to the agent. Agents only.\n- **Output** — The final completion returned to the user.\n\nFor more information about intervention points, see [Intervention points and controls](intervention-points).",
+          "sourceSha256": "8bff59568b79380dc2ea6df819b965422c98fdf03bf6b06df0b99bc1287e4c54"
+        }
+      ]
+    },
+    {
+      "claimId": "F030A",
+      "statement": "The captured Language overview distinguishes core NER, PII, language detection, and health analysis from supported legacy features such as sentiment and summarization.",
+      "sourceId": "S030",
+      "sourceUrl": "https://learn.microsoft.com/azure/ai-services/language-service/overview",
+      "versionContext": "Core/legacy features separated",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S030.md",
+          "lineStart": 67,
+          "lineEnd": 70,
+          "heading": "## Legacy capabilities",
+          "needle": "## Legacy capabilities",
+          "excerpt": "\n## Legacy capabilities\n\n**Supported for existing implementations**",
+          "sourceSha256": "debd3c5f132c72a0d258daa4d82d950834da5b4c89e3b42b20cf32982a169e1d"
+        }
+      ]
+    },
+    {
+      "claimId": "F031A",
+      "statement": "Language summarization is still documented but scheduled to retire March 31, 2029; current new-project guidance favors Foundry models.",
+      "sourceId": "S031",
+      "sourceUrl": "https://learn.microsoft.com/azure/ai-services/language-service/summarization/overview",
+      "versionContext": "Summarization retires Mar31,2029; document summary preview",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S031.md",
+          "lineStart": 4,
+          "lineEnd": 7,
+          "heading": "# What is summarization?",
+          "needle": "Summarization retires from Azure Language",
+          "excerpt": "\nSummarization retires from Azure Language on **March 31, 2029**. To avoid production disruption, migrate existing workloads and direct all new projects to [Microsoft Foundry](../../../foundry/concepts/foundry-models-overview), which offers enhanced capabilities for natural language understanding and can be easily integrated into your applications. For guidance, see [**Transitioning from Azure Language features to Foundry models**](https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/transitioning-from-azure-language-features-to-foundry-models/4524092).\n\nSummarization is a feature offered by [Azure Language in Foundry Tools](../overview), a combination of generative Large Language models and task-optimized encoder models that offer summarization solutions with higher quality, cost efficiency, and lower latency. Use this article to learn more about this feature, and how to use it in your applications.",
+          "sourceSha256": "2ce54fde2b84248210dcae4d3c5703d0a09a7ab87e8b3ca97cd7e786c37bb6a0"
+        }
+      ]
+    },
+    {
+      "claimId": "F032A",
+      "statement": "Translator supports text translation, synchronous/asynchronous document modes, adaptive custom translation and custom terminology/model workflows.",
+      "sourceId": "S032",
+      "sourceUrl": "https://learn.microsoft.com/azure/ai-services/translator/overview",
+      "versionContext": "Translator v3 and2026-06-06GA; document sync/async differ",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S032.md",
+          "lineStart": 12,
+          "lineEnd": 16,
+          "heading": "## Azure Translator features and development options",
+          "needle": "Document translation (Asynchronous)",
+          "excerpt": "| [**Text translation v3 (GA)**](text-translation/overview) | Execute text translation between supported source and target languages in real time. Create a [dynamic dictionary](dynamic-dictionary) and learn how to [prevent translations](prevent-translation) using the Translator API. | • [**REST API**](text-translation/reference/rest-api-guide)• [**Text translation SDK**](text-sdk-overview)• [**Foundry (classic) portal**](https://ai.azure.com/)• [**Translator container**](containers/translator-how-to-install-container) |\n| [**Document translation (Asynchronous)**](document-translation/overview) | • **Batch translation**: Translate batch and complex files while preserving the structure and format of the original documents. The batch translation process requires an Azure Blob storage account with containers for your source and translated documents. | • [**REST API**](document-translation/latest/rest-api/guide-overview)• [**Document Translation SDK**](document-translation/document-sdk-overview)• [**Translator container**](containers/translator-how-to-install-container) |\n| [**Document translation (Synchronous)**](document-translation/overview) | • **Single file translation**: Translate a single document file alone or with a glossary file while preserving the structure and format of the original document. The file translation process doesn't require an Azure Blob storage account. The final response contains the translated document and is returned directly to the calling client. | • [**REST API**](document-translation/latest/rest-api/guide-overview)• [**Foundry (classic) portal**](https://ai.azure.com/)• [**Translator container**](containers/translator-how-to-install-container) |\n| [**Adaptive custom translation**](custom-translator/azure-ai-foundry/concepts/adaptive-custom-translation) | Upload 5–10,000 prealigned source–target segment pairs (≤500 chars per pair). The service builds a custom bilingual index in minutes to adapt supported LLMs (for example, GPT‑5.1) via [Azure Translator APIs](text-translation/overview). | • [**Adaptive custom translation**](custom-translator/azure-ai-foundry/concepts/adaptive-custom-translation) |\n| [**Custom Translator**](custom-translator/overview) | Build customized models to translate domain- and industry-specific language, terminology, and style. [Create a dictionary (phrase or sentence)](custom-translator/concepts/dictionaries) for custom translations. | • [**Custom Translator portal**](https://portal.customtranslator.azure.ai/) |",
+          "sourceSha256": "5bed84630392d9ef61f1f463299425457e14614de81cefd58f484a680615b0df"
+        },
+        {
+          "snapshot": "sources/snapshots/S032.md",
+          "lineStart": 10,
+          "lineEnd": 16,
+          "heading": "## Azure Translator features and development options",
+          "needle": "Text translation",
+          "excerpt": "| --- | --- | --- |\n| [**Text translation version 2026-06-06 (GA)**](text-translation/overview) | • Azure Translator text translation `2026-06-06` introduces our newest cloud-based, multilingual, neural machine translation service.• Key enhancements include the option to select specified large language models (LLM), adaptive custom translation, and expanded parameters for translation requests.• For more information, *see* the [Migration guide](text-translation/how-to/migrate-to-2026-06-06). | [**REST API**](text-translation/2026-06-06/rest-api-guide) |\n| [**Text translation v3 (GA)**](text-translation/overview) | Execute text translation between supported source and target languages in real time. Create a [dynamic dictionary](dynamic-dictionary) and learn how to [prevent translations](prevent-translation) using the Translator API. | • [**REST API**](text-translation/reference/rest-api-guide)• [**Text translation SDK**](text-sdk-overview)• [**Foundry (classic) portal**](https://ai.azure.com/)• [**Translator container**](containers/translator-how-to-install-container) |\n| [**Document translation (Asynchronous)**](document-translation/overview) | • **Batch translation**: Translate batch and complex files while preserving the structure and format of the original documents. The batch translation process requires an Azure Blob storage account with containers for your source and translated documents. | • [**REST API**](document-translation/latest/rest-api/guide-overview)• [**Document Translation SDK**](document-translation/document-sdk-overview)• [**Translator container**](containers/translator-how-to-install-container) |\n| [**Document translation (Synchronous)**](document-translation/overview) | • **Single file translation**: Translate a single document file alone or with a glossary file while preserving the structure and format of the original document. The file translation process doesn't require an Azure Blob storage account. The final response contains the translated document and is returned directly to the calling client. | • [**REST API**](document-translation/latest/rest-api/guide-overview)• [**Foundry (classic) portal**](https://ai.azure.com/)• [**Translator container**](containers/translator-how-to-install-container) |\n| [**Adaptive custom translation**](custom-translator/azure-ai-foundry/concepts/adaptive-custom-translation) | Upload 5–10,000 prealigned source–target segment pairs (≤500 chars per pair). The service builds a custom bilingual index in minutes to adapt supported LLMs (for example, GPT‑5.1) via [Azure Translator APIs](text-translation/overview). | • [**Adaptive custom translation**](custom-translator/azure-ai-foundry/concepts/adaptive-custom-translation) |\n| [**Custom Translator**](custom-translator/overview) | Build customized models to translate domain- and industry-specific language, terminology, and style. [Create a dictionary (phrase or sentence)](custom-translator/concepts/dictionaries) for custom translations. | • [**Custom Translator portal**](https://portal.customtranslator.azure.ai/) |",
+          "sourceSha256": "5bed84630392d9ef61f1f463299425457e14614de81cefd58f484a680615b0df"
+        },
+        {
+          "snapshot": "sources/snapshots/S032.md",
+          "lineStart": 15,
+          "lineEnd": 18,
+          "heading": "## Azure Translator features and development options",
+          "needle": "Custom Translator",
+          "excerpt": "| [**Adaptive custom translation**](custom-translator/azure-ai-foundry/concepts/adaptive-custom-translation) | Upload 5–10,000 prealigned source–target segment pairs (≤500 chars per pair). The service builds a custom bilingual index in minutes to adapt supported LLMs (for example, GPT‑5.1) via [Azure Translator APIs](text-translation/overview). | • [**Adaptive custom translation**](custom-translator/azure-ai-foundry/concepts/adaptive-custom-translation) |\n| [**Custom Translator**](custom-translator/overview) | Build customized models to translate domain- and industry-specific language, terminology, and style. [Create a dictionary (phrase or sentence)](custom-translator/concepts/dictionaries) for custom translations. | • [**Custom Translator portal**](https://portal.customtranslator.azure.ai/) |\n\nFor detailed information regarding Azure Translator request limits, *see*[**Service and request limits**](service-limits#text-translation).",
+          "sourceSha256": "5bed84630392d9ef61f1f463299425457e14614de81cefd58f484a680615b0df"
+        }
+      ]
+    },
+    {
+      "claimId": "F037A",
+      "statement": "Structured outputs use response_format in Chat Completions and text.format in Responses; older JSON mode guarantees valid JSON without strict schema adherence.",
+      "sourceId": "S037",
+      "sourceUrl": "https://learn.microsoft.com/azure/foundry/openai/how-to/structured-outputs",
+      "versionContext": "Chat Completions response_format versus Responses text.format; strict schema subset",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S037.md",
+          "lineStart": 2,
+          "lineEnd": 5,
+          "heading": "# Structured outputs",
+          "needle": "For Chat Completions, define the schema",
+          "excerpt": "\nStructured outputs make a model follow a [JSON Schema](https://json-schema.org/overview/what-is-jsonschema) definition that you provide as part of your inference API call. Both the Chat Completions API and Responses API support structured outputs. For Chat Completions, define the schema in `response_format`. For Responses, define the schema in `text.format`. This approach contrasts with the older [JSON mode](json-mode) feature, which guaranteed valid JSON but couldn't ensure strict adherence to the supplied schema. Use structured outputs for function calling, extracting structured data, and building complex multi-step workflows.\n\n::: zone pivot=\"programming-language-python\"",
+          "sourceSha256": "0337c89ce3e5a9ba28d1c2fc18f1644c50b13568eb19edc43420d16b401cacfc"
+        },
+        {
+          "snapshot": "sources/snapshots/S037.md",
+          "lineStart": 2,
+          "lineEnd": 5,
+          "heading": "# Structured outputs",
+          "needle": "older [JSON mode]",
+          "excerpt": "\nStructured outputs make a model follow a [JSON Schema](https://json-schema.org/overview/what-is-jsonschema) definition that you provide as part of your inference API call. Both the Chat Completions API and Responses API support structured outputs. For Chat Completions, define the schema in `response_format`. For Responses, define the schema in `text.format`. This approach contrasts with the older [JSON mode](json-mode) feature, which guaranteed valid JSON but couldn't ensure strict adherence to the supplied schema. Use structured outputs for function calling, extracting structured data, and building complex multi-step workflows.\n\n::: zone pivot=\"programming-language-python\"",
+          "sourceSha256": "0337c89ce3e5a9ba28d1c2fc18f1644c50b13568eb19edc43420d16b401cacfc"
+        }
+      ]
+    },
+    {
+      "claimId": "F037B",
+      "statement": "The supported strict JSON Schema subset requires fields and additionalProperties false; optionality is represented using a nullable required field.",
+      "sourceId": "S037",
+      "sourceUrl": "https://learn.microsoft.com/azure/foundry/openai/how-to/structured-outputs",
+      "versionContext": "Chat Completions response_format versus Responses text.format; strict schema subset",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S037.md",
+          "lineStart": 976,
+          "lineEnd": 979,
+          "heading": "### All fields must be required",
+          "needle": "### All fields must be required",
+          "excerpt": "\n### All fields must be required\n\nInclude all fields or function parameters as required. In the following example, both `location` and `unit` appear under `\"required\": [\"location\", \"unit\"]`.",
+          "sourceSha256": "0337c89ce3e5a9ba28d1c2fc18f1644c50b13568eb19edc43420d16b401cacfc"
+        },
+        {
+          "snapshot": "sources/snapshots/S037.md",
+          "lineStart": 1036,
+          "lineEnd": 1039,
+          "heading": "### Always set `additionalProperties: false` in objects",
+          "needle": "### Always set `additionalProperties: false`",
+          "excerpt": "\n### Always set `additionalProperties: false` in objects\n\nThis property controls if an object can have other key value pairs that weren't defined in the JSON Schema. To use structured outputs, set this value to false.",
+          "sourceSha256": "0337c89ce3e5a9ba28d1c2fc18f1644c50b13568eb19edc43420d16b401cacfc"
+        },
+        {
+          "snapshot": "sources/snapshots/S037.md",
+          "lineStart": 1004,
+          "lineEnd": 1014,
+          "heading": "### All fields must be required",
+          "needle": "emulate an optional parameter",
+          "excerpt": "\nIf needed, you can emulate an optional parameter by using a union type with `null`. In this example, this approach is represented by the line `\"type\": [\"string\", \"null\"],`.\n\n```json\n{\n    \"name\": \"get_weather\",\n    \"description\": \"Fetches the weather in the given location\",\n    \"strict\": true,\n    \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {",
+          "sourceSha256": "0337c89ce3e5a9ba28d1c2fc18f1644c50b13568eb19edc43420d16b401cacfc"
+        }
+      ]
+    },
+    {
+      "claimId": "F047A",
+      "statement": "The general prompt-engineering guide explicitly excludes its techniques from reasoning-model recommendations; check the specific model's supported controls.",
+      "sourceId": "S047",
+      "sourceUrl": "https://learn.microsoft.com/azure/foundry/openai/concepts/prompt-engineering",
+      "versionContext": "Feature-specific qualifications in snapshot; package/API version unknown unless stated in a referenced excerpt.",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S047.md",
+          "lineStart": 2,
+          "lineEnd": 5,
+          "heading": "# Prompt engineering techniques",
+          "needle": "aren't recommended for reasoning models",
+          "excerpt": "\nThese techniques aren't recommended for reasoning models like gpt-5 and o-series models.\n\nPrompt construction can be difficult. In practice, the prompt acts to help the model complete the desired task, but it's more of an art than a science, often requiring experience and intuition to craft a successful prompt. The goal of this article is to help get you started with this learning process. This article attempts to capture general concepts and patterns that apply to all GPT models. However, it's important to understand that each model behaves differently, so the learnings might not apply equally to all models.",
+          "sourceSha256": "b4589840f35e640a7d5b7936baa6a05b21af3023e4ec00d3aa471e990ec8fccd"
+        }
+      ]
+    },
+    {
+      "claimId": "F048A",
+      "statement": "Content Safety FAQ documents image/multimodal harm classification but limits Prompt Shields, protected-material checks, and groundedness detection to text.",
+      "sourceId": "S048",
+      "sourceUrl": "https://learn.microsoft.com/en-us/azure/ai-services/content-safety/faq",
+      "versionContext": "Harm moderation image/multimodal; Prompt Shields/protected material/groundedness text-only",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S048.md",
+          "lineStart": 39,
+          "lineEnd": 42,
+          "heading": "### What types of media can Azure AI Content Safety classify/moderate?",
+          "needle": "work with text content only",
+          "excerpt": "\nOur content harm classification models support the moderation of text, images, and multimodal content (images with text + OCR). The protected material, prompt shields, and groundedness detection models work with text content only.\n\n### How are Azure AI Content Safety models priced?",
+          "sourceSha256": "b63f7ce635fdf749b4a5fcb4859aa2e9f6ef5e5bb69ec1ef6b772a3fdec08db9"
+        }
+      ]
+    }
+  ],
+  "constraints": [
+    "Only listed facts with conditions establish answer keys. Cite correct answers and distractor rationales.",
+    "Preserve API/SDK generation, preview, retirement and region/model qualifiers.",
+    "No unshown methods, asserted execution, GH-600 material, dumps, remembered assessments or official format parity.",
+    "Ready is bounded evidence support; later content review and manual solve-first audit are still required."
+  ]
+}

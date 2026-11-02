@@ -1,0 +1,719 @@
+{
+  "canonicalDraftHash": "06b6490c1b4476a934d6301f1a53263b0e941b691ac9febf2e4522411b324c4a",
+  "questions": [
+    {
+      "domainId": "A",
+      "stem": "An interactive assistant may process requests across EU countries but cannot process them outside the EU. Usage varies, and the team wants token-based billing. The model supports all listed types. Which deployment fits?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Data Zone Standard, using EU capacity with token-based charges for interactive requests."
+        },
+        {
+          "id": "B",
+          "text": "Global Standard in an EU resource, relying on the resource region to keep inference processing within the EU."
+        },
+        {
+          "id": "C",
+          "text": "Data Zone Batch, submitting requests to the asynchronous batch queue."
+        },
+        {
+          "id": "D",
+          "text": "Data Zone Provisioned, with EU processing and reserved throughput."
+        }
+      ],
+      "correctAnswer": "A",
+      "difficulty": "easy",
+      "type": "single_choice",
+      "explanation": {
+        "whyCorrect": "Data Zone Standard combines the EU processing boundary with on-demand token billing. Model availability and quota must also be available in the selected deployment.",
+        "whyDistractorsWrong": {
+          "B": "Global processing is not restricted to the EU by the resource location.",
+          "D": "The workload calls for usage-based billing rather than reserved throughput.",
+          "C": "The assistant needs responses during the user interaction."
+        }
+      },
+      "objectiveTags": [
+        "AI103-A2.02"
+      ],
+      "id": "ai103-improvement-r2-set-a-100-q017",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Plan and manage an Azure AI solution",
+      "sourceRefs": [
+        {
+          "sourceId": "S005",
+          "title": "Deployment types for Microsoft Foundry Models",
+          "url": "https://learn.microsoft.com/azure/foundry/foundry-models/concepts/deployment-types",
+          "snapshotSha256": "6c6d5d7b11684c1cbba8d35fd278a313e1420e3853b0ba9f104898c4a8c24c58",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-5",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "A",
+      "stem": "A service has predictable sustained model traffic and needs allocated throughput. Its processing boundary is already satisfied by the chosen region. Which deployment characteristic should drive the selection?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Developer deployment for experimentation with the selected model."
+        },
+        {
+          "id": "B",
+          "text": "Batch processing with deferred completion for groups of requests."
+        },
+        {
+          "id": "C",
+          "text": "Standard token billing with capacity shared across on-demand requests."
+        },
+        {
+          "id": "D",
+          "text": "Provisioned capacity with a throughput commitment."
+        }
+      ],
+      "correctAnswer": "D",
+      "difficulty": "easy",
+      "type": "single_choice",
+      "explanation": {
+        "whyCorrect": "Provisioned deployments allocate throughput under a capacity commitment. Size the commitment using measured workload characteristics rather than equating it with on-demand quota.",
+        "whyDistractorsWrong": {
+          "C": "This does not reserve the planned throughput.",
+          "B": "Deferred completion does not meet a sustained interactive serving need.",
+          "A": "An experimentation deployment does not meet the production capacity requirement."
+        }
+      },
+      "objectiveTags": [
+        "AI103-A2.02"
+      ],
+      "id": "ai103-improvement-r2-set-a-100-q018",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Plan and manage an Azure AI solution",
+      "sourceRefs": [
+        {
+          "sourceId": "S005",
+          "title": "Deployment types for Microsoft Foundry Models",
+          "url": "https://learn.microsoft.com/azure/foundry/foundry-models/concepts/deployment-types",
+          "snapshotSha256": "6c6d5d7b11684c1cbba8d35fd278a313e1420e3853b0ba9f104898c4a8c24c58",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-5",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "A",
+      "stem": "Developers have scoped Foundry RBAC roles, but a shared resource key authenticates the application. A developer can perform an operation that their role excludes. Which change makes the role assignments effective for those calls?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Move the application behind a private endpoint while retaining key authentication."
+        },
+        {
+          "id": "B",
+          "text": "Rotate the shared resource key and continue assigning each developer the same key."
+        },
+        {
+          "id": "C",
+          "text": "Store the shared key in a vault and distribute it to authorized developers."
+        },
+        {
+          "id": "D",
+          "text": "Authenticate with Entra identities carrying the intended scoped roles."
+        }
+      ],
+      "correctAnswer": "D",
+      "difficulty": "easy",
+      "type": "single_choice",
+      "explanation": {
+        "whyCorrect": "Foundry RBAC applies to Microsoft Entra authentication. A resource key grants access outside those individual role restrictions.",
+        "whyDistractorsWrong": {
+          "B": "Rotation does not make a shared key enforce individual RBAC.",
+          "A": "Network isolation does not change the authorization semantics of the key.",
+          "C": "Protecting storage does not apply user-role restrictions to key-authenticated calls."
+        }
+      },
+      "objectiveTags": [
+        "AI103-A3.04"
+      ],
+      "id": "ai103-improvement-r2-set-a-100-q019",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Plan and manage an Azure AI solution",
+      "sourceRefs": [
+        {
+          "sourceId": "S010",
+          "title": "Role-based access control for Microsoft Foundry",
+          "url": "https://learn.microsoft.com/azure/foundry/concepts/rbac-foundry",
+          "snapshotSha256": "c63d1b1d5cb16c4ffbf9019b34ac56ab5e47f81f1457b4e2d7c02a2de16a59f9",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-5",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "A",
+      "stem": "A secured agent has the required runtime roles. Search resolves to a public IP from the agent network even though public access is disabled. The private endpoint exists. What should be investigated next?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Private DNS resolution and links for the agent network."
+        },
+        {
+          "id": "B",
+          "text": "The query-time semantic ranking configuration on the target index."
+        },
+        {
+          "id": "C",
+          "text": "The private endpoint connection approval state for the runtime subnet."
+        },
+        {
+          "id": "D",
+          "text": "The Search role assignments on the identity used by the deployment pipeline."
+        }
+      ],
+      "correctAnswer": "A",
+      "difficulty": "easy",
+      "type": "single_choice",
+      "explanation": {
+        "whyCorrect": "A private endpoint must be reachable through correct DNS resolution and routing from the runtime network. Roles cannot repair resolution to a blocked public endpoint.",
+        "whyDistractorsWrong": {
+          "C": "The stated failure is name resolution to a public address.",
+          "D": "The problem is name resolution from the runtime network.",
+          "B": "Ranking is evaluated after a request reaches Search."
+        }
+      },
+      "objectiveTags": [
+        "AI103-A3.04"
+      ],
+      "id": "ai103-improvement-r2-set-a-100-q020",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Plan and manage an Azure AI solution",
+      "sourceRefs": [
+        {
+          "sourceId": "S011",
+          "title": "Set up private networking for Foundry Agent Service",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/how-to/virtual-networks",
+          "snapshotSha256": "02eb40fb9bc5fcbd6b27249423b2d0ba26f5df0dd6b6885c881270a7a6fac8b9",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-5",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "A",
+      "stem": "A Foundry managed-compute preview deployment needs more accelerators. Matching GPU VM quota is available in the same region. Which quota should the team request?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Request a larger subscription-wide regional vCPU allocation and count that capacity toward the Foundry managed-compute accelerator deployment."
+        },
+        {
+          "id": "B",
+          "text": "An increase to the classic managed-endpoint GPU VM-family quota for that region."
+        },
+        {
+          "id": "C",
+          "text": "Request the regional accelerator-SKU allocation through the Foundry managed-compute quota process."
+        },
+        {
+          "id": "D",
+          "text": "Additional tokens per minute on the serverless language model deployment."
+        }
+      ],
+      "correctAnswer": "C",
+      "difficulty": "easy",
+      "type": "single_choice",
+      "explanation": {
+        "whyCorrect": "Managed-compute preview uses its own quota per accelerator SKU and region. Existing Azure VM quota cannot be applied to it.",
+        "whyDistractorsWrong": {
+          "B": "Classic VM quota is a separate allocation.",
+          "D": "Token quota does not allocate managed-compute accelerators.",
+          "A": "Foundry managed-compute quota is separate from the subscription VM allocation."
+        }
+      },
+      "objectiveTags": [
+        "AI103-A3.01"
+      ],
+      "id": "ai103-improvement-r2-set-a-100-q021",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Plan and manage an Azure AI solution",
+      "sourceRefs": [
+        {
+          "sourceId": "S004",
+          "title": "Deployment overview for Microsoft Foundry Models",
+          "url": "https://learn.microsoft.com/azure/foundry/concepts/deployments-overview",
+          "snapshotSha256": "91520b0f84e6e2823bb27945cb8e25f716440b7680ffc7ea9689d8025f1d080f",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-5",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "A",
+      "stem": "A hosted agent returns session_quota_exceeded. Several sessions no longer need active compute, but their stored state is still required. What should the operator do?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Stop the inactive sessions that are consuming active capacity."
+        },
+        {
+          "id": "B",
+          "text": "Delete the completed sessions together with their stored conversation state."
+        },
+        {
+          "id": "C",
+          "text": "Increase the model deployment’s reserved inference throughput."
+        },
+        {
+          "id": "D",
+          "text": "Increase the tokens-per-minute allocation for the underlying chat model."
+        }
+      ],
+      "correctAnswer": "A",
+      "difficulty": "easy",
+      "type": "single_choice",
+      "explanation": {
+        "whyCorrect": "Stopping sessions that no longer need active compute releases active session capacity while respecting the requirement to retain state.",
+        "whyDistractorsWrong": {
+          "B": "The requirement explicitly preserves the state.",
+          "D": "The reported code concerns sessions, not model tokens.",
+          "C": "Model throughput is separate from active hosted-session capacity."
+        }
+      },
+      "objectiveTags": [
+        "AI103-A3.01"
+      ],
+      "id": "ai103-improvement-r2-set-a-100-q022",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Plan and manage an Azure AI solution",
+      "sourceRefs": [
+        {
+          "sourceId": "S009",
+          "title": "Foundry Agent Service limits, quotas, and regional support",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/concepts/limits-quotas-regions",
+          "snapshotSha256": "d83fd890729d322d4ffa580ca5a8db2bed5bcd783dae47f5da2b05985f4b3041",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-5",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "A",
+      "stem": "A GitHub workflow must deploy a hosted agent with no long-lived Azure credential stored in GitHub. Which identity setup fits the documented deployment pattern?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A client-secret credential copied into GitHub and rotated before each release."
+        },
+        {
+          "id": "B",
+          "text": "A project endpoint variable used as the workflow's authentication credential."
+        },
+        {
+          "id": "C",
+          "text": "Federated OIDC authentication with a scoped deployment identity."
+        },
+        {
+          "id": "D",
+          "text": "The runtime agent identity inferred from the agent name in the workflow file."
+        }
+      ],
+      "correctAnswer": "C",
+      "difficulty": "easy",
+      "type": "single_choice",
+      "explanation": {
+        "whyCorrect": "OIDC federation lets the workflow obtain tokens through a configured trust relationship. The workflow identity still needs the required deployment roles.",
+        "whyDistractorsWrong": {
+          "A": "This still stores a long-lived secret credential.",
+          "D": "A name does not establish workflow federation or deployment permissions.",
+          "B": "The endpoint identifies the service; it does not authenticate the workflow."
+        }
+      },
+      "objectiveTags": [
+        "AI103-A2.04"
+      ],
+      "id": "ai103-improvement-r2-set-a-100-q023",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Plan and manage an Azure AI solution",
+      "sourceRefs": [
+        {
+          "sourceId": "S012",
+          "title": "Quickstart: Hosted agent CI/CD templates",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/quickstarts/set-up-cicd-hosted-agent",
+          "snapshotSha256": "e6e53feb7b84553872c1d228d971a02871b943aa30c877cb5f9402e1cb4797c6",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-5",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "A",
+      "stem": "An agent request traverses retrieval, generation and a business tool. Engineers need to attribute a latency increase to one operation and its parent request. Which telemetry structure supports that?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Timed service events whose correlation key is the service name shared by all requests."
+        },
+        {
+          "id": "B",
+          "text": "Record a structured event for each request containing final text, total elapsed time and the names of every participating service."
+        },
+        {
+          "id": "C",
+          "text": "Export a correlated request trace with timed nested spans for retrieval, generation and the tool call."
+        },
+        {
+          "id": "D",
+          "text": "Independent traces for each operation, each with a newly generated request identifier."
+        }
+      ],
+      "correctAnswer": "C",
+      "difficulty": "easy",
+      "type": "single_choice",
+      "explanation": {
+        "whyCorrect": "Nested spans represent timed operations inside a request trace. Consistent attributes and parent relationships make the slow stage visible.",
+        "whyDistractorsWrong": {
+          "B": "Aggregate request timing and service names do not identify timed nested operations.",
+          "A": "A service name does not connect operations for a particular request.",
+          "D": "Separate identifiers break the shared request hierarchy."
+        }
+      },
+      "objectiveTags": [
+        "AI103-A4.03"
+      ],
+      "id": "ai103-improvement-r2-set-a-100-q024",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Plan and manage an Azure AI solution",
+      "sourceRefs": [
+        {
+          "sourceId": "S013",
+          "title": "Agent tracing overview",
+          "url": "https://learn.microsoft.com/azure/foundry/observability/concepts/trace-agent-concept",
+          "snapshotSha256": "895295a4b74d7cabaa0daf62bd6cd5239daf25b6ea85a2268dc2cdf8483b19e8",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-5",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "A",
+      "stem": "Tool arguments include account numbers and an access token. Engineers need useful traces for incident diagnosis. Which collection policy best fits?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Export full content spans to a restricted workspace, then delete secrets in a nightly job."
+        },
+        {
+          "id": "B",
+          "text": "Store raw access tokens in encrypted span attributes accessible to incident responders."
+        },
+        {
+          "id": "C",
+          "text": "Remove the request and evaluation identifiers while preserving raw tool arguments."
+        },
+        {
+          "id": "D",
+          "text": "Redact sensitive fields before export and preserve safe correlation data."
+        }
+      ],
+      "correctAnswer": "D",
+      "difficulty": "easy",
+      "type": "single_choice",
+      "explanation": {
+        "whyCorrect": "Remove credentials and redact personal data before they enter telemetry. Safe identifiers, timings, access controls and retention policies preserve diagnostic value.",
+        "whyDistractorsWrong": {
+          "A": "Secrets enter telemetry before the deletion job.",
+          "C": "This loses correlation and retains sensitive content.",
+          "B": "Credentials should not be recorded in telemetry."
+        }
+      },
+      "objectiveTags": [
+        "AI103-A4.03"
+      ],
+      "id": "ai103-improvement-r2-set-a-100-q025",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Plan and manage an Azure AI solution",
+      "sourceRefs": [
+        {
+          "sourceId": "S013",
+          "title": "Agent tracing overview",
+          "url": "https://learn.microsoft.com/azure/foundry/observability/concepts/trace-agent-concept",
+          "snapshotSha256": "895295a4b74d7cabaa0daf62bd6cd5239daf25b6ea85a2268dc2cdf8483b19e8",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:45:53Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-5",
+        "validationStatus": "draft"
+      }
+    }
+  ],
+  "caseStudies": [],
+  "evidence": [
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q017",
+      "testedDecision": "An interactive assistant may process requests across EU countries but cannot process them outside the EU. Usage varies, and the team wants token-based billing. The model supports all listed types. Which deployment fits?",
+      "oldItemIds": [
+        "ai103-set-a-q001"
+      ],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-A2.02",
+      "itemRevisionHash": "9fca0d8a7198783b0099f79c8421788bee25dcd04d7face7c3f7b431d3e1831e",
+      "sources": [
+        {
+          "sourceId": "S005",
+          "title": "Deployment types for Microsoft Foundry Models",
+          "url": "https://learn.microsoft.com/azure/foundry/foundry-models/concepts/deployment-types",
+          "snapshotSha256": "6c6d5d7b11684c1cbba8d35fd278a313e1420e3853b0ba9f104898c4a8c24c58",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q018",
+      "testedDecision": "A service has predictable sustained model traffic and needs allocated throughput. Its processing boundary is already satisfied by the chosen region. Which deployment characteristic should drive the selection?",
+      "oldItemIds": [
+        "ai103-set-a-q002"
+      ],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-A2.02",
+      "itemRevisionHash": "fa68d4d8b956448648b6a11f003ac682d9c1a51378c378b262cc80e4cead32a2",
+      "sources": [
+        {
+          "sourceId": "S005",
+          "title": "Deployment types for Microsoft Foundry Models",
+          "url": "https://learn.microsoft.com/azure/foundry/foundry-models/concepts/deployment-types",
+          "snapshotSha256": "6c6d5d7b11684c1cbba8d35fd278a313e1420e3853b0ba9f104898c4a8c24c58",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q019",
+      "testedDecision": "Developers have scoped Foundry RBAC roles, but a shared resource key authenticates the application. A developer can perform an operation that their role excludes. Which change makes the role assignments effective for those calls?",
+      "oldItemIds": [
+        "ai103-set-a-q003"
+      ],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-A3.04",
+      "itemRevisionHash": "2db0805857d105791720b987b330d937de87ceddfe12d2cadb9d00d3242931f4",
+      "sources": [
+        {
+          "sourceId": "S010",
+          "title": "Role-based access control for Microsoft Foundry",
+          "url": "https://learn.microsoft.com/azure/foundry/concepts/rbac-foundry",
+          "snapshotSha256": "c63d1b1d5cb16c4ffbf9019b34ac56ab5e47f81f1457b4e2d7c02a2de16a59f9",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q020",
+      "testedDecision": "A secured agent has the required runtime roles. Search resolves to a public IP from the agent network even though public access is disabled. The private endpoint exists. What should be investigated next?",
+      "oldItemIds": [
+        "ai103-set-a-q004"
+      ],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-A3.04",
+      "itemRevisionHash": "4b2cd407efb9c0b42f84d07eac73f1bd7a3d0b241d241d33f1a98a5c06cf79b2",
+      "sources": [
+        {
+          "sourceId": "S011",
+          "title": "Set up private networking for Foundry Agent Service",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/how-to/virtual-networks",
+          "snapshotSha256": "02eb40fb9bc5fcbd6b27249423b2d0ba26f5df0dd6b6885c881270a7a6fac8b9",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q021",
+      "testedDecision": "A Foundry managed-compute preview deployment needs more accelerators. Matching GPU VM quota is available in the same region. Which quota should the team request?",
+      "oldItemIds": [
+        "ai103-set-a-q005"
+      ],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-A3.01",
+      "itemRevisionHash": "cc4a9030d9d7969cc48d7a75b6daee4826b295edd9ce8f2c85cad390732df4fe",
+      "sources": [
+        {
+          "sourceId": "S004",
+          "title": "Deployment overview for Microsoft Foundry Models",
+          "url": "https://learn.microsoft.com/azure/foundry/concepts/deployments-overview",
+          "snapshotSha256": "91520b0f84e6e2823bb27945cb8e25f716440b7680ffc7ea9689d8025f1d080f",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q022",
+      "testedDecision": "A hosted agent returns session_quota_exceeded. Several sessions no longer need active compute, but their stored state is still required. What should the operator do?",
+      "oldItemIds": [
+        "ai103-set-a-q006"
+      ],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-A3.01",
+      "itemRevisionHash": "09a1e9747474dbf74a1745e032512bc61608e5919eaa99a23209df43e5e1c1ab",
+      "sources": [
+        {
+          "sourceId": "S009",
+          "title": "Foundry Agent Service limits, quotas, and regional support",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/concepts/limits-quotas-regions",
+          "snapshotSha256": "d83fd890729d322d4ffa580ca5a8db2bed5bcd783dae47f5da2b05985f4b3041",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q023",
+      "testedDecision": "A GitHub workflow must deploy a hosted agent with no long-lived Azure credential stored in GitHub. Which identity setup fits the documented deployment pattern?",
+      "oldItemIds": [
+        "ai103-set-a-q007"
+      ],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-A2.04",
+      "itemRevisionHash": "daf2c16a7ee6f9ad30831f186824c579d4cf25699d9f47dc77fa26d4e2ce6031",
+      "sources": [
+        {
+          "sourceId": "S012",
+          "title": "Quickstart: Hosted agent CI/CD templates",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/quickstarts/set-up-cicd-hosted-agent",
+          "snapshotSha256": "e6e53feb7b84553872c1d228d971a02871b943aa30c877cb5f9402e1cb4797c6",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q024",
+      "testedDecision": "An agent request traverses retrieval, generation and a business tool. Engineers need to attribute a latency increase to one operation and its parent request. Which telemetry structure supports that?",
+      "oldItemIds": [
+        "ai103-set-a-q008"
+      ],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-A4.03",
+      "itemRevisionHash": "f72beffbd9483c3e09c7131dbe2c26ac701763c48529755a04499b3e6c056fb5",
+      "sources": [
+        {
+          "sourceId": "S013",
+          "title": "Agent tracing overview",
+          "url": "https://learn.microsoft.com/azure/foundry/observability/concepts/trace-agent-concept",
+          "snapshotSha256": "895295a4b74d7cabaa0daf62bd6cd5239daf25b6ea85a2268dc2cdf8483b19e8",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q025",
+      "testedDecision": "Tool arguments include account numbers and an access token. Engineers need useful traces for incident diagnosis. Which collection policy best fits?",
+      "oldItemIds": [
+        "ai103-set-a-q009"
+      ],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-A4.03",
+      "itemRevisionHash": "9e983edc9466f2f968c6992840c8b80b2ef3b7d10b3adb46def6ce3435c31275",
+      "sources": [
+        {
+          "sourceId": "S013",
+          "title": "Agent tracing overview",
+          "url": "https://learn.microsoft.com/azure/foundry/observability/concepts/trace-agent-concept",
+          "snapshotSha256": "895295a4b74d7cabaa0daf62bd6cd5239daf25b6ea85a2268dc2cdf8483b19e8",
+          "docType": "microsoft_learn"
+        }
+      ]
+    }
+  ]
+}

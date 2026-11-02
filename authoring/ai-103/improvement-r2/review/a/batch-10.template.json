@@ -1,0 +1,257 @@
+{
+  "templateOnly": true,
+  "packetId": "ai103-improvement-r2-set-a-100-batch-10",
+  "packageId": "ai103-improvement-r2-set-a-100",
+  "revision": "2",
+  "pack": {
+    "id": "ai-103",
+    "version": "1.2.0"
+  },
+  "draftPackageSha256": "06b6490c1b4476a934d6301f1a53263b0e941b691ac9febf2e4522411b324c4a",
+  "reviewer": {
+    "actualModelLabel": null,
+    "visibleModeIfAny": null,
+    "reviewedAtUtc": null
+  },
+  "instructions": "Solve blind first. Assess alternatives, evidence, API/version, objective fit, difficulty and cues. Null verdicts are not reviews.",
+  "items": [
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q063",
+      "itemRevision": "2",
+      "itemSha256": "22f89d783d1be13f6bb0bfe0ef7796485727e5e8bbae4df62e5e2e35ab3e29d6",
+      "sourceIds": [
+        "S025",
+        "S058"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S025",
+          "lines": null,
+          "supports": null
+        },
+        {
+          "sourceId": "S058",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q064",
+      "itemRevision": "2",
+      "itemSha256": "83451f6e24fa742a93f448d7a32a979f0fdea4cfc2cf08f812c9cabc43429c3e",
+      "sourceIds": [
+        "S029",
+        "S043"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S029",
+          "lines": null,
+          "supports": null
+        },
+        {
+          "sourceId": "S043",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q065",
+      "itemRevision": "2",
+      "itemSha256": "f3914f8cb82aba0f5d19cece46a826f61158311cf34d4249a9d20d5bf9276911",
+      "sourceIds": [
+        "S040",
+        "S054"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S040",
+          "lines": null,
+          "supports": null
+        },
+        {
+          "sourceId": "S054",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q066",
+      "itemRevision": "2",
+      "itemSha256": "e36b1f070255b29a4b58279507edf826f0030455dec17ef5c8b215817092c828",
+      "sourceIds": [
+        "S059",
+        "S045"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S059",
+          "lines": null,
+          "supports": null
+        },
+        {
+          "sourceId": "S045",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q067",
+      "itemRevision": "2",
+      "itemSha256": "669a0d76720eb306aa021d657c67308ffb5cedaa600b61f15e70eab76234e129",
+      "sourceIds": [
+        "S059",
+        "S021"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S059",
+          "lines": null,
+          "supports": null
+        },
+        {
+          "sourceId": "S021",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q068",
+      "itemRevision": "2",
+      "itemSha256": "15930e9f729389e1610ade9aa64cd125ab8a1129164d9a2775bb647671ad2720",
+      "sourceIds": [
+        "S059",
+        "S045"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S059",
+          "lines": null,
+          "supports": null
+        },
+        {
+          "sourceId": "S045",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q069",
+      "itemRevision": "2",
+      "itemSha256": "4f885550d8d48bd56b9793ff0aaf6439429fd96059e326dac87e052c633ddd2f",
+      "sourceIds": [
+        "S007"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S007",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q070",
+      "itemRevision": "2",
+      "itemSha256": "b6dffadd10643fb43f54c8b4a4077ecb22bf9c97704e2d4f734329d66537a97a",
+      "sourceIds": [
+        "S037"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S037",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q071",
+      "itemRevision": "2",
+      "itemSha256": "8cb79a3349c27dce78ed37ce644a321b02515e45debcac81c8094b4835320008",
+      "sourceIds": [
+        "S025",
+        "S026"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S025",
+          "lines": null,
+          "supports": null
+        },
+        {
+          "sourceId": "S026",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q072",
+      "itemRevision": "2",
+      "itemSha256": "6ab8c5c2496fc619454b0be833f6b53eafb40b8dfe44c604bb7a137ed691145f",
+      "sourceIds": [
+        "S015",
+        "S016"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S015",
+          "lines": null,
+          "supports": null
+        },
+        {
+          "sourceId": "S016",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    }
+  ]
+}

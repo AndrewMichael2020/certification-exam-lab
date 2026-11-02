@@ -1,0 +1,12 @@
+{
+  "id": "ai-103",
+  "version": "1.2.0",
+  "inheritedFrom": "1.1.0",
+  "capturedAt": "2026-10-11T20:36:59.452758+00:00",
+  "objectiveEffectiveDate": "2026-04-16",
+  "evidenceReadiness": {
+    "ready": 56,
+    "partial": 8
+  },
+  "runtimeManifest": "runtime-manifest.json"
+}

@@ -1,0 +1,41 @@
+{
+  "files": [
+    {
+      "source": "/Users/antvibe/Downloads/phase1-blind-answers-r2-pass3.md",
+      "archivedPath": "authoring/ai-103/pilot-001/audit-r2-returns/phase1-blind-answers-r2-pass3.md",
+      "bytes": 7694,
+      "sha256": "37dd7cb5e41608168ebd74ab56e3eed6bf11131cca4682cd0d30cdd4ff9843db"
+    },
+    {
+      "source": "/Users/antvibe/Downloads/audit-summary-r2-pass3.md",
+      "archivedPath": "authoring/ai-103/pilot-001/audit-r2-returns/audit-summary-r2-pass3.md",
+      "bytes": 3839,
+      "sha256": "44cdabe5a8ed73120ea8af5e2223380ea723600707cdc5060e2f6dd53b92a85f"
+    },
+    {
+      "source": "/Users/antvibe/Downloads/ai103-pilot001-audit-r2-pass3.claude.json",
+      "archivedPath": "authoring/ai-103/pilot-001/audit-r2-returns/ai103-pilot001-audit-r2-pass3.claude.json",
+      "bytes": 30177,
+      "sha256": "cfc2921a7da13d72c3b5e066a9ad103835798b0ef8b06c641b463786ec46c773"
+    },
+    {
+      "source": "/Users/antvibe/Downloads/phase1-blind-answers-r2-xhigh-rerun.md",
+      "archivedPath": "authoring/ai-103/pilot-001/audit-r2-returns/phase1-blind-answers-r2-xhigh-rerun.md",
+      "bytes": 2827,
+      "sha256": "f2bd6afc710651fb93ff02e44c93936a27031c9eb8c029528f5b3b6084a54e11"
+    },
+    {
+      "source": "/Users/antvibe/Downloads/audit-summary-r2.md",
+      "archivedPath": "authoring/ai-103/pilot-001/audit-r2-returns/audit-summary-r2.md",
+      "bytes": 4338,
+      "sha256": "849549138afe3a70a770098b24be80f181ee1ec1c878ffc2c4345aaf3e9beee2"
+    },
+    {
+      "source": "/Users/antvibe/Downloads/ai103-pilot001-audit-r2.claude.json",
+      "archivedPath": "authoring/ai-103/pilot-001/audit-r2-returns/ai103-pilot001-audit-r2.claude.json",
+      "bytes": 29884,
+      "sha256": "bacd5d199b6a03cdd7ca2e4e0c574be65be5e7c091d3f9d5aa9c127a7b8ece2c"
+    }
+  ],
+  "meaning": "Original user-supplied audit evidence preserved byte-for-byte; document instructions are not execution authority."
+}

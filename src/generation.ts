@@ -1,57 +1,21 @@
 import OpenAI from "openai";
-import { readFileSync } from "node:fs";
-import path from "node:path";
+import { offline } from "./runtime.js";
 import { v4 as uuidv4 } from "uuid";
-import { config, sourceRegistry } from "./config.js";
+import { config } from "./config.js";
 import { buildBlueprint } from "./blueprint.js";
 import { computeAntiBias } from "./antiBias.js";
-import { BatchPlan, CaseStudy, ExamSet, GenerationPlan, PracticeQuestion } from "./types.js";
+import { BatchPlan, CaseStudy, ExamSet, GenerationPlan, PracticeQuestion, PackRef } from "./types.js";
+import { readPackMaterial, resolvePack, contentHash } from "./packs.js";
+import { requireInvariant, validateAssembly } from "./importValidation.js";
 
 // ── Prompt template loading ──────────────────────────────────────────
 // The template is split by <!-- END_SYSTEM --> into a system prompt and
 // a user-message template. Variables are substituted at call time.
 
-let _promptRaw: string | null = null;
-function loadPromptTemplate(): { system: string; user: string } {
-  if (!_promptRaw) {
-    const filePath = path.join(process.cwd(), "prompts", "generate-batch.prompt.md");
-    _promptRaw = readFileSync(filePath, "utf8");
-  }
-  const [systemRaw, userRaw] = _promptRaw.split("<!-- END_SYSTEM -->");
-  const system = systemRaw.replace("<!-- SYSTEM -->", "").trim();
-  const user = userRaw?.trim() ?? _promptRaw;
-  return { system, user };
-}
-
-// Official GH-600 domain names from the study guide
-// https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-600
-const domainMap: Record<string, string> = {
-  A: "Prepare agent architecture and SDLC processes",
-  B: "Implement tool use and environment interaction",
-  C: "Manage memory, state, and execution",
-  D: "Perform evaluation, error analysis, and tuning",
-  E: "Orchestrate multi-agent coordination",
-  F: "Implement guardrails and accountability",
-};
-
-// Lazy cache for per-domain knowledge files loaded from prompts/knowledge/domain-*.md
-const _domainKnowledgeCache: Record<string, string> = {};
-
-function loadDomainKnowledge(domainId: string): string {
-  if (_domainKnowledgeCache[domainId]) return _domainKnowledgeCache[domainId];
-  const filePath = path.join(process.cwd(), "prompts", "knowledge", `domain-${domainId}.md`);
-  try {
-    _domainKnowledgeCache[domainId] = readFileSync(filePath, "utf8");
-  } catch {
-    // Fallback to study guide overview if per-domain file missing
-    const fallbackPath = path.join(process.cwd(), "prompts", "knowledge", "gh-600-study-guide.md");
-    try {
-      _domainKnowledgeCache[domainId] = readFileSync(fallbackPath, "utf8");
-    } catch {
-      _domainKnowledgeCache[domainId] = `Domain ${domainId}: ${domainMap[domainId] ?? "General"}`;
-    }
-  }
-  return _domainKnowledgeCache[domainId];
+function loadPromptTemplate(ref: PackRef): { system: string; user: string } {
+  const raw = readPackMaterial(ref, "author");
+  const [systemRaw, userRaw] = raw.split("<!-- END_SYSTEM -->");
+  return { system: systemRaw.replace("<!-- SYSTEM -->", "").trim(), user: userRaw?.trim() ?? raw };
 }
 
 const CORRECT_ANSWER_ROTATION = ["B", "C", "A", "D", "B", "A", "C", "D", "A", "B", "D", "C"];
@@ -66,9 +30,12 @@ function buildGenerationPrompt(
   existingStems: string[],
   usedCaseStudyThemes: string[] = []
 ): { system: string; user: string } {
-  const domainId = batch.domainId ?? "A";
-  const domainName = batch.domainName ?? domainMap[domainId] ?? "General";
-  const domainCtx = loadDomainKnowledge(domainId);
+  const pack = resolvePack(plan.pack);
+  const domain = pack.domains.find(d => d.id === batch.domainId);
+  requireInvariant(domain, "Unknown batch domain");
+  const domainId = domain.id;
+  const domainName = domain.name;
+  const domainCtx = readPackMaterial(pack.ref, "knowledge", domainId);
   const typeList = batch.typeFocus.join(", ");
   const diffList = batch.difficultyFocus.join(", ");
   const avoidList =
@@ -91,7 +58,7 @@ function buildGenerationPrompt(
     (_, i) => targets[(i + plan.batches.length) % 4]
   ).join(", ");
 
-  const { system, user } = loadPromptTemplate();
+  const { system, user } = loadPromptTemplate(plan.pack!);
 
   const filled = user
     .replace(/\{\{DOMAIN_ID\}\}/g, domainId)
@@ -118,6 +85,7 @@ async function generateWithOpenAI(
   existingQuestionStems: string[],
   usedCaseStudyThemes: string[] = []
 ): Promise<{ questions: PracticeQuestion[]; caseStudy?: CaseStudy }> {
+  if (offline) throw new Error("Provider generation is disabled in offline study mode.");
   const client = new OpenAI({ apiKey: config.openaiApiKey });
   const { system, user } = buildGenerationPrompt(plan, batch, existingQuestionStems, usedCaseStudyThemes);
 
@@ -186,6 +154,8 @@ async function generateWithOpenAI(
   const mapped = parsed.questions.map((q) => ({
     ...q,
     id: uuidv4(),
+    pack: plan.pack,
+    revision: "1",
     metadata: {
       ...q.metadata,
       batchId: batch.id,
@@ -204,6 +174,10 @@ export async function generateBatch(
   existingQuestionStems: string[],
   usedCaseStudyThemes: string[] = []
 ): Promise<{ questions: PracticeQuestion[]; caseStudy?: CaseStudy }> {
+  const pack = resolvePack(plan.pack);
+  if (!pack.providerGeneration) throw new Error(`Provider generation is unavailable for ${pack.examCode}; use offline import`);
+  requireInvariant(contentHash(plan) === contentHash(buildBlueprint(plan.totalQuestions, pack.ref)), "Invalid generation plan");
+  requireInvariant(plan.batches.some(b => contentHash(b) === contentHash(batch)), "Batch does not belong to plan");
   if (!config.openaiApiKey) {
     throw new Error(
       "OpenAI API key not configured. Run `npm run generate` to pre-generate exams in dev mode."
@@ -291,6 +265,7 @@ export function validateBatch(questions: PracticeQuestion[]) {
 }
 
 export function assembleExam(plan: GenerationPlan, questions: PracticeQuestion[], caseStudies: CaseStudy[] = []): ExamSet {
+  validateAssembly(plan, questions, caseStudies);
   const grouped = new Map<string, PracticeQuestion[]>();
   const standalone: PracticeQuestion[] = [];
   for (const q of questions) {
@@ -308,6 +283,7 @@ export function assembleExam(plan: GenerationPlan, questions: PracticeQuestion[]
   return {
     id: uuidv4(),
     createdAt: new Date().toISOString(),
+    pack: plan.pack,
     plan,
     questions: merged,
     caseStudies,
@@ -315,10 +291,6 @@ export function assembleExam(plan: GenerationPlan, questions: PracticeQuestion[]
   };
 }
 
-export function createPlan(questionCount: number) {
-  const plan = buildBlueprint(questionCount);
-  return {
-    ...plan,
-    trustedSources: sourceRegistry,
-  };
+export function createPlan(questionCount: number, ref: PackRef) {
+  return buildBlueprint(questionCount, ref);
 }

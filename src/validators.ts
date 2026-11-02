@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { packRefSchema } from "./packs.js";
 
 const difficultySchema = z.enum(["medium", "hard", "very_hard"]);
 
@@ -26,14 +27,16 @@ const batchPlanSchema = z.object({
 
 const generationPlanSchema = z
   .object({
+    pack: packRefSchema,
     totalQuestions: z.number().int().min(1).max(200).optional(),
     batches: z.array(batchPlanSchema).min(1).max(200),
   })
   .passthrough();
 
 export const blueprintRequestSchema = z.object({
+  pack: packRefSchema,
   questionCount: z.number().int().min(1).max(200),
-});
+}).strict();
 
 export const generateBatchRequestSchema = z.object({
   plan: generationPlanSchema,
@@ -45,6 +48,7 @@ export const validateBatchRequestSchema = z.object({
   questions: z.array(z.any()),
 });
 
+/** Historical provider shape only; import/assembly endpoints use importPackageSchema. */
 export const assembleRequestSchema = z.object({
   plan: z.any(),
   questions: z.array(z.any()),
@@ -58,6 +62,7 @@ export const attemptRequestSchema = z.object({
   flagged: z.array(z.string()).default([]),
 });
 
+/** Historical GH-600 shape; new artifacts use importedQuestionSchema. */
 export const practiceQuestionSchema = z.object({
   id: z.string(),
   examCode: z.literal("GH-600"),

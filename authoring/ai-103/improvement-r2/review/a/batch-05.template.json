@@ -1,0 +1,190 @@
+{
+  "templateOnly": true,
+  "packetId": "ai103-improvement-r2-set-a-100-batch-5",
+  "packageId": "ai103-improvement-r2-set-a-100",
+  "revision": "2",
+  "pack": {
+    "id": "ai-103",
+    "version": "1.2.0"
+  },
+  "draftPackageSha256": "06b6490c1b4476a934d6301f1a53263b0e941b691ac9febf2e4522411b324c4a",
+  "reviewer": {
+    "actualModelLabel": null,
+    "visibleModeIfAny": null,
+    "reviewedAtUtc": null
+  },
+  "instructions": "Solve blind first. Assess alternatives, evidence, API/version, objective fit, difficulty and cues. Null verdicts are not reviews.",
+  "items": [
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q017",
+      "itemRevision": "2",
+      "itemSha256": "9fca0d8a7198783b0099f79c8421788bee25dcd04d7face7c3f7b431d3e1831e",
+      "sourceIds": [
+        "S005"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S005",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q018",
+      "itemRevision": "2",
+      "itemSha256": "fa68d4d8b956448648b6a11f003ac682d9c1a51378c378b262cc80e4cead32a2",
+      "sourceIds": [
+        "S005"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S005",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q019",
+      "itemRevision": "2",
+      "itemSha256": "2db0805857d105791720b987b330d937de87ceddfe12d2cadb9d00d3242931f4",
+      "sourceIds": [
+        "S010"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S010",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q020",
+      "itemRevision": "2",
+      "itemSha256": "4b2cd407efb9c0b42f84d07eac73f1bd7a3d0b241d241d33f1a98a5c06cf79b2",
+      "sourceIds": [
+        "S011"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S011",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q021",
+      "itemRevision": "2",
+      "itemSha256": "cc4a9030d9d7969cc48d7a75b6daee4826b295edd9ce8f2c85cad390732df4fe",
+      "sourceIds": [
+        "S004"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S004",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q022",
+      "itemRevision": "2",
+      "itemSha256": "09a1e9747474dbf74a1745e032512bc61608e5919eaa99a23209df43e5e1c1ab",
+      "sourceIds": [
+        "S009"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S009",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q023",
+      "itemRevision": "2",
+      "itemSha256": "daf2c16a7ee6f9ad30831f186824c579d4cf25699d9f47dc77fa26d4e2ce6031",
+      "sourceIds": [
+        "S012"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S012",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q024",
+      "itemRevision": "2",
+      "itemSha256": "f72beffbd9483c3e09c7131dbe2c26ac701763c48529755a04499b3e6c056fb5",
+      "sourceIds": [
+        "S013"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S013",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q025",
+      "itemRevision": "2",
+      "itemSha256": "9e983edc9466f2f968c6992840c8b80b2ef3b7d10b3adb46def6ce3435c31275",
+      "sourceIds": [
+        "S013"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [
+        {
+          "sourceId": "S013",
+          "lines": null,
+          "supports": null
+        }
+      ]
+    }
+  ]
+}

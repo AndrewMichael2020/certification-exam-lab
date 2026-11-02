@@ -1,0 +1,188 @@
+{
+  "templateOnly": true,
+  "packetId": "ai103-pilot001-audit-r2",
+  "packageId": "ai103-pilot-001-r2",
+  "revision": "2",
+  "pack": {
+    "id": "ai-103",
+    "version": "1.1.0"
+  },
+  "draftPackageSha256": "5d3fb8595e92f9e0bd7143fd6fba655bfad32906408a011084d3c6257594f2a8",
+  "reviewer": {
+    "actualModelLabel": null,
+    "visibleModeIfAny": null,
+    "reviewedAtUtc": null
+  },
+  "items": [
+    {
+      "itemId": "ai103-pilot001-q01",
+      "itemRevision": "2",
+      "itemSha256": "ff2516e6617fe35b8db17fad20d6c898b0473c479a421a49284349540fb61710",
+      "sourceIds": [
+        "S005"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [],
+      "issues": [],
+      "suggestedCorrection": null,
+      "difficultyAssessment": null
+    },
+    {
+      "itemId": "ai103-pilot001-q02",
+      "itemRevision": "2",
+      "itemSha256": "40c4ea6f85bc00579fc708a78f11b1ed270ecd022d0af4cae6356412621e3e63",
+      "sourceIds": [
+        "S011",
+        "S040"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [],
+      "issues": [],
+      "suggestedCorrection": null,
+      "difficultyAssessment": null
+    },
+    {
+      "itemId": "ai103-pilot001-q03",
+      "itemRevision": "2",
+      "itemSha256": "31d35d4d2a7e954e8a23d8b9a4cc2e8d77e593b3307bfc6f09fa4a2941dd0745",
+      "sourceIds": [
+        "S037"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [],
+      "issues": [],
+      "suggestedCorrection": null,
+      "difficultyAssessment": null
+    },
+    {
+      "itemId": "ai103-pilot001-q04",
+      "itemRevision": "2",
+      "itemSha256": "7a2910a2963af9a93ca5ed8d22cdec871047aaf94582caf1b03280109896838d",
+      "sourceIds": [
+        "S007"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [],
+      "issues": [],
+      "suggestedCorrection": null,
+      "difficultyAssessment": null
+    },
+    {
+      "itemId": "ai103-pilot001-q05",
+      "itemRevision": "2",
+      "itemSha256": "2612907e04fc9fdc1d9a90e89c0e765f8b68f2719945c85b38617c13b00f9981",
+      "sourceIds": [
+        "S014",
+        "S039"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [],
+      "issues": [],
+      "suggestedCorrection": null,
+      "difficultyAssessment": null
+    },
+    {
+      "itemId": "ai103-pilot001-q06",
+      "itemRevision": "2",
+      "itemSha256": "e7c9fa6faea465dd927be2389e616d5b227e7ccd94510bb2e92e12f36443b261",
+      "sourceIds": [
+        "S018"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [],
+      "issues": [],
+      "suggestedCorrection": null,
+      "difficultyAssessment": null
+    },
+    {
+      "itemId": "ai103-pilot001-q07",
+      "itemRevision": "2",
+      "itemSha256": "c97da0405ba27044292bef1c51b198cc626e416df579925a5360f922ed9e55b0",
+      "sourceIds": [
+        "S009"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [],
+      "issues": [],
+      "suggestedCorrection": null,
+      "difficultyAssessment": null
+    },
+    {
+      "itemId": "ai103-pilot001-q08",
+      "itemRevision": "2",
+      "itemSha256": "3594149034eb4fe2a91754d781ad248cc0c9bbf11757da1642fcc379e2e2d28c",
+      "sourceIds": [
+        "S042"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [],
+      "issues": [],
+      "suggestedCorrection": null,
+      "difficultyAssessment": null
+    },
+    {
+      "itemId": "ai103-pilot001-q09",
+      "itemRevision": "2",
+      "itemSha256": "2451ff9a3933330be814baf1438629fc2e85b71a29b9e48c7bffb3a016bc69ef",
+      "sourceIds": [
+        "S046"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [],
+      "issues": [],
+      "suggestedCorrection": null,
+      "difficultyAssessment": null
+    },
+    {
+      "itemId": "ai103-pilot001-q10",
+      "itemRevision": "2",
+      "itemSha256": "c59dd6128fabe5d321941654c470f313e21645f923c4698f903c2044b60a8034",
+      "sourceIds": [
+        "S028",
+        "S029",
+        "S043",
+        "S026"
+      ],
+      "blindAnswer": null,
+      "finalProposedAnswer": null,
+      "verdict": null,
+      "rationale": null,
+      "sourceEvidence": [],
+      "issues": [],
+      "suggestedCorrection": null,
+      "difficultyAssessment": null
+    }
+  ],
+  "overall": {
+    "summary": null,
+    "releaseRecommendation": null,
+    "unresolvedSourceGaps": []
+  }
+}

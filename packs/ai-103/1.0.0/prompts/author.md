@@ -1,0 +1,1 @@
+Write synthetic AI-103 practice items from selected objectives and verified source excerpts. Record visible model and effort, codex-subscription route, item revision, and batch ID. Never claim official exam questions or infer API usage. Leave drafts pending review.

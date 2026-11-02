@@ -1,0 +1,340 @@
+{
+  "schemaVersion": 1,
+  "packRef": {
+    "id": "ai-103",
+    "version": "1.1.0"
+  },
+  "parentObjectiveId": "AI103-E1",
+  "title": "Build retrieval and grounding pipelines",
+  "state": "evidence-packet-only; no questions",
+  "allowedObjectiveIds": [
+    "AI103-E1.01",
+    "AI103-E1.02",
+    "AI103-E1.03",
+    "AI103-E1.04",
+    "AI103-E1.05"
+  ],
+  "allowedScope": [
+    {
+      "objectiveId": "AI103-E1.01",
+      "claims": [
+        "F021B",
+        "F021C",
+        "F026A"
+      ],
+      "choice": "Transform multimodal files into searchable representations, then ingest/index those representations with meaningful source metadata.",
+      "configuration": "Use document/image/audio/video analyzers as appropriate; retain page/time/segment references; chunk and embed/index compatible content.",
+      "comparison": "A Search index does not magically understand arbitrary raw audio/video; analysis outputs and retrieval representations must be explicit.",
+      "judgment": "For a video knowledge base, store the transcript/segment description with timestamps and vectors so retrieved answers can point back to a segment."
+    },
+    {
+      "objectiveId": "AI103-E1.02",
+      "claims": [
+        "F025A",
+        "F025B",
+        "F026A"
+      ],
+      "choice": "Choose keyword, vector, hybrid, and optional semantic ranking according to relevance requirements.",
+      "configuration": "Match indexed/query embeddings; configure vector fields and semantic settings; preserve filters and avoid explicit sorting that replaces relevance.",
+      "comparison": "Semantic ranking is not the same as creating embeddings; pure vectors can miss exact identifiers.",
+      "judgment": "For product-code questions plus paraphrased symptoms, hybrid retrieval lets exact and conceptual evidence contribute before reranking."
+    },
+    {
+      "objectiveId": "AI103-E1.03",
+      "claims": [
+        "F028A",
+        "F029A",
+        "F043A"
+      ],
+      "choice": "Use a skillset to enrich the document tree with OCR/layout/text features and map results into the index.",
+      "configuration": "Set skill contexts and input/output paths; create normalized images for OCR; use outputFieldMappings for enriched nodes.",
+      "comparison": "A successful skill computation can still yield an empty searchable field if mapping paths are wrong.",
+      "judgment": "When OCR output exists in the enrichment tree but is absent from search results, inspect output mappings before re-running recognition."
+    },
+    {
+      "objectiveId": "AI103-E1.04",
+      "claims": [
+        "F043A",
+        "F026A",
+        "F029A"
+      ],
+      "choice": "Combine readable document extraction/OCR, meaningful chunking, embeddings, and index projection for RAG.",
+      "configuration": "Configure imageAction/normalized image paths, OCR/layout outputs, chunk source metadata, and embedding compatibility; inspect indexer failures.",
+      "comparison": "OCR can create text without preserving document structure; layout-aware chunking may be needed for tables/sections.",
+      "judgment": "A scanned manual should retain headings and page context so retrieved chunks do not separate warnings from the instructions they qualify."
+    },
+    {
+      "objectiveId": "AI103-E1.05",
+      "claims": [
+        "F040A",
+        "F040B",
+        "F007A"
+      ],
+      "choice": "Connect the finished retrieval pipeline to a documented Search tool or application function used by workflows/agents.",
+      "configuration": "Supply project connection/index, supported query_type and filters; use managed identity for private Search tool connections; retain citations.",
+      "comparison": "Attaching a tool does not ingest missing documents or grant every downstream permission.",
+      "judgment": "If an agent can query an empty or stale index, fix ingestion/index quality before changing the tool schema."
+    }
+  ],
+  "excludedObjectives": [],
+  "evidence": [
+    {
+      "claimId": "F007A",
+      "statement": "A function-call tool gives the model a name, description, and parameter schema; the application executes the requested function and returns the result.",
+      "sourceId": "S007",
+      "sourceUrl": "https://learn.microsoft.com/azure/foundry/agents/how-to/tools/function-calling",
+      "versionContext": "Mixed page panels: current AI Projects2.x Responses/conversations examples and classic threads/runs material. Current fragments used below; do not transfer classic10-minute run expiry to Responses.",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S007.md",
+          "lineStart": 2,
+          "lineEnd": 5,
+          "heading": "# Use function calling with Microsoft Foundry agents",
+          "needle": "Your app executes the function",
+          "excerpt": "\nMicrosoft Foundry agents support function calling, which lets you extend agents with custom capabilities. Define a function with its name, parameters, and description, and the agent's Foundry model can request your app to call it. Your app executes the function and returns the output. The agent then uses the result to continue the conversation with accurate, real-time data from your systems.\n\nImportant",
+          "sourceSha256": "0d4119f94b15c94d404729f53d2ed5f52a89dfaf35841d1290c0472be3e3e953"
+        }
+      ]
+    },
+    {
+      "claimId": "F021B",
+      "statement": "Content Understanding provides separate document, image, audio, and video search analyzers; the document-search analyzer preserves layout and structured markdown for RAG.",
+      "sourceId": "S021",
+      "sourceUrl": "https://learn.microsoft.com/python/api/overview/azure/ai-contentunderstanding-readme?view=azure-python",
+      "versionContext": "azure-ai-contentunderstanding1.1.0 /API2025-11-01; ContentUnderstandingClient; Entra or key",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S021.md",
+          "lineStart": 282,
+          "lineEnd": 290,
+          "heading": "### Prebuilt analyzers",
+          "needle": "**`prebuilt-documentSearch`**",
+          "excerpt": "- **RAG analyzers** - Optimized for retrieval-augmented generation scenarios with semantic analysis and markdown extraction. These analyzers return markdown and a one-paragraph `Summary`for each content item:\n    - **`prebuilt-documentSearch`** - Extracts content from documents (PDF, images, Office documents) with layout preservation, table detection, figure analysis, and structured markdown output. Optimized for RAG scenarios.\n    - **`prebuilt-imageSearch`** - Analyzes standalone images and returns a one-paragraph description of the image content. Optimized for image understanding and search scenarios. For images that contain text (including hand-written text), use `prebuilt-documentSearch`.\n    - **`prebuilt-audioSearch`** - Transcribes audio content with speaker diarization, timing information, and conversation summaries. Supports multilingual transcription.\n    - **`prebuilt-videoSearch`** - Analyzes video content with visual frame extraction, audio transcription, and structured summaries. Provides temporal alignment of visual and audio content and can return multiple segments per video.\n- **Content extraction analyzers** - Focus on OCR and layout analysis (e.g., `prebuilt-read`, `prebuilt-layout`)\n- **Base analyzers** - Fundamental content processing capabilities used as parent analyzers for custom analyzers (e.g., `prebuilt-document`, `prebuilt-image`, `prebuilt-audio`, `prebuilt-video`)\n- **Domain-specific analyzers** - Preconfigured analyzers for common document categories including financial documents (invoices, receipts, bank statements), identity documents (passports, driver's licenses), tax forms, mortgage documents, and contracts\n- **Utility analyzers** - Specialized tools for schema generation and field extraction (e.g., `prebuilt-documentFieldSchema`, `prebuilt-documentFields`)",
+          "sourceSha256": "aa5fd0abb99fe608e62d3909ffd7bc4eac9904dc931f427c9e3788351fbc7b42"
+        }
+      ]
+    },
+    {
+      "claimId": "F021C",
+      "statement": "Content Understanding analysis is a long-running operation: begin analysis, poll to completion, then process structured content and markdown.",
+      "sourceId": "S021",
+      "sourceUrl": "https://learn.microsoft.com/python/api/overview/azure/ai-contentunderstanding-readme?view=azure-python",
+      "versionContext": "azure-ai-contentunderstanding1.1.0 /API2025-11-01; ContentUnderstandingClient; Entra or key",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S021.md",
+          "lineStart": 304,
+          "lineEnd": 307,
+          "heading": "### Asynchronous operations",
+          "needle": "### Asynchronous operations",
+          "excerpt": "\n### Asynchronous operations\n\nContent Understanding operations are asynchronous long-running operations. The workflow is:",
+          "sourceSha256": "aa5fd0abb99fe608e62d3909ffd7bc4eac9904dc931f427c9e3788351fbc7b42"
+        }
+      ]
+    },
+    {
+      "claimId": "F025A",
+      "statement": "Hybrid search executes keyword and vector retrieval in parallel and combines ranked lists with RRF; semantic reranking is an additional stage rather than the vector embedding step.",
+      "sourceId": "S025",
+      "sourceUrl": "https://learn.microsoft.com/azure/search/hybrid-search-overview",
+      "versionContext": "Feature-specific qualifications in snapshot; package/API version unknown unless stated in a referenced excerpt.",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S025.md",
+          "lineStart": 10,
+          "lineEnd": 13,
+          "heading": "# Hybrid search using vectors and full-text search in Azure AI Search",
+          "needle": "Reciprocal Rank Fusion (RRF)",
+          "excerpt": "- Runs full-text search and vector search in parallel.\n- Merges results from each query by using [Reciprocal Rank Fusion (RRF)](hybrid-search-ranking).\n\nThis article explains the concepts, benefits, and limitations of hybrid search. Links at the end provide usage instructions and next steps. You can also watch the embedded video for an explanation of how hybrid retrieval contributes to high-quality generative search applications.",
+          "sourceSha256": "8f766ea87e9528dc1e469ffca3de91350cf9b9393aaf47e5c8c124378457397d"
+        },
+        {
+          "snapshot": "sources/snapshots/S025.md",
+          "lineStart": 16,
+          "lineEnd": 19,
+          "heading": "## Why use hybrid search?",
+          "needle": "semantic ranking",
+          "excerpt": "\nHybrid search combines the strengths of vector search and keyword search. The advantage of vector search is finding information that's conceptually similar to your search query, even if there are no keyword matches in the inverted index. The advantage of keyword or full-text search is precision, with the ability to apply optional semantic ranking that improves the quality of the initial results. Some scenarios, such as querying over product codes, highly specialized jargon, dates, and people's names, perform better with keyword search because it can identify exact matches.\n\nBenchmark testing on real-world and benchmark datasets indicates that hybrid retrieval with semantic ranker offers significant benefits in search relevance.",
+          "sourceSha256": "8f766ea87e9528dc1e469ffca3de91350cf9b9393aaf47e5c8c124378457397d"
+        }
+      ]
+    },
+    {
+      "claimId": "F025B",
+      "statement": "Keyword retrieval can preserve exact names, identifiers, and specialized terms that pure similarity retrieval misses; combining it with vectors provides complementary relevance.",
+      "sourceId": "S025",
+      "sourceUrl": "https://learn.microsoft.com/azure/search/hybrid-search-overview",
+      "versionContext": "Feature-specific qualifications in snapshot; package/API version unknown unless stated in a referenced excerpt.",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S025.md",
+          "lineStart": 16,
+          "lineEnd": 19,
+          "heading": "## Why use hybrid search?",
+          "needle": "product codes, highly specialized jargon",
+          "excerpt": "\nHybrid search combines the strengths of vector search and keyword search. The advantage of vector search is finding information that's conceptually similar to your search query, even if there are no keyword matches in the inverted index. The advantage of keyword or full-text search is precision, with the ability to apply optional semantic ranking that improves the quality of the initial results. Some scenarios, such as querying over product codes, highly specialized jargon, dates, and people's names, perform better with keyword search because it can identify exact matches.\n\nBenchmark testing on real-world and benchmark datasets indicates that hybrid retrieval with semantic ranker offers significant benefits in search relevance.",
+          "sourceSha256": "8f766ea87e9528dc1e469ffca3de91350cf9b9393aaf47e5c8c124378457397d"
+        }
+      ]
+    },
+    {
+      "claimId": "F026A",
+      "statement": "Query-time vectorization must use the embedding model compatible with indexed content vectors; integrated indexing adds chunking and embedding skills.",
+      "sourceId": "S026",
+      "sourceUrl": "https://learn.microsoft.com/azure/search/vector-search-integrated-vectorization",
+      "versionContext": "Feature-specific qualifications in snapshot; package/API version unknown unless stated in a referenced excerpt.",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S026.md",
+          "lineStart": 39,
+          "lineEnd": 47,
+          "heading": "## Using integrated vectorization in queries",
+          "needle": "must match the embedding model",
+          "excerpt": "- A text string that's converted to a vector at query time.\n- [A vectorizer](vector-search-how-to-configure-vectorizer), defined in the index schema, assigned to a vector field, and used automatically at query time to convert a text query to a vector. The vectorizer you set up must match the embedding model used to encode your content.\n\n    | Embedding skill | Vectorizer |\n    | --- | --- |\n    | [AzureOpenAIEmbedding skill](cognitive-search-skill-azure-openai-embedding) | [Azure OpenAI vectorizer](vector-search-vectorizer-azure-open-ai) |\n    | [Custom skill](cognitive-search-custom-skill-web-api) | [Custom Web API vectorizer](vector-search-vectorizer-custom-web-api) |\n    | [Azure Vision multimodal embeddings skill (preview)](cognitive-search-skill-vision-vectorize) | [Azure Vision vectorizer](vector-search-vectorizer-ai-services-vision) |\n    | [AML skill pointing to the model catalog in Foundry portal](cognitive-search-aml-skill) | [Microsoft Foundry model catalog vectorizer (preview)](vector-search-vectorizer-azure-machine-learning-ai-studio-catalog) |",
+          "sourceSha256": "45a6b445fbe4f7f65334693eb96b2de7b021e0b50ce46b363ab47c5de0a11f0d"
+        },
+        {
+          "snapshot": "sources/snapshots/S026.md",
+          "lineStart": 25,
+          "lineEnd": 32,
+          "heading": "## Using integrated vectorization during indexing",
+          "needle": "A chunking strategy",
+          "excerpt": "\n    - A chunking strategy: [Text Split skill](cognitive-search-skill-textsplit), [Azure Content Understanding skill](cognitive-search-skill-content-understanding), or one of the [document parsing modes](vector-search-how-to-chunk-documents#common-chunking-techniques).\n    - An embedding skill, used to generate vector arrays, which can be any of the following:\n\n        - [AzureOpenAIEmbedding skill](cognitive-search-skill-azure-openai-embedding), attached to text-embedding-ada-002,text-embedding-3-small, text-embedding-3-large on Azure OpenAI.\n        - [Custom skill](cognitive-search-custom-skill-web-api) that points to another embedding model on Azure or on another site.\n        - [Azure Vision multimodal embeddings skill (preview)](cognitive-search-skill-vision-vectorize) that points to the multimodal API for Azure Vision.\n        - [AML skill](cognitive-search-aml-skill) that points to select models in the Microsoft Foundry model catalog.",
+          "sourceSha256": "45a6b445fbe4f7f65334693eb96b2de7b021e0b50ce46b363ab47c5de0a11f0d"
+        }
+      ]
+    },
+    {
+      "claimId": "F028A",
+      "statement": "A skillset enriches a document tree; outputFieldMappings sends enriched nodes to index fields, while fieldMappings maps source fields.",
+      "sourceId": "S028",
+      "sourceUrl": "https://learn.microsoft.com/azure/search/cognitive-search-working-with-skillsets",
+      "versionContext": "Feature-specific qualifications in snapshot; package/API version unknown unless stated in a referenced excerpt.",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S028.md",
+          "lineStart": 153,
+          "lineEnd": 156,
+          "heading": "## Indexer definition",
+          "needle": "\"outputFieldMappings\"",
+          "excerpt": "- [\"fieldMappings\"](search-indexer-field-mappings) map a source field to a search field.\n- [\"outputFieldMappings\"](cognitive-search-output-field-mapping) map a node in an enriched document to a search field.\n\nThe \"sourceFieldName\" property specifies either a field in your data source or a node in an enrichment tree. The \"targetFieldName\" property specifies the search field in an index that receives the content.",
+          "sourceSha256": "3d24961260a3a7ca041656383016222704c25dec2dff53743bbaef628236312b"
+        },
+        {
+          "snapshot": "sources/snapshots/S028.md",
+          "lineStart": 152,
+          "lineEnd": 156,
+          "heading": "## Indexer definition",
+          "needle": "\"fieldMappings\"",
+          "excerpt": "\n- [\"fieldMappings\"](search-indexer-field-mappings) map a source field to a search field.\n- [\"outputFieldMappings\"](cognitive-search-output-field-mapping) map a node in an enriched document to a search field.\n\nThe \"sourceFieldName\" property specifies either a field in your data source or a node in an enrichment tree. The \"targetFieldName\" property specifies the search field in an index that receives the content.",
+          "sourceSha256": "3d24961260a3a7ca041656383016222704c25dec2dff53743bbaef628236312b"
+        }
+      ]
+    },
+    {
+      "claimId": "F029A",
+      "statement": "The Document Layout search skill uses Document Intelligence layout analysis to emit structured Markdown or text and can preserve image location metadata.",
+      "sourceId": "S029",
+      "sourceUrl": "https://learn.microsoft.com/azure/search/cognitive-search-skill-document-intelligence-layout",
+      "versionContext": "Feature-specific qualifications in snapshot; package/API version unknown unless stated in a referenced excerpt.",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S029.md",
+          "lineStart": 6,
+          "lineEnd": 9,
+          "heading": "# Document Layout skill",
+          "needle": "representation in Markdown or text format",
+          "excerpt": "\nThe **Document Layout** skill uses the [layout model](/en-us/azure/ai-services/document-intelligence/concept-layout) from Azure Document Intelligence in Foundry Tools to analyze a document, detect its structure and characteristics, and produce a syntactical representation in Markdown or text format. This skill supports text and image extraction, the latter of which includes location metadata that preserves image position within a document. Image proximity to related content is beneficial in retrieval-augmented generation (RAG) and [multimodal search](multimodal-search-overview) scenarios.\n\nFor transactions that exceed 20 documents per indexer per day, this skill requires you to [attach a billable Microsoft Foundry resource](cognitive-search-attach-cognitive-services) to your skillset. Execution of built-in skills is charged at the existing [Foundry Tools Standard price](https://azure.microsoft.com/pricing/details/cognitive-services/).",
+          "sourceSha256": "eb899b4d8c7fdd95e158072fa95891c8c96388f09c48c00a67683fa10ec4591a"
+        }
+      ]
+    },
+    {
+      "claimId": "F040A",
+      "statement": "An Azure AI Search agent tool requires a project connection and index name; query_type selects simple/vector/semantic/hybrid modes and retrieval filters scope the returned content.",
+      "sourceId": "S040",
+      "sourceUrl": "https://learn.microsoft.com/azure/foundry/agents/how-to/tools/ai-search",
+      "versionContext": "Feature-specific qualifications in snapshot; package/API version unknown unless stated in a referenced excerpt.",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S040.md",
+          "lineStart": 52,
+          "lineEnd": 57,
+          "heading": "## Configure tool parameters",
+          "needle": "| `project_connection_id` |",
+          "excerpt": "| --- | --- | --- |\n| `project_connection_id` | Yes | The resource ID of the project connection to Azure AI Search. |\n| `index_name` | Yes | The name of the index in your Azure AI Search resource. |\n| `top_k` | No | Defaults to 5. |\n| `query_type` | No | Defaults to `vector_semantic_hybrid`. Supported values: `simple`, `vector`, `semantic`, `vector_simple_hybrid`, `vector_semantic_hybrid`. |\n| `filter` | No | Applies to all queries the agent makes to the index. |",
+          "sourceSha256": "67830020b25de8c993ae294ff523035ad2c04c16865c1fe7222f053769316545"
+        },
+        {
+          "snapshot": "sources/snapshots/S040.md",
+          "lineStart": 55,
+          "lineEnd": 59,
+          "heading": "## Configure tool parameters",
+          "needle": "| `query_type` |",
+          "excerpt": "| `top_k` | No | Defaults to 5. |\n| `query_type` | No | Defaults to `vector_semantic_hybrid`. Supported values: `simple`, `vector`, `semantic`, `vector_simple_hybrid`, `vector_semantic_hybrid`. |\n| `filter` | No | Applies to all queries the agent makes to the index. |\n\n## Add Azure AI Search to a toolbox",
+          "sourceSha256": "67830020b25de8c993ae294ff523035ad2c04c16865c1fe7222f053769316545"
+        },
+        {
+          "snapshot": "sources/snapshots/S040.md",
+          "lineStart": 56,
+          "lineEnd": 59,
+          "heading": "## Configure tool parameters",
+          "needle": "| `filter` |",
+          "excerpt": "| `query_type` | No | Defaults to `vector_semantic_hybrid`. Supported values: `simple`, `vector`, `semantic`, `vector_simple_hybrid`, `vector_semantic_hybrid`. |\n| `filter` | No | Applies to all queries the agent makes to the index. |\n\n## Add Azure AI Search to a toolbox",
+          "sourceSha256": "67830020b25de8c993ae294ff523035ad2c04c16865c1fe7222f053769316545"
+        }
+      ]
+    },
+    {
+      "claimId": "F040B",
+      "statement": "A private-network Azure AI Search agent-tool connection requires Microsoft Entra project managed identity in the captured guide.",
+      "sourceId": "S040",
+      "sourceUrl": "https://learn.microsoft.com/azure/foundry/agents/how-to/tools/ai-search",
+      "versionContext": "Feature-specific qualifications in snapshot; package/API version unknown unless stated in a referenced excerpt.",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S040.md",
+          "lineStart": 4,
+          "lineEnd": 7,
+          "heading": "# Connect an Azure AI Search index to Foundry agents",
+          "needle": "Key-based authentication isn't supported",
+          "excerpt": "\nIf you want to use a private virtual network with the Azure AI Search tool, make sure you use Microsoft Entra project managed identity to authenticate in your Azure AI Search connection. Key-based authentication isn't supported with private virtual networking.\n\nFor a managed knowledge base experience, see [Foundry IQ](../foundry-iq-connect).",
+          "sourceSha256": "67830020b25de8c993ae294ff523035ad2c04c16865c1fe7222f053769316545"
+        }
+      ]
+    },
+    {
+      "claimId": "F043A",
+      "statement": "OCR skill input depends on normalized images produced by the blob indexer imageAction configuration; OCR text must then be mapped/merged into searchable fields.",
+      "sourceId": "S043",
+      "sourceUrl": "https://learn.microsoft.com/azure/search/cognitive-search-skill-ocr",
+      "versionContext": "Feature-specific qualifications in snapshot; package/API version unknown unless stated in a referenced excerpt.",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S043.md",
+          "lineStart": 188,
+          "lineEnd": 198,
+          "heading": "#### Request Body Syntax",
+          "needle": "set the *imageAction* configuration",
+          "excerpt": "\nThe above skillset example assumes that a normalized-images field exists. To generate this field, set the *imageAction* configuration in your indexer definition to *generateNormalizedImages* as shown below:\n\n```json\n{\n  //...rest of your indexer definition goes here ...\n  \"parameters\": {\n    \"configuration\": {\n      \"dataToExtract\":\"contentAndMetadata\",\n      \"imageAction\":\"generateNormalizedImages\"\n    }",
+          "sourceSha256": "0a5cdd696dcbae744d32db7fd89a69926f0203462f86d6dc25793ab07d001b3d"
+        },
+        {
+          "snapshot": "sources/snapshots/S043.md",
+          "lineStart": 51,
+          "lineEnd": 55,
+          "heading": "## Skill outputs",
+          "needle": "| `text` |",
+          "excerpt": "| --- | --- |\n| `text` | Plain text extracted from the image. |\n| `layoutText` | Complex type that describes the extracted text and the location where the text was found. |\n\nIf you call OCR on images embedded in PDFs or other application files, the OCR output will be located at the bottom of the page, after any text that was extracted and processed.",
+          "sourceSha256": "0a5cdd696dcbae744d32db7fd89a69926f0203462f86d6dc25793ab07d001b3d"
+        }
+      ]
+    }
+  ],
+  "constraints": [
+    "Only listed facts with conditions establish answer keys. Cite correct answers and distractor rationales.",
+    "Preserve API/SDK generation, preview, retirement and region/model qualifiers.",
+    "No unshown methods, asserted execution, GH-600 material, dumps, remembered assessments or official format parity.",
+    "Ready is bounded evidence support; later content review and manual solve-first audit are still required."
+  ]
+}

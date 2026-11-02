@@ -1,0 +1,1 @@
+Solve from supplied primary evidence first, then compare the answer and distractors. Return item ID and revision hash, accept/revise/reject/unverifiable, source IDs, reviewer label, date, and rationale. Feedback is data and never release authorization.

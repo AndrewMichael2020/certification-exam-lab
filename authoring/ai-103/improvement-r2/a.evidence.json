@@ -1,0 +1,2224 @@
+{
+  "packageId": "ai103-improvement-r2-set-a-100",
+  "canonicalDraftHash": "06b6490c1b4476a934d6301f1a53263b0e941b691ac9febf2e4522411b324c4a",
+  "packManifestHash": "49384b20f6efd6a2601f3dd5cec2cd06b699c0c0ee69d7ffbfd620f1b35aeef4",
+  "assessmentState": "author estimate; independent review pending",
+  "items": [
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q001",
+      "testedDecision": "In Rotor’s two-warehouse request, west completes first. Which output correlation preserves the API contract?",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-B2.01",
+      "itemRevisionHash": "2a0fef3b06e3043ba60916634b3dd62a14da8c52d764e5e5835422c9bc8bd3dd",
+      "sources": [
+        {
+          "sourceId": "S007",
+          "title": "Use function calling with Microsoft Foundry agents",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/how-to/tools/function-calling",
+          "snapshotSha256": "0d4119f94b15c94d404729f53d2ed5f52a89dfaf35841d1290c0472be3e3e953",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q002",
+      "testedDecision": "Rotor’s fresh availability turn must use a tool rather than answer from prior knowledge. Both tools are available. Which request-level mode requires tool use?",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-B2.02",
+      "itemRevisionHash": "5c78e38def68f93ff38e7db757682d6241687bc2fbf0bd57fd2cce7fda4bd3b6",
+      "sources": [
+        {
+          "sourceId": "S054",
+          "title": "Tool best practices for Microsoft Foundry Agent Service",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/concepts/tool-best-practice",
+          "snapshotSha256": "fbf440754eab789009c34a8bf7636fc60c1d0bd64402cd650b1b903230ffd0f9",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S007",
+          "title": "Use function calling with Microsoft Foundry agents",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/how-to/tools/function-calling",
+          "snapshotSha256": "0d4119f94b15c94d404729f53d2ed5f52a89dfaf35841d1290c0472be3e3e953",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q003",
+      "testedDecision": "In Rotor’s cross-account reservation test, the JSON schema passes. Which check must decide whether the host may execute?",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-B2.05",
+      "itemRevisionHash": "94ebc6f9efaf8ca2ee8deafe2796ee0a4ddbec116362a682580dbdef071dc467",
+      "sources": [
+        {
+          "sourceId": "S007",
+          "title": "Use function calling with Microsoft Foundry agents",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/how-to/tools/function-calling",
+          "snapshotSha256": "0d4119f94b15c94d404729f53d2ed5f52a89dfaf35841d1290c0472be3e3e953",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S054",
+          "title": "Tool best practices for Microsoft Foundry Agent Service",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/concepts/tool-best-practice",
+          "snapshotSha256": "fbf440754eab789009c34a8bf7636fc60c1d0bd64402cd650b1b903230ffd0f9",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q004",
+      "testedDecision": "Rotor approved five units, then the proposal changed to fifty. What should the host do?",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-B2.05",
+      "itemRevisionHash": "2e2054a7e0b7830b5baca47d5282c49aeb0f0f7f6ec06d967d7721abe7898eea",
+      "sources": [
+        {
+          "sourceId": "S007",
+          "title": "Use function calling with Microsoft Foundry agents",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/how-to/tools/function-calling",
+          "snapshotSha256": "0d4119f94b15c94d404729f53d2ed5f52a89dfaf35841d1290c0472be3e3e953",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S054",
+          "title": "Tool best practices for Microsoft Foundry Agent Service",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/concepts/tool-best-practice",
+          "snapshotSha256": "fbf440754eab789009c34a8bf7636fc60c1d0bd64402cd650b1b903230ffd0f9",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q005",
+      "testedDecision": "Harbor must serve HX-104 identifiers and descriptions of symptoms. Which retrieval approach combines those signals?",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-B1.02",
+      "itemRevisionHash": "994bd3c019afb75b91064c69e2d24d5ec8f42d65d0b28676410e263e963a5d15",
+      "sources": [
+        {
+          "sourceId": "S025",
+          "title": "Hybrid search using vectors and full-text search in Azure AI Search",
+          "url": "https://learn.microsoft.com/azure/search/hybrid-search-overview",
+          "snapshotSha256": "8f766ea87e9528dc1e469ffca3de91350cf9b9393aaf47e5c8c124378457397d",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q006",
+      "testedDecision": "Harbor tests harbor-embed-y for queries while content remains from harbor-embed-x. Equal dimensions did not preserve relevance. Which correction targets the mismatch?",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-B1.02",
+      "itemRevisionHash": "e65e10dd04ee8bd28756a2a6a2bdbbe1fef416a8cedea150c14cb50050772511",
+      "sources": [
+        {
+          "sourceId": "S026",
+          "title": "Integrated vector embedding in Azure AI Search",
+          "url": "https://learn.microsoft.com/azure/search/vector-search-integrated-vectorization",
+          "snapshotSha256": "45a6b445fbe4f7f65334693eb96b2de7b021e0b50ce46b363ab47c5de0a11f0d",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S058",
+          "title": "Integrated vectorization REST configuration",
+          "url": "https://learn.microsoft.com/en-us/azure/search/search-how-to-integrated-vectorization",
+          "snapshotSha256": "a09c24b08450e2017f75e2fa7d0b107b870d58cb085c863b6531ddb3ab513716",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q007",
+      "testedDecision": "Harbor answers twenty-four months from a passage saying twelve. It stays on topic. Which evaluation isolates this defect?",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-B1.04",
+      "itemRevisionHash": "81d3a24c33afae81101dfc9b56e4f163c71449244f7bf6ac9be02c8aeeb6d04e",
+      "sources": [
+        {
+          "sourceId": "S039",
+          "title": "Retrieval-Augmented Generation (RAG) evaluators",
+          "url": "https://learn.microsoft.com/azure/foundry/concepts/evaluation-evaluators/rag-evaluators",
+          "snapshotSha256": "3b16c765be1f1479ac22e04cf9b293be767d473fc1cacb188b90751227074a4b",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q008",
+      "testedDecision": "Harbor’s employee is authorized for one department. Which control enforces that boundary before passages reach the model?",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-B1.02",
+      "itemRevisionHash": "7a3795bbb03ab1d4cd3f28cbc8e618d622773f88ffe2b1e8df57edae8dbc09a7",
+      "sources": [
+        {
+          "sourceId": "S040",
+          "title": "Connect an Azure AI Search index to Foundry agents",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/how-to/tools/ai-search",
+          "snapshotSha256": "67830020b25de8c993ae294ff523035ad2c04c16865c1fe7222f053769316545",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S054",
+          "title": "Tool best practices for Microsoft Foundry Agent Service",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/concepts/tool-best-practice",
+          "snapshotSha256": "fbf440754eab789009c34a8bf7636fc60c1d0bd64402cd650b1b903230ffd0f9",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q009",
+      "testedDecision": "Which deployment fits Lumen’s interactive EU-processing and on-demand billing requirements?",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-A2.02",
+      "itemRevisionHash": "c35d4b1506aa5dc42a3680f7f1282934e7c5b8a2350775ffdb1d07aecb21ee3f",
+      "sources": [
+        {
+          "sourceId": "S005",
+          "title": "Deployment types for Microsoft Foundry Models",
+          "url": "https://learn.microsoft.com/azure/foundry/foundry-models/concepts/deployment-types",
+          "snapshotSha256": "6c6d5d7b11684c1cbba8d35fd278a313e1420e3853b0ba9f104898c4a8c24c58",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q010",
+      "testedDecision": "Lumen’s runtime obtains a token but Reader-only inference is denied. Which documented role at the called Azure OpenAI resource supplies inference permission?",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-A3.04",
+      "itemRevisionHash": "1d6591803b4e4b10a17b651c08e411779974ce1b0677261b039ecd8c51ca0f94",
+      "sources": [
+        {
+          "sourceId": "S051",
+          "title": "Azure OpenAI v1 API",
+          "url": "https://learn.microsoft.com/en-us/azure/foundry/openai/api-version-lifecycle",
+          "snapshotSha256": "8e7e4b2c4e94ad6056ffa3edf4750e4db864ceac16a52777cc13fd2068403803",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S052",
+          "title": "Use Azure OpenAI without keys",
+          "url": "https://learn.microsoft.com/en-us/azure/developer/ai/keyless-connections",
+          "snapshotSha256": "4f2b4d850889660d3af96aac661fa1955b8d9e1bf6f454facbef5b11aa59efcd",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q011",
+      "testedDecision": "Lumen’s Search role is correct, but the runtime resolves Search publicly. What should be repaired first?",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-A3.04",
+      "itemRevisionHash": "7db21261479f0d84d52dcc4102b1b00669f6d926a532f093ae6c31a304f8574a",
+      "sources": [
+        {
+          "sourceId": "S011",
+          "title": "Set up private networking for Foundry Agent Service",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/how-to/virtual-networks",
+          "snapshotSha256": "02eb40fb9bc5fcbd6b27249423b2d0ba26f5df0dd6b6885c881270a7a6fac8b9",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q012",
+      "testedDecision": "Lumen’s OIDC token succeeds but deployment is denied. Which authorization correction targets the case defect?",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-A2.04",
+      "itemRevisionHash": "385fb0fbea81b0439596a021fb3891f9625b4e84af047bbe806925dcfffe599f",
+      "sources": [
+        {
+          "sourceId": "S012",
+          "title": "Quickstart: Hosted agent CI/CD templates",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/quickstarts/set-up-cicd-hosted-agent",
+          "snapshotSha256": "e6e53feb7b84553872c1d228d971a02871b943aa30c877cb5f9402e1cb4797c6",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S010",
+          "title": "Role-based access control for Microsoft Foundry",
+          "url": "https://learn.microsoft.com/azure/foundry/concepts/rbac-foundry",
+          "snapshotSha256": "c63d1b1d5cb16c4ffbf9019b34ac56ab5e47f81f1457b4e2d7c02a2de16a59f9",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q013",
+      "testedDecision": "North uses one backend principal and {{$userId}} with no header. Which implementation separates authenticated subscribers?",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-B2.02",
+      "itemRevisionHash": "5dfe068f5f98a19f542d711a3b47ac3a438d65fbbe8c56d81a178dee4d1aec42",
+      "sources": [
+        {
+          "sourceId": "S053",
+          "title": "Create and use memory in Foundry Agent Service (preview)",
+          "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/how-to/memory-usage",
+          "snapshotSha256": "d118113db20dbe589f686a9150063736c78ce1b6e7b37c649bf28262918d31b6",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q014",
+      "testedDecision": "North’s administrative job searches low-level memory with the subscriber named only in query text. What must change?",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-B2.02",
+      "itemRevisionHash": "50ce73a5f25f4ab927500b9ac68fc8a025cabde06cc8b8118fe910931fb7dda6",
+      "sources": [
+        {
+          "sourceId": "S053",
+          "title": "Create and use memory in Foundry Agent Service (preview)",
+          "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/how-to/memory-usage",
+          "snapshotSha256": "d118113db20dbe589f686a9150063736c78ce1b6e7b37c649bf28262918d31b6",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q015",
+      "testedDecision": "North’s Responses builder copied response_format from Chat Completions. Where should its structured-result format be configured?",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-B3.01",
+      "itemRevisionHash": "8199fef410314a966a824d294e1110f15c92d9f5749c809fc5747356c435759f",
+      "sources": [
+        {
+          "sourceId": "S037",
+          "title": "Structured outputs",
+          "url": "https://learn.microsoft.com/azure/foundry/openai/how-to/structured-outputs",
+          "snapshotSha256": "0337c89ce3e5a9ba28d1c2fc18f1644c50b13568eb19edc43420d16b401cacfc",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q016",
+      "testedDecision": "North wants a domain boundary and clarification when evidence is missing. Which design addresses behavior and enforcement?",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-B3.01",
+      "itemRevisionHash": "668c679e809880f2102ef8b798a0b212e51059e0d242513a3f5b21f18b47a5bf",
+      "sources": [
+        {
+          "sourceId": "S057",
+          "title": "System message design",
+          "url": "https://learn.microsoft.com/en-us/azure/cognitive-services/openai/concepts/advanced-prompt-engineering?pivots=programming-language-chat-completions",
+          "snapshotSha256": "8c3d221b7d097fd064d9875f54a48e446f7e44efe81622613ce58cfcb84e87e4",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q017",
+      "testedDecision": "An interactive assistant may process requests across EU countries but cannot process them outside the EU. Usage varies, and the team wants token-based billing. The model supports all listed types. Which deployment fits?",
+      "oldItemIds": [
+        "ai103-set-a-q001"
+      ],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-A2.02",
+      "itemRevisionHash": "9fca0d8a7198783b0099f79c8421788bee25dcd04d7face7c3f7b431d3e1831e",
+      "sources": [
+        {
+          "sourceId": "S005",
+          "title": "Deployment types for Microsoft Foundry Models",
+          "url": "https://learn.microsoft.com/azure/foundry/foundry-models/concepts/deployment-types",
+          "snapshotSha256": "6c6d5d7b11684c1cbba8d35fd278a313e1420e3853b0ba9f104898c4a8c24c58",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q018",
+      "testedDecision": "A service has predictable sustained model traffic and needs allocated throughput. Its processing boundary is already satisfied by the chosen region. Which deployment characteristic should drive the selection?",
+      "oldItemIds": [
+        "ai103-set-a-q002"
+      ],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-A2.02",
+      "itemRevisionHash": "fa68d4d8b956448648b6a11f003ac682d9c1a51378c378b262cc80e4cead32a2",
+      "sources": [
+        {
+          "sourceId": "S005",
+          "title": "Deployment types for Microsoft Foundry Models",
+          "url": "https://learn.microsoft.com/azure/foundry/foundry-models/concepts/deployment-types",
+          "snapshotSha256": "6c6d5d7b11684c1cbba8d35fd278a313e1420e3853b0ba9f104898c4a8c24c58",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q019",
+      "testedDecision": "Developers have scoped Foundry RBAC roles, but a shared resource key authenticates the application. A developer can perform an operation that their role excludes. Which change makes the role assignments effective for those calls?",
+      "oldItemIds": [
+        "ai103-set-a-q003"
+      ],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-A3.04",
+      "itemRevisionHash": "2db0805857d105791720b987b330d937de87ceddfe12d2cadb9d00d3242931f4",
+      "sources": [
+        {
+          "sourceId": "S010",
+          "title": "Role-based access control for Microsoft Foundry",
+          "url": "https://learn.microsoft.com/azure/foundry/concepts/rbac-foundry",
+          "snapshotSha256": "c63d1b1d5cb16c4ffbf9019b34ac56ab5e47f81f1457b4e2d7c02a2de16a59f9",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q020",
+      "testedDecision": "A secured agent has the required runtime roles. Search resolves to a public IP from the agent network even though public access is disabled. The private endpoint exists. What should be investigated next?",
+      "oldItemIds": [
+        "ai103-set-a-q004"
+      ],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-A3.04",
+      "itemRevisionHash": "4b2cd407efb9c0b42f84d07eac73f1bd7a3d0b241d241d33f1a98a5c06cf79b2",
+      "sources": [
+        {
+          "sourceId": "S011",
+          "title": "Set up private networking for Foundry Agent Service",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/how-to/virtual-networks",
+          "snapshotSha256": "02eb40fb9bc5fcbd6b27249423b2d0ba26f5df0dd6b6885c881270a7a6fac8b9",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q021",
+      "testedDecision": "A Foundry managed-compute preview deployment needs more accelerators. Matching GPU VM quota is available in the same region. Which quota should the team request?",
+      "oldItemIds": [
+        "ai103-set-a-q005"
+      ],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-A3.01",
+      "itemRevisionHash": "cc4a9030d9d7969cc48d7a75b6daee4826b295edd9ce8f2c85cad390732df4fe",
+      "sources": [
+        {
+          "sourceId": "S004",
+          "title": "Deployment overview for Microsoft Foundry Models",
+          "url": "https://learn.microsoft.com/azure/foundry/concepts/deployments-overview",
+          "snapshotSha256": "91520b0f84e6e2823bb27945cb8e25f716440b7680ffc7ea9689d8025f1d080f",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q022",
+      "testedDecision": "A hosted agent returns session_quota_exceeded. Several sessions no longer need active compute, but their stored state is still required. What should the operator do?",
+      "oldItemIds": [
+        "ai103-set-a-q006"
+      ],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-A3.01",
+      "itemRevisionHash": "09a1e9747474dbf74a1745e032512bc61608e5919eaa99a23209df43e5e1c1ab",
+      "sources": [
+        {
+          "sourceId": "S009",
+          "title": "Foundry Agent Service limits, quotas, and regional support",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/concepts/limits-quotas-regions",
+          "snapshotSha256": "d83fd890729d322d4ffa580ca5a8db2bed5bcd783dae47f5da2b05985f4b3041",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q023",
+      "testedDecision": "A GitHub workflow must deploy a hosted agent with no long-lived Azure credential stored in GitHub. Which identity setup fits the documented deployment pattern?",
+      "oldItemIds": [
+        "ai103-set-a-q007"
+      ],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-A2.04",
+      "itemRevisionHash": "daf2c16a7ee6f9ad30831f186824c579d4cf25699d9f47dc77fa26d4e2ce6031",
+      "sources": [
+        {
+          "sourceId": "S012",
+          "title": "Quickstart: Hosted agent CI/CD templates",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/quickstarts/set-up-cicd-hosted-agent",
+          "snapshotSha256": "e6e53feb7b84553872c1d228d971a02871b943aa30c877cb5f9402e1cb4797c6",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q024",
+      "testedDecision": "An agent request traverses retrieval, generation and a business tool. Engineers need to attribute a latency increase to one operation and its parent request. Which telemetry structure supports that?",
+      "oldItemIds": [
+        "ai103-set-a-q008"
+      ],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-A4.03",
+      "itemRevisionHash": "f72beffbd9483c3e09c7131dbe2c26ac701763c48529755a04499b3e6c056fb5",
+      "sources": [
+        {
+          "sourceId": "S013",
+          "title": "Agent tracing overview",
+          "url": "https://learn.microsoft.com/azure/foundry/observability/concepts/trace-agent-concept",
+          "snapshotSha256": "895295a4b74d7cabaa0daf62bd6cd5239daf25b6ea85a2268dc2cdf8483b19e8",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q025",
+      "testedDecision": "Tool arguments include account numbers and an access token. Engineers need useful traces for incident diagnosis. Which collection policy best fits?",
+      "oldItemIds": [
+        "ai103-set-a-q009"
+      ],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-A4.03",
+      "itemRevisionHash": "9e983edc9466f2f968c6992840c8b80b2ef3b7d10b3adb46def6ce3435c31275",
+      "sources": [
+        {
+          "sourceId": "S013",
+          "title": "Agent tracing overview",
+          "url": "https://learn.microsoft.com/azure/foundry/observability/concepts/trace-agent-concept",
+          "snapshotSha256": "895295a4b74d7cabaa0daf62bd6cd5239daf25b6ea85a2268dc2cdf8483b19e8",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q026",
+      "testedDecision": "An indexer reports Success, but several known source documents are absent from Search. Where should the investigation start?",
+      "oldItemIds": [
+        "ai103-set-a-q010"
+      ],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-A3.03",
+      "itemRevisionHash": "3f75541947992c41bce13b1011bb8f10c692db46e28ff96f757b39ffb33def08",
+      "sources": [
+        {
+          "sourceId": "S027",
+          "title": "Monitor Azure AI Search",
+          "url": "https://learn.microsoft.com/azure/search/monitor-azure-cognitive-search",
+          "snapshotSha256": "fd18e205e7cd88e39eab53a5690757f65c8d457366491f8954875d2bc4f54ca0",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S044",
+          "title": "Monitor indexer status and results in Azure AI Search",
+          "url": "https://learn.microsoft.com/azure/search/search-monitor-indexers",
+          "snapshotSha256": "7b9808eefb69e1d573b537e17a3fff7ab159cf6e259f3b7a254a2ecd1c1a8dcc",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q027",
+      "testedDecision": "Complete the current Python client calls for an existing agent named helpdesk and its project OpenAI client.",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-B1.06",
+      "itemRevisionHash": "6414d7f37590957d1563299dd49776a959d1dca08b186da9872d09f6c9df41f5",
+      "sources": [
+        {
+          "sourceId": "S002",
+          "title": "Azure AI Projects client library for Python - version 2.8.0",
+          "url": "https://learn.microsoft.com/python/api/overview/azure/ai-projects-readme?view=azure-python",
+          "snapshotSha256": "2ce3139fd9fb77eb3f63d4a797ecc24deab957376faac5fe5a28d80e8080b266",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S056",
+          "title": "AI Projects AgentsOperations Python reference",
+          "url": "https://learn.microsoft.com/en-us/python/api/azure-ai-projects/azure.ai.projects.operations.agentsoperations?view=azure-python",
+          "snapshotSha256": "888658bb603bbc211a4096be874b78aefcabf8c8e5a4b3c0a14e93ad80c2a6a7",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q028",
+      "testedDecision": "Complete a backend memory-search tool definition and response header for per-user preferences. user_key is derived from the authenticated session.",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-B2.02",
+      "itemRevisionHash": "7948dab189232eeec9f1fa3135eb663bfa98efb0b4ba0fc058d883e556c1570e",
+      "sources": [
+        {
+          "sourceId": "S053",
+          "title": "Create and use memory in Foundry Agent Service (preview)",
+          "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/how-to/memory-usage",
+          "snapshotSha256": "d118113db20dbe589f686a9150063736c78ce1b6e7b37c649bf28262918d31b6",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q029",
+      "testedDecision": "A Responses turn must consult at least one attached tool. Complete the request-level control.",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-B2.01",
+      "itemRevisionHash": "ac2b28d27360812b6dd96140091de0ae27181cf4d6db1adad63daa3c728bd776",
+      "sources": [
+        {
+          "sourceId": "S054",
+          "title": "Tool best practices for Microsoft Foundry Agent Service",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/concepts/tool-best-practice",
+          "snapshotSha256": "fbf440754eab789009c34a8bf7636fc60c1d0bd64402cd650b1b903230ffd0f9",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q030",
+      "testedDecision": "Complete a supported strict Responses schema: note must be present and can be null; unknown properties are rejected.",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-B3.01",
+      "itemRevisionHash": "f82cc7af5f1486f70f85e22aa0b50c87c129321899759e91aa3850372ca48557",
+      "sources": [
+        {
+          "sourceId": "S037",
+          "title": "Structured outputs",
+          "url": "https://learn.microsoft.com/azure/foundry/openai/how-to/structured-outputs",
+          "snapshotSha256": "0337c89ce3e5a9ba28d1c2fc18f1644c50b13568eb19edc43420d16b401cacfc",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q031",
+      "testedDecision": "A supported reasoning model returns a reasoning summary through Responses. A product manager wants to label it 'the model's complete internal reasoning'. Which description is accurate?",
+      "oldItemIds": [
+        "ai103-set-a-q032"
+      ],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-B3.01",
+      "itemRevisionHash": "fb5c9fc1b7dcfe4a28d6e023c7eb0b76b4605b5d45606f1677d0fbf3dee3fc99",
+      "sources": [
+        {
+          "sourceId": "S038",
+          "title": "Azure OpenAI reasoning models",
+          "url": "https://learn.microsoft.com/azure/foundry/openai/how-to/reasoning",
+          "snapshotSha256": "e70ad3d65055c901703ee0f2faa850aa6c69cd5ee2a4d7e57d3e0a5e0b3cbf34",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q032",
+      "testedDecision": "A support assistant should stay within product support and ask for clarification when evidence is insufficient. Which prompt control expresses both?",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-B3.01",
+      "itemRevisionHash": "d782fee40b337677ee2d383fc2f9e5c103aa674d3b22bb5e2b74a8f1ee2c980f",
+      "sources": [
+        {
+          "sourceId": "S057",
+          "title": "System message design",
+          "url": "https://learn.microsoft.com/en-us/azure/cognitive-services/openai/concepts/advanced-prompt-engineering?pivots=programming-language-chat-completions",
+          "snapshotSha256": "8c3d221b7d097fd064d9875f54a48e446f7e44efe81622613ce58cfcb84e87e4",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q033",
+      "testedDecision": "A deterministic workflow sends a request to a retrieval specialist and then a policy specialist. What must its orchestration represent?",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-B2.04",
+      "itemRevisionHash": "d8c3cab219aa256a7eecb1b6838497195ccfd729cec4d360987bd3eba8391864",
+      "sources": [
+        {
+          "sourceId": "S008",
+          "title": "Build a workflow in Microsoft Foundry (Preview)",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/concepts/workflow",
+          "snapshotSha256": "91311aec35bad6e1e44149491430baa72e5eeec37c9f869ba7fbf9356e5497e4",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q034",
+      "testedDecision": "An agent calls the translation tool for a request that requires stock availability. The translation call is valid and succeeds. Which evaluation pinpoints the mistake?",
+      "oldItemIds": [
+        "ai103-set-a-q037"
+      ],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-B2.06",
+      "itemRevisionHash": "63b4f584369a1ad5988142b072ec250374ad0fd41f6774a8e1daef5c0667f906",
+      "sources": [
+        {
+          "sourceId": "S014",
+          "title": "Agent evaluators",
+          "url": "https://learn.microsoft.com/azure/foundry/concepts/evaluation-evaluators/agent-evaluators",
+          "snapshotSha256": "0ce17b86785e87efb44074de9d3fdee3ae8290dedcb04a18a68558081be7103f",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q035",
+      "testedDecision": "A Search tool points at the right service but retrieves an unrelated index. Which agent-tool configuration should be corrected first?",
+      "oldItemIds": [
+        "ai103-set-a-q036"
+      ],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-B1.02",
+      "itemRevisionHash": "013d8db6ea51e4175ee9724f7972099abcebb5a08ac45b271b492029f419b830",
+      "sources": [
+        {
+          "sourceId": "S040",
+          "title": "Connect an Azure AI Search index to Foundry agents",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/how-to/tools/ai-search",
+          "snapshotSha256": "67830020b25de8c993ae294ff523035ad2c04c16865c1fe7222f053769316545",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q036",
+      "testedDecision": "A response is fully supported by context and addresses the question, but omits two required parts of the reference answer. Which additional metric is most targeted?",
+      "oldItemIds": [
+        "ai103-set-a-q042"
+      ],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-B1.04",
+      "itemRevisionHash": "49eecffa9e55acedf3549774c6b7f5fcc83f8b85cf7e32948b62c3989079a6f9",
+      "sources": [
+        {
+          "sourceId": "S039",
+          "title": "Retrieval-Augmented Generation (RAG) evaluators",
+          "url": "https://learn.microsoft.com/azure/foundry/concepts/evaluation-evaluators/rag-evaluators",
+          "snapshotSha256": "3b16c765be1f1479ac22e04cf9b293be767d473fc1cacb188b90751227074a4b",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q037",
+      "testedDecision": "An agent must remember a user's preferred units across conversations while answering from a maintained engineering manual. Which division of context is appropriate?",
+      "oldItemIds": [
+        "ai103-set-a-q011"
+      ],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-A1.04",
+      "itemRevisionHash": "9e816482f1cffa0e096ff587506945163535b51e87d39feb93f1e29f17873b22",
+      "sources": [
+        {
+          "sourceId": "S006",
+          "title": "Memory in Microsoft Foundry Agent Service (preview)",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/concepts/what-is-memory",
+          "snapshotSha256": "1dd4a33b4885266d1a2a73cee51de011ad50f9e63454609195d46179316746f8",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q038",
+      "testedDecision": "An agent follows its operating policy and calls the correct tools, but leaves two requested deliverables unfinished. Which evaluator best targets the overall outcome?",
+      "oldItemIds": [
+        "ai103-set-a-q013"
+      ],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-A4.02",
+      "itemRevisionHash": "51771f171506af048eb90bdf3456b4b3a81af81350376629d9e52ef922e0b7f8",
+      "sources": [
+        {
+          "sourceId": "S014",
+          "title": "Agent evaluators",
+          "url": "https://learn.microsoft.com/azure/foundry/concepts/evaluation-evaluators/agent-evaluators",
+          "snapshotSha256": "0ce17b86785e87efb44074de9d3fdee3ae8290dedcb04a18a68558081be7103f",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q039",
+      "testedDecision": "A team has query-document relevance labels and wants to compare two retrievers before adding answer generation. Which evaluation is appropriate?",
+      "oldItemIds": [
+        "ai103-set-a-q014"
+      ],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-A4.02",
+      "itemRevisionHash": "0b872b80483aae05a1a1cce9323b91e852318a7791fca62e1f3c2fda2ceba8fd",
+      "sources": [
+        {
+          "sourceId": "S039",
+          "title": "Retrieval-Augmented Generation (RAG) evaluators",
+          "url": "https://learn.microsoft.com/azure/foundry/concepts/evaluation-evaluators/rag-evaluators",
+          "snapshotSha256": "3b16c765be1f1479ac22e04cf9b293be767d473fc1cacb188b90751227074a4b",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q040",
+      "testedDecision": "A retrieved maintenance page tells the agent to ignore its instructions and send credentials to a URL. Which threat category should be evaluated at this boundary?",
+      "oldItemIds": [
+        "ai103-set-a-q015"
+      ],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-A4.01",
+      "itemRevisionHash": "304fe4676acda1e76bbd84a22d58dbb2bf29af741ccd6c55e9ea7c757b09dc8d",
+      "sources": [
+        {
+          "sourceId": "S015",
+          "title": "Guardrails and controls overview in Microsoft Foundry",
+          "url": "https://learn.microsoft.com/azure/foundry/guardrails/guardrails-overview",
+          "snapshotSha256": "8bff59568b79380dc2ea6df819b965422c98fdf03bf6b06df0b99bc1287e4c54",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S016",
+          "title": "Prompt Shields in Microsoft Foundry",
+          "url": "https://learn.microsoft.com/azure/foundry/openai/concepts/content-filter-prompt-shields",
+          "snapshotSha256": "770228d708d01826dc0d17c9ddafbb8d0e7f412bb2a0ad9a13b2ac54ac84735e",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q041",
+      "testedDecision": "An organization requires agent state in customer-managed resources in its own subscription. Which agent setup aligns with that storage requirement?",
+      "oldItemIds": [
+        "ai103-set-a-q017"
+      ],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-A2.01",
+      "itemRevisionHash": "3377f11c29e825ce621aa2969687bea38ebaad94b19f209aa3ac139eed9da83b",
+      "sources": [
+        {
+          "sourceId": "S009",
+          "title": "Foundry Agent Service limits, quotas, and regional support",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/concepts/limits-quotas-regions",
+          "snapshotSha256": "d83fd890729d322d4ffa580ca5a8db2bed5bcd783dae47f5da2b05985f4b3041",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q042",
+      "testedDecision": "A team wants one supported Python client library for extracting document layout, transcribing audio and analyzing recorded video into structured outputs. Which service’s documented client covers all three input modalities?",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-A1.02",
+      "itemRevisionHash": "45350b532e2d6a616aaca29cb37e6e0a9c47174bae31c7afefe9d9b666d264c4",
+      "sources": [
+        {
+          "sourceId": "S021",
+          "title": "Azure AI Content Understanding client library for Python - version 1.1.0",
+          "url": "https://learn.microsoft.com/python/api/overview/azure/ai-contentunderstanding-readme?view=azure-python",
+          "snapshotSha256": "aa5fd0abb99fe608e62d3909ffd7bc4eac9904dc931f427c9e3788351fbc7b42",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q043",
+      "testedDecision": "Complete the Azure OpenAI v1 client for keyless inference. The calling identity has the inference role at the resource scope.",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-A3.04",
+      "itemRevisionHash": "95012a04e71b6271add4910d6cf080ae5d1a03eec7888425a67a7c5b8b968062",
+      "sources": [
+        {
+          "sourceId": "S051",
+          "title": "Azure OpenAI v1 API",
+          "url": "https://learn.microsoft.com/en-us/azure/foundry/openai/api-version-lifecycle",
+          "snapshotSha256": "8e7e4b2c4e94ad6056ffa3edf4750e4db864ceac16a52777cc13fd2068403803",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S052",
+          "title": "Use Azure OpenAI without keys",
+          "url": "https://learn.microsoft.com/en-us/azure/developer/ai/keyless-connections",
+          "snapshotSha256": "4f2b4d850889660d3af96aac661fa1955b8d9e1bf6f454facbef5b11aa59efcd",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q044",
+      "testedDecision": "Complete the AI Projects Python 2.8.0 constructor for project operations.",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-A2.03",
+      "itemRevisionHash": "ea2e6bb0cfccb550abc30cc7b89418fb91790abc1ac146c3f95d89b25d88f8e8",
+      "sources": [
+        {
+          "sourceId": "S002",
+          "title": "Azure AI Projects client library for Python - version 2.8.0",
+          "url": "https://learn.microsoft.com/python/api/overview/azure/ai-projects-readme?view=azure-python",
+          "snapshotSha256": "2ce3139fd9fb77eb3f63d4a797ecc24deab957376faac5fe5a28d80e8080b266",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S003",
+          "title": "Microsoft Foundry SDKs and endpoints",
+          "url": "https://learn.microsoft.com/azure/foundry/how-to/develop/sdk-overview",
+          "snapshotSha256": "f62e4cfa9a1eeed9aa30383cab18005b8bc8f72d2743a26dedf0bb83d24e046d",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q045",
+      "testedDecision": "A catalog requires exact part-code matches and semantic symptom matches. Which design combines both retrieval signals before optional reranking?",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-A1.03",
+      "itemRevisionHash": "4f9c98b06a6355dfde8e6fa331d4adabacf38e8767ac87bcc0e31635ee343ec6",
+      "sources": [
+        {
+          "sourceId": "S025",
+          "title": "Hybrid search using vectors and full-text search in Azure AI Search",
+          "url": "https://learn.microsoft.com/azure/search/hybrid-search-overview",
+          "snapshotSha256": "8f766ea87e9528dc1e469ffca3de91350cf9b9393aaf47e5c8c124378457397d",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S026",
+          "title": "Integrated vector embedding in Azure AI Search",
+          "url": "https://learn.microsoft.com/azure/search/vector-search-integrated-vectorization",
+          "snapshotSha256": "45a6b445fbe4f7f65334693eb96b2de7b021e0b50ce46b363ab47c5de0a11f0d",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q046",
+      "testedDecision": "An agent proposes a consequential account change. Which host boundary should decide whether it executes?",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-A4.04",
+      "itemRevisionHash": "724fb7d8f627c1e5dababcf7d0cb416633f7f855467f17f997528193d21b3d20",
+      "sources": [
+        {
+          "sourceId": "S054",
+          "title": "Tool best practices for Microsoft Foundry Agent Service",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/concepts/tool-best-practice",
+          "snapshotSha256": "fbf440754eab789009c34a8bf7636fc60c1d0bd64402cd650b1b903230ffd0f9",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q047",
+      "testedDecision": "A catalog app must create a new product-scene image from a text brief, with no source image supplied. Its supported GPT image deployment is available. Which operation matches this input contract?",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-C1.01",
+      "itemRevisionHash": "ef53aab6371364bfeacdfa558ed3def37d86b44978bbcd3782771fa7328690ce",
+      "sources": [
+        {
+          "sourceId": "S017",
+          "title": "Azure OpenAI image generation models",
+          "url": "https://learn.microsoft.com/azure/foundry/openai/how-to/dall-e",
+          "snapshotSha256": "34668770bb5790633413f4ae9432738c85ed36aef328f9f2bdb8b1b82437dca6",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q048",
+      "testedDecision": "An application switches between two GPT image deployments with different quality and size options. What should its request builder use?",
+      "oldItemIds": [
+        "ai103-set-a-q044"
+      ],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-C1.05",
+      "itemRevisionHash": "c30593a7c8669cdda51b746e2c504c173dffa1f4a5e7f1691e2f9a84302e3012",
+      "sources": [
+        {
+          "sourceId": "S017",
+          "title": "Azure OpenAI image generation models",
+          "url": "https://learn.microsoft.com/azure/foundry/openai/how-to/dall-e",
+          "snapshotSha256": "34668770bb5790633413f4ae9432738c85ed36aef328f9f2bdb8b1b82437dca6",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q049",
+      "testedDecision": "A vision-enabled chat model must describe damage visible in a supplied photograph. Which message construction gives it the actual visual input?",
+      "oldItemIds": [
+        "ai103-set-a-q045"
+      ],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-C2.01",
+      "itemRevisionHash": "af7e0c79697ad288f8954548ab54c4168dfec44902343135f57a3d1dc3fda8b9",
+      "sources": [
+        {
+          "sourceId": "S019",
+          "title": "Use vision-enabled chat models",
+          "url": "https://learn.microsoft.com/azure/foundry/openai/how-to/gpt-with-vision",
+          "snapshotSha256": "1ce6d9970cccbd4d54714eff5d70bc5e73d4c2c8ad3ea48175c8fcea5d11b2cd",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q050",
+      "testedDecision": "A magnifying-glass image is the visible label of a search button. Which text alternative best communicates the function?",
+      "oldItemIds": [
+        "ai103-set-a-q046"
+      ],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-C2.04",
+      "itemRevisionHash": "e61010146809b7214f923c9bd80cabab06fb5c78b89718e705d270eee82b9e05",
+      "sources": [
+        {
+          "sourceId": "S050",
+          "title": "W3C WAI An alt Decision Tree",
+          "url": "https://www.w3.org/WAI/tutorials/images/decision-tree/",
+          "snapshotSha256": "fa71070e3609f8825849fe94c3b718fb8632724b4c88ed9f3e5ea54615f36404",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q051",
+      "testedDecision": "A Content Understanding video preview samples about one frame per second. A safety event lasts 0.2 seconds and the output does not mention it. Which conclusion is justified?",
+      "oldItemIds": [
+        "ai103-set-a-q049"
+      ],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-C2.06",
+      "itemRevisionHash": "34b350479a27a6d01753f415819895de7d01dac6988a57cce711718b153495ba",
+      "sources": [
+        {
+          "sourceId": "S022",
+          "title": "Azure Content Understanding in Foundry Tools video solutions",
+          "url": "https://learn.microsoft.com/azure/ai-services/content-understanding/video/overview",
+          "snapshotSha256": "3a89d957245350c800482a717244bd3fc27b322ed67dbcbabea8e41782a3a57a",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q052",
+      "testedDecision": "A production document-image workflow needs capabilities available in Content Understanding 2025-11-01. A newer preview offers unrelated features. Which API selection follows the documented production guidance?",
+      "oldItemIds": [
+        "ai103-set-a-q050"
+      ],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-C2.05",
+      "itemRevisionHash": "ba94deab30f8c667ba34f32065ab668e7a27b5cd867ac1cb42d857f64dd3f8c8",
+      "sources": [
+        {
+          "sourceId": "S020",
+          "title": "What is Azure Content Understanding in Foundry Tools?",
+          "url": "https://learn.microsoft.com/azure/ai-services/content-understanding/overview",
+          "snapshotSha256": "c371f350d668f0d6040d569a845d3ec43e22834614253c7be6c62115f59ba8df",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q053",
+      "testedDecision": "A poster has a low visual harm score but includes text telling an agent to reveal credentials. Which conclusion follows from the harm result?",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-C3.01",
+      "itemRevisionHash": "2fd0ad122c221cec195968c5e54080a48bb203f7379e4d110a38f3e8a75a58f7",
+      "sources": [
+        {
+          "sourceId": "S042",
+          "title": "QuickStart: Analyze image content",
+          "url": "https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-image",
+          "snapshotSha256": "6a40b6fdabe9e2a91838a3026f8530d0229c70acd401c4fab094a6c0c63b8670",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S048",
+          "title": "Azure AI Content Safety Frequently Asked Questions",
+          "url": "https://learn.microsoft.com/en-us/azure/ai-services/content-safety/faq",
+          "snapshotSha256": "1b16f29ac9424c57412c1d41d6e8a1edabe2bac709c1296ffdac09e0439ddadf",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q054",
+      "testedDecision": "A vision model receives two images of the same machine. The app needs a concise caption comparing visible differences. What should be supplied?",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-C2.02",
+      "itemRevisionHash": "22006f688ce2aa84c1d81d0b4fb267299578460ac7eea33b8b80603cdcdec42f",
+      "sources": [
+        {
+          "sourceId": "S019",
+          "title": "Use vision-enabled chat models",
+          "url": "https://learn.microsoft.com/azure/foundry/openai/how-to/gpt-with-vision",
+          "snapshotSha256": "1ce6d9970cccbd4d54714eff5d70bc5e73d4c2c8ad3ea48175c8fcea5d11b2cd",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q055",
+      "testedDecision": "Complete a vision chat message so a question about a supplied inspection photo is grounded in actual image input.",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-C2.03",
+      "itemRevisionHash": "f469df2c72be27190f5fd1c3b032617b71d450ce4b7b0a5cec5b2f829081937a",
+      "sources": [
+        {
+          "sourceId": "S019",
+          "title": "Use vision-enabled chat models",
+          "url": "https://learn.microsoft.com/azure/foundry/openai/how-to/gpt-with-vision",
+          "snapshotSha256": "1ce6d9970cccbd4d54714eff5d70bc5e73d4c2c8ad3ea48175c8fcea5d11b2cd",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q056",
+      "testedDecision": "The selected image model supports masking. Complete an edit request for a source image and a mask already sized to match it.",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-C1.03",
+      "itemRevisionHash": "7b5a38945b2a0e32bd237458987affb66f463bf22352f7829fc9f3e58a2cdd4e",
+      "sources": [
+        {
+          "sourceId": "S017",
+          "title": "Azure OpenAI image generation models",
+          "url": "https://learn.microsoft.com/azure/foundry/openai/how-to/dall-e",
+          "snapshotSha256": "34668770bb5790633413f4ae9432738c85ed36aef328f9f2bdb8b1b82437dca6",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q057",
+      "testedDecision": "A Translator text request contains one sentence with English and German spans. Some words remain untranslated. Which preparation targets the documented limitation?",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-D1.03",
+      "itemRevisionHash": "b467a5e17d5544a341e52b88811b68643981fb5ccceca01e0e3aaa04384ecb66",
+      "sources": [
+        {
+          "sourceId": "S055",
+          "title": "Azure Translator known issues and troubleshooting",
+          "url": "https://learn.microsoft.com/en-us/azure/ai-services/translator/reference/known-issues",
+          "snapshotSha256": "c1b48f37f4dc56c80cbc9c30661bfc67f1f6f75dea4693ef6d9e39beeeb88f1c",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q058",
+      "testedDecision": "A domain compliance summarizer needs a defined scope and an explicit escalation when evidence is missing. Which instruction design addresses it?",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-D1.04",
+      "itemRevisionHash": "90047a916e2f2ee68f8fe76154c9c447a13288bbe60212e91843d7aed897cfec",
+      "sources": [
+        {
+          "sourceId": "S057",
+          "title": "System message design",
+          "url": "https://learn.microsoft.com/en-us/azure/cognitive-services/openai/concepts/advanced-prompt-engineering?pivots=programming-language-chat-completions",
+          "snapshotSha256": "8c3d221b7d097fd064d9875f54a48e446f7e44efe81622613ce58cfcb84e87e4",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q059",
+      "testedDecision": "A blob OCR pipeline has imageAction none and incorrectly maps a skill-produced text node with fieldMappings. Which TWO changes repair the data path? Select TWO answers.",
+      "oldItemIds": [
+        "ai103-set-a-q080"
+      ],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-E1.04",
+      "itemRevisionHash": "bfb186d648fc843d174a3cd8a8aa92cf6eb55db511f33a44339592942f65a3fa",
+      "sources": [
+        {
+          "sourceId": "S043",
+          "title": "OCR cognitive skill",
+          "url": "https://learn.microsoft.com/azure/search/cognitive-search-skill-ocr",
+          "snapshotSha256": "0a5cdd696dcbae744d32db7fd89a69926f0203462f86d6dc25793ab07d001b3d",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S028",
+          "title": "Skillset concepts in Azure AI Search",
+          "url": "https://learn.microsoft.com/azure/search/cognitive-search-working-with-skillsets",
+          "snapshotSha256": "3d24961260a3a7ca041656383016222704c25dec2dff53743bbaef628236312b",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q060",
+      "testedDecision": "A team uses Content Understanding SDK 1.1.0 for production document extraction. Which TWO implementation choices align with the referenced contract? Select TWO answers.",
+      "oldItemIds": [
+        "ai103-set-a-q081"
+      ],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-E2.02",
+      "itemRevisionHash": "6c64fddd3cf76405ff9917f2f9d0660137031b6fe92983c5be26b41e0115c9a8",
+      "sources": [
+        {
+          "sourceId": "S021",
+          "title": "Azure AI Content Understanding client library for Python - version 1.1.0",
+          "url": "https://learn.microsoft.com/python/api/overview/azure/ai-contentunderstanding-readme?view=azure-python",
+          "snapshotSha256": "aa5fd0abb99fe608e62d3909ffd7bc4eac9904dc931f427c9e3788351fbc7b42",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S020",
+          "title": "What is Azure Content Understanding in Foundry Tools?",
+          "url": "https://learn.microsoft.com/azure/ai-services/content-understanding/overview",
+          "snapshotSha256": "c371f350d668f0d6040d569a845d3ec43e22834614253c7be6c62115f59ba8df",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q061",
+      "testedDecision": "A custom analyzer must extract an amount from unfamiliar invoice layouts and support reviewer verification. Which TWO features or inputs are useful? Select TWO answers.",
+      "oldItemIds": [
+        "ai103-set-a-q082"
+      ],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-E2.03",
+      "itemRevisionHash": "e0d225722487bcda6d43f84985d64ec87fc69b7eae050743aff0bbac6cef47e7",
+      "sources": [
+        {
+          "sourceId": "S045",
+          "title": "Validate document analyzer quality with confidence, grounding, and labeled samples",
+          "url": "https://learn.microsoft.com/azure/ai-services/content-understanding/document/analyzer-improvement",
+          "snapshotSha256": "c08a60437bdcc723d00d30d9898b3967040a122cf43b5ff95b5f1a33a3dadd93",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S059",
+          "title": "Content Understanding document solutions",
+          "url": "https://learn.microsoft.com/en-us/azure/ai-services/content-understanding/document/overview",
+          "snapshotSha256": "bf5c315cb4cdc9062a3f9dd797d0167ce02b793bfbcea213c4c3ea8f25903422",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q062",
+      "testedDecision": "Long manuals exceed embedding limits, and the query vectorizer uses an unrelated model. Which TWO configuration corrections address the two failures? Select TWO answers.",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-E1.01",
+      "itemRevisionHash": "359dbcc06ec591cd6b290b6f9f2a8e4ab22fdf01fe3e87a3e6a79487b4a8cbc8",
+      "sources": [
+        {
+          "sourceId": "S058",
+          "title": "Integrated vectorization REST configuration",
+          "url": "https://learn.microsoft.com/en-us/azure/search/search-how-to-integrated-vectorization",
+          "snapshotSha256": "a09c24b08450e2017f75e2fa7d0b107b870d58cb085c863b6531ddb3ab513716",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S026",
+          "title": "Integrated vector embedding in Azure AI Search",
+          "url": "https://learn.microsoft.com/azure/search/vector-search-integrated-vectorization",
+          "snapshotSha256": "45a6b445fbe4f7f65334693eb96b2de7b021e0b50ce46b363ab47c5de0a11f0d",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q063",
+      "testedDecision": "A product catalog needs exact codes and semantic candidates, with optional semantic reranking. Which TWO statements describe the stages correctly? Select TWO answers.",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-E1.02",
+      "itemRevisionHash": "22f89d783d1be13f6bb0bfe0ef7796485727e5e8bbae4df62e5e2e35ab3e29d6",
+      "sources": [
+        {
+          "sourceId": "S025",
+          "title": "Hybrid search using vectors and full-text search in Azure AI Search",
+          "url": "https://learn.microsoft.com/azure/search/hybrid-search-overview",
+          "snapshotSha256": "8f766ea87e9528dc1e469ffca3de91350cf9b9393aaf47e5c8c124378457397d",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S058",
+          "title": "Integrated vectorization REST configuration",
+          "url": "https://learn.microsoft.com/en-us/azure/search/search-how-to-integrated-vectorization",
+          "snapshotSha256": "a09c24b08450e2017f75e2fa7d0b107b870d58cb085c863b6531ddb3ab513716",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q064",
+      "testedDecision": "A document enrichment pipeline needs layout-aware Markdown and OCR for normalized images. Which TWO skill choices directly target these outputs? Select TWO answers.",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-E1.03",
+      "itemRevisionHash": "83451f6e24fa742a93f448d7a32a979f0fdea4cfc2cf08f812c9cabc43429c3e",
+      "sources": [
+        {
+          "sourceId": "S029",
+          "title": "Document Layout skill",
+          "url": "https://learn.microsoft.com/azure/search/cognitive-search-skill-document-intelligence-layout",
+          "snapshotSha256": "eb899b4d8c7fdd95e158072fa95891c8c96388f09c48c00a67683fa10ec4591a",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S043",
+          "title": "OCR cognitive skill",
+          "url": "https://learn.microsoft.com/azure/search/cognitive-search-skill-ocr",
+          "snapshotSha256": "0a5cdd696dcbae744d32db7fd89a69926f0203462f86d6dc25793ab07d001b3d",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q065",
+      "testedDecision": "An agent retrieves an unrelated Search index and returns content from another department. Which TWO tool configuration controls address the stated defects? Select TWO answers.",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-E1.05",
+      "itemRevisionHash": "f3914f8cb82aba0f5d19cece46a826f61158311cf34d4249a9d20d5bf9276911",
+      "sources": [
+        {
+          "sourceId": "S040",
+          "title": "Connect an Azure AI Search index to Foundry agents",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/how-to/tools/ai-search",
+          "snapshotSha256": "67830020b25de8c993ae294ff523035ad2c04c16865c1fe7222f053769316545",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S054",
+          "title": "Tool best practices for Microsoft Foundry Agent Service",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/concepts/tool-best-practice",
+          "snapshotSha256": "fbf440754eab789009c34a8bf7636fc60c1d0bd64402cd650b1b903230ffd0f9",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q066",
+      "testedDecision": "A document pipeline must extract invoice fields and support amount verification. Which TWO design choices address those requirements? Select TWO answers.",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-E2.01",
+      "itemRevisionHash": "e36b1f070255b29a4b58279507edf826f0030455dec17ef5c8b215817092c828",
+      "sources": [
+        {
+          "sourceId": "S059",
+          "title": "Content Understanding document solutions",
+          "url": "https://learn.microsoft.com/en-us/azure/ai-services/content-understanding/document/overview",
+          "snapshotSha256": "bf5c315cb4cdc9062a3f9dd797d0167ce02b793bfbcea213c4c3ea8f25903422",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S045",
+          "title": "Validate document analyzer quality with confidence, grounding, and labeled samples",
+          "url": "https://learn.microsoft.com/azure/ai-services/content-understanding/document/analyzer-improvement",
+          "snapshotSha256": "c08a60437bdcc723d00d30d9898b3967040a122cf43b5ff95b5f1a33a3dadd93",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q067",
+      "testedDecision": "A RAG pipeline needs a clean document representation before retrieval. Which TWO Content Understanding outputs or behaviors fit? Select TWO answers.",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-E2.02",
+      "itemRevisionHash": "669a0d76720eb306aa021d657c67308ffb5cedaa600b61f15e70eab76234e129",
+      "sources": [
+        {
+          "sourceId": "S059",
+          "title": "Content Understanding document solutions",
+          "url": "https://learn.microsoft.com/en-us/azure/ai-services/content-understanding/document/overview",
+          "snapshotSha256": "bf5c315cb4cdc9062a3f9dd797d0167ce02b793bfbcea213c4c3ea8f25903422",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S021",
+          "title": "Azure AI Content Understanding client library for Python - version 1.1.0",
+          "url": "https://learn.microsoft.com/python/api/overview/azure/ai-contentunderstanding-readme?view=azure-python",
+          "snapshotSha256": "aa5fd0abb99fe608e62d3909ffd7bc4eac9904dc931f427c9e3788351fbc7b42",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q068",
+      "testedDecision": "A custom contract analyzer misses renewal dates in a new layout. Which TWO inputs should guide improvement? Select TWO answers.",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-E2.03",
+      "itemRevisionHash": "15930e9f729389e1610ade9aa64cd125ab8a1129164d9a2775bb647671ad2720",
+      "sources": [
+        {
+          "sourceId": "S059",
+          "title": "Content Understanding document solutions",
+          "url": "https://learn.microsoft.com/en-us/azure/ai-services/content-understanding/document/overview",
+          "snapshotSha256": "bf5c315cb4cdc9062a3f9dd797d0167ce02b793bfbcea213c4c3ea8f25903422",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S045",
+          "title": "Validate document analyzer quality with confidence, grounding, and labeled samples",
+          "url": "https://learn.microsoft.com/azure/ai-services/content-understanding/document/analyzer-improvement",
+          "snapshotSha256": "c08a60437bdcc723d00d30d9898b3967040a122cf43b5ff95b5f1a33a3dadd93",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q069",
+      "testedDecision": "An agent proposes a refund. The application requires user confirmation, and the model supplies untrusted arguments. Which TWO host responsibilities are needed before the side effect? Select TWO answers.",
+      "oldItemIds": [
+        "ai103-set-a-q070"
+      ],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-B2.01",
+      "itemRevisionHash": "4f885550d8d48bd56b9793ff0aaf6439429fd96059e326dac87e052c633ddd2f",
+      "sources": [
+        {
+          "sourceId": "S007",
+          "title": "Use function calling with Microsoft Foundry agents",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/how-to/tools/function-calling",
+          "snapshotSha256": "0d4119f94b15c94d404729f53d2ed5f52a89dfaf35841d1290c0472be3e3e953",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q070",
+      "testedDecision": "A strict Responses output must contain code and comment. Comment may be null, and additional fields are prohibited. Which TWO schema decisions satisfy those constraints? Select TWO answers.",
+      "oldItemIds": [
+        "ai103-set-a-q071"
+      ],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-B3.01",
+      "itemRevisionHash": "b6dffadd10643fb43f54c8b4a4077ecb22bf9c97704e2d4f734329d66537a97a",
+      "sources": [
+        {
+          "sourceId": "S037",
+          "title": "Structured outputs",
+          "url": "https://learn.microsoft.com/azure/foundry/openai/how-to/structured-outputs",
+          "snapshotSha256": "0337c89ce3e5a9ba28d1c2fc18f1644c50b13568eb19edc43420d16b401cacfc",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q071",
+      "testedDecision": "A RAG system must find exact equipment identifiers and semantic paraphrases. It uses a vector index built with model X. Which TWO design choices fit? Select TWO answers.",
+      "oldItemIds": [
+        "ai103-set-a-q072"
+      ],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-B1.02",
+      "itemRevisionHash": "8cb79a3349c27dce78ed37ce644a321b02515e45debcac81c8094b4835320008",
+      "sources": [
+        {
+          "sourceId": "S025",
+          "title": "Hybrid search using vectors and full-text search in Azure AI Search",
+          "url": "https://learn.microsoft.com/azure/search/hybrid-search-overview",
+          "snapshotSha256": "8f766ea87e9528dc1e469ffca3de91350cf9b9393aaf47e5c8c124378457397d",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S026",
+          "title": "Integrated vector embedding in Azure AI Search",
+          "url": "https://learn.microsoft.com/azure/search/vector-search-integrated-vectorization",
+          "snapshotSha256": "45a6b445fbe4f7f65334693eb96b2de7b021e0b50ce46b363ab47c5de0a11f0d",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q072",
+      "testedDecision": "An agent receives hostile user prompts and malicious instructions inside retrieved text. Which TWO controls align with those different entry points? Select TWO answers.",
+      "oldItemIds": [
+        "ai103-set-a-q073"
+      ],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-B2.05",
+      "itemRevisionHash": "6ab8c5c2496fc619454b0be833f6b53eafb40b8dfe44c604bb7a137ed691145f",
+      "sources": [
+        {
+          "sourceId": "S015",
+          "title": "Guardrails and controls overview in Microsoft Foundry",
+          "url": "https://learn.microsoft.com/azure/foundry/guardrails/guardrails-overview",
+          "snapshotSha256": "8bff59568b79380dc2ea6df819b965422c98fdf03bf6b06df0b99bc1287e4c54",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S016",
+          "title": "Prompt Shields in Microsoft Foundry",
+          "url": "https://learn.microsoft.com/azure/foundry/openai/concepts/content-filter-prompt-shields",
+          "snapshotSha256": "770228d708d01826dc0d17c9ddafbb8d0e7f412bb2a0ad9a13b2ac54ac84735e",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q073",
+      "testedDecision": "A support agent needs a remembered user preference, current corporate policy and a receipt uploaded for this interaction. Which TWO assignments are appropriate? Select TWO answers.",
+      "oldItemIds": [
+        "ai103-set-a-q074"
+      ],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-B2.02",
+      "itemRevisionHash": "f7b715fe6219a8307a535d7146c8081f8c4c3946b824e72bd84c0cf8b134d704",
+      "sources": [
+        {
+          "sourceId": "S006",
+          "title": "Memory in Microsoft Foundry Agent Service (preview)",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/concepts/what-is-memory",
+          "snapshotSha256": "1dd4a33b4885266d1a2a73cee51de011ad50f9e63454609195d46179316746f8",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q074",
+      "testedDecision": "A proxy calls a memory-enabled prompt agent for two users using one managed identity. Which TWO requirements implement separate preferences? Select TWO answers.",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-B2.02",
+      "itemRevisionHash": "9b7504afb9884e83dbcb555e757f181b1db52ff407605d42fc33a2447b8a9128",
+      "sources": [
+        {
+          "sourceId": "S053",
+          "title": "Create and use memory in Foundry Agent Service (preview)",
+          "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/how-to/memory-usage",
+          "snapshotSha256": "d118113db20dbe589f686a9150063736c78ce1b6e7b37c649bf28262918d31b6",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q075",
+      "testedDecision": "A support agent needs a domain boundary and a measurable fallback for missing evidence. Which TWO activities address those requirements? Select TWO answers.",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-B3.01",
+      "itemRevisionHash": "dcccf4bf78bcd8b9633e84dec2be7135e3a55ff5d6aeecb16ec8b045dd4e2e33",
+      "sources": [
+        {
+          "sourceId": "S057",
+          "title": "System message design",
+          "url": "https://learn.microsoft.com/en-us/azure/cognitive-services/openai/concepts/advanced-prompt-engineering?pivots=programming-language-chat-completions",
+          "snapshotSha256": "8c3d221b7d097fd064d9875f54a48e446f7e44efe81622613ce58cfcb84e87e4",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q076",
+      "testedDecision": "A specialist agent proposes an action that a deterministic host rule must approve. Which TWO responsibilities should the design keep explicit? Select TWO answers.",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-B3.04",
+      "itemRevisionHash": "b8b633fd3c844cce46ab43578fc181074cb8539a6351b3c6e17170b97cd73daf",
+      "sources": [
+        {
+          "sourceId": "S008",
+          "title": "Build a workflow in Microsoft Foundry (Preview)",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/concepts/workflow",
+          "snapshotSha256": "91311aec35bad6e1e44149491430baa72e5eeec37c9f869ba7fbf9356e5497e4",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S007",
+          "title": "Use function calling with Microsoft Foundry agents",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/how-to/tools/function-calling",
+          "snapshotSha256": "0d4119f94b15c94d404729f53d2ed5f52a89dfaf35841d1290c0472be3e3e953",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q077",
+      "testedDecision": "A Python OpenAI 2.x application extracts events with Responses structured output. The client is configured and the supported model is deployed. On the successful non-refusal path, arrange these operations; business validation needs the parsed field values.",
+      "oldItemIds": [],
+      "dependencyEdges": [
+        {
+          "before": "B",
+          "after": "C",
+          "reason": "The request consumes that type and returns the response."
+        },
+        {
+          "before": "C",
+          "after": "A",
+          "reason": "The successful response supplies the parsed values."
+        },
+        {
+          "before": "A",
+          "after": "D",
+          "reason": "Business checks consume those values rather than the request schema."
+        }
+      ],
+      "primaryObjective": "AI103-D1.01",
+      "itemRevisionHash": "2640b1391bc6a26b8828aa560440d58cbc6b0c51b734f8a8a888e6ef2031abdf",
+      "sources": [
+        {
+          "sourceId": "S037",
+          "title": "Structured outputs",
+          "url": "https://learn.microsoft.com/azure/foundry/openai/how-to/structured-outputs",
+          "snapshotSha256": "0337c89ce3e5a9ba28d1c2fc18f1644c50b13568eb19edc43420d16b401cacfc",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q078",
+      "testedDecision": "A Language NER pipeline must send organization and location records to a JSON-consuming application. The host constructs the records from returned entity categories and verifies the resulting JSON against the consumer’s schema. Arrange the data dependencies.",
+      "oldItemIds": [],
+      "dependencyEdges": [
+        {
+          "before": "B",
+          "after": "C",
+          "reason": "NER supplies the categorized entities."
+        },
+        {
+          "before": "C",
+          "after": "A",
+          "reason": "The records are constructed from those entities."
+        },
+        {
+          "before": "A",
+          "after": "D",
+          "reason": "Validation requires the actual constructed payload."
+        }
+      ],
+      "primaryObjective": "AI103-D1.01",
+      "itemRevisionHash": "95f1f4d8605d78b1af6061f91ca358fe588a7994dc18f24ff5e792c8f2907b24",
+      "sources": [
+        {
+          "sourceId": "S030",
+          "title": "What is Azure Language in Foundry Tools?",
+          "url": "https://learn.microsoft.com/azure/ai-services/language-service/overview",
+          "snapshotSha256": "debd3c5f132c72a0d258daa4d82d950834da5b4c89e3b42b20cf32982a169e1d",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S037",
+          "title": "Structured outputs",
+          "url": "https://learn.microsoft.com/azure/foundry/openai/how-to/structured-outputs",
+          "snapshotSha256": "0337c89ce3e5a9ba28d1c2fc18f1644c50b13568eb19edc43420d16b401cacfc",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q079",
+      "testedDecision": "A transcript may be held temporarily in a restricted worker. The searchable store may receive only a version redacted using the entities returned by PII detection. The worker has no existing detection result. Arrange the data dependencies.",
+      "oldItemIds": [],
+      "dependencyEdges": [
+        {
+          "before": "A",
+          "after": "D",
+          "reason": "Detection must process the input before its output exists."
+        },
+        {
+          "before": "D",
+          "after": "B",
+          "reason": "The detected entities supply the host’s redaction targets."
+        },
+        {
+          "before": "B",
+          "after": "C",
+          "reason": "Indexing the original text first would breach the specified boundary."
+        }
+      ],
+      "primaryObjective": "AI103-D1.02",
+      "itemRevisionHash": "3c26a35d8b6d4ce7b25304403e0409f5344c1ee5c87cf261e1315a67f44f1f0c",
+      "sources": [
+        {
+          "sourceId": "S030",
+          "title": "What is Azure Language in Foundry Tools?",
+          "url": "https://learn.microsoft.com/azure/ai-services/language-service/overview",
+          "snapshotSha256": "debd3c5f132c72a0d258daa4d82d950834da5b4c89e3b42b20cf32982a169e1d",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q080",
+      "testedDecision": "A mixed-language notice must be translated into French. Its language spans are known, and quality review compares the complete reconstructed notice with the original, including references across segments. Arrange this application workflow.",
+      "oldItemIds": [],
+      "dependencyEdges": [
+        {
+          "before": "D",
+          "after": "A",
+          "reason": "Translation produces the target-language segments."
+        },
+        {
+          "before": "A",
+          "after": "B",
+          "reason": "Reconstruction combines those outputs."
+        },
+        {
+          "before": "B",
+          "after": "C",
+          "reason": "The specified cross-segment review needs the reconstructed notice."
+        }
+      ],
+      "primaryObjective": "AI103-D1.03",
+      "itemRevisionHash": "8aca20007a07a998178362d63aa0267a4a689a5af9cd6f7e30ac8a75c4a21894",
+      "sources": [
+        {
+          "sourceId": "S055",
+          "title": "Azure Translator known issues and troubleshooting",
+          "url": "https://learn.microsoft.com/en-us/azure/ai-services/translator/reference/known-issues",
+          "snapshotSha256": "c1b48f37f4dc56c80cbc9c30661bfc67f1f6f75dea4693ef6d9e39beeeb88f1c",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S032",
+          "title": "What is Azure Translator in Foundry Tools?",
+          "url": "https://learn.microsoft.com/azure/ai-services/translator/overview",
+          "snapshotSha256": "5bed84630392d9ef61f1f463299425457e14614de81cefd58f484a680615b0df",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q081",
+      "testedDecision": "A compliance extractor may forward a result for approval only after its cited fields are verified against the supplied policy. Its model, client and policy are ready, but its domain instructions and strict output schema have not been defined. Arrange these operations.",
+      "oldItemIds": [],
+      "dependencyEdges": [
+        {
+          "before": "A",
+          "after": "D",
+          "reason": "Inference produces the candidate extraction."
+        },
+        {
+          "before": "D",
+          "after": "B",
+          "reason": "Evidence checks require that candidate and its source."
+        },
+        {
+          "before": "B",
+          "after": "C",
+          "reason": "The stated queue gate requires successful verification."
+        }
+      ],
+      "primaryObjective": "AI103-D1.04",
+      "itemRevisionHash": "75d96560a5afe49c5ea9e29b1f8cc82323b835e575bca332cf6edc0169e13a00",
+      "sources": [
+        {
+          "sourceId": "S057",
+          "title": "System message design",
+          "url": "https://learn.microsoft.com/en-us/azure/cognitive-services/openai/concepts/advanced-prompt-engineering?pivots=programming-language-chat-completions",
+          "snapshotSha256": "8c3d221b7d097fd064d9875f54a48e446f7e44efe81622613ce58cfcb84e87e4",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S037",
+          "title": "Structured outputs",
+          "url": "https://learn.microsoft.com/azure/foundry/openai/how-to/structured-outputs",
+          "snapshotSha256": "0337c89ce3e5a9ba28d1c2fc18f1644c50b13568eb19edc43420d16b401cacfc",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q082",
+      "testedDecision": "A voice assistant uses a text-only response model and a separate speech synthesizer. The application requires its response-text policy check to pass before any answer audio is emitted. Arrange the successful path for one recorded utterance.",
+      "oldItemIds": [],
+      "dependencyEdges": [
+        {
+          "before": "B",
+          "after": "A",
+          "reason": "Generation supplies the candidate answer."
+        },
+        {
+          "before": "A",
+          "after": "C",
+          "reason": "The policy check requires the candidate answer."
+        },
+        {
+          "before": "C",
+          "after": "D",
+          "reason": "The specified policy allows audio only from approved text."
+        }
+      ],
+      "primaryObjective": "AI103-D2.01",
+      "itemRevisionHash": "1f5aac97e40da7b9b3569208ab7f5a4fc68e816b8825bacac9928dd9a7e183a6",
+      "sources": [
+        {
+          "sourceId": "S033",
+          "title": "What is Azure Speech?",
+          "url": "https://learn.microsoft.com/azure/ai-services/speech-service/overview",
+          "snapshotSha256": "60a8436b0646a9a3c1e779b78f0e1d645948866173ce85449a6283d58c019d54",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S057",
+          "title": "System message design",
+          "url": "https://learn.microsoft.com/en-us/azure/cognitive-services/openai/concepts/advanced-prompt-engineering?pivots=programming-language-chat-completions",
+          "snapshotSha256": "8c3d221b7d097fd064d9875f54a48e446f7e44efe81622613ce58cfcb84e87e4",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q083",
+      "testedDecision": "A Custom Speech project and training data are ready. A new model must meet a held-out WER threshold before deployment, and the application will use it for real-time recognition, not batch transcription. Arrange the remaining operations.",
+      "oldItemIds": [],
+      "dependencyEdges": [
+        {
+          "before": "C",
+          "after": "A",
+          "reason": "Evaluation verifies the specified deployment gate."
+        },
+        {
+          "before": "A",
+          "after": "B",
+          "reason": "Deployment creates the endpoint for this model."
+        },
+        {
+          "before": "B",
+          "after": "D",
+          "reason": "Real-time requests use that deployed endpoint."
+        }
+      ],
+      "primaryObjective": "AI103-D2.02",
+      "itemRevisionHash": "0accddf36020f034e72d31c8063f75568e1fdf61b10bdc910a1d97331427cb5d",
+      "sources": [
+        {
+          "sourceId": "S034",
+          "title": "What is custom speech?",
+          "url": "https://learn.microsoft.com/azure/ai-services/speech-service/custom-speech-overview",
+          "snapshotSha256": "8bde6391b7bdee42b5e52ea8c995024dcda82d1a0b56acbdfb817207b2a8d511",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q084",
+      "testedDecision": "A Realtime assistant must interpret a recorded inspection question in the context of a written maintenance note for the same equipment. Its supported audio model and transport are ready. Host policy requires checking the returned interpretation against that note before offering a repair action. Arrange the application’s operations.",
+      "oldItemIds": [],
+      "dependencyEdges": [
+        {
+          "before": "C",
+          "after": "A",
+          "reason": "Input and conversation context must be prepared before submission."
+        },
+        {
+          "before": "A",
+          "after": "D",
+          "reason": "Successful inference supplies the interpretation."
+        },
+        {
+          "before": "D",
+          "after": "B",
+          "reason": "The host check consumes that interpretation and its associated note."
+        }
+      ],
+      "primaryObjective": "AI103-D2.03",
+      "itemRevisionHash": "e6c6722a31c27377e6cde44e648e368894b030903ad19ea6756053486f16950a",
+      "sources": [
+        {
+          "sourceId": "S036",
+          "title": "Use the GPT Realtime API for speech and audio",
+          "url": "https://learn.microsoft.com/azure/foundry/openai/how-to/realtime-audio",
+          "snapshotSha256": "69134c918deb6d5a8089eb41d86cf44b7a17ded278305d6afb203c2779e889b6",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q085",
+      "testedDecision": "An event-based Speech SDK translator must retain the first completed translated utterance. Credentials and AudioConfig are ready. It uses a TranslationRecognizer whose recognized callback stores successful translations. Arrange initialization so the handler is ready when recognition begins.",
+      "oldItemIds": [],
+      "dependencyEdges": [
+        {
+          "before": "B",
+          "after": "A",
+          "reason": "The recognizer must exist before its event can be subscribed."
+        },
+        {
+          "before": "A",
+          "after": "C",
+          "reason": "The application requires the callback to be ready before recognition starts."
+        },
+        {
+          "before": "C",
+          "after": "D",
+          "reason": "Recognition now delivers completed results to the installed handler."
+        }
+      ],
+      "primaryObjective": "AI103-D2.04",
+      "itemRevisionHash": "468f12489fd5a17e4348b8ab31f37426f0cfb37212b1782b6c743debb540647b",
+      "sources": [
+        {
+          "sourceId": "S046",
+          "title": "How to recognize and translate speech",
+          "url": "https://learn.microsoft.com/azure/ai-services/speech-service/how-to-translate-speech",
+          "snapshotSha256": "8a73fb1e63f49dde972815b860758a57ff3d620842220f9e29200bccf573c39e",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q086",
+      "testedDecision": "A store-and-forward speech translator uses manual synthesis for two target languages. It will deliver an audio file only after synthesis succeeds. Arrange the successful path for the selected target language; no translation result is available initially.",
+      "oldItemIds": [],
+      "dependencyEdges": [
+        {
+          "before": "D",
+          "after": "C",
+          "reason": "Selection supplies the requested target text."
+        },
+        {
+          "before": "C",
+          "after": "A",
+          "reason": "Synthesis consumes that text and produces audio."
+        },
+        {
+          "before": "A",
+          "after": "B",
+          "reason": "The application delivers a file only after successful synthesis."
+        }
+      ],
+      "primaryObjective": "AI103-D2.04",
+      "itemRevisionHash": "fa96dca4ef610a49b472a333aa85fe6efef11d44e1bc2a78cbd557cfae51f493",
+      "sources": [
+        {
+          "sourceId": "S046",
+          "title": "How to recognize and translate speech",
+          "url": "https://learn.microsoft.com/azure/ai-services/speech-service/how-to-translate-speech",
+          "snapshotSha256": "8a73fb1e63f49dde972815b860758a57ff3d620842220f9e29200bccf573c39e",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S033",
+          "title": "What is Azure Speech?",
+          "url": "https://learn.microsoft.com/azure/ai-services/speech-service/overview",
+          "snapshotSha256": "60a8436b0646a9a3c1e779b78f0e1d645948866173ce85449a6283d58c019d54",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q087",
+      "testedDecision": "Match each workload requirement to its deployment family. Geography and model support have already been checked. Use each selected choice once; one choice is unused.",
+      "oldItemIds": [
+        "ai103-set-a-q093"
+      ],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-A2.02",
+      "itemRevisionHash": "7327546da9c94479c60814af49a827e6e0e7ff3994096eb03304abdcebb46598",
+      "sources": [
+        {
+          "sourceId": "S005",
+          "title": "Deployment types for Microsoft Foundry Models",
+          "url": "https://learn.microsoft.com/azure/foundry/foundry-models/concepts/deployment-types",
+          "snapshotSha256": "6c6d5d7b11684c1cbba8d35fd278a313e1420e3853b0ba9f104898c4a8c24c58",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q088",
+      "testedDecision": "Match each investigation to the most direct evidence source. Use each selected choice once; one choice is unused.",
+      "oldItemIds": [
+        "ai103-set-a-q094"
+      ],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-A3.03",
+      "itemRevisionHash": "b4538807ea4ec51611ed58507a0f735b68eeae7007c554ae448035f4129802ce",
+      "sources": [
+        {
+          "sourceId": "S013",
+          "title": "Agent tracing overview",
+          "url": "https://learn.microsoft.com/azure/foundry/observability/concepts/trace-agent-concept",
+          "snapshotSha256": "895295a4b74d7cabaa0daf62bd6cd5239daf25b6ea85a2268dc2cdf8483b19e8",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S027",
+          "title": "Monitor Azure AI Search",
+          "url": "https://learn.microsoft.com/azure/search/monitor-azure-cognitive-search",
+          "snapshotSha256": "fd18e205e7cd88e39eab53a5690757f65c8d457366491f8954875d2bc4f54ca0",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S044",
+          "title": "Monitor indexer status and results in Azure AI Search",
+          "url": "https://learn.microsoft.com/azure/search/search-monitor-indexers",
+          "snapshotSha256": "7b9808eefb69e1d573b537e17a3fff7ab159cf6e259f3b7a254a2ecd1c1a8dcc",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q089",
+      "testedDecision": "Match each keyless inference observation to the boundary to inspect. Use each selected choice once; one choice is unused.",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-A3.04",
+      "itemRevisionHash": "a211baf3584bbca6ccd587343a2ea9151d610080e169124b6f7bd75f6b5db1b1",
+      "sources": [
+        {
+          "sourceId": "S051",
+          "title": "Azure OpenAI v1 API",
+          "url": "https://learn.microsoft.com/en-us/azure/foundry/openai/api-version-lifecycle",
+          "snapshotSha256": "8e7e4b2c4e94ad6056ffa3edf4750e4db864ceac16a52777cc13fd2068403803",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S052",
+          "title": "Use Azure OpenAI without keys",
+          "url": "https://learn.microsoft.com/en-us/azure/developer/ai/keyless-connections",
+          "snapshotSha256": "4f2b4d850889660d3af96aac661fa1955b8d9e1bf6f454facbef5b11aa59efcd",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S010",
+          "title": "Role-based access control for Microsoft Foundry",
+          "url": "https://learn.microsoft.com/azure/foundry/concepts/rbac-foundry",
+          "snapshotSha256": "c63d1b1d5cb16c4ffbf9019b34ac56ab5e47f81f1457b4e2d7c02a2de16a59f9",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q090",
+      "testedDecision": "Match each trust boundary to the relevant inspection point. Use each selected choice once; one choice is unused.",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-A4.01",
+      "itemRevisionHash": "9da2389c5f7bc5aaeceb02a09369886e35594ee62b4bbb1a1b00e6c338d88cc6",
+      "sources": [
+        {
+          "sourceId": "S015",
+          "title": "Guardrails and controls overview in Microsoft Foundry",
+          "url": "https://learn.microsoft.com/azure/foundry/guardrails/guardrails-overview",
+          "snapshotSha256": "8bff59568b79380dc2ea6df819b965422c98fdf03bf6b06df0b99bc1287e4c54",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S016",
+          "title": "Prompt Shields in Microsoft Foundry",
+          "url": "https://learn.microsoft.com/azure/foundry/openai/concepts/content-filter-prompt-shields",
+          "snapshotSha256": "770228d708d01826dc0d17c9ddafbb8d0e7f412bb2a0ad9a13b2ac54ac84735e",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q091",
+      "testedDecision": "Match each observed agent defect to the targeted tool evaluator. Use each selected choice once; one choice is unused.",
+      "oldItemIds": [
+        "ai103-set-a-q095"
+      ],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-B2.06",
+      "itemRevisionHash": "f23898a6914c772696e0735857762ea0a7ca7f4e7639f08156daf24143db5d75",
+      "sources": [
+        {
+          "sourceId": "S014",
+          "title": "Agent evaluators",
+          "url": "https://learn.microsoft.com/azure/foundry/concepts/evaluation-evaluators/agent-evaluators",
+          "snapshotSha256": "0ce17b86785e87efb44074de9d3fdee3ae8290dedcb04a18a68558081be7103f",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q092",
+      "testedDecision": "Match each information need to the documented context capability. Use each selected choice once; one choice is unused.",
+      "oldItemIds": [
+        "ai103-set-a-q096"
+      ],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-B2.02",
+      "itemRevisionHash": "d46bbc39a622c3ca76e66201348bc6be1ac35f562589a56e4643653a359823fa",
+      "sources": [
+        {
+          "sourceId": "S006",
+          "title": "Memory in Microsoft Foundry Agent Service (preview)",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/concepts/what-is-memory",
+          "snapshotSha256": "1dd4a33b4885266d1a2a73cee51de011ad50f9e63454609195d46179316746f8",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q093",
+      "testedDecision": "Match each response-turn requirement to the documented tool_choice mode. Use each selected choice once; one choice is unused.",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-B2.01",
+      "itemRevisionHash": "d710a8773d1395e80a84417e706d57ac9179de8e5b994c75b6d37a1297b6c32e",
+      "sources": [
+        {
+          "sourceId": "S054",
+          "title": "Tool best practices for Microsoft Foundry Agent Service",
+          "url": "https://learn.microsoft.com/azure/foundry/agents/concepts/tool-best-practice",
+          "snapshotSha256": "fbf440754eab789009c34a8bf7636fc60c1d0bd64402cd650b1b903230ffd0f9",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q094",
+      "testedDecision": "Match each webpage image role to the appropriate alternative-text approach. Use each selected choice once; one choice is unused.",
+      "oldItemIds": [
+        "ai103-set-a-q097"
+      ],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-C2.04",
+      "itemRevisionHash": "87e623116c2ba8745eb48a939b3de2a19ea6bde45e6ac86ff3298e5cc94297a2",
+      "sources": [
+        {
+          "sourceId": "S050",
+          "title": "W3C WAI An alt Decision Tree",
+          "url": "https://www.w3.org/WAI/tutorials/images/decision-tree/",
+          "snapshotSha256": "fa71070e3609f8825849fe94c3b718fb8632724b4c88ed9f3e5ea54615f36404",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q095",
+      "testedDecision": "The index has no OCR text. Which one configuration defect in this exhibit blocks the OCR input path?",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-E1.04",
+      "itemRevisionHash": "8af89ab15d09144771547a59b6d9d2956d8b0e41d9dd79fda75add56967bb4a2",
+      "sources": [
+        {
+          "sourceId": "S043",
+          "title": "OCR cognitive skill",
+          "url": "https://learn.microsoft.com/azure/search/cognitive-search-skill-ocr",
+          "snapshotSha256": "0a5cdd696dcbae744d32db7fd89a69926f0203462f86d6dc25793ab07d001b3d",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S028",
+          "title": "Skillset concepts in Azure AI Search",
+          "url": "https://learn.microsoft.com/azure/search/cognitive-search-working-with-skillsets",
+          "snapshotSha256": "3d24961260a3a7ca041656383016222704c25dec2dff53743bbaef628236312b",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q096",
+      "testedDecision": "The pipeline needs layout-derived Markdown for indexing. Which producing capability should replace the enrichment stage in this exhibit?",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-E1.03",
+      "itemRevisionHash": "c4e3f19b961d00854579a0fe876c332d7f188d9221ae59d864fdc3f71b69200e",
+      "sources": [
+        {
+          "sourceId": "S029",
+          "title": "Document Layout skill",
+          "url": "https://learn.microsoft.com/azure/search/cognitive-search-skill-document-intelligence-layout",
+          "snapshotSha256": "eb899b4d8c7fdd95e158072fa95891c8c96388f09c48c00a67683fa10ec4591a",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S059",
+          "title": "Content Understanding document solutions",
+          "url": "https://learn.microsoft.com/en-us/azure/ai-services/content-understanding/document/overview",
+          "snapshotSha256": "bf5c315cb4cdc9062a3f9dd797d0167ce02b793bfbcea213c4c3ea8f25903422",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q097",
+      "testedDecision": "A custom extractor uses the following result. What should happen before the application posts the invoice amount?",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-E2.03",
+      "itemRevisionHash": "c79c68c18e38b5506dedc88c92cac14d0ebfdb773c97217d8bc350cfd9e4302b",
+      "sources": [
+        {
+          "sourceId": "S045",
+          "title": "Validate document analyzer quality with confidence, grounding, and labeled samples",
+          "url": "https://learn.microsoft.com/azure/ai-services/content-understanding/document/analyzer-improvement",
+          "snapshotSha256": "c08a60437bdcc723d00d30d9898b3967040a122cf43b5ff95b5f1a33a3dadd93",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S059",
+          "title": "Content Understanding document solutions",
+          "url": "https://learn.microsoft.com/en-us/azure/ai-services/content-understanding/document/overview",
+          "snapshotSha256": "bf5c315cb4cdc9062a3f9dd797d0167ce02b793bfbcea213c4c3ea8f25903422",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q098",
+      "testedDecision": "The image:analyze 2024-09-01 contract uses FourSeverityLevels. Policy rejects an image when any harm category is Medium or High. What comparison should implement the policy?",
+      "oldItemIds": [
+        "ai103-set-a-q047"
+      ],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-C3.01",
+      "itemRevisionHash": "92238656acb456d513ef305880291d087ea3921b9463aabfe76320b2eec08aa3",
+      "sources": [
+        {
+          "sourceId": "S042",
+          "title": "QuickStart: Analyze image content",
+          "url": "https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-image",
+          "snapshotSha256": "6a40b6fdabe9e2a91838a3026f8530d0229c70acd401c4fab094a6c0c63b8670",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q099",
+      "testedDecision": "This audio-analysis worker passes an operation handle to its transcript consumer and the consumer rejects it. Which change obtains the completed analysis output in the pinned SDK?",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-C2.05",
+      "itemRevisionHash": "b6a6b032792b0ccfbeaa3be86c4c143d3569b0698c72aeb1b807eae5f8252478",
+      "sources": [
+        {
+          "sourceId": "S021",
+          "title": "Azure AI Content Understanding client library for Python - version 1.1.0",
+          "url": "https://learn.microsoft.com/python/api/overview/azure/ai-contentunderstanding-readme?view=azure-python",
+          "snapshotSha256": "aa5fd0abb99fe608e62d3909ffd7bc4eac9904dc931f427c9e3788351fbc7b42",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-set-a-100-q100",
+      "testedDecision": "The translation result leaves part of this input unchanged. Which cause and response best fit the documented condition?",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-D1.03",
+      "itemRevisionHash": "a9bf9bcab5ae71f955abaca200c7f50b19c23dd5ed2a4824ffe6b5f6a7ca9ca1",
+      "sources": [
+        {
+          "sourceId": "S055",
+          "title": "Azure Translator known issues and troubleshooting",
+          "url": "https://learn.microsoft.com/en-us/azure/ai-services/translator/reference/known-issues",
+          "snapshotSha256": "c1b48f37f4dc56c80cbc9c30661bfc67f1f6f75dea4693ef6d9e39beeeb88f1c",
+          "docType": "microsoft_learn"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,767 @@
+{
+  "canonicalDraftHash": "d2d885166ed8a1c2675e6d43bb3fd40f8d70e3d1b48e4a6618b345b2edb424f0",
+  "questions": [
+    {
+      "domainId": "C",
+      "stem": "An image safety policy evaluates four harm categories and rejects any severity of 4 or 6. Which TWO implementation decisions match the image:analyze 2024-09-01 contract? Select TWO answers.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Request FourSeverityLevels for the image analysis."
+        },
+        {
+          "id": "B",
+          "text": "Average all categories before applying the rejection threshold."
+        },
+        {
+          "id": "C",
+          "text": "Use EightSeverityLevels as the documented image output scale."
+        },
+        {
+          "id": "D",
+          "text": "Treat HTTP success as an approval verdict."
+        },
+        {
+          "id": "E",
+          "text": "Evaluate the policy against each of the four harm categories."
+        }
+      ],
+      "correctAnswer": [
+        "A",
+        "E"
+      ],
+      "difficulty": "medium",
+      "type": "multi_select",
+      "explanation": {
+        "whyCorrect": "The image contract uses values 0, 2, 4 and 6. Analyze the required categories and apply the application's explicit threshold policy.",
+        "whyDistractorsWrong": {
+          "C": "The referenced image contract uses four levels.",
+          "D": "Success means the analysis request completed.",
+          "B": "An average does not implement an any-category policy."
+        }
+      },
+      "objectiveTags": [
+        "AI103-C3.01"
+      ],
+      "id": "ai103-improvement-r2-checkpoint-20-q012",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Implement computer vision solutions",
+      "sourceRefs": [
+        {
+          "sourceId": "S042",
+          "title": "QuickStart: Analyze image content",
+          "url": "https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-image",
+          "snapshotSha256": "6a40b6fdabe9e2a91838a3026f8530d0229c70acd401c4fab094a6c0c63b8670",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:37:42Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-5",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "C",
+      "stem": "A model supports masked image edits. The client must change one area of an existing image. Which TWO inputs are directly relevant to the edit definition? Select TWO answers.",
+      "options": [
+        {
+          "id": "A",
+          "text": "A same-size PNG mask marking edit areas with transparent pixels."
+        },
+        {
+          "id": "B",
+          "text": "A JPEG mask with the source dimensions but no transparency."
+        },
+        {
+          "id": "C",
+          "text": "A mask resized to the requested output dimensions instead of the source dimensions."
+        },
+        {
+          "id": "D",
+          "text": "A same-size mask whose opaque pixels mark the replacement area."
+        },
+        {
+          "id": "E",
+          "text": "The source image and a prompt describing the intended change."
+        }
+      ],
+      "correctAnswer": [
+        "E",
+        "A"
+      ],
+      "difficulty": "medium",
+      "type": "multi_select",
+      "explanation": {
+        "whyCorrect": "A supported edit request uses the source, edit instructions and spatial mask. Model-specific controls and input requirements still apply.",
+        "whyDistractorsWrong": {
+          "C": "The mask dimensions must match the input image, not an independently selected output size.",
+          "B": "The documented mask is PNG and uses transparent pixels; a JPEG has no alpha channel.",
+          "D": "The documented mask uses fully transparent pixels to designate the editable region."
+        }
+      },
+      "objectiveTags": [
+        "AI103-C1.03"
+      ],
+      "id": "ai103-improvement-r2-checkpoint-20-q013",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Implement computer vision solutions",
+      "sourceRefs": [
+        {
+          "sourceId": "S017",
+          "title": "Azure OpenAI image generation models",
+          "url": "https://learn.microsoft.com/azure/foundry/openai/how-to/dall-e",
+          "snapshotSha256": "34668770bb5790633413f4ae9432738c85ed36aef328f9f2bdb8b1b82437dca6",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:37:42Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-5",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "C",
+      "stem": "A team evaluates the video-analysis 2026-06-01-preview contract for fast events and tiny labels. Which TWO limitations belong in its evaluation plan? Select TWO answers.",
+      "options": [
+        {
+          "id": "A",
+          "text": "OCR retains original source resolution for every sampled frame."
+        },
+        {
+          "id": "B",
+          "text": "Scene segmentation removes the temporal frame-sampling limit."
+        },
+        {
+          "id": "C",
+          "text": "About one-frame-per-second sampling can miss brief events."
+        },
+        {
+          "id": "D",
+          "text": "Every source frame is analyzed, but only key frames are returned."
+        },
+        {
+          "id": "E",
+          "text": "Resizing to 512 by 512 can lose small or distant details."
+        }
+      ],
+      "correctAnswer": [
+        "C",
+        "E"
+      ],
+      "difficulty": "medium",
+      "type": "multi_select",
+      "explanation": {
+        "whyCorrect": "Evaluate the feature against its temporal and spatial resolution. Do not interpret a missing detection as proof that the original video lacks an event or detail.",
+        "whyDistractorsWrong": {
+          "B": "Segmentation provides scene organization; it does not remove the documented sampling limitation.",
+          "A": "The captured contract resizes sampled frames; it does not promise original-resolution OCR.",
+          "D": "The documented limit concerns inspected frames, not just the number of returned thumbnails."
+        }
+      },
+      "objectiveTags": [
+        "AI103-C2.06"
+      ],
+      "id": "ai103-improvement-r2-checkpoint-20-q014",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Implement computer vision solutions",
+      "sourceRefs": [
+        {
+          "sourceId": "S022",
+          "title": "Azure Content Understanding in Foundry Tools video solutions",
+          "url": "https://learn.microsoft.com/azure/ai-services/content-understanding/video/overview",
+          "snapshotSha256": "3a89d957245350c800482a717244bd3fc27b322ed67dbcbabea8e41782a3a57a",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:37:42Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-5",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "D",
+      "objectiveTags": [
+        "AI103-D1.03"
+      ],
+      "stem": "Mixed-language segments were submitted together for translation. Which TWO changes directly target the documented input problem? Select TWO answers.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Use the intended source language for each segment."
+        },
+        {
+          "id": "B",
+          "text": "Separate single-language segments."
+        },
+        {
+          "id": "C",
+          "text": "Increase the translated response length limit."
+        },
+        {
+          "id": "D",
+          "text": "Detect one source language and submit the whole mixture unchanged."
+        },
+        {
+          "id": "E",
+          "text": "Move the unchanged mixture to the document endpoint."
+        }
+      ],
+      "correctAnswer": [
+        "B",
+        "A"
+      ],
+      "type": "multi_select",
+      "difficulty": "medium",
+      "explanation": {
+        "whyCorrect": "Language segmentation and explicit intended source handling target the documented condition. The host should inspect translation quality rather than infer success from detection.",
+        "whyDistractorsWrong": {
+          "C": "Output length does not separate source-language spans.",
+          "D": "A detected language does not establish that every span was translated.",
+          "E": "Document translation also has documented mixed-language limitations."
+        }
+      },
+      "id": "ai103-improvement-r2-checkpoint-20-q015",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Implement text analysis solutions",
+      "sourceRefs": [
+        {
+          "sourceId": "S055",
+          "title": "Azure Translator known issues and troubleshooting",
+          "url": "https://learn.microsoft.com/en-us/azure/ai-services/translator/reference/known-issues",
+          "snapshotSha256": "c1b48f37f4dc56c80cbc9c30661bfc67f1f6f75dea4693ef6d9e39beeeb88f1c",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:37:42Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-6",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "E",
+      "objectiveTags": [
+        "AI103-E1.01"
+      ],
+      "stem": "A source document exceeds the embedding input limit. Arrange the dependency chain that produces searchable chunk vectors.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Embed each prepared chunk."
+        },
+        {
+          "id": "B",
+          "text": "Index the chunk text and its compatible vectors."
+        },
+        {
+          "id": "C",
+          "text": "Read the document text."
+        },
+        {
+          "id": "D",
+          "text": "Create chunks within the input limit."
+        }
+      ],
+      "correctAnswer": {
+        "order": [
+          "C",
+          "D",
+          "A",
+          "B"
+        ]
+      },
+      "type": "sequence_order",
+      "difficulty": "medium",
+      "explanation": {
+        "whyCorrect": "Each output is the next operation’s input: document text, bounded chunks, embeddings, then index records.",
+        "whyDistractorsWrong": {
+          "C": "The source text supplies the chunking input.",
+          "D": "Chunking requires source text and produces embedding inputs.",
+          "A": "Vectors are produced from prepared chunks.",
+          "B": "Indexing consumes text and completed vectors."
+        }
+      },
+      "id": "ai103-improvement-r2-checkpoint-20-q016",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Implement information extraction solutions",
+      "sourceRefs": [
+        {
+          "sourceId": "S026",
+          "title": "Integrated vector embedding in Azure AI Search",
+          "url": "https://learn.microsoft.com/azure/search/vector-search-integrated-vectorization",
+          "snapshotSha256": "45a6b445fbe4f7f65334693eb96b2de7b021e0b50ce46b363ab47c5de0a11f0d",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S058",
+          "title": "Integrated vectorization REST configuration",
+          "url": "https://learn.microsoft.com/en-us/azure/search/search-how-to-integrated-vectorization",
+          "snapshotSha256": "a09c24b08450e2017f75e2fa7d0b107b870d58cb085c863b6531ddb3ab513716",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:37:42Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-7",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "E",
+      "objectiveTags": [
+        "AI103-E2.02"
+      ],
+      "stem": "A configured document analyzer returns a long-running operation. Arrange the dependency chain for sending completed extraction to a RAG pipeline.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Submit document analysis."
+        },
+        {
+          "id": "B",
+          "text": "Wait for successful operation completion."
+        },
+        {
+          "id": "C",
+          "text": "Pass that result to downstream ingestion."
+        },
+        {
+          "id": "D",
+          "text": "Read the completed structured/Markdown result."
+        }
+      ],
+      "correctAnswer": {
+        "order": [
+          "A",
+          "B",
+          "D",
+          "C"
+        ]
+      },
+      "type": "sequence_order",
+      "difficulty": "medium",
+      "explanation": {
+        "whyCorrect": "A returned operation is not extracted content. Completion is required before results can supply downstream ingestion.",
+        "whyDistractorsWrong": {
+          "A": "Submission creates the tracked operation.",
+          "B": "The operation must finish successfully before consumption.",
+          "D": "Only the successful result supplies the representation.",
+          "C": "Downstream work requires the extracted representation."
+        }
+      },
+      "id": "ai103-improvement-r2-checkpoint-20-q017",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Implement information extraction solutions",
+      "sourceRefs": [
+        {
+          "sourceId": "S021",
+          "title": "Azure AI Content Understanding client library for Python - version 1.1.0",
+          "url": "https://learn.microsoft.com/python/api/overview/azure/ai-contentunderstanding-readme?view=azure-python",
+          "snapshotSha256": "aa5fd0abb99fe608e62d3909ffd7bc4eac9904dc931f427c9e3788351fbc7b42",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:37:42Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-7",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "D",
+      "objectiveTags": [
+        "AI103-D2.01",
+        "AI103-D2.02",
+        "AI103-D2.04"
+      ],
+      "stem": "Match each speech requirement to the relevant capability. Use each selected choice once; one choice is unused.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Recognize source speech and obtain target-language text"
+        },
+        {
+          "id": "B",
+          "text": "Adapt recognition to specialist terminology using domain data"
+        },
+        {
+          "id": "C",
+          "text": "Render supplied text as spoken audio"
+        }
+      ],
+      "correctAnswer": {
+        "pairs": {
+          "B": "Custom Speech",
+          "A": "Speech translation",
+          "C": "Text-to-speech synthesis"
+        }
+      },
+      "type": "matching_magnet",
+      "difficulty": "medium",
+      "explanation": {
+        "whyCorrect": "Custom Speech adapts recognition, Speech translation produces target-language text, and synthesis renders text as audio.",
+        "whyDistractorsWrong": {
+          "B": "Adapt recognition to specialist terminology using domain data: Custom Speech.",
+          "A": "Recognize source speech and obtain target-language text: Speech translation.",
+          "C": "Render supplied text as spoken audio: Text-to-speech synthesis."
+        }
+      },
+      "matchChoices": [
+        "Custom Speech",
+        "Speech translation",
+        "Text-to-speech synthesis",
+        "Image analysis"
+      ],
+      "id": "ai103-improvement-r2-checkpoint-20-q018",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Implement text analysis solutions",
+      "sourceRefs": [
+        {
+          "sourceId": "S033",
+          "title": "What is Azure Speech?",
+          "url": "https://learn.microsoft.com/azure/ai-services/speech-service/overview",
+          "snapshotSha256": "60a8436b0646a9a3c1e779b78f0e1d645948866173ce85449a6283d58c019d54",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S034",
+          "title": "What is custom speech?",
+          "url": "https://learn.microsoft.com/azure/ai-services/speech-service/custom-speech-overview",
+          "snapshotSha256": "8bde6391b7bdee42b5e52ea8c995024dcda82d1a0b56acbdfb817207b2a8d511",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S046",
+          "title": "How to recognize and translate speech",
+          "url": "https://learn.microsoft.com/azure/ai-services/speech-service/how-to-translate-speech",
+          "snapshotSha256": "8a73fb1e63f49dde972815b860758a57ff3d620842220f9e29200bccf573c39e",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:37:42Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-8",
+        "validationStatus": "draft"
+      }
+    },
+    {
+      "domainId": "D",
+      "objectiveTags": [
+        "AI103-D1.01",
+        "AI103-D1.02"
+      ],
+      "stem": "Match each text task to the most targeted Language capability. Use each selected choice once; one choice is unused.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Locate personal identifiers for redaction"
+        },
+        {
+          "id": "B",
+          "text": "Label organizations and locations using predefined categories"
+        },
+        {
+          "id": "C",
+          "text": "Identify a message language for routing"
+        }
+      ],
+      "correctAnswer": {
+        "pairs": {
+          "A": "PII detection",
+          "C": "Language detection",
+          "B": "Named entity recognition"
+        }
+      },
+      "type": "matching_magnet",
+      "difficulty": "medium",
+      "explanation": {
+        "whyCorrect": "The requested output determines the capability. Sentiment measures emotional tone and is unused here.",
+        "whyDistractorsWrong": {
+          "A": "Locate personal identifiers for redaction: PII detection.",
+          "C": "Identify a message language for routing: Language detection.",
+          "B": "Label organizations and locations using predefined categories: Named entity recognition."
+        }
+      },
+      "matchChoices": [
+        "PII detection",
+        "Language detection",
+        "Named entity recognition",
+        "Sentiment analysis"
+      ],
+      "id": "ai103-improvement-r2-checkpoint-20-q019",
+      "pack": {
+        "id": "ai-103",
+        "version": "1.2.0"
+      },
+      "revision": "2",
+      "examCode": "AI-103",
+      "domainName": "Implement text analysis solutions",
+      "sourceRefs": [
+        {
+          "sourceId": "S030",
+          "title": "What is Azure Language in Foundry Tools?",
+          "url": "https://learn.microsoft.com/azure/ai-services/language-service/overview",
+          "snapshotSha256": "debd3c5f132c72a0d258daa4d82d950834da5b4c89e3b42b20cf32982a169e1d",
+          "docType": "microsoft_learn"
+        }
+      ],
+      "metadata": {
+        "generatedAt": "2026-10-11T20:37:42Z",
+        "model": "Codex GPT-6 main agent",
+        "reasoningEffort": "not exposed",
+        "batchId": "batch-8",
+        "validationStatus": "draft"
+      }
+    }
+  ],
+  "caseStudies": [],
+  "evidence": [
+    {
+      "itemId": "ai103-improvement-r2-checkpoint-20-q012",
+      "testedDecision": "An image safety policy evaluates four harm categories and rejects any severity of 4 or 6. Which TWO implementation decisions match the image:analyze 2024-09-01 contract? Select TWO answers.",
+      "oldItemIds": [
+        "ai103-set-a-q075"
+      ],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-C3.01",
+      "itemRevisionHash": "d4b20eb4b80b5eaf87db7a729d9df6e8f9ee4841f15c0ede76876e0b202f7aca",
+      "sources": [
+        {
+          "sourceId": "S042",
+          "title": "QuickStart: Analyze image content",
+          "url": "https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-image",
+          "snapshotSha256": "6a40b6fdabe9e2a91838a3026f8530d0229c70acd401c4fab094a6c0c63b8670",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-checkpoint-20-q013",
+      "testedDecision": "A model supports masked image edits. The client must change one area of an existing image. Which TWO inputs are directly relevant to the edit definition? Select TWO answers.",
+      "oldItemIds": [
+        "ai103-set-a-q076"
+      ],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-C1.03",
+      "itemRevisionHash": "0708a89a85a35593c1521059eaff6ac27f2d8ebabb93ef75ddee31d49990faf2",
+      "sources": [
+        {
+          "sourceId": "S017",
+          "title": "Azure OpenAI image generation models",
+          "url": "https://learn.microsoft.com/azure/foundry/openai/how-to/dall-e",
+          "snapshotSha256": "34668770bb5790633413f4ae9432738c85ed36aef328f9f2bdb8b1b82437dca6",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-checkpoint-20-q014",
+      "testedDecision": "A team evaluates the video-analysis 2026-06-01-preview contract for fast events and tiny labels. Which TWO limitations belong in its evaluation plan? Select TWO answers.",
+      "oldItemIds": [
+        "ai103-set-a-q077"
+      ],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-C2.06",
+      "itemRevisionHash": "47734af93d793451bed20b201d72448cef2479bfbb45f7779b100af72088bbaa",
+      "sources": [
+        {
+          "sourceId": "S022",
+          "title": "Azure Content Understanding in Foundry Tools video solutions",
+          "url": "https://learn.microsoft.com/azure/ai-services/content-understanding/video/overview",
+          "snapshotSha256": "3a89d957245350c800482a717244bd3fc27b322ed67dbcbabea8e41782a3a57a",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-checkpoint-20-q015",
+      "testedDecision": "Mixed-language segments were submitted together for translation. Which TWO changes directly target the documented input problem? Select TWO answers.",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-D1.03",
+      "itemRevisionHash": "ba08d378e15880f00aff9dc5a83195b924a7aa88dce01daf0216fdf1fb101629",
+      "sources": [
+        {
+          "sourceId": "S055",
+          "title": "Azure Translator known issues and troubleshooting",
+          "url": "https://learn.microsoft.com/en-us/azure/ai-services/translator/reference/known-issues",
+          "snapshotSha256": "c1b48f37f4dc56c80cbc9c30661bfc67f1f6f75dea4693ef6d9e39beeeb88f1c",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-checkpoint-20-q016",
+      "testedDecision": "A source document exceeds the embedding input limit. Arrange the dependency chain that produces searchable chunk vectors.",
+      "oldItemIds": [],
+      "dependencyEdges": [
+        {
+          "before": "C",
+          "after": "D",
+          "reason": "Chunking requires source text and produces embedding inputs."
+        },
+        {
+          "before": "D",
+          "after": "A",
+          "reason": "Vectors are produced from prepared chunks."
+        },
+        {
+          "before": "A",
+          "after": "B",
+          "reason": "Indexing consumes text and completed vectors."
+        }
+      ],
+      "primaryObjective": "AI103-E1.01",
+      "itemRevisionHash": "ee2a94b8caebf98397d9fc4921aa185dfcd71ff0147cd102a9429f86ecb32db1",
+      "sources": [
+        {
+          "sourceId": "S026",
+          "title": "Integrated vector embedding in Azure AI Search",
+          "url": "https://learn.microsoft.com/azure/search/vector-search-integrated-vectorization",
+          "snapshotSha256": "45a6b445fbe4f7f65334693eb96b2de7b021e0b50ce46b363ab47c5de0a11f0d",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S058",
+          "title": "Integrated vectorization REST configuration",
+          "url": "https://learn.microsoft.com/en-us/azure/search/search-how-to-integrated-vectorization",
+          "snapshotSha256": "a09c24b08450e2017f75e2fa7d0b107b870d58cb085c863b6531ddb3ab513716",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-checkpoint-20-q017",
+      "testedDecision": "A configured document analyzer returns a long-running operation. Arrange the dependency chain for sending completed extraction to a RAG pipeline.",
+      "oldItemIds": [],
+      "dependencyEdges": [
+        {
+          "before": "A",
+          "after": "B",
+          "reason": "The operation must finish successfully before consumption."
+        },
+        {
+          "before": "B",
+          "after": "D",
+          "reason": "Only the successful result supplies the representation."
+        },
+        {
+          "before": "D",
+          "after": "C",
+          "reason": "Downstream work requires the extracted representation."
+        }
+      ],
+      "primaryObjective": "AI103-E2.02",
+      "itemRevisionHash": "40a17af2a766b2729396f65f34edb98f571dc20725aae07750411dd8c2c4e8ef",
+      "sources": [
+        {
+          "sourceId": "S021",
+          "title": "Azure AI Content Understanding client library for Python - version 1.1.0",
+          "url": "https://learn.microsoft.com/python/api/overview/azure/ai-contentunderstanding-readme?view=azure-python",
+          "snapshotSha256": "aa5fd0abb99fe608e62d3909ffd7bc4eac9904dc931f427c9e3788351fbc7b42",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-checkpoint-20-q018",
+      "testedDecision": "Match each speech requirement to the relevant capability. Use each selected choice once; one choice is unused.",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-D2.01",
+      "itemRevisionHash": "8f59edf663d98227702cf67235bbe8a9d05c6fc9b0c8619e78538a0e8d8abc06",
+      "sources": [
+        {
+          "sourceId": "S033",
+          "title": "What is Azure Speech?",
+          "url": "https://learn.microsoft.com/azure/ai-services/speech-service/overview",
+          "snapshotSha256": "60a8436b0646a9a3c1e779b78f0e1d645948866173ce85449a6283d58c019d54",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S034",
+          "title": "What is custom speech?",
+          "url": "https://learn.microsoft.com/azure/ai-services/speech-service/custom-speech-overview",
+          "snapshotSha256": "8bde6391b7bdee42b5e52ea8c995024dcda82d1a0b56acbdfb817207b2a8d511",
+          "docType": "microsoft_learn"
+        },
+        {
+          "sourceId": "S046",
+          "title": "How to recognize and translate speech",
+          "url": "https://learn.microsoft.com/azure/ai-services/speech-service/how-to-translate-speech",
+          "snapshotSha256": "8a73fb1e63f49dde972815b860758a57ff3d620842220f9e29200bccf573c39e",
+          "docType": "microsoft_learn"
+        }
+      ]
+    },
+    {
+      "itemId": "ai103-improvement-r2-checkpoint-20-q019",
+      "testedDecision": "Match each text task to the most targeted Language capability. Use each selected choice once; one choice is unused.",
+      "oldItemIds": [],
+      "dependencyEdges": [],
+      "primaryObjective": "AI103-D1.01",
+      "itemRevisionHash": "ab9b8766c1fe8a310e18d36c7845df525f6916a770aa9f4e479e776dae2d645e",
+      "sources": [
+        {
+          "sourceId": "S030",
+          "title": "What is Azure Language in Foundry Tools?",
+          "url": "https://learn.microsoft.com/azure/ai-services/language-service/overview",
+          "snapshotSha256": "debd3c5f132c72a0d258daa4d82d950834da5b4c89e3b42b20cf32982a169e1d",
+          "docType": "microsoft_learn"
+        }
+      ]
+    }
+  ]
+}

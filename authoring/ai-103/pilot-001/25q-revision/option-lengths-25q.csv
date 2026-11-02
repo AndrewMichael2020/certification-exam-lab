@@ -1,0 +1,21 @@
+item,format,keyed,len_A,len_B,len_C,len_D,len_E,longest,keyed_rank_by_length
+Q1,single,C,74,90,84,96,,D,3
+Q2,single,A,109,92,120,116,,C,3
+Q3,single,B,15,18,21,15,,C,2
+Q4,single,D,91,116,133,135,,D,1
+Q6,single,C,85,95,90,100,,D,3
+Q7,single,A,25,17,24,12,,A,1
+Q8,single,D,127,92,126,101,,A,3
+Q9,single,B,125,107,142,93,,C,3
+Q10,single,C,83,84,80,80,,B,3
+Q11,single,D,106,103,131,110,,C,2
+Q12,single,A,77,65,103,60,,C,2
+Q13,single,C,97,88,95,99,,D,3
+Q14,single,B,77,99,102,113,,D,3
+Q15,single,D,137,118,118,122,,A,2
+Q16,multi (2 of 5),B+E,109,105,81,123,96,D,3+4
+Q17,multi (2 of 5),A+C,84,82,84,82,95,E,2+3
+Q18,multi (2 of 5),B+E,74,79,95,98,86,D,4+3
+Q19,multi (2 of 5),A+C,100,97,107,116,117,E,4+3
+Q20,multi (2 of 5),B+D,83,76,62,122,114,D,4+1
+Q25,single,B,67,103,98,102,,B,1

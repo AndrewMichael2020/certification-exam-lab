@@ -1,0 +1,210 @@
+{
+ "package": "AI-103-Practice-With-Answers-25-Questions.pdf",
+ "file_sha256": "c7bdb05cd4b655811ddb5ff58ba3b8ab5e51f2327a223b5fe9114961fbf9f2ae",
+ "practice_content_sha256": "5654fd23907a66b788694699ab53c0455b729c70f582e5be4cbd1ca2d83fb522",
+ "item_hashes": null,
+ "reviewer": {
+  "model": "claude-opus-5-5[1m]",
+  "last_served_model": "claude-opus-5-5",
+  "effort": "xhigh",
+  "date": "2026-10-08"
+ },
+ "method": "key-hidden solve from stripped text; live Microsoft Learn reads 2026-10-08 for new sources; r2 frozen evidence for sources with matching snapshot hashes",
+ "longest_option_rule": {
+  "single_answer_items": 15,
+  "keyed_longest": 11,
+  "rate": 0.733,
+  "target": "0.18-0.20",
+  "items_keyed_longest": [
+   "Q1",
+   "Q2",
+   "Q4",
+   "Q7",
+   "Q8",
+   "Q9",
+   "Q11",
+   "Q13",
+   "Q14",
+   "Q15",
+   "Q25"
+  ],
+  "multi_select_longest_is_keyed": "2 of 5 (Q19, Q20); chance 0.40"
+ },
+ "items": [
+  {
+   "item": "Q1",
+   "key": "C",
+   "key_correct": true,
+   "verdict": "revise",
+   "notes": "Key longest +24%; A, D strawmen; S008 workflows retire 2026-12-01, re-source; easy"
+  },
+  {
+   "item": "Q2",
+   "key": "A",
+   "key_correct": true,
+   "verdict": "revise",
+   "notes": "Key longest +49%; B-D restate case violations; easy"
+  },
+  {
+   "item": "Q3",
+   "key": "B",
+   "key_correct": true,
+   "verdict": "accept",
+   "notes": "Carried from r2 Q1"
+  },
+  {
+   "item": "Q4",
+   "key": "D",
+   "key_correct": true,
+   "verdict": "revise",
+   "notes": "Remove source line numbers and stipulation commentary from explanation"
+  },
+  {
+   "item": "Q5",
+   "key": "required [order_id,note]; additionalProperties false; text.format",
+   "key_correct": true,
+   "verdict": "revise",
+   "notes": "Dropdown choices not shown; 'additional:' label; B3.01 loose fit"
+  },
+  {
+   "item": "Q6",
+   "key": "C",
+   "key_correct": true,
+   "verdict": "accept",
+   "notes": "Carried from r2 Q4; trace renders cleanly"
+  },
+  {
+   "item": "Q7",
+   "key": "A",
+   "key_correct": true,
+   "verdict": "accept",
+   "notes": "Carried from r2 Q5"
+  },
+  {
+   "item": "Q8",
+   "key": "D",
+   "key_correct": true,
+   "verdict": "revise",
+   "notes": "Key longest +2%; absolutes in A, C; 'captured' in stem; A1.04 closer fit"
+  },
+  {
+   "item": "Q9",
+   "key": "B",
+   "key_correct": true,
+   "verdict": "revise",
+   "notes": "'SDK generation' wording; D self-refuting"
+  },
+  {
+   "item": "Q10",
+   "key": "C",
+   "key_correct": true,
+   "verdict": "revise",
+   "notes": "Distractors self-refuting; add '(preview)' to Response Completeness; easy"
+  },
+  {
+   "item": "Q11",
+   "key": "D",
+   "key_correct": true,
+   "verdict": "revise",
+   "notes": "Key longest +88%; A-C implausible; easy"
+  },
+  {
+   "item": "Q12",
+   "key": "A",
+   "key_correct": true,
+   "verdict": "accept",
+   "notes": "S010 tip verbatim"
+  },
+  {
+   "item": "Q13",
+   "key": "C",
+   "key_correct": true,
+   "verdict": "revise",
+   "notes": "Key longest +64%; 'Only' strawmen; easy"
+  },
+  {
+   "item": "Q14",
+   "key": "B",
+   "key_correct": true,
+   "verdict": "revise",
+   "notes": "Key longest +73%; C, D implausible; 'captured new Foundry guide', 'feature generation'"
+  },
+  {
+   "item": "Q15",
+   "key": "D",
+   "key_correct": true,
+   "verdict": "revise",
+   "notes": "Key longest +72%; A, C weak; easy"
+  },
+  {
+   "item": "Q16",
+   "key": "B,E",
+   "key_correct": true,
+   "verdict": "accept",
+   "notes": "Carried from r2 Q8; 'captured' in stem"
+  },
+  {
+   "item": "Q17",
+   "key": "A,D",
+   "key_correct": true,
+   "verdict": "remove",
+   "notes": "Sora 2 remix item, Andrew's decision; CV drops to 2 of 24"
+  },
+  {
+   "item": "Q18",
+   "key": "B,E",
+   "key_correct": true,
+   "verdict": "revise",
+   "notes": "Minor: A, C weak; 'captured' in stem; easy"
+  },
+  {
+   "item": "Q19",
+   "key": "A,C",
+   "key_correct": true,
+   "verdict": "revise",
+   "notes": "B, D, E implausible; A longest; easy"
+  },
+  {
+   "item": "Q20",
+   "key": "B,D",
+   "key_correct": true,
+   "verdict": "accept",
+   "notes": "Speech translation under text analysis matches study guide D2.04"
+  },
+  {
+   "item": "Q21",
+   "key": "C-A-D-B",
+   "key_correct": true,
+   "verdict": "revise",
+   "notes": "Lettered steps not printed; easy"
+  },
+  {
+   "item": "Q22",
+   "key": "B-D-A-C",
+   "key_correct": true,
+   "verdict": "revise",
+   "notes": "Lettered steps not printed; 'captured' in stem"
+  },
+  {
+   "item": "Q23",
+   "key": "A stop sessions; B backoff with jitter; C support request",
+   "key_correct": true,
+   "verdict": "revise",
+   "notes": "Explanation mentions deletion not in choices; doubled punctuation in Choices line; rows unlettered"
+  },
+  {
+   "item": "Q24",
+   "key": "A PII detection; B language detection; C prebuilt NER",
+   "key_correct": true,
+   "verdict": "accept",
+   "notes": "Rows unlettered (cosmetic)"
+  },
+  {
+   "item": "Q25",
+   "key": "B",
+   "key_correct": true,
+   "verdict": "accept",
+   "notes": "Key longest by 1 char only"
+  }
+ ]
+}

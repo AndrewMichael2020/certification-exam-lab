@@ -1,0 +1,47 @@
+{
+  "status": "passed",
+  "scope": "Actual revision-3 draft previews; not released PDF acceptance",
+  "packageSha256": "13bd138a2d24b8bd6be8365393e96b0098b6dea1b76d67a64afa653a66711d68",
+  "variants": [
+    {
+      "kind": "questions",
+      "path": "/Users/antvibe/Documents/Dev/cert-exam-lab-local/authoring/ai-103/pilot-001/revision-3/output/pdf/ai103-pilot-001-r3-questions.pdf",
+      "sha256": "42fdd27d58981d32aacdcfad90289be45dd9daf3f54bf15b8b24fd7f6c472671",
+      "pages": 10,
+      "sourceLinks": 0,
+      "allTenStemsPresent": true,
+      "allExplanationsAndSourcesPresent": false,
+      "draftIdentityAndHashesPresent": true
+    },
+    {
+      "kind": "answers",
+      "path": "/Users/antvibe/Documents/Dev/cert-exam-lab-local/authoring/ai-103/pilot-001/revision-3/output/pdf/ai103-pilot-001-r3-answers.pdf",
+      "sha256": "405b87a1b67bd1d199f5a1b1557449f97b61b4314b13e9b65df56797b50ee4c6",
+      "pages": 14,
+      "sourceLinks": 15,
+      "allTenStemsPresent": true,
+      "allExplanationsAndSourcesPresent": true,
+      "draftIdentityAndHashesPresent": true
+    },
+    {
+      "kind": "practice",
+      "path": "/Users/antvibe/Documents/Dev/cert-exam-lab-local/authoring/ai-103/pilot-001/revision-3/output/pdf/ai103-pilot-001-r3-practice.pdf",
+      "sha256": "17b3ec1cea7ff111a97885ecdde85da2f2914737ea749aa380e26d060d4e64d6",
+      "pages": 14,
+      "sourceLinks": 15,
+      "allTenStemsPresent": true,
+      "allExplanationsAndSourcesPresent": true,
+      "draftIdentityAndHashesPresent": true
+    }
+  ],
+  "renderedPages": 38,
+  "visualReview": {
+    "renderedPages": 38,
+    "allContactSheetsInspected": true,
+    "detailedPages": [
+      "answers page 4 - Q2",
+      "answers page 14 - complete quick key"
+    ],
+    "findings": []
+  }
+}

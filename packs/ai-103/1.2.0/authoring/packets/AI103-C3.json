@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "packRef": {
+    "id": "ai-103",
+    "version": "1.1.0"
+  },
+  "parentObjectiveId": "AI103-C3",
+  "title": "Implement responsible AI for multimodal content",
+  "state": "evidence-packet-only; no questions",
+  "allowedObjectiveIds": [
+    "AI103-C3.01"
+  ],
+  "allowedScope": [
+    {
+      "objectiveId": "AI103-C3.01",
+      "claims": [
+        "F042A",
+        "F048A"
+      ],
+      "choice": "Use image or multimodal Content Safety harm classification, then apply application thresholds/actions.",
+      "configuration": "Inspect hate/self-harm/sexual/violence severities; choose appropriate reject/review handling; evaluate false positives and negatives for the workload.",
+      "comparison": "Safety labels do not automatically enforce custom brand, trademark, symbol, or watermark rules.",
+      "judgment": "A moderation service should route the returned severity according to explicit policy, rather than treating every nonzero value identically."
+    }
+  ],
+  "excludedObjectives": [
+    {
+      "id": "AI103-C3.02",
+      "reason": "OCR plus text shielding is a design inference, not a documented end-to-end image shield. Direct image coverage, OCR loss, and bypass behavior require separate verified implementation evidence."
+    },
+    {
+      "id": "AI103-C3.03",
+      "reason": "The source set does not prove configurable platform watermark enforcement, complete symbol detection, or brand-use validation. Those guarantees remain unsupported; current packets may teach the limit, not claim the missing capability."
+    }
+  ],
+  "evidence": [
+    {
+      "claimId": "F042A",
+      "statement": "The Image Content Safety quickstart shows severity values 0, 2, 4, and 6 for harm categories and policy thresholds that determine acceptance or rejection.",
+      "sourceId": "S042",
+      "sourceUrl": "https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-image",
+      "versionContext": "Feature-specific qualifications in snapshot; package/API version unknown unless stated in a referenced excerpt.",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S042.md",
+          "lineStart": 32,
+          "lineEnd": 35,
+          "heading": "## Analyze images",
+          "needle": "0-Safe, 2-Low, 4-Medium, 6-High",
+          "excerpt": "2. Select a sample image from the panels on the page, or upload your own image.\n3. Select **Run test**. The service returns all the categories that were detected, with the severity level for each: 0-Safe, 2-Low, 4-Medium, 6-High. It also returns a binary **Accepted**/**Rejected** result, based on the filters you configure. Use the matrix in the **Configure filters** tab on the right to set your allowed/prohibited severity levels for each category. Then you can run the text again to see how the filter works.\n\n## View and export code",
+          "sourceSha256": "6a40b6fdabe9e2a91838a3026f8530d0229c70acd401c4fab094a6c0c63b8670"
+        }
+      ]
+    },
+    {
+      "claimId": "F048A",
+      "statement": "Content Safety FAQ documents image/multimodal harm classification but limits Prompt Shields, protected-material checks, and groundedness detection to text.",
+      "sourceId": "S048",
+      "sourceUrl": "https://learn.microsoft.com/en-us/azure/ai-services/content-safety/faq",
+      "versionContext": "Harm moderation image/multimodal; Prompt Shields/protected material/groundedness text-only",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S048.md",
+          "lineStart": 39,
+          "lineEnd": 42,
+          "heading": "### What types of media can Azure AI Content Safety classify/moderate?",
+          "needle": "work with text content only",
+          "excerpt": "\nOur content harm classification models support the moderation of text, images, and multimodal content (images with text + OCR). The protected material, prompt shields, and groundedness detection models work with text content only.\n\n### How are Azure AI Content Safety models priced?",
+          "sourceSha256": "b63f7ce635fdf749b4a5fcb4859aa2e9f6ef5e5bb69ec1ef6b772a3fdec08db9"
+        }
+      ]
+    }
+  ],
+  "constraints": [
+    "Only listed facts with conditions establish answer keys. Cite correct answers and distractor rationales.",
+    "Preserve API/SDK generation, preview, retirement and region/model qualifiers.",
+    "No unshown methods, asserted execution, GH-600 material, dumps, remembered assessments or official format parity.",
+    "Ready is bounded evidence support; later content review and manual solve-first audit are still required."
+  ]
+}

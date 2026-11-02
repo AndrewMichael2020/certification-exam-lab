@@ -1,0 +1,87 @@
+{
+  "extraction": {
+    "ai-103-pilot-001-r1-answers.pdf": {
+      "sha256": "33959df61226a61cec77150eaf0395c2880389dd77b8dab1f43f0261711bb47e",
+      "pages": 15,
+      "questionHeaders": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "allStemsPresent": true,
+      "allExplanationsPresent": true,
+      "hasKey": true,
+      "sourceLinks": 15,
+      "snapshotHashesPresent": true,
+      "packageHashOnCover": true,
+      "draftLabel": true
+    },
+    "ai-103-pilot-001-r1-practice.pdf": {
+      "sha256": "2a8f1ee0214602f623ed236e58caced8e69864ec917264a66f230e4ca1ad3389",
+      "pages": 15,
+      "questionHeaders": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "allStemsPresent": true,
+      "allExplanationsPresent": true,
+      "hasKey": true,
+      "sourceLinks": 15,
+      "snapshotHashesPresent": true,
+      "packageHashOnCover": true,
+      "draftLabel": true
+    },
+    "ai-103-pilot-001-r1-questions.pdf": {
+      "sha256": "0f343a56fd8d541c7dcf3e28153c75b9c5dafe15b47bab53fa3f831eb92db70f",
+      "pages": 10,
+      "questionHeaders": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "allStemsPresent": true,
+      "allExplanationsPresent": false,
+      "hasKey": false,
+      "sourceLinks": 0,
+      "snapshotHashesPresent": false,
+      "packageHashOnCover": true,
+      "draftLabel": true
+    }
+  },
+  "visualReview": {
+    "status": "inspected; no observed clipping or overlap",
+    "allPagesRasterized": 40,
+    "contactSheets": [
+      "questions",
+      "answers",
+      "practice"
+    ],
+    "individualPagesInspected": [
+      "questions page 4",
+      "practice pages 6, 12, 13, 15"
+    ],
+    "continuations": "Long cases, explanations and source lists span pages. Preview layout changes remain local to the authoring runner."
+  }
+}

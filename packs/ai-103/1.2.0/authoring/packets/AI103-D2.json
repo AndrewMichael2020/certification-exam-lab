@@ -1,0 +1,233 @@
+{
+  "schemaVersion": 1,
+  "packRef": {
+    "id": "ai-103",
+    "version": "1.1.0"
+  },
+  "parentObjectiveId": "AI103-D2",
+  "title": "Implement speech solutions",
+  "state": "evidence-packet-only; no questions",
+  "allowedObjectiveIds": [
+    "AI103-D2.01",
+    "AI103-D2.02",
+    "AI103-D2.03",
+    "AI103-D2.04"
+  ],
+  "allowedScope": [
+    {
+      "objectiveId": "AI103-D2.01",
+      "claims": [
+        "F033A",
+        "F035A"
+      ],
+      "choice": "Choose STT/TTS components for a controlled speech pipeline or Voice Live for a managed conversational integration.",
+      "configuration": "Configure recognition language/input, synthesis voice/output, turn handling, and cancellation; check service/model/region compatibility.",
+      "comparison": "Recognized text and synthesized speech are separate artifacts; voice turns must account for user interruption.",
+      "judgment": "A voice support agent needs a clear stop/interrupt behavior so stale speech does not continue after the user changes the task."
+    },
+    {
+      "objectiveId": "AI103-D2.02",
+      "claims": [
+        "F034A",
+        "F035A"
+      ],
+      "choice": "Use Custom Speech to improve recognition of domain terms and audio conditions, and integrate recognition into the chosen agent modality.",
+      "configuration": "Compare base/custom recognition, train with suitable data, deploy a custom endpoint, and confirm the selected conversational product supports that customization.",
+      "comparison": "Custom Speech recognition is different from custom voice synthesis; one model cannot be substituted for the other.",
+      "judgment": "A warehouse agent struggling with product codes needs recognition customization evaluated against transcription errors before changing the answer model."
+    },
+    {
+      "objectiveId": "AI103-D2.03",
+      "claims": [
+        "F036A",
+        "F035A"
+      ],
+      "choice": "Use a supported audio-capable conversational model/interface when reasoning should operate on audio interaction, and distinguish it from transcript-only processing.",
+      "configuration": "Configure audio session inputs/outputs, VAD/turn rules, interruptions, and any permitted additional modalities.",
+      "comparison": "A transcription service produces text but does not itself establish general multimodal reasoning capability.",
+      "judgment": "For a conversational assistant reacting in real time, evaluate its audio turn behavior and reasoning output together."
+    },
+    {
+      "objectiveId": "AI103-D2.04",
+      "claims": [
+        "F033A",
+        "F046A"
+      ],
+      "choice": "Use Speech translation for recognized source speech to target text/speech, or an explicitly evaluated audio/LLM translation flow.",
+      "configuration": "Configure source recognition language and each target language; inspect recognition status; synthesize the chosen target voice separately when needed.",
+      "comparison": "Target-language text and target-language audio require distinct handling; NoMatch/Canceled are not successful translations.",
+      "judgment": "A multilingual agent should retain recognized source text, translated outputs, and cancellation details to diagnose the correct stage."
+    }
+  ],
+  "excludedObjectives": [],
+  "evidence": [
+    {
+      "claimId": "F033A",
+      "statement": "Azure Speech provides speech-to-text, text-to-speech, speech translation, and conversational modality capabilities.",
+      "sourceId": "S033",
+      "sourceUrl": "https://learn.microsoft.com/azure/ai-services/speech-service/overview",
+      "versionContext": "Feature-specific qualifications in snapshot; package/API version unknown unless stated in a referenced excerpt.",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S033.md",
+          "lineStart": 55,
+          "lineEnd": 58,
+          "heading": "### Speech translation",
+          "needle": "### Speech translation",
+          "excerpt": "\n### Speech translation\n\n[Speech translation](speech-translation) enables real-time, multilingual translation of speech to your applications, tools, and devices. Use this feature for speech-to-speech and speech-to-text translation.",
+          "sourceSha256": "60a8436b0646a9a3c1e779b78f0e1d645948866173ce85449a6283d58c019d54"
+        },
+        {
+          "snapshot": "sources/snapshots/S033.md",
+          "lineStart": 30,
+          "lineEnd": 33,
+          "heading": "### Speech to text",
+          "needle": "### Speech to text",
+          "excerpt": "\n### Speech to text\n\nUse [speech to text](speech-to-text) to convert audio into text. Choose from:",
+          "sourceSha256": "60a8436b0646a9a3c1e779b78f0e1d645948866173ce85449a6283d58c019d54"
+        },
+        {
+          "snapshot": "sources/snapshots/S033.md",
+          "lineStart": 40,
+          "lineEnd": 43,
+          "heading": "### Text to speech",
+          "needle": "### Text to speech",
+          "excerpt": "\n### Text to speech\n\nWith [text to speech](text-to-speech), you can convert input text into humanlike synthesized speech. Use neural voices, which are humanlike voices powered by deep neural networks. Use [Speech Synthesis Markup Language (SSML)](speech-synthesis-markup) to fine-tune the pitch, pronunciation, speaking rate, volume, and more.",
+          "sourceSha256": "60a8436b0646a9a3c1e779b78f0e1d645948866173ce85449a6283d58c019d54"
+        }
+      ]
+    },
+    {
+      "claimId": "F034A",
+      "statement": "Custom Speech uses domain data to evaluate and train speech-recognition models and deploy them to a custom endpoint.",
+      "sourceId": "S034",
+      "sourceUrl": "https://learn.microsoft.com/azure/ai-services/speech-service/custom-speech-overview",
+      "versionContext": "Feature-specific qualifications in snapshot; package/API version unknown unless stated in a referenced excerpt.",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S034.md",
+          "lineStart": 12,
+          "lineEnd": 15,
+          "heading": "## How does it work?",
+          "needle": "deploy a model to a custom endpoint",
+          "excerpt": "\nWith custom speech, you can upload your own data, test and train a custom model, compare accuracy between models, and deploy a model to a custom endpoint.\n\n![Diagram that highlights the components that make up the custom speech area of the Speech Studio.](media/custom-speech/custom-speech-overview.png)",
+          "sourceSha256": "8bde6391b7bdee42b5e52ea8c995024dcda82d1a0b56acbdfb817207b2a8d511"
+        },
+        {
+          "snapshot": "sources/snapshots/S034.md",
+          "lineStart": 2,
+          "lineEnd": 5,
+          "heading": "# What is custom speech?",
+          "needle": "speech recognition",
+          "excerpt": "\nWith custom speech, you can evaluate and improve the accuracy of speech recognition for your applications and products. A custom speech model can be used for [real-time speech to text](speech-to-text), [speech translation](speech-translation), and [batch transcription](batch-transcription).\n\nOut of the box, speech recognition utilizes a Universal Language Model as a base model that is trained with Microsoft-owned data and reflects commonly used spoken language. The base model is pretrained with dialects and phonetics representing various common domains. When you make a speech recognition request, the most recent base model for each [supported language](language-support?tabs=stt) is used by default. The base model works well in most speech recognition scenarios.",
+          "sourceSha256": "8bde6391b7bdee42b5e52ea8c995024dcda82d1a0b56acbdfb817207b2a8d511"
+        }
+      ]
+    },
+    {
+      "claimId": "F035A",
+      "statement": "Voice Live integrates recognition, generation, and synthesis for managed speech-to-speech agents; feature, model, and regional compatibility remain configuration constraints.",
+      "sourceId": "S035",
+      "sourceUrl": "https://learn.microsoft.com/azure/ai-services/speech-service/voice-live",
+      "versionContext": "Feature-specific qualifications in snapshot; package/API version unknown unless stated in a referenced excerpt.",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S035.md",
+          "lineStart": 4,
+          "lineEnd": 7,
+          "heading": "## What is the Voice Live API?",
+          "needle": "eliminates the need to manually orchestrate",
+          "excerpt": "\nThe Voice Live API is a solution that enables low-latency, high-quality speech-to-speech interactions for voice agents. The API is designed for developers seeking scalable and efficient voice-driven experiences as it eliminates the need to manually orchestrate multiple components. By integrating speech recognition, generative AI, and text-to-speech functionalities into a single, unified interface, it provides an end-to-end solution for creating seamless experiences.\n\nThe Voice Live API is fully managed, so you don't need to handle backend orchestration or component integration. Developers provide audio input and receive audio output, avatar visuals, and action triggers—all with minimal latency. You don't need to deploy or manage any generative AI models, as the API handles the underlying infrastructure.",
+          "sourceSha256": "e73bb03416a786c00b45198fdfdb0cc859eb5c76e66e481361d69ba291d440f0"
+        },
+        {
+          "snapshot": "sources/snapshots/S035.md",
+          "lineStart": 47,
+          "lineEnd": 50,
+          "heading": "## Supported models and regions",
+          "needle": "## Supported models and regions",
+          "excerpt": "\n## Supported models and regions\n\nTo power the intelligence of your voice agent, you have flexibility and choice in the generative AI model between GPT-Realtime, GPT-5, GPT-4.1, Phi, and more options. Different generative AI models provide different types of capabilities, levels of intelligence, speed and latency of inferencing, and cost. Depending on what matters most for your business and use case, choose the model that best suits your needs.",
+          "sourceSha256": "e73bb03416a786c00b45198fdfdb0cc859eb5c76e66e481361d69ba291d440f0"
+        }
+      ]
+    },
+    {
+      "claimId": "F036A",
+      "statement": "Realtime audio supports WebRTC/WebSocket/SIP-oriented integrations; session, turn-detection, interruption, and audio handling are part of the interaction contract.",
+      "sourceId": "S036",
+      "sourceUrl": "https://learn.microsoft.com/azure/foundry/openai/how-to/realtime-audio",
+      "versionContext": "Feature-specific qualifications in snapshot; package/API version unknown unless stated in a referenced excerpt.",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S036.md",
+          "lineStart": 8,
+          "lineEnd": 11,
+          "heading": "## Connection methods",
+          "needle": "## Connection methods",
+          "excerpt": "\n## Connection methods\n\nYou can use the Realtime API via WebRTC, session initiation protocol (SIP), or WebSocket to send audio input to the model and receive audio responses in real time. In most cases, we recommend using the WebRTC API for low-latency real-time audio streaming.",
+          "sourceSha256": "69134c918deb6d5a8089eb41d86cf44b7a17ded278305d6afb203c2779e889b6"
+        },
+        {
+          "snapshot": "sources/snapshots/S036.md",
+          "lineStart": 117,
+          "lineEnd": 121,
+          "heading": "## Session configuration",
+          "needle": "turn_detection",
+          "excerpt": "- Opt in to transcription of user input audio by using the session's `input_audio_transcription` property. If you specify a transcription model deployment name in this configuration, you enable the delivery of `conversation.item.audio_transcription.completed` events.\n- Turn handling is controlled by the `turn_detection` property. This property's type can be set to `none`, `semantic_vad`, or `server_vad` as described in the voice activity detection (VAD) and the audio buffer section.\n- Tools can be configured to enable the server to call out to external services or functions to enrich the conversation. Tools are defined as part of the `tools` property in the session configuration.\n\nAn example `session.update` that configures several aspects of the session, including tools, follows. All session parameters are optional and can be omitted if not needed.",
+          "sourceSha256": "69134c918deb6d5a8089eb41d86cf44b7a17ded278305d6afb203c2779e889b6"
+        },
+        {
+          "snapshot": "sources/snapshots/S036.md",
+          "lineStart": 295,
+          "lineEnd": 298,
+          "heading": "### Response interruption",
+          "needle": "### Response interruption",
+          "excerpt": "\n### Response interruption\n\nThe client `response.cancel` event is used to cancel an in-progress response.",
+          "sourceSha256": "69134c918deb6d5a8089eb41d86cf44b7a17ded278305d6afb203c2779e889b6"
+        }
+      ]
+    },
+    {
+      "claimId": "F046A",
+      "statement": "Speech translation configures a recognition source language and one or more target languages; translation results and synthesized target speech are separate outputs.",
+      "sourceId": "S046",
+      "sourceUrl": "https://learn.microsoft.com/azure/ai-services/speech-service/how-to-translate-speech",
+      "versionContext": "azure-cognitiveservices-speech; sample SDK version unspecified; translation config/recognizer/synthesis",
+      "locators": [
+        {
+          "snapshot": "sources/snapshots/S046.md",
+          "lineStart": 76,
+          "lineEnd": 80,
+          "heading": "## Change the source language",
+          "needle": "speech_recognition_language =",
+          "excerpt": "    from_language = \"it-IT\"\n    translation_config.speech_recognition_language = from_language\n```\n\nThe `speech_recognition_language` property expects a language-locale format string. Refer to the [list of supported speech translation locales](language-support?tabs=speech-translation).",
+          "sourceSha256": "8a73fb1e63f49dde972815b860758a57ff3d620842220f9e29200bccf573c39e"
+        },
+        {
+          "snapshot": "sources/snapshots/S046.md",
+          "lineStart": 93,
+          "lineEnd": 96,
+          "heading": "## Add a translation language",
+          "needle": "translation_config.add_target_language",
+          "excerpt": "    # Translate to languages. See, https://aka.ms/speech/sttt-languages\n    translation_config.add_target_language(\"fr\")\n    translation_config.add_target_language(\"de\")\n```",
+          "sourceSha256": "8a73fb1e63f49dde972815b860758a57ff3d620842220f9e29200bccf573c39e"
+        },
+        {
+          "snapshot": "sources/snapshots/S046.md",
+          "lineStart": 274,
+          "lineEnd": 277,
+          "heading": "## Synthesize translations",
+          "needle": "## Synthesize translations",
+          "excerpt": "\n## Synthesize translations\n\nAfter a successful speech recognition and translation, the result contains all the translations in a dictionary. The [`translations`](/en-us/python/api/azure-cognitiveservices-speech/azure.cognitiveservices.speech.translation.translationrecognitionresult#translations) dictionary key is the target translation language, and the value is the translated text. Recognized speech can be translated and then synthesized in a different language (speech-to-speech).",
+          "sourceSha256": "8a73fb1e63f49dde972815b860758a57ff3d620842220f9e29200bccf573c39e"
+        }
+      ]
+    }
+  ],
+  "constraints": [
+    "Only listed facts with conditions establish answer keys. Cite correct answers and distractor rationales.",
+    "Preserve API/SDK generation, preview, retirement and region/model qualifiers.",
+    "No unshown methods, asserted execution, GH-600 material, dumps, remembered assessments or official format parity.",
+    "Ready is bounded evidence support; later content review and manual solve-first audit are still required."
+  ]
+}

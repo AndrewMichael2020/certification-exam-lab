@@ -1,18 +1,11 @@
 import { describe, expect, it } from "vitest";
-import { assembleExam, createPlan, validateBatch } from "../src/generation.js";
+import { assembleImportedExam } from "../src/importer.js";
 import { scoreAttempt } from "../src/scoring.js";
-import { FIXTURE_QUESTIONS } from "./fixtures/questions.js";
+import { CURRENT_GH600 } from "../src/packs.js";
+import { syntheticPackage } from "./fixtures/importPackage.js";
 
 function buildMockExam(total = 100) {
-  const plan = createPlan(total);
-  // Repeat the 6 fixture questions to fill any requested exam size
-  const questions = Array.from({ length: total }, (_, i) => ({
-    ...FIXTURE_QUESTIONS[i % FIXTURE_QUESTIONS.length],
-    id: `fixture-${i}`,
-  }));
-  const validated = validateBatch(questions);
-  const accepted = validated.filter((q) => q.metadata.validationStatus !== "rejected");
-  return assembleExam(plan, accepted.slice(0, plan.totalQuestions), []);
+  return assembleImportedExam(syntheticPackage(CURRENT_GH600, total));
 }
 
 describe("phase 3 full mock ops", () => {

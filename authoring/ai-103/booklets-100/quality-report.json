@@ -1,0 +1,3833 @@
+{
+  "sets": {
+    "A": {
+      "singleCount": 64,
+      "singleKeyLongest": 12,
+      "singleKeyShortest": 15,
+      "multiCount": 18,
+      "multiLongestIsKey": 4,
+      "multiBothKeysTopTwo": 0,
+      "domains": {
+        "A": 28,
+        "B": 33,
+        "C": 13,
+        "D": 13,
+        "E": 13
+      },
+      "difficulty": {
+        "medium": 58,
+        "easy": 35,
+        "hard": 7
+      },
+      "contentSha256": "8f224b6a54ec321236aeb29b2905d0321b5849cc08f276891cf290da26a90b1b",
+      "itemSha256": {
+        "ai103-set-a-q001": "e15fcc00116ee7f61082a091651c495d8cf489c202acc1a2e3be998c8f016041",
+        "ai103-set-a-q002": "b380c8415c4ba93a6dca1c9cb9025697a365f4a58907435f1fdceb01728c0e54",
+        "ai103-set-a-q003": "75d4921b9ee3d728928ae7fd547a70a34cd89e03608c9e2ac8e82303970515ba",
+        "ai103-set-a-q004": "0563dce4956128335261ec15802eeeaeabee2543fb1be36b9d4a5e310d933220",
+        "ai103-set-a-q005": "10f988f29128bebe15b383a53bf7f4fb314021ff2300e5a6d6f3338899583aa7",
+        "ai103-set-a-q006": "96a7fe34379b46039adbbbf92a492a3a3b12f7e954e40ec7dde7e99fa112e4bc",
+        "ai103-set-a-q007": "2134b0b18ad787a3c7f6507bb0ec24616075682d253235ec45b1d577b07a5281",
+        "ai103-set-a-q008": "81fe1fcf234b9490c43b9f00695c94a35e2a744f3fca2c73e3fb2e3ea622d5fc",
+        "ai103-set-a-q009": "478b0195cf83950bc93f8ae18dbc756a73eedc1f95cadbf847749b4b50823def",
+        "ai103-set-a-q010": "979280b01fab4eee3ad6c38c90273110fb0d2c1bc2d85c7bce8895ca20961167",
+        "ai103-set-a-q011": "60e2e9a6c118d2363b645dee5bb239600df5cc5c9a879b457d42b85f409d0a8f",
+        "ai103-set-a-q012": "25705c0631665a06f00b722e22cbfb9f7ba7e388edcd65a3b762d1a261abe17d",
+        "ai103-set-a-q013": "c748cf8d26daefe2ddc86edd7ef7afacffb7d2e0ad4ae6f5ac8a03ea08e9483b",
+        "ai103-set-a-q014": "181237b40f8101dd374c132ce3969a7031cd04a95d391b48eb44383c3b898f3c",
+        "ai103-set-a-q015": "7a8cb7d37f262559b83f8f4bab7837ca2e2713a460b428f50581e3acba768c87",
+        "ai103-set-a-q016": "b589eedd63e1d754101f4dccb180ba2e6a8994e24df8f0aa2c31ab28bc0f724f",
+        "ai103-set-a-q017": "964b6144257eeae28b2f099d55115aa5ec132dfb565df7edeb32a9a3da966841",
+        "ai103-set-a-q018": "40b7769720fc50c2bfaa6caa94862dd9c99a3f25c8325b4411e9d0c558673f22",
+        "ai103-set-a-q019": "d5c4437beded0bc251bcbba617a7e54b09fc9cc7ae00bfd7ca1091f18729611e",
+        "ai103-set-a-q020": "1ab6a107686744809e13fc44a217b02036733587b3d1bc4f610b625d0660ed42",
+        "ai103-set-a-q021": "c0b066dab281a9e7b5ccf24d80bc7fbf6b6d91848c990645861ab94bf9e750be",
+        "ai103-set-a-q022": "b1e924530eda6aa72454d55909be2130e40e6fb0f981186bf951aabc8e25ae87",
+        "ai103-set-a-q023": "19c6c3f3b38a0b2f39665ec2cfde83c45646ed02c91b5db2cc665276dfc576e8",
+        "ai103-set-a-q024": "791fc6b3b13d67301474675b4b0bf40d03d0c53de13124e5a9167783ffd08d66",
+        "ai103-set-a-q025": "df46a3c2cda98ab944d53938a8acab6e1ddde4607644a43e17962421429c974a",
+        "ai103-set-a-q026": "48753166672d2561f0c878b88480d5aa8b1e2794a905809565f5002d033922f7",
+        "ai103-set-a-q027": "58c2c00c30b5cb119c34506868ec45bd7937275fa6a5ee97462eebd16aa1fadd",
+        "ai103-set-a-q028": "8b8ad8482125a8fa0a2df407cb42e293cbf3f4da634511e3cc06b225d98f754d",
+        "ai103-set-a-q029": "348914e5d971d1a98d853842058e14be9d61d2c7e5058844c4a3f30a1e83bfb1",
+        "ai103-set-a-q030": "3caac801aa80042950160c55745b9c26b4e33902310de763c6e86a496734b3bc",
+        "ai103-set-a-q031": "0e087f0aac38253ed6d383c6391896168b8386338b8d302fcc6f75d735a8d529",
+        "ai103-set-a-q032": "e73a2478756fb8d537c0b4ca68593e105a50252b87ea4d7be8a59b4a74cefca7",
+        "ai103-set-a-q033": "060d10722396201e22b75f4ab9b650c679d4b544de2456e0962927516b2c8136",
+        "ai103-set-a-q034": "f7e66768602eb379286b0f3873dadf36194c09ceea34ed1cd96c644bd2b1c7fc",
+        "ai103-set-a-q035": "7175bc244e1c20a6a54221d3bff2aaada04ada8e06e1828ce9db69cc108d2822",
+        "ai103-set-a-q036": "ce95b17c87c680a40699036d693c4b256440a8fb6c9d167fba20a41c31e28186",
+        "ai103-set-a-q037": "e5e8795b5f4a4d611929ca00049f1378f00aee78b5e62a185bf98857037257cb",
+        "ai103-set-a-q038": "0a87c8bccb40b5d9d33bca69dc144bdd6af51223316f027b8b9e86e259c3fd47",
+        "ai103-set-a-q039": "3b928ea1692a0645af7fc01238b2349a1f2cba96a232db46ca2659f3c79c0a0d",
+        "ai103-set-a-q040": "209dd7cc7e4adfc9f1e08fad7988a3d201ad3595f75155a467f044be8a90b08d",
+        "ai103-set-a-q041": "9f8a2b2bc049d5a1acacb5cc8f734d79f2e00fe1b3eda30b422fe355b147e33c",
+        "ai103-set-a-q042": "12e8e2f577adf522643e62f8703b2f8bff741e77738ab75d04820dc4123483ea",
+        "ai103-set-a-q043": "05e427fe6fa88fd49a9d9aa4993a78e2fa05aeb914314010a7654c47842bdc03",
+        "ai103-set-a-q044": "20b8a4ddeeef790f307d8ebce6d9e3a0d257ccad8eafa709969f85f202504092",
+        "ai103-set-a-q045": "06a8029be9058d01da5e2f9c96d89169d1378c4d36eb5458950cd883ec8007c1",
+        "ai103-set-a-q046": "1e72c49f006325a15e7f94aceea9676d948398bac62a95281a90d8399313b12e",
+        "ai103-set-a-q047": "729499fd608303d7f4cd7fddda1c65c361ee95e4c9b20090df93754484f17b62",
+        "ai103-set-a-q048": "fc54d8d58d7a0d22f4a6d2ca94857c0df42fb33f76f2c94a60785062c39826af",
+        "ai103-set-a-q049": "04fc32337a6cfd7946b46189475ab03db070f3f21a78941595957c2681d849a9",
+        "ai103-set-a-q050": "bfed7eaeff84623a38f5562e78a2480531ef3216939d793eff0697084632ed1a",
+        "ai103-set-a-q051": "9e56dd4e1b3c2511b4d07b5904da029d448b5998acdfcdfd7dd3f453cc42ff5b",
+        "ai103-set-a-q052": "ad87787e25e45ec92c5b0782a4b4df93d65ffbec09d7d1069fce62a159adfc03",
+        "ai103-set-a-q053": "b38f319175adcb79753d93727a01051bb3510ca4c5742cd144a9b7ae8615a175",
+        "ai103-set-a-q054": "522d4474350a1086b13222cce9730cb2da179952c98edf1b275d8620bee5c818",
+        "ai103-set-a-q055": "25402f2f99cc5558185ab8db447d5fe77b0ad428f2197588bdb564988c48cddd",
+        "ai103-set-a-q056": "d64b6cf7d8ee94b6bc81f90ae9f245c17f4c09d5b9d230486c773f56388303c3",
+        "ai103-set-a-q057": "f05a612a91700f8ab376e7764c430a27623d3596eac950f81e14d798df46fba5",
+        "ai103-set-a-q058": "0d8eaf179ddd873c9ce211b95833ebb4ee650a977bf7fe4974bff06382116baa",
+        "ai103-set-a-q059": "2a5a5541346406670129dfa192ec1ad7399cd395f9fb96201859b56b144c497d",
+        "ai103-set-a-q060": "c39dd045b281819ad9205577afeb7f4322bee7f88fc61cc5abe6c2039379c898",
+        "ai103-set-a-q061": "1d7c3965953befa8e98d256d592713242c19ae0ad3736f0c7ec023e963a856a8",
+        "ai103-set-a-q062": "f114ec74691c0849f3873a898301ee1008233ec4cb34bbb7c5ef7041747312ce",
+        "ai103-set-a-q063": "b2d3788c39234e04f6a81c85f2fc679c5d104c07b7676599f07bb0f93fbf74e4",
+        "ai103-set-a-q064": "59aacad0ee1118f693955fb630007f8fdaca7c730d1d3f7a542c018232363bd0",
+        "ai103-set-a-q065": "2b8976b59feb86ef3dbe4484e71d76cfb36890a51f9c3851d1e38c8df55b111e",
+        "ai103-set-a-q066": "39e4401a16788996760cef96030da97b997bcab65f3fb913336d6f566100840c",
+        "ai103-set-a-q067": "93eeec5102431880274a82c3a7bc340f75bbbcc24cb9670d75ed36b26495308e",
+        "ai103-set-a-q068": "2750b5f8893d6b134a808b718d90e313508c0403cede86ed0e6139970daf5761",
+        "ai103-set-a-q069": "215a11972b711779862a60f7853fa05c392b9c688eccee066e781644c2f06ad5",
+        "ai103-set-a-q070": "eb3581967b6f76117661853daa51a960be0cd40d32926b34459d061bdba94513",
+        "ai103-set-a-q071": "d0f7bc9dde1b4fb62ffc6939b329179dff6edb70840696adb4368d5ca8b98748",
+        "ai103-set-a-q072": "bea1b820da45ccc88f572900ddf5bda8ed2be1fa71bd6bc5f46014f9be6915b4",
+        "ai103-set-a-q073": "3ec350086193804f3c39610152e8d212189306163b8a363e5a058edfdc5d36ab",
+        "ai103-set-a-q074": "26413b9d93e23e2e6695cdc7b58f94aaef41a04aeb8ef70d1933503c824e53c0",
+        "ai103-set-a-q075": "de654abec7682e8c3e95c869f4d29610712ec3f28da7fd82cf774041ccc87cac",
+        "ai103-set-a-q076": "75df098d3ec4269dbc53b8cdc6a7425715824b95f88a5b5ed41a0201a4ba3e12",
+        "ai103-set-a-q077": "4b0b2e32e01a3f6cd70b088cfbb920eba1046cff04f6a9b76b5fc579b765c64b",
+        "ai103-set-a-q078": "da0d164cd665a5609ff7dda02e278d260c9bc1c0cd3dc95efe37d3b761f16743",
+        "ai103-set-a-q079": "251cc394b23fb05d1d99c2e50c4cfcbef7ed6296d050b834046a52ee4ab121ce",
+        "ai103-set-a-q080": "ebc45226a5a5d5b07e7fb2222e2285022bcd6bce1a8d7edcc96a27dec5874847",
+        "ai103-set-a-q081": "36ae12eb77e25b180e1ca77ea266a878376ee382f24c8e54fc8bb4ee09bc1e95",
+        "ai103-set-a-q082": "d858d6493b1f9aa2c76b4ff9b64b9734b17efcaa12c2f2bf9d3b3a569dd224c7",
+        "ai103-set-a-q083": "782394ad303908907b88e44cd222d19900a4fac1209130f978c46789613ff2d7",
+        "ai103-set-a-q084": "9580ad9d581b39d78dc2562f7abc10c42de77b8337409a52d01be7175f03a1fb",
+        "ai103-set-a-q085": "851278b6f75aaf3d181a804addbde0fe174388d9781f08f9ff4d598ac0e88040",
+        "ai103-set-a-q086": "15cd48b7abf52197ce3073cc55e96f85a077e3986ecfa78b0ba0ca0669f47f3f",
+        "ai103-set-a-q087": "318b304301071185a67c35f60835c28472fe9d726da731c599f2a34112dda075",
+        "ai103-set-a-q088": "6c616998804c6f03c430620cbeda8778f2a5d289cf51e1df65722208d46bc240",
+        "ai103-set-a-q089": "8fa7737d61f87d45bc4ebcc95801c084dd790d5ea5132737bef1daa4b1e143e6",
+        "ai103-set-a-q090": "2ab005129f15ee7732fc0d0169adb6d9a93885c4bbb53f26b958820f3e765c5a",
+        "ai103-set-a-q091": "c0a45a4dcc0a887c9494fe098574a547028cb542b0fbeabb177616deb5a0a5ff",
+        "ai103-set-a-q092": "fc678b47d5f569207dcb09347fbeb97dc17374e8f8127d21a93bdc6a4be35568",
+        "ai103-set-a-q093": "6a26fb029e46ac087986a0f9c29e5dca176c9905f8f486f61982ddd6e983635a",
+        "ai103-set-a-q094": "c2a5cc006701bb2ec9cd667d855a4982353109d42ec09cab498a99b343e8fde4",
+        "ai103-set-a-q095": "2884f4c9344c1ef8687140ea7154bcdb638b50bdbee07bbefbd021111c2bf954",
+        "ai103-set-a-q096": "1cfa94efe2a0eeb64082c8f5672323b661b9998c9fcefeae0795017869e78265",
+        "ai103-set-a-q097": "a22a588ad3abdeb3e29d1872fe6eda1be94e474ce7a2447ba65ca74dfcc884d9",
+        "ai103-set-a-q098": "014fd212b8513255c78baa61502403f78a1977ef4cb7922ddaf4553146dcfd04",
+        "ai103-set-a-q099": "b649ad753337639a3adccbcdb93b383ecb63333686e12df49b7eea52adf349ca",
+        "ai103-set-a-q100": "8117a3cc0b3938b3cf93f81c5367cbe40bc656f232a118abcad82305095fcd90"
+      },
+      "singleAnswerPositions": {
+        "B": 16,
+        "C": 16,
+        "D": 16,
+        "A": 16
+      },
+      "lengthMethod": "Characters after whitespace normalization. Longest and shortest require a unique extreme. Top-two requires both keys above all distractors; ties at the boundary do not count.",
+      "items": [
+        {
+          "id": "ai103-set-a-q001",
+          "type": "single_choice",
+          "counts": {
+            "A": 69,
+            "B": 88,
+            "C": 66,
+            "D": 109
+          },
+          "keys": [
+            "B"
+          ],
+          "keyRanks": {
+            "B": 2
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-a-q002",
+          "type": "single_choice",
+          "counts": {
+            "A": 65,
+            "B": 65,
+            "C": 50,
+            "D": 70
+          },
+          "keys": [
+            "C"
+          ],
+          "keyRanks": {
+            "C": 4
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": true,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-a-q003",
+          "type": "single_choice",
+          "counts": {
+            "A": 75,
+            "B": 82,
+            "C": 82,
+            "D": 70
+          },
+          "keys": [
+            "D"
+          ],
+          "keyRanks": {
+            "D": 4
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": true,
+          "bothKeysTopTwo": false,
+          "maximumTied": true,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-a-q004",
+          "type": "single_choice",
+          "counts": {
+            "A": 55,
+            "B": 58,
+            "C": 76,
+            "D": 66
+          },
+          "keys": [
+            "A"
+          ],
+          "keyRanks": {
+            "A": 4
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": true,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-a-q005",
+          "type": "single_choice",
+          "counts": {
+            "A": 80,
+            "B": 98,
+            "C": 73,
+            "D": 142
+          },
+          "keys": [
+            "B"
+          ],
+          "keyRanks": {
+            "B": 2
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-a-q006",
+          "type": "single_choice",
+          "counts": {
+            "A": 72,
+            "B": 62,
+            "C": 77,
+            "D": 76
+          },
+          "keys": [
+            "B"
+          ],
+          "keyRanks": {
+            "B": 4
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": true,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-a-q007",
+          "type": "single_choice",
+          "counts": {
+            "A": 64,
+            "B": 77,
+            "C": 77,
+            "D": 78
+          },
+          "keys": [
+            "A"
+          ],
+          "keyRanks": {
+            "A": 4
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": true,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-a-q008",
+          "type": "single_choice",
+          "counts": {
+            "A": 102,
+            "B": 130,
+            "C": 86,
+            "D": 86
+          },
+          "keys": [
+            "A"
+          ],
+          "keyRanks": {
+            "A": 2
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": true
+        },
+        {
+          "id": "ai103-set-a-q009",
+          "type": "single_choice",
+          "counts": {
+            "A": 73,
+            "B": 90,
+            "C": 82,
+            "D": 87
+          },
+          "keys": [
+            "A"
+          ],
+          "keyRanks": {
+            "A": 4
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": true,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-a-q010",
+          "type": "single_choice",
+          "counts": {
+            "A": 77,
+            "B": 60,
+            "C": 70,
+            "D": 45
+          },
+          "keys": [
+            "D"
+          ],
+          "keyRanks": {
+            "D": 4
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": true,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-a-q011",
+          "type": "single_choice",
+          "counts": {
+            "A": 99,
+            "B": 79,
+            "C": 97,
+            "D": 135
+          },
+          "keys": [
+            "A"
+          ],
+          "keyRanks": {
+            "A": 2
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-a-q012",
+          "type": "single_choice",
+          "counts": {
+            "A": 66,
+            "B": 78,
+            "C": 71,
+            "D": 46
+          },
+          "keys": [
+            "D"
+          ],
+          "keyRanks": {
+            "D": 4
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": true,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-a-q013",
+          "type": "single_choice",
+          "counts": {
+            "A": 65,
+            "B": 143,
+            "C": 65,
+            "D": 98
+          },
+          "keys": [
+            "D"
+          ],
+          "keyRanks": {
+            "D": 2
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": true
+        },
+        {
+          "id": "ai103-set-a-q014",
+          "type": "single_choice",
+          "counts": {
+            "A": 63,
+            "B": 144,
+            "C": 105,
+            "D": 65
+          },
+          "keys": [
+            "C"
+          ],
+          "keyRanks": {
+            "C": 2
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-a-q015",
+          "type": "single_choice",
+          "counts": {
+            "A": 60,
+            "B": 66,
+            "C": 71,
+            "D": 55
+          },
+          "keys": [
+            "D"
+          ],
+          "keyRanks": {
+            "D": 4
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": true,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-a-q016",
+          "type": "single_choice",
+          "counts": {
+            "A": 76,
+            "B": 68,
+            "C": 57,
+            "D": 82
+          },
+          "keys": [
+            "C"
+          ],
+          "keyRanks": {
+            "C": 4
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": true,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-a-q017",
+          "type": "single_choice",
+          "counts": {
+            "A": 67,
+            "B": 58,
+            "C": 58,
+            "D": 50
+          },
+          "keys": [
+            "C"
+          ],
+          "keyRanks": {
+            "C": 2
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-a-q018",
+          "type": "single_choice",
+          "counts": {
+            "A": 79,
+            "B": 68,
+            "C": 58,
+            "D": 84
+          },
+          "keys": [
+            "C"
+          ],
+          "keyRanks": {
+            "C": 4
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": true,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-a-q019",
+          "type": "single_choice",
+          "counts": {
+            "A": 62,
+            "B": 73,
+            "C": 74,
+            "D": 76
+          },
+          "keys": [
+            "B"
+          ],
+          "keyRanks": {
+            "B": 3
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-a-q020",
+          "type": "code_or_config_artifact",
+          "counts": {
+            "A": 49,
+            "B": 127,
+            "C": 50,
+            "D": 80
+          },
+          "keys": [
+            "D"
+          ],
+          "keyRanks": {
+            "D": 2
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-a-q021",
+          "type": "single_choice",
+          "counts": {
+            "A": 65,
+            "B": 72,
+            "C": 124,
+            "D": 75
+          },
+          "keys": [
+            "D"
+          ],
+          "keyRanks": {
+            "D": 2
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-a-q022",
+          "type": "single_choice",
+          "counts": {
+            "A": 62,
+            "B": 81,
+            "C": 80,
+            "D": 67
+          },
+          "keys": [
+            "B"
+          ],
+          "keyRanks": {
+            "B": 1
+          },
+          "longestIsKey": true,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-a-q023",
+          "type": "single_choice",
+          "counts": {
+            "A": 61,
+            "B": 59,
+            "C": 123,
+            "D": 54
+          },
+          "keys": [
+            "A"
+          ],
+          "keyRanks": {
+            "A": 2
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-a-q024",
+          "type": "single_choice",
+          "counts": {
+            "A": 46,
+            "B": 60,
+            "C": 81,
+            "D": 128
+          },
+          "keys": [
+            "C"
+          ],
+          "keyRanks": {
+            "C": 2
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-a-q025",
+          "type": "single_choice",
+          "counts": {
+            "A": 60,
+            "B": 70,
+            "C": 66,
+            "D": 63
+          },
+          "keys": [
+            "C"
+          ],
+          "keyRanks": {
+            "C": 2
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-a-q026",
+          "type": "single_choice",
+          "counts": {
+            "A": 59,
+            "B": 53,
+            "C": 67,
+            "D": 57
+          },
+          "keys": [
+            "D"
+          ],
+          "keyRanks": {
+            "D": 3
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-a-q027",
+          "type": "single_choice",
+          "counts": {
+            "A": 117,
+            "B": 56,
+            "C": 80,
+            "D": 55
+          },
+          "keys": [
+            "C"
+          ],
+          "keyRanks": {
+            "C": 2
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-a-q028",
+          "type": "single_choice",
+          "counts": {
+            "A": 40,
+            "B": 45,
+            "C": 62,
+            "D": 58
+          },
+          "keys": [
+            "A"
+          ],
+          "keyRanks": {
+            "A": 4
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": true,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-a-q029",
+          "type": "code_or_config_artifact",
+          "counts": {
+            "A": 59,
+            "B": 55,
+            "C": 65,
+            "D": 57
+          },
+          "keys": [
+            "A"
+          ],
+          "keyRanks": {
+            "A": 2
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-a-q030",
+          "type": "single_choice",
+          "counts": {
+            "A": 55,
+            "B": 59,
+            "C": 53,
+            "D": 70
+          },
+          "keys": [
+            "B"
+          ],
+          "keyRanks": {
+            "B": 2
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-a-q031",
+          "type": "single_choice",
+          "counts": {
+            "A": 65,
+            "B": 143,
+            "C": 59,
+            "D": 63
+          },
+          "keys": [
+            "A"
+          ],
+          "keyRanks": {
+            "A": 2
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-a-q032",
+          "type": "single_choice",
+          "counts": {
+            "A": 57,
+            "B": 56,
+            "C": 75,
+            "D": 64
+          },
+          "keys": [
+            "C"
+          ],
+          "keyRanks": {
+            "C": 1
+          },
+          "longestIsKey": true,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-a-q033",
+          "type": "single_choice",
+          "counts": {
+            "A": 71,
+            "B": 71,
+            "C": 70,
+            "D": 81
+          },
+          "keys": [
+            "D"
+          ],
+          "keyRanks": {
+            "D": 1
+          },
+          "longestIsKey": true,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-a-q034",
+          "type": "single_choice",
+          "counts": {
+            "A": 65,
+            "B": 61,
+            "C": 57,
+            "D": 65
+          },
+          "keys": [
+            "B"
+          ],
+          "keyRanks": {
+            "B": 3
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": true,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-a-q035",
+          "type": "single_choice",
+          "counts": {
+            "A": 73,
+            "B": 75,
+            "C": 72,
+            "D": 69
+          },
+          "keys": [
+            "C"
+          ],
+          "keyRanks": {
+            "C": 3
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-a-q036",
+          "type": "single_choice",
+          "counts": {
+            "A": 53,
+            "B": 44,
+            "C": 32,
+            "D": 68
+          },
+          "keys": [
+            "D"
+          ],
+          "keyRanks": {
+            "D": 1
+          },
+          "longestIsKey": true,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-a-q037",
+          "type": "single_choice",
+          "counts": {
+            "A": 69,
+            "B": 70,
+            "C": 65,
+            "D": 70
+          },
+          "keys": [
+            "D"
+          ],
+          "keyRanks": {
+            "D": 1
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": true,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-a-q038",
+          "type": "single_choice",
+          "counts": {
+            "A": 75,
+            "B": 57,
+            "C": 55,
+            "D": 70
+          },
+          "keys": [
+            "A"
+          ],
+          "keyRanks": {
+            "A": 1
+          },
+          "longestIsKey": true,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-a-q039",
+          "type": "single_choice",
+          "counts": {
+            "A": 59,
+            "B": 60,
+            "C": 71,
+            "D": 55
+          },
+          "keys": [
+            "D"
+          ],
+          "keyRanks": {
+            "D": 4
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": true,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-a-q040",
+          "type": "single_choice",
+          "counts": {
+            "A": 79,
+            "B": 51,
+            "C": 55,
+            "D": 70
+          },
+          "keys": [
+            "A"
+          ],
+          "keyRanks": {
+            "A": 1
+          },
+          "longestIsKey": true,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-a-q041",
+          "type": "single_choice",
+          "counts": {
+            "A": 80,
+            "B": 63,
+            "C": 67,
+            "D": 60
+          },
+          "keys": [
+            "A"
+          ],
+          "keyRanks": {
+            "A": 1
+          },
+          "longestIsKey": true,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-a-q042",
+          "type": "single_choice",
+          "counts": {
+            "A": 58,
+            "B": 79,
+            "C": 56,
+            "D": 55
+          },
+          "keys": [
+            "B"
+          ],
+          "keyRanks": {
+            "B": 1
+          },
+          "longestIsKey": true,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-a-q043",
+          "type": "single_choice",
+          "counts": {
+            "A": 54,
+            "B": 72,
+            "C": 29,
+            "D": 33
+          },
+          "keys": [
+            "A"
+          ],
+          "keyRanks": {
+            "A": 2
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-a-q044",
+          "type": "single_choice",
+          "counts": {
+            "A": 48,
+            "B": 60,
+            "C": 78,
+            "D": 73
+          },
+          "keys": [
+            "B"
+          ],
+          "keyRanks": {
+            "B": 3
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-a-q045",
+          "type": "single_choice",
+          "counts": {
+            "A": 56,
+            "B": 63,
+            "C": 88,
+            "D": 41
+          },
+          "keys": [
+            "B"
+          ],
+          "keyRanks": {
+            "B": 2
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-a-q046",
+          "type": "single_choice",
+          "counts": {
+            "A": 22,
+            "B": 19,
+            "C": 64,
+            "D": 19
+          },
+          "keys": [
+            "D"
+          ],
+          "keyRanks": {
+            "D": 3
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": true
+        },
+        {
+          "id": "ai103-set-a-q047",
+          "type": "single_choice",
+          "counts": {
+            "A": 52,
+            "B": 32,
+            "C": 36,
+            "D": 80
+          },
+          "keys": [
+            "A"
+          ],
+          "keyRanks": {
+            "A": 2
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-a-q048",
+          "type": "single_choice",
+          "counts": {
+            "A": 79,
+            "B": 54,
+            "C": 81,
+            "D": 79
+          },
+          "keys": [
+            "A"
+          ],
+          "keyRanks": {
+            "A": 2
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-a-q049",
+          "type": "single_choice",
+          "counts": {
+            "A": 78,
+            "B": 80,
+            "C": 53,
+            "D": 56
+          },
+          "keys": [
+            "C"
+          ],
+          "keyRanks": {
+            "C": 4
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": true,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-a-q050",
+          "type": "single_choice",
+          "counts": {
+            "A": 72,
+            "B": 67,
+            "C": 69,
+            "D": 49
+          },
+          "keys": [
+            "B"
+          ],
+          "keyRanks": {
+            "B": 3
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-a-q051",
+          "type": "single_choice",
+          "counts": {
+            "A": 53,
+            "B": 71,
+            "C": 43,
+            "D": 61
+          },
+          "keys": [
+            "D"
+          ],
+          "keyRanks": {
+            "D": 2
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-a-q052",
+          "type": "single_choice",
+          "counts": {
+            "A": 62,
+            "B": 55,
+            "C": 70,
+            "D": 50
+          },
+          "keys": [
+            "B"
+          ],
+          "keyRanks": {
+            "B": 3
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-a-q053",
+          "type": "single_choice",
+          "counts": {
+            "A": 77,
+            "B": 63,
+            "C": 68,
+            "D": 62
+          },
+          "keys": [
+            "B"
+          ],
+          "keyRanks": {
+            "B": 3
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-a-q054",
+          "type": "single_choice",
+          "counts": {
+            "A": 67,
+            "B": 56,
+            "C": 71,
+            "D": 55
+          },
+          "keys": [
+            "C"
+          ],
+          "keyRanks": {
+            "C": 1
+          },
+          "longestIsKey": true,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-a-q055",
+          "type": "single_choice",
+          "counts": {
+            "A": 71,
+            "B": 71,
+            "C": 61,
+            "D": 61
+          },
+          "keys": [
+            "A"
+          ],
+          "keyRanks": {
+            "A": 1
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": true,
+          "minimumTied": true
+        },
+        {
+          "id": "ai103-set-a-q056",
+          "type": "single_choice",
+          "counts": {
+            "A": 66,
+            "B": 69,
+            "C": 62,
+            "D": 66
+          },
+          "keys": [
+            "C"
+          ],
+          "keyRanks": {
+            "C": 4
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": true,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-a-q057",
+          "type": "single_choice",
+          "counts": {
+            "A": 63,
+            "B": 63,
+            "C": 57,
+            "D": 58
+          },
+          "keys": [
+            "B"
+          ],
+          "keyRanks": {
+            "B": 1
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": true,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-a-q058",
+          "type": "single_choice",
+          "counts": {
+            "A": 45,
+            "B": 53,
+            "C": 60,
+            "D": 67
+          },
+          "keys": [
+            "C"
+          ],
+          "keyRanks": {
+            "C": 2
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-a-q059",
+          "type": "code_or_config_artifact",
+          "counts": {
+            "A": 44,
+            "B": 44,
+            "C": 55,
+            "D": 50
+          },
+          "keys": [
+            "C"
+          ],
+          "keyRanks": {
+            "C": 1
+          },
+          "longestIsKey": true,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": true
+        },
+        {
+          "id": "ai103-set-a-q060",
+          "type": "single_choice",
+          "counts": {
+            "A": 38,
+            "B": 71,
+            "C": 44,
+            "D": 128
+          },
+          "keys": [
+            "B"
+          ],
+          "keyRanks": {
+            "B": 2
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-a-q061",
+          "type": "single_choice",
+          "counts": {
+            "A": 59,
+            "B": 65,
+            "C": 64,
+            "D": 70
+          },
+          "keys": [
+            "C"
+          ],
+          "keyRanks": {
+            "C": 3
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-a-q062",
+          "type": "single_choice",
+          "counts": {
+            "A": 63,
+            "B": 60,
+            "C": 61,
+            "D": 73
+          },
+          "keys": [
+            "D"
+          ],
+          "keyRanks": {
+            "D": 1
+          },
+          "longestIsKey": true,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-a-q063",
+          "type": "single_choice",
+          "counts": {
+            "A": 56,
+            "B": 56,
+            "C": 136,
+            "D": 65
+          },
+          "keys": [
+            "D"
+          ],
+          "keyRanks": {
+            "D": 2
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": true
+        },
+        {
+          "id": "ai103-set-a-q064",
+          "type": "single_choice",
+          "counts": {
+            "A": 65,
+            "B": 76,
+            "C": 64,
+            "D": 66
+          },
+          "keys": [
+            "B"
+          ],
+          "keyRanks": {
+            "B": 1
+          },
+          "longestIsKey": true,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-a-q065",
+          "type": "multi_select",
+          "counts": {
+            "A": 63,
+            "B": 54,
+            "C": 73,
+            "D": 63,
+            "E": 69
+          },
+          "keys": [
+            "B",
+            "D"
+          ],
+          "keyRanks": {
+            "B": 5,
+            "D": 3
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-a-q066",
+          "type": "multi_select",
+          "counts": {
+            "A": 82,
+            "B": 74,
+            "C": 91,
+            "D": 62,
+            "E": 66
+          },
+          "keys": [
+            "B",
+            "D"
+          ],
+          "keyRanks": {
+            "B": 3,
+            "D": 5
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-a-q067",
+          "type": "multi_select",
+          "counts": {
+            "A": 62,
+            "B": 56,
+            "C": 76,
+            "D": 79,
+            "E": 59
+          },
+          "keys": [
+            "D",
+            "E"
+          ],
+          "keyRanks": {
+            "D": 1,
+            "E": 4
+          },
+          "longestIsKey": true,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-a-q068",
+          "type": "multi_select",
+          "counts": {
+            "A": 65,
+            "B": 80,
+            "C": 59,
+            "D": 80,
+            "E": 66
+          },
+          "keys": [
+            "C",
+            "D"
+          ],
+          "keyRanks": {
+            "C": 5,
+            "D": 1
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": true,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-a-q069",
+          "type": "multi_select",
+          "counts": {
+            "A": 60,
+            "B": 72,
+            "C": 54,
+            "D": 58,
+            "E": 56
+          },
+          "keys": [
+            "A",
+            "C"
+          ],
+          "keyRanks": {
+            "A": 2,
+            "C": 5
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-a-q070",
+          "type": "multi_select",
+          "counts": {
+            "A": 65,
+            "B": 62,
+            "C": 56,
+            "D": 53,
+            "E": 61
+          },
+          "keys": [
+            "C",
+            "D"
+          ],
+          "keyRanks": {
+            "C": 4,
+            "D": 5
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-a-q071",
+          "type": "multi_select",
+          "counts": {
+            "A": 70,
+            "B": 66,
+            "C": 57,
+            "D": 57,
+            "E": 55
+          },
+          "keys": [
+            "C",
+            "E"
+          ],
+          "keyRanks": {
+            "C": 3,
+            "E": 5
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-a-q072",
+          "type": "multi_select",
+          "counts": {
+            "A": 60,
+            "B": 81,
+            "C": 59,
+            "D": 67,
+            "E": 65
+          },
+          "keys": [
+            "C",
+            "E"
+          ],
+          "keyRanks": {
+            "C": 5,
+            "E": 3
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-a-q073",
+          "type": "multi_select",
+          "counts": {
+            "A": 49,
+            "B": 80,
+            "C": 73,
+            "D": 65,
+            "E": 70
+          },
+          "keys": [
+            "A",
+            "E"
+          ],
+          "keyRanks": {
+            "A": 5,
+            "E": 3
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-a-q074",
+          "type": "multi_select",
+          "counts": {
+            "A": 58,
+            "B": 61,
+            "C": 67,
+            "D": 66,
+            "E": 73
+          },
+          "keys": [
+            "A",
+            "D"
+          ],
+          "keyRanks": {
+            "A": 5,
+            "D": 3
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-a-q075",
+          "type": "multi_select",
+          "counts": {
+            "A": 61,
+            "B": 50,
+            "C": 63,
+            "D": 42,
+            "E": 61
+          },
+          "keys": [
+            "B",
+            "E"
+          ],
+          "keyRanks": {
+            "B": 4,
+            "E": 2
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-a-q076",
+          "type": "multi_select",
+          "counts": {
+            "A": 61,
+            "B": 44,
+            "C": 53,
+            "D": 55,
+            "E": 54
+          },
+          "keys": [
+            "A",
+            "B"
+          ],
+          "keyRanks": {
+            "A": 1,
+            "B": 5
+          },
+          "longestIsKey": true,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-a-q077",
+          "type": "multi_select",
+          "counts": {
+            "A": 72,
+            "B": 58,
+            "C": 57,
+            "D": 66,
+            "E": 73
+          },
+          "keys": [
+            "B",
+            "C"
+          ],
+          "keyRanks": {
+            "B": 4,
+            "C": 5
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-a-q078",
+          "type": "multi_select",
+          "counts": {
+            "A": 74,
+            "B": 58,
+            "C": 71,
+            "D": 63,
+            "E": 72
+          },
+          "keys": [
+            "A",
+            "C"
+          ],
+          "keyRanks": {
+            "A": 1,
+            "C": 3
+          },
+          "longestIsKey": true,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-a-q079",
+          "type": "multi_select",
+          "counts": {
+            "A": 63,
+            "B": 66,
+            "C": 76,
+            "D": 65,
+            "E": 47
+          },
+          "keys": [
+            "A",
+            "B"
+          ],
+          "keyRanks": {
+            "A": 4,
+            "B": 2
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-a-q080",
+          "type": "multi_select",
+          "counts": {
+            "A": 56,
+            "B": 51,
+            "C": 62,
+            "D": 58,
+            "E": 57
+          },
+          "keys": [
+            "B",
+            "C"
+          ],
+          "keyRanks": {
+            "B": 5,
+            "C": 1
+          },
+          "longestIsKey": true,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-a-q081",
+          "type": "multi_select",
+          "counts": {
+            "A": 55,
+            "B": 64,
+            "C": 73,
+            "D": 60,
+            "E": 68
+          },
+          "keys": [
+            "D",
+            "E"
+          ],
+          "keyRanks": {
+            "D": 4,
+            "E": 2
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-a-q082",
+          "type": "multi_select",
+          "counts": {
+            "A": 59,
+            "B": 79,
+            "C": 69,
+            "D": 58,
+            "E": 66
+          },
+          "keys": [
+            "A",
+            "E"
+          ],
+          "keyRanks": {
+            "A": 4,
+            "E": 3
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        }
+      ]
+    },
+    "B": {
+      "singleCount": 64,
+      "singleKeyLongest": 12,
+      "singleKeyShortest": 13,
+      "multiCount": 18,
+      "multiLongestIsKey": 5,
+      "multiBothKeysTopTwo": 0,
+      "domains": {
+        "A": 28,
+        "B": 33,
+        "C": 13,
+        "D": 13,
+        "E": 13
+      },
+      "difficulty": {
+        "medium": 53,
+        "easy": 35,
+        "hard": 12
+      },
+      "contentSha256": "6da3c7cfc570603f6dcbf248df657159477c467fd568b06dd519fcf1c2787cd8",
+      "itemSha256": {
+        "ai103-set-b-q001": "a5b401acd6ab6ec3e5870534052b238ad193f623c9e8bd18fc60e4f2222827fe",
+        "ai103-set-b-q002": "c3348248b5a98368a7c1b5fba6f441ca682ccc1c1a86cbe30568ccfa404408c4",
+        "ai103-set-b-q003": "ea58a901a9b79e8e21f308d8bf76c6601e75f9ddfe0154bed5af613d0de3935f",
+        "ai103-set-b-q004": "cfc8830ec1b9a0c9427ee5c6b77e5fbccb3e868a4cd1ab3967a9da8831d3f343",
+        "ai103-set-b-q005": "62889fb7cf864296370b328d708d2a927ef0d73397366c08f27b21c75506c41b",
+        "ai103-set-b-q006": "46e7c678d7459ebe9afa99c75c53f5ec1f703876dae9b2f4d0dc7069e4def10b",
+        "ai103-set-b-q007": "6d3ab56e5d86a3f97a0078c4083f3362c0abf478907168bb36879182611113b2",
+        "ai103-set-b-q008": "8c07a60b7d6efdba74bdbaf474d3f840aafb9c9adeed0d906e2c33586a9e37ba",
+        "ai103-set-b-q009": "baef34ed242350b2671dc2ab28ca35e344cd1df239ccf3c42c705aecde1118f2",
+        "ai103-set-b-q010": "fd1dd5bd974e73911c75f9468ae262f5bdfa5df1a45d512f465e6ef68bebbead",
+        "ai103-set-b-q011": "22fbf8752215a0e47afbabe297dc1b3f522b9e9a7d2bf9a018c7c2b9f90845fb",
+        "ai103-set-b-q012": "45759e7e615ce11830c6d078d553bb90bf36e11f1bc2e90764a75043c480fb37",
+        "ai103-set-b-q013": "388d322f7e3aa835bd1461d9358a6f1bb2a758faf353200c5f5fa4871292184a",
+        "ai103-set-b-q014": "e2edd1bc8a2972e28924a9aaeb5a74053845f27ff71ad167f5db2fc2826cf3f2",
+        "ai103-set-b-q015": "79c082b2bf5d47d6aaaff8ef2b48e7314536cefe68eb4dfe50dffb1295040f03",
+        "ai103-set-b-q016": "7ceda8918049e27e816b7c64af5ad0b033eaa84f776e3c74693040a464ed1409",
+        "ai103-set-b-q017": "d51710aab492aa50ef93bee9181a3c444eeb832ab994b49e9b44bbd081052b61",
+        "ai103-set-b-q018": "ef4044b080c356ba3c4dfcbb7c633313a27db3a6b4b700da5663e4a58a2c3548",
+        "ai103-set-b-q019": "385d8fbefbb3ddff86ff0ea88b366bb4a0c9e56b00b2d1f088f8b89d9d06b195",
+        "ai103-set-b-q020": "92bae52417b41969f891baef0b71613e75d54323a517b216ebf3887460825cb9",
+        "ai103-set-b-q021": "1d6ed594906414e420f280486cb22f1ff43663a58759e847734a6f5205a26486",
+        "ai103-set-b-q022": "2b4cf6d052969d692de0c888b70510aab1de5fe0c9c8f4b01acecf7f694ff949",
+        "ai103-set-b-q023": "7df37d25a52b66d7c36dbbd421d218dd1f3860dbfb9d16df2d9f80d96a7c5d3a",
+        "ai103-set-b-q024": "e555deb0e2ce167c79a08e4beb547a168c59be67287f961cc1884d2a5d9704fe",
+        "ai103-set-b-q025": "ebbf207a037e2b61e86ff4c953992eace534a84e96c948c1310a29f5887d73bc",
+        "ai103-set-b-q026": "078d560631f0eb3014e7cae18d76126e955dccd02d51580bf68cbb54a777944a",
+        "ai103-set-b-q027": "7ecd85a3b873ea1540122c380fd58dca7ed9fc06948aefa037a87f63838149e7",
+        "ai103-set-b-q028": "cd34e6613f81dad8a406752994a273475052a9f7d670ec3c1440c1891743c12f",
+        "ai103-set-b-q029": "d3f7e639a7cc78ca079f567a0221a845ba7e45c52a78eebe8d1c09e3db6dde46",
+        "ai103-set-b-q030": "4376a723d9dd03f9ff8c4f0bc1f7339da2098106514d774e3be71f019ce93ca7",
+        "ai103-set-b-q031": "85d9b3a7eb292babdfe07675db3c102d6b633958650fa3e0bc1cfbe75a62bf13",
+        "ai103-set-b-q032": "d495c2850e145808ecb664cf2ba2118f450acf1cb7e2062c5b97cae74210b6d1",
+        "ai103-set-b-q033": "5d5e4f023452061e1ebf7704b0dd5f207ac085348e0771d686773f595a54e171",
+        "ai103-set-b-q034": "2a9e0e5cf318fe07ed721035114128b706ea354af9cea53e612c22337fb76af4",
+        "ai103-set-b-q035": "83e6916fb45f77f4351bd5ac6e7d5270e19a1693b639b26c368a04529497d3e8",
+        "ai103-set-b-q036": "1efbd4021adf614dcc74e4614bfafabd0974ac97fa39a397a11305c3cde51ba9",
+        "ai103-set-b-q037": "75d7467376b6fce1f722c9c95ca13866b132f4f7d19d06d12b87ffe024db43c4",
+        "ai103-set-b-q038": "9f2a22b8fa60a6790d8c69e0b05254b6069924cedb2d99d4f0807a3ab8532cc8",
+        "ai103-set-b-q039": "206eb2afff303e1de101de59aecebf8b499a4e82a2ac0eee8dd4c5e5c11d632e",
+        "ai103-set-b-q040": "cdaeb7d81259fcc18da8b96f8063ba1fcc673022bd687ce555fddbeafe64e26a",
+        "ai103-set-b-q041": "b998a0ee138b4e04933c63e7b1a9f3e93b24ddfdbe1a83e8b4141ad8226cd079",
+        "ai103-set-b-q042": "044ecb43e22ba38307c533cbf8f7b674ba03567c0aa92e72a01f75b537cbae9b",
+        "ai103-set-b-q043": "217095871f547e926c95369b4a022e6ae8b8f1d280796d390bbbe4d935a922af",
+        "ai103-set-b-q044": "b021e90292512f5ab00356e9891d022969a3a75717a70b519e63d75c99fdd22d",
+        "ai103-set-b-q045": "37f39a6988a36320619578b899c855685f3d76ea33839db210ef3abf6cdf1c4d",
+        "ai103-set-b-q046": "9f8046b311fc87a6b24da0d50bfbdbb6e715c567f29680ffc7660ebb835a3d82",
+        "ai103-set-b-q047": "a112c2d75ea50dae2548a5e478aa871965a1a0a194b17e96c80f0be8a09c2601",
+        "ai103-set-b-q048": "59f0762f5c66baede14d6623d578feec8a7c11a3758c7788db8f02d402d62046",
+        "ai103-set-b-q049": "ac25d5dcc5c97757a5a5a6f32025c0233605f0ec0e2800f579333901ccd8bb50",
+        "ai103-set-b-q050": "b98f0bafb5d8a8ab07d76b08f44d64acb22c1d4f48208324fa7769279d28f2bc",
+        "ai103-set-b-q051": "a28fd4076ad41550ce4732e412ca0801f237ba4decd9ea400a4551d5e5109ae2",
+        "ai103-set-b-q052": "4beb6d5ddd276b71a3bba2204c79d5f7b57f2cad7f6a1435ebfc11f79416b087",
+        "ai103-set-b-q053": "1a59862d6c396376bc079092de8d0e2fa602d9509ab8c1b7a13ff3641604b9e6",
+        "ai103-set-b-q054": "4d5913a3d150c32ba8bfad7e925687ceea7d95f129c07d5c12c179f5ecab9dc4",
+        "ai103-set-b-q055": "5dbb62a1fe5fe7e9e2da585194794a374d7722cb3ddcb50ccbf2fdb0035a7c93",
+        "ai103-set-b-q056": "204b9bc911b77179560c82078b8be124c4169651453220c1841dba8e786e136c",
+        "ai103-set-b-q057": "bec41d86b3af856e18f032ad0887068007660f97fbe436dd6d5041d429f16eac",
+        "ai103-set-b-q058": "4e79d5ed17528a88539fcc31f970b3583a5cd9eda5baf6d7b9acf5ed945ccf3a",
+        "ai103-set-b-q059": "72e2429fea8c67594b0c31b22a762340448f467037581fc5ac119d8115cfc020",
+        "ai103-set-b-q060": "8730259cd3675dfb938d54bc18cea3a9e1e671254a22522644055e8c7599309b",
+        "ai103-set-b-q061": "70c8c9822de295f14760cbaf5a8dc9e05c54e67674cd563dcd712dcbd7957a5a",
+        "ai103-set-b-q062": "2ca3077fd9705c4499f4b0c6c19dcaff361180cc2e996aee23200d5071abcb3a",
+        "ai103-set-b-q063": "f827206445aeb3b70995c894e5726d78e62df1589170aa3e64c52e283e815f89",
+        "ai103-set-b-q064": "a2cd23e493b0cd093f90fdb6d53331cf616dbe8a9eaca90b446666c685fc920a",
+        "ai103-set-b-q065": "17da5cad46917cf79ac182de4b574ed3d1387486f4147ae6c274b4eb6d48aae1",
+        "ai103-set-b-q066": "49077d7a3b5b471cda3ab5983be44e6315eee0eb02ac57173b78e35b928251d4",
+        "ai103-set-b-q067": "f4d36be5a0e8b12067c1c274f955164978e170e3fc7b61a24e3f0fed23c33f0f",
+        "ai103-set-b-q068": "72770e96e1d97cc675537df825b58f7fa1472f974ec10a2eb04f1771e40ef53a",
+        "ai103-set-b-q069": "ec5d688ee611a2e0298813c812a5b41bd37178eb9e5fd412b540f7957165f4d4",
+        "ai103-set-b-q070": "d2e22a0f4df0e176e2547b9979097101544d86f649ddd65fb74c6ea6cbf02047",
+        "ai103-set-b-q071": "dba9ffa9f1a234ed52f2af3c272c40be6f7f9f8414e39619f9a984b52275c97a",
+        "ai103-set-b-q072": "2cd405ee1e58b548a1648bc4d912205631c142786fc1532a78b831633bf3ce47",
+        "ai103-set-b-q073": "f351cb531b6cf7cd16b0080f4892fb20359fdd353d8fb65bec78afa46f8d4b12",
+        "ai103-set-b-q074": "bdd532dd7a48e12a8b8597cdf699efc1404735f6e23668be61f53af6b419980d",
+        "ai103-set-b-q075": "fb5eee81f85659c781fe74d46c60660905688c98223e115deea8b34e1a997581",
+        "ai103-set-b-q076": "ead2328c29eeffd5789fa4eaeff38887510c839f420b89268e5713c3fa556543",
+        "ai103-set-b-q077": "807e43d76332e10536dbae0132655620dce346b8b40281250ffd89b81a8e8e03",
+        "ai103-set-b-q078": "8b924cb2c5a13ae44f4f3ad8f7491a09775a18b2067a9888e5e6571299383373",
+        "ai103-set-b-q079": "8c6b08cfa0da13ed54d5fb2d2b8ae2ebd59d44f2fda8d3190f5fb43949818579",
+        "ai103-set-b-q080": "fdc176dfd855e6aa73c94a9d946017fd27f57201e4157d2b4c0ed362f8e16651",
+        "ai103-set-b-q081": "c4ddc8c3c4d875150cb8535e7e4d66bd57b4d7bd0b8c836536ae3dfa1b530fe7",
+        "ai103-set-b-q082": "f8fa6d26edf43c2a08fcc5988b0aa5848c55b3641347550463705a734a76ddf7",
+        "ai103-set-b-q083": "c0bd1b74af767140506d553ef8c8718919e554f46e3e5a31affbecabdd0f8a51",
+        "ai103-set-b-q084": "4c2c488e275a3f3388f6ff1546c5d83e81786f2950c1d09349a34c8ff9344507",
+        "ai103-set-b-q085": "c9470a85d945228fb6f450a33b071221e6a24831a655fb8e9d27432bd16c290a",
+        "ai103-set-b-q086": "530bb5b1e5903172b5760cfa66283e7867895d77e60df4ac425a090eb3220083",
+        "ai103-set-b-q087": "e91b5aaa75110e31b98c75fe496746b2a006c3bb74bc5450b43e7f9c7a5b460e",
+        "ai103-set-b-q088": "43f9f67c8b9b4000a81d5191b3aca1864467569701ba0624e260eff36589ae20",
+        "ai103-set-b-q089": "8554efb6e0cea865f7e92eda323d1ba2c75dfb5524981a623657935072619a72",
+        "ai103-set-b-q090": "360d6486d808697632b9549a79d44c7de8d943a58615ac112ed7a7aab153f44f",
+        "ai103-set-b-q091": "5a8612b8acae6db63a394a4dea256416fb87233c68ffcf09bb06076ad80eec5b",
+        "ai103-set-b-q092": "11865cc7e623f160eed15ecf786bf226f98ac2a8583d43e7bfb72f69f49f61a4",
+        "ai103-set-b-q093": "b9c10de98d4b92bea61a9168fb8d3d68df1bbcae566925cbcb6fa91d7aaae966",
+        "ai103-set-b-q094": "5821a8833470e1f57f310e4dca263e56ec0035cb6a28422e2d9fc53e4e75e0e0",
+        "ai103-set-b-q095": "fd87cbad8b6ea8e89387198438613b165090854dee0951d79642e4ef8f75af27",
+        "ai103-set-b-q096": "866e80bf1c8f75de33faae58ecc51f65e0acd306c53a1652bd85ab0e55365fd0",
+        "ai103-set-b-q097": "07c02f442537cd27fecdc78e4a360647bb66f3b8454db5b58859f63921cae17e",
+        "ai103-set-b-q098": "de107b0a1113c47f7829ceade47d639e26aaa87dc35e816026cb5b2b18e7a39a",
+        "ai103-set-b-q099": "fc8ef4fb3a2d6d105d45f0dc16adb55af4b414b630b987a6a5fad3e7a4d1fb35",
+        "ai103-set-b-q100": "07a0332a81208bcc118d82c691fd0e5d95fe52f2db34874b1e97b44839e9080d"
+      },
+      "singleAnswerPositions": {
+        "C": 16,
+        "D": 16,
+        "A": 16,
+        "B": 16
+      },
+      "lengthMethod": "Characters after whitespace normalization. Longest and shortest require a unique extreme. Top-two requires both keys above all distractors; ties at the boundary do not count.",
+      "items": [
+        {
+          "id": "ai103-set-b-q001",
+          "type": "single_choice",
+          "counts": {
+            "A": 130,
+            "B": 65,
+            "C": 101,
+            "D": 66
+          },
+          "keys": [
+            "C"
+          ],
+          "keyRanks": {
+            "C": 2
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-b-q002",
+          "type": "single_choice",
+          "counts": {
+            "A": 69,
+            "B": 70,
+            "C": 47,
+            "D": 49
+          },
+          "keys": [
+            "D"
+          ],
+          "keyRanks": {
+            "D": 3
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-b-q003",
+          "type": "single_choice",
+          "counts": {
+            "A": 82,
+            "B": 41,
+            "C": 73,
+            "D": 68
+          },
+          "keys": [
+            "D"
+          ],
+          "keyRanks": {
+            "D": 3
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-b-q004",
+          "type": "single_choice",
+          "counts": {
+            "A": 88,
+            "B": 79,
+            "C": 68,
+            "D": 73
+          },
+          "keys": [
+            "C"
+          ],
+          "keyRanks": {
+            "C": 4
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": true,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-b-q005",
+          "type": "single_choice",
+          "counts": {
+            "A": 99,
+            "B": 143,
+            "C": 64,
+            "D": 72
+          },
+          "keys": [
+            "A"
+          ],
+          "keyRanks": {
+            "A": 2
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-b-q006",
+          "type": "single_choice",
+          "counts": {
+            "A": 69,
+            "B": 64,
+            "C": 44,
+            "D": 76
+          },
+          "keys": [
+            "B"
+          ],
+          "keyRanks": {
+            "B": 3
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-b-q007",
+          "type": "single_choice",
+          "counts": {
+            "A": 75,
+            "B": 62,
+            "C": 65,
+            "D": 58
+          },
+          "keys": [
+            "D"
+          ],
+          "keyRanks": {
+            "D": 4
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": true,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-b-q008",
+          "type": "single_choice",
+          "counts": {
+            "A": 79,
+            "B": 68,
+            "C": 81,
+            "D": 68
+          },
+          "keys": [
+            "B"
+          ],
+          "keyRanks": {
+            "B": 3
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": true
+        },
+        {
+          "id": "ai103-set-b-q009",
+          "type": "single_choice",
+          "counts": {
+            "A": 139,
+            "B": 94,
+            "C": 81,
+            "D": 73
+          },
+          "keys": [
+            "B"
+          ],
+          "keyRanks": {
+            "B": 2
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-b-q010",
+          "type": "single_choice",
+          "counts": {
+            "A": 28,
+            "B": 44,
+            "C": 54,
+            "D": 56
+          },
+          "keys": [
+            "B"
+          ],
+          "keyRanks": {
+            "B": 3
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-b-q011",
+          "type": "single_choice",
+          "counts": {
+            "A": 81,
+            "B": 44,
+            "C": 84,
+            "D": 62
+          },
+          "keys": [
+            "B"
+          ],
+          "keyRanks": {
+            "B": 4
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": true,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-b-q012",
+          "type": "single_choice",
+          "counts": {
+            "A": 67,
+            "B": 74,
+            "C": 66,
+            "D": 75
+          },
+          "keys": [
+            "A"
+          ],
+          "keyRanks": {
+            "A": 3
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-b-q013",
+          "type": "single_choice",
+          "counts": {
+            "A": 96,
+            "B": 76,
+            "C": 68,
+            "D": 143
+          },
+          "keys": [
+            "A"
+          ],
+          "keyRanks": {
+            "A": 2
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-b-q014",
+          "type": "single_choice",
+          "counts": {
+            "A": 70,
+            "B": 51,
+            "C": 102,
+            "D": 151
+          },
+          "keys": [
+            "C"
+          ],
+          "keyRanks": {
+            "C": 2
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-b-q015",
+          "type": "single_choice",
+          "counts": {
+            "A": 104,
+            "B": 69,
+            "C": 148,
+            "D": 66
+          },
+          "keys": [
+            "A"
+          ],
+          "keyRanks": {
+            "A": 2
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-b-q016",
+          "type": "single_choice",
+          "counts": {
+            "A": 83,
+            "B": 64,
+            "C": 85,
+            "D": 79
+          },
+          "keys": [
+            "B"
+          ],
+          "keyRanks": {
+            "B": 4
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": true,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-b-q017",
+          "type": "single_choice",
+          "counts": {
+            "A": 86,
+            "B": 82,
+            "C": 91,
+            "D": 73
+          },
+          "keys": [
+            "D"
+          ],
+          "keyRanks": {
+            "D": 4
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": true,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-b-q018",
+          "type": "single_choice",
+          "counts": {
+            "A": 84,
+            "B": 56,
+            "C": 80,
+            "D": 66
+          },
+          "keys": [
+            "B"
+          ],
+          "keyRanks": {
+            "B": 4
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": true,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-b-q019",
+          "type": "single_choice",
+          "counts": {
+            "A": 140,
+            "B": 88,
+            "C": 73,
+            "D": 44
+          },
+          "keys": [
+            "C"
+          ],
+          "keyRanks": {
+            "C": 3
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-b-q020",
+          "type": "single_choice",
+          "counts": {
+            "A": 53,
+            "B": 133,
+            "C": 47,
+            "D": 77
+          },
+          "keys": [
+            "D"
+          ],
+          "keyRanks": {
+            "D": 2
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-b-q021",
+          "type": "single_choice",
+          "counts": {
+            "A": 139,
+            "B": 63,
+            "C": 56,
+            "D": 66
+          },
+          "keys": [
+            "B"
+          ],
+          "keyRanks": {
+            "B": 3
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-b-q022",
+          "type": "single_choice",
+          "counts": {
+            "A": 61,
+            "B": 66,
+            "C": 66,
+            "D": 75
+          },
+          "keys": [
+            "D"
+          ],
+          "keyRanks": {
+            "D": 1
+          },
+          "longestIsKey": true,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-b-q023",
+          "type": "single_choice",
+          "counts": {
+            "A": 142,
+            "B": 79,
+            "C": 61,
+            "D": 69
+          },
+          "keys": [
+            "B"
+          ],
+          "keyRanks": {
+            "B": 2
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-b-q024",
+          "type": "single_choice",
+          "counts": {
+            "A": 63,
+            "B": 58,
+            "C": 85,
+            "D": 143
+          },
+          "keys": [
+            "C"
+          ],
+          "keyRanks": {
+            "C": 2
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-b-q025",
+          "type": "single_choice",
+          "counts": {
+            "A": 51,
+            "B": 52,
+            "C": 55,
+            "D": 58
+          },
+          "keys": [
+            "A"
+          ],
+          "keyRanks": {
+            "A": 4
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": true,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-b-q026",
+          "type": "single_choice",
+          "counts": {
+            "A": 54,
+            "B": 66,
+            "C": 137,
+            "D": 57
+          },
+          "keys": [
+            "B"
+          ],
+          "keyRanks": {
+            "B": 2
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-b-q027",
+          "type": "single_choice",
+          "counts": {
+            "A": 67,
+            "B": 60,
+            "C": 64,
+            "D": 47
+          },
+          "keys": [
+            "D"
+          ],
+          "keyRanks": {
+            "D": 4
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": true,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-b-q028",
+          "type": "code_or_config_artifact",
+          "counts": {
+            "A": 62,
+            "B": 55,
+            "C": 50,
+            "D": 152
+          },
+          "keys": [
+            "A"
+          ],
+          "keyRanks": {
+            "A": 2
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-b-q029",
+          "type": "single_choice",
+          "counts": {
+            "A": 55,
+            "B": 33,
+            "C": 64,
+            "D": 72
+          },
+          "keys": [
+            "A"
+          ],
+          "keyRanks": {
+            "A": 3
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-b-q030",
+          "type": "single_choice",
+          "counts": {
+            "A": 75,
+            "B": 75,
+            "C": 60,
+            "D": 70
+          },
+          "keys": [
+            "D"
+          ],
+          "keyRanks": {
+            "D": 3
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": true,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-b-q031",
+          "type": "single_choice",
+          "counts": {
+            "A": 59,
+            "B": 52,
+            "C": 63,
+            "D": 68
+          },
+          "keys": [
+            "D"
+          ],
+          "keyRanks": {
+            "D": 1
+          },
+          "longestIsKey": true,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-b-q032",
+          "type": "single_choice",
+          "counts": {
+            "A": 63,
+            "B": 57,
+            "C": 63,
+            "D": 54
+          },
+          "keys": [
+            "C"
+          ],
+          "keyRanks": {
+            "C": 1
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": true,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-b-q033",
+          "type": "single_choice",
+          "counts": {
+            "A": 67,
+            "B": 72,
+            "C": 69,
+            "D": 74
+          },
+          "keys": [
+            "D"
+          ],
+          "keyRanks": {
+            "D": 1
+          },
+          "longestIsKey": true,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-b-q034",
+          "type": "single_choice",
+          "counts": {
+            "A": 60,
+            "B": 55,
+            "C": 50,
+            "D": 61
+          },
+          "keys": [
+            "A"
+          ],
+          "keyRanks": {
+            "A": 2
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-b-q035",
+          "type": "single_choice",
+          "counts": {
+            "A": 80,
+            "B": 68,
+            "C": 71,
+            "D": 73
+          },
+          "keys": [
+            "B"
+          ],
+          "keyRanks": {
+            "B": 4
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": true,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-b-q036",
+          "type": "single_choice",
+          "counts": {
+            "A": 135,
+            "B": 62,
+            "C": 69,
+            "D": 63
+          },
+          "keys": [
+            "C"
+          ],
+          "keyRanks": {
+            "C": 2
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-b-q037",
+          "type": "single_choice",
+          "counts": {
+            "A": 72,
+            "B": 70,
+            "C": 67,
+            "D": 72
+          },
+          "keys": [
+            "D"
+          ],
+          "keyRanks": {
+            "D": 1
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": true,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-b-q038",
+          "type": "single_choice",
+          "counts": {
+            "A": 67,
+            "B": 60,
+            "C": 75,
+            "D": 55
+          },
+          "keys": [
+            "C"
+          ],
+          "keyRanks": {
+            "C": 1
+          },
+          "longestIsKey": true,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-b-q039",
+          "type": "single_choice",
+          "counts": {
+            "A": 67,
+            "B": 51,
+            "C": 43,
+            "D": 64
+          },
+          "keys": [
+            "D"
+          ],
+          "keyRanks": {
+            "D": 2
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-b-q040",
+          "type": "single_choice",
+          "counts": {
+            "A": 67,
+            "B": 49,
+            "C": 80,
+            "D": 70
+          },
+          "keys": [
+            "C"
+          ],
+          "keyRanks": {
+            "C": 1
+          },
+          "longestIsKey": true,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-b-q041",
+          "type": "single_choice",
+          "counts": {
+            "A": 81,
+            "B": 77,
+            "C": 74,
+            "D": 66
+          },
+          "keys": [
+            "B"
+          ],
+          "keyRanks": {
+            "B": 2
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-b-q042",
+          "type": "single_choice",
+          "counts": {
+            "A": 55,
+            "B": 66,
+            "C": 79,
+            "D": 77
+          },
+          "keys": [
+            "C"
+          ],
+          "keyRanks": {
+            "C": 1
+          },
+          "longestIsKey": true,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-b-q043",
+          "type": "single_choice",
+          "counts": {
+            "A": 69,
+            "B": 40,
+            "C": 67,
+            "D": 37
+          },
+          "keys": [
+            "C"
+          ],
+          "keyRanks": {
+            "C": 2
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-b-q044",
+          "type": "single_choice",
+          "counts": {
+            "A": 40,
+            "B": 75,
+            "C": 54,
+            "D": 67
+          },
+          "keys": [
+            "C"
+          ],
+          "keyRanks": {
+            "C": 3
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-b-q045",
+          "type": "single_choice",
+          "counts": {
+            "A": 48,
+            "B": 38,
+            "C": 84,
+            "D": 66
+          },
+          "keys": [
+            "D"
+          ],
+          "keyRanks": {
+            "D": 2
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-b-q046",
+          "type": "single_choice",
+          "counts": {
+            "A": 47,
+            "B": 23,
+            "C": 26,
+            "D": 65
+          },
+          "keys": [
+            "A"
+          ],
+          "keyRanks": {
+            "A": 2
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-b-q047",
+          "type": "code_or_config_artifact",
+          "counts": {
+            "A": 34,
+            "B": 64,
+            "C": 62,
+            "D": 43
+          },
+          "keys": [
+            "C"
+          ],
+          "keyRanks": {
+            "C": 2
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-b-q048",
+          "type": "single_choice",
+          "counts": {
+            "A": 75,
+            "B": 67,
+            "C": 78,
+            "D": 66
+          },
+          "keys": [
+            "A"
+          ],
+          "keyRanks": {
+            "A": 2
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-b-q049",
+          "type": "single_choice",
+          "counts": {
+            "A": 74,
+            "B": 67,
+            "C": 71,
+            "D": 59
+          },
+          "keys": [
+            "D"
+          ],
+          "keyRanks": {
+            "D": 4
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": true,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-b-q050",
+          "type": "single_choice",
+          "counts": {
+            "A": 64,
+            "B": 50,
+            "C": 44,
+            "D": 64
+          },
+          "keys": [
+            "A"
+          ],
+          "keyRanks": {
+            "A": 1
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": true,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-b-q051",
+          "type": "single_choice",
+          "counts": {
+            "A": 67,
+            "B": 46,
+            "C": 60,
+            "D": 66
+          },
+          "keys": [
+            "C"
+          ],
+          "keyRanks": {
+            "C": 3
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-b-q052",
+          "type": "single_choice",
+          "counts": {
+            "A": 61,
+            "B": 59,
+            "C": 62,
+            "D": 56
+          },
+          "keys": [
+            "A"
+          ],
+          "keyRanks": {
+            "A": 2
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-b-q053",
+          "type": "single_choice",
+          "counts": {
+            "A": 75,
+            "B": 87,
+            "C": 83,
+            "D": 68
+          },
+          "keys": [
+            "B"
+          ],
+          "keyRanks": {
+            "B": 1
+          },
+          "longestIsKey": true,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-b-q054",
+          "type": "single_choice",
+          "counts": {
+            "A": 70,
+            "B": 45,
+            "C": 65,
+            "D": 67
+          },
+          "keys": [
+            "A"
+          ],
+          "keyRanks": {
+            "A": 1
+          },
+          "longestIsKey": true,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-b-q055",
+          "type": "single_choice",
+          "counts": {
+            "A": 69,
+            "B": 67,
+            "C": 38,
+            "D": 62
+          },
+          "keys": [
+            "B"
+          ],
+          "keyRanks": {
+            "B": 2
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-b-q056",
+          "type": "code_or_config_artifact",
+          "counts": {
+            "A": 68,
+            "B": 79,
+            "C": 77,
+            "D": 73
+          },
+          "keys": [
+            "A"
+          ],
+          "keyRanks": {
+            "A": 4
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": true,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-b-q057",
+          "type": "single_choice",
+          "counts": {
+            "A": 58,
+            "B": 43,
+            "C": 75,
+            "D": 47
+          },
+          "keys": [
+            "C"
+          ],
+          "keyRanks": {
+            "C": 1
+          },
+          "longestIsKey": true,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-b-q058",
+          "type": "single_choice",
+          "counts": {
+            "A": 56,
+            "B": 62,
+            "C": 68,
+            "D": 49
+          },
+          "keys": [
+            "D"
+          ],
+          "keyRanks": {
+            "D": 4
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": true,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-b-q059",
+          "type": "single_choice",
+          "counts": {
+            "A": 63,
+            "B": 39,
+            "C": 57,
+            "D": 60
+          },
+          "keys": [
+            "A"
+          ],
+          "keyRanks": {
+            "A": 1
+          },
+          "longestIsKey": true,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-b-q060",
+          "type": "single_choice",
+          "counts": {
+            "A": 55,
+            "B": 62,
+            "C": 151,
+            "D": 51
+          },
+          "keys": [
+            "B"
+          ],
+          "keyRanks": {
+            "B": 2
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-b-q061",
+          "type": "single_choice",
+          "counts": {
+            "A": 58,
+            "B": 56,
+            "C": 57,
+            "D": 70
+          },
+          "keys": [
+            "D"
+          ],
+          "keyRanks": {
+            "D": 1
+          },
+          "longestIsKey": true,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-b-q062",
+          "type": "single_choice",
+          "counts": {
+            "A": 60,
+            "B": 67,
+            "C": 68,
+            "D": 135
+          },
+          "keys": [
+            "A"
+          ],
+          "keyRanks": {
+            "A": 4
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": true,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-b-q063",
+          "type": "single_choice",
+          "counts": {
+            "A": 75,
+            "B": 60,
+            "C": 82,
+            "D": 71
+          },
+          "keys": [
+            "C"
+          ],
+          "keyRanks": {
+            "C": 1
+          },
+          "longestIsKey": true,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-b-q064",
+          "type": "single_choice",
+          "counts": {
+            "A": 149,
+            "B": 78,
+            "C": 65,
+            "D": 58
+          },
+          "keys": [
+            "B"
+          ],
+          "keyRanks": {
+            "B": 2
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-b-q065",
+          "type": "multi_select",
+          "counts": {
+            "A": 61,
+            "B": 58,
+            "C": 60,
+            "D": 67,
+            "E": 137
+          },
+          "keys": [
+            "C",
+            "D"
+          ],
+          "keyRanks": {
+            "C": 4,
+            "D": 2
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-b-q066",
+          "type": "multi_select",
+          "counts": {
+            "A": 60,
+            "B": 62,
+            "C": 64,
+            "D": 67,
+            "E": 81
+          },
+          "keys": [
+            "B",
+            "D"
+          ],
+          "keyRanks": {
+            "B": 4,
+            "D": 2
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-b-q067",
+          "type": "multi_select",
+          "counts": {
+            "A": 50,
+            "B": 61,
+            "C": 61,
+            "D": 55,
+            "E": 63
+          },
+          "keys": [
+            "A",
+            "E"
+          ],
+          "keyRanks": {
+            "A": 5,
+            "E": 1
+          },
+          "longestIsKey": true,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-b-q068",
+          "type": "multi_select",
+          "counts": {
+            "A": 57,
+            "B": 59,
+            "C": 60,
+            "D": 61,
+            "E": 65
+          },
+          "keys": [
+            "A",
+            "C"
+          ],
+          "keyRanks": {
+            "A": 5,
+            "C": 3
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-b-q069",
+          "type": "multi_select",
+          "counts": {
+            "A": 57,
+            "B": 43,
+            "C": 61,
+            "D": 55,
+            "E": 58
+          },
+          "keys": [
+            "D",
+            "E"
+          ],
+          "keyRanks": {
+            "D": 4,
+            "E": 2
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-b-q070",
+          "type": "multi_select",
+          "counts": {
+            "A": 55,
+            "B": 63,
+            "C": 48,
+            "D": 53,
+            "E": 66
+          },
+          "keys": [
+            "C",
+            "E"
+          ],
+          "keyRanks": {
+            "C": 5,
+            "E": 1
+          },
+          "longestIsKey": true,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-b-q071",
+          "type": "multi_select",
+          "counts": {
+            "A": 59,
+            "B": 71,
+            "C": 51,
+            "D": 70,
+            "E": 72
+          },
+          "keys": [
+            "C",
+            "D"
+          ],
+          "keyRanks": {
+            "C": 5,
+            "D": 3
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-b-q072",
+          "type": "multi_select",
+          "counts": {
+            "A": 68,
+            "B": 60,
+            "C": 63,
+            "D": 54,
+            "E": 61
+          },
+          "keys": [
+            "B",
+            "E"
+          ],
+          "keyRanks": {
+            "B": 4,
+            "E": 3
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-b-q073",
+          "type": "multi_select",
+          "counts": {
+            "A": 67,
+            "B": 59,
+            "C": 64,
+            "D": 69,
+            "E": 63
+          },
+          "keys": [
+            "B",
+            "C"
+          ],
+          "keyRanks": {
+            "B": 5,
+            "C": 3
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-b-q074",
+          "type": "multi_select",
+          "counts": {
+            "A": 53,
+            "B": 74,
+            "C": 83,
+            "D": 75,
+            "E": 53
+          },
+          "keys": [
+            "C",
+            "E"
+          ],
+          "keyRanks": {
+            "C": 1,
+            "E": 4
+          },
+          "longestIsKey": true,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": true
+        },
+        {
+          "id": "ai103-set-b-q075",
+          "type": "multi_select",
+          "counts": {
+            "A": 58,
+            "B": 64,
+            "C": 45,
+            "D": 61,
+            "E": 53
+          },
+          "keys": [
+            "A",
+            "E"
+          ],
+          "keyRanks": {
+            "A": 3,
+            "E": 4
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-b-q076",
+          "type": "multi_select",
+          "counts": {
+            "A": 64,
+            "B": 73,
+            "C": 55,
+            "D": 68,
+            "E": 80
+          },
+          "keys": [
+            "B",
+            "D"
+          ],
+          "keyRanks": {
+            "B": 2,
+            "D": 3
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-b-q077",
+          "type": "multi_select",
+          "counts": {
+            "A": 56,
+            "B": 65,
+            "C": 70,
+            "D": 64,
+            "E": 50
+          },
+          "keys": [
+            "A",
+            "C"
+          ],
+          "keyRanks": {
+            "A": 4,
+            "C": 1
+          },
+          "longestIsKey": true,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-b-q078",
+          "type": "multi_select",
+          "counts": {
+            "A": 59,
+            "B": 69,
+            "C": 77,
+            "D": 70,
+            "E": 70
+          },
+          "keys": [
+            "A",
+            "B"
+          ],
+          "keyRanks": {
+            "A": 5,
+            "B": 4
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-b-q079",
+          "type": "multi_select",
+          "counts": {
+            "A": 60,
+            "B": 55,
+            "C": 48,
+            "D": 69,
+            "E": 51
+          },
+          "keys": [
+            "B",
+            "C"
+          ],
+          "keyRanks": {
+            "B": 3,
+            "C": 5
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-b-q080",
+          "type": "multi_select",
+          "counts": {
+            "A": 54,
+            "B": 53,
+            "C": 59,
+            "D": 50,
+            "E": 63
+          },
+          "keys": [
+            "D",
+            "E"
+          ],
+          "keyRanks": {
+            "D": 5,
+            "E": 1
+          },
+          "longestIsKey": true,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-b-q081",
+          "type": "multi_select",
+          "counts": {
+            "A": 56,
+            "B": 66,
+            "C": 66,
+            "D": 60,
+            "E": 63
+          },
+          "keys": [
+            "A",
+            "D"
+          ],
+          "keyRanks": {
+            "A": 5,
+            "D": 4
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": true,
+          "minimumTied": false
+        },
+        {
+          "id": "ai103-set-b-q082",
+          "type": "multi_select",
+          "counts": {
+            "A": 60,
+            "B": 61,
+            "C": 68,
+            "D": 59,
+            "E": 73
+          },
+          "keys": [
+            "A",
+            "B"
+          ],
+          "keyRanks": {
+            "A": 4,
+            "B": 3
+          },
+          "longestIsKey": false,
+          "singleKeyShortest": false,
+          "bothKeysTopTwo": false,
+          "maximumTied": false,
+          "minimumTied": false
+        }
+      ]
+    }
+  },
+  "uniqueStems": 200,
+  "generatedQuestionCount": 200,
+  "sourceBasis": "Immutable local primary-source snapshots captured 2026-10-08; snapshot hashes checked during assembly.",
+  "reviewStatus": "Author checks complete; new content has not received an independent Opus review.",
+  "paidGenerationApiCalls": 0,
+  "baselineCorrection": {
+    "singleKeyLongest": "3/15 (20%)",
+    "singleKeyShortest": "0/15",
+    "multiLongestIsKey": "1/5 (20%)",
+    "multiBothKeysTopTwo": "0/5",
+    "replacement": "Q17: supported masked image editing",
+    "blindSolveArithmetic": "The earlier review named five verify-only items, leaving twenty, not twenty-one, independently solvable items."
+  }
+}

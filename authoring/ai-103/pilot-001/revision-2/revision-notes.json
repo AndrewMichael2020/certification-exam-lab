@@ -1,0 +1,26 @@
+{
+  "predecessorPackage": "ai103-pilot-001-r1",
+  "predecessorCanonicalSha256": "0ceafb2d5784ffa424193a00ff62ffb47731c6f902e9c766010db3fe582b358b",
+  "revisedAt": "2026-10-08T06:45:50Z",
+  "author": {
+    "route": "codex-subscription",
+    "model": "Codex GPT-6 main agent (runtime variant not exposed)",
+    "reasoningEffort": "not exposed",
+    "authoredAt": "2026-10-08T06:45:50Z"
+  },
+  "status": "draft; independent revision-2 audit pending",
+  "changes": {
+    "Q1/Q2 case": "Self-contained requirements and retrieval symptom; current role list replaces named missing role. Exact account principal remains a scoped stipulation.",
+    "Q2": "Removed unsupported Foundry User explanation and undocumented problem wording.",
+    "Q3 evidence": "Frozen S037 line 979 and null-union passage at 1005 added to new packet.",
+    "Q4": "Explanation limited to shown call_id contract.",
+    "Q7": "Intermittent/immediate retries; explicitly initial remediation, with escalation for persistent errors.",
+    "difficulty": {
+      "easy": 3,
+      "medium": 6,
+      "hard": 1,
+      "very_hard": 0
+    },
+    "provenance": "New revision editor recorded honestly; all item hashes require fresh review."
+  }
+}
